@@ -2,6 +2,13 @@
 
 
 
+# 1.1.0 (2021-03-01)
+
+
+### Features
+
+* add mo-product ([ea4bda1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ea4bda166e77872a6f0e6b94b15e85ac7d9e3cfb))
+
 ## 1.0.5 (2021-03-01)
 
 
