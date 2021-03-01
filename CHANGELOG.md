@@ -2,6 +2,14 @@
 
 
 
+## 1.1.2 (2021-03-01)
+
+
+### Bug Fixes
+
+* added misc-data and project plugin. ([6ea3266](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6ea32662c041701a1adce8b5ebd51be96103c46b))
+* rm @mo/mo-gateway-core ([e6c3b79](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e6c3b79e63c09a515ada52b39c93bebaeddb3a4a))
+
 ## 1.1.1 (2021-03-01)
 
 
