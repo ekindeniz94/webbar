@@ -4,11 +4,10 @@ import { IUserOneTimeKeyData } from '../interfaces';
 import { v4 as uuidv4 } from 'uuid';
 
 export class UserOneTimeKeyModel {
-  private _key: string;
-  private _created: number;
-  private _expiresAt: number;
+  protected _key: string;
+  protected _created: number;
+  protected _expiresAt: number;
 
-  // MO_USER_OTK_EXPIRES_MS = 20Min
   constructor(data?: IUserOneTimeKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_OTK_EXPIRES_MS: number = 1200000) {
     this._key = data?.key ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
     this._created = data?.created ? data.created : Date.now();

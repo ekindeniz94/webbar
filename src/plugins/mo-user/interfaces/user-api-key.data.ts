@@ -3,5 +3,5 @@ export interface IUserApiKeyData {
   name: string;
   key: string;
   created: number;
-  expiresAt : number;
+  expiresAt: number;
 }

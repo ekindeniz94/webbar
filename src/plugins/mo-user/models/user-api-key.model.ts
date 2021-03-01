@@ -1,16 +1,16 @@
 import bcrypt from 'bcrypt';
+import { IUserApiKeyData } from '../interfaces';
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { IUserApiKeyData } from '../interfaces';
 
 export class UserApiKeyModel {
-  private _id: string;
-  private _name: string;
-  private _key: string;
-  private _created: number;
-  private _expiresAt: number;
+  protected _id: string;
+  protected _name: string;
+  protected _key: string;
+  protected _created: number;
+  protected _expiresAt: number;
 
-  constructor(data?: IUserApiKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_API_KEY_EXPIRES_DAY: number = 1) {
+  constructor(data?: IUserApiKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_API_KEY_EXPIRES_DAY: number = 30) {
     this._id = data?.id ?? uuidv4();
     this._name = data?.name ?? uuidv4();
     this._key = data?.key ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
