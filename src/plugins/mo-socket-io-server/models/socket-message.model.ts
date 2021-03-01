@@ -1,11 +1,9 @@
-import { Logger } from '@mo/mo-gateway-core';
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 import { MessageTypeEnum, SocketMessageTypeEnum } from '../enums';
 import { ISocketMessageData } from '../interfaces';
 
 export class SocketMessageModel<T> {
-  private readonly _logger: Logger;
   private readonly _id: string;
 
   private _createdAt: number;
@@ -17,7 +15,6 @@ export class SocketMessageModel<T> {
   private _data: T;
 
   constructor(data: ISocketMessageData<T>, userId: string) {
-    this._logger = new Logger();
     this._id = data.id ?? uuidv4();
     this._createdAt = data.createdAt ?? Date.now();
 

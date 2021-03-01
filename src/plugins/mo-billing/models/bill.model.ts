@@ -1,4 +1,3 @@
-import { Logger } from '@mo/mo-gateway-core';
 import deepmerge from 'deepmerge';
 import { isObject } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
@@ -7,8 +6,6 @@ import { DEFAULT_BILL_DATA, IBillData } from '../interfaces';
 import { BillEntryModel } from './bill-entry.model';
 
 export class BillModel {
-  protected _logger: Logger;
-
   protected _id: string;
   protected _type: BillTypeEnum;
   protected _billNo: string;
@@ -21,13 +18,12 @@ export class BillModel {
 
   constructor(data: IBillData) {
     data = deepmerge(DEFAULT_BILL_DATA, data);
-    this._logger = new Logger();
 
     if (data && isObject(data)) {
       try {
         data = JSON.parse(JSON.stringify(data));
       } catch (err) {
-        this._logger.error(err);
+        console.log(err);
         data = {} as any;
       }
     }
