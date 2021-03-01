@@ -45,10 +45,7 @@ export class UserModel {
     this._apiKeys = this._apiKeys.filter((item: UserApiKeyModel) => item.id !== id);
   }
 
-  public addApiKey(name: string): UserApiKeyModel {
-    const item = new UserApiKeyModel({
-      name: name
-    } as IUserApiKeyData);
+  public addApiKey(item: UserApiKeyModel): UserApiKeyModel {
     this._apiKeys.push(item);
     return item;
   }
@@ -61,8 +58,7 @@ export class UserModel {
     this._oneTimeKeys = this._oneTimeKeys.filter((item: UserOneTimeKeyModel) => item.key !== key);
   }
 
-  public addOneTimeKey(): UserOneTimeKeyModel {
-    const item = new UserOneTimeKeyModel();
+  public addOneTimeKey(item: UserOneTimeKeyModel): UserOneTimeKeyModel {
     this._oneTimeKeys.push(item);
     return item;
   }

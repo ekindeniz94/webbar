@@ -1,17 +1,15 @@
 import moment from 'moment';
-import bcrypt from 'bcrypt';
 import { IUserOneTimeKeyData } from '../interfaces';
-import { v4 as uuidv4 } from 'uuid';
 
 export class UserOneTimeKeyModel {
   protected _key: string;
   protected _created: number;
   protected _expiresAt: number;
 
-  constructor(data?: IUserOneTimeKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_OTK_EXPIRES_MS: number = 1200000) {
-    this._key = data?.key ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
-    this._created = data?.created ? data.created : Date.now();
-    this._expiresAt = data?.expiresAt ? data.expiresAt : Date.now() + MO_USER_OTK_EXPIRES_MS;
+  constructor(data: IUserOneTimeKeyData) {
+    this._key = data?.key; // ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
+    this._created = data?.created; //  ? data.created : Date.now();
+    this._expiresAt = data?.expiresAt; //  ? data.expiresAt : Date.now() + MO_USER_OTK_EXPIRES_MS;
   }
 
   get key(): string {

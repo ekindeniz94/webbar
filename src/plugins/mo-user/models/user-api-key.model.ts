@@ -1,7 +1,5 @@
-import bcrypt from 'bcrypt';
 import { IUserApiKeyData } from '../interfaces';
 import moment from 'moment';
-import { v4 as uuidv4 } from 'uuid';
 
 export class UserApiKeyModel {
   protected _id: string;
@@ -10,14 +8,12 @@ export class UserApiKeyModel {
   protected _created: number;
   protected _expiresAt: number;
 
-  constructor(data?: IUserApiKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_API_KEY_EXPIRES_DAY: number = 30) {
-    this._id = data?.id ?? uuidv4();
-    this._name = data?.name ?? uuidv4();
-    this._key = data?.key ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
-    this._created = data?.created ? data.created : Date.now();
-    this._expiresAt = data?.expiresAt
-      ? data.expiresAt
-      : moment().add(MO_USER_API_KEY_EXPIRES_DAY, 'days').unix() * 1000;
+  constructor(data: IUserApiKeyData) {
+    this._id = data.id; //  ?? uuidv4();
+    this._name = data.name; // ?? uuidv4();
+    this._key = data.key; //  ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
+    this._created = data.created; //  ? data.created : Date.now();
+    this._expiresAt = data.expiresAt; //  ? data.expiresAt : moment().add(MO_USER_API_KEY_EXPIRES_DAY, 'days').unix() * 1000;
   }
 
   get id(): string {
