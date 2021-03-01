@@ -2,6 +2,13 @@
 
 
 
+## 1.1.1 (2021-03-01)
+
+
+### Bug Fixes
+
+* export all models/interfaces ([0e1c14f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0e1c14fb9336750294784d8a3909ca7b0511f80a))
+
 # 1.1.0 (2021-03-01)
 
 
