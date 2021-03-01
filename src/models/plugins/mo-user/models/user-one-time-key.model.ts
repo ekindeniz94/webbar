@@ -1,0 +1,57 @@
+import moment from 'moment';
+import bcrypt from 'bcrypt';
+import { IUserOneTimeKeyData } from '../interfaces';
+import { v4 as uuidv4 } from 'uuid';
+
+export class UserOneTimeKeyModel {
+  private _key: string;
+  private _created: number;
+  private _expiresAt: number;
+
+  // MO_USER_OTK_EXPIRES_MS = 20Min
+  constructor(data?: IUserOneTimeKeyData, BCRYPT_SALT_ROUNDS: number = 10, MO_USER_OTK_EXPIRES_MS: number = 1200000) {
+    this._key = data?.key ?? bcrypt.hashSync(uuidv4(), BCRYPT_SALT_ROUNDS);
+    this._created = data?.created ? data.created : Date.now();
+    this._expiresAt = data?.expiresAt ? data.expiresAt : Date.now() + MO_USER_OTK_EXPIRES_MS;
+  }
+
+  get key(): string {
+    return this._key;
+  }
+
+  get created(): number {
+    return this._created;
+  }
+
+  get createdNumericDate(): number {
+    return Math.floor(this._created / 1000);
+  }
+
+  get expiresAt(): number {
+    return this._expiresAt;
+  }
+
+  get expiresAtNumericDate(): number {
+    return Math.floor(this._expiresAt / 1000);
+  }
+
+  get createdFormatted(): string {
+    return moment(this._created).format('DD.MM.YYYY HH:mm:ss');
+  }
+
+  get expiresAtFormatted(): string {
+    return moment(this._expiresAt).format('DD.MM.YYYY HH:mm:ss');
+  }
+
+  get isExpired(): boolean {
+    return this._expiresAt < Date.now();
+  }
+
+  get serialize(): IUserOneTimeKeyData {
+    return {
+      key: this._key,
+      created: this._created,
+      expiresAt: this._expiresAt
+    };
+  }
+}
