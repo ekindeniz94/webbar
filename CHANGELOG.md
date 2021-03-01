@@ -2,6 +2,13 @@
 
 
 
+## 1.0.4 (2021-03-01)
+
+
+### Bug Fixes
+
+* test package version ([a20cc15](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a20cc1576dad43ad38baffdbe1e5b218317d946d))
+
 ## 1.0.3 (2021-03-01)
 
 
