@@ -2,6 +2,14 @@
 
 
 
+## 1.1.3 (2021-03-01)
+
+
+### Bug Fixes
+
+* refactored billing, event, socket-client, socket-server to core-base. ([21cc685](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/21cc685bb983d150f849a3697258da9ad0ef3d2e))
+* removed core-gateway-references. ([bb05c74](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bb05c7497dd484dd20ab0810399f37bef13d183a))
+
 ## 1.1.2 (2021-03-01)
 
 
