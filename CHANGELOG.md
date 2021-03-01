@@ -2,6 +2,13 @@
 
 
 
+## 1.0.5 (2021-03-01)
+
+
+### Bug Fixes
+
+* mv plugins folder to src root ([579e7a1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/579e7a1b7e5927041de5a3f04ef2032f6b9036cb))
+
 ## 1.0.4 (2021-03-01)
 
 
