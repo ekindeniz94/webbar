@@ -1,0 +1,13 @@
+export const enum MoEventState {
+  UNKNOWN = 'UNKNOWN',
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  ERROR = 'ERROR',
+  DEBUG = 'DEBUG',
+  STARTED = 'STARTED',
+  PENDING = 'PENDING',
+  SUCCESS = 'SUCCESS',
+  RUNNING = 'RUNNING',
+  CANCELD = 'CANCELD',
+  FAILED = 'FAILED'
+}
