@@ -13,11 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
-    "serve": "STAGE=${STAGE:=local} nodemon --config ./nodemon.config.json",
-    "build": "STAGE=${STAGE:=local} rm -rf ./dist && STAGE=${STAGE:=local} tsc",
-    "start": "STAGE=${STAGE:=local} npm run build && STAGE=${STAGE:=local} node dist/server.js",
-    "semantic-release": "semantic-release",
-    "debug": "STAGE=${STAGE:=local} npm run build && STAGE=${STAGE:=local} node --inspect dist/server.js"
+    "build": "rm -rf ./dist && tsc",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
