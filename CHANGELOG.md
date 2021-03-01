@@ -2,6 +2,14 @@
 
 
 
+## 1.0.3 (2021-03-01)
+
+
+### Bug Fixes
+
+* update package.json ([086f0bb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/086f0bb9e4ebb09a6a2c99f1774b85b731f388e2))
+* update package.json ([2e93bc0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2e93bc0d0626cf7ae1a3cb5b249a9acc7c7f594d))
+
 ## 1.0.2 (2021-03-01)
 
 
