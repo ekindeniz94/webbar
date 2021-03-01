@@ -1,5 +1,4 @@
-import { MoStringUtil } from '@mo/mo-gateway-core';
-import { isBoolean, isObject, isString } from 'lodash';
+import { isBoolean, isObject, isString, kebabCase } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import { ProjectTypeEnum } from '../enums';
 import { DEFAULT_PROJECT_ANGULAR_CONFIG, IProjectAngularConfigData, IProjectAngularData } from '../interfaces';
@@ -74,10 +73,20 @@ export class ProjectAngularModel extends ProjectModel {
       if (value === undefined && (!isBoolean(value) || !isString(value) || value === '')) {
         continue;
       }
-      resultArr.push(`--${MoStringUtil.toKebabCase(key)}=${value}`);
+      resultArr.push(`--${this.toKebabCase(key)}=${value}`);
     }
 
     return resultArr.join(' ');
+  }
+
+  /**
+   * TODO LÖSCHEN nach mo-core-utils
+   */
+  private toKebabCase(str: string): string {
+    return str
+      .split('*')
+      .map((item: string) => kebabCase(item))
+      .join('*');
   }
 
   /**
