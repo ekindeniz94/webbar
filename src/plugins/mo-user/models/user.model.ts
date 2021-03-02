@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IPurchasedProductData, PurchasedProductModel } from '../../mo-product';
 import { IAddress, ICompany, IProfileData, IUserApiKeyData, IUserData, IUserOneTimeKeyData } from '../interfaces';
 import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
 import { UserOneTimeKeyModel } from './user-one-time-key.model';
-import { IPurchasedProductData, PurchasedProductModel } from '../../mo-product';
 
 export class UserModel {
   protected _id: string;
@@ -96,7 +96,7 @@ export class UserModel {
   }
 
   get products(): IPurchasedProductData[] {
-    return this._products.map((item: PurchasedProductModel) => item.serialize);
+    return this._products.map((item: PurchasedProductModel) => item.getSerialized());
   }
 
   set addProducts(products: IPurchasedProductData[]) {
@@ -105,19 +105,19 @@ export class UserModel {
     }
   }
 
-  get serialize(): IUserData {
+  public getSerialized(): IUserData {
     return {
       id: this._id,
       email: this._email,
       passwordHash: this._passwordHash,
-      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.serialize),
-      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.serialize),
-      products: this._products.map((item: PurchasedProductModel) => item.serialize),
+      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
+      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized()),
+      products: this._products.map((item: PurchasedProductModel) => item.getSerialized()),
       firstName: this._firstName,
       lastName: this._lastName,
-      company: this._company?.serialize,
-      address: this._address?.serialize,
-      billingAddress: this._billingAddress?.serialize,
+      company: this._company?.getSerialized(),
+      address: this._address?.getSerialized(),
+      billingAddress: this._billingAddress?.getSerialized(),
       billingAddressEqualsAddress: this._billingAddressEqualsAddress,
       phoneNumber: this._phoneNumber
     };
@@ -127,8 +127,8 @@ export class UserModel {
     return {
       id: this._id,
       email: this._email,
-      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.serialize),
-      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.serialize)
+      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
+      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized())
     };
   }
 
@@ -141,15 +141,15 @@ export class UserModel {
   }
 
   get company(): ICompany | undefined {
-    return this._company?.serialize;
+    return this._company?.getSerialized();
   }
 
   get address(): IAddress | undefined {
-    return this._address?.serialize;
+    return this._address?.getSerialized();
   }
 
   get billingAddress(): IAddress | undefined {
-    return this._billingAddress?.serialize;
+    return this._billingAddress?.getSerialized();
   }
 
   get billingAddressEqualsAddress(): boolean | undefined {

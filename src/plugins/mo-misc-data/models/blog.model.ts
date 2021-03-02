@@ -30,7 +30,7 @@ export class Blog extends MiscData {
     this.published = data.published;
   }
 
-  serialize(): IBlogData {
+  public getSerialized(): IBlogData {
     return {
       id: this.id,
       type: this.type,

@@ -1,6 +1,6 @@
 import { ProjectTypeEnum } from '../enums';
-import { ProjectModel } from './project.model';
 import { IProjectDockerData } from '../interfaces';
+import { ProjectModel } from './project.model';
 
 export class ProjectDockerModel extends ProjectModel {
   protected readonly _projectType: ProjectTypeEnum.DOCKER = ProjectTypeEnum.DOCKER;
@@ -23,9 +23,9 @@ export class ProjectDockerModel extends ProjectModel {
   /**
    * @return {IProjectGatewayData}
    */
-  get serialize(): IProjectDockerData {
+  public getSerialized(): IProjectDockerData {
     return {
-      ...super.getSerialize(),
+      ...super.getSerialized(),
       projectType: this._projectType
     };
   }

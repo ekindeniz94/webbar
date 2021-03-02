@@ -3,7 +3,6 @@ import { isObject } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import { ProjectRolloutStrategyEnum, ProjectTypeEnum } from '../enums';
 import { DEFAULT_PROJECT_DATA, IProjectData } from '../interfaces';
-import { ProjectDataType } from '../types';
 
 export abstract class ProjectModel {
   protected abstract readonly _projectType: ProjectTypeEnum;
@@ -205,7 +204,7 @@ export abstract class ProjectModel {
   }
 
 
-  protected getSerialize(): IProjectData {
+  public getSerialized(): IProjectData {
     return {
       id: this._id,
       name: this._name,
@@ -233,6 +232,4 @@ export abstract class ProjectModel {
       containerTemplateId: this.containerTemplateId
     };
   }
-
-  abstract get serialize(): ProjectDataType;
 }

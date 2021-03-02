@@ -25,7 +25,7 @@ export class Contact extends MiscData {
     this.repliedOn = data.repliedOn;
   }
 
-  serialize(): IContactData {
+  public getSerialized(): IContactData {
     return {
       id: this.id,
       type: this.type,

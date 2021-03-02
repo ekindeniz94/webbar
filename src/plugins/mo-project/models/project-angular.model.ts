@@ -99,9 +99,9 @@ export class ProjectAngularModel extends ProjectModel {
   /**
    * @return {IProjectAngularData}
    */
-  public get serialize(): IProjectAngularData {
+  public getSerialized(): IProjectAngularData {
     return {
-      ...super.getSerialize(),
+      ...super.getSerialized(),
       projectType: this._projectType,
       config: this._config
     };

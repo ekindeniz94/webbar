@@ -1,5 +1,5 @@
-import { IUserApiKeyData } from '../interfaces';
 import moment from 'moment';
+import { IUserApiKeyData } from '../interfaces';
 
 export class UserApiKeyModel {
   protected _id: string;
@@ -56,7 +56,7 @@ export class UserApiKeyModel {
     return this._expiresAt < Date.now();
   }
 
-  get serialize(): IUserApiKeyData {
+  public getSerialized(): IUserApiKeyData {
     return {
       id: this._id,
       name: this._name,

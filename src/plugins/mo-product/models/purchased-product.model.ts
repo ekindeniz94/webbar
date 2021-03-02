@@ -42,7 +42,7 @@ export class PurchasedProductModel extends ProductModel {
     return this._yearly;
   }
 
-  get serialize(): IPurchasedProductData {
+  public getSerialized(): IPurchasedProductData {
     return {
       id: this._id,
       name: this._name,

@@ -103,7 +103,7 @@ export class BillModel {
     this._currency = value;
   }
 
-  serialize(): IBillData {
+  public getSerialized(): IBillData {
     return {
       id: this._id,
       type: this._type,
@@ -112,7 +112,7 @@ export class BillModel {
       updateAt: this._updateAt,
       deliveredAt: this._deliveredAt,
       userId: this._userId,
-      entries: this._entries.map((entry: BillEntryModel) => entry.serialize()),
+      entries: this._entries.map((entry: BillEntryModel) => entry.getSerialized()),
       currency: this._currency
     };
   }

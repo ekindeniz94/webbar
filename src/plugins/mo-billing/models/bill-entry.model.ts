@@ -12,7 +12,7 @@ export class BillEntryModel {
     this._tax = data.tax;
   }
 
-  serialize() {
+  public getSerialized() {
     return {
       quantity: this._quantity,
       pricePerQuantityInCent: this._pricePerQuantityInCent,

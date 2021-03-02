@@ -44,7 +44,7 @@ export class UserOneTimeKeyModel {
     return this._expiresAt < Date.now();
   }
 
-  get serialize(): IUserOneTimeKeyData {
+  public getSerialized(): IUserOneTimeKeyData {
     return {
       key: this._key,
       created: this._created,

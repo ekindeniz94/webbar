@@ -58,7 +58,7 @@ export class SocketMessageModel<T> {
     return this._data;
   }
 
-  get serialize(): ISocketMessageData<T> {
+  public getSerialized(): ISocketMessageData<T> {
     return {
       id: this._id,
       createdAt: this._createdAt,

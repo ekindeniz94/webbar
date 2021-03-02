@@ -1,5 +1,5 @@
-import { IProjectNginxData } from '../interfaces';
 import { ProjectTypeEnum } from '../enums';
+import { IProjectNginxData } from '../interfaces';
 import { ProjectModel } from './project.model';
 
 export class ProjectNginxModel extends ProjectModel {
@@ -23,9 +23,9 @@ export class ProjectNginxModel extends ProjectModel {
   /**
    * @return {IProjectNginxData}
    */
-  get serialize(): IProjectNginxData {
+  public getSerialized(): IProjectNginxData {
     return {
-      ...super.getSerialize(),
+      ...super.getSerialized(),
       projectType: this._projectType
     };
   }

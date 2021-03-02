@@ -1,5 +1,5 @@
-import { IProjectGatewayData } from '../interfaces';
 import { ProjectTypeEnum } from '../enums';
+import { IProjectGatewayData } from '../interfaces';
 import { ProjectModel } from './project.model';
 
 export class ProjectGatewayModel extends ProjectModel {
@@ -23,9 +23,9 @@ export class ProjectGatewayModel extends ProjectModel {
   /**
    * @return {IProjectGatewayData}
    */
-  get serialize(): IProjectGatewayData {
+  public getSerialized(): IProjectGatewayData {
     return {
-      ...super.getSerialize(),
+      ...super.getSerialized(),
       projectType: this._projectType
     };
   }

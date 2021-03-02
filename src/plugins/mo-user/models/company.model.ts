@@ -17,7 +17,7 @@ export class CompanyModel {
     return this._taxNumber;
   }
 
-  get serialize(): ICompany {
+  public getSerialized(): ICompany {
     return {
       name: this._name,
       taxNumber: this._taxNumber

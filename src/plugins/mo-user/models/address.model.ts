@@ -29,7 +29,7 @@ export class AddressModel {
     return this._country;
   }
 
-  get serialize(): IAddress {
+  public getSerialized(): IAddress {
     return {
       street: this._street,
       zip: this._zip,

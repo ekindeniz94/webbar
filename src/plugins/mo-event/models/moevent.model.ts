@@ -24,7 +24,7 @@ export class MoEvent {
     this.topic = data.topic ?? MoEventTopic.UNKNOWN;
   }
 
-  get serializeEvent(): MoEventData {
+  public getSerialized(): MoEventData {
     return {
       id: this.id,
       name: this.name,

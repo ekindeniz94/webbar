@@ -174,7 +174,7 @@ export class ProductModel {
     return this._initLogger;
   }
 
-  getSerialize(): IProductData {
+  public getSerialized(): IProductData {
     return {
       id: this._id,
       name: this._name,
@@ -198,7 +198,7 @@ export class ProductModel {
     };
   }
 
-  serializePublic(): IProductDataPublic {
+  public getSerializedPublic(): IProductDataPublic {
     return {
       id: this._id,
       name: this._name,
@@ -218,7 +218,7 @@ export class ProductModel {
     };
   }
 
-  createSerializedPurchasedProduct(quantity: number, yearly: boolean = true): IPurchasedProductData {
+  public getSerializedPurchasedProduct(quantity: number, yearly: boolean = true): IPurchasedProductData {
     return {
       id: this._id,
       name: this._name,
