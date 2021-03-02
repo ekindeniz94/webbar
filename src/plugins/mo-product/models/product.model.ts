@@ -170,70 +170,6 @@ export class ProductModel {
     return this._bestValue;
   }
 
-  set name(value: string) {
-    this._name = value;
-  }
-
-  set productType(value: ProductTypeEnum) {
-    this._productType = value;
-  }
-
-  set description(value: string) {
-    this._description = value;
-  }
-
-  set startsOn(value: string) {
-    this._startsOn = value;
-  }
-
-  set endsOn(value: string) {
-    this._endsOn = value;
-  }
-
-  set minimumDurationDays(value: number) {
-    this._minimumDurationDays = value;
-  }
-
-  set unit(value: ProductUnitEnum) {
-    this._unit = value;
-  }
-
-  set pricePerUnit(value: number) {
-    this._pricePerUnit = value;
-  }
-
-  set dependsOnProducts(value: string[]) {
-    this._dependsOnProducts = value;
-  }
-
-  set boundToUser(value: string | null) {
-    this._boundToUser = value;
-  }
-
-  set deleted(value: boolean) {
-    this._deleted = value;
-  }
-
-  set icon(value: string) {
-    this._icon = value;
-  }
-
-  set requestsPerDay(value: number) {
-    this._requestsPerDay = value;
-  }
-
-  set bgColor(value: string) {
-    this._bgColor = value;
-  }
-
-  set pricePerUnitYearlyDiscount(value: number) {
-    this._pricePerUnitYearlyDiscount = value;
-  }
-
-  set bestValue(value: boolean) {
-    this._bestValue = value;
-  }
-
   get initLogger(): { type: string; error: any }[] {
     return this._initLogger;
   }
@@ -245,10 +181,10 @@ export class ProductModel {
       productType: this._productType,
       description: this._description,
       createdAt: this._createdAt,
-      createdBy: this.createdBy,
-      startsOn: this.startsOn,
+      createdBy: this._createdBy,
+      startsOn: this._startsOn,
       endsOn: this._endsOn,
-      minimumDurationDays: this.minimumDurationDays,
+      minimumDurationDays: this._minimumDurationDays,
       unit: this._unit,
       pricePerUnit: this._pricePerUnit,
       dependsOnProducts: this._dependsOnProducts,
@@ -282,17 +218,17 @@ export class ProductModel {
     };
   }
 
-  createSerializedPurchasedProduct(quantity: number): IPurchasedProductData {
+  createSerializedPurchasedProduct(quantity: number, yearly: boolean = true): IPurchasedProductData {
     return {
       id: this._id,
       name: this._name,
       productType: this._productType,
       description: this._description,
       createdAt: this._createdAt,
-      createdBy: this.createdBy,
-      startsOn: this.startsOn,
+      createdBy: this._createdBy,
+      startsOn: this._startsOn,
       endsOn: this._endsOn,
-      minimumDurationDays: this.minimumDurationDays,
+      minimumDurationDays: this._minimumDurationDays,
       unit: this._unit,
       pricePerUnit: this._pricePerUnit,
       dependsOnProducts: this._dependsOnProducts,
@@ -303,8 +239,9 @@ export class ProductModel {
       bgColor: this._bgColor,
       pricePerUnitYearlyDiscount: this._pricePerUnitYearlyDiscount,
       bestValue: this._bestValue,
+      purchaseTimestamp: moment().format(),
       quantity: quantity,
-      purchaseTimestamp: moment().format()
+      yearly: yearly
     };
   }
 }

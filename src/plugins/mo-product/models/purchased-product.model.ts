@@ -3,14 +3,17 @@ import { IPurchasedProductData } from '../interfaces/purchased-product.data';
 import { ProductModel } from './product.model';
 
 export class PurchasedProductModel extends ProductModel {
-  quantity: number;
-  purchaseTimestamp: string;
+  protected _quantity: number;
+  protected _purchaseTimestamp: string;
+
+  protected _yearly: boolean;
 
   constructor(data: IPurchasedProductData) {
     super(data);
 
-    this.quantity = data.quantity;
-    this.purchaseTimestamp = moment().format();
+    this._quantity = data.quantity;
+    this._purchaseTimestamp = moment().format();
+    this._yearly = data.yearly;
   }
 
   stripeLineItem(): any {
@@ -23,8 +26,20 @@ export class PurchasedProductModel extends ProductModel {
         },
         unit_amount: this.pricePerUnit
       },
-      quantity: this.quantity
+      quantity: this._quantity
     };
+  }
+
+  get quantity(): number {
+    return this._quantity;
+  }
+
+  get purchaseTimestamp(): string {
+    return this._purchaseTimestamp;
+  }
+
+  get yearly(): boolean {
+    return this._yearly;
   }
 
   get serialize(): IPurchasedProductData {
@@ -34,10 +49,10 @@ export class PurchasedProductModel extends ProductModel {
       productType: this._productType,
       description: this._description,
       createdAt: this._createdAt,
-      createdBy: this.createdBy,
-      startsOn: this.startsOn,
+      createdBy: this._createdBy,
+      startsOn: this._startsOn,
       endsOn: this._endsOn,
-      minimumDurationDays: this.minimumDurationDays,
+      minimumDurationDays: this._minimumDurationDays,
       unit: this._unit,
       pricePerUnit: this._pricePerUnit,
       dependsOnProducts: this._dependsOnProducts,
@@ -49,7 +64,8 @@ export class PurchasedProductModel extends ProductModel {
       pricePerUnitYearlyDiscount: this._pricePerUnitYearlyDiscount,
       bestValue: this._bestValue,
       quantity: this.quantity,
-      purchaseTimestamp: this.purchaseTimestamp
+      purchaseTimestamp: this.purchaseTimestamp,
+      yearly: this._yearly
     };
   }
 }

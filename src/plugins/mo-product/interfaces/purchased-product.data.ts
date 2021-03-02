@@ -22,4 +22,5 @@ export interface IPurchasedProductData {
   bestValue: boolean;
   quantity: number;
   purchaseTimestamp: string;
+  yearly: boolean;
 }
