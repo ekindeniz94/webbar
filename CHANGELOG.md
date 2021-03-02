@@ -2,6 +2,13 @@
 
 
 
+## 1.1.8 (2021-03-02)
+
+
+### Bug Fixes
+
+* added missing properties to job. ([12c9388](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/12c9388f835487111165ab1dbbe6b8ca55300254))
+
 ## 1.1.7 (2021-03-02)
 
 
