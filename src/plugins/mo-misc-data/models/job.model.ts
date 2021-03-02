@@ -7,6 +7,8 @@ export class JobModel extends MiscData {
   name: string;
   tags: string[];
   content: string;
+  teaserText: string;
+  bgColor: string;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;
@@ -18,6 +20,8 @@ export class JobModel extends MiscData {
     this.name = data.name;
     this.tags = data.tags ?? [];
     this.content = data.content;
+    this.teaserText = data.teaserText;
+    this.bgColor = data.bgColor;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
     this.teaserImage = data.teaserImage;
@@ -31,6 +35,8 @@ export class JobModel extends MiscData {
       name: this.name,
       tags: this.tags,
       content: this.content,
+      teaserText: this.teaserText,
+      bgColor: this.bgColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,

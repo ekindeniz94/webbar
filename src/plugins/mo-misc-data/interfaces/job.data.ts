@@ -8,6 +8,8 @@ export const DEFAULT_JOB_DATA: IJobData = {
   name: '',
   tags: [],
   content: '',
+  teaserText: '',
+  bgColor: '#009bc5',
   createdAt: moment().format(),
   updatedAt: moment().format(),
   teaserImage: '',
@@ -19,6 +21,8 @@ export interface IJobData {
   type: string;
   name: string;
   tags: string[];
+  teaserText: string;
+  bgColor: string;
   content: string;
   createdAt: string;
   updatedAt: string;
