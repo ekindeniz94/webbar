@@ -2,6 +2,13 @@
 
 
 
+## 1.1.9 (2021-03-02)
+
+
+### Bug Fixes
+
+* minor fix. ([5a921d8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5a921d8bbaa9ad7ad1d7f57aa3c9bcf1a4ff6a2f))
+
 ## 1.1.8 (2021-03-02)
 
 
