@@ -5,6 +5,7 @@ import { MiscData } from './misc-data.model';
 
 export class JobModel extends MiscData {
   name: string;
+  shortName: string;
   tags: string[];
   content: string;
   teaserText: string;
@@ -18,6 +19,7 @@ export class JobModel extends MiscData {
     super(MiscDataTypeEnum.JOB);
 
     this.name = data.name;
+    this.shortName = data.shortName;
     this.tags = data.tags ?? [];
     this.content = data.content;
     this.teaserText = data.teaserText;
@@ -33,6 +35,7 @@ export class JobModel extends MiscData {
       id: this.id,
       type: this.type,
       name: this.name,
+      shortName: this.shortName,
       tags: this.tags,
       content: this.content,
       teaserText: this.teaserText,

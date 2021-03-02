@@ -6,6 +6,7 @@ export const DEFAULT_JOB_DATA: IJobData = {
   id: uuidv4(),
   type: MiscDataTypeEnum.JOB,
   name: '',
+  shortName: 'DEV',
   tags: [],
   content: '',
   teaserText: '',
@@ -20,6 +21,7 @@ export interface IJobData {
   id: string;
   type: string;
   name: string;
+  shortName: string;
   tags: string[];
   teaserText: string;
   bgColor: string;
