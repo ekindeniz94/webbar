@@ -2,6 +2,13 @@
 
 
 
+## 1.1.4 (2021-03-01)
+
+
+### Bug Fixes
+
+* npm package ([08fd737](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/08fd7378208e681ccd1b1f66aa5b5df37a977615))
+
 ## 1.1.3 (2021-03-01)
 
 
