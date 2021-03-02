@@ -2,6 +2,13 @@
 
 
 
+## 1.1.10 (2021-03-02)
+
+
+### Bug Fixes
+
+* added shortName to job. ([74951c5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/74951c57959c2811d970caf44ad7741e7e11b462))
+
 ## 1.1.9 (2021-03-02)
 
 
