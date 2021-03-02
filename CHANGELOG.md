@@ -2,6 +2,13 @@
 
 
 
+## 1.1.5 (2021-03-02)
+
+
+### Bug Fixes
+
+* product model ([49f3c5a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/49f3c5aab340845c235b4f81262d77d30415e4b9))
+
 ## 1.1.4 (2021-03-01)
 
 
