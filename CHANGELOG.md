@@ -2,6 +2,13 @@
 
 
 
+## 1.1.7 (2021-03-02)
+
+
+### Bug Fixes
+
+* added job model and interface to misc-data. ([e10c8d8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e10c8d81199dc42e241532e52a81127e048b51f9))
+
 ## 1.1.6 (2021-03-02)
 
 
