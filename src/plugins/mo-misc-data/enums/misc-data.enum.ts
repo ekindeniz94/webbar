@@ -1,5 +1,6 @@
 export const enum MiscDataTypeEnum {
     CONTACT = 'CONTACT',
     NEWSLETTER = 'NEWSLETTER',
-    BLOG = 'BLOG'
+    BLOG = 'BLOG',
+    JOB = 'JOB'
 }
