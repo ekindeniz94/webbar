@@ -2,6 +2,13 @@
 
 
 
+## 1.1.6 (2021-03-02)
+
+
+### Bug Fixes
+
+* serialize to getSerialized. ([e9d5e42](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e9d5e421af09f9e8bdf3c1a5da6948a3fa6c511e))
+
 ## 1.1.5 (2021-03-02)
 
 
