@@ -14,9 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "build": "rm -rf ./dist && tsc",
-    "semantic-release": "semantic-release",
-    "yalc:push": "npm run build && yalc push",
-    "yalc:watch": "nodemon --config ./nodemon.config.json --exec \"npm run yalc:push\""
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
