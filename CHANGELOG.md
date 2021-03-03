@@ -2,6 +2,13 @@
 
 
 
+## 1.2.5 (2021-03-03)
+
+
+### Bug Fixes
+
+* update user model ([27b1bbb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/27b1bbb9d2ae82011dd43f3e904b7bb4dd1553af))
+
 ## 1.2.4 (2021-03-03)
 
 
