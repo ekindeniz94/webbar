@@ -132,6 +132,13 @@ export class UserModel {
     };
   }
 
+  get toStringName(): string {
+    if ((this._firstName && this._firstName.length > 0) || (this._lastName && this._lastName?.length > 0)) {
+      return [`${this._firstName}`, `${this._lastName}`].filter((item: string) => item).join(' ');
+    }
+    return this._email ?? this._id;
+  }
+
   get firstName(): string | undefined {
     return this._firstName;
   }
