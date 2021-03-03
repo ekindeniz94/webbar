@@ -16,7 +16,7 @@ export class JobModel extends MiscData {
   published: boolean;
 
   constructor(data: IJobData) {
-    super(MiscDataTypeEnum.JOB);
+    super(MiscDataTypeEnum.JOB, data.id);
 
     this.name = data.name;
     this.shortName = data.shortName;

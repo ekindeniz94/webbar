@@ -18,7 +18,7 @@ export class Blog extends MiscData {
   published: boolean;
 
   constructor(data: IBlogData) {
-    super(MiscDataTypeEnum.BLOG);
+    super(MiscDataTypeEnum.BLOG, data.id);
 
     this.topic = data.topic;
     this.title = data.title;
