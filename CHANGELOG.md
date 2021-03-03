@@ -2,6 +2,13 @@
 
 
 
+## 1.1.12 (2021-03-03)
+
+
+### Bug Fixes
+
+* added missing import. ([09bd9f0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/09bd9f0d5d9183b1e8cda1ea14a6d9019ecb6e7a))
+
 ## 1.1.11 (2021-03-03)
 
 
