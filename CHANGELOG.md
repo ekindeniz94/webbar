@@ -2,6 +2,13 @@
 
 
 
+## 1.2.3 (2021-03-03)
+
+
+### Bug Fixes
+
+* update blog (author is user model) ([d8c22ad](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d8c22ad078c9166a38bdb43abc263b3971bf4e09))
+
 ## 1.2.2 (2021-03-03)
 
 
