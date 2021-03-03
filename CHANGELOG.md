@@ -2,6 +2,13 @@
 
 
 
+# 1.2.0 (2021-03-03)
+
+
+### Features
+
+* IPaginationResponse, ISearchRequest ([178b163](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/178b163fe80ca32d9da20be098bcc28ab4fc2bb2))
+
 ## 1.1.12 (2021-03-03)
 
 
