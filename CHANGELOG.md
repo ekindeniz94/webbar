@@ -2,6 +2,15 @@
 
 
 
+## 1.1.11 (2021-03-03)
+
+
+### Bug Fixes
+
+* added File interfaces and models. ([049c6bb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/049c6bb2e945bb045c8bd0c38654108265f82d8b))
+* changed lib to es2016. ([8e498ec](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8e498ec0a71808e2f341b8ff4567c50dce61230e))
+* changed targetLib to es2016. ([84ab0e6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/84ab0e6dc1a44b50df2ce99f3e222be59a981302))
+
 ## 1.1.10 (2021-03-02)
 
 
