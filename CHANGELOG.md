@@ -2,6 +2,13 @@
 
 
 
+## 1.2.4 (2021-03-03)
+
+
+### Bug Fixes
+
+* misc init ([5b02460](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5b024601f1b516d8c26a107481be0638cf9ff630))
+
 ## 1.2.3 (2021-03-03)
 
 
