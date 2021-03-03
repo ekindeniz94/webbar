@@ -2,6 +2,13 @@
 
 
 
+## 1.2.1 (2021-03-03)
+
+
+### Bug Fixes
+
+* export ISearchRequest interface ([cbd3fdc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cbd3fdc925bdb5481c66c1ed9479e49cb145e3ea))
+
 # 1.2.0 (2021-03-03)
 
 
