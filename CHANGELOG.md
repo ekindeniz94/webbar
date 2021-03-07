@@ -2,6 +2,13 @@
 
 
 
+## 1.2.6 (2021-03-07)
+
+
+### Bug Fixes
+
+* modified file data type. ([536a5ea](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/536a5ea6eabb85b8cd58e0c574ba99f2ba125765))
+
 ## 1.2.5 (2021-03-03)
 
 
