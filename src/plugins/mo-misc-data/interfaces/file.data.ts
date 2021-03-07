@@ -13,8 +13,8 @@ export const DEFAULT_FILE_DATA: IFileData = {
   uploadedByUser: '',
   createdAt: moment().format(),
   updatedAt: moment().format(),
-  locationOnDisk: '',
-  alt: ''
+  downloadUrl: '',
+  altText: ''
 };
 
 export interface IFileData {
@@ -26,6 +26,6 @@ export interface IFileData {
   uploadedByUser: string;
   createdAt: string;
   updatedAt: string;
-  locationOnDisk: string;
-  alt: string;
+  downloadUrl: string;
+  altText: string;
 }

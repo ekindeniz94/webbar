@@ -11,8 +11,8 @@ export class FileModel extends MiscData {
   uploadedByUser: string;
   createdAt: string;
   updatedAt: string;
-  locationOnDisk: string;
-  alt: string;
+  downloadUrl: string;
+  altText: string;
 
   constructor(data: IFileData) {
     super(MiscDataTypeEnum.FILE);
@@ -26,8 +26,8 @@ export class FileModel extends MiscData {
     );
     this.sizeInBytes = data.sizeInBytes;
     this.uploadedByUser = data.uploadedByUser;
-    this.locationOnDisk = data.locationOnDisk;
-    this.alt = data.alt;
+    this.downloadUrl = data.downloadUrl;
+    this.altText = data.altText;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
   }
@@ -42,8 +42,8 @@ export class FileModel extends MiscData {
       uploadedByUser: this.uploadedByUser,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
-      locationOnDisk: this.locationOnDisk,
-      alt: this.alt
+      downloadUrl: this.downloadUrl,
+      altText: this.altText
     };
   }
 }
