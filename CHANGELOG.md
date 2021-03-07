@@ -2,6 +2,35 @@
 
 
 
+## 1.2.5 (2021-03-03)
+
+
+### Bug Fixes
+
+* update user model ([27b1bbb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/27b1bbb9d2ae82011dd43f3e904b7bb4dd1553af))
+
+## 1.2.4 (2021-03-03)
+
+
+### Bug Fixes
+
+* misc init ([5b02460](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5b024601f1b516d8c26a107481be0638cf9ff630))
+
+## 1.2.3 (2021-03-03)
+
+
+### Bug Fixes
+
+* update blog (author is user model) ([d8c22ad](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d8c22ad078c9166a38bdb43abc263b3971bf4e09))
+
+## 1.2.2 (2021-03-03)
+
+
+### Bug Fixes
+
+* es5 and es2016. ([f3b82f9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f3b82f99d77f8a0d1ab41db87dc80e7c195327ee))
+* es5. ([bb15015](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bb1501582a0327af42a3c63529f1e4ffec39bd4f))
+
 ## 1.2.1 (2021-03-03)
 
 

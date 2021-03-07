@@ -13,7 +13,7 @@ export class Contact extends MiscData {
   repliedOn?: string;
 
   constructor(data: IContactData) {
-    super(MiscDataTypeEnum.CONTACT);
+    super(MiscDataTypeEnum.CONTACT, data.id);
 
     this.firstName = data.firstName;
     this.lastName = data.lastName;

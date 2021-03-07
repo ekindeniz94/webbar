@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 import { MiscDataTypeEnum } from '../enums';
-import { IAuthorData } from './author.data';
+import { IUserData } from '../../mo-user';
 
 export const DEFAULT_BLOG_DATA: IBlogData = {
   id: uuidv4(),
@@ -11,7 +11,8 @@ export const DEFAULT_BLOG_DATA: IBlogData = {
   subtitle: '',
   tags: [],
   content: '',
-  author: { id: uuidv4(), firstName: '', lastName: '', profileImage: '', email: '' },
+  author: null,
+  authorId: null,
   createdAt: moment().format(),
   updatedAt: moment().format(),
   teaserImage: '',
@@ -26,7 +27,8 @@ export interface IBlogData {
   subtitle: string;
   tags: string[];
   content: string;
-  author: IAuthorData;
+  author: IUserData | null;
+  authorId: string | null;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;

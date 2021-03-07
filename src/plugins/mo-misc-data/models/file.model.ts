@@ -15,7 +15,7 @@ export class FileModel extends MiscData {
   altText: string;
 
   constructor(data: IFileData) {
-    super(MiscDataTypeEnum.FILE);
+    super(MiscDataTypeEnum.FILE, data.id);
 
     this.fileName = data.fileName;
     this.fileType = new FileType(
