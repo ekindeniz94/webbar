@@ -1,6 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
 import { IPurchasedProductData, PurchasedProductModel } from '../../mo-product';
-import { IAddress, ICompany, IProfileData, IUserApiKeyData, IUserData, IUserOneTimeKeyData } from '../interfaces';
+import {
+  IAddress,
+  ICompany,
+  IProfileData,
+  IPublicUserData,
+  IUserApiKeyData,
+  IUserData,
+  IUserOneTimeKeyData
+} from '../interfaces';
 import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
@@ -13,13 +21,13 @@ export class UserModel {
   protected _apiKeys: UserApiKeyModel[];
   protected _oneTimeKeys: UserOneTimeKeyModel[];
   protected _products: PurchasedProductModel[];
-  protected _firstName?: string;
-  protected _lastName?: string;
-  protected _company?: CompanyModel;
-  protected _address?: AddressModel;
-  protected _billingAddress?: AddressModel;
-  protected _billingAddressEqualsAddress?: boolean;
-  protected _phoneNumber?: string;
+  protected _firstName?: string | undefined;
+  protected _lastName?: string | undefined;
+  protected _company?: CompanyModel | undefined;
+  protected _address?: AddressModel | undefined;
+  protected _billingAddress?: AddressModel | undefined;
+  protected _billingAddressEqualsAddress: boolean = true;
+  protected _phoneNumber?: string | undefined;
 
   constructor(data: IUserData) {
     this._id = data.id ?? uuidv4();
@@ -37,7 +45,10 @@ export class UserModel {
     this._company = data?.company ? new CompanyModel(data.company) : undefined;
     this._address = data?.address ? new AddressModel(data.address) : undefined;
     this._billingAddress = data?.billingAddress ? new AddressModel(data.billingAddress) : undefined;
-    this._billingAddressEqualsAddress = data?.billingAddressEqualsAddress;
+    this._billingAddressEqualsAddress =
+      data?.billingAddressEqualsAddress === false || data?.billingAddressEqualsAddress === true
+        ? data.billingAddressEqualsAddress
+        : true;
     this._phoneNumber = data?.phoneNumber;
   }
 
@@ -65,6 +76,54 @@ export class UserModel {
 
   public filterExpiredOneTimeKeys(): void {
     this._oneTimeKeys = this._oneTimeKeys.filter((item: UserOneTimeKeyModel) => !item.isExpired);
+  }
+
+  public getSerialized(): IUserData {
+    return {
+      id: this._id,
+      email: this._email,
+      passwordHash: this._passwordHash,
+      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
+      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized()),
+      products: this._products.map((item: PurchasedProductModel) => item.getSerialized()),
+      firstName: this._firstName,
+      lastName: this._lastName,
+      company: this._company?.getSerialized(),
+      address: this._address?.getSerialized(),
+      billingAddress: this._billingAddress?.getSerialized(),
+      billingAddressEqualsAddress: this._billingAddressEqualsAddress,
+      phoneNumber: this._phoneNumber
+    };
+  }
+
+  public getPublicSerialized(): IPublicUserData {
+    return {
+      id: this._id,
+      email: this._email,
+      firstName: this._firstName,
+      lastName: this._lastName,
+      company: this._company?.getSerialized(),
+      address: this._address?.getSerialized(),
+      billingAddress: this._billingAddress?.getSerialized(),
+      billingAddressEqualsAddress: this._billingAddressEqualsAddress,
+      phoneNumber: this._phoneNumber
+    };
+  }
+
+  get profileData(): IProfileData {
+    return {
+      id: this._id,
+      email: this._email,
+      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
+      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized())
+    };
+  }
+
+  get toStringName(): string {
+    if ((this._firstName && this._firstName.length > 0) || (this._lastName && this._lastName?.length > 0)) {
+      return [`${this._firstName}`, `${this._lastName}`].filter((item: string) => item).join(' ');
+    }
+    return this._email ?? this._id;
   }
 
   get id(): string {
@@ -105,90 +164,56 @@ export class UserModel {
     }
   }
 
-  public getSerialized(): IUserData {
-    return {
-      id: this._id,
-      email: this._email,
-      passwordHash: this._passwordHash,
-      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
-      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized()),
-      products: this._products.map((item: PurchasedProductModel) => item.getSerialized()),
-      firstName: this._firstName,
-      lastName: this._lastName,
-      company: this._company?.getSerialized(),
-      address: this._address?.getSerialized(),
-      billingAddress: this._billingAddress?.getSerialized(),
-      billingAddressEqualsAddress: this._billingAddressEqualsAddress,
-      phoneNumber: this._phoneNumber
-    };
-  }
-
-  get profileData(): IProfileData {
-    return {
-      id: this._id,
-      email: this._email,
-      apiKeys: this._apiKeys.map((item: UserApiKeyModel) => item.getSerialized()),
-      oneTimeKeys: this._oneTimeKeys.map((item: UserOneTimeKeyModel) => item.getSerialized())
-    };
-  }
-
-  get toStringName(): string {
-    if ((this._firstName && this._firstName.length > 0) || (this._lastName && this._lastName?.length > 0)) {
-      return [`${this._firstName}`, `${this._lastName}`].filter((item: string) => item).join(' ');
-    }
-    return this._email ?? this._id;
-  }
-
   get firstName(): string | undefined {
     return this._firstName;
-  }
-
-  get lastName(): string | undefined {
-    return this._lastName;
-  }
-
-  get company(): ICompany | undefined {
-    return this._company?.getSerialized();
-  }
-
-  get address(): IAddress | undefined {
-    return this._address?.getSerialized();
-  }
-
-  get billingAddress(): IAddress | undefined {
-    return this._billingAddress?.getSerialized();
-  }
-
-  get billingAddressEqualsAddress(): boolean | undefined {
-    return this._billingAddressEqualsAddress;
-  }
-
-  get phoneNumber(): string | undefined {
-    return this._phoneNumber;
   }
 
   set firstName(value: string | undefined) {
     this._firstName = value;
   }
 
+  get lastName(): string | undefined {
+    return this._lastName;
+  }
+
   set lastName(value: string | undefined) {
     this._lastName = value;
+  }
+
+  get company(): ICompany | undefined {
+    return this._company?.getSerialized();
   }
 
   set company(value: ICompany | undefined) {
     this._company = new CompanyModel(value);
   }
 
+  get address(): IAddress | undefined {
+    return this._address?.getSerialized();
+  }
+
   set address(value: IAddress | undefined) {
     this._address = new AddressModel(value);
+  }
+
+  get billingAddress(): IAddress | undefined {
+    return this._billingAddress?.getSerialized();
   }
 
   set billingAddress(value: IAddress | undefined) {
     this._billingAddress = new AddressModel(value);
   }
 
-  set billingAddressEqualsAddress(value: boolean | undefined) {
+  get billingAddressEqualsAddress(): boolean {
+    return this._billingAddressEqualsAddress;
+  }
+
+  set billingAddressEqualsAddress(value: boolean) {
     this._billingAddressEqualsAddress = value;
+  }
+
+  get phoneNumber(): string | undefined {
+    return this._phoneNumber;
   }
 
   set phoneNumber(value: string | undefined) {

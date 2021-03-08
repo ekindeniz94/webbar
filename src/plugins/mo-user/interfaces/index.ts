@@ -6,3 +6,4 @@ export * from './profile.data';
 export * from './user-api-key.data';
 export * from './user-one-time-key.data';
 export * from './user.data';
+export * from './public-user.data';

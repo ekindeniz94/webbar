@@ -2,9 +2,10 @@ import moment from 'moment';
 import { MiscDataTypeEnum } from '../enums';
 import { IBlogData } from '../interfaces';
 import { MiscData } from './misc-data.model';
-import { UserModel } from '../../mo-user';
+import { IUserData, UserModel } from '../../mo-user';
 
 export class Blog extends MiscData {
+  seoUrl: string;
   topic: string;
   title: string;
   subtitle: string;
@@ -20,12 +21,17 @@ export class Blog extends MiscData {
   constructor(data: IBlogData) {
     super(MiscDataTypeEnum.BLOG, data.id);
 
+    this.seoUrl = `${data.title
+      .replace(/[^a-zA-Z]/g, ' ')
+      .replace(/ +/g, '-')
+      .toLowerCase()}`;
+
     this.topic = data.topic;
     this.title = data.title;
     this.subtitle = data.subtitle;
     this.tags = data.tags ?? [];
     this.content = data.content;
-    this.author = data.author ? new UserModel(data.author) : null;
+    this.author = data.author ? new UserModel(data.author as IUserData) : null;
     this.authorId = data.authorId;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
@@ -35,6 +41,7 @@ export class Blog extends MiscData {
 
   public getSerialized(): IBlogData {
     return {
+      seoUrl: this.seoUrl,
       id: this.id,
       type: this.type,
       topic: this.topic,
@@ -42,7 +49,7 @@ export class Blog extends MiscData {
       subtitle: this.subtitle,
       tags: this.tags,
       content: this.content,
-      author: this.author?.getSerialized() ?? null,
+      author: this.author?.getPublicSerialized() ?? null,
       authorId: this.authorId,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
