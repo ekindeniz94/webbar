@@ -2,6 +2,13 @@
 
 
 
+## 1.2.8 (2021-03-08)
+
+
+### Bug Fixes
+
+* blog author undefined ([f6237fa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f6237fa590acca383eeeeaef0543e0d629ea684d))
+
 ## 1.2.7 (2021-03-08)
 
 
