@@ -2,6 +2,13 @@
 
 
 
+## 1.2.9 (2021-03-08)
+
+
+### Bug Fixes
+
+* update job model (add public, admin serialized) ([63fad4d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/63fad4d27bbd76ecec1d30a6cf948bcbf95f7afe))
+
 ## 1.2.8 (2021-03-08)
 
 
