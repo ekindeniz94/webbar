@@ -12,7 +12,7 @@ export const DEFAULT_BLOG_DATA: IBlogData = {
   subtitle: '',
   tags: [],
   content: '',
-  author: null,
+  author: undefined,
   authorId: null,
   createdAt: moment().format(),
   updatedAt: moment().format(),
@@ -29,7 +29,7 @@ export interface IBlogData {
   subtitle: string;
   tags: string[];
   content: string;
-  author: IPublicUserData | null;
+  author: IPublicUserData | undefined;
   authorId: string | null;
   createdAt: string;
   updatedAt: string;

@@ -11,7 +11,7 @@ export class Blog extends MiscData {
   subtitle: string;
   tags: string[];
   content: string;
-  author: UserModel | null;
+  author: UserModel | undefined;
   authorId: string | null;
   createdAt: string;
   updatedAt: string;
@@ -31,7 +31,7 @@ export class Blog extends MiscData {
     this.subtitle = data.subtitle;
     this.tags = data.tags ?? [];
     this.content = data.content;
-    this.author = data.author ? new UserModel(data.author as IUserData) : null;
+    this.author = data.author ? new UserModel(data.author as IUserData) : undefined;
     this.authorId = data.authorId;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
@@ -49,7 +49,7 @@ export class Blog extends MiscData {
       subtitle: this.subtitle,
       tags: this.tags,
       content: this.content,
-      author: this.author?.getPublicSerialized() ?? null,
+      author: this.author?.getPublicSerialized() ?? undefined,
       authorId: this.authorId,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
