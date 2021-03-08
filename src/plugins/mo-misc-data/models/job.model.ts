@@ -1,9 +1,11 @@
 import moment from 'moment';
 import { MiscDataTypeEnum } from '../enums';
-import { IJobData } from '../interfaces';
+import { IJobData, IPublicJobData } from '../interfaces';
 import { MiscData } from './misc-data.model';
+import { IUserData, UserModel } from '../../mo-user';
 
 export class JobModel extends MiscData {
+  seoUrl: string;
   name: string;
   shortName: string;
   tags: string[];
@@ -15,8 +17,16 @@ export class JobModel extends MiscData {
   teaserImage: string;
   published: boolean;
 
+  author: UserModel | undefined;
+  authorId: string | null;
+
   constructor(data: IJobData) {
     super(MiscDataTypeEnum.JOB, data.id);
+
+    this.seoUrl = `${data.name
+      .replace(/[^a-zA-Z]/g, ' ')
+      .replace(/ +/g, '-')
+      .toLowerCase()}`;
 
     this.name = data.name;
     this.shortName = data.shortName;
@@ -28,6 +38,9 @@ export class JobModel extends MiscData {
     this.updatedAt = data.updatedAt ?? moment().format();
     this.teaserImage = data.teaserImage;
     this.published = data.published;
+
+    this.author = data.author ? new UserModel(data.author as IUserData) : undefined;
+    this.authorId = data.authorId;
   }
 
   public getSerialized(): IJobData {
@@ -43,7 +56,48 @@ export class JobModel extends MiscData {
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
-      published: this.published
+      published: this.published,
+
+      author: this.author?.getSerialized() ?? undefined,
+      authorId: this.authorId
+    };
+  }
+
+  public getAdimSerialized(): IJobData {
+    return {
+      id: this.id,
+      type: this.type,
+      name: this.name,
+      shortName: this.shortName,
+      tags: this.tags,
+      content: this.content,
+      teaserText: this.teaserText,
+      bgColor: this.bgColor,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+      teaserImage: this.teaserImage,
+      published: this.published,
+
+      author: this.author?.getAdimSerialized() ?? undefined,
+      authorId: this.authorId
+    };
+  }
+
+  public getPublicSerialized(): IPublicJobData {
+    return {
+      id: this.id,
+      name: this.name,
+      shortName: this.shortName,
+      tags: this.tags,
+      content: this.content,
+      teaserText: this.teaserText,
+      bgColor: this.bgColor,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+      teaserImage: this.teaserImage,
+      published: this.published,
+
+      author: this.author?.getPublicSerialized() ?? undefined
     };
   }
 }

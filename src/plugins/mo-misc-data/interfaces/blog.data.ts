@@ -1,7 +1,8 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 import { MiscDataTypeEnum } from '../enums';
-import { IPublicUserData } from '../../mo-user';
+import { IPublicUserData, IUserData } from '../../mo-user';
+import { IAdminUserData } from '../../mo-user/interfaces/admin-user.data';
 
 export const DEFAULT_BLOG_DATA: IBlogData = {
   seoUrl: '',
@@ -12,12 +13,13 @@ export const DEFAULT_BLOG_DATA: IBlogData = {
   subtitle: '',
   tags: [],
   content: '',
-  author: undefined,
-  authorId: null,
   createdAt: moment().format(),
   updatedAt: moment().format(),
   teaserImage: '',
-  published: false
+  published: false,
+
+  author: undefined,
+  authorId: null
 };
 
 export interface IBlogData {
@@ -29,10 +31,11 @@ export interface IBlogData {
   subtitle: string;
   tags: string[];
   content: string;
-  author: IPublicUserData | undefined;
-  authorId: string | null;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;
   published: boolean;
+
+  author: IUserData | IAdminUserData | IPublicUserData | undefined;
+  authorId: string | null;
 }

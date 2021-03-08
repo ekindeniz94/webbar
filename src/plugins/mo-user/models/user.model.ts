@@ -13,6 +13,7 @@ import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
 import { UserOneTimeKeyModel } from './user-one-time-key.model';
+import { IAdminUserData } from '../interfaces/admin-user.data';
 
 export class UserModel {
   protected _id: string;
@@ -97,6 +98,13 @@ export class UserModel {
   }
 
   public getPublicSerialized(): IPublicUserData {
+    return {
+      firstName: this._firstName!,
+      lastName: this._lastName!
+    };
+  }
+
+  public getAdimSerialized(): IAdminUserData {
     return {
       id: this._id,
       email: this._email,
