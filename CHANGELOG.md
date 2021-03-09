@@ -2,6 +2,13 @@
 
 
 
+## 1.2.10 (2021-03-09)
+
+
+### Bug Fixes
+
+* added missing properties to billing-entry. ([b866e20](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b866e20775d722b77db81830af12e22016e8024a))
+
 ## 1.2.9 (2021-03-08)
 
 
