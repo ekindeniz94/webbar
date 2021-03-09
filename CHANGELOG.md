@@ -2,6 +2,13 @@
 
 
 
+## 1.2.11 (2021-03-09)
+
+
+### Bug Fixes
+
+* renamed job and blog to ...model. ([64bf817](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/64bf8171446218cf67c64ec30e5b211bdcc8eb94))
+
 ## 1.2.10 (2021-03-09)
 
 
