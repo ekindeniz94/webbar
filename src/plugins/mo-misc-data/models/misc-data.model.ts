@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { MiscDataTypeEnum } from '../enums';
 
-export class MiscData {
+export class MiscDataModel {
   id: string;
   type: MiscDataTypeEnum;
 

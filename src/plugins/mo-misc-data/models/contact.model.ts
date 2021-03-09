@@ -1,8 +1,8 @@
 import { MiscDataTypeEnum } from '../enums';
 import { IContactData } from '../interfaces';
-import { MiscData } from './misc-data.model';
+import { MiscDataModel } from './misc-data.model';
 
-export class Contact extends MiscData {
+export class ContactModel extends MiscDataModel {
   firstName: string;
   lastName: string;
   email: string;

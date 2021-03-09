@@ -1,10 +1,10 @@
 import moment from 'moment';
+import { IUserData, UserModel } from '../../mo-user';
 import { MiscDataTypeEnum } from '../enums';
 import { IBlogData, IPublicBlogData } from '../interfaces';
-import { MiscData } from './misc-data.model';
-import { IUserData, UserModel } from '../../mo-user';
+import { MiscDataModel } from './misc-data.model';
 
-export class Blog extends MiscData {
+export class BlogModel extends MiscDataModel {
   seoUrl: string;
   topic: string;
   title: string;

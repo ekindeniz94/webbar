@@ -2,9 +2,9 @@ import moment from 'moment';
 import { MiscDataTypeEnum } from '../enums';
 import { IFileData } from '../interfaces';
 import { FileType } from './file-type.model';
-import { MiscData } from './misc-data.model';
+import { MiscDataModel } from './misc-data.model';
 
-export class FileModel extends MiscData {
+export class FileModel extends MiscDataModel {
   fileName: string;
   fileType: FileType;
   sizeInBytes: number;
