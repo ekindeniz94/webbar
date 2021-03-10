@@ -2,6 +2,13 @@
 
 
 
+## 1.2.13 (2021-03-10)
+
+
+### Bug Fixes
+
+* user model improved. added isDeletedAt ([b15fee8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b15fee8a1a5cbcf8d3eea06743853ad4b6399084))
+
 ## 1.2.12 (2021-03-10)
 
 
