@@ -9,11 +9,11 @@ import {
   IUserData,
   IUserOneTimeKeyData
 } from '../interfaces';
+import { IAdminUserData } from '../interfaces/admin-user.data';
 import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
 import { UserOneTimeKeyModel } from './user-one-time-key.model';
-import { IAdminUserData } from '../interfaces/admin-user.data';
 
 export class UserModel {
   protected _id: string;
@@ -29,6 +29,8 @@ export class UserModel {
   protected _billingAddress?: AddressModel | undefined;
   protected _billingAddressEqualsAddress: boolean = true;
   protected _phoneNumber?: string | undefined;
+  protected _phoneNumberValidatedAt?: string | undefined;
+  protected _emailValidatedAt?: string | undefined;
 
   constructor(data: IUserData) {
     this._id = data.id ?? uuidv4();
@@ -51,6 +53,8 @@ export class UserModel {
         ? data.billingAddressEqualsAddress
         : true;
     this._phoneNumber = data?.phoneNumber;
+    this._emailValidatedAt = data.emailValidatedAt;
+    this._phoneNumberValidatedAt = data.phoneNumberValidatedAt;
   }
 
   public deleteApiKey(id: string): void {
@@ -93,7 +97,9 @@ export class UserModel {
       address: this._address?.getSerialized(),
       billingAddress: this._billingAddress?.getSerialized(),
       billingAddressEqualsAddress: this._billingAddressEqualsAddress,
-      phoneNumber: this._phoneNumber
+      phoneNumber: this._phoneNumber,
+      phoneNumberValidatedAt: this._phoneNumberValidatedAt,
+      emailValidatedAt: this._emailValidatedAt 
     };
   }
 
@@ -114,7 +120,9 @@ export class UserModel {
       address: this._address?.getSerialized(),
       billingAddress: this._billingAddress?.getSerialized(),
       billingAddressEqualsAddress: this._billingAddressEqualsAddress,
-      phoneNumber: this._phoneNumber
+      phoneNumber: this._phoneNumber,
+      phoneNumberValidatedAt: this._phoneNumberValidatedAt,
+      emailValidatedAt: this._emailValidatedAt 
     };
   }
 
@@ -226,5 +234,21 @@ export class UserModel {
 
   set phoneNumber(value: string | undefined) {
     this._phoneNumber = value;
+  }
+
+  get phoneNumberValidatedAt(): string | undefined {
+    return this._phoneNumberValidatedAt;
+  }
+
+  set phoneNumberValidatedAt(value: string | undefined) {
+    this._phoneNumberValidatedAt = value;
+  }
+
+  get emailValidatedAt(): string | undefined {
+    return this._emailValidatedAt;
+  }
+
+  set emailValidatedAt(value: string | undefined) {
+    this._emailValidatedAt = value;
   }
 }
