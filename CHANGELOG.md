@@ -2,6 +2,13 @@
 
 
 
+## 1.2.12 (2021-03-10)
+
+
+### Bug Fixes
+
+* user model improved. added emailvalidated and phonevalidated.. ([67f281b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/67f281bb57c8f50fd6f2cf8ceac1e3c9f0dd3766))
+
 ## 1.2.11 (2021-03-09)
 
 
