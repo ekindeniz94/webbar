@@ -2,6 +2,13 @@
 
 
 
+## 1.2.14 (2021-03-10)
+
+
+### Bug Fixes
+
+* added sms-auth data-models. ([976100f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/976100fff831a15aa2279850bbde9e712d305b6a))
+
 ## 1.2.13 (2021-03-10)
 
 
