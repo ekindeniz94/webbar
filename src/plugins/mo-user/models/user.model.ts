@@ -31,6 +31,7 @@ export class UserModel {
   protected _phoneNumber?: string | undefined;
   protected _phoneNumberValidatedAt?: string | undefined;
   protected _emailValidatedAt?: string | undefined;
+  protected _isDeletedAt?: string | undefined;
 
   constructor(data: IUserData) {
     this._id = data.id ?? uuidv4();
@@ -53,8 +54,9 @@ export class UserModel {
         ? data.billingAddressEqualsAddress
         : true;
     this._phoneNumber = data?.phoneNumber;
-    this._emailValidatedAt = data.emailValidatedAt;
-    this._phoneNumberValidatedAt = data.phoneNumberValidatedAt;
+    this._emailValidatedAt = data?.emailValidatedAt;
+    this._phoneNumberValidatedAt = data?.phoneNumberValidatedAt;
+    this._isDeletedAt = data?.isDeletedAt;
   }
 
   public deleteApiKey(id: string): void {
@@ -99,7 +101,8 @@ export class UserModel {
       billingAddressEqualsAddress: this._billingAddressEqualsAddress,
       phoneNumber: this._phoneNumber,
       phoneNumberValidatedAt: this._phoneNumberValidatedAt,
-      emailValidatedAt: this._emailValidatedAt 
+      emailValidatedAt: this._emailValidatedAt,
+      isDeletedAt: this._isDeletedAt
     };
   }
 
@@ -122,7 +125,8 @@ export class UserModel {
       billingAddressEqualsAddress: this._billingAddressEqualsAddress,
       phoneNumber: this._phoneNumber,
       phoneNumberValidatedAt: this._phoneNumberValidatedAt,
-      emailValidatedAt: this._emailValidatedAt 
+      emailValidatedAt: this._emailValidatedAt,
+      isDeletedAt: this._isDeletedAt
     };
   }
 
@@ -250,5 +254,13 @@ export class UserModel {
 
   set emailValidatedAt(value: string | undefined) {
     this._emailValidatedAt = value;
+  }
+
+  get isDeletedAt(): string | undefined {
+    return this._isDeletedAt;
+  }
+
+  set isDeletedAt(value: string | undefined) {
+    this._isDeletedAt = value;
   }
 }

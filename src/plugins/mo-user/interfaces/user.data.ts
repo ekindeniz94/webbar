@@ -20,4 +20,5 @@ export interface IUserData {
   billingAddressEqualsAddress?: boolean;
   phoneNumberValidatedAt?: string;
   emailValidatedAt?: string;
+  isDeletedAt?: string;
 }
