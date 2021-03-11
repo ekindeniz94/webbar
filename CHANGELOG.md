@@ -2,6 +2,13 @@
 
 
 
+## 1.2.15 (2021-03-11)
+
+
+### Bug Fixes
+
+* added isImage method. ([c70d1b8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c70d1b8a732465193b05c74491e189d8c6a1a80a))
+
 ## 1.2.14 (2021-03-10)
 
 
