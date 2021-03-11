@@ -2,6 +2,13 @@
 
 
 
+## 1.2.16 (2021-03-11)
+
+
+### Bug Fixes
+
+* currency and taxes improved for billing. ([032afef](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/032afef2c7061acc2e82a5f0a6dd23492aeea94b))
+
 ## 1.2.15 (2021-03-11)
 
 
