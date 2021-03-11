@@ -7,6 +7,7 @@ export interface IPublicJobData {
   tags: string[];
   teaserText: string;
   bgColor: string;
+  textColor: string;
   content: string;
   createdAt: string;
   updatedAt: string;

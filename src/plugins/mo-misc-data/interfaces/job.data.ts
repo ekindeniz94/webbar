@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { MiscDataTypeEnum } from '../enums';
 import { IAdminUserData, IPublicUserData, IUserData } from '../../mo-user';
+import { MiscDataTypeEnum } from '../enums';
 
 export const DEFAULT_JOB_DATA: IJobData = {
   id: uuidv4(),
@@ -12,6 +12,7 @@ export const DEFAULT_JOB_DATA: IJobData = {
   content: '',
   teaserText: '',
   bgColor: '#009bc5',
+  textColor: '#ffffff',
   createdAt: moment().format(),
   updatedAt: moment().format(),
   teaserImage: '',
@@ -29,6 +30,7 @@ export interface IJobData {
   tags: string[];
   teaserText: string;
   bgColor: string;
+  textColor: string;
   content: string;
   createdAt: string;
   updatedAt: string;

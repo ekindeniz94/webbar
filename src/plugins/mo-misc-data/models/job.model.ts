@@ -12,6 +12,7 @@ export class JobModel extends MiscDataModel {
   content: string;
   teaserText: string;
   bgColor: string;
+  textColor: string;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;
@@ -34,6 +35,7 @@ export class JobModel extends MiscDataModel {
     this.content = data.content;
     this.teaserText = data.teaserText;
     this.bgColor = data.bgColor;
+    this.textColor = data.textColor;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
     this.teaserImage = data.teaserImage;
@@ -53,6 +55,7 @@ export class JobModel extends MiscDataModel {
       content: this.content,
       teaserText: this.teaserText,
       bgColor: this.bgColor,
+      textColor: this.textColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
@@ -72,6 +75,7 @@ export class JobModel extends MiscDataModel {
       tags: this.tags,
       content: this.content,
       teaserText: this.teaserText,
+      textColor: this.textColor,
       bgColor: this.bgColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
@@ -92,6 +96,7 @@ export class JobModel extends MiscDataModel {
       content: this.content,
       teaserText: this.teaserText,
       bgColor: this.bgColor,
+      textColor: this.textColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
