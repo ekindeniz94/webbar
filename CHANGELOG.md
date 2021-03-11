@@ -2,6 +2,13 @@
 
 
 
+## 1.2.17 (2021-03-11)
+
+
+### Bug Fixes
+
+* added textColor to job. ([f60e836](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f60e836310adf8c4d8d72ebbe4c734fc17dc5141))
+
 ## 1.2.16 (2021-03-11)
 
 
