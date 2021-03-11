@@ -2,6 +2,13 @@
 
 
 
+## 1.2.18 (2021-03-11)
+
+
+### Bug Fixes
+
+* added faq datamodel. ([35d8f9b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/35d8f9be4a5ad45300769455e3020b2a5213f20c))
+
 ## 1.2.17 (2021-03-11)
 
 
