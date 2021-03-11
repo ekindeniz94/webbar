@@ -1,4 +1,4 @@
-import { IFileTypeData } from "../interfaces";
+import { IFileTypeData } from '../interfaces';
 
 export class FileType {
   private static availableTypes = [
@@ -76,5 +76,9 @@ export class FileType {
       mimeType: this.mimeType,
       icon: this.icon
     };
+  }
+
+  public isImage(): boolean {
+    return this.icon === 'fa-file-image';
   }
 }
