@@ -1,9 +1,10 @@
 import deepmerge from 'deepmerge';
 import { isObject } from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
-import { BillTypeEnum, CurrencyEnum } from '../enums';
+import { BillTypeEnum } from '../enums';
 import { DEFAULT_BILL_DATA, IBillData } from '../interfaces';
 import { BillEntryModel } from './bill-entry.model';
+import { CurrencyModel } from './currency.model';
 
 export class BillModel {
   protected _id: string;
@@ -14,7 +15,7 @@ export class BillModel {
   protected _deliveredAt: string;
   protected _userId: string;
   protected _entries: BillEntryModel[];
-  protected _currency: CurrencyEnum;
+  protected _currency: CurrencyModel;
 
   constructor(data: IBillData) {
     data = deepmerge(DEFAULT_BILL_DATA, data);
@@ -36,7 +37,7 @@ export class BillModel {
     this._deliveredAt = data.deliveredAt;
     this._userId = data.userId;
     this._entries = data.entries.map((data) => new BillEntryModel(data));
-    this._currency = data.currency;
+    this._currency = new CurrencyModel(data.currency);
   }
 
   get id(): string {
@@ -71,7 +72,7 @@ export class BillModel {
     return this._entries;
   }
 
-  get currency(): CurrencyEnum {
+  get currency(): CurrencyModel {
     return this._currency;
   }
 
@@ -99,7 +100,7 @@ export class BillModel {
     this._entries = value;
   }
 
-  set currency(value: CurrencyEnum) {
+  set currency(value: CurrencyModel) {
     this._currency = value;
   }
 
@@ -113,7 +114,7 @@ export class BillModel {
       deliveredAt: this._deliveredAt,
       userId: this._userId,
       entries: this._entries.map((entry: BillEntryModel) => entry.getSerialized()),
-      currency: this._currency
+      currency: this._currency.getSerialized()
     };
   }
 }

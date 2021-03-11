@@ -1,4 +1,3 @@
-import { TaxEnum } from '../enums/tax.enum';
 import { IBillEntryData } from '../interfaces';
 
 export class BillEntryModel {
@@ -6,23 +5,23 @@ export class BillEntryModel {
   protected _description: string;
   protected _quantity: number;
   protected _pricePerQuantityInCent: number;
-  protected _tax: TaxEnum;
+  protected _taxPercent: number;
 
   constructor(data: IBillEntryData) {
     this._name = data.name;
     this._description = data.description;
     this._quantity = data.quantity;
     this._pricePerQuantityInCent = data.pricePerQuantityInCent;
-    this._tax = data.tax;
+    this._taxPercent = data.taxPercent;
   }
 
-  public getSerialized() {
+  public getSerialized(): IBillEntryData {
     return {
       name: this._name,
       description: this._description,
       quantity: this._quantity,
       pricePerQuantityInCent: this._pricePerQuantityInCent,
-      tax: this._tax
+      taxPercent: this._taxPercent
     };
   }
 }

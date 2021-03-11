@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { BillTypeEnum } from '../enums/bill-type.enum';
-import { CurrencyEnum } from '../enums/currency.enum';
 import { IBillEntryData } from './bill-entry.data';
+import { DEFAULT_CURRENCY_DATA, ICurrencyData } from './currency.data';
 
 export const DEFAULT_BILL_DATA: IBillData = {
   id: '',
@@ -12,7 +12,7 @@ export const DEFAULT_BILL_DATA: IBillData = {
   deliveredAt: moment().format(),
   userId: '',
   entries: [],
-  currency: CurrencyEnum.EUR
+  currency: DEFAULT_CURRENCY_DATA
 };
 
 export interface IBillData {
@@ -24,5 +24,5 @@ export interface IBillData {
   deliveredAt: string;
   userId: string;
   entries: IBillEntryData[];
-  currency: CurrencyEnum;
+  currency: ICurrencyData;
 }
