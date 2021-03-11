@@ -17,6 +17,7 @@ export const DEFAULT_JOB_DATA: IJobData = {
   updatedAt: moment().format(),
   teaserImage: '',
   published: false,
+  seoUrl: '',
 
   author: undefined,
   authorId: null
@@ -26,6 +27,7 @@ export interface IJobData {
   id: string;
   type: string;
   name: string;
+  seoUrl: string;
   shortName: string;
   tags: string[];
   teaserText: string;
