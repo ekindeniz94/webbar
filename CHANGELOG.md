@@ -2,6 +2,13 @@
 
 
 
+## 1.2.19 (2021-03-15)
+
+
+### Bug Fixes
+
+* job datamodel updated. ([138b97b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/138b97b4f2b3fe49fc8b08ba4d80e9213c8af3c8))
+
 ## 1.2.18 (2021-03-11)
 
 
