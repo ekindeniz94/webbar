@@ -13,5 +13,5 @@ export interface IAdminUserData {
   phoneNumber?: string;
   phoneNumberValidatedAt?: string;
   emailValidatedAt?: string;
-  isDeletedAt?: string;
+  createdAt: string;
 }
