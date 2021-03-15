@@ -2,6 +2,13 @@
 
 
 
+## 1.2.21 (2021-03-15)
+
+
+### Bug Fixes
+
+* remove svg from resizing. ([a1f9a40](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a1f9a401c9175fc2bd13472374c8242c901ae352))
+
 ## 1.2.20 (2021-03-15)
 
 
