@@ -78,7 +78,7 @@ export class FileType {
     };
   }
 
-  public isImage(): boolean {
-    return this.icon === 'fa-file-image';
+  public isResizableImage(): boolean {
+    return this.icon === 'fa-file-image' && this.name !== 'svg';
   }
 }
