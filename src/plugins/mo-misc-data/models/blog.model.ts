@@ -8,7 +8,7 @@ export class BlogModel extends MiscDataModel {
   seoUrl: string;
   topic: string;
   title: string;
-  subtitle: string;
+  teaserText: string;
   tags: string[];
   content: string;
   createdAt: string;
@@ -29,7 +29,7 @@ export class BlogModel extends MiscDataModel {
 
     this.topic = data.topic;
     this.title = data.title;
-    this.subtitle = data.subtitle;
+    this.teaserText = data.teaserText;
     this.tags = data.tags ?? [];
     this.content = data.content;
     this.createdAt = data.createdAt ?? moment().format();
@@ -48,7 +48,7 @@ export class BlogModel extends MiscDataModel {
       type: this.type,
       topic: this.topic,
       title: this.title,
-      subtitle: this.subtitle,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
       createdAt: this.createdAt,
@@ -68,7 +68,7 @@ export class BlogModel extends MiscDataModel {
       type: this.type,
       topic: this.topic,
       title: this.title,
-      subtitle: this.subtitle,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
       createdAt: this.createdAt,
@@ -87,7 +87,7 @@ export class BlogModel extends MiscDataModel {
       id: this.id,
       topic: this.topic,
       title: this.title,
-      subtitle: this.subtitle,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
       createdAt: this.createdAt,

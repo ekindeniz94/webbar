@@ -5,7 +5,7 @@ export interface IPublicBlogData {
   id: string;
   topic: string;
   title: string;
-  subtitle: string;
+  teaserText: string;
   tags: string[];
   content: string;
   author: IPublicUserData | undefined;

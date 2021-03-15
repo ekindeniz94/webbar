@@ -1,8 +1,8 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { MiscDataTypeEnum } from '../enums';
 import { IPublicUserData, IUserData } from '../../mo-user';
 import { IAdminUserData } from '../../mo-user/interfaces/admin-user.data';
+import { MiscDataTypeEnum } from '../enums';
 
 export const DEFAULT_BLOG_DATA: IBlogData = {
   seoUrl: '',
@@ -10,7 +10,7 @@ export const DEFAULT_BLOG_DATA: IBlogData = {
   type: MiscDataTypeEnum.BLOG,
   topic: '',
   title: '',
-  subtitle: '',
+  teaserText: '',
   tags: [],
   content: '',
   createdAt: moment().format(),
@@ -28,7 +28,7 @@ export interface IBlogData {
   type: string;
   topic: string;
   title: string;
-  subtitle: string;
+  teaserText: string;
   tags: string[];
   content: string;
   createdAt: string;
