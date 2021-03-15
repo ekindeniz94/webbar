@@ -2,6 +2,13 @@
 
 
 
+## 1.2.20 (2021-03-15)
+
+
+### Bug Fixes
+
+* user createdAt added. remove isDeleted. ([6defb37](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6defb37455ebac785105100d2718b0ef683a59fb))
+
 ## 1.2.19 (2021-03-15)
 
 
