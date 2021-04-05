@@ -1,4 +1,4 @@
-import { IPublicUserData } from '../../mo-user';
+import { UserDto } from '../../mo-user';
 
 export interface IPublicBlogData {
   seoUrl: string;
@@ -8,7 +8,7 @@ export interface IPublicBlogData {
   teaserText: string;
   tags: string[];
   content: string;
-  author: IPublicUserData | undefined;
+  author: UserDto | undefined;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;

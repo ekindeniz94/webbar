@@ -1,8 +1,9 @@
 import moment from 'moment';
-import { IUserData, UserModel } from '../../mo-user';
+import { UserDto } from '../../mo-user';
 import { MiscDataTypeEnum } from '../enums';
 import { IBlogData, IPublicBlogData } from '../interfaces';
 import { MiscDataModel } from './misc-data.model';
+import { plainToClass } from 'class-transformer';
 
 export class BlogModel extends MiscDataModel {
   seoUrl: string;
@@ -16,7 +17,7 @@ export class BlogModel extends MiscDataModel {
   teaserImage: string;
   published: boolean;
 
-  author: UserModel | undefined;
+  author: UserDto | undefined;
   authorId: string | null;
 
   constructor(data: IBlogData) {
@@ -37,7 +38,7 @@ export class BlogModel extends MiscDataModel {
     this.teaserImage = data.teaserImage;
     this.published = data.published;
 
-    this.author = data.author ? new UserModel(data.author as IUserData) : undefined;
+    this.author = data.author ? plainToClass(UserDto, data.author, { excludeExtraneousValues: true }) : undefined;
     this.authorId = data.authorId;
   }
 
@@ -56,7 +57,7 @@ export class BlogModel extends MiscDataModel {
       teaserImage: this.teaserImage,
       published: this.published,
 
-      author: this.author?.getSerialized() ?? undefined,
+      author: this.author ?? undefined,
       authorId: this.authorId
     };
   }
@@ -75,8 +76,7 @@ export class BlogModel extends MiscDataModel {
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
       published: this.published,
-
-      author: this.author?.getAdimSerialized() ?? undefined,
+      author: this.author ?? undefined,
       authorId: this.authorId
     };
   }
@@ -94,8 +94,7 @@ export class BlogModel extends MiscDataModel {
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
       published: this.published,
-
-      author: this.author?.getPublicSerialized() ?? undefined
+      author: this.author ?? undefined
     };
   }
 }

@@ -1,8 +1,9 @@
 import moment from 'moment';
-import { IUserData, UserModel } from '../../mo-user';
 import { MiscDataTypeEnum } from '../enums';
 import { IJobData, IPublicJobData } from '../interfaces';
 import { MiscDataModel } from './misc-data.model';
+import { UserDto } from '../../mo-user';
+import { plainToClass } from 'class-transformer';
 
 export class JobModel extends MiscDataModel {
   seoUrl: string;
@@ -18,7 +19,7 @@ export class JobModel extends MiscDataModel {
   teaserImage: string;
   published: boolean;
 
-  author: UserModel | undefined;
+  author: UserDto | undefined;
   authorId: string | null;
 
   constructor(data: IJobData) {
@@ -41,7 +42,7 @@ export class JobModel extends MiscDataModel {
     this.teaserImage = data.teaserImage;
     this.published = data.published;
 
-    this.author = data.author ? new UserModel(data.author as IUserData) : undefined;
+    this.author = data.author ? plainToClass(UserDto, data.author, { excludeExtraneousValues: true }) : undefined;
     this.authorId = data.authorId;
   }
 
@@ -62,7 +63,7 @@ export class JobModel extends MiscDataModel {
       teaserImage: this.teaserImage,
       published: this.published,
 
-      author: this.author?.getSerialized() ?? undefined,
+      author: this.author ?? undefined,
       authorId: this.authorId
     };
   }
@@ -84,7 +85,7 @@ export class JobModel extends MiscDataModel {
       teaserImage: this.teaserImage,
       published: this.published,
 
-      author: this.author?.getAdimSerialized() ?? undefined,
+      author: this.author ?? undefined,
       authorId: this.authorId
     };
   }
@@ -104,7 +105,7 @@ export class JobModel extends MiscDataModel {
       teaserImage: this.teaserImage,
       published: this.published,
 
-      author: this.author?.getPublicSerialized() ?? undefined
+      author: this.author ?? undefined
     };
   }
 }

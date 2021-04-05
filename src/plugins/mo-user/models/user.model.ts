@@ -6,16 +6,16 @@ import {
   IProfileData,
   IPublicUserData,
   IUserApiKeyData,
-  IUserData,
+  IUserData_DEPRECATED,
   IUserOneTimeKeyData
 } from '../interfaces';
-import { IAdminUserData } from '../interfaces/admin-user.data';
+import { IAdminUserData } from '../interfaces';
 import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
 import { UserOneTimeKeyModel } from './user-one-time-key.model';
 
-export class UserModel {
+export class UserModel_DEPRECATED {
   protected _id: string;
   protected _email: string;
   protected _createdAt: string;
@@ -32,9 +32,9 @@ export class UserModel {
   protected _phoneNumber?: string | undefined;
   protected _phoneNumberValidatedAt?: string | undefined;
   protected _emailValidatedAt?: string | undefined;
-  
 
-  constructor(data: IUserData) {
+
+  constructor(data: IUserData_DEPRECATED) {
     this._id = data.id ?? uuidv4();
     this._email = data.email;
     this._createdAt = data.createdAt;
@@ -86,7 +86,7 @@ export class UserModel {
     this._oneTimeKeys = this._oneTimeKeys.filter((item: UserOneTimeKeyModel) => !item.isExpired);
   }
 
-  public getSerialized(): IUserData {
+  public getSerialized(): IUserData_DEPRECATED {
     return {
       id: this._id,
       email: this._email,

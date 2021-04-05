@@ -6,7 +6,7 @@ import { ICompany } from './company.data';
 import { IUserApiKeyData } from './user-api-key.data';
 import { IUserOneTimeKeyData } from './user-one-time-key.data';
 
-export const DEFAULT_USER_DATA: IUserData = {
+export const DEFAULT_USER_DATA: IUserData_DEPRECATED = {
   id: uniqueId(),
   email: '',
   createdAt: moment().format(),
@@ -16,7 +16,7 @@ export const DEFAULT_USER_DATA: IUserData = {
   products: []
 }
 
-export interface IUserData {
+export interface IUserData_DEPRECATED {
   id: string;
   email: string;
   createdAt: string;

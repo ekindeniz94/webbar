@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { IAdminUserData, IPublicUserData, IUserData } from '../../mo-user';
+import { UserDto } from '../../mo-user';
 import { MiscDataTypeEnum } from '../enums';
 
 export const DEFAULT_JOB_DATA: IJobData = {
@@ -39,6 +39,6 @@ export interface IJobData {
   teaserImage: string;
   published: boolean;
 
-  author: IUserData | IAdminUserData | IPublicUserData | undefined;
+  author: UserDto | undefined;
   authorId: string | null;
 }

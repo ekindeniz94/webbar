@@ -1,4 +1,4 @@
-import { IAdminUserData, IPublicUserData, IUserData } from '../../mo-user';
+import { UserDto } from '../../mo-user';
 
 export interface IPublicJobData {
   id: string;
@@ -14,5 +14,5 @@ export interface IPublicJobData {
   teaserImage: string;
   published: boolean;
 
-  author: IUserData | IAdminUserData | IPublicUserData | undefined;
+  author: UserDto | undefined;
 }

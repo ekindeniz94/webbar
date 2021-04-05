@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { IPublicUserData, IUserData } from '../../mo-user';
-import { IAdminUserData } from '../../mo-user/interfaces/admin-user.data';
+import { IPublicUserData, UserDto } from '../../mo-user';
+import { IAdminUserData } from '../../mo-user';
 import { MiscDataTypeEnum } from '../enums';
 
 export const DEFAULT_BLOG_DATA: IBlogData = {
@@ -36,6 +36,6 @@ export interface IBlogData {
   teaserImage: string;
   published: boolean;
 
-  author: IUserData | IAdminUserData | IPublicUserData | undefined;
+  author: UserDto | undefined;
   authorId: string | null;
 }
