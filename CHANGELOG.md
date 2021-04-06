@@ -2,6 +2,13 @@
 
 
 
+## 1.4.1 (2021-04-06)
+
+
+### Bug Fixes
+
+* expose misc data id ([21034c0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/21034c04b285e7bce386bd29aa4c75661216dfda))
+
 # 1.4.0 (2021-04-06)
 
 
