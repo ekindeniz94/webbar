@@ -83,6 +83,9 @@ export class UserDto {
   @Expose()
   routePermissions: string[];
 
+  @Expose()
+  permissions: string[];
+
   get displayName(): string {
     if ((this.firstName && this.firstName.length > 0) || (this.lastName && this.lastName?.length > 0)) {
       return [this.firstName, this.lastName]
