@@ -2,6 +2,13 @@
 
 
 
+## 1.4.2 (2021-04-06)
+
+
+### Bug Fixes
+
+* user dto (add permissions) ([a5b8efd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a5b8efd0bcdc1daf8d452dd7c719ffa0f1a0f971))
+
 ## 1.4.1 (2021-04-06)
 
 
