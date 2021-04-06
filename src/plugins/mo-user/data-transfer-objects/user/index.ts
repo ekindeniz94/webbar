@@ -16,6 +16,3 @@ export * from './user-address-patch-request.dto';
 
 export * from './user-invite-request.dto';
 export * from './user-invite-response.dto';
-
-export * from './user-invite-request.dto';
-export * from './user-invite-response.dto';
