@@ -2,6 +2,13 @@
 
 
 
+# 1.3.0 (2021-04-06)
+
+
+### Features
+
+* mo-user DTOs ([5592481](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5592481e028c588c951e77981d347746a887c571))
+
 ## 1.2.21 (2021-03-15)
 
 
