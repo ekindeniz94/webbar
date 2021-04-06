@@ -2,6 +2,13 @@
 
 
 
+# 1.4.0 (2021-04-06)
+
+
+### Features
+
+* mo-misc job DTOs ([f1936ad](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f1936ad4b864b21e2805a3cf1a82ad8606557452))
+
 # 1.3.0 (2021-04-06)
 
 
