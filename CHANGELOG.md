@@ -2,6 +2,21 @@
 
 
 
+# 1.5.0 (2021-04-11)
+
+
+### Bug Fixes
+
+* job misc data, add prop groups to request dto ([c29e7a3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c29e7a326fba1137427056d6ae2d7d1cc7fcad78))
+* update user and user invite dto ([1393988](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/13939881da083eb443010d269d13a4f3ae79b29c))
+
+
+### Features
+
+* add GroupDto ([49a0e86](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/49a0e86f2fc142449cf5d271326b6aa0b743b1ab))
+* add UserAddPermissionRequestDto, UserAddPermissionResponseDto and UserPublicDto ([903c4ab](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/903c4ab9b4d08dd7d787e6629fb240a1ce23cc8d))
+* core DTOs, status dto ([045021d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/045021d3fd93d95723eff4e64c17d031da505d87))
+
 ## 1.4.2 (2021-04-06)
 
 
