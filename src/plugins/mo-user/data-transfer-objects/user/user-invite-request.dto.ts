@@ -15,19 +15,19 @@ export class UserInviteRequestDto {
   @Expose()
   groupId: string;
 
-  // TODO
-  // GROUPS
-  // ROUTE-PERMISSIONS
-
-  @IsOptional()
-  @IsString({ each: true })
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
-  @Expose()
-  routePermissions: string[];
-
-  @IsOptional()
-  @IsString({ each: true })
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
-  @Expose()
-  permissions: string[];
+  // // TODO
+  // // GROUPS
+  // // ROUTE-PERMISSIONS
+  //
+  // @IsOptional()
+  // @IsString({ each: true })
+  // @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  // @Expose()
+  // routePermissions: string[];
+  //
+  // @IsOptional()
+  // @IsString({ each: true })
+  // @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  // @Expose()
+  // permissions: string[];
 }

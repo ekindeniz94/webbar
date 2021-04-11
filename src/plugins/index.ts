@@ -7,4 +7,4 @@ export * from './mo-sms-auth';
 export * from './mo-socket-io-client';
 export * from './mo-socket-io-server';
 export * from './mo-user';
-
+export * from './mo-gateway-core';
