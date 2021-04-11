@@ -53,4 +53,10 @@ export class JobMiscDataCreateRequestDto {
   @IsString()
   @Expose()
   authorId: string;
+
+  @IsNotEmpty()
+  @IsString({ each: true })
+  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @Expose()
+  groups: string[];
 }
