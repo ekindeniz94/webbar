@@ -2,6 +2,13 @@
 
 
 
+# 1.6.0 (2021-04-13)
+
+
+### Features
+
+* revoke token request dto ([bfcf4a1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bfcf4a121dd765d795b90aff95220cf99e680731))
+
 # 1.5.0 (2021-04-11)
 
 
