@@ -2,7 +2,7 @@ import { isArray, IsEmail, IsNotEmpty, isString, IsString, Matches, MinLength } 
 import { Expose, Transform } from 'class-transformer';
 import * as _ from 'lodash';
 
-export class UserAddPermissionResponseDto {
+export class AddPermissionResponseDto {
   @Expose()
   id: string;
 

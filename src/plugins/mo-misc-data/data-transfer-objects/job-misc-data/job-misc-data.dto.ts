@@ -5,6 +5,18 @@ export class JobMiscDataDto {
   id: string;
 
   @Expose()
+  seoUrl: string;
+
+  @Expose()
+  createdBy: string;
+
+  @Expose()
+  createdAt: string;
+
+  @Expose()
+  updatedAt: string;
+
+  @Expose()
   name: string;
 
   @Expose()
@@ -33,4 +45,20 @@ export class JobMiscDataDto {
 
   @Expose()
   authorDisplayName: string | undefined;
+
+  get teaserTextString(): string {
+    const content = this.teaserText?.replace(/<[^>]*>/g, '');
+    if (content?.length > 20) {
+      return `${content.slice(0, 20)}...`;
+    }
+    return content;
+  }
+
+  get contentString(): string {
+    const content = this.content.replace(/<[^>]*>/g, '');
+    if (content.length > 20) {
+      return `${content.slice(0, 20)}...`;
+    }
+    return content;
+  }
 }

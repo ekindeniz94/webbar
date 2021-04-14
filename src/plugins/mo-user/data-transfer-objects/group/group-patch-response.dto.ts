@@ -1,14 +1,11 @@
 import { Expose } from 'class-transformer';
 
-export class GroupCreateResponseDto {
+export class GroupPatchResponseDto {
   @Expose()
   id: string;
 
   @Expose()
   name: string;
-
-  // @Expose()
-  // scope: string;
 
   @Expose()
   description: string;

@@ -2,7 +2,7 @@ import { ArrayNotEmpty, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNeste
 import { Expose, Transform } from 'class-transformer';
 import * as _ from 'lodash';
 
-export class UserAddPermissionRequestDto {
+export class AddPermissionRequestDto {
   @IsOptional()
   @IsString()
   @Expose()
