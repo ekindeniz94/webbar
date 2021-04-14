@@ -2,6 +2,13 @@
 
 
 
+# 1.7.0 (2021-04-14)
+
+
+### Features
+
+* update misc job dtos; permissions dtos ([e88c66b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e88c66b039eb1601ce6a373fa913d513bb6af188))
+
 # 1.6.0 (2021-04-13)
 
 
