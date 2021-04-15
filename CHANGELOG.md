@@ -2,6 +2,13 @@
 
 
 
+## 1.7.1 (2021-04-15)
+
+
+### Bug Fixes
+
+* add TokenDto ([315c995](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/315c9956cfb5d329bfc55ee7af494a505f85ccac))
+
 # 1.7.0 (2021-04-14)
 
 
