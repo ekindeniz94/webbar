@@ -1,4 +1,4 @@
-import { IAddress } from '../interfaces';
+import { IAddress } from '../../interfaces/DEPRECATED';
 
 export class AddressModel {
   protected _street?: string;

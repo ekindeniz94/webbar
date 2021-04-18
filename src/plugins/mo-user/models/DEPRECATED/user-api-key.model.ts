@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { IUserApiKeyData } from '../interfaces';
+import { IUserApiKeyData } from '../../interfaces/DEPRECATED';
 
 export class UserApiKeyModel {
   protected _id: string;

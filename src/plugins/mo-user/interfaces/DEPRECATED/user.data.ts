@@ -1,12 +1,12 @@
 import { uniqueId } from 'lodash';
 import moment from 'moment';
-import { IPurchasedProductData } from '../../mo-product';
+import { IPurchasedProductData } from '../../../mo-product';
 import { IAddress } from './address.data';
 import { ICompany } from './company.data';
 import { IUserApiKeyData } from './user-api-key.data';
 import { IUserOneTimeKeyData } from './user-one-time-key.data';
 
-export const DEFAULT_USER_DATA: IUserData_DEPRECATED = {
+export const DEFAULT_USER_DATA: IUserData = {
   id: uniqueId(),
   email: '',
   createdAt: moment().format(),
@@ -16,7 +16,7 @@ export const DEFAULT_USER_DATA: IUserData_DEPRECATED = {
   products: []
 }
 
-export interface IUserData_DEPRECATED {
+export interface IUserData {
   id: string;
   email: string;
   createdAt: string;

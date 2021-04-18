@@ -1,4 +1,4 @@
-import { ICompany } from '../interfaces';
+import { ICompany } from '../../interfaces/DEPRECATED';
 
 export class CompanyModel {
   protected _name?: string;

@@ -39,7 +39,8 @@ export class JobMiscDataCreateRequestDto {
   @Expose()
   teaserText: string;
 
-  @IsNotEmpty()
+  // @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   teaserImage: string;

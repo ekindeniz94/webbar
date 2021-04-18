@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { IUserOneTimeKeyData } from '../interfaces';
+import { IUserOneTimeKeyData } from '../../interfaces/DEPRECATED';
 
 export class UserOneTimeKeyModel {
   protected _key: string;

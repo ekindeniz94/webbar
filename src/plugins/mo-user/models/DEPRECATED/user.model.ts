@@ -1,21 +1,21 @@
 import { v4 as uuidv4 } from 'uuid';
-import { IPurchasedProductData, PurchasedProductModel } from '../../mo-product';
+import { IPurchasedProductData, PurchasedProductModel } from '../../../mo-product';
 import {
   IAddress,
   ICompany,
   IProfileData,
   IPublicUserData,
   IUserApiKeyData,
-  IUserData_DEPRECATED,
-  IUserOneTimeKeyData
-} from '../interfaces';
-import { IAdminUserData } from '../interfaces';
+  IUserOneTimeKeyData,
+  IAdminUserData,
+  IUserData
+} from '../../interfaces/DEPRECATED';
 import { AddressModel } from './address.model';
 import { CompanyModel } from './company.model';
 import { UserApiKeyModel } from './user-api-key.model';
 import { UserOneTimeKeyModel } from './user-one-time-key.model';
 
-export class UserModel_DEPRECATED {
+export class UserModel {
   protected _id: string;
   protected _email: string;
   protected _createdAt: string;
@@ -33,8 +33,7 @@ export class UserModel_DEPRECATED {
   protected _phoneNumberValidatedAt?: string | undefined;
   protected _emailValidatedAt?: string | undefined;
 
-
-  constructor(data: IUserData_DEPRECATED) {
+  constructor(data: IUserData) {
     this._id = data.id ?? uuidv4();
     this._email = data.email;
     this._createdAt = data.createdAt;
@@ -86,7 +85,7 @@ export class UserModel_DEPRECATED {
     this._oneTimeKeys = this._oneTimeKeys.filter((item: UserOneTimeKeyModel) => !item.isExpired);
   }
 
-  public getSerialized(): IUserData_DEPRECATED {
+  public getSerialized(): IUserData {
     return {
       id: this._id,
       email: this._email,
