@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { UserDto } from '../../../mo-user';
 
 export class JobMiscDataDto {
   @Expose()
@@ -45,6 +46,13 @@ export class JobMiscDataDto {
 
   @Expose()
   authorDisplayName: string | undefined;
+
+  @Type(() => UserDto)
+  @Expose()
+  author: UserDto;
+
+  @Expose()
+  authorId: string;
 
   get teaserTextString(): string {
     const content = this.teaserText?.replace(/<[^>]*>/g, '');
