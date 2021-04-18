@@ -77,6 +77,9 @@ export class UserDto {
   @Expose()
   groups: string[];
 
+  @Expose()
+  isSuperAdmin: boolean;
+
   // @Expose()
   // isSuperAdmin: boolean;
 
