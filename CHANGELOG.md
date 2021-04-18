@@ -2,6 +2,22 @@
 
 
 
+# 1.8.0 (2021-04-18)
+
+
+### Bug Fixes
+
+* add author and authorId to JobMiscDataDto ([0cd9776](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0cd977639f99a661f1ff4a0d73088586c8ab05ad))
+* job misc data teaserImage is optional ([df6bdd2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/df6bdd26476eddb4a09fd8380e8372daa7ccddf3))
+* mv user model and user interface in deprecated folder ([343dd6a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/343dd6acdc696ad8c8fa0e7f9d84a08b2f9b2554))
+
+
+### Features
+
+* add PermissionEnum, RolesEnum ([b13326b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b13326b17116bb6c8a80835d786dd8736a6b2a6d))
+* add PermissionModel, UserGroupPermissionEntityModel, UserGroupPermissionModel, UserPermissionModel ([78145eb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/78145eb7daadc02e8a16680388dcd6ac585fd434))
+* add UserWithPermissionsDto ([647cfda](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/647cfdab3d5957ad07ae10839b278d926ac25ede))
+
 ## 1.7.1 (2021-04-15)
 
 
