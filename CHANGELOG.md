@@ -2,6 +2,13 @@
 
 
 
+## 1.8.1 (2021-04-20)
+
+
+### Bug Fixes
+
+* export roles.enum ([4e8c7b7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4e8c7b7037159f5dc78d1490ad128ed8f2f954c1))
+
 # 1.8.0 (2021-04-18)
 
 
