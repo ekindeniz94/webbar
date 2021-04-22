@@ -1,6 +1,6 @@
 import {
   ArrayMaxSize,
-  isArray,
+  isArray, isBoolean,
   IsBoolean,
   IsHexColor,
   IsNotEmpty,
@@ -63,6 +63,7 @@ export class BlogMiscDataCreateRequestDto {
   teaserImage: string;
 
   @IsNotEmpty()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
   @IsBoolean()
   @Expose()
   published: boolean;

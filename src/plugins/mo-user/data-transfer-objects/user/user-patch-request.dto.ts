@@ -71,8 +71,8 @@ export class UserPatchRequestDto {
   @Expose()
   billingAddress: UserAddressPatchRequestDto;
 
-  @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @IsBoolean()
   @Expose()
   billingAddressEqualsAddress: boolean;
 }
