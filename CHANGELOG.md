@@ -2,6 +2,13 @@
 
 
 
+## 1.8.2 (2021-04-22)
+
+
+### Bug Fixes
+
+* max characters for request-DTO properties ([0c6fca1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0c6fca1a9d48bbdbe2ee340652a0c3c1a5c41a45))
+
 ## 1.8.1 (2021-04-20)
 
 
