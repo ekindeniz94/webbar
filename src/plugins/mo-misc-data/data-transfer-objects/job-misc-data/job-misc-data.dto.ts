@@ -63,7 +63,7 @@ export class JobMiscDataDto {
   }
 
   get contentString(): string {
-    const content = this.content.replace(/<[^>]*>/g, '');
+    const content = this.content?.replace(/<[^>]*>/g, '');
     if (content.length > 20) {
       return `${content.slice(0, 20)}...`;
     }

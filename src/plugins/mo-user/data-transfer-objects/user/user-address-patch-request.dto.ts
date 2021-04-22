@@ -7,7 +7,7 @@ export class UserAddressPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(256)
-  @Transform(({ value }) => value.substring(0, 256))
+  @Transform(({ value }) => value?.substring(0, 256))
   @Expose()
   street: string;
 
@@ -15,7 +15,7 @@ export class UserAddressPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   zip: string;
 
@@ -23,7 +23,7 @@ export class UserAddressPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   city: string;
 
@@ -31,7 +31,7 @@ export class UserAddressPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   country: string;
 }

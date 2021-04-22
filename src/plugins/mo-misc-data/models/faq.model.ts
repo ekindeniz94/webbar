@@ -17,8 +17,8 @@ export class FaqModel extends MiscDataModel {
     super(MiscDataTypeEnum.FAQ, data.id);
 
     this.seoUrl = `${data.title
-      .replace(/[^a-zA-Z]/g, ' ')
-      .replace(/ +/g, '-')
+      ?.replace(/[^a-zA-Z]/g, ' ')
+      ?.replace(/ +/g, '-')
       .toLowerCase()}`;
 
     this.tags = data.tags;

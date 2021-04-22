@@ -16,28 +16,28 @@ export class JobMiscDataCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(256)
-  @Transform(({ value }) => value.substring(0, 256))
+  @Transform(({ value }) => value?.substring(0, 256))
   @Expose()
   name: string;
 
   @IsNotEmpty()
   @IsHexColor()
   @MaxLength(8)
-  @Transform(({ value }) => value.substring(0, 8))
+  @Transform(({ value }) => value?.substring(0, 8))
   @Expose()
   bgColor: string;
 
   @IsNotEmpty()
   @IsHexColor()
   @MaxLength(8)
-  @Transform(({ value }) => value.substring(0, 8))
+  @Transform(({ value }) => value?.substring(0, 8))
   @Expose()
   textColor: string;
 
   @IsNotEmpty()
   @IsString()
   @MaxLength(256)
-  @Transform(({ value }) => value.substring(0, 256))
+  @Transform(({ value }) => value?.substring(0, 256))
   @Expose()
   shortName: string;
 
@@ -48,7 +48,7 @@ export class JobMiscDataCreateRequestDto {
     each: true
   })
   @Transform(({ value }) =>
-    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item.substring(0, 128))
+    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item?.substring(0, 128))
   )
   @Expose()
   tags: string[];
@@ -56,14 +56,14 @@ export class JobMiscDataCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(512000)
-  @Transform(({ value }) => value.substring(0, 512000))
+  @Transform(({ value }) => value?.substring(0, 512000))
   @Expose()
   content: string;
 
   @IsNotEmpty()
   @IsString()
   @MaxLength(256000)
-  @Transform(({ value }) => value.substring(0, 256000))
+  @Transform(({ value }) => value?.substring(0, 256000))
   @Expose()
   teaserText: string;
 
@@ -71,7 +71,7 @@ export class JobMiscDataCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(512)
-  @Transform(({ value }) => value.substring(0, 512))
+  @Transform(({ value }) => value?.substring(0, 512))
   @Expose()
   teaserImage: string;
 
@@ -83,7 +83,7 @@ export class JobMiscDataCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(64)
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 64))
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, 64))
   @Expose()
   authorId: string;
 
@@ -94,7 +94,7 @@ export class JobMiscDataCreateRequestDto {
     each: true
   })
   @Transform(({ value }) =>
-    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item.substring(0, 64))
+    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item?.substring(0, 64))
   )
   @Expose()
   groups: string[];
