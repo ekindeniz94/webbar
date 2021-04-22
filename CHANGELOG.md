@@ -2,6 +2,13 @@
 
 
 
+## 1.9.1 (2021-04-22)
+
+
+### Bug Fixes
+
+* [secure] as default value for publish blog/job property ([392f0e8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/392f0e843cb4d6cec4f9027f6dd6d9996688aaed))
+
 # 1.9.0 (2021-04-22)
 
 
