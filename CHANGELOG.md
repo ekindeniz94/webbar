@@ -2,6 +2,19 @@
 
 
 
+# 1.9.0 (2021-04-22)
+
+
+### Bug Fixes
+
+* blog model/interface deprected ([860254d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/860254df68ec294ea8734145e47bb9c211f7ad9d))
+* max string length (for all DTOs) ([1d92360](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1d923603a8494bfa8b7e3aa5ef2281f38167ec0f))
+
+
+### Features
+
+* adding blog DTOs ([5aeec38](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5aeec38bec00f6874b6d75e42dbd3269e2666a9f))
+
 ## 1.8.2 (2021-04-22)
 
 
