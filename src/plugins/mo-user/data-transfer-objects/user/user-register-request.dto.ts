@@ -5,7 +5,7 @@ export class UserRegisterRequestDto {
   @IsNotEmpty()
   @IsEmail()
   @MaxLength(320)
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 320))
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, 320))
   @Expose()
   email: string;
 

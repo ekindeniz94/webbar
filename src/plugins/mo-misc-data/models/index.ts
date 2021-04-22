@@ -1,4 +1,3 @@
-export * from './blog.model';
 export * from './contact.model';
 export * from './file-type.model';
 export * from './file.model';

@@ -1,9 +1,10 @@
 import moment from 'moment';
-import { UserDto } from '../../mo-user';
-import { MiscDataTypeEnum } from '../enums';
-import { IBlogData, IPublicBlogData } from '../interfaces';
-import { MiscDataModel } from './misc-data.model';
+import { UserDto } from '../../../mo-user';
+import { MiscDataTypeEnum } from '../../enums';
+import { MiscDataModel } from '../misc-data.model';
 import { plainToClass } from 'class-transformer';
+import { IBlogData } from '../../interfaces/DEPRECATED/blog.data';
+import { IPublicBlogData } from '../../interfaces/DEPRECATED/public-blog.data';
 
 export class BlogModel extends MiscDataModel {
   seoUrl: string;
@@ -24,9 +25,9 @@ export class BlogModel extends MiscDataModel {
     super(MiscDataTypeEnum.BLOG, data.id);
 
     this.seoUrl = `${data.title
-      .replace(/[^a-zA-Z]/g, ' ')
-      .replace(/ +/g, '-')
-      .toLowerCase()}`;
+      ?.replace(/[^a-zA-Z]/g, ' ')
+      ?.replace(/ +/g, '-')
+      ?.toLowerCase()}`;
 
     this.topic = data.topic;
     this.title = data.title;

@@ -7,7 +7,7 @@ export class UserCompanyPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   name: string;
 
@@ -15,7 +15,7 @@ export class UserCompanyPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   taxNumber: string;
 }

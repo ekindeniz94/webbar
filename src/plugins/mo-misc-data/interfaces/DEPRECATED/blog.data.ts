@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { MiscDataTypeEnum } from '../enums';
-import { UserDto } from '../../mo-user';
+import { MiscDataTypeEnum } from '../../enums';
+import { UserDto } from '../../../mo-user';
 
 export const DEFAULT_BLOG_DATA: IBlogData = {
   seoUrl: '',

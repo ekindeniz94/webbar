@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { UserDto } from '../../../mo-user';
 
-export class JobMiscDataDto {
+export class BlogMiscDataDto {
   @Expose()
   id: string;
 
@@ -18,19 +18,13 @@ export class JobMiscDataDto {
   updatedAt: string;
 
   @Expose()
-  name: string;
-
-  @Expose()
-  bgColor: string;
-
-  @Expose()
-  textColor: string;
-
-  @Expose()
-  shortName: string;
-
-  @Expose()
   tags: string[];
+
+  @Expose()
+  topic: string;
+
+  @Expose()
+  title: string;
 
   @Expose()
   content: string;

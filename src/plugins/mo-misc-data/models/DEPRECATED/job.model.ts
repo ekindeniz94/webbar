@@ -27,9 +27,9 @@ export class JobModel extends MiscDataModel {
     super(MiscDataTypeEnum.JOB, data.id);
 
     this.seoUrl = `${data.name
-      .replace(/[^a-zA-Z]/g, ' ')
-      .replace(/ +/g, '-')
-      .toLowerCase()}`;
+      ?.replace(/[^a-zA-Z]/g, ' ')
+      ?.replace(/ +/g, '-')
+      ?.toLowerCase()}`;
 
     this.name = data.name;
     this.shortName = data.shortName;

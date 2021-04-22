@@ -17,7 +17,7 @@ export class UserPatchRequestDto {
   @IsString()
   @IsEmail()
   @MaxLength(320)
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 320))
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, 320))
   @Expose()
   email: string;
 
@@ -27,28 +27,28 @@ export class UserPatchRequestDto {
     message: 'Password error TODO.'
   })
   @MaxLength(128)
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 128))
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, 128))
   @Expose()
   password: string;
 
   @IsOptional()
   @IsString()
   @MaxLength(128)
-  @Transform(({ value }) => value.substring(0, 128))
+  @Transform(({ value }) => value?.substring(0, 128))
   @Expose()
   phoneNumber: string;
 
   @IsOptional()
   @IsString()
   @MaxLength(256)
-  @Transform(({ value }) => value.substring(0, 256))
+  @Transform(({ value }) => value?.substring(0, 256))
   @Expose()
   firstName: string;
 
   @IsOptional()
   @IsString()
   @MaxLength(256)
-  @Transform(({ value }) => value.substring(0, 256))
+  @Transform(({ value }) => value?.substring(0, 256))
   @Expose()
   lastName: string;
 

@@ -12,34 +12,7 @@ import {
 import { Expose, Transform } from 'class-transformer';
 import * as _ from 'lodash';
 
-export class JobMiscDataCreateRequestDto {
-  @IsNotEmpty()
-  @IsString()
-  @MaxLength(256)
-  @Transform(({ value }) => value?.substring(0, 256))
-  @Expose()
-  name: string;
-
-  @IsNotEmpty()
-  @IsHexColor()
-  @MaxLength(8)
-  @Transform(({ value }) => value?.substring(0, 8))
-  @Expose()
-  bgColor: string;
-
-  @IsNotEmpty()
-  @IsHexColor()
-  @MaxLength(8)
-  @Transform(({ value }) => value?.substring(0, 8))
-  @Expose()
-  textColor: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @MaxLength(256)
-  @Transform(({ value }) => value?.substring(0, 256))
-  @Expose()
-  shortName: string;
+export class BlogMiscDataCreateRequestDto {
 
   @IsOptional()
   @ArrayMaxSize(100)
@@ -52,6 +25,20 @@ export class JobMiscDataCreateRequestDto {
   )
   @Expose()
   tags: string[];
+
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(512)
+  @Transform(({ value }) => value?.substring(0, 512))
+  @Expose()
+  topic: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(512)
+  @Transform(({ value }) => value?.substring(0, 512))
+  @Expose()
+  title: string;
 
   @IsNotEmpty()
   @IsString()

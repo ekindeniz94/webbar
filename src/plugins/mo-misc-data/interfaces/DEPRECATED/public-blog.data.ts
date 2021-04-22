@@ -1,4 +1,4 @@
-import { UserDto } from '../../mo-user';
+import { UserDto } from '../../../mo-user';
 
 export interface IPublicBlogData {
   seoUrl: string;
