@@ -1,10 +1,11 @@
-import { IsEmail, IsNotEmpty, isString, IsString, Matches, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 
 export class UserRegisterRequestDto {
   @IsNotEmpty()
   @IsEmail()
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value))
+  @MaxLength(320)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 320))
   @Expose()
   email: string;
 

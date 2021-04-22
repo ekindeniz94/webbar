@@ -1,33 +1,24 @@
-import { isArray, IsEmail, IsNotEmpty, IsOptional, isString, IsString, Matches, MinLength } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  isString,
+  IsString,
+  MaxLength,
+} from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import * as _ from 'lodash';
 
 export class UserInviteRequestDto {
   @IsNotEmpty()
   @IsEmail()
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value))
+  @MaxLength(320)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 320))
   @Expose()
   email: string;
 
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) => (value && isString(value) ? value.trim() : value))
+  @MaxLength(64)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 64))
   @Expose()
   groupId: string;
-
-  // // TODO
-  // // GROUPS
-  // // ROUTE-PERMISSIONS
-  //
-  // @IsOptional()
-  // @IsString({ each: true })
-  // @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
-  // @Expose()
-  // routePermissions: string[];
-  //
-  // @IsOptional()
-  // @IsString({ each: true })
-  // @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
-  // @Expose()
-  // permissions: string[];
 }

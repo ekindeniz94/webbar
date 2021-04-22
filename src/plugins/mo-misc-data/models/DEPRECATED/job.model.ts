@@ -1,9 +1,10 @@
 import moment from 'moment';
-import { MiscDataTypeEnum } from '../enums';
-import { IJobData, IPublicJobData } from '../interfaces';
-import { MiscDataModel } from './misc-data.model';
-import { UserDto } from '../../mo-user';
+import { MiscDataTypeEnum } from '../../enums';
+import { MiscDataModel } from '../misc-data.model';
+import { UserDto } from '../../../mo-user';
 import { plainToClass } from 'class-transformer';
+import { IPublicJobData } from '../../interfaces/DEPRECATED/public-job.data';
+import { IJobData } from '../../interfaces/DEPRECATED/job.data';
 
 export class JobModel extends MiscDataModel {
   seoUrl: string;

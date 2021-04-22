@@ -1,6 +1,4 @@
-import { isArray, IsEmail, IsNotEmpty, isString, IsString, Matches, MinLength } from 'class-validator';
-import { Expose, Transform } from 'class-transformer';
-import * as _ from 'lodash';
+import { Expose } from 'class-transformer';
 
 export class AddPermissionResponseDto {
   @Expose()

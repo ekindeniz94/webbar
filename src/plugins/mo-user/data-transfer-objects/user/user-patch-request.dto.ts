@@ -2,9 +2,9 @@ import {
   isBoolean,
   IsBoolean,
   IsEmail,
-  IsOptional,
+  IsOptional, isString,
   IsString,
-  Matches,
+  Matches, MaxLength,
   ValidateIf,
   ValidateNested
 } from 'class-validator';
@@ -16,6 +16,8 @@ export class UserPatchRequestDto {
   @IsOptional()
   @IsString()
   @IsEmail()
+  @MaxLength(320)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 320))
   @Expose()
   email: string;
 
@@ -24,21 +26,29 @@ export class UserPatchRequestDto {
   @Matches(/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*?[^\w\s]|.*?_|.*?\.).{6,20}$/, {
     message: 'Password error TODO.'
   })
+  @MaxLength(128)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 128))
   @Expose()
   password: string;
 
   @IsOptional()
   @IsString()
+  @MaxLength(128)
+  @Transform(({ value }) => value.substring(0, 128))
   @Expose()
   phoneNumber: string;
 
   @IsOptional()
   @IsString()
+  @MaxLength(256)
+  @Transform(({ value }) => value.substring(0, 256))
   @Expose()
   firstName: string;
 
   @IsOptional()
   @IsString()
+  @MaxLength(256)
+  @Transform(({ value }) => value.substring(0, 256))
   @Expose()
   lastName: string;
 

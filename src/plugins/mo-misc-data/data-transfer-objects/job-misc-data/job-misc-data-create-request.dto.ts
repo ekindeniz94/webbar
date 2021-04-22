@@ -1,47 +1,77 @@
-import { isArray, IsBoolean, IsHexColor, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import {
+  ArrayMaxSize,
+  isArray,
+  IsBoolean,
+  IsHexColor,
+  IsNotEmpty,
+  IsOptional,
+  isString,
+  IsString,
+  MaxLength
+} from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import * as _ from 'lodash';
 
 export class JobMiscDataCreateRequestDto {
   @IsNotEmpty()
   @IsString()
+  @MaxLength(256)
+  @Transform(({ value }) => value.substring(0, 256))
   @Expose()
   name: string;
 
   @IsNotEmpty()
   @IsHexColor()
+  @MaxLength(8)
+  @Transform(({ value }) => value.substring(0, 8))
   @Expose()
   bgColor: string;
 
   @IsNotEmpty()
   @IsHexColor()
+  @MaxLength(8)
+  @Transform(({ value }) => value.substring(0, 8))
   @Expose()
   textColor: string;
 
   @IsNotEmpty()
   @IsString()
+  @MaxLength(256)
+  @Transform(({ value }) => value.substring(0, 256))
   @Expose()
   shortName: string;
 
   @IsOptional()
+  @ArrayMaxSize(100)
   @IsString({ each: true })
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @MaxLength(128, {
+    each: true
+  })
+  @Transform(({ value }) =>
+    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item.substring(0, 128))
+  )
   @Expose()
   tags: string[];
 
   @IsNotEmpty()
   @IsString()
+  @MaxLength(512000)
+  @Transform(({ value }) => value.substring(0, 512000))
   @Expose()
   content: string;
 
   @IsNotEmpty()
   @IsString()
+  @MaxLength(256000)
+  @Transform(({ value }) => value.substring(0, 256000))
   @Expose()
   teaserText: string;
 
   // @IsNotEmpty()
   @IsOptional()
   @IsString()
+  @MaxLength(512)
+  @Transform(({ value }) => value.substring(0, 512))
   @Expose()
   teaserImage: string;
 
@@ -52,12 +82,20 @@ export class JobMiscDataCreateRequestDto {
 
   @IsOptional()
   @IsString()
+  @MaxLength(64)
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value).substring(0, 64))
   @Expose()
   authorId: string;
 
   @IsNotEmpty()
+  @ArrayMaxSize(100)
   @IsString({ each: true })
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @MaxLength(64, {
+    each: true
+  })
+  @Transform(({ value }) =>
+    ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) => item.substring(0, 64))
+  )
   @Expose()
   groups: string[];
 }
