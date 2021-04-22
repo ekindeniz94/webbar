@@ -1,20 +1,18 @@
 import moment from 'moment';
+import { UserDto } from '../../../mo-user';
 import { MiscDataTypeEnum } from '../../enums';
 import { MiscDataModel } from '../misc-data.model';
-import { UserDto } from '../../../mo-user';
 import { plainToClass } from 'class-transformer';
-import { IPublicJobData } from '../../interfaces/DEPRECATED/public-job.data';
-import { IJobData } from '../../interfaces/DEPRECATED/job.data';
+import { IBlogData } from '../../interfaces/DEPRECATED/blog.data';
+import { IPublicBlogData } from '../../interfaces/DEPRECATED/public-blog.data';
 
-export class JobModel extends MiscDataModel {
+export class BlogModel extends MiscDataModel {
   seoUrl: string;
-  name: string;
-  shortName: string;
+  topic: string;
+  title: string;
+  teaserText: string;
   tags: string[];
   content: string;
-  teaserText: string;
-  bgColor: string;
-  textColor: string;
   createdAt: string;
   updatedAt: string;
   teaserImage: string;
@@ -23,21 +21,19 @@ export class JobModel extends MiscDataModel {
   author: UserDto | undefined;
   authorId: string | null;
 
-  constructor(data: IJobData) {
-    super(MiscDataTypeEnum.JOB, data.id);
+  constructor(data: IBlogData) {
+    super(MiscDataTypeEnum.BLOG, data.id);
 
-    this.seoUrl = `${data.name
+    this.seoUrl = `${data.title
       ?.replace(/[^a-zA-Z]/g, ' ')
       ?.replace(/ +/g, '-')
       ?.toLowerCase()}`;
 
-    this.name = data.name;
-    this.shortName = data.shortName;
+    this.topic = data.topic;
+    this.title = data.title;
+    this.teaserText = data.teaserText;
     this.tags = data.tags ?? [];
     this.content = data.content;
-    this.teaserText = data.teaserText;
-    this.bgColor = data.bgColor;
-    this.textColor = data.textColor;
     this.createdAt = data.createdAt ?? moment().format();
     this.updatedAt = data.updatedAt ?? moment().format();
     this.teaserImage = data.teaserImage;
@@ -47,18 +43,16 @@ export class JobModel extends MiscDataModel {
     this.authorId = data.authorId;
   }
 
-  public getSerialized(): IJobData {
+  public getSerialized(): IBlogData {
     return {
+      seoUrl: this.seoUrl,
       id: this.id,
       type: this.type,
-      name: this.name,
-      shortName: this.shortName,
-      seoUrl: this.seoUrl,
+      topic: this.topic,
+      title: this.title,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
-      teaserText: this.teaserText,
-      bgColor: this.bgColor,
-      textColor: this.textColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
@@ -69,43 +63,38 @@ export class JobModel extends MiscDataModel {
     };
   }
 
-  public getAdimSerialized(): IJobData {
+  public getAdimSerialized(): IBlogData {
     return {
+      seoUrl: this.seoUrl,
       id: this.id,
       type: this.type,
-      name: this.name,
-      shortName: this.shortName,
-      seoUrl: this.seoUrl,
+      topic: this.topic,
+      title: this.title,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
-      teaserText: this.teaserText,
-      textColor: this.textColor,
-      bgColor: this.bgColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
       published: this.published,
-
       author: this.author ?? undefined,
       authorId: this.authorId
     };
   }
 
-  public getPublicSerialized(): IPublicJobData {
+  public getPublicSerialized(): IPublicBlogData {
     return {
+      seoUrl: this.seoUrl,
       id: this.id,
-      name: this.name,
-      shortName: this.shortName,
+      topic: this.topic,
+      title: this.title,
+      teaserText: this.teaserText,
       tags: this.tags,
       content: this.content,
-      teaserText: this.teaserText,
-      bgColor: this.bgColor,
-      textColor: this.textColor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
       teaserImage: this.teaserImage,
       published: this.published,
-
       author: this.author ?? undefined
     };
   }
