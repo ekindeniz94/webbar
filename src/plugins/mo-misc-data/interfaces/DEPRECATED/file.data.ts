@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
-import { MiscDataTypeEnum } from '../enums';
-import { FileType } from '../models';
+import { MiscDataTypeEnum } from '../../enums';
+import { FileType } from '../../models/DEPRECATED/file-type.model';
 import { IFileTypeData } from './file-type.data';
 
 export const DEFAULT_FILE_DATA: IFileData = {

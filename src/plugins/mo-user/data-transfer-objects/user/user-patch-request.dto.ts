@@ -1,7 +1,7 @@
 import {
   isBoolean,
   IsBoolean,
-  IsEmail,
+  IsEmail, IsNotEmpty,
   IsOptional, isString,
   IsString,
   Matches, MaxLength,
@@ -71,7 +71,9 @@ export class UserPatchRequestDto {
   @Expose()
   billingAddress: UserAddressPatchRequestDto;
 
+  @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @IsNotEmpty()
   @IsBoolean()
   @Expose()
   billingAddressEqualsAddress: boolean;

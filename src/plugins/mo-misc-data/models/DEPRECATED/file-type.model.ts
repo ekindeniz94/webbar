@@ -1,4 +1,4 @@
-import { IFileTypeData } from '../interfaces';
+import { IFileTypeData } from '../../interfaces/DEPRECATED/file-type.data';
 
 export class FileType {
   private static availableTypes = [

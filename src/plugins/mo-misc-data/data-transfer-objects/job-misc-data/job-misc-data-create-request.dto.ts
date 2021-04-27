@@ -9,7 +9,7 @@ import {
   IsString,
   MaxLength
 } from 'class-validator';
-import { Expose, Transform } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import * as _ from 'lodash';
 
 export class JobMiscDataCreateRequestDto {
@@ -75,8 +75,10 @@ export class JobMiscDataCreateRequestDto {
   @Expose()
   teaserImage: string;
 
-  @IsNotEmpty()
+
+  @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsNotEmpty()
   @IsBoolean()
   @Expose()
   published: boolean;

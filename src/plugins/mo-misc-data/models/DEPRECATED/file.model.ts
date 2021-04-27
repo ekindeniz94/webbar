@@ -1,8 +1,8 @@
 import moment from 'moment';
-import { MiscDataTypeEnum } from '../enums';
-import { IFileData } from '../interfaces';
+import { MiscDataTypeEnum } from '../../enums';
+import { IFileData } from '../../interfaces/DEPRECATED/file.data';
 import { FileType } from './file-type.model';
-import { MiscDataModel } from './misc-data.model';
+import { MiscDataModel } from '../misc-data.model';
 
 export class FileModel extends MiscDataModel {
   fileName: string;
