@@ -2,6 +2,13 @@
 
 
 
+# 1.11.0 (2021-04-27)
+
+
+### Features
+
+* blog/job translation ([d73cb3f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d73cb3fb20a494e9cccfd6cb5abacd0b35ebc611))
+
 # 1.10.0 (2021-04-27)
 
 
