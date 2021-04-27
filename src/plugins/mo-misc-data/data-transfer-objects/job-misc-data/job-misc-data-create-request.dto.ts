@@ -7,12 +7,18 @@ import {
   IsOptional,
   isString,
   IsString,
-  MaxLength
+  MaxLength, ValidateNested
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import * as _ from 'lodash';
 
 export class JobMiscDataCreateRequestDto {
+  @IsNotEmpty()
+  @IsString()
+  @Transform(({ value }) => value ?? 'en')
+  @Expose()
+  langISO_639_1: string;
+
   @IsNotEmpty()
   @IsString()
   @MaxLength(256)
@@ -101,4 +107,11 @@ export class JobMiscDataCreateRequestDto {
   )
   @Expose()
   groups: string[];
+
+  @Type(() => JobMiscDataCreateRequestDto)
+  @IsOptional()
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
+  @Expose()
+  translations: JobMiscDataCreateRequestDto[];
 }

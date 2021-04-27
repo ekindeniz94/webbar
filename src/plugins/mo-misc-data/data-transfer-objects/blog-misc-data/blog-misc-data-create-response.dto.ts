@@ -1,9 +1,12 @@
-import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray } from 'class-validator';
 
 export class BlogMiscDataCreateResponseDto {
   @Expose()
   id: string;
+
+  @Expose()
+  langISO_639_1: string;
 
   @Expose()
   tags: string[];
@@ -28,4 +31,9 @@ export class BlogMiscDataCreateResponseDto {
 
   @Expose()
   authorDisplayName: string | undefined;
+
+  @Type(() => BlogMiscDataCreateResponseDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  translations: BlogMiscDataCreateResponseDto[];
 }

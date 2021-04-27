@@ -1,9 +1,13 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { UserDto } from '../../../mo-user';
+import { isArray } from 'class-validator';
 
 export class BlogMiscDataDto {
   @Expose()
   id: string;
+
+  @Expose()
+  langISO_639_1: string;
 
   @Expose()
   seoUrl: string;
@@ -47,6 +51,11 @@ export class BlogMiscDataDto {
 
   @Expose()
   authorId: string;
+
+  @Type(() => BlogMiscDataDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  translations: BlogMiscDataDto[];
 
   get teaserTextString(): string {
     const content = this.teaserText?.replace(/<[^>]*>/g, '');

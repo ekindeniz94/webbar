@@ -7,12 +7,18 @@ import {
   IsOptional,
   isString,
   IsString,
-  MaxLength
+  MaxLength, ValidateNested
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import * as _ from 'lodash';
 
 export class BlogMiscDataCreateRequestDto {
+
+  @IsNotEmpty()
+  @IsString()
+  @Transform(({ value }) => value ?? 'en')
+  @Expose()
+  langISO_639_1: string;
 
   @IsOptional()
   @ArrayMaxSize(100)
@@ -87,4 +93,11 @@ export class BlogMiscDataCreateRequestDto {
   )
   @Expose()
   groups: string[];
+
+  @Type(() => BlogMiscDataCreateRequestDto)
+  @IsOptional()
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
+  @Expose()
+  translations: BlogMiscDataCreateRequestDto[];
 }

@@ -1,8 +1,12 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray } from 'class-validator';
 
 export class JobMiscDataCreateResponseDto {
   @Expose()
   id: string;
+
+  @Expose()
+  langISO_639_1: string;
 
   @Expose()
   name: string;
@@ -33,4 +37,9 @@ export class JobMiscDataCreateResponseDto {
 
   @Expose()
   authorDisplayName: string | undefined;
+
+  @Type(() => JobMiscDataCreateResponseDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  translations: JobMiscDataCreateResponseDto;
 }

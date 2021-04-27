@@ -1,9 +1,13 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { UserDto } from '../../../mo-user';
+import { isArray, IsOptional, ValidateNested } from 'class-validator';
 
 export class JobMiscDataDto {
   @Expose()
   id: string;
+
+  @Expose()
+  langISO_639_1: string;
 
   @Expose()
   seoUrl: string;
@@ -53,6 +57,11 @@ export class JobMiscDataDto {
 
   @Expose()
   authorId: string;
+
+  @Type(() => JobMiscDataDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  translations: JobMiscDataDto[];
 
   get teaserTextString(): string {
     const content = this.teaserText?.replace(/<[^>]*>/g, '');
