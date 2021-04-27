@@ -2,6 +2,13 @@
 
 
 
+# 1.10.0 (2021-04-27)
+
+
+### Features
+
+* file misc data ([0da06ce](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0da06ce58d8a9243f808d06e256c0a5b10a5435e))
+
 ## 1.9.1 (2021-04-22)
 
 
