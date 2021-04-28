@@ -111,6 +111,7 @@ export class JobMiscDataCreateRequestDto {
   @Type(() => JobMiscDataCreateRequestDto)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ArrayMaxSize(2)
   @ValidateNested()
   @Expose()
   translations: JobMiscDataCreateRequestDto[];

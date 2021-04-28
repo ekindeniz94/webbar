@@ -97,6 +97,7 @@ export class BlogMiscDataCreateRequestDto {
   @Type(() => BlogMiscDataCreateRequestDto)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ArrayMaxSize(2)
   @ValidateNested()
   @Expose()
   translations: BlogMiscDataCreateRequestDto[];

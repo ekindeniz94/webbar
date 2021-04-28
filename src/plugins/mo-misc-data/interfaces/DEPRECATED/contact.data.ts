@@ -1,4 +1,4 @@
-import { MiscDataTypeEnum } from "../enums";
+import { MiscDataTypeEnum } from "../../enums";
 
 export interface IContactData {
   id: string;
