@@ -2,6 +2,18 @@
 
 
 
+# 1.12.0 (2021-04-28)
+
+
+### Bug Fixes
+
+* import ([bc7187b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bc7187b401125a0f7b0edca8813803fc5ded5241))
+
+
+### Features
+
+* contact misc data DTOs ([9b6db09](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9b6db094b8b0fe39f920d488a75d5ed031aa47a5))
+
 # 1.11.0 (2021-04-27)
 
 
