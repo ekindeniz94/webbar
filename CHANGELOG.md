@@ -2,6 +2,13 @@
 
 
 
+# 1.13.0 (2021-04-29)
+
+
+### Features
+
+* SmsMessageDto ([c4fa24c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c4fa24cd32b43391e59a386676fd737bd1d2c227))
+
 # 1.12.0 (2021-04-28)
 
 
