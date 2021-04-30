@@ -2,6 +2,13 @@
 
 
 
+## 1.13.1 (2021-04-30)
+
+
+### Bug Fixes
+
+* smsmessage dto transform data; adding mo-util ([6e728c8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6e728c8a59b3b7fe7d9809d887e719e2d3dfd1b3))
+
 # 1.13.0 (2021-04-29)
 
 
