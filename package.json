@@ -51,6 +51,7 @@
     "deepmerge": "^4.2.2",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
+    "nanoid": "^3.1.22",
     "rxjs": "^6.6.3",
     "source-map-support": "^0.5.19",
     "uuid": "^8.3.1",
