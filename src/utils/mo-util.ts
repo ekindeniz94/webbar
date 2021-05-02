@@ -1,7 +1,7 @@
 import { customAlphabet } from 'nanoid';
 
 export class MoUtil {
-  public static get nanoid(): () => {} {
+  public static get nanoid(): () => string {
     const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     // Speed: 1000IDs per hour/second
     // ~4 million years needed, in order to have a 1% probability of at least one collision.
