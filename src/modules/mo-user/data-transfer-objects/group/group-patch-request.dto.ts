@@ -1,0 +1,23 @@
+import { IsNotEmpty, IsOptional, isString, IsString, MaxLength } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
+
+export class GroupPatchRequestDto {
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.GROUP.NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.GROUP.NAME.MAX)
+  )
+  @Expose()
+  name: string;
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.GROUP.DESCRIPTION.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.GROUP.DESCRIPTION.MAX)
+  )
+  @Expose()
+  description: string;
+}
