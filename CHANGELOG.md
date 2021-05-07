@@ -2,6 +2,13 @@
 
 
 
+# 1.14.0 (2021-05-07)
+
+
+### Features
+
+* update mo-user, mo-misc-data ([1ed0772](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1ed07721510a2a1a0bb4eb1a7a42762df3575a04))
+
 ## 1.13.2 (2021-05-02)
 
 
