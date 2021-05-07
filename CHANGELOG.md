@@ -2,6 +2,13 @@
 
 
 
+## 1.13.2 (2021-05-02)
+
+
+### Bug Fixes
+
+* MoUtil.nanoid (return type) ([bd89bc1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bd89bc1aa95c688b11dcdd2f8f025df814e72c21))
+
 ## 1.13.1 (2021-04-30)
 
 
