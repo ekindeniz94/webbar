@@ -2,6 +2,13 @@
 
 
 
+## 1.14.2 (2021-05-12)
+
+
+### Bug Fixes
+
+* added dtos. ([583e7a2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/583e7a20e9ffd6a15af3246d058cb6d21b9d3d09))
+
 ## 1.14.1 (2021-05-12)
 
 
