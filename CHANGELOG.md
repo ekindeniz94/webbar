@@ -2,6 +2,13 @@
 
 
 
+## 1.14.1 (2021-05-12)
+
+
+### Bug Fixes
+
+* added enum and consts. ([4fb6e98](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4fb6e981f62b131e957d9f71d575d2bfabcefa08))
+
 # 1.14.0 (2021-05-07)
 
 
