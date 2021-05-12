@@ -1,4 +1,3 @@
-import { Matches } from 'class-validator';
 
 export const DTO_VALIDATION_CONST = {
   EMAIL: {
@@ -56,6 +55,17 @@ export const DTO_VALIDATION_CONST = {
     }
   },
   MISC: {
+    KEYVAULT: {
+      NAME: {
+        MIN: 5,
+        MAX: 50,
+        MATCHES: /^[a-zA-Z0-9-_]{6,}$/
+      },
+      ENCRYPTEDVALUE: {
+        MIN: 1,
+        MAX: 500
+      }
+    },
     BLOG: {
       TAG: {
         MAX: 128,
