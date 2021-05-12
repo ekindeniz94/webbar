@@ -2,6 +2,13 @@
 
 
 
+## 1.14.3 (2021-05-12)
+
+
+### Bug Fixes
+
+* add isSuperAdmin and group properties to UserDto ([ae181d1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ae181d146f5b1bcef3235afe970325b9f9b90d26))
+
 ## 1.14.2 (2021-05-12)
 
 
