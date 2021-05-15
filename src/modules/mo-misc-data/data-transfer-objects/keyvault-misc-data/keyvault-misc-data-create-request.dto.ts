@@ -11,7 +11,7 @@ export class KeyvaultMiscDataCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.KEYVAULT.ENCRYPTEDVALUE.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.MISC.KEYVAULT.VALUE.MAX)
   @Expose()
-  encryptedValue: string;
+  value: string;
 }
