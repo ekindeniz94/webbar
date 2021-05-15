@@ -2,6 +2,13 @@
 
 
 
+## 1.14.4 (2021-05-15)
+
+
+### Bug Fixes
+
+* minor fixes keyvault dtos. ([516b9ba](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/516b9ba782b2f5801fbad65ae45dcdfa7e00a0e6))
+
 ## 1.14.3 (2021-05-12)
 
 
