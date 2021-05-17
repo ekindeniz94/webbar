@@ -1,5 +1,12 @@
 
 export const DTO_VALIDATION_CONST = {
+  NAMESPACE: {
+    NAME: {
+      MIN: 5,
+      MAX: 50,
+      MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
+    }
+  },
   EMAIL: {
     MIN: 5,
     MAX: 320
@@ -59,7 +66,7 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 5,
         MAX: 50,
-        MATCHES: /^[a-zA-Z0-9-_]{6,}$/
+        MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
       },
       VALUE: {
         MIN: 1,
