@@ -2,6 +2,13 @@
 
 
 
+## 1.14.10 (2021-05-17)
+
+
+### Bug Fixes
+
+* init namespace module. ([01ded51](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/01ded51f31009ea3dbc026cfd822994c6ec42081))
+
 ## 1.14.9 (2021-05-17)
 
 
