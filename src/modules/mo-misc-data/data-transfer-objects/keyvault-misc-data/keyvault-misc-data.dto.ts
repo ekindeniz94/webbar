@@ -9,5 +9,5 @@ export class KeyvaultMiscDataDto extends BaseEntityDto {
   name: string;
 
   @Expose()
-  value: string;
+  encrypted: string;
 }
