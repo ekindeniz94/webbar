@@ -2,6 +2,13 @@
 
 
 
+## 1.14.6 (2021-05-17)
+
+
+### Bug Fixes
+
+* added keyvault decrypted response. ([b3756e5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b3756e5cefe6f9f8b8642ddfd9d476fa257ffaac))
+
 ## 1.14.5 (2021-05-17)
 
 
