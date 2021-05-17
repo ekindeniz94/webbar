@@ -2,6 +2,13 @@
 
 
 
+## 1.14.5 (2021-05-17)
+
+
+### Bug Fixes
+
+* increased keyvault length limit. ([6d7f468](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6d7f468863efda335f2ba7d53c87d0b47038c8d5))
+
 ## 1.14.4 (2021-05-15)
 
 
