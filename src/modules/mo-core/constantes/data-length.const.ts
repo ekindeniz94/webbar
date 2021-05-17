@@ -63,7 +63,7 @@ export const DTO_VALIDATION_CONST = {
       },
       ENCRYPTEDVALUE: {
         MIN: 1,
-        MAX: 500
+        MAX: 5000
       }
     },
     BLOG: {
