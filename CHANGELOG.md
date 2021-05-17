@@ -2,6 +2,27 @@
 
 
 
+## 1.14.4 (2021-05-15)
+
+
+### Bug Fixes
+
+* minor fixes keyvault dtos. ([516b9ba](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/516b9ba782b2f5801fbad65ae45dcdfa7e00a0e6))
+
+## 1.14.3 (2021-05-12)
+
+
+### Bug Fixes
+
+* add isSuperAdmin and group properties to UserDto ([ae181d1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ae181d146f5b1bcef3235afe970325b9f9b90d26))
+
+## 1.14.2 (2021-05-12)
+
+
+### Bug Fixes
+
+* added dtos. ([583e7a2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/583e7a20e9ffd6a15af3246d058cb6d21b9d3d09))
+
 ## 1.14.1 (2021-05-12)
 
 

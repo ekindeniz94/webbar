@@ -1,8 +1,9 @@
 import { BaseEntityDto } from '../../../mo-core';
 import { Exclude, Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, isString } from 'class-validator';
+import { isBoolean, IsOptional, isString } from 'class-validator';
 import { UserCompanyDto } from './user-company.dto';
 import { UserAddressDto } from './user-address.dto';
+import { GroupDto } from '../group';
 
 export class UserDto extends BaseEntityDto {
   @Exclude()
@@ -41,6 +42,14 @@ export class UserDto extends BaseEntityDto {
 
   @Expose()
   emailValidatedAt: string;
+
+  @Expose()
+  isSuperAdmin: boolean;
+
+  @IsOptional()
+  @Type(() => GroupDto)
+  @Expose()
+  groups: GroupDto[];
 
   get displayName(): string {
     if ((this.firstName && this.firstName.length > 0) || (this.lastName && this.lastName?.length > 0)) {

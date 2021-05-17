@@ -61,7 +61,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 50,
         MATCHES: /^[a-zA-Z0-9-_]{6,}$/
       },
-      ENCRYPTEDVALUE: {
+      VALUE: {
         MIN: 1,
         MAX: 5000
       }
