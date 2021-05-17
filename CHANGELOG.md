@@ -2,6 +2,13 @@
 
 
 
+## 1.14.9 (2021-05-17)
+
+
+### Bug Fixes
+
+* added keyvault patch validator fix. ([15be73f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/15be73fe8a73bb1daea79ff9a29d079a909959c4))
+
 ## 1.14.8 (2021-05-17)
 
 
