@@ -2,6 +2,13 @@
 
 
 
+## 1.14.17 (2021-05-18)
+
+
+### Bug Fixes
+
+* simplified users array. ([ac37c55](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ac37c556ed3f73efaa1c2aabaf5ecc0e67d4319a))
+
 ## 1.14.16 (2021-05-18)
 
 
