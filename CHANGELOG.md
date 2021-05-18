@@ -2,6 +2,13 @@
 
 
 
+## 1.14.19 (2021-05-18)
+
+
+### Bug Fixes
+
+* dto updates. ([fde13c2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fde13c21f0fe89c6503ae2c6b6bad6ca33b0113d))
+
 ## 1.14.18 (2021-05-18)
 
 
