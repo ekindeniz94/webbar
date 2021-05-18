@@ -2,6 +2,13 @@
 
 
 
+## 1.14.11 (2021-05-18)
+
+
+### Bug Fixes
+
+* added keypair to namespace dto. ([a735bbb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a735bbbe40eb7dcd7e29c2c00daf1cd7c22d3040))
+
 ## 1.14.10 (2021-05-17)
 
 
