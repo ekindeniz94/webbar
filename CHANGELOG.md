@@ -2,6 +2,13 @@
 
 
 
+## 1.14.12 (2021-05-18)
+
+
+### Bug Fixes
+
+* added users-array to namespace dto. ([fea27a8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fea27a8d4c82867c1f2e5b7bcfc584c041683583))
+
 ## 1.14.11 (2021-05-18)
 
 
