@@ -2,6 +2,13 @@
 
 
 
+## 1.14.18 (2021-05-18)
+
+
+### Bug Fixes
+
+* simplified namespace create request. ([f49fa6c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f49fa6c8df8935b680f9cf6ad163344554595dee))
+
 ## 1.14.17 (2021-05-18)
 
 
