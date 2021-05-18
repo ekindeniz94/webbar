@@ -2,6 +2,13 @@
 
 
 
+## 1.14.13 (2021-05-18)
+
+
+### Bug Fixes
+
+* added create-request-response dto in namespace. ([883abb6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/883abb64fef4de2c7510291753652d7cdb75e08d))
+
 ## 1.14.12 (2021-05-18)
 
 
