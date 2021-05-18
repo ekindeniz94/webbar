@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { NamespaceKeypairDto } from './namespace-keypair.dto';
+import { NamespaceUser } from './namespace-user.dto';
 
 export class NamespacePatchRequestDto {
   @IsNotEmpty()
@@ -11,7 +11,8 @@ export class NamespacePatchRequestDto {
   @Expose()
   name: string;
 
-  @Type(() => NamespaceKeypairDto)
+  @Type(() => NamespaceUser)
+  @IsNotEmpty()
   @Expose()
-  keypair: NamespaceKeypairDto;
+  users: NamespaceUser[];
 }
