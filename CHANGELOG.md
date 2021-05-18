@@ -2,6 +2,13 @@
 
 
 
+## 1.14.15 (2021-05-18)
+
+
+### Bug Fixes
+
+* typo. ([2627644](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2627644f2768cd5463384e471ad8e9a4054a62c1))
+
 ## 1.14.14 (2021-05-18)
 
 
