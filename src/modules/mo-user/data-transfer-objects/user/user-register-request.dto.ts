@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 
 export class UserRegisterRequestDto {
   @IsNotEmpty()

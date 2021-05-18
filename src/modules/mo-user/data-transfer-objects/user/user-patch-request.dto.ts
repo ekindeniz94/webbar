@@ -15,7 +15,7 @@ import {
 import { Expose, Transform, Type } from 'class-transformer';
 import { UserCompanyPatchRequestDto } from './user-company-patch-request.dto';
 import { UserAddressPatchRequestDto } from './user-address-patch-request.dto';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 
 export class UserPatchRequestDto {
   @IsOptional()
@@ -63,6 +63,16 @@ export class UserPatchRequestDto {
   )
   @Expose()
   password: string;
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
+  )
+  @IsInStringList(DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.IS_IN_STRING_LIST)
+  @Expose()
+  phoneNumberPrefix: string;
 
   @IsOptional()
   @IsString()
