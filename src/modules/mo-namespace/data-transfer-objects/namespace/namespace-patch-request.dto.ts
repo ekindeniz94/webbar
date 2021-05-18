@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class NamespacePatchRequestDto {
@@ -10,8 +10,7 @@ export class NamespacePatchRequestDto {
   @Expose()
   name: string;
 
-  @IsNotEmpty()
-  @IsString({ each: true })
+  @IsOptional()
   @Expose()
   users: string[];
 }
