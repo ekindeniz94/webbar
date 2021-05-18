@@ -19,6 +19,9 @@ export class UserDto extends BaseEntityDto {
   email: string;
 
   @Expose()
+  phoneNumberPrefix: string;
+
+  @Expose()
   phoneNumber: string;
 
   @Type(() => UserCompanyDto)

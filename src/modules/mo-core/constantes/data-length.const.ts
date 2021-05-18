@@ -1,5 +1,17 @@
+import { IsInStringList } from '../validation-decorators';
 
 export const DTO_VALIDATION_CONST = {
+  MO_DOMAINS: [
+    'http://localhost:4200',
+    'https://mogenius.app',
+    'https://mogenius.com',
+    'https://mogenius.de',
+    'https://mogenius.eu',
+    'https://mogenius.info',
+    'https://mogenius.io',
+    'https://mogenius.net',
+    'https://mogenius.org'
+  ],
   NAMESPACE: {
     NAME: {
       MIN: 5,
@@ -15,6 +27,10 @@ export const DTO_VALIDATION_CONST = {
     MIN: 5,
     MAX: 128,
     MATCHES: /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*?[^\w\s]|.*?_|.*?\.).{6,20}$/
+  },
+  PHONE_NUMBER_PREFIX: {
+    MAX: 2,
+    IS_IN_STRING_LIST: ['49']
   },
   PHONE_NUMBER: {
     MAX: 128

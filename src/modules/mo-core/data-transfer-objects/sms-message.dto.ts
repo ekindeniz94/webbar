@@ -17,8 +17,8 @@ export class SmsMessageDto {
 
   @IsString()
   @MinLength(5)
-  @MaxLength(160)
-  @Transform(({ value }) => value?.substring(0, 160))
+  @MaxLength(300)
+  @Transform(({ value }) => value?.substring(0, 300))
   @Expose()
   text: string;
 }
