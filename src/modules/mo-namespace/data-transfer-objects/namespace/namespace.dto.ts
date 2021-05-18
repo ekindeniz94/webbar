@@ -1,6 +1,7 @@
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
-import { Exclude, Expose, Transform, Type } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator';
+import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
+import { NamespaceKeypairDto } from './namespace-keypair.dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Exclude()
@@ -13,6 +14,7 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   name: string;
 
+  @Type(() => NamespaceKeypairDto)
   @Expose()
-  lastName: string;
+  keypair: NamespaceKeypairDto;
 }

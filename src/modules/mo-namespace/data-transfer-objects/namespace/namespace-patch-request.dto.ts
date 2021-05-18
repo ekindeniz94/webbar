@@ -1,19 +1,15 @@
+import { Expose, Type } from 'class-transformer';
 import {
-  isBoolean,
-  IsBoolean,
-  IsEmail,
   IsNotEmpty,
-  IsOptional,
-  isString,
+
+
   IsString,
-  Matches,
+
   MaxLength,
-  MinLength,
-  ValidateIf,
-  ValidateNested
+  MinLength
 } from 'class-validator';
-import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { NamespaceKeypairDto } from './namespace-keypair.dto';
 
 export class NamespacePatchRequestDto {
   @IsNotEmpty()
@@ -22,4 +18,8 @@ export class NamespacePatchRequestDto {
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MAX)
   @Expose()
   name: string;
+
+  @Type(() => NamespaceKeypairDto)
+  @Expose()
+  keypair: NamespaceKeypairDto;
 }
