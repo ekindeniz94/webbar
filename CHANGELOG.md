@@ -2,6 +2,14 @@
 
 
 
+## 1.15.1 (2021-05-19)
+
+
+### Bug Fixes
+
+* namespace dto updated. ([a9017e4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a9017e4a8e6f27e22cef2a58ff58bd2e6b281d79))
+* save commit. ([31cb7f1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/31cb7f1bb19804fe9b99ab0b01189ad8d606c91f))
+
 # 1.15.0 (2021-05-18)
 
 
