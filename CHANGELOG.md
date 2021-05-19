@@ -2,6 +2,13 @@
 
 
 
+## 1.15.3 (2021-05-19)
+
+
+### Bug Fixes
+
+* added first and lastname to register. ([d9cf6da](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d9cf6da53f7a51b2b9dc00b8cfe9f4e3ed629173))
+
 ## 1.15.2 (2021-05-19)
 
 
