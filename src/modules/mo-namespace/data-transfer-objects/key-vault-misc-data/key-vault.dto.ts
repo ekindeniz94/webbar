@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 
-export class KeyvaultMiscDataDto extends BaseEntityDto {
+export class KeyVaultDto extends BaseEntityDto {
   // @Exclude()
   // createdBy: string;
 

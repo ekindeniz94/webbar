@@ -86,7 +86,7 @@ export const DTO_VALIDATION_CONST = {
     }
   },
   MISC: {
-    KEYVAULT: {
+    KEY_VAULT: {
       NAME: {
         MIN: 5,
         MAX: 50,
