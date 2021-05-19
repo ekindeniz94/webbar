@@ -2,6 +2,13 @@
 
 
 
+# 1.15.0 (2021-05-18)
+
+
+### Features
+
+* confirm email/sms DTOs ([6e48e3c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6e48e3c255286af44649152d8c190450fffd05b6))
+
 ## 1.14.19 (2021-05-18)
 
 

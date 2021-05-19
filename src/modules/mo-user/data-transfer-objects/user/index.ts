@@ -8,3 +8,5 @@ export * from './user-patch-request.dto';
 export * from './user-patch-response.dto';
 export * from './user-company-patch-request.dto';
 export * from './user-address-patch-request.dto';
+export * from './email-confirmation-message.dto';
+export * from './sms-confirmation-message.dto';
