@@ -1,33 +1,30 @@
-import { Exclude, Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator';
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
+import { Exclude, Expose, Transform } from 'class-transformer';
+import { BaseEntityDto } from '../../../mo-core';
+import { NamespaceStateEnum } from '../../enums';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Exclude()
   createdBy: string;
 
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MAX)
+  @Expose()
+  shortId: string;
+
   @Expose()
   name: string;
 
-  @Type(() => NamespaceKeypairDto)
   @Expose()
   keypair: NamespaceKeypairDto;
 
-  @IsNotEmpty()
-  @IsString({ each: true })
   @Expose()
   users: string[];
 
-  @IsNotEmpty()
   @Expose()
   hostname: string;
 
-  @IsNotEmpty()
+  @Expose()
+  domain: string;
+
   @Expose()
   description: string;
 
@@ -44,5 +41,27 @@ export class NamespaceDto extends BaseEntityDto {
   notifications: any[];
 
   @Expose()
-  state: string; // state enum erstellen?
+  state: NamespaceStateEnum;
+
+  @Transform(({ value }) => value ?? 'default-icon')
+  @Expose()
+  icon: string;
+
+  get fullHostname(): string {
+    if (
+      this.hostname &&
+      this.hostname.length > 0 &&
+      this.domain &&
+      this.domain?.length > 0 &&
+      this.shortId &&
+      this.shortId?.length > 0
+    ) {
+      return `${this.hostname}-${this.shortId}.${this.domain}`;
+    }
+    return '__MISSING_DATA__';
+  }
+
+  get fullHostnameWithProtocol(): string {
+    return `https://${this.fullHostname}`;
+  }
 }

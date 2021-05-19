@@ -13,4 +13,12 @@ export class NamespacePatchRequestDto {
   @IsOptional()
   @Expose()
   users: string[];
+
+  @IsOptional()
+  @Expose()
+  icon: string;
+
+  @IsOptional()
+  @Expose()
+  description: string;
 }

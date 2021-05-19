@@ -1,6 +1,14 @@
-import { IsInStringList } from '../validation-decorators';
 
 export const DTO_VALIDATION_CONST = {
+  MO_USER_DOMAINS: [
+    'mogenius.app',
+    'mogenius.de',
+    'mogenius.eu',
+    'mogenius.info',
+    'mogenius.io',
+    'mogenius.net',
+    'mogenius.org'
+  ],
   MO_DOMAINS: [
     'http://localhost:4200',
     'https://mogenius.app',
@@ -15,8 +23,8 @@ export const DTO_VALIDATION_CONST = {
   NAMESPACE: {
     NAME: {
       MIN: 5,
-      MAX: 50,
-      MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
+      MAX: 30,
+      MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
     }
   },
   EMAIL: {
