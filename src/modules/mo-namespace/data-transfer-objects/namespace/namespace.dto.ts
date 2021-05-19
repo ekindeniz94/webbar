@@ -22,4 +22,27 @@ export class NamespaceDto extends BaseEntityDto {
   @IsString({ each: true })
   @Expose()
   users: string[];
+
+  @IsNotEmpty()
+  @Expose()
+  hostname: string;
+
+  @IsNotEmpty()
+  @Expose()
+  description: string;
+
+  @Expose()
+  services: any[];
+
+  @Expose()
+  stages: any[];
+
+  @Expose()
+  clusterRegion: string;
+
+  @Expose()
+  notifications: any[];
+
+  @Expose()
+  state: string; // state enum erstellen?
 }
