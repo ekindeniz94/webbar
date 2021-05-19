@@ -2,6 +2,13 @@
 
 
 
+## 1.15.2 (2021-05-19)
+
+
+### Bug Fixes
+
+* refactoring key-vault (from misc to namespace module) ([23311ef](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/23311ef69b5036351eae1bb015583b8c179c058a))
+
 ## 1.15.1 (2021-05-19)
 
 
