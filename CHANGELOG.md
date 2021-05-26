@@ -2,6 +2,13 @@
 
 
 
+# 1.16.0 (2021-05-26)
+
+
+### Features
+
+* AddUserToNamespaceRequestDto, RemoveUserFromNamespaceRequestDto ([0625afb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0625afbd9dd448024c66364f79c66bc176da796e))
+
 ## 1.15.3 (2021-05-19)
 
 
