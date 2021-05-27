@@ -2,6 +2,13 @@
 
 
 
+# 1.17.0 (2021-05-27)
+
+
+### Features
+
+* ResetPasswordRequestDto, ResetPasswordWithEmailMessageDto and ResetPasswordWithEmailRequestDto ([0b280f6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0b280f62fbdc91af3333d3c914c91875276c82af))
+
 # 1.16.0 (2021-05-26)
 
 
