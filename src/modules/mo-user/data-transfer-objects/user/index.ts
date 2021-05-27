@@ -10,3 +10,6 @@ export * from './user-company-patch-request.dto';
 export * from './user-address-patch-request.dto';
 export * from './email-confirmation-message.dto';
 export * from './sms-confirmation-message.dto';
+export * from './reset-password-with-email-request.dto';
+export * from './reset-password-with-email-message.dto';
+export * from './reset-password-request.dto';
