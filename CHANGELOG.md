@@ -2,6 +2,19 @@
 
 
 
+# 1.18.0 (2021-06-04)
+
+
+### Bug Fixes
+
+* cleanup imports ([0f0d6b6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0f0d6b689c5547028786041c20df9c7267b9343c))
+* refactoring key-vault (rename) ([c37a974](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c37a974159de10f40304835575bf18c6c200f75a))
+
+
+### Features
+
+* namespace DTOs ([00f3021](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/00f3021e50dc644648aeff872fa3d98799c587ac))
+
 # 1.17.0 (2021-05-27)
 
 
