@@ -1,4 +1,3 @@
-
 export const DTO_VALIDATION_CONST = {
   MO_USER_DOMAINS: [
     'mogenius.app',
@@ -25,6 +24,12 @@ export const DTO_VALIDATION_CONST = {
       MIN: 5,
       MAX: 30,
       MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
+    },
+    DESCRIPTION: {
+      MAX: 512
+    },
+    ICON: {
+      MAX: 256
     }
   },
   EMAIL: {
@@ -37,8 +42,8 @@ export const DTO_VALIDATION_CONST = {
     MATCHES: /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*?[^\w\s]|.*?_|.*?\.).{6,20}$/
   },
   PHONE_NUMBER_PREFIX: {
-    MAX: 2,
-    IS_IN_STRING_LIST: ['49']
+    MAX: 3,
+    IS_IN_STRING_LIST: ['+49']
   },
   PHONE_NUMBER: {
     MAX: 128

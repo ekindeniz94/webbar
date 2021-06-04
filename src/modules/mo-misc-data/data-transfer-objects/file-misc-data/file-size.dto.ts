@@ -1,9 +1,9 @@
 import { Expose } from 'class-transformer';
-import { IsNumber, IsString } from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { ImageSizeEnum } from '../../enums';
 
 export class FileSizeDto {
-  @IsNumber()
+  @IsEnum(ImageSizeEnum)
   @Expose()
   size: ImageSizeEnum;
 
