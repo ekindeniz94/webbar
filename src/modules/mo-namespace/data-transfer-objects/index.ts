@@ -1,2 +1,3 @@
-export * from './key-vault-misc-data';
+export * from './key-vault';
 export * from './namespace';
+export * from './namespace-invitation';
