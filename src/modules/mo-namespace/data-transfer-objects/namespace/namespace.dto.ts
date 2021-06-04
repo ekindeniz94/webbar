@@ -1,7 +1,8 @@
-import { Exclude, Expose, Transform } from 'class-transformer';
+import { Exclude, Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
+import { IsEnum } from 'class-validator';
 
 export class NamespaceDto extends BaseEntityDto {
   @Exclude()
@@ -13,6 +14,7 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   name: string;
 
+  @Type(() => NamespaceKeypairDto)
   @Expose()
   keypair: NamespaceKeypairDto;
 
@@ -40,6 +42,7 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   notifications: any[];
 
+  @IsEnum(NamespaceStateEnum)
   @Expose()
   state: NamespaceStateEnum;
 

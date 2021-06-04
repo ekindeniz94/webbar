@@ -1,7 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { IsInStringList } from '../../../mo-core/validation-decorators';
+import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()
@@ -25,11 +24,14 @@ export class NamespaceCreateRequestDto {
   @Expose()
   domain: string;
 
+  @IsOptional()
   @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.DESCRIPTION.MAX)
   @Expose()
   description: string;
 
   @IsOptional()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.ICON.MAX)
   @Expose()
   icon: string;
 }
