@@ -1,5 +1,4 @@
-import { isBoolean, IsBoolean, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
 
 export class FileMiscDataCreateResponseDto {
