@@ -2,6 +2,13 @@
 
 
 
+# 1.19.0 (2021-06-07)
+
+
+### Features
+
+* add HttpStatusCodeEnum to mo-core ([21dff86](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/21dff865d9b860cd6c277911e6ca305f40596aec))
+
 # 1.18.0 (2021-06-04)
 
 
