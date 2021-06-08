@@ -2,6 +2,13 @@
 
 
 
+## 1.20.1 (2021-06-08)
+
+
+### Bug Fixes
+
+* rename RemoveUserFromNamespaceRequestDto to RemoveUserFromNamespaceGroupRequestDto ([6f2663b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6f2663ba9812399684213d97ed437d0ce16960ce))
+
 # 1.20.0 (2021-06-08)
 
 
