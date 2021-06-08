@@ -2,6 +2,13 @@
 
 
 
+# 1.20.0 (2021-06-08)
+
+
+### Features
+
+* add NamespaceUserDto, update NamespaceInvitationDto, add email in UserPublicDto ([c197d96](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c197d96dbc3826d802e262690dd16a587d8a19f7))
+
 # 1.19.0 (2021-06-07)
 
 
