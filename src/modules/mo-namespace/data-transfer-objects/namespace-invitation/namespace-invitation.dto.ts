@@ -1,5 +1,6 @@
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { GroupDto, UserPublicDto } from '../../../mo-user';
+import { IsOptional } from 'class-validator';
 
 export class NamespaceInvitationDto {
   @Expose()
@@ -10,4 +11,19 @@ export class NamespaceInvitationDto {
 
   @Expose()
   namespaceRole: string;
+
+  @IsOptional()
+  @Type(() => UserPublicDto)
+  @Expose()
+  fromUser: UserPublicDto;
+
+  @IsOptional()
+  @Type(() => UserPublicDto)
+  @Expose()
+  toUser: UserPublicDto;
+
+  @IsOptional()
+  @Type(() => GroupDto)
+  @Expose()
+  group: GroupDto;
 }

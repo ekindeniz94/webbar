@@ -1,11 +1,11 @@
 import { isString } from 'class-validator';
-import { Expose, Transform } from 'class-transformer';
+import { Expose } from 'class-transformer';
 
 export class UserPublicDto {
   @Expose()
   id: string;
 
-  @Transform(({ value, obj }) => (obj.lastName || obj.firstName ? '' : value))
+  // @Transform(({ value, obj }) => (obj.lastName || obj.firstName ? '' : value))
   @Expose()
   email: string;
 
