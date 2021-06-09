@@ -2,6 +2,13 @@
 
 
 
+## 1.20.3 (2021-06-09)
+
+
+### Bug Fixes
+
+* namespace added dto. ([b96e0fa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b96e0fa577bb08e83a70bbe98000694a5852e2aa))
+
 ## 1.20.2 (2021-06-09)
 
 
