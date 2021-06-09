@@ -6,3 +6,4 @@ export * from './namespace-patch-response.dto';
 export * from './namespace.dto';
 export * from './namespace-user.dto';
 export * from './remove-user-from-namespace-group-request.dto';
+export * from './add-user-to-namespace-group-request.dto';
