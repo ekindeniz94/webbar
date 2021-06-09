@@ -2,6 +2,13 @@
 
 
 
+# 1.21.0 (2021-06-09)
+
+
+### Features
+
+* AddUserToNamespaceGroupRequestDto ([2545082](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2545082e4d4f51c6ede9c535edefdda7f3d16a55))
+
 ## 1.20.3 (2021-06-09)
 
 
