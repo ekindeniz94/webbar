@@ -2,6 +2,13 @@
 
 
 
+## 1.20.2 (2021-06-09)
+
+
+### Bug Fixes
+
+* namespace added toString. ([e0f7485](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e0f7485947875cf301af0fa8703716128bafb606))
+
 ## 1.20.1 (2021-06-08)
 
 
