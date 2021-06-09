@@ -68,7 +68,7 @@ export class NamespaceDto extends BaseEntityDto {
     return `https://${this.fullHostname}`;
   }
 
-  toString(): string {
+  get kubernetesName(): string {
     return `${this.name}-${this.shortId}`
   }
 }
