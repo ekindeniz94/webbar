@@ -1,8 +1,8 @@
 import { Exclude, Expose, Transform, Type } from 'class-transformer';
+import { IsEnum } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
-import { IsEnum } from 'class-validator';
 
 export class NamespaceDto extends BaseEntityDto {
   @Exclude()
@@ -66,5 +66,9 @@ export class NamespaceDto extends BaseEntityDto {
 
   get fullHostnameWithProtocol(): string {
     return `https://${this.fullHostname}`;
+  }
+
+  toString(): string {
+    return `${this.name}-${this.shortId}`
   }
 }
