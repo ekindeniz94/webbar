@@ -2,6 +2,13 @@
 
 
 
+## 1.22.1 (2021-06-10)
+
+
+### Bug Fixes
+
+* rm BaseEntityDto from NamespaceCommandCreateRequestDto, NamespaceCommandRequestDto, NamespaceCommandResponseDto ([323a5ef](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/323a5ef55a14e0acacd06cba3683c2701c6912b6))
+
 # 1.22.0 (2021-06-10)
 
 
