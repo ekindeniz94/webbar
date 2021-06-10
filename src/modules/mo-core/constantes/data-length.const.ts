@@ -30,6 +30,45 @@ export const DTO_VALIDATION_CONST = {
     },
     ICON: {
       MAX: 256
+    },
+    SERVICES: {
+      ARRAY_MAX_SIZE: 100
+    },
+    STAGES: {
+      ARRAY_MAX_SIZE: 10
+    },
+    STAGE: {
+      NAME: {
+        MIN: 5,
+        MAX: 50
+      },
+      BRANCH: {
+        MIN: 5,
+        MAX: 512
+      }
+    },
+    KEY_VAULT: {
+      NAME: {
+        MIN: 5,
+        MAX: 50,
+        MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
+      },
+      VALUE: {
+        MIN: 1,
+        MAX: 5000
+      }
+    },
+    SERVICE: {
+      NAME: {
+        MIN: 5,
+        MAX: 256
+      },
+      DESCRIPTION: {
+        MAX: 512
+      },
+      GIT_REPOSITORY: {
+        MAX: 4096
+      }
     }
   },
   EMAIL: {
@@ -91,17 +130,6 @@ export const DTO_VALIDATION_CONST = {
     }
   },
   MISC: {
-    KEY_VAULT: {
-      NAME: {
-        MIN: 5,
-        MAX: 50,
-        MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
-      },
-      VALUE: {
-        MIN: 1,
-        MAX: 5000
-      }
-    },
     BLOG: {
       TAG: {
         MAX: 128,

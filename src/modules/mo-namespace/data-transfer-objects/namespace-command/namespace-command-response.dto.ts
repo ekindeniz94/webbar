@@ -1,8 +1,8 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { NamespaceCommandState } from '../../enums';
+import { NamespaceCommandStateEnum } from '../../enums';
 
-export class CommandResponse extends BaseEntityDto {
+export class NamespaceCommandResponseDto extends BaseEntityDto {
   @Expose()
   id: string;
 
@@ -16,12 +16,12 @@ export class CommandResponse extends BaseEntityDto {
   startedAt: string;
 
   @Expose()
-  state: NamespaceCommandState;
+  state: NamespaceCommandStateEnum;
 
   @Expose()
   durationMs: number;
 
-  @Type(() => CommandResponse)
+  @Type(() => NamespaceCommandResponseDto)
   @Expose()
-  subCommands: CommandResponse[];
+  subCommands: NamespaceCommandResponseDto[];
 }

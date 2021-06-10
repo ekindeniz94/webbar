@@ -1,4 +1,4 @@
-export enum NamespaceCommandState {
+export enum NamespaceCommandStateEnum {
     STARTED = 'STARTED',
     FAILED = 'FAILED',
     SUCCEEDED = 'SUCCEEDED',
