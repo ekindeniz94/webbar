@@ -1,0 +1,16 @@
+import { Expose } from 'class-transformer';
+import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
+
+export class NamespaceServiceDto {
+  @Expose()
+  name: string;
+
+  @Expose()
+  description: string;
+
+  @Expose()
+  gitRepository: string;
+
+  @Expose()
+  kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
+}
