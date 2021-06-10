@@ -2,6 +2,14 @@
 
 
 
+## 1.22.2 (2021-06-10)
+
+
+### Bug Fixes
+
+* add NamespaceStageEntityDto, NamespaceServiceKubernetesSettingsDto, NamespaceServiceDto ([09544db](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/09544db1ca7dbc42d78d40a3701628bf42f44a34))
+* namespace kubernetes DTOs (refactoring) ([13d511f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/13d511f14d41baa0affb0c1172c91ca8bab73eb0))
+
 ## 1.22.1 (2021-06-10)
 
 
