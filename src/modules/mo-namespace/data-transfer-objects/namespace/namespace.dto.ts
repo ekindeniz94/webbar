@@ -1,13 +1,12 @@
-import { Exclude, Expose, Transform, Type } from 'class-transformer';
-import { IsEnum } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
+import { ClusterDto } from '../kubernetes';
+import { NamespaceStageEntityDto } from './namespace-stage.dto';
+import { NamespaceServiceDto } from '../namespace-service';
 
 export class NamespaceDto extends BaseEntityDto {
-  @Exclude()
-  createdBy: string;
-
   @Expose()
   shortId: string;
 
@@ -30,25 +29,22 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   description: string;
 
+  @Type(() => NamespaceServiceDto)
   @Expose()
-  services: any[];
+  services: NamespaceServiceDto[];
+
+  @Type(() => NamespaceStageEntityDto)
+  @Expose()
+  stages: NamespaceStageEntityDto[];
 
   @Expose()
-  stages: any[];
+  cluster: ClusterDto;
 
-  @Expose()
-  clusterRegion: string;
-
-  @Expose()
-  notifications: any[];
-
-  @IsEnum(NamespaceStateEnum)
   @Expose()
   state: NamespaceStateEnum;
 
-  @Transform(({ value }) => value ?? 'default-icon')
   @Expose()
-  icon: string;
+  bgColorStyle: string;
 
   get fullHostname(): string {
     if (
@@ -69,6 +65,6 @@ export class NamespaceDto extends BaseEntityDto {
   }
 
   get kubernetesName(): string {
-    return `${this.name}-${this.shortId}`
+    return `${this.name}-${this.shortId}`;
   }
 }
