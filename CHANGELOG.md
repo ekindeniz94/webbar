@@ -2,6 +2,13 @@
 
 
 
+## 1.22.3 (2021-06-10)
+
+
+### Bug Fixes
+
+* namespace imports ([a597b71](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a597b7131add4e0599d1f87f35dba2f201f70046))
+
 ## 1.22.2 (2021-06-10)
 
 
