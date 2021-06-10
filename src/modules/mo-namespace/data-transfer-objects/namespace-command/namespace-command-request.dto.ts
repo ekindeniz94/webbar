@@ -1,6 +1,4 @@
-import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
-import { NamespaceCommandStateEnum } from '../../enums';
+import { Expose } from 'class-transformer';
 
 export class NamespaceCommandRequestDto {
   @Expose()

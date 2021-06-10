@@ -1,5 +1,4 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceCommandStateEnum } from '../../enums';
 import moment from 'moment';
 import { isArray, IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
