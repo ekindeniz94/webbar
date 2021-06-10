@@ -2,6 +2,13 @@
 
 
 
+# 1.22.0 (2021-06-10)
+
+
+### Features
+
+* namespace kubernetes DTOs ([d860d09](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d860d09d497b9b0d972500f0feb7f5c7b0ea477e))
+
 # 1.21.0 (2021-06-09)
 
 
