@@ -4,7 +4,7 @@ import { NamespaceCommandStateEnum } from '../../enums';
 import moment from 'moment';
 import { isArray, IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
-export class NamespaceCommandCreateRequestDto extends BaseEntityDto {
+export class NamespaceCommandCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()

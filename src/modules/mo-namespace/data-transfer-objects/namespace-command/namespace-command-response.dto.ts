@@ -2,7 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceCommandStateEnum } from '../../enums';
 
-export class NamespaceCommandResponseDto extends BaseEntityDto {
+export class NamespaceCommandResponseDto {
   @Expose()
   id: string;
 
