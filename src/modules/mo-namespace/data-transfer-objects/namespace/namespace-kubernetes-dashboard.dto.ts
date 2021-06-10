@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class NamespaceKubernetesDto {
+export class NamespaceKubernetesDashboardDto {
   // from prometheus
   @Expose()
   allocatedTrafficMB: number;
