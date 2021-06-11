@@ -69,6 +69,11 @@ export const DTO_VALIDATION_CONST = {
       GIT_REPOSITORY: {
         MAX: 4096
       }
+    },
+    NAMESPACE_COMMAND: {
+      MESSAGE: {
+        MAX: 4096
+      }
     }
   },
   EMAIL: {

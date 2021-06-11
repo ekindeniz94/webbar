@@ -1,9 +1,25 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceCommandStateEnum } from '../../enums';
 import moment from 'moment';
-import { isArray, IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength } from 'class-validator';
+import { MoUtil } from '../../../../utils';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class NamespaceCommandCreateRequestDto {
+  @IsString()
+  @Transform(
+    ({ value, obj }) => {
+      if (value) {
+        return value;
+      }
+      obj.id = MoUtil.nanoid();
+      return obj.id;
+    },
+    { toClassOnly: true }
+  )
+  @Expose()
+  id: string;
+
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -47,4 +63,16 @@ export class NamespaceCommandCreateRequestDto {
   })
   @Expose()
   subCommands: NamespaceCommandCreateRequestDto[];
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TOPIC.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.NAMESPACE_COMMAND.MESSAGE.MAX
+    )
+  )
+  @Expose()
+  message: string;
 }
