@@ -2,6 +2,13 @@
 
 
 
+## 1.22.4 (2021-06-11)
+
+
+### Bug Fixes
+
+* add id and message to NamespaceCommandCreateRequestDto ([27a457c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/27a457ca8aac0e185760f1e9cd5186870bdd98f8))
+
 ## 1.22.3 (2021-06-10)
 
 
