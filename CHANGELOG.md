@@ -2,6 +2,13 @@
 
 
 
+## 1.22.5 (2021-06-14)
+
+
+### Bug Fixes
+
+* improved enums. added service type enum into namespace-service. ([f766922](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f7669228eb41ecd40b06e323a165c1993b02ffa7))
+
 ## 1.22.4 (2021-06-11)
 
 
