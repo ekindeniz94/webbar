@@ -9,3 +9,15 @@ export enum NamespaceBgColorStyleEnum {
   'COLOR_STYLE_08' = 'linear-gradient(136deg, #00d7e6, #00aec8 121%);',
   'COLOR_STYLE_09' = 'linear-gradient(138deg, #fad961 -14%, #f76b1c 117%);'
 }
+
+export const ALL_NAMESPACE_BG_COLOR_STYLES = [
+  NamespaceBgColorStyleEnum.COLOR_STYLE_01,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_02,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_03,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_04,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_05,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_06,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_07,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_08,
+  NamespaceBgColorStyleEnum.COLOR_STYLE_09
+];
