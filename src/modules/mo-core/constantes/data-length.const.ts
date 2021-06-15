@@ -25,6 +25,11 @@ export const DTO_VALIDATION_CONST = {
       MAX: 30,
       MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
     },
+    HOSTNAME: {
+      MIN: 5,
+      MAX: 30,
+      MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
+    },
     DESCRIPTION: {
       MAX: 512
     },
@@ -67,6 +72,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 512
       },
       GIT_REPOSITORY: {
+        MIN: 10,
         MAX: 4096
       }
     },
