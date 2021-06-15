@@ -2,6 +2,13 @@
 
 
 
+# 1.23.0 (2021-06-15)
+
+
+### Features
+
+* namespace-service dto ([02c38f1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/02c38f16bec419928462491fc50a39325502c45c))
+
 ## 1.22.5 (2021-06-14)
 
 
