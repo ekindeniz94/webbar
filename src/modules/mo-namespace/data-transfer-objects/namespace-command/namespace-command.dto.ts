@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { NamespaceCommandStateEnum } from '../../enums';
 
-export class NamespaceCommandResponseDto {
+export class NamespaceCommandDto {
   @Expose()
   id: string;
 
@@ -20,7 +20,7 @@ export class NamespaceCommandResponseDto {
   @Expose()
   durationMs: number;
 
-  @Type(() => NamespaceCommandResponseDto)
+  @Type(() => NamespaceCommandDto)
   @Expose()
-  subCommands: NamespaceCommandResponseDto[];
+  subCommands: NamespaceCommandDto[];
 }

@@ -1,9 +1,21 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
+import {
+  ArrayMaxSize,
+  isArray,
+  IsEnum,
+  IsFQDN,
+  IsNotEmpty,
+  IsOptional,
+  isString,
+  IsString,
+  MaxLength,
+  MinLength
+} from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { DEFAULT_KUBERNETES_CLUSTER } from '../kubernetes';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import _ from 'lodash';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -51,4 +63,14 @@ export class NamespaceServiceCreateRequestDto {
   // @Transform(({ value }) => value ?? DEFAULT_KUBERNETES_CLUSTER)
   @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsCreateRequestDto;
+
+  @IsOptional()
+  @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
+  @IsFQDN({}, { each: true })
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_LENGTH, {
+    each: true
+  })
+  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @Expose()
+  cNames: string[];
 }

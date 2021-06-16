@@ -20,6 +20,10 @@ export const DTO_VALIDATION_CONST = {
     'https://mogenius.org'
   ],
   NAMESPACE: {
+    CNAME: {
+      MAX_ENTRIES: 10,
+      MAX_LENGTH: 100
+    },
     NAME: {
       MIN: 5,
       MAX: 30,
