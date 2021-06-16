@@ -2,6 +2,13 @@
 
 
 
+## 1.23.1 (2021-06-16)
+
+
+### Bug Fixes
+
+* added more cname array. ([6678829](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/66788295cdb609bf9879fea08309062f845079bd))
+
 # 1.23.0 (2021-06-15)
 
 
