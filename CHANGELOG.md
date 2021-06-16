@@ -2,6 +2,13 @@
 
 
 
+## 1.23.2 (2021-06-16)
+
+
+### Bug Fixes
+
+* added service enum for html. ([edaee0a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/edaee0add0373a039e8ae64396448ad3ce3e52e0))
+
 ## 1.23.1 (2021-06-16)
 
 
