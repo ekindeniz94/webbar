@@ -11,11 +11,10 @@ import {
   MaxLength,
   MinLength
 } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { DEFAULT_KUBERNETES_CLUSTER } from '../kubernetes';
-import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
-import { NamespaceServiceTypeEnum } from '../../enums';
 import _ from 'lodash';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()

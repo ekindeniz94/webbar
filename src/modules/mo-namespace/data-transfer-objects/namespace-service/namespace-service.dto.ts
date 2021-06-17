@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
+import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
-import { BaseEntityDto } from '../../../mo-core';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -21,4 +21,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   @Expose()
   cNames: string[];
+
+  @Expose()
+  deploymentId: string;
 }
