@@ -2,6 +2,13 @@
 
 
 
+## 1.23.3 (2021-06-17)
+
+
+### Bug Fixes
+
+* added deploymentId. ([5845085](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5845085fe3283c96b9f7574010f76135c2f6ee3f))
+
 ## 1.23.2 (2021-06-16)
 
 
