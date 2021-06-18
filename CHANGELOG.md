@@ -2,6 +2,13 @@
 
 
 
+## 1.24.1 (2021-06-18)
+
+
+### Bug Fixes
+
+* removed deploymentId and added internalPort. ([06fa3a6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/06fa3a677d19c661a7be41290c83d6d5bf4ee3de))
+
 # 1.24.0 (2021-06-18)
 
 
