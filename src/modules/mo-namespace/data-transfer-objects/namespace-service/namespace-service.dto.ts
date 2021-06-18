@@ -23,5 +23,5 @@ export class NamespaceServiceDto extends BaseEntityDto {
   cNames: string[];
 
   @Expose()
-  deploymentId: string;
+  internalPort: number;
 }
