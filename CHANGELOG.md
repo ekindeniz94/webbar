@@ -2,6 +2,13 @@
 
 
 
+# 1.24.0 (2021-06-18)
+
+
+### Features
+
+* add RequestMethodEnum to core ([4fbdb3d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4fbdb3d24d83789ed15c803e179836bf9aaaba6a))
+
 ## 1.23.3 (2021-06-17)
 
 
