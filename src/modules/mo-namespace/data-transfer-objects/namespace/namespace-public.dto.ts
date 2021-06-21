@@ -3,19 +3,19 @@ import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { ClusterDto } from '../kubernetes';
 import { NamespaceServiceDto } from '../namespace-service';
-import { NamespaceKeypairDto } from './namespace-keypair.dto';
+import { NamespaceKeypairPublicDto } from './namespace-keypair-public.dto';
 import { NamespaceStageEntityDto } from './namespace-stage.dto';
 
-export class NamespaceDto extends BaseEntityDto {
+export class NamespacePublicDto extends BaseEntityDto {
   @Expose()
   shortId: string;
 
   @Expose()
   name: string;
 
-  @Type(() => NamespaceKeypairDto)
+  @Type(() => NamespaceKeypairPublicDto)
   @Expose()
-  keypair: NamespaceKeypairDto;
+  keypair: NamespaceKeypairPublicDto;
 
   @Expose()
   users: string[];
