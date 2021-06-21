@@ -2,6 +2,13 @@
 
 
 
+## 1.24.3 (2021-06-21)
+
+
+### Bug Fixes
+
+* add ConfigDto / DockerTemplateProjectDto ([3a9c024](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3a9c0247c4d45484a05b6efdbc4a4b98fb2abcac))
+
 ## 1.24.2 (2021-06-21)
 
 
