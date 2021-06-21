@@ -16,7 +16,7 @@ import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 
-export abstract class NamespaceServiceCreateRequestDto {
+export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)

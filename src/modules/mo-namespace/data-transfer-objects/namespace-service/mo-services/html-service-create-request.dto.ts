@@ -6,8 +6,8 @@ import {
   MaxLength,
   MinLength
 } from 'class-validator';
-import { NamespaceServiceCreateRequestDto } from '..';
-import { DTO_VALIDATION_CONST } from '../../../..';
+import { DTO_VALIDATION_CONST } from '../../../../mo-core/constantes/data-length.const';
+import { NamespaceServiceCreateRequestDto } from '../namespace-service-create-request.dto';
 
 export class NamespaceServiceHtmlCreateRequestDto extends NamespaceServiceCreateRequestDto {
   @IsOptional()
