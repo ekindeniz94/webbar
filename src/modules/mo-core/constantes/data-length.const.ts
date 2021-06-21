@@ -67,7 +67,17 @@ export const DTO_VALIDATION_CONST = {
         MAX: 5000
       }
     },
+    HTML: {
+      DOCUMENT_ROOT: {
+        MIN: 3,
+        MAX: 256
+      }
+    },
     SERVICE: {
+      BRANCH_NAME: {
+        MIN: 5,
+        MAX: 256
+      },
       NAME: {
         MIN: 5,
         MAX: 256

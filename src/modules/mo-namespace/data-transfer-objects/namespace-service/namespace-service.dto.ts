@@ -14,6 +14,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   gitRepository: string;
 
   @Expose()
+  gitBranch: string;
+
+  @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
 
   @Expose()

@@ -57,6 +57,19 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   gitRepository: string;
 
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX)
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MIN)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX
+    )
+  )
+  @Expose()
+  gitBranch: string;
+
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
   // @Transform(({ value }) => value ?? DEFAULT_KUBERNETES_CLUSTER)
