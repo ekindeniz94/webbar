@@ -2,6 +2,13 @@
 
 
 
+## 1.24.2 (2021-06-21)
+
+
+### Bug Fixes
+
+* introduced public namespaces. ([b644c34](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b644c346c0d6efea8ed9bbff1353388a421e063a))
+
 ## 1.24.1 (2021-06-18)
 
 
