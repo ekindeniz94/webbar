@@ -2,6 +2,13 @@
 
 
 
+## 1.24.4 (2021-06-21)
+
+
+### Bug Fixes
+
+* added new service and improved base service model. ([3c90613](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3c90613d6c65787263d0a91d14cb6daf7bfcf44a))
+
 ## 1.24.3 (2021-06-21)
 
 
