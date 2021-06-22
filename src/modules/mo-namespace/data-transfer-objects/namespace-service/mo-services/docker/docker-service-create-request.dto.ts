@@ -6,10 +6,10 @@ import {
   MaxLength,
   MinLength
 } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../../mo-core/constantes/data-length.const';
-import { NamespaceServiceCreateRequestDto } from '../namespace-service-create-request.dto';
+import { DTO_VALIDATION_CONST } from '../../../../../mo-core/constantes/data-length.const';
+import { NamespaceServiceCreateRequestDto } from '../../namespace-service-create-request.dto';
 
-export class NamespaceServiceHtmlCreateRequestDto extends NamespaceServiceCreateRequestDto {
+export class NamespaceServiceDockerCreateRequestDto extends NamespaceServiceCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
@@ -21,5 +21,5 @@ export class NamespaceServiceHtmlCreateRequestDto extends NamespaceServiceCreate
     )
   )
   @Expose()
-  documentRoot: string;
+  dockerfileName: string;
 }
