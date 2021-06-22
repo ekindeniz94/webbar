@@ -2,6 +2,13 @@
 
 
 
+## 1.24.8 (2021-06-22)
+
+
+### Bug Fixes
+
+* added docker-service dto. ([81f0079](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/81f00798d4bb0dada91d626e05e107c4b42c7d95))
+
 ## 1.24.7 (2021-06-21)
 
 
