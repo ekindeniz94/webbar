@@ -2,6 +2,13 @@
 
 
 
+## 1.24.9 (2021-06-23)
+
+
+### Bug Fixes
+
+* added cluster name. ([3fc52bb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3fc52bb04192f650f3db6550b565cf920591cc37))
+
 ## 1.24.8 (2021-06-22)
 
 
