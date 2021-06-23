@@ -72,7 +72,6 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
-  // @Transform(({ value }) => value ?? DEFAULT_KUBERNETES_CLUSTER)
   @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsCreateRequestDto;
 
