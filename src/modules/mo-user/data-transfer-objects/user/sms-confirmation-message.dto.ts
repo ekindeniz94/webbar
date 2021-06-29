@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import { MoUtil } from '../../../../utils';
+import { MoUtils } from '../../../../utils';
 
 export class SmsConfirmationMessageDto {
   @IsString()

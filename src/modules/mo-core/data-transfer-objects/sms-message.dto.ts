@@ -1,10 +1,10 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsString, MaxLength, MinLength } from 'class-validator';
-import { MoUtil } from '../../../utils';
+import { MoUtils } from '../../../utils';
 
 export class SmsMessageDto {
   @IsString()
-  @Transform(({ value }) => value ?? MoUtil.nanoid())
+  @Transform(({ value }) => value ?? MoUtils.nanoid())
   @Expose()
   id: string;
 

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceCommandStateEnum } from '../../enums';
 import moment from 'moment';
 import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength } from 'class-validator';
-import { MoUtil } from '../../../../utils';
+import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class NamespaceCommandCreateRequestDto {
@@ -12,7 +12,7 @@ export class NamespaceCommandCreateRequestDto {
       if (value) {
         return value;
       }
-      obj.id = MoUtil.nanoid();
+      obj.id = MoUtils.nanoid();
       return obj.id;
     },
     { toClassOnly: true }

@@ -1,6 +1,15 @@
 import { customAlphabet } from 'nanoid';
 
-export class MoUtil {
+export class MoUtils {
+  /**
+   *
+   * @param {string} str
+   * @return {string}
+   */
+  public static cleanUpUrl(str: string): string {
+    return str.replace(/([^:]\/)\/+/g, '$1');
+  }
+
   public static get nanoid(): () => string {
     const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     // Speed: 1000IDs per hour/second

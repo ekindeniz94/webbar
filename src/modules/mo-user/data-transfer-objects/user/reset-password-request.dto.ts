@@ -1,11 +1,11 @@
 import { IsEmail, IsOptional, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
-import { MoUtil } from '../../../../utils';
+import { MoUtils } from '../../../../utils';
 
 export class ResetPasswordRequestDto {
   @IsString()
-  @Transform(({ value }) => value ?? MoUtil.nanoid())
+  @Transform(({ value }) => value ?? MoUtils.nanoid())
   @Expose()
   messageId: string;
 
