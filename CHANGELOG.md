@@ -2,6 +2,13 @@
 
 
 
+## 1.24.10 (2021-06-29)
+
+
+### Bug Fixes
+
+* MoUtil to MoUtils ([7d8be64](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7d8be64a429d5f2f6765a31c950db67b31388e7c))
+
 ## 1.24.9 (2021-06-23)
 
 
