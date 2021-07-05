@@ -2,6 +2,13 @@
 
 
 
+## 1.24.11 (2021-07-05)
+
+
+### Bug Fixes
+
+* added template into docker-service, renamed dockertemplate, added service group. ([59b77af](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/59b77af49fb8e45cbef6c35250ca6e4286d966e4))
+
 ## 1.24.10 (2021-06-29)
 
 
