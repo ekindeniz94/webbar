@@ -1,4 +1,4 @@
-import { DockerTemplateProjectDto } from './docker-template-project.dto';
+import { DockerTemplateDto } from './docker-template.dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 
@@ -8,9 +8,9 @@ export class ConfigDto {
   domains: string[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => DockerTemplateProjectDto)
+  @Type(() => DockerTemplateDto)
   @Expose()
-  dockerTemplateProjects: DockerTemplateProjectDto[];
+  dockerTemplateProjects: DockerTemplateDto[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()

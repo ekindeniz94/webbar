@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class DockerTemplateProjectDto {
+export class DockerTemplateDto {
   @Expose()
   id: string;
 

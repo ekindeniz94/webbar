@@ -84,4 +84,17 @@ export class NamespaceServiceCreateRequestDto {
   @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
   @Expose()
   cNames: string[];
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MAX)
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MIN)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MAX
+    )
+  )
+  @Expose()
+  serviceGroup: string;
 }

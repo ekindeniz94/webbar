@@ -88,6 +88,10 @@ export const DTO_VALIDATION_CONST = {
       GIT_REPOSITORY: {
         MIN: 10,
         MAX: 4096
+      },
+      GROUP: {
+        MIN: 5,
+        MAX: 100
       }
     },
     NAMESPACE_COMMAND: {

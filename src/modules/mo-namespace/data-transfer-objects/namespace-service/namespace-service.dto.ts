@@ -27,4 +27,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   @Expose()
   internalPort: number;
+
+  @Expose()
+  serviceGroup: string;
 }
