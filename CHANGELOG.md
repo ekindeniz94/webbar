@@ -2,6 +2,13 @@
 
 
 
+## 1.24.12 (2021-07-05)
+
+
+### Bug Fixes
+
+* removed needsPvc flag. ([056efbe](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/056efbed5b6993af1b9f13ed3644de339693a4eb))
+
 ## 1.24.11 (2021-07-05)
 
 
