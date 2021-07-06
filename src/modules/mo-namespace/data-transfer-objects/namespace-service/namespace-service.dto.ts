@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
@@ -17,6 +17,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   gitBranch: string;
 
+  @Type(() => NamespaceServiceKubernetesSettingsDto)
   @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
 
@@ -29,6 +30,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   internalPort: number;
 
+  @Type(() => NamespaceServiceGroupDto)
   @Expose()
   serviceGroup: NamespaceServiceGroupDto;
 }

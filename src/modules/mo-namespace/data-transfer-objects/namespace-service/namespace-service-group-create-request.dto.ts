@@ -2,11 +2,21 @@ import { Expose, Transform } from 'class-transformer';
 import {
   IsNotEmpty, isString, IsString, MaxLength, MinLength
 } from 'class-validator';
+import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 
 export class NamespaceServiceGroupCreateRequestDto {
-  @IsNotEmpty()
   @IsString()
+  @Transform(
+    ({ value, obj }) => {
+      if (value) {
+        return value;
+      }
+      obj.id = MoUtils.nanoid();
+      return obj.id;
+    },
+    { toClassOnly: true }
+  )
   @Expose()
   id: string;
 

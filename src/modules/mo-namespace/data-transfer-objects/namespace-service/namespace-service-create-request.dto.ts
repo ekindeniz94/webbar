@@ -5,6 +5,7 @@ import {
   IsEnum,
   IsFQDN,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   isString,
   IsString,
@@ -91,4 +92,9 @@ export class NamespaceServiceCreateRequestDto {
   @Type(() => NamespaceServiceGroupCreateRequestDto)
   @Expose()
   serviceGroup: NamespaceServiceGroupDto;
+
+  @IsOptional()
+  @IsNumber()
+  @Expose()
+  internalPort: number;
 }
