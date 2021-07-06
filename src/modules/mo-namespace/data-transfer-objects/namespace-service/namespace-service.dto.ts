@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
@@ -29,5 +30,5 @@ export class NamespaceServiceDto extends BaseEntityDto {
   internalPort: number;
 
   @Expose()
-  serviceGroup: string;
+  serviceGroup: NamespaceServiceGroupDto;
 }

@@ -14,6 +14,8 @@ import {
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
+import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 
 export class NamespaceServiceCreateRequestDto {
@@ -86,15 +88,7 @@ export class NamespaceServiceCreateRequestDto {
   cNames: string[];
 
   @IsOptional()
-  @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUP.MAX
-    )
-  )
+  @Type(() => NamespaceServiceGroupCreateRequestDto)
   @Expose()
-  serviceGroup: string;
+  serviceGroup: NamespaceServiceGroupDto;
 }

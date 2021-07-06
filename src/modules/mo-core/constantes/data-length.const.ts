@@ -89,7 +89,7 @@ export const DTO_VALIDATION_CONST = {
         MIN: 10,
         MAX: 4096
       },
-      GROUP: {
+      GROUPNAME: {
         MIN: 5,
         MAX: 100
       }
