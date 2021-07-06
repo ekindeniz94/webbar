@@ -2,6 +2,13 @@
 
 
 
+## 1.24.16 (2021-07-06)
+
+
+### Bug Fixes
+
+* minor improvements. ([f334055](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f33405566e7326c45df358d317d2187d795b7fa0))
+
 ## 1.24.15 (2021-07-06)
 
 
