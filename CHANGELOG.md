@@ -2,6 +2,14 @@
 
 
 
+## 1.24.13 (2021-07-06)
+
+
+### Bug Fixes
+
+* refactored service-group property. ([b10e0db](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b10e0dba81fb38173fa0c0fc77cf36017e37a568))
+* refactored service-group property. ([ced722b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ced722b29bc6500d94289f15442e2a5afa883407))
+
 ## 1.24.12 (2021-07-05)
 
 
