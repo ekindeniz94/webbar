@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+import { IsOptional } from 'class-validator';
 
 export class DockerTemplateDto {
   @Expose()
@@ -20,5 +21,6 @@ export class DockerTemplateDto {
   lastUpdate: string;
 
   @Expose()
-  needsPvc: boolean;
+  @IsOptional()
+  exposedPort: number;
 }
