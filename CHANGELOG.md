@@ -2,6 +2,13 @@
 
 
 
+## 1.24.15 (2021-07-06)
+
+
+### Bug Fixes
+
+* added getter. ([ed83c7b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ed83c7ba70add79ce1f74da44de3ef9ef70a2c5d))
+
 ## 1.24.14 (2021-07-06)
 
 
