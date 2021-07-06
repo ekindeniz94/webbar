@@ -2,6 +2,13 @@
 
 
 
+## 1.24.14 (2021-07-06)
+
+
+### Bug Fixes
+
+* refactored service-group. added patch fpr docker-service. ([d0663b4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d0663b43ac9a85440b1637767cd6ac4ad084cc8e))
+
 ## 1.24.13 (2021-07-06)
 
 
