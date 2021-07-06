@@ -8,4 +8,11 @@ export class NamespaceServiceDockerDto extends NamespaceServiceDto {
 
   @Expose()
   template: DockerTemplateDto;
+
+  get isTemplated(): boolean {
+    if (this.template) {
+      return true;
+    }
+    return false;
+  }
 }
