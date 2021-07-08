@@ -2,6 +2,13 @@
 
 
 
+## 1.24.17 (2021-07-08)
+
+
+### Bug Fixes
+
+* add hasPermission and hasPermissions to GroupDto ([3713df7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3713df7b6eb4acacd4d807dadcf3d6330c7aaa65))
+
 ## 1.24.16 (2021-07-06)
 
 
