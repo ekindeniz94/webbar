@@ -2,6 +2,13 @@
 
 
 
+# 1.26.0 (2021-07-09)
+
+
+### Features
+
+* regEx for envvars. ([d754fdb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d754fdbea6d38000e8a880bd47426c804461da83))
+
 # 1.25.0 (2021-07-09)
 
 
