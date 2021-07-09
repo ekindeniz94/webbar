@@ -1,6 +1,8 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
 
@@ -33,4 +35,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Type(() => NamespaceServiceGroupDto)
   @Expose()
   serviceGroup: NamespaceServiceGroupDto;
+
+
+  @Type(() => NamespaceServiceGroupDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  envVars: NamespaceServiceEnvVarDto[];
 }

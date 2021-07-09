@@ -92,6 +92,14 @@ export const DTO_VALIDATION_CONST = {
       GROUPNAME: {
         MIN: 5,
         MAX: 100
+      },
+      ENVVAR_NAME: {
+        MIN: 3,
+        MAX: 80
+      },
+      ENVVAR_VALUE: {
+        MIN: 0,
+        MAX: 500
       }
     },
     NAMESPACE_COMMAND: {
