@@ -2,6 +2,13 @@
 
 
 
+# 1.25.0 (2021-07-09)
+
+
+### Features
+
+* added service environment variables array. ([74beaf4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/74beaf4c19189b3cc15b585f16921db0aac79ed1))
+
 ## 1.24.17 (2021-07-08)
 
 
