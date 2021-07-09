@@ -2,6 +2,13 @@
 
 
 
+## 1.26.1 (2021-07-09)
+
+
+### Bug Fixes
+
+* copy pastbug fixed. ([9e6c38c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9e6c38c0fbe757d0d03a6816f415c16415956624))
+
 # 1.26.0 (2021-07-09)
 
 
