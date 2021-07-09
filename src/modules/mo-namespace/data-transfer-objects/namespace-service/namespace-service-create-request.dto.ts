@@ -15,6 +15,7 @@ import {
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
 import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
@@ -97,4 +98,9 @@ export class NamespaceServiceCreateRequestDto {
   @IsNumber()
   @Expose()
   internalPort: number;
+
+  @Type(() => NamespaceServiceEnvVarDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  envVars: NamespaceServiceEnvVarDto[];
 }

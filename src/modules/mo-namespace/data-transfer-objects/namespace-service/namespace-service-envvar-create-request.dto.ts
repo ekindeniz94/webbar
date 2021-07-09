@@ -21,17 +21,6 @@ export class NamespaceServiceEnvVarDtoCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUPNAME.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUPNAME.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUPNAME.MAX
-    )
-  )
-  
-  @IsNotEmpty()
-  @IsString()
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MIN)
