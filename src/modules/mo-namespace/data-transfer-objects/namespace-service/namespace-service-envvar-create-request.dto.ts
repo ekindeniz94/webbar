@@ -1,8 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import {
-  IsEnum,
-  IsNotEmpty, isString, IsString, MaxLength, MinLength
-} from 'class-validator';
+import { IsEnum, IsNotEmpty, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
@@ -32,9 +29,10 @@ export class NamespaceServiceEnvVarDtoCreateRequestDto {
       DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GROUPNAME.MAX
     )
   )
-
+  
   @IsNotEmpty()
   @IsString()
+  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MIN)
   @Expose()
