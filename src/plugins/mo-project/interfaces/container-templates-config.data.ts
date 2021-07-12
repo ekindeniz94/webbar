@@ -76,6 +76,11 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
         name: 'MYSQL_ROOT_PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+      },
+      {
+        name: 'VOLUME-MOUNT',
+        value: 'mysql:/var/lib/mysql',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       }
     ]
   },
