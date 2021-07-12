@@ -2,6 +2,13 @@
 
 
 
+## 1.26.3 (2021-07-12)
+
+
+### Bug Fixes
+
+* new entry in env-var-enum volumemount. ([7db7404](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7db7404d875b32a742cff0d981ee123a46e6dd90))
+
 ## 1.26.2 (2021-07-09)
 
 
