@@ -1,3 +1,5 @@
+import { NamespaceServiceEnvVarTypeEnum } from '../../../modules';
+
 export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
   {
     name: 'nginx',
@@ -30,13 +32,52 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
     exposedPort: 80
   },
   {
+    name: 'WordPress',
+    id: 'wordpress-php8.0-apache',
+    version: 'php8.0-apache',
+    description:
+      'WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service. Features include a plugin architecture and a template system. WordPress is used by more than 22.0% of the top 10 million websites as of August 2013. WordPress is the most popular blogging system in use on the Web, at more than 60 million websites.',
+    folder: 'wordpress',
+    lastUpdate: '2021-07-12T10:50:31+01:00',
+    exposedPort: 80,
+    envVars: [
+      {
+        name: 'WORDPRESS_DB_HOST',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'WORDPRESS_DB_USER',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'WORDPRESS_DB_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+      },
+      {
+        name: 'WORDPRESS_DB_NAME',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      }
+    ]
+  },
+  {
     name: 'MySQL',
     id: 'mysql-8.0.23',
     version: '8.0.23',
     description:
       "MySQL is the world's most popular open source database. With its proven performance, reliability and ease-of-use, MySQL has become the leading database choice for web-based applications, covering the entire range from personal projects and websites, via e-commerce and information services, all the way to high profile web properties including Facebook, Twitter, YouTube, Yahoo! and many more.",
     folder: 'mysql',
-    lastUpdate: '2021-02-01T09:50:31+01:00'
+    lastUpdate: '2021-02-01T09:50:31+01:00',
+    envVars: [
+      {
+        name: 'MYSQL_ROOT_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+      }
+    ]
   },
   {
     name: 'MongoDB',
@@ -67,4 +108,11 @@ export interface IContainerTemplateData {
   folder: string;
   lastUpdate: string;
   exposedPort?: number;
+  envVars?: EnvVarData[];
+}
+
+export interface EnvVarData {
+  name: string;
+  value: string;
+  type: NamespaceServiceEnvVarTypeEnum;
 }
