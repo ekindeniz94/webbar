@@ -2,6 +2,13 @@
 
 
 
+## 1.26.4 (2021-07-12)
+
+
+### Bug Fixes
+
+* added wordpress and required envvars. ([37e0e47](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/37e0e47df82035537fe393e405da7bc55e47f24c))
+
 ## 1.26.3 (2021-07-12)
 
 
