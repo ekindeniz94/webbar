@@ -2,6 +2,13 @@
 
 
 
+## 1.26.5 (2021-07-12)
+
+
+### Bug Fixes
+
+* added volume mount to mysql. ([848a266](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/848a2660c0a2d046671bbb5f5f79cb7a589b7667))
+
 ## 1.26.4 (2021-07-12)
 
 
