@@ -2,6 +2,13 @@
 
 
 
+## 1.26.7 (2021-07-13)
+
+
+### Bug Fixes
+
+* added disksize for disk storage. ([5f2453f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5f2453f6a6063ea81e504de9ef0428742caa81e2))
+
 ## 1.26.6 (2021-07-13)
 
 
