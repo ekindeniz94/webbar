@@ -77,14 +77,34 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
     lastUpdate: '2021-02-01T09:50:31+01:00',
     envVars: [
       {
+        name: 'VOLUME-MOUNT',
+        value: 'mysql:/var/lib/mysql',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_DISK
+      },
+      {
         name: 'MYSQL_ROOT_PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
       },
       {
-        name: 'VOLUME-MOUNT',
-        value: 'mysql:/var/lib/mysql',
-        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+        name: 'MYSQL_ROOT_HOST',
+        value: '%',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'MYSQL_USER',
+        value: 'mysqluser',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'MYSQL_PASSWORD',
+        value: '###_REPLACE_###',
+        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+      },
+      {
+        name: 'MYSQL_DATABASE',
+        value: 'wordpress',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       }
     ],
     internalPort: 3306,
