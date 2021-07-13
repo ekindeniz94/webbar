@@ -2,6 +2,13 @@
 
 
 
+## 1.26.8 (2021-07-13)
+
+
+### Bug Fixes
+
+* refactored internal port and expose. ([c426576](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c426576f9af0937ad60080220e2cd07e3eb5d32a))
+
 ## 1.26.7 (2021-07-13)
 
 
