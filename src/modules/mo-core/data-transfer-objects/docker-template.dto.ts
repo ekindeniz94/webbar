@@ -28,4 +28,8 @@ export class DockerTemplateDto {
   @Expose()
   @IsOptional()
   envVars?: NamespaceServiceEnvVarDto[];
+
+  @Expose()
+  @IsOptional()
+  diskSizeInMB?: number;
 }

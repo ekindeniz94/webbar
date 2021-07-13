@@ -82,7 +82,8 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
         value: 'mysql:/var/lib/mysql',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       }
-    ]
+    ],
+    diskSizeInMB: 1000
   },
   {
     name: 'MongoDB',
@@ -114,6 +115,7 @@ export interface IContainerTemplateData {
   lastUpdate: string;
   exposedPort?: number;
   envVars?: EnvVarData[];
+  diskSizeInMB?: number;
 }
 
 export interface EnvVarData {
