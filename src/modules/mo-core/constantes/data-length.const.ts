@@ -75,7 +75,7 @@ export const DTO_VALIDATION_CONST = {
     },
     SERVICE: {
       BRANCH_NAME: {
-        MIN: 5,
+        MIN: 1,
         MAX: 256
       },
       NAME: {
@@ -87,7 +87,7 @@ export const DTO_VALIDATION_CONST = {
       },
       GIT_REPOSITORY: {
         MIN: 10,
-        MAX: 4096
+        MAX: 1028
       },
       GROUPNAME: {
         MIN: 5,

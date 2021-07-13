@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import {
   ArrayMaxSize,
   isArray,
+  IsBoolean,
   IsEnum,
   IsFQDN,
   IsNotEmpty,
@@ -103,4 +104,8 @@ export class NamespaceServiceCreateRequestDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
+
+  @IsBoolean()
+  @Expose()
+  expose: boolean;
 }

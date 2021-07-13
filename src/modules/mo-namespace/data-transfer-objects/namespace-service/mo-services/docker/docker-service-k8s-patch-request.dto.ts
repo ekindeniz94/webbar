@@ -1,5 +1,5 @@
 import { Expose, Transform } from "class-transformer";
-import { IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from "class-validator";
 import { DTO_VALIDATION_CONST } from "../../../../../mo-core/constantes/data-length.const";
 
 export class NamespaceServicePatchRequestDto {
@@ -45,4 +45,8 @@ export class NamespaceServicePatchRequestDto {
   @IsNumber()
   @Expose()
   internalPort: number;
+
+  @IsBoolean()
+  @Expose()
+  expose: boolean;
 }
