@@ -1,5 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsOptional } from 'class-validator';
+import { NamespaceServiceEnvVarDto } from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar.dto';
 
 export class DockerTemplateDto {
   @Expose()
@@ -23,4 +24,8 @@ export class DockerTemplateDto {
   @Expose()
   @IsOptional()
   exposedPort: number;
+
+  @Expose()
+  @IsOptional()
+  envVars?: NamespaceServiceEnvVarDto[];
 }
