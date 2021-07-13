@@ -2,6 +2,13 @@
 
 
 
+## 1.26.10 (2021-07-13)
+
+
+### Bug Fixes
+
+* volume-mount-disk enum added. ([c0e12af](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c0e12affd2e91b29f1dc4a198e130964b9f65d58))
+
 ## 1.26.9 (2021-07-13)
 
 
