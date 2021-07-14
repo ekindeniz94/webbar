@@ -50,7 +50,7 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   serviceType: NamespaceServiceTypeEnum;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
   @Transform(({ value }) =>
@@ -75,6 +75,19 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   gitBranch: string;
 
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
+    )
+  )
+  @Expose()
+  dockerfileName: string;
+
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
   @Expose()
@@ -93,7 +106,7 @@ export class NamespaceServiceCreateRequestDto {
   @IsOptional()
   @Type(() => NamespaceServiceGroupCreateRequestDto)
   @Expose()
-  serviceGroup: NamespaceServiceGroupDto;
+  serviceGroup: NamespaceServiceGroupCreateRequestDto;
 
   @IsOptional()
   @IsNumber()
