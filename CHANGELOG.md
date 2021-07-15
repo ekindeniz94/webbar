@@ -2,6 +2,13 @@
 
 
 
+## 1.26.11 (2021-07-14)
+
+
+### Bug Fixes
+
+* update namespace service create DTOs ([f0e72ae](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f0e72ae36a076f6317ff1407ef472572038629fd))
+
 ## 1.26.10 (2021-07-13)
 
 
