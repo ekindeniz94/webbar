@@ -107,6 +107,13 @@ export const DTO_VALIDATION_CONST = {
       MESSAGE: {
         MAX: 4096
       }
+    },
+    CLUSTER: {
+      NAME: {
+        MIN:3,
+        MAX: 256,
+        MATCHES: /^[a-zA-Z0-9-_]{4,256}$/
+      }
     }
   },
   EMAIL: {
