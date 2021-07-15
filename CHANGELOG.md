@@ -2,6 +2,13 @@
 
 
 
+## 1.26.12 (2021-07-15)
+
+
+### Bug Fixes
+
+* expose cluster DTO fields ([2afa094](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2afa094b0b86f5474f0b52c63afdf519a255836f))
+
 ## 1.26.11 (2021-07-14)
 
 
