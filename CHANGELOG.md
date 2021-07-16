@@ -2,6 +2,13 @@
 
 
 
+## 1.26.14 (2021-07-16)
+
+
+### Bug Fixes
+
+* add git-branch-item dto ([5aaef41](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5aaef419f74323e90388c130468911ee1c5042c3))
+
 ## 1.26.13 (2021-07-16)
 
 
