@@ -2,6 +2,13 @@
 
 
 
+## 1.26.13 (2021-07-16)
+
+
+### Bug Fixes
+
+* file tree dto, is git url validation ([043d1c6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/043d1c6c8aa88156249f2e5cef6c3df836589807))
+
 ## 1.26.12 (2021-07-15)
 
 
