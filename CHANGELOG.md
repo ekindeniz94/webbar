@@ -2,6 +2,13 @@
 
 
 
+## 1.26.15 (2021-07-19)
+
+
+### Bug Fixes
+
+* refactored filetreedto. ([2465e2b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2465e2bbfec56d2fca03c36515951b71b1e3ecfa))
+
 ## 1.26.14 (2021-07-16)
 
 
