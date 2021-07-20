@@ -2,6 +2,13 @@
 
 
 
+## 1.26.18 (2021-07-20)
+
+
+### Bug Fixes
+
+* config dto (env) ([fced9e5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fced9e562850c93f8f77efae0a444f1b4b3b7813))
+
 ## 1.26.17 (2021-07-20)
 
 
