@@ -72,7 +72,7 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
       },
       {
         name: 'VOLUME_MOUNT',
-        value: 'wordpress:/var/lib/htlm',
+        value: 'wordpress:/var/lib/html',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       }
     ]
