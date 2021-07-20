@@ -2,6 +2,13 @@
 
 
 
+## 1.26.17 (2021-07-20)
+
+
+### Bug Fixes
+
+* fixed typo. ([40a9e0f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/40a9e0f626bde2f60abb0f3f2a4563895c43daff))
+
 ## 1.26.16 (2021-07-20)
 
 
