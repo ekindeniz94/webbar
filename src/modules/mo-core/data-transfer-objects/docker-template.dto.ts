@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { IsBoolean, IsOptional } from 'class-validator';
 import { NamespaceServiceEnvVarDto } from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar.dto';
 
@@ -21,15 +21,16 @@ export class DockerTemplateDto {
   @Expose()
   lastUpdate: string;
 
-  @Expose()
   @IsOptional()
+  @Expose()
   internalPort: number;
 
-  @Expose()
   @IsBoolean()
+  @Expose()
   expose: boolean;
 
-  @Expose()
   @IsOptional()
+  @Type(() => NamespaceServiceEnvVarDto)
+  @Expose()
   envVars?: NamespaceServiceEnvVarDto[];
 }

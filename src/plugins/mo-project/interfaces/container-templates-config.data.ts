@@ -1,4 +1,5 @@
 import { NamespaceServiceEnvVarTypeEnum } from '../../../modules';
+import { Expose, Transform } from 'class-transformer';
 
 export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
   {
@@ -68,12 +69,20 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
       {
         name: 'SEED_PATH',
         value: 'wordpress:wordpress',
-        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED,
+        deactivateName: true,
+        deactivateValue: true,
+        deactivateType: true
       },
       {
         name: 'VOLUME_MOUNT',
         value: 'wordpress:/var/lib/html',
-        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT,
+        deactivateName: true,
+        deactivateValue: true,
+        deactivateType: true,
+        dependsOn: 'SEED_PATH',
+        dependsOnMethod: 'SEED_PATH__TO___VOLUME_MOUNT__FROM'
       }
     ]
   },
@@ -160,4 +169,11 @@ export interface EnvVarData {
   name: string;
   value: string;
   type: NamespaceServiceEnvVarTypeEnum;
+
+  deactivateName?: boolean;
+  deactivateValue?: boolean;
+  deactivateType?: boolean;
+  deactivateDelete?: boolean;
+  dependsOn?: string;
+  dependsOnMethod?: string;
 }
