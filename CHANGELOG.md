@@ -2,6 +2,13 @@
 
 
 
+## 1.26.16 (2021-07-20)
+
+
+### Bug Fixes
+
+* removed disksizeinmb and added volume_mount_seed. ([0b0194a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0b0194abc7599443ecb410d9723f6f62aa068b9c))
+
 ## 1.26.15 (2021-07-19)
 
 
