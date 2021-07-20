@@ -64,6 +64,16 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
         name: 'WORDPRESS_DB_NAME',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'SEED_PATH',
+        value: 'wordpress:wordpress',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED
+      },
+      {
+        name: 'VOLUME_MOUNT',
+        value: 'wordpress:/var/lib/htlm',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       }
     ]
   },
@@ -79,7 +89,7 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
       {
         name: 'VOLUME-MOUNT',
         value: 'mysql:/var/lib/mysql',
-        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_DISK
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
       {
         name: 'MYSQL_ROOT_PASSWORD',
@@ -108,8 +118,7 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
       }
     ],
     internalPort: 3306,
-    expose: false,
-    diskSizeInMB: 1000
+    expose: false
   },
   {
     name: 'MongoDB',
@@ -145,7 +154,6 @@ export interface IContainerTemplateData {
   internalPort?: number;
   expose: boolean;
   envVars?: EnvVarData[];
-  diskSizeInMB?: number;
 }
 
 export interface EnvVarData {
