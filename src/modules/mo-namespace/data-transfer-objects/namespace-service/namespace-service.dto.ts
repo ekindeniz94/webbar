@@ -36,7 +36,6 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   serviceGroup: NamespaceServiceGroupDto;
 
-
   @Type(() => NamespaceServiceEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()

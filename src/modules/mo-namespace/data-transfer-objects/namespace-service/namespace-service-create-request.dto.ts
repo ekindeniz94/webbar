@@ -18,7 +18,6 @@ import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
-import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 
 export class NamespaceServiceCreateRequestDto {
@@ -74,19 +73,6 @@ export class NamespaceServiceCreateRequestDto {
   )
   @Expose()
   gitBranch: string;
-
-  @IsOptional()
-  @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
-    )
-  )
-  @Expose()
-  dockerfileName: string;
 
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
