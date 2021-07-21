@@ -2,6 +2,13 @@
 
 
 
+## 1.26.20 (2021-07-21)
+
+
+### Bug Fixes
+
+* add docker-template DTOs ([408cbc7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/408cbc7c09e30e238144815b5223ef721cb5e6f2))
+
 ## 1.26.19 (2021-07-21)
 
 
