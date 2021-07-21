@@ -32,4 +32,14 @@ export class MoUtils {
   static delay(time: number = 5000): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, time));
   }
+
+  static generatePassword(
+    length: number = 20,
+    characters: string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@-#$'
+  ): string {
+    return Array(length)
+      .fill(0)
+      .map(() => characters.charAt(Math.floor(Math.random() * characters.length)))
+      .join('');
+  }
 }
