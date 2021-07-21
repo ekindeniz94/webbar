@@ -2,6 +2,13 @@
 
 
 
+## 1.26.19 (2021-07-21)
+
+
+### Bug Fixes
+
+* add generatePassword to mo-utils ([355eafe](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/355eafef094c25d6f02c004aa07dfa4a3d423737))
+
 ## 1.26.18 (2021-07-20)
 
 
