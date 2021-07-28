@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../../../mo-core';
 
-export class NamespaceServiceDockerServiceK8sPatchRequestDto {
+export class NamespaceServiceDockerK8sPatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)

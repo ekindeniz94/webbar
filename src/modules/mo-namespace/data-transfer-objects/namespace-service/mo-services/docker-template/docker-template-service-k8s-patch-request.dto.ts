@@ -1,9 +1,9 @@
-import { NamespaceServiceDockerServiceK8sPatchRequestDto } from '../docker/docker-service-k8s-patch-request.dto';
 import { IsOptional } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
 import { DockerTemplateDto } from '../../../../../mo-core';
+import { NamespaceServiceDockerK8sPatchRequestDto } from '../docker';
 
-export class NamespaceServiceDockerTemplateServiceK8sPatchRequestDto extends NamespaceServiceDockerServiceK8sPatchRequestDto {
+export class NamespaceServiceDockerTemplateK8sPatchRequestDto extends NamespaceServiceDockerK8sPatchRequestDto {
   @IsOptional()
   @Type(() => DockerTemplateDto)
   @Expose()

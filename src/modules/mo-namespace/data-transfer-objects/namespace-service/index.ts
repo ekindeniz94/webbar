@@ -1,3 +1,6 @@
+import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
+import { NamespaceServiceDockerTemplateServiceCreateRequestDto } from './mo-services';
+
 export * from './mo-services';
 export * from './namespace-service.dto';
 export * from './namespace-service-create-request.dto';
@@ -11,3 +14,7 @@ export * from './namespace-service-kubernetes-settings.dto';
 export * from './namespace-service-kubernetes-settings-create-request.dto';
 export * from './namespace-service-patch-request.dto';
 
+export type t =
+  | NamespaceServiceCreateRequestDto
+  | NamespaceServiceDockerServiceCreateRequestDto
+  | NamespaceServiceDockerTemplateServiceCreateRequestDto;

@@ -3,7 +3,7 @@ import { IsOptional } from 'class-validator';
 import { NamespaceServiceDockerCreateRequestDto } from '../docker';
 import { DockerTemplateDto } from '../../../../../mo-core';
 
-export class NamespaceServiceDockerTemplateServiceCreateRequestDto extends NamespaceServiceDockerCreateRequestDto {
+export class NamespaceServiceDockerTemplateCreateRequestDto extends NamespaceServiceDockerCreateRequestDto {
   @IsOptional()
   @Type(() => DockerTemplateDto)
   @Expose()

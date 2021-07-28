@@ -1,3 +1,3 @@
-import { NamespaceServiceDockerTemplateServiceK8sPatchRequestDto } from './docker-template-service-k8s-patch-request.dto';
+import { NamespaceServiceDockerTemplateK8sPatchRequestDto } from './docker-template-service-k8s-patch-request.dto';
 
-export class NamespaceServiceDockerTemplateServicePatchRequestDto extends NamespaceServiceDockerTemplateServiceK8sPatchRequestDto {}
+export class NamespaceServiceDockerTemplatePatchRequestDto extends NamespaceServiceDockerTemplateK8sPatchRequestDto {}
