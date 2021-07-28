@@ -2,6 +2,13 @@
 
 
 
+## 1.26.22 (2021-07-28)
+
+
+### Bug Fixes
+
+* namespace service dto (update validators) ([bc7c748](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bc7c74809995dbcd842377d619d06d72b7c9a560))
+
 ## 1.26.21 (2021-07-28)
 
 
