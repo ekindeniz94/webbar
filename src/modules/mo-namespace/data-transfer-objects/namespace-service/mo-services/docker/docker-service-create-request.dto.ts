@@ -1,11 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
-import { DockerTemplateDto } from '../../../../../mo-core/data-transfer-objects/docker-template.dto';
+import { IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { NamespaceServiceCreateRequestDto } from '../../namespace-service-create-request.dto';
 import { DTO_VALIDATION_CONST } from '../../../../../mo-core';
 
 export class NamespaceServiceDockerCreateRequestDto extends NamespaceServiceCreateRequestDto {
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
@@ -17,9 +16,4 @@ export class NamespaceServiceDockerCreateRequestDto extends NamespaceServiceCrea
   )
   @Expose()
   dockerfileName: string;
-
-  @IsOptional()
-  @Type(() => DockerTemplateDto)
-  @Expose()
-  template: DockerTemplateDto;
 }

@@ -1,30 +1,45 @@
 import { Expose, Type } from 'class-transformer';
-import { IsBoolean, IsOptional } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { NamespaceServiceEnvVarDto } from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar.dto';
 
 export class DockerTemplateDto {
+  @IsNotEmpty()
+  @IsString()
   @Expose()
   id: string;
 
+  @IsNotEmpty()
+  @IsString()
   @Expose()
   name: string;
 
+  @IsNotEmpty()
+  @IsString()
   @Expose()
   version: string;
 
+  @IsOptional()
+  @IsString()
   @Expose()
   description: string;
 
+  @IsNotEmpty()
+  @IsString()
   @Expose()
   folder: string;
 
+  @IsOptional()
+  @IsString()
   @Expose()
   lastUpdate: string;
 
+  @IsNotEmpty()
+  @IsNumber()
   @IsOptional()
   @Expose()
   internalPort: number;
 
+  @IsNotEmpty()
   @IsBoolean()
   @Expose()
   expose: boolean;

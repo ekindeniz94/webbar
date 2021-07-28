@@ -1,4 +1,4 @@
-import { IsOptional } from 'class-validator';
+import { IsOptional, ValidateNested } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
 import { DockerTemplateDto } from '../../../../../mo-core';
 import { NamespaceServiceDockerK8sPatchRequestDto } from '../docker';
@@ -6,6 +6,7 @@ import { NamespaceServiceDockerK8sPatchRequestDto } from '../docker';
 export class NamespaceServiceDockerTemplateK8sPatchRequestDto extends NamespaceServiceDockerK8sPatchRequestDto {
   @IsOptional()
   @Type(() => DockerTemplateDto)
+  @ValidateNested()
   @Expose()
   template: DockerTemplateDto;
 }

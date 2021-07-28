@@ -1,5 +1,4 @@
 import { NamespaceServiceEnvVarTypeEnum } from '../../../modules';
-import { Expose, Transform } from 'class-transformer';
 
 export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
   {
@@ -47,27 +46,27 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
     expose: true,
     envVars: [
       {
-        name: 'WORDPRESS_DB_HOST',
+        name: 'WORDPRESS-DB-HOST',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'WORDPRESS_DB_USER',
+        name: 'WORDPRESS-DB-USER',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'WORDPRESS_DB_PASSWORD',
+        name: 'WORDPRESS-DB-PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
       },
       {
-        name: 'WORDPRESS_DB_NAME',
+        name: 'WORDPRESS-DB-NAME',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'SEED_PATH',
+        name: 'SEED-PATH',
         value: 'wordpress:wordpress',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED,
         deactivateName: true,
@@ -75,13 +74,13 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
         deactivateType: true
       },
       {
-        name: 'VOLUME_MOUNT',
+        name: 'VOLUME-MOUNT',
         value: 'wordpress:/var/lib/html',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT,
         deactivateName: true,
         deactivateValue: true,
         deactivateType: true,
-        dependsOn: 'SEED_PATH',
+        dependsOn: 'SEED-PATH',
         dependsOnMethod: 'SEED_PATH__TO___VOLUME_MOUNT__FROM'
       }
     ]
@@ -101,27 +100,27 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
       {
-        name: 'MYSQL_ROOT_PASSWORD',
+        name: 'MYSQL-ROOT-PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
       },
       {
-        name: 'MYSQL_ROOT_HOST',
+        name: 'MYSQL-ROOT-HOST',
         value: '%',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'MYSQL_USER',
+        name: 'MYSQL-USER',
         value: 'mysqluser',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'MYSQL_PASSWORD',
+        name: 'MYSQL-PASSWORD',
         value: '###_REPLACE_###',
         type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
       },
       {
-        name: 'MYSQL_DATABASE',
+        name: 'MYSQL-DATABASE',
         value: 'wordpress',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       }
