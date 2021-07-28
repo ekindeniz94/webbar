@@ -2,6 +2,14 @@
 
 
 
+## 1.26.21 (2021-07-28)
+
+
+### Bug Fixes
+
+* NamespaceServiceTypes ([c8d93ff](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c8d93ff1f105f27a5a49e78951603c1bd618dfb9))
+* refactoring namespace docker template DTOs ([3787f3a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3787f3ae2d65e71b364b66948058a212cafc7332))
+
 ## 1.26.20 (2021-07-21)
 
 
