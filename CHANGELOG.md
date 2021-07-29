@@ -2,6 +2,13 @@
 
 
 
+## 1.26.23 (2021-07-29)
+
+
+### Bug Fixes
+
+* refactoring docker template const ([9609a18](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9609a18a8914e59ab71453b2139ee3133ed90d06))
+
 ## 1.26.22 (2021-07-28)
 
 
