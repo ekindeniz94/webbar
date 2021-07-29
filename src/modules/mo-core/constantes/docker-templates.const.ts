@@ -1,6 +1,7 @@
-import { NamespaceServiceEnvVarTypeEnum } from '../../../modules';
+import { IDockerTemplate } from '../../../modules/mo-namespace/interfaces/docker-template';
+import { NamespaceServiceEnvVarTypeEnum } from '../../mo-namespace/enums/namespace-envvar-type.enum';
 
-export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
+export const DOCKER_TEMPLATES: IDockerTemplate[] = [
   {
     name: 'nginx',
     id: 'nginx-1.19',
@@ -151,28 +152,3 @@ export const CONTAINER_TEMPLATES: IContainerTemplateData[] = [
     expose: true
   }
 ];
-
-export interface IContainerTemplateData {
-  name: string;
-  id: string;
-  version: string;
-  description: string;
-  folder: string;
-  lastUpdate: string;
-  internalPort?: number;
-  expose: boolean;
-  envVars?: EnvVarData[];
-}
-
-export interface EnvVarData {
-  name: string;
-  value: string;
-  type: NamespaceServiceEnvVarTypeEnum;
-
-  deactivateName?: boolean;
-  deactivateValue?: boolean;
-  deactivateType?: boolean;
-  deactivateDelete?: boolean;
-  dependsOn?: string;
-  dependsOnMethod?: string;
-}

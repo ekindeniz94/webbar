@@ -1,4 +1,3 @@
-export * from './container-templates-config.data';
 export * from './project-angular-config.data';
 export * from './project-angular.data';
 export * from './project-docker.data';
