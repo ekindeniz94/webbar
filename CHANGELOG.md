@@ -2,6 +2,13 @@
 
 
 
+## 1.26.26 (2021-07-30)
+
+
+### Bug Fixes
+
+* add validators for shortId ([8617768](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/861776886860ae51dc29c048e8645aad941c44b8))
+
 ## 1.26.25 (2021-07-30)
 
 
