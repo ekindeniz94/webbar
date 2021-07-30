@@ -77,11 +77,11 @@ export class DocumentationMiscDataCreateRequest {
   published: boolean;
 
   //TRANSLATIONS
-  @Type(() => BlogMiscDataCreateRequestDto)
+  @Type(() => DocumentationMiscDataCreateRequest)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ArrayMaxSize(10)
   @ValidateNested()
   @Expose()
-  translations: BlogMiscDataCreateRequestDto[];
+  translations: DocumentationMiscDataCreateRequest[];
 }
