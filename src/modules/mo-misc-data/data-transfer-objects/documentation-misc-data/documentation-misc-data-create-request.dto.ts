@@ -15,7 +15,6 @@ import {
 import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import _ from 'lodash';
-import { BlogMiscDataCreateRequestDto } from 'src/mo-core-base';
 
 export class DocumentationMiscDataCreateRequestDto {
   //Setting the Language of the Documentation Entry -> Default EN

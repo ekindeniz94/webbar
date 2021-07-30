@@ -1,10 +1,9 @@
-import { DocumentationMiscDataCreateRequestDto } from './documentation-misc-data-create-request.dto';
-
 import {
   ArrayMaxSize,
   isArray,
-  IsBoolean,
   isBoolean,
+  IsBoolean,
+  IsNotEmpty,
   IsOptional,
   isString,
   IsString,
@@ -12,23 +11,27 @@ import {
   MinLength,
   ValidateNested
 } from 'class-validator';
-
 import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
-export class DocumentationMiscDataPatchRequestDto {
+export class DocumentationMiscDataCreateRequestDto {
+  //Setting the Language of the Documentation Entry -> Default EN
+  @IsNotEmpty()
   @IsOptional()
   @IsString()
   @Transform(({ value }) => value ?? 'en')
   @Expose()
   langISO_639_1: string;
 
+  // Author ID
+  @IsNotEmpty()
   @IsOptional()
   @IsString()
   @Expose()
   authorId: string;
 
+  // TAGS
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.MISC.DOCUMENTATION.TAG.MAX_TAGS)
   @IsString({ each: true })
@@ -43,6 +46,8 @@ export class DocumentationMiscDataPatchRequestDto {
   @Expose()
   tags: string[];
 
+  // TITLE
+  @IsNotEmpty()
   @IsOptional()
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.MISC.DOCUMENTATION.TITLE.MIN)
@@ -53,28 +58,33 @@ export class DocumentationMiscDataPatchRequestDto {
   @Expose()
   title: string;
 
+  // CONTENT
+  @IsNotEmpty()
   @IsOptional()
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.MISC.DOCUMENTATION.CONTENT.MIN)
   @MaxLength(DTO_VALIDATION_CONST.MISC.DOCUMENTATION.CONTENT.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.CONTENT.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.DOCUMENTATION.CONTENT.MAX)
   )
   @Expose()
   content: string;
 
+  // Published?
   @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
   @IsOptional()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsNotEmpty()
   @IsBoolean()
   @Expose()
   published: boolean;
 
-  @Type(() => DocumentationMiscDataPatchRequestDto)
+  //TRANSLATIONS
+  @Type(() => DocumentationMiscDataCreateRequestDto)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @ArrayMaxSize(2)
+  @ArrayMaxSize(10)
   @ValidateNested()
   @Expose()
-  translations: DocumentationMiscDataPatchRequestDto[];
+  translations: DocumentationMiscDataCreateRequestDto[];
 }
