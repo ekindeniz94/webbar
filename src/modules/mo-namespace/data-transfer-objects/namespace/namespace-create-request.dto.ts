@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 import { ClusterDto, DEFAULT_KUBERNETES_CLUSTER } from '../kubernetes/cluster.dto';
+import { MoUtils } from '../../../../utils';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()
@@ -10,6 +11,12 @@ export class NamespaceCreateRequestDto {
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MAX)
   @Expose()
   name: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Transform(({ value }) => value ?? MoUtils.nanoidSuperShort())
+  @Expose()
+  shortId: string;
 
   @IsNotEmpty()
   @IsString()
