@@ -2,6 +2,13 @@
 
 
 
+## 1.26.24 (2021-07-30)
+
+
+### Bug Fixes
+
+* exports ([32a0d83](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/32a0d83dfeafb3acac3d8582c23dcaf3b3afceff))
+
 ## 1.26.23 (2021-07-29)
 
 
