@@ -14,6 +14,11 @@ export class NamespaceCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MAX)
+  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MATCHES, {
+    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+  })
   @Transform(({ value }) => value ?? MoUtils.nanoidSuperShort())
   @Expose()
   shortId: string;
