@@ -59,7 +59,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'WORDPRESS-DB-PASSWORD',
         value: '',
-        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
         name: 'WORDPRESS-DB-NAME',
@@ -103,7 +103,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'MYSQL-ROOT-PASSWORD',
         value: '',
-        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
         name: 'MYSQL-ROOT-HOST',
@@ -118,7 +118,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'MYSQL-PASSWORD',
         value: '###_REPLACE_###',
-        type: NamespaceServiceEnvVarTypeEnum.KEYVAULT
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
         name: 'MYSQL-DATABASE',
