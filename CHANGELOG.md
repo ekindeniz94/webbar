@@ -2,6 +2,13 @@
 
 
 
+## 1.26.25 (2021-07-30)
+
+
+### Bug Fixes
+
+* add shortId in namespace create request dto ([358cb23](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/358cb239c0471bbbc6b55368db5b53cbae793aaa))
+
 ## 1.26.24 (2021-07-30)
 
 
