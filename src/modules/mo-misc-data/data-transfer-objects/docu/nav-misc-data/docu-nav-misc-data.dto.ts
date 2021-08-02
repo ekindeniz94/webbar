@@ -11,8 +11,9 @@ export class DocuNavMiscDataDto extends BaseEntityDto {
   @Expose()
   title: string;
 
+  @Type(() => DocuNavMiscDataDto)
   @Expose()
-  subNavIds: String[];
+  subNavs: DocuNavMiscDataDto;
 
   @Expose()
   documentIds: String[];

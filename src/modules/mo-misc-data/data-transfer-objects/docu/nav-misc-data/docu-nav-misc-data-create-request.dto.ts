@@ -26,12 +26,12 @@ export class DocuNavMiscDataCreateRequestDto {
   title: String;
 
   // Nav-Childs : Optional
-  @Type(() => String)
+  @Type(() => DocuNavMiscDataCreateRequestDto)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ValidateNested()
   @Expose()
-  subNavIds: String[];
+  subNavIds: DocuNavMiscDataCreateRequestDto[];
 
   // Document-Childs : Optional
   @Type(() => String)
