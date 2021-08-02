@@ -2,6 +2,13 @@
 
 
 
+## 1.26.34 (2021-08-02)
+
+
+### Bug Fixes
+
+* update docker template const ([35f377f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/35f377ff1ccebeb79358b4b282809ca7407b615e))
+
 ## 1.26.33 (2021-08-02)
 
 
