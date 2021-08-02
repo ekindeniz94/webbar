@@ -206,6 +206,16 @@ export const DTO_VALIDATION_CONST = {
         TAGS: {
           MAX: 128
         }
+      },
+      SECTION: {
+        TITLE: {
+          MAX: 1024,
+          MIN: 2
+        },
+        CONTENT: {
+          MIN: 2,
+          MAX: 512000
+        }
       }
     },
     JOB: {
