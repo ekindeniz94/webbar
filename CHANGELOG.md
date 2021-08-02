@@ -2,6 +2,13 @@
 
 
 
+## 1.26.33 (2021-08-02)
+
+
+### Bug Fixes
+
+* add namespace env var constants ([afb62e1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/afb62e1af91c7b9c8f6ec353799a4ed986a8c51f))
+
 ## 1.26.32 (2021-08-02)
 
 
