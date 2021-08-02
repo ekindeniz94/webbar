@@ -2,6 +2,13 @@
 
 
 
+## 1.26.31 (2021-08-02)
+
+
+### Bug Fixes
+
+* added another path notation for BaseEntityDto ([20002b1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/20002b1de7b6b80be9822315c4620b8a9a5304bf))
+
 ## 1.26.30 (2021-08-02)
 
 
