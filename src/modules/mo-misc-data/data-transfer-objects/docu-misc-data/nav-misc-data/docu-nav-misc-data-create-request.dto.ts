@@ -11,7 +11,8 @@ import {
   isArray
 } from 'class-validator';
 import _ from 'lodash';
-import { DTO_VALIDATION_CONST } from 'src/modules';
+import { DTO_VALIDATION_CONST } from '../../../../mo-core';
+
 import { DocuNavMiscDataDto } from './docu-nav-misc-data.dto';
 
 export class DocuNavMiscDataCreateRequestDto {

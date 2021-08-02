@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST } from 'src/mo-core-base';
+import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 
 export class DocuSectionMiscDataCreateRequest {
   // Section Title
