@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
-export class DocuSectionMiscDataCreateRequest {
+export class DocuSectionMiscDataPatchRequest {
   // Section Title
   @IsOptional()
   @IsNotEmpty()
