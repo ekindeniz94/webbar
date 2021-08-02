@@ -47,22 +47,22 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     expose: true,
     envVars: [
       {
-        name: 'WORDPRESS-DB-HOST',
+        name: 'WORDPRESS_DB_HOST',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'WORDPRESS-DB-USER',
+        name: 'WORDPRESS_DB_USER',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'WORDPRESS-DB-PASSWORD',
+        name: 'WORDPRESS_DB_PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
-        name: 'WORDPRESS-DB-NAME',
+        name: 'WORDPRESS_DB_NAME',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
@@ -101,27 +101,27 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
       {
-        name: 'MYSQL-ROOT-PASSWORD',
+        name: 'MYSQL_ROOT_PASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
-        name: 'MYSQL-ROOT-HOST',
+        name: 'MYSQL_ROOT_HOST',
         value: '%',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'MYSQL-USER',
+        name: 'MYSQL_USER',
         value: 'mysqluser',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       },
       {
-        name: 'MYSQL-PASSWORD',
+        name: 'MYSQL_PASSWORD',
         value: '###_REPLACE_###',
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
       },
       {
-        name: 'MYSQL-DATABASE',
+        name: 'MYSQL_DATABASE',
         value: 'wordpress',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
       }
