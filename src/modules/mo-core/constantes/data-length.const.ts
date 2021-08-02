@@ -106,6 +106,21 @@ export const DTO_VALIDATION_CONST = {
       ENVVAR_VALUE: {
         MIN: 0,
         MAX: 500
+      },
+      ENVVAR_CHOWN_USER_VALUE: {
+        MIN: 1,
+        MAX: 30,
+        MATCHES: /^[a-zA-Z0-9_-]{1,30}$/
+      },
+      ENVVAR_CHOWN_GROUP_VALUE: {
+        MIN: 1,
+        MAX: 30,
+        MATCHES: /^[a-zA-Z0-9_-]{1,30}$/
+      },
+      ENVVAR_CHOWN_FOLDER_VALUE: {
+        MIN: 1,
+        MAX: 256,
+        MATCHES: /^[a-zA-Z0-9\/_]{1,256}$/
       }
     },
     NAMESPACE_COMMAND: {
