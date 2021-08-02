@@ -14,6 +14,7 @@ import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from 'src/modules';
 
 export class DocuNavMiscDataCreateRequestDto {
+  // Navigation Element
   // Nav Title
   @IsNotEmpty()
   @IsString()
@@ -31,7 +32,7 @@ export class DocuNavMiscDataCreateRequestDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ValidateNested()
   @Expose()
-  subNavIds: DocuNavMiscDataCreateRequestDto[];
+  subNavs: DocuNavMiscDataCreateRequestDto[];
 
   // Document-Childs : Optional
   @Type(() => String)
