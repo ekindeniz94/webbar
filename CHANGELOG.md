@@ -2,6 +2,27 @@
 
 
 
+## 1.26.27 (2021-07-30)
+
+
+### Bug Fixes
+
+* add  CHANGE_OWNER and  HOSTNAME to namespace service env var types ([0fdbdce](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0fdbdcec6d97ed6321f79098b4dd53c57453b6b0))
+
+## 1.26.26 (2021-07-30)
+
+
+### Bug Fixes
+
+* add validators for shortId ([8617768](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/861776886860ae51dc29c048e8645aad941c44b8))
+
+## 1.26.25 (2021-07-30)
+
+
+### Bug Fixes
+
+* add shortId in namespace create request dto ([358cb23](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/358cb239c0471bbbc6b55368db5b53cbae793aaa))
+
 ## 1.26.24 (2021-07-30)
 
 

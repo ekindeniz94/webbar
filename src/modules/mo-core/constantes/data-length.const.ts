@@ -34,6 +34,11 @@ export const DTO_VALIDATION_CONST = {
       MAX: 30,
       MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
     },
+    SHORT_ID: {
+      MIN: 6,
+      MAX: 6,
+      MATCHES: /^[a-z0-9]{6,6}$/
+    },
     DESCRIPTION: {
       MAX: 512
     },
