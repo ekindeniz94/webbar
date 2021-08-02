@@ -2,6 +2,13 @@
 
 
 
+## 1.26.36 (2021-08-02)
+
+
+### Bug Fixes
+
+* add hostname getter to namespace-service.dto ([60a605a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/60a605abd5a29c418670fa6933cb9a02b042a242))
+
 ## 1.26.35 (2021-08-02)
 
 
