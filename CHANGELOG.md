@@ -2,6 +2,13 @@
 
 
 
+## 1.26.28 (2021-08-02)
+
+
+### Bug Fixes
+
+* version bump. ([05e23cb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/05e23cb5549798d2c6cc4e4594e35e378785c415))
+
 ## 1.26.27 (2021-07-30)
 
 
