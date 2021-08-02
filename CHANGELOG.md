@@ -2,6 +2,13 @@
 
 
 
+## 1.26.30 (2021-08-02)
+
+
+### Bug Fixes
+
+* added right path for baseEntityDto. ([6079a06](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6079a067c4218ff0d7de17b018e0ab8a6243df79))
+
 ## 1.26.29 (2021-08-02)
 
 
