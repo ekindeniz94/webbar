@@ -2,6 +2,13 @@
 
 
 
+## 1.26.32 (2021-08-02)
+
+
+### Bug Fixes
+
+* changed absolute path to relative path - seems to work ([ce767e4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ce767e4c8f9a41e5aa0c56136912170b0d81e5bd))
+
 ## 1.26.31 (2021-08-02)
 
 
