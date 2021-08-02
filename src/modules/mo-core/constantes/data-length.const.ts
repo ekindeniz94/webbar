@@ -197,22 +197,15 @@ export const DTO_VALIDATION_CONST = {
         MAX: 256000
       }
     },
-    DOCUMENTATION: {
-      TAG: {
-        MAX: 128,
-        MAX_TAGS: 100
-      },
-      TOPIC: {
-        MIN: 2,
-        MAX: 512
-      },
-      TITLE: {
-        MIN: 2,
-        MAX: 512
-      },
-      CONTENT: {
-        MIN: 10,
-        MAX: 512000
+    DOCU: {
+      NAV: {
+        TITLE: {
+          MIN: 512,
+          MAX: 2
+        },
+        TAGS: {
+          MAX: 128
+        }
       }
     },
     JOB: {

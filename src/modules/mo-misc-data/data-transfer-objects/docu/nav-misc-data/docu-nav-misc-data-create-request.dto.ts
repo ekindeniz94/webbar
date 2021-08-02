@@ -17,8 +17,8 @@ export class DocuNavMiscDataCreateRequestDto {
   // Nav Title
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
   )
@@ -43,14 +43,14 @@ export class DocuNavMiscDataCreateRequestDto {
 
   // tags
   @IsOptional()
-  @ArrayMaxSize(DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX_TAGS)
+  @ArrayMaxSize(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TAGS.MAX)
   @IsString({ each: true })
-  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX, {
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TAGS.MAX, {
     each: true
   })
   @Transform(({ value }) =>
     ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) =>
-      item?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX)
+      item?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.NAV.TAGS.MAX)
     )
   )
   @Expose()
