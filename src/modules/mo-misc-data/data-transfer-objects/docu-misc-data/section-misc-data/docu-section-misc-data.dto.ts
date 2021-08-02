@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { BaseEntityDto } from 'src/mo-core-base';
+import { BaseEntityDto } from '../../../../mo-core';
 
 export class DocuSectionMiscDataDto extends BaseEntityDto {
   @Expose()
