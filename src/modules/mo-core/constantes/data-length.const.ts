@@ -115,7 +115,7 @@ export const DTO_VALIDATION_CONST = {
     },
     CLUSTER: {
       NAME: {
-        MIN:3,
+        MIN: 3,
         MAX: 256,
         MATCHES: /^[a-zA-Z0-9-_]{4,256}$/
       }
@@ -200,6 +200,27 @@ export const DTO_VALIDATION_CONST = {
       TEASER_TEXT: {
         MIN: 10,
         MAX: 256000
+      }
+    },
+    DOCU: {
+      NAV: {
+        TITLE: {
+          MIN: 512,
+          MAX: 2
+        },
+        TAGS: {
+          MAX: 128
+        }
+      },
+      SECTION: {
+        TITLE: {
+          MAX: 1024,
+          MIN: 2
+        },
+        CONTENT: {
+          MIN: 2,
+          MAX: 512000
+        }
       }
     },
     JOB: {
