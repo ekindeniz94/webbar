@@ -2,6 +2,14 @@
 
 
 
+## 1.26.29 (2021-08-02)
+
+
+### Bug Fixes
+
+* added import statements. ([7ab5162](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7ab51625630350be905f8d745d8ac806a5a1d1dd))
+* added missing files ([2d43183](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2d4318303c94d853b990a474ac347e1b7bfde88a))
+
 ## 1.26.28 (2021-08-02)
 
 
