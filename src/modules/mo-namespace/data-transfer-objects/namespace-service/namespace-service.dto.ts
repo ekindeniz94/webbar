@@ -44,4 +44,8 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @IsBoolean()
   @Expose()
   expose: boolean;
+
+  get hostname(): string {
+    return `http://${this.name}-${this.id}:${this.internalPort}`;
+  }
 }
