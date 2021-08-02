@@ -2,6 +2,13 @@
 
 
 
+## 1.26.35 (2021-08-02)
+
+
+### Bug Fixes
+
+* update env name match regex ([37715a0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/37715a0cc7b3ee2e45c9ae5851d6508670e3d36a))
+
 ## 1.26.34 (2021-08-02)
 
 
