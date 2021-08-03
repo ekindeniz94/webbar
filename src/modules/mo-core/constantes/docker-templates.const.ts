@@ -171,12 +171,12 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     lastUpdate: '2021-02-01T09:50:31+01:00',
     envVars: [
       {
-        name: 'VOLUME-MOUNT',
+        name: 'VOLUME-MOUNT-DB',
         value: 'mongo_db:/data/db',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
       {
-        name: 'VOLUME-MOUNT',
+        name: 'VOLUME-MOUNT-CONFIG',
         value: 'mongo_configdb:/data/configdb',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
@@ -220,6 +220,14 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         name: 'ME_CONFIG_MONGODB_ADMINPASSWORD',
         value: '',
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'ME_CONFIG_MONGODB_SERVER',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
         deactivateName: true,
         deactivateValue: false,
         deactivateType: true
@@ -313,6 +321,18 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         deactivateType: true
       }
     ],
+    internalPort: 80,
+    expose: true
+  },
+  {
+    name: 'django-cms',
+    id: 'django-cms:3.9.0',
+    version: '3.9.0',
+    description:
+      'django CMS is a modern web publishing platform built with Django, the web application framework for perfectionists with deadlines. django CMS offers out-of-the-box support for the common features you would expect from a CMS, but can also be easily customised and extended by developers to create a site that is tailored to their precise needs.',
+    folder: 'django-cms',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [],
     internalPort: 80,
     expose: true
   }
