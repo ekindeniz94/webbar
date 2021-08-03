@@ -2,6 +2,13 @@
 
 
 
+## 1.26.53 (2021-08-03)
+
+
+### Bug Fixes
+
+* added django-cms. ([fd044d6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fd044d6f82f7624cba6301e8a8e9ab96b9490aa0))
+
 ## 1.26.52 (2021-08-03)
 
 
