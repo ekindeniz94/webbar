@@ -188,6 +188,35 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     expose: false
   },
   {
+    name: 'mongo-express',
+    id: 'mongo-express:0.54.0',
+    version: '0.54.0',
+    description:
+      'mongo-express is a web-based MongoDB admin interface written in Node.js, Express.js, and Bootstrap3.',
+    folder: 'mongo-express',
+    lastUpdate: '2021-07-03T09:50:31+01:00',
+    envVars: [
+      {
+        name: 'ME_CONFIG_MONGODB_ADMINUSERNAME',
+        value: 'root',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true,
+      },
+      {
+        name: 'ME_CONFIG_MONGODB_ADMINPASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true,
+      }
+    ],
+    internalPort: 8081,
+    expose: true
+  },
+  {
     name: 'Python-Flask',
     id: 'python-3.8-flask-1.1.1',
     version: '3.8',
