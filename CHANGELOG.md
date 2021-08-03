@@ -2,6 +2,13 @@
 
 
 
+## 1.26.38 (2021-08-03)
+
+
+### Bug Fixes
+
+* save commit. ([4b66dc5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4b66dc509bcfbca6aeeb1a0153ff30704f33bc47))
+
 ## 1.26.37 (2021-08-02)
 
 
