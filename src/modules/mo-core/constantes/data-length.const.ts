@@ -40,7 +40,7 @@ export const DTO_VALIDATION_CONST = {
       MATCHES: /^[a-z0-9]{6,6}$/
     },
     DESCRIPTION: {
-      MAX: 512
+      MAX: 2048
     },
     ICON: {
       MAX: 256
@@ -88,7 +88,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 256
       },
       DESCRIPTION: {
-        MAX: 512
+        MAX: 2048
       },
       GIT_REPOSITORY: {
         MIN: 10,
