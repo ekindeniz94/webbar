@@ -130,6 +130,35 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     expose: false
   },
   {
+    name: 'phpMyAdmin',
+    id: '5.1.1-apache',
+    version: '5.1.1',
+    description:
+      "phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement.",
+    folder: 'phpmyadmin',
+    lastUpdate: '2021-07-03T09:50:31+01:00',
+    envVars: [
+      {
+        name: 'MYSQL_ROOT_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true,
+      },
+      {
+        name: 'PMA_HOST',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true,
+      }
+    ],
+    internalPort: 8080,
+    expose: true
+  },
+  {
     name: 'MongoDB',
     id: 'mongo-4.4.3-bionic',
     version: '4.4.3-bionic',
