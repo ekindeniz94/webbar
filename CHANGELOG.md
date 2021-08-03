@@ -2,6 +2,13 @@
 
 
 
+## 1.26.47 (2021-08-03)
+
+
+### Bug Fixes
+
+* added basic django added. ([67f7361](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/67f73618187cc3e09b4f70f1ec3881076a6322f3))
+
 ## 1.26.46 (2021-08-03)
 
 
