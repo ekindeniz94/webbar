@@ -2,6 +2,13 @@
 
 
 
+## 1.26.46 (2021-08-03)
+
+
+### Bug Fixes
+
+* namespace service description length 2048 chr ([92b3988](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/92b39881035cf7f1fca9267f09ae1a6081d2138f))
+
 ## 1.26.45 (2021-08-03)
 
 
