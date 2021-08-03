@@ -155,7 +155,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         deactivateType: true,
       }
     ],
-    internalPort: 8080,
+    internalPort: 80,
     expose: true
   },
   {
