@@ -2,6 +2,13 @@
 
 
 
+## 1.26.45 (2021-08-03)
+
+
+### Bug Fixes
+
+* added postgres and pgadmin. ([f8b122c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f8b122c8185939e9bee56db89f0619bca5aa2d4f))
+
 ## 1.26.44 (2021-08-03)
 
 
