@@ -335,5 +335,17 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     envVars: [],
     internalPort: 80,
     expose: true
+  },
+  {
+    name: 'redis',
+    id: 'redis:6.2.5-alpine',
+    version: '6.2.5',
+    description:
+      'Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C. The development of Redis is sponsored by Redis Labs today; before that, it was sponsored by Pivotal and VMware. According to the monthly ranking by DB-Engines.com, Redis is the most popular key-value store. The name Redis means REmote DIctionary Server.',
+    folder: 'redis',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [],
+    internalPort: 6379,
+    expose: false
   }
 ];
