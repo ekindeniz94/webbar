@@ -10,6 +10,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       'Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a web server (origin server). The nginx project started with a strong focus on high concurrency, high performance and low memory usage. It is licensed under the 2-clause BSD-like license and it runs on Linux, BSD variants, Mac OS X, Solaris, AIX, HP-UX, as well as on other *nix flavors. It also has a proof of concept port for Microsoft Windows.',
     folder: 'nginx-latest',
     lastUpdate: '2021-02-01T09:50:31+01:00',
+    envVars: [],
     internalPort: 80,
     expose: true
   },
@@ -21,6 +22,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       'Swift is a high-performance system programming language. It has a clean and modern syntax, offers seamless access to existing C and Objective-C code and frameworks, and is memory safe by default. Although inspired by Objective-C and many other languages, Swift is not itself a C-derived language. As a complete and independent language, Swift packages core features like flow control, data structures, and functions, with high-level constructs like objects, protocols, closures, and generics. Swift embraces modules, eliminating the need for headers and the code duplication they entail.',
     folder: 'vapor-swift',
     lastUpdate: '2021-02-01T09:50:31+01:00',
+    envVars: [],
     internalPort: 8080,
     expose: true
   },
@@ -32,6 +34,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       'The Apache HTTP Server, colloquially called Apache, is a Web server application notable for playing a key role in the initial growth of the World Wide Web. Originally based on the NCSA HTTPd server, development of Apache began in early 1995 after work on the NCSA code stalled. Apache quickly overtook NCSA HTTPd as the dominant HTTP server, and has remained the most popular HTTP server in use since April 1996.',
     folder: 'httpd-apache-2.4',
     lastUpdate: '2021-02-01T09:50:31+01:00',
+    envVars: [],
     internalPort: 80,
     expose: true
   },
@@ -134,7 +137,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     id: '5.1.1-apache',
     version: '5.1.1',
     description:
-      "phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement.",
+      'phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement.',
     folder: 'phpmyadmin',
     lastUpdate: '2021-07-03T09:50:31+01:00',
     envVars: [
@@ -144,7 +147,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       },
       {
         name: 'PMA_HOST',
@@ -152,7 +155,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       }
     ],
     internalPort: 80,
@@ -169,7 +172,12 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     envVars: [
       {
         name: 'VOLUME-MOUNT',
-        value: 'mongodb:/data',
+        value: 'mongo_db:/data/db',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+      },
+      {
+        name: 'VOLUME-MOUNT',
+        value: 'mongo_configdb:/data/configdb',
         type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
       },
       {
@@ -178,7 +186,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       },
       {
         name: 'MONGO_INITDB_ROOT_PASSWORD',
@@ -186,7 +194,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       }
     ],
     internalPort: 27017,
@@ -196,8 +204,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     name: 'mongo-express',
     id: 'mongo-express:0.54.0',
     version: '0.54.0',
-    description:
-      'mongo-express is a web-based MongoDB admin interface written in Node.js, Express.js, and Bootstrap3.',
+    description: 'mongo-express is a web-based MongoDB admin interface written in Node.js, Express.js, and Bootstrap3.',
     folder: 'mongo-express',
     lastUpdate: '2021-07-03T09:50:31+01:00',
     envVars: [
@@ -207,7 +214,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       },
       {
         name: 'ME_CONFIG_MONGODB_ADMINPASSWORD',
@@ -215,7 +222,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
         type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
         deactivateName: true,
         deactivateValue: false,
-        deactivateType: true,
+        deactivateType: true
       }
     ],
     internalPort: 8081,
@@ -229,7 +236,84 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       'Python is an interpreted, interactive, object-oriented, open-source programming language. It incorporates modules, exceptions, dynamic typing, very high level dynamic data types, and classes. Python combines remarkable power with very clear syntax. It has interfaces to many system calls and libraries, as well as to various window systems, and is extensible in C or C++. It is also usable as an extension language for applications that need a programmable interface. Finally, Python is portable: it runs on many Unix variants, on the Mac, and on Windows 2000 and later.<br> Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.',
     folder: 'python3.8-flask',
     lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [],
     internalPort: 1337,
+    expose: true
+  },
+  {
+    name: 'PostgreSQL',
+    id: 'postgres:13.3-alpine',
+    version: '13.3',
+    description:
+      'PostgreSQL, often simply "Postgres", is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards-compliance. As a database server, its primary function is to store data, securely and supporting best practices, and retrieve it later, as requested by other software applications, be it those on the same computer or those running on another computer across a network (including the Internet).',
+    folder: 'postgres',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [
+      {
+        name: 'POSTGRES_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'POSTGRES_USER',
+        value: 'postgres',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'POSTGRES_DB',
+        value: 'postgres',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'VOLUME-MOUNT',
+        value: 'postgres_db:/var/lib/postgresql/data',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+      },
+      {
+        name: 'VOLUME-CHOWN',
+        value: '1000:1000 /var/lib/postgresql/data',
+        type: NamespaceServiceEnvVarTypeEnum.CHANGE_OWNER
+      }
+    ],
+    internalPort: 5432,
+    expose: false
+  },
+  {
+    name: 'pgAdmin',
+    id: 'pgadmin4:5.5',
+    version: '4.5.5',
+    description:
+      'pgAdmin is a management tool for PostgreSQL and derivative relational databases such as EnterpriseDBs EDB Advanced Server. It may be run either as a web or desktop application.',
+    folder: 'pgadmin',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [
+      {
+        name: 'PGADMIN_DEFAULT_EMAIL',
+        value: 'test@mogenius.com',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'PGADMIN_DEFAULT_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      }
+    ],
+    internalPort: 80,
     expose: true
   }
 ];
