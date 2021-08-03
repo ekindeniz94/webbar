@@ -133,6 +133,49 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     expose: false
   },
   {
+    name: 'MySQL-5.7',
+    id: 'mysql-5.7',
+    version: '5.7',
+    description:
+      "MySQL is the world's most popular open source database. With its proven performance, reliability and ease-of-use, MySQL has become the leading database choice for web-based applications, covering the entire range from personal projects and websites, via e-commerce and information services, all the way to high profile web properties including Facebook, Twitter, YouTube, Yahoo! and many more.",
+    folder: 'mysql-57',
+    lastUpdate: '2021-02-01T09:50:31+01:00',
+    envVars: [
+      {
+        name: 'VOLUME-MOUNT',
+        value: 'mysql:/var/lib/mysql',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+      },
+      {
+        name: 'MYSQL_ROOT_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
+      },
+      {
+        name: 'MYSQL_ROOT_HOST',
+        value: '%',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'MYSQL_USER',
+        value: 'mysqluser',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      },
+      {
+        name: 'MYSQL_PASSWORD',
+        value: '###_REPLACE_###',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT
+      },
+      {
+        name: 'MYSQL_DATABASE',
+        value: 'wordpress',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+      }
+    ],
+    internalPort: 3306,
+    expose: false
+  },
+  {
     name: 'phpMyAdmin',
     id: '5.1.1-apache',
     version: '5.1.1',
