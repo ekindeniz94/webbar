@@ -1,8 +1,9 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { DockerTemplateDto } from '../../../../../mo-core';
 import { NamespaceServiceDockerDto } from '../docker';
 
 export class NamespaceServiceDockerTemplateDto extends NamespaceServiceDockerDto {
+  @Type(() => DockerTemplateDto)
   @Expose()
   template: DockerTemplateDto;
 
