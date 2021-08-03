@@ -1,7 +1,13 @@
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
-import { NamespaceServiceDockerCreateRequestDto, NamespaceServiceDockerTemplateCreateRequestDto } from './mo-services';
+import {
+  NamespaceServiceDockerCreateRequestDto,
+  NamespaceServiceDockerDto,
+  NamespaceServiceDockerTemplateCreateRequestDto,
+  NamespaceServiceDockerTemplateDto
+} from './mo-services';
 import { NamespaceServiceTypeEnum } from '../../enums';
 import { plainToClass } from 'class-transformer';
+import { NamespaceServiceDto } from './namespace-service.dto';
 
 export * from './mo-services';
 export * from './namespace-service.dto';
@@ -20,6 +26,18 @@ export type NamespaceServiceCreateTypes =
   | NamespaceServiceCreateRequestDto
   | NamespaceServiceDockerCreateRequestDto
   | NamespaceServiceDockerTemplateCreateRequestDto;
+
+export type NamespaceServiceTypes = NamespaceServiceDto | NamespaceServiceDockerDto | NamespaceServiceDockerTemplateDto;
+
+export const plainToClassNamespaceServiceDto = (item: NamespaceServiceTypes): NamespaceServiceTypes => {
+  if (item.serviceType === NamespaceServiceTypeEnum.DOCKER) {
+    return plainToClass(NamespaceServiceDockerDto, item, { excludeExtraneousValues: true });
+  }
+  if (item.serviceType === NamespaceServiceTypeEnum.DOCKER_TEMPLATE) {
+    return plainToClass(NamespaceServiceDockerTemplateDto, item, { excludeExtraneousValues: true });
+  }
+  return plainToClass(NamespaceServiceDto, item, { excludeExtraneousValues: true });
+};
 
 export const plainToClassNamespaceServiceCreate = (
   rawValue: NamespaceServiceCreateTypes
