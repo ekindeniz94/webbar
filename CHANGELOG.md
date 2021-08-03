@@ -2,6 +2,14 @@
 
 
 
+## 1.26.42 (2021-08-03)
+
+
+### Bug Fixes
+
+* added mongodb-express. ([155ea86](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/155ea8681cce5bc6c2b532a5e64fc498211387b6))
+* added mongodb. ([1d16e72](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1d16e72621606c55c32e6014728e923a0eafdd03))
+
 ## 1.26.41 (2021-08-03)
 
 
