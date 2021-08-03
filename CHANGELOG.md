@@ -2,6 +2,13 @@
 
 
 
+## 1.26.50 (2021-08-03)
+
+
+### Bug Fixes
+
+* add namespace service type ([5c63c04](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5c63c043480b4e62a1073f923f2c030cab676bda))
+
 ## 1.26.49 (2021-08-03)
 
 
