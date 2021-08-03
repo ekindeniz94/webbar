@@ -149,7 +149,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'PMA_HOST',
         value: '',
-        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
         deactivateName: true,
         deactivateValue: false,
         deactivateType: true,
