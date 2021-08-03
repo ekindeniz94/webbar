@@ -2,6 +2,13 @@
 
 
 
+## 1.26.40 (2021-08-03)
+
+
+### Bug Fixes
+
+* added phpmyadmin. ([034fd53](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/034fd539acecb032ee2dc05daf936562b5a2a2c2))
+
 ## 1.26.39 (2021-08-03)
 
 
