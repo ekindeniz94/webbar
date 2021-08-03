@@ -168,6 +168,11 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     lastUpdate: '2021-02-01T09:50:31+01:00',
     envVars: [
       {
+        name: 'VOLUME-MOUNT',
+        value: 'mongodb:/data',
+        type: NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT
+      },
+      {
         name: 'MONGO_INITDB_ROOT_USERNAME',
         value: 'root',
         type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
