@@ -2,6 +2,13 @@
 
 
 
+## 1.26.52 (2021-08-03)
+
+
+### Bug Fixes
+
+* added mysql 5.7. ([61de696](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/61de696ea36a97aba27f71f84680f3e5c4baaeb8))
+
 ## 1.26.51 (2021-08-03)
 
 
