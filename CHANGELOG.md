@@ -2,6 +2,13 @@
 
 
 
+## 1.26.48 (2021-08-03)
+
+
+### Bug Fixes
+
+* added basic redis. ([cd053db](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cd053db9fcf0d31fabd43ff6f3069e92e64ebc1c))
+
 ## 1.26.47 (2021-08-03)
 
 
