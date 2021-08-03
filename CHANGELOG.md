@@ -2,6 +2,13 @@
 
 
 
+## 1.26.44 (2021-08-03)
+
+
+### Bug Fixes
+
+* added mongo vol mount. ([e84e55e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e84e55e715877f18da91c92b03f4a47479771113))
+
 ## 1.26.43 (2021-08-03)
 
 
