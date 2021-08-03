@@ -375,8 +375,57 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       'django CMS is a modern web publishing platform built with Django, the web application framework for perfectionists with deadlines. django CMS offers out-of-the-box support for the common features you would expect from a CMS, but can also be easily customised and extended by developers to create a site that is tailored to their precise needs.',
     folder: 'django-cms',
     lastUpdate: '2021-07-06T08:09:31+01:00',
-    envVars: [],
-    internalPort: 80,
+    envVars: [
+      {
+        name: 'PORT',
+        value: '8000',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_HOST',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_PORT',
+        value: '5432',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_NAME',
+        value: 'djangocms',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_USER',
+        value: 'postgres',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      }
+    ],
+    internalPort: 8000,
     expose: true
   },
   {
