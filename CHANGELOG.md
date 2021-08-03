@@ -2,6 +2,13 @@
 
 
 
+## 1.26.51 (2021-08-03)
+
+
+### Bug Fixes
+
+* added basic prestashop and joomla. ([d36831b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d36831baf06b2b621fa4134323b1b7835de34221))
+
 ## 1.26.50 (2021-08-03)
 
 
