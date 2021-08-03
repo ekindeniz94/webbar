@@ -2,6 +2,13 @@
 
 
 
+## 1.26.49 (2021-08-03)
+
+
+### Bug Fixes
+
+* type DockerTemplateDto ([03396ec](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/03396ec7d20375b2725421e35c5bb407cded0e92))
+
 ## 1.26.48 (2021-08-03)
 
 
