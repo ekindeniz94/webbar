@@ -49,7 +49,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'WORDPRESS_DB_HOST',
         value: '',
-        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME
       },
       {
         name: 'WORDPRESS_DB_USER',
@@ -149,7 +149,7 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
       {
         name: 'PMA_HOST',
         value: '',
-        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
         deactivateName: true,
         deactivateValue: false,
         deactivateType: true,

@@ -46,6 +46,14 @@ export class NamespaceServiceDto extends BaseEntityDto {
   expose: boolean;
 
   get hostname(): string {
-    return `http://${this.name}-${this.id}:${this.internalPort}`;
+    return `${this.name.toLowerCase()}`;
+  }
+
+  get fullHostname(): string {
+    return `http://${this.name}`;
+  }
+
+  get fullHostnameWithPort(): string {
+    return `http://${this.name}:${this.internalPort}`;
   }
 }
