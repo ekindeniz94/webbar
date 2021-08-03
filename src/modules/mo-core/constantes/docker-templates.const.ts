@@ -347,5 +347,111 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     envVars: [],
     internalPort: 6379,
     expose: false
+  },
+  {
+    name: 'joomla',
+    id: 'joomla:fpm-alpine',
+    version: '3.9.28',
+    description:
+      'Joomla is a free and open-source content management system (CMS) for publishing web content. It is built on a model–view–controller web application framework that can be used independently of the CMS. Joomla is written in PHP, uses object-oriented programming (OOP) techniques and software design patterns, stores data in a MySQL, MS SQL, or PostgreSQL database, and includes features such as page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.',
+    folder: 'joomla',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [
+      {
+        name: 'JOOMLA_DB_HOST',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'JOOMLA_DB_USER',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'JOOMLA_DB_PASSWORD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'JOOMLA_DB_NAME',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      }
+    ],
+    internalPort: 80,
+    expose: true
+  },
+  {
+    name: 'prestashop',
+    id: 'prestashop:1.7.7.5-apache',
+    version: '1.7.7.5',
+    description:
+      'PrestaShop is a free and open-source e-commerce web application, committed to providing the best shopping cart experience for both merchants and customers. It is written in PHP, is highly customizable, supports all the major payment services, is translated in many languages and localized for many countries, has a fully responsive design (both front and back office), etc. See all the available features.',
+    folder: 'prestashop',
+    lastUpdate: '2021-07-06T08:09:31+01:00',
+    envVars: [
+      {
+        name: 'DB_SERVER',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.HOSTNAME,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_USER',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_PASSWD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'DB_NAME',
+        value: 'prestashop',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'ADMIN_MAIL',
+        value: 'test@mogenius.com',
+        type: NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      },
+      {
+        name: 'ADMIN_PASSWD',
+        value: '',
+        type: NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
+        deactivateName: true,
+        deactivateValue: false,
+        deactivateType: true
+      }
+    ],
+    internalPort: 80,
+    expose: true
   }
 ];
