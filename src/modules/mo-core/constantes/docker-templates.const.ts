@@ -545,5 +545,17 @@ export const DOCKER_TEMPLATES: IDockerTemplate[] = [
     ],
     internalPort: 80,
     expose: true
+  },
+  {
+    name: 'nextcloud',
+    id: 'nextcloud:1337latest',
+    version: 'latest',
+    description:
+      'A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.',
+    folder: 'nextcloud',
+    lastUpdate: '2021-07-04T08:09:31+01:00',
+    envVars: [],
+    internalPort: 80,
+    expose: true
   }
 ];
