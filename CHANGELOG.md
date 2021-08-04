@@ -2,6 +2,13 @@
 
 
 
+## 1.26.54 (2021-08-04)
+
+
+### Bug Fixes
+
+* added nextcloud. ([3fbcf59](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3fbcf59ed2c9b02c0e5b736e4b23f74aea6c8d9c))
+
 ## 1.26.53 (2021-08-03)
 
 
