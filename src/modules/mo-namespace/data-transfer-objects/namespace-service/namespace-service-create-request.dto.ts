@@ -1,4 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
+import { TransformFnParams } from 'class-transformer/types/interfaces';
 import {
   ArrayMaxSize,
   isArray,
@@ -21,7 +22,6 @@ import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
-import { TransformFnParams } from 'class-transformer/types/interfaces';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -114,7 +114,7 @@ export class NamespaceServiceCreateRequestDto {
   protected static gitBranchTransform(params: TransformFnParams): string {
     let value = params.value;
     if (value instanceof GitBranchRefItemDto) {
-      value = value.ref;
+      value = value.name;
     }
     return (value && isString(value) ? value.trim() : value)?.substring(
       0,
