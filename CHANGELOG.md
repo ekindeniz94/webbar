@@ -2,6 +2,13 @@
 
 
 
+## 1.26.55 (2021-08-06)
+
+
+### Bug Fixes
+
+* gitbranchref replaced with name. ([fb064df](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fb064dfb71c255cd1a7774924c8b59e0535adcac))
+
 ## 1.26.54 (2021-08-04)
 
 
