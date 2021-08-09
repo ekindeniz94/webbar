@@ -2,6 +2,13 @@
 
 
 
+## 1.26.56 (2021-08-09)
+
+
+### Bug Fixes
+
+* add stats DTOs ([5d229d8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5d229d878e32c7ed85b8f5af8b2066c0461fdf4b))
+
 ## 1.26.55 (2021-08-06)
 
 
