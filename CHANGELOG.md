@@ -2,6 +2,13 @@
 
 
 
+## 1.26.57 (2021-08-12)
+
+
+### Bug Fixes
+
+* patch namespace service over redis dto ([4bb2f3e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4bb2f3e8fb31272cf0c1465aabf9744789117564))
+
 ## 1.26.56 (2021-08-09)
 
 
