@@ -1,6 +1,18 @@
-import { Expose } from 'class-transformer';
-import { NamespaceCommandStateEnum } from '../../enums';
-import { IsEnum, IsNotEmpty, IsNumber } from 'class-validator';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
+import { Exclude } from 'class-transformer';
+import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
 
-export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {}
+export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
+  @Exclude()
+  name: string;
+
+  @Exclude()
+  serviceType: NamespaceServiceTypeEnum;
+
+  @Exclude()
+  gitRepository: string;
+
+  @Exclude()
+  serviceGroup: NamespaceServiceGroupCreateRequestDto;
+}

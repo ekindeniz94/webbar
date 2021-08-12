@@ -3,6 +3,12 @@ import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLen
 import { DTO_VALIDATION_CONST } from '../../../../../mo-core';
 
 export class NamespaceServiceDockerK8sPatchRequestDto {
+  @Expose()
+  namespaceId: string;
+
+  @Expose()
+  namespaceServiceId: string;
+
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
@@ -45,8 +51,4 @@ export class NamespaceServiceDockerK8sPatchRequestDto {
   @IsNumber()
   @Expose()
   internalPort: number;
-
-  @IsBoolean()
-  @Expose()
-  expose: boolean;
 }

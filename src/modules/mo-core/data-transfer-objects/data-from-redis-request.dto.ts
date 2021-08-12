@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class NamespaceCommandRequestDto {
+export class DataFromRedisRequestDto{
   @Expose()
   id: string;
 }
