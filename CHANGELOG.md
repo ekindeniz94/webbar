@@ -2,6 +2,13 @@
 
 
 
+## 1.26.58 (2021-08-13)
+
+
+### Bug Fixes
+
+* added git tag support. ([32dc57e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/32dc57ecf56a3d1b4f219f8576dbf9bcbc69b5c3))
+
 ## 1.26.57 (2021-08-12)
 
 
