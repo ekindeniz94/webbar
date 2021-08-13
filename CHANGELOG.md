@@ -2,6 +2,13 @@
 
 
 
+## 1.26.59 (2021-08-13)
+
+
+### Bug Fixes
+
+* add type to GitRefsListsDto (nested) ([11746cc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/11746cc5f34a675b0e6d37cc9cd7209e8a5e3c98))
+
 ## 1.26.58 (2021-08-13)
 
 
