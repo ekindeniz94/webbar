@@ -2,6 +2,13 @@
 
 
 
+## 1.26.60 (2021-08-16)
+
+
+### Bug Fixes
+
+* add RedisPubSubMessageDto ([cdabb6d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cdabb6d689189a375afd52a976b3322712b1ad3b))
+
 ## 1.26.59 (2021-08-13)
 
 
