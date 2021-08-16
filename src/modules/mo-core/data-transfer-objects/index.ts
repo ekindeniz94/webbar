@@ -8,4 +8,4 @@ export * from './git-branch-ref-item.dto';
 export * from './git-refs-lists.dto';
 export * from './git-tag-ref-item.dto';
 export * from './sms-message.dto';
-
+export * from './redis-pub-sub-message.dto';
