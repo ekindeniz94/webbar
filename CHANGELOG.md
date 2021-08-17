@@ -2,6 +2,13 @@
 
 
 
+## 1.26.61 (2021-08-17)
+
+
+### Bug Fixes
+
+* added pod short stats dto. ([9051d52](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9051d5234d686e6217d7bddd8b857467eb650c58))
+
 ## 1.26.60 (2021-08-16)
 
 
