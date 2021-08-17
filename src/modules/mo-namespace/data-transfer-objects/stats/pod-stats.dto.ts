@@ -5,7 +5,7 @@ import { MemoryStatsDto } from './memory-stats.dto';
 import { CpuStatsDto } from './cpu-stats.dto';
 
 export class PodStatsDto {
-  @Type(() => CpuStatsDto)
+ @Type(() => CpuStatsDto)
   @Expose()
   cpu: CpuStatsDto;
 
