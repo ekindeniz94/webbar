@@ -2,6 +2,13 @@
 
 
 
+## 1.26.64 (2021-08-17)
+
+
+### Bug Fixes
+
+* added container image dto. ([6e44af5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6e44af56a61633c63138eb997893de5b98581a1f))
+
 ## 1.26.63 (2021-08-17)
 
 
