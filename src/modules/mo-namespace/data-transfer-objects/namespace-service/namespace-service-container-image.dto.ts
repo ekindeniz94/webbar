@@ -21,4 +21,8 @@ export class NamespaceServiceContainerImageDto {
   @IsString()
   @Expose()
   updated: string;
+
+  @IsString()
+  @Expose()
+  digest: string;
 }
