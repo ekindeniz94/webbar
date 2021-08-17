@@ -3,6 +3,7 @@ import { TrafficStatsDto } from './traffic-stats.dto';
 import { StorageStatsDto } from './storage-stats.dto';
 import { MemoryStatsDto } from './memory-stats.dto';
 import { CpuStatsDto } from './cpu-stats.dto';
+import { PodStatsShortDto } from './pod-stats-short.dto';
 
 export class ServiceStatsDto {
   @Type(() => CpuStatsDto)
@@ -20,4 +21,8 @@ export class ServiceStatsDto {
   @Type(() => TrafficStatsDto)
   @Expose()
   traffic: TrafficStatsDto;
+
+  @Type(() => PodStatsShortDto)
+  @Expose()
+  pods: PodStatsShortDto[];
 }

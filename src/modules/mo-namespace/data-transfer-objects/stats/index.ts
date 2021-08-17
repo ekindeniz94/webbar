@@ -7,3 +7,4 @@ export * from './storage-stats.dto';
 export * from './time-series.dto';
 export * from './traffic-stats.dto';
 export * from './traffic-stats-time-series.dto';
+export * from './pod-stats-short.dto';
