@@ -27,12 +27,12 @@ export const DTO_VALIDATION_CONST = {
     NAME: {
       MIN: 5,
       MAX: 30,
-      MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
+      MATCHES: /^[a-zA-Z0-9-]{6,30}$/
     },
     HOSTNAME: {
       MIN: 5,
       MAX: 30,
-      MATCHES: /^[a-zA-Z0-9-_]{6,30}$/
+      MATCHES: /^[a-zA-Z0-9-]{6,30}$/
     },
     SHORT_ID: {
       MIN: 6,

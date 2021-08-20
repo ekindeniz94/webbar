@@ -1,10 +1,8 @@
 import { Expose, Type } from 'class-transformer';
 import { NamespaceCommandStateEnum } from '../../enums';
+import { BaseEntityDto } from '../../../mo-core';
 
-export class NamespaceCommandDto {
-  @Expose()
-  id: string;
-
+export class NamespaceCommandDto extends BaseEntityDto{
   @Expose()
   namespaceId: string;
 

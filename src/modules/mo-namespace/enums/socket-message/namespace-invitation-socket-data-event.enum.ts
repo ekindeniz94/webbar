@@ -1,0 +1,3 @@
+export enum NamespaceInvitationSocketDataEventEnum {
+  GET_NAMESPACE_INVITATION_LIST_NAMESPACE = 'GET_NAMESPACE_INVITATION_LIST_NAMESPACE'
+}
