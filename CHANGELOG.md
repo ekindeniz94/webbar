@@ -2,6 +2,13 @@
 
 
 
+## 1.26.65 (2021-08-20)
+
+
+### Bug Fixes
+
+* socket message interfaces ([d8b8f18](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d8b8f184c87c20c6be05c888700b7d0889c9bafc))
+
 ## 1.26.64 (2021-08-17)
 
 
