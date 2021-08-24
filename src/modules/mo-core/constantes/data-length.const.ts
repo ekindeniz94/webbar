@@ -35,6 +35,9 @@ export const DTO_VALIDATION_CONST = {
       }
     }
   },
+  SUBSCRIPTION_POOL: {
+    MAX_SUBSCRIPTIONS: 100
+  },
   NAMESPACE: {
     CNAME: {
       MAX_ENTRIES: 10,

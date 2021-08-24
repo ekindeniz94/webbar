@@ -1,14 +1,13 @@
 import { Expose, Transform } from 'class-transformer';
 import {
   IsBoolean,
-  IsDate,
+  IsDateString,
   IsEnum,
   IsHexColor,
   IsNumber,
   isString,
   IsString,
   MaxLength,
-  Min,
   MinLength
 } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
@@ -16,19 +15,6 @@ import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
 import { ProductTypeEnum } from '../../enums';
 
 export class ProductDto extends BaseEntityDto {
-  @Expose()
-  id: string;
-
-  @Expose()
-  @IsString()
-  @IsDate()
-  createdAt: string;
-
-  @Expose()
-  @IsString()
-  @IsDate()
-  createdBy: string;
-
   @Expose()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.NAME.MAX)
@@ -56,12 +42,12 @@ export class ProductDto extends BaseEntityDto {
 
   @Expose()
   @IsString()
-  @IsDate()
+  @IsDateString()
   startsOn: string;
 
   @Expose()
   @IsString()
-  @IsDate()
+  @IsDateString()
   endsOn: string;
 
   @Expose()
@@ -83,21 +69,18 @@ export class ProductDto extends BaseEntityDto {
   @IsNumber()
   trafficInMb: number;
 
-//   @Expose()
-//   @IsBoolean()
-//   diskAllowed: boolean;
+  @Expose()
+  @IsNumber()
+  persistentDiskInMb: number;
 
-//   @Expose()
-//   @IsBoolean()
-//   azureFileAllowed: boolean;
+  @Expose()
+  @IsNumber()
+  persistentAzureFilesInMb: number;
 
   @Expose()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.ICON.MAX)
   @MinLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.ICON.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.ICON.MAX)
-  )
   icon: string;
 
   @Expose()
