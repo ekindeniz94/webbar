@@ -19,6 +19,22 @@ export const DTO_VALIDATION_CONST = {
     'https://mogenius.net',
     'https://mogenius.org'
   ],
+  SUBSCRIPTION: {
+    PRODUCT: {
+      NAME: {
+        MIN: 5,
+        MAX: 255
+      },
+      DESCRIPTION: {
+        MIN: 0,
+        MAX: 4096
+      },
+      ICON: {
+        MIN: 0,
+        MAX: 4096
+      }
+    }
+  },
   NAMESPACE: {
     CNAME: {
       MAX_ENTRIES: 10,
