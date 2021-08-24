@@ -2,6 +2,18 @@
 
 
 
+# 1.27.0 (2021-08-24)
+
+
+### Bug Fixes
+
+* subscription improved. ([c64d5d5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c64d5d50c9b4bc000a96164ade517dfb89949e8a))
+
+
+### Features
+
+* subscription added. ([1a91792](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1a917928d9f4a74eb915b63309d384f5f69b80f3))
+
 ## 1.26.65 (2021-08-20)
 
 
