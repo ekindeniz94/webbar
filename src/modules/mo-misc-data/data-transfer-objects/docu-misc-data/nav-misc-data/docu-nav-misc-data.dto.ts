@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
 
 export class DocuNavMiscDataDto extends BaseEntityDto {
@@ -13,7 +13,7 @@ export class DocuNavMiscDataDto extends BaseEntityDto {
 
   @Type(() => DocuNavMiscDataDto)
   @Expose()
-  subNavs: DocuNavMiscDataDto;
+  subNavs: DocuNavMiscDataDto[];
 
   @Expose()
   documentIds: String[];

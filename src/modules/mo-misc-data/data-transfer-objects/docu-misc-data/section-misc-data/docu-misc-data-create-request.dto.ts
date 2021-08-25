@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 
-export class DocuSectionMiscDataCreateRequest {
+export class DocuMiscDataCreateRequest {
   // Section Title
   @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.TITLE.MIN)
   @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.TITLE.MAX)
