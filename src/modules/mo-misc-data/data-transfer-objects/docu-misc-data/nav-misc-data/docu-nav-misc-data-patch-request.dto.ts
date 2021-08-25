@@ -1,18 +1,9 @@
-import { Transform, Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import {
-  IsNotEmpty,
-  IsString,
-  MinLength,
-  MaxLength,
-  IsOptional,
-  ValidateNested,
-  ArrayMaxSize,
-  isString,
-  isArray
+  ArrayMaxSize, isArray, IsNotEmpty, IsOptional, IsString, isString, MaxLength, MinLength, ValidateNested
 } from 'class-validator';
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
-import { DocuNavMiscDataCreateRequestDto } from './docu-nav-misc-data-create-request.dto';
 import { DocuNavMiscDataDto } from './docu-nav-misc-data.dto';
 
 export class DocuNavMiscDataPatchRequestDto {
@@ -20,10 +11,10 @@ export class DocuNavMiscDataPatchRequestDto {
   @IsOptional()
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX)
   )
   @Expose()
   title: string;
@@ -46,14 +37,14 @@ export class DocuNavMiscDataPatchRequestDto {
 
   // tags
   @IsOptional()
-  @ArrayMaxSize(DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX_TAGS)
+  @ArrayMaxSize(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TAGS.MAX)
   @IsString({ each: true })
-  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX, {
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX, {
     each: true
   })
   @Transform(({ value }) =>
     ((value && isArray(value) ? _.uniq(value) : []) as string[]).map((item: string) =>
-      item?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TAG.MAX)
+      item?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.NAV.TAGS.MAX)
     )
   )
   @Expose()

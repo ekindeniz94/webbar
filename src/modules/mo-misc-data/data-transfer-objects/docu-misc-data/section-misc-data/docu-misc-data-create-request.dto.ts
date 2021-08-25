@@ -4,10 +4,10 @@ import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 
 export class DocuMiscDataCreateRequest {
   // Section Title
-  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.TITLE.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.TITLE.MAX)
+  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.TITLE.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.TITLE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.TITLE.MAX)
   )
   @IsNotEmpty()
   @IsString()
@@ -15,10 +15,10 @@ export class DocuMiscDataCreateRequest {
   title: string;
 
   // Section Content
-  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.CONTENT.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.SECTION.CONTENT.MAX)
+  @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.CONTENT.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.CONTENT.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.ENTRY.TITLE.MAX)
   )
   @IsNotEmpty()
   @IsString()

@@ -1,19 +1,11 @@
-import { Transform, Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import {
-  IsNotEmpty,
-  IsString,
-  MinLength,
-  MaxLength,
-  IsOptional,
-  ValidateNested,
-  ArrayMaxSize,
-  isString,
-  isArray
+  ArrayMaxSize, isArray, IsNotEmpty, IsOptional, IsString, isString, MaxLength, MinLength, ValidateNested
 } from 'class-validator';
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
-
 import { DocuNavMiscDataDto } from './docu-nav-misc-data.dto';
+
 
 export class DocuNavMiscDataCreateRequestDto {
   // Navigation Element
@@ -23,7 +15,7 @@ export class DocuNavMiscDataCreateRequestDto {
   @MinLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MIN)
   @MaxLength(DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.BLOG.TITLE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.DOCU.NAV.TITLE.MAX)
   )
   @Expose()
   title: String;

@@ -239,17 +239,17 @@ export const DTO_VALIDATION_CONST = {
     DOCU: {
       NAV: {
         TITLE: {
-          MIN: 512,
-          MAX: 2
+          MIN: 2,
+          MAX: 1024
         },
         TAGS: {
           MAX: 128
         }
       },
-      SECTION: {
+      ENTRY: {
         TITLE: {
-          MAX: 1024,
-          MIN: 2
+          MIN: 2,
+          MAX: 2048
         },
         CONTENT: {
           MIN: 2,
