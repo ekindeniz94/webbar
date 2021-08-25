@@ -5,5 +5,7 @@ export const enum MiscDataTypeEnum {
     JOB = 'JOB',
     FILE = 'FILE',
     FAQ = 'FAQ',
-    KEY_VAULT = 'KEY_VAULT'
+    KEY_VAULT = 'KEY_VAULT',
+    DOCU_NAV = 'DOCU_NAV',
+    DOCU = 'DOCU'
 }
