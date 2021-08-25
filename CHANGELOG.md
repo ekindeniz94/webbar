@@ -2,6 +2,13 @@
 
 
 
+## 1.27.3 (2021-08-25)
+
+
+### Bug Fixes
+
+* updated documentation module. ([8efd71e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8efd71e02dd1f588b0d4044b32020fe1d9edc5e9))
+
 ## 1.27.2 (2021-08-25)
 
 
