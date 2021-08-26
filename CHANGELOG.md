@@ -2,6 +2,13 @@
 
 
 
+## 1.27.4 (2021-08-26)
+
+
+### Bug Fixes
+
+* import bug fixed. ([e5bfcc5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e5bfcc5c2acaa5924396cc1289fe8a3aa2debc02))
+
 ## 1.27.3 (2021-08-25)
 
 
