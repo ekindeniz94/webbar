@@ -2,6 +2,13 @@
 
 
 
+## 1.27.5 (2021-08-26)
+
+
+### Bug Fixes
+
+* exclude dto stuff. ([b44b336](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b44b3369319dea5031dd022806c2f5703ab1b001))
+
 ## 1.27.4 (2021-08-26)
 
 
