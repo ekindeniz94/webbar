@@ -1,11 +1,18 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
-  ArrayMaxSize, isArray, IsNotEmpty, IsOptional, IsString, isString, MaxLength, MinLength, ValidateNested
+  ArrayMaxSize,
+  isArray,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  isString,
+  MaxLength,
+  MinLength,
+  ValidateNested
 } from 'class-validator';
-import _ from 'lodash';
+import _, { each } from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 import { DocuNavMiscDataDto } from './docu-nav-misc-data.dto';
-
 
 export class DocuNavMiscDataCreateRequestDto {
   // Navigation Element
@@ -29,10 +36,9 @@ export class DocuNavMiscDataCreateRequestDto {
   subNavs: DocuNavMiscDataDto[];
 
   // Document-Childs : Optional
-  @Type(() => String)
   @IsOptional()
+  @IsString({ each: true })
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @ValidateNested()
   @Expose()
   documentIds: String[];
 
