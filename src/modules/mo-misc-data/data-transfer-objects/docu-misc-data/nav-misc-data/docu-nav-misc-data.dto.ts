@@ -1,7 +1,25 @@
-import { Expose, Type } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
 
 export class DocuNavMiscDataDto extends BaseEntityDto {
+  @Exclude()
+  entityName: string;
+
+  @Exclude()
+  type: string;
+
+  @Exclude()
+  id: string;
+
+  @Exclude()
+  createdAt: string;
+
+  @Exclude()
+  uniqueKey: string;
+
+  @Exclude()
+  partitionKey: string;
+
   @Expose()
   seoUrl: string;
 
