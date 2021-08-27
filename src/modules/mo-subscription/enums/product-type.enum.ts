@@ -1,5 +1,11 @@
 export enum ProductTypeEnum {
   STANDALONE = 'STANDALONE',
-  BUNDLE = 'BUNDLE',
-  PLAN = 'PLAN'
+  PLAN = 'PLAN',
+  BUNDLE = 'BUNDLE'
 }
+
+export const ProductTypeEnum_ALL = [
+  ProductTypeEnum.STANDALONE,
+  ProductTypeEnum.PLAN,
+  ProductTypeEnum.BUNDLE
+];

@@ -12,7 +12,9 @@ import {
 } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { ProductTypeEnum } from '../../enums';
+import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
+import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
+import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
@@ -41,6 +43,28 @@ export class ProductDto extends BaseEntityDto {
   productType: ProductTypeEnum;
 
   @Expose()
+  @IsEnum(PaypalProductTypeEnum)
+  paypalProductType: PaypalProductTypeEnum;
+
+  @Expose()
+  @IsEnum(PaypalCategoryTypeEnum)
+  paypalCategoryType: PaypalCategoryTypeEnum;
+
+  @Expose()
+  @IsEnum(ProductRuntimeIntervalEnum)
+  interval: ProductRuntimeIntervalEnum;
+
+  // NEEDED FOR PAYPAL
+  @Expose()
+  @IsString()
+  imageUrl: string;
+
+  // NEEDED FOR PAYPAL
+  @Expose()
+  @IsString()
+  homeUrl: string;
+
+  @Expose()
   @IsString()
   @IsDateString()
   startsOn: string;
@@ -53,10 +77,6 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   @IsNumber()
   pricePerMonthInCents: number;
-
-  @Expose()
-  @IsNumber()
-  pricePerYearInCents: number;
 
   @Expose()
   @IsBoolean()
@@ -90,8 +110,7 @@ export class ProductDto extends BaseEntityDto {
   get displayPriceMonth(): string {
     return `${(this.pricePerMonthInCents / 100).toFixed(2)}`;
   }
-
-  get displayPriceYear(): string {
-    return `${(this.pricePerYearInCents / 100).toFixed(2)}`;
-  }
+}
+function SubscriptionCycleEnum(SubscriptionCycleEnum: any) {
+  throw new Error('Function not implemented.');
 }

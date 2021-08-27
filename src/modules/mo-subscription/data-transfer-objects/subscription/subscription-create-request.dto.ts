@@ -1,9 +1,8 @@
-import { Expose, Transform } from 'class-transformer';
-import { IsDateString, IsEnum, IsString } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { IsDateString, IsEnum, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { MoUtils } from '../../../../utils';
 import { BaseEntityDto } from '../../../mo-core';
-import { SubscriptionOrderDurationEnum } from '../../enums';
 import { SubscriptionStateEnum } from '../../enums/subscription-state.enum';
 import { ProductDto } from '../product';
 
@@ -37,12 +36,9 @@ export class SubscriptionCreateRequestDto extends BaseEntityDto {
   createdAt: string;
 
   @Expose()
+  @Type(() => ProductDto)
+  @ValidateNested()
   product: ProductDto;
-
-  @Expose()
-  @IsEnum(SubscriptionOrderDurationEnum)
-  @Transform(({ value }) => value ?? SubscriptionOrderDurationEnum.MONTH)
-  orderDuration: SubscriptionOrderDurationEnum;
 
   @Expose()
   @IsDateString()

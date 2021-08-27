@@ -1,7 +1,11 @@
 export enum SubscriptionStateEnum {
-  ACTIVE = 'ACTIVE',
+  CREATED = 'CREATED',
   INACTIVE = 'INACTIVE',
-  INACTIVE_BANNED = 'INACTIVE_BANNED',
-  INACTIVE_PAYMENT = 'INACTIVE_PAYMENT',
-  INACTIVE_SUSPENDED = 'INACTIVE_SUSPENDED'
+  ACTIVE = 'ACTIVE'
 }
+
+export const SubscriptionStateEnum_ALL = [
+  SubscriptionStateEnum.CREATED,
+  SubscriptionStateEnum.INACTIVE,
+  SubscriptionStateEnum.ACTIVE
+];
