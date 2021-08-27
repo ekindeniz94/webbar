@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsDateString, IsEnum, IsString } from 'class-validator';
+import { IsBoolean, IsDateString, IsEnum, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { SubscriptionStateEnum } from '../../enums/subscription-state.enum';
 import { PaypalPlanData } from '../../utils/subscription.utils';
@@ -12,6 +12,11 @@ export class SubscriptionDto extends BaseEntityDto {
   @IsString()
   @Expose()
   name: string;
+
+  // PayPal ID will be equal to SubscriptionId!
+  @IsBoolean()
+  @Expose()
+  synchronizedWithPaypal: Boolean;
 
   @Expose()
   @IsString()
