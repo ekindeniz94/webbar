@@ -2,6 +2,13 @@
 
 
 
+## 1.27.6 (2021-08-27)
+
+
+### Bug Fixes
+
+* improved subscription and product to fit paypal needs. ([dac416a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dac416a45c858bf7d69c4b0e6acbfa3429ef4027))
+
 ## 1.27.5 (2021-08-26)
 
 
