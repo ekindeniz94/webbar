@@ -2,6 +2,13 @@
 
 
 
+## 1.27.7 (2021-08-27)
+
+
+### Bug Fixes
+
+* added paypal subscripe html example. ([dff3369](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dff3369415642ed7cba0fc0054a5c21cf05e75f3))
+
 ## 1.27.6 (2021-08-27)
 
 
