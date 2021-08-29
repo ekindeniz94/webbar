@@ -2,6 +2,13 @@
 
 
 
+## 1.27.8 (2021-08-29)
+
+
+### Bug Fixes
+
+* started adding paypal webhook route. ([64e48c2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/64e48c2d53a877a4820d0bab8bacbf14d9406e6b))
+
 ## 1.27.7 (2021-08-27)
 
 
