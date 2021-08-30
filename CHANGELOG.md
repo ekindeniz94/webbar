@@ -2,6 +2,13 @@
 
 
 
+## 1.27.9 (2021-08-30)
+
+
+### Bug Fixes
+
+* renamed subscription to plan. ([a5801e9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a5801e94132dfbbc5b4f34c2724007f699c61ce9))
+
 ## 1.27.8 (2021-08-29)
 
 
