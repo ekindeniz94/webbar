@@ -19,7 +19,7 @@ export const DTO_VALIDATION_CONST = {
     'https://mogenius.net',
     'https://mogenius.org'
   ],
-  SUBSCRIPTION: {
+  PLAN: {
     PRODUCT: {
       NAME: {
         MIN: 5,
@@ -35,8 +35,8 @@ export const DTO_VALIDATION_CONST = {
       }
     }
   },
-  SUBSCRIPTION_POOL: {
-    MAX_SUBSCRIPTIONS: 100
+  PLAN_POOL: {
+    MAX_PLANS: 100
   },
   NAMESPACE: {
     CNAME: {

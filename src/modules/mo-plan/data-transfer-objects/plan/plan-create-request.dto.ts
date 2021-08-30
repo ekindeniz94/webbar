@@ -3,10 +3,10 @@ import { IsDateString, IsEnum, IsString, ValidateNested } from 'class-validator'
 import moment from 'moment';
 import { MoUtils } from '../../../../utils';
 import { BaseEntityDto } from '../../../mo-core';
-import { SubscriptionStateEnum } from '../../enums/subscription-state.enum';
+import { PlanStateEnum } from '../../enums/plan-state.enum';
 import { ProductDto } from '../product';
 
-export class SubscriptionCreateRequestDto extends BaseEntityDto {
+export class PlanCreateRequestDto extends BaseEntityDto {
   @IsString()
   @Transform(
     ({ value, obj }) => {
@@ -55,7 +55,7 @@ export class SubscriptionCreateRequestDto extends BaseEntityDto {
   startedOn: string;
 
   @Expose()
-  @IsEnum(SubscriptionStateEnum)
-  @Transform(({ value }) => value ?? SubscriptionStateEnum.ACTIVE)
-  state: SubscriptionStateEnum;
+  @IsEnum(PlanStateEnum)
+  @Transform(({ value }) => value ?? PlanStateEnum.ACTIVE)
+  state: PlanStateEnum;
 }

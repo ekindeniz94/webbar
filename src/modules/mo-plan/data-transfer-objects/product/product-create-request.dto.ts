@@ -47,21 +47,21 @@ export class ProductCreateRequestDto extends BaseEntityDto {
 
   @Expose()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.NAME.MAX)
-  @MinLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.NAME.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.NAME.MAX)
+  @MinLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.NAME.MIN)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.NAME.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PLAN.PRODUCT.NAME.MAX)
   )
   name: string;
 
   @Expose()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.DESCRIPTION.MAX)
-  @MinLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.DESCRIPTION.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX)
+  @MinLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MIN)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,
-      DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.DESCRIPTION.MAX
+      DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX
     )
   )
   description: string;
@@ -204,8 +204,8 @@ export class ProductCreateRequestDto extends BaseEntityDto {
 
   @Expose()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.ICON.MAX)
-  @MinLength(DTO_VALIDATION_CONST.SUBSCRIPTION.PRODUCT.ICON.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.ICON.MAX)
+  @MinLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.ICON.MIN)
   @Transform(
     ({ value, obj }) => {
       if (value) {

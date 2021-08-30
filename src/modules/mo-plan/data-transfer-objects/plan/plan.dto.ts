@@ -1,11 +1,11 @@
 import { Expose } from 'class-transformer';
 import { IsBoolean, IsDateString, IsEnum, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
-import { SubscriptionStateEnum } from '../../enums/subscription-state.enum';
-import { PaypalPlanData } from '../../utils/subscription.utils';
+import { PlanStateEnum } from '../../enums/plan-state.enum';
+import { PaypalPlanData } from '../../utils/plan.utils';
 import { ProductDto } from '../product';
 
-export class SubscriptionDto extends BaseEntityDto {
+export class PlanDto extends BaseEntityDto {
   @Expose()
   product: ProductDto;
 
@@ -13,7 +13,7 @@ export class SubscriptionDto extends BaseEntityDto {
   @Expose()
   name: string;
 
-  // PayPal ID will be equal to SubscriptionId!
+  // PayPal ID will be equal to planId!
   @IsBoolean()
   @Expose()
   synchronizedWithPaypal: Boolean;
@@ -24,8 +24,8 @@ export class SubscriptionDto extends BaseEntityDto {
   startedOn: string;
 
   @Expose()
-  @IsEnum(SubscriptionStateEnum)
-  state: SubscriptionStateEnum;
+  @IsEnum(PlanStateEnum)
+  state: PlanStateEnum;
 
   get paypalPlanData(): any {
     return PaypalPlanData.fromProduct(this.product);
