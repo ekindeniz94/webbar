@@ -2,6 +2,13 @@
 
 
 
+## 1.27.10 (2021-09-01)
+
+
+### Bug Fixes
+
+* mo-namespace, mo-core (mysql) ([6be2f09](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6be2f09568337963a427231509e05e9d25360287))
+
 ## 1.27.9 (2021-08-30)
 
 
