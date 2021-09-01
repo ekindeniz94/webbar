@@ -2,7 +2,7 @@ import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString, Matches, MaxLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
-export class KeyVaultCreateRequestDto {
+export class KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.KEY_VAULT.NAME.MAX)

@@ -11,5 +11,5 @@ export class NamespaceUserDto {
   @IsOptional()
   @Type(() => GroupDto)
   @Expose()
-  groupList: GroupDto[];
+  group: GroupDto;
 }

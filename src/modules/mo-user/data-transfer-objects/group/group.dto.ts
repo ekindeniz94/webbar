@@ -1,5 +1,6 @@
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude, Expose, Transform } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
+import { isArray, isString } from 'class-validator';
 
 export class GroupDto extends BaseEntityDto {
   @Exclude()
@@ -11,6 +12,9 @@ export class GroupDto extends BaseEntityDto {
   @Expose()
   description: string;
 
+  @Transform(({ value }) =>
+    value && isArray(value) ? value.map((item: any) => (isString(item) ? item : item?.name)) : []
+  )
   @Expose()
   permissions: string[];
 

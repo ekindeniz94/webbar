@@ -5,10 +5,15 @@ export class RemoveUserFromNamespaceGroupRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  groupId: string;
+  namespaceId: string;
 
   @IsNotEmpty()
   @IsString()
   @Expose()
   userId: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  groupId: string;
 }

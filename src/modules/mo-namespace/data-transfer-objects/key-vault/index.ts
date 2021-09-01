@@ -1,7 +1,6 @@
-export * from './key-vault.dto';
-export * from './key-vault-create-request.dto';
-export * from './key-vault-create-response.dto';
-export * from './key-vault-decrypted-response.dto';
-export * from './key-vault-patch-request.dto';
-export * from './key-vault-patch-response.dto';
-
+export * from './key-vault-secret.dto';
+export * from './key-vault-secret-create-request.dto';
+export * from './key-vault-secret-create-response.dto';
+export * from './key-vault-secret-decrypted-response.dto';
+export * from './key-vault-secret-patch-request.dto';
+export * from './key-vault-secret-patch-response.dto';
