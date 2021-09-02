@@ -9,22 +9,13 @@ export class PlanDto extends BaseEntityDto {
   @Expose()
   product: ProductDto;
 
-  @IsString()
   @Expose()
   name: string;
 
-  // PayPal ID will be equal to planId!
-  @IsBoolean()
   @Expose()
-  synchronizedWithPaypal: Boolean;
-
-  @Expose()
-  @IsString()
-  @IsDateString()
   startedOn: string;
 
   @Expose()
-  @IsEnum(PlanStateEnum)
   state: PlanStateEnum;
 
   get paypalPlanData(): any {
