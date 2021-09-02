@@ -2,6 +2,13 @@
 
 
 
+## 1.27.11 (2021-09-02)
+
+
+### Bug Fixes
+
+* product and plan modified. ([c5a41c7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c5a41c7a65a5787123d6abe67cbe9f27252ed9aa))
+
 ## 1.27.10 (2021-09-01)
 
 
