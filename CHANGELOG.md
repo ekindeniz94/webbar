@@ -2,6 +2,13 @@
 
 
 
+## 1.27.14 (2021-09-13)
+
+
+### Bug Fixes
+
+* refactoring notification DTOs ([793dc7a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/793dc7a42a87cd7cfe3e9d43e1163b0852542fe9))
+
 ## 1.27.13 (2021-09-02)
 
 
