@@ -2,6 +2,13 @@
 
 
 
+## 1.27.16 (2021-09-13)
+
+
+### Bug Fixes
+
+* product and plan dates set to std moment format again. ([64045d8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/64045d81d7f9b507be8485f996d3899f825b611b))
+
 ## 1.27.15 (2021-09-13)
 
 
