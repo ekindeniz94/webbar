@@ -20,7 +20,6 @@ interface IRedisPubSubMessage {
   socketEvent: RedisPubSubMessageSocketEventTypes;
 }
 
-
 /***
  * NAMESPACE
  */

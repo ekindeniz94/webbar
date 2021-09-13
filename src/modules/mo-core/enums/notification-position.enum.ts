@@ -1,4 +1,4 @@
-export enum NotificationBannerPositionEnum {
+export enum NotificationPositionEnum {
   TOP_RIGHT = 'top-right',
   TOP_LEFT = 'top-left',
   BOTTOM_RIGHT = 'bottom-right',

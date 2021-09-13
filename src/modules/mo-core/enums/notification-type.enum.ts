@@ -1,5 +1,6 @@
-export enum NotificationBannerTypeEnum {
+export enum NotificationTypeEnum {
   INFO = 'info',
+  WARNING = 'warning',
   SUCCESS = 'success',
   ERROR = 'error'
 }

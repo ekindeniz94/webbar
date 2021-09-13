@@ -1,4 +1,4 @@
-import { NotificationBannerPositionEnum, NotificationBannerTypeEnum, SocketDataEventEnum } from '../enums';
+import { NotificationPositionEnum, NotificationTypeEnum, SocketDataEventEnum } from '../enums';
 
 export interface IRedisPubSubMessageData<EVENT_DATA_TYPE, EVENT_DATA = any> {
   event: EVENT_DATA_TYPE;
@@ -9,7 +9,7 @@ export interface IRedisPubSubMessageNotificationBanner {
   event: SocketDataEventEnum.NOTIFICATION_BANNER;
   header: string;
   body: string;
-  type?: NotificationBannerTypeEnum;
-  position?: NotificationBannerPositionEnum;
+  type?: NotificationTypeEnum;
+  position?: NotificationPositionEnum;
   delay?: number;
 }
