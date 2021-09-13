@@ -37,7 +37,7 @@ export class ProductCreateRequestDto extends BaseEntityDto {
       if (value) {
         return value;
       }
-      obj.createdAt = moment().format();
+      obj.createdAt = moment().toISOString();
       return obj.createdAt;
     },
     { toClassOnly: true }
@@ -78,7 +78,7 @@ export class ProductCreateRequestDto extends BaseEntityDto {
       if (value) {
         return value;
       }
-      obj.startsOn = moment().format();
+      obj.startsOn = moment().toISOString();
       return obj.startsOn;
     },
     { toClassOnly: true }
@@ -92,7 +92,7 @@ export class ProductCreateRequestDto extends BaseEntityDto {
       if (value) {
         return value;
       }
-      obj.endsOn = moment().add(100, 'years').format();
+      obj.endsOn = moment().add(100, 'years').toISOString();
       return obj.endsOn;
     },
     { toClassOnly: true }

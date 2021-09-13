@@ -27,7 +27,7 @@ export class PlanCreateRequestDto extends BaseEntityDto {
       if (value) {
         return value;
       }
-      obj.createdAt = moment().format();
+      obj.createdAt = moment().toISOString();
       return obj.createdAt;
     },
     { toClassOnly: true }
@@ -47,7 +47,7 @@ export class PlanCreateRequestDto extends BaseEntityDto {
       if (value) {
         return value;
       }
-      obj.startedOn = moment().format();
+      obj.startedOn = moment().toISOString();
       return obj.startedOn;
     },
     { toClassOnly: true }
