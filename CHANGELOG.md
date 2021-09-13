@@ -2,6 +2,13 @@
 
 
 
+## 1.27.15 (2021-09-13)
+
+
+### Bug Fixes
+
+* product and plan dates set to iso json standard. ([747694d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/747694dfaa18e056d61501538e951512628a25a1))
+
 ## 1.27.14 (2021-09-13)
 
 
