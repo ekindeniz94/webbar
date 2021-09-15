@@ -1,20 +1,11 @@
 import { Expose, Transform } from 'class-transformer';
-import {
-  IsBoolean,
-  IsDateString,
-  IsEnum,
-  IsHexColor,
-  IsNumber,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength
-} from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
 import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
+import { CurrencyEnum } from '../../enums/currency.enum';
 import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
 import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
+import { CurrencyDto } from '../currency';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
@@ -44,13 +35,13 @@ export class ProductDto extends BaseEntityDto {
   homeUrl: string;
 
   @Expose()
-  startsOn: string;
+  startsOn: Date;
 
   @Expose()
-  endsOn: string;
+  endsOn: Date;
 
   @Expose()
-  pricePerMonthInCents: number;
+  currencies: CurrencyDto[];
 
   @Expose()
   deleted: boolean;
@@ -73,10 +64,20 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   bgColor: string;
 
-  get displayPriceMonth(): string {
-    return `${(this.pricePerMonthInCents / 100).toFixed(2)}`;
+  get displayPricePerMonthInEuro(): string {
+    for (const currency of this.currencies) {
+      if (currency.type === CurrencyEnum.EUR) {
+        return `${(currency.pricePerMonth / 100).toFixed(2)}`;
+      }
+    }
+    return '? Euro';
   }
-}
-function PlanCycleEnum(PlanCycleEnum: any) {
-  throw new Error('Function not implemented.');
+  get displayPricePerYearInEuro(): string {
+    for (const currency of this.currencies) {
+      if (currency.type === CurrencyEnum.EUR) {
+        return `${(currency.pricePerYear / 100).toFixed(2)}`;
+      }
+    }
+    return '? Euro';
+  }
 }

@@ -36,9 +36,8 @@ export class PlanCreateRequestDto extends BaseEntityDto {
   createdAt: string;
 
   @Expose()
-  @Type(() => ProductDto)
-  @ValidateNested()
-  product: ProductDto;
+  @IsString()
+  productId: string;
 
   @Expose()
   @IsDateString()

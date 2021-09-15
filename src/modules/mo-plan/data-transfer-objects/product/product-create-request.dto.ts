@@ -1,4 +1,4 @@
-import { Expose, Transform } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import {
   IsBoolean,
   IsDateString,
@@ -8,13 +8,15 @@ import {
   isString,
   IsString,
   MaxLength,
-  MinLength
+  MinLength,
+  ValidateNested
 } from 'class-validator';
 import moment from 'moment';
 import { MoUtils } from '../../../../utils';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
 import { ProductTypeEnum } from '../../enums';
+import { CurrencyDto } from '../currency';
 
 export class ProductCreateRequestDto extends BaseEntityDto {
   @IsString()
@@ -100,32 +102,9 @@ export class ProductCreateRequestDto extends BaseEntityDto {
   endsOn: string;
 
   @Expose()
-  @IsNumber()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.pricePerMonthInCents = 0;
-      return obj.pricePerMonthInCents;
-    },
-    { toClassOnly: true }
-  )
-  pricePerMonthInCents: number;
-
-  @Expose()
-  @IsNumber()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.pricePerYearInCents = 0;
-      return obj.pricePerYearInCents;
-    },
-    { toClassOnly: true }
-  )
-  pricePerYearInCents: number;
+  @Type(() => CurrencyDto)
+  @ValidateNested()
+  currencies: CurrencyDto[];
 
   @Expose()
   @IsBoolean()
