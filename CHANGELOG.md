@@ -2,6 +2,14 @@
 
 
 
+## 1.27.17 (2021-09-16)
+
+
+### Bug Fixes
+
+* paypal models, plans, products and currencies improved. ([43b2492](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/43b2492243e863bca5a8079b17fdf54ae67f232f))
+* save commit paypal. ([0458238](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/045823826ac31dd93a462b560202cb56a107647f))
+
 ## 1.27.16 (2021-09-13)
 
 
