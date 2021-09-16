@@ -1,18 +1,23 @@
 import { Expose } from 'class-transformer';
-import { IsBoolean, IsDateString, IsEnum, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
-import { CurrencyEnum } from '../../enums/currency.enum';
-import { PlanStateEnum } from '../../enums/plan-state.enum';
-import { PaypalPlanData } from '../../utils/plan.utils';
-import { ProductDto } from '../product';
-
+import { ProductRuntimeIntervalEnum, CurrencyEnum } from '../../enums';
 export class CurrencyDto extends BaseEntityDto {
   @Expose()
   type: CurrencyEnum;
 
   @Expose()
-  pricePerMonth: number;
+  interval: ProductRuntimeIntervalEnum;
 
   @Expose()
-  pricePerYear: number;
+  pricePerInterval: number;
+
+  @Expose()
+  taxPercent: number;
+
+  get displayPricePerInterval(): string {
+    if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {
+      return `${(this.pricePerInterval / 100).toFixed(2)}`;
+    }
+    return `${this.type} does not support displayPricePerInterval()`;
+  }
 }

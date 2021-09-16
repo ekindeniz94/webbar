@@ -1,8 +1,8 @@
 import { Expose } from 'class-transformer';
-import { IsBoolean, IsDateString, IsEnum, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { PlanStateEnum } from '../../enums/plan-state.enum';
 import { PaypalPlanData } from '../../utils/plan.utils';
+import { CurrencyDto } from '../currency/currency.dto';
 import { ProductDto } from '../product';
 
 export class PlanDto extends BaseEntityDto {
@@ -10,7 +10,13 @@ export class PlanDto extends BaseEntityDto {
   product: ProductDto;
 
   @Expose()
+  currencies: CurrencyDto[];
+
+  @Expose()
   name: string;
+
+  @Expose()
+  description: string;
 
   @Expose()
   startedOn: string;
@@ -18,7 +24,7 @@ export class PlanDto extends BaseEntityDto {
   @Expose()
   state: PlanStateEnum;
 
-  get paypalPlanData(): any {
-    return PaypalPlanData.fromProduct(this.product);
+  get paypalPlanData(): PaypalPlanData[] {
+    return PaypalPlanData.fromPlan(this);
   }
 }

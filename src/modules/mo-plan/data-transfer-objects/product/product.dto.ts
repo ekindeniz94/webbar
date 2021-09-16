@@ -5,6 +5,7 @@ import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
 import { CurrencyEnum } from '../../enums/currency.enum';
 import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
 import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
+import { PaypalProductData } from '../../utils';
 import { CurrencyDto } from '../currency';
 
 export class ProductDto extends BaseEntityDto {
@@ -23,9 +24,6 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   paypalCategoryType: PaypalCategoryTypeEnum;
 
-  @Expose()
-  interval: ProductRuntimeIntervalEnum;
-
   // NEEDED FOR PAYPAL
   @Expose()
   imageUrl: string;
@@ -39,9 +37,6 @@ export class ProductDto extends BaseEntityDto {
 
   @Expose()
   endsOn: Date;
-
-  @Expose()
-  currencies: CurrencyDto[];
 
   @Expose()
   deleted: boolean;
@@ -64,20 +59,7 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   bgColor: string;
 
-  get displayPricePerMonthInEuro(): string {
-    for (const currency of this.currencies) {
-      if (currency.type === CurrencyEnum.EUR) {
-        return `${(currency.pricePerMonth / 100).toFixed(2)}`;
-      }
-    }
-    return '? Euro';
-  }
-  get displayPricePerYearInEuro(): string {
-    for (const currency of this.currencies) {
-      if (currency.type === CurrencyEnum.EUR) {
-        return `${(currency.pricePerYear / 100).toFixed(2)}`;
-      }
-    }
-    return '? Euro';
+  get paypalProductData(): PaypalProductData {
+    return PaypalProductData.fromProduct(this);
   }
 }

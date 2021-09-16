@@ -4,7 +4,7 @@ import moment from 'moment';
 import { MoUtils } from '../../../../utils';
 import { BaseEntityDto } from '../../../mo-core';
 import { PlanStateEnum } from '../../enums/plan-state.enum';
-import { ProductDto } from '../product';
+import { CurrencyDto } from '../currency';
 
 export class PlanCreateRequestDto extends BaseEntityDto {
   @IsString()
@@ -38,6 +38,11 @@ export class PlanCreateRequestDto extends BaseEntityDto {
   @Expose()
   @IsString()
   productId: string;
+
+  @Expose()
+  @Type(() => CurrencyDto)
+  @ValidateNested()
+  currencies: CurrencyDto[];
 
   @Expose()
   @IsDateString()
