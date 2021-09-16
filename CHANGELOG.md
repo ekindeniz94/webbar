@@ -2,6 +2,13 @@
 
 
 
+## 1.27.18 (2021-09-16)
+
+
+### Bug Fixes
+
+* refactoring mo-file ([8abee72](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8abee72a01a8f59a0fa77538f25eeed4a30bf0d7))
+
 ## 1.27.17 (2021-09-16)
 
 
