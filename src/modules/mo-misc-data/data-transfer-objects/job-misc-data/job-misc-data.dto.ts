@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { UserPublicDto } from '../../../mo-user';
 import { isArray } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
-import { FileMiscDataDto, FilePublicMiscDataDto } from '../file-misc-data';
+import { FilePublicDto } from '../../../mo-file';
 
 export class JobMiscDataDto extends BaseEntityDto {
   @Expose()
@@ -42,9 +42,9 @@ export class JobMiscDataDto extends BaseEntityDto {
   @Expose()
   teaserImageId: string;
 
-  @Type(() => FilePublicMiscDataDto)
+  @Type(() => FilePublicDto)
   @Expose()
-  teaserImage: FilePublicMiscDataDto;
+  teaserImage: FilePublicDto;
 
   @Expose()
   published: boolean;

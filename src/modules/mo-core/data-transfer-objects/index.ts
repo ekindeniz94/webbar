@@ -10,3 +10,4 @@ export * from './git-tag-ref-item.dto';
 export * from './sms-message.dto';
 export * from './search-request.dto';
 export * from './pagination-response.dto';
+export * from './language-code.dto';

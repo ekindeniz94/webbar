@@ -4,10 +4,11 @@ import { isBoolean, IsOptional, isString } from 'class-validator';
 import { UserCompanyDto } from './user-company.dto';
 import { UserAddressDto } from './user-address.dto';
 import { GroupDto } from '../group';
+import { UserPublicDto } from './user-public.dto';
 
 export class UserDto extends BaseEntityDto {
   @Exclude()
-  createdBy: string;
+  createdBy: UserPublicDto;
 
   @Expose()
   firstName: string;

@@ -1,11 +1,8 @@
-import { Exclude, Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
-import { BaseEntityDto } from '../../../mo-core';
+import { BaseEntityDto } from '../../mo-core';
 
-export class FilePublicMiscDataDto extends BaseEntityDto {
-  @Exclude()
-  createdBy: string;
-
+export class FilePublicDto extends BaseEntityDto {
   @Expose()
   seoUrl: string;
 

@@ -291,6 +291,9 @@ export const DTO_VALIDATION_CONST = {
       },
       ALT_TEXT: {
         MAX: 256
+      },
+      LANGUAGE_CODE: {
+        MAX: 6
       }
     },
     CONTACT: {

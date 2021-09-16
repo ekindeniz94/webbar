@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
 
-export class FileMiscDataCreateResponseDto {
+export class FileCreateResponseDto {
   @Expose()
   seoUrl: string;
 

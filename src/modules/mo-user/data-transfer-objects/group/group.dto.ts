@@ -1,10 +1,11 @@
 import { Exclude, Expose, Transform } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { isArray, isString } from 'class-validator';
+import { UserPublicDto } from '../user/user-public.dto';
 
 export class GroupDto extends BaseEntityDto {
   @Exclude()
-  createdBy: string;
+  createdBy: UserPublicDto;
 
   @Expose()
   name: string;

@@ -1,8 +1,17 @@
 import { isBoolean, IsBoolean, IsNotEmpty, IsOptional, isString, IsString, MaxLength } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../../mo-core';
 
-export class FileMiscDataCreateRequestDto {
+export class FileCreateRequestDto {
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.MISC.FILE.LANGUAGE_CODE.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.FILE.LANGUAGE_CODE.MAX)
+  )
+  @Expose()
+  languageCode: string;
+
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.MISC.FILE.ALT_TEXT.MAX)
