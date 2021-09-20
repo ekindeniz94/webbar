@@ -10,6 +10,9 @@ import { CurrencyDto } from '../currency';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
+  paypalId: string;
+
+  @Expose()
   name: string;
 
   @Expose()
