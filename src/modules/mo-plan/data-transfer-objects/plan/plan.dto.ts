@@ -26,8 +26,4 @@ export class PlanDto extends BaseEntityDto {
 
   @Expose()
   state: PlanStateEnum;
-
-  get paypalPlanData(): PaypalPlanData[] {
-    return PaypalPlanData.fromPlan(this);
-  }
 }

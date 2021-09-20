@@ -1,6 +1,8 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { ProductRuntimeIntervalEnum, CurrencyEnum } from '../../enums';
+import { PaypalPlanData } from '../../utils/plan.utils';
+import { PlanDto } from '../plan';
 export class CurrencyDto extends BaseEntityDto {
   @Expose()
   type: CurrencyEnum;
@@ -19,5 +21,9 @@ export class CurrencyDto extends BaseEntityDto {
       return `${(this.pricePerInterval / 100).toFixed(2)}`;
     }
     return `${this.type} does not support displayPricePerInterval()`;
+  }
+
+  paypalPlanData(plan:PlanDto): PaypalPlanData {
+    return PaypalPlanData.from(plan, this);
   }
 }
