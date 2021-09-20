@@ -2,6 +2,13 @@
 
 
 
+## 1.27.21 (2021-09-20)
+
+
+### Bug Fixes
+
+* added paypalId to plan and product. ([5444b34](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5444b3481931eb09dbff2f13489d37dc1f3953f4))
+
 ## 1.27.20 (2021-09-20)
 
 
