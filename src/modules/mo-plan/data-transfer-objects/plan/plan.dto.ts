@@ -7,9 +7,6 @@ import { ProductDto } from '../product';
 
 export class PlanDto extends BaseEntityDto {
   @Expose()
-  paypalId: string;
-  
-  @Expose()
   product: ProductDto;
 
   @Expose()

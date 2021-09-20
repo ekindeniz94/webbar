@@ -1,9 +1,15 @@
 import { Expose } from 'class-transformer';
+import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { ProductRuntimeIntervalEnum, CurrencyEnum } from '../../enums';
 import { PaypalPlanData } from '../../utils/plan.utils';
 import { PlanDto } from '../plan';
 export class CurrencyDto extends BaseEntityDto {
+  @Expose()
+  @IsOptional()
+  @IsString()
+  paypalId: string;
+
   @Expose()
   type: CurrencyEnum;
 
