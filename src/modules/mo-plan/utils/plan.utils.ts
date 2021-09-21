@@ -10,7 +10,7 @@ export class PaypalPlanData {
 
   static from(plan: PlanDto, currency: CurrencyDto): PaypalPlanData {
     return {
-      product_id: plan.product.id,
+      product_id: plan.product.paypalId,
       name: plan.name,
       description: plan.description,
       billing_cycles: [
