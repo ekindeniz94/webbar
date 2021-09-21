@@ -10,12 +10,12 @@ export class PaypalProductData {
 
   static fromProduct(product: ProductDto): PaypalProductData {
     return {
-      name: product.name,
-      description: product.description,
+      name: encodeURIComponent(product.name),
+      description: encodeURIComponent(product.description),
       type: product.paypalProductType,
       category: product.paypalCategoryType,
-      image_url: product.imageUrl,
-      home_url: product.homeUrl
+      image_url: encodeURIComponent(product.imageUrl),
+      home_url: encodeURIComponent(product.homeUrl)
     };
   }
 }
