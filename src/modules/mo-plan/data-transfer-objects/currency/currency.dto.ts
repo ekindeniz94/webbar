@@ -29,7 +29,7 @@ export class CurrencyDto extends BaseEntityDto {
     return `${this.type} does not support displayPricePerInterval()`;
   }
 
-  paypalPlanData(plan:PlanDto): PaypalPlanData {
-    return PaypalPlanData.from(plan, this);
+  paypalPlanData(plan:PlanDto, paypalProductId: string): PaypalPlanData {
+    return PaypalPlanData.from(plan, this, paypalProductId);
   }
 }
