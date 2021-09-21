@@ -8,9 +8,9 @@ export class PaypalPlanData {
   payment_preferences: any;
   taxes: any;
 
-  static from(plan: PlanDto, currency: CurrencyDto): PaypalPlanData {
+  static from(plan: PlanDto, currency: CurrencyDto, paypalProductId: string): PaypalPlanData {
     return {
-      product_id: plan.product.paypalId,
+      product_id: paypalProductId,
       name: plan.name,
       description: plan.description,
       billing_cycles: [
