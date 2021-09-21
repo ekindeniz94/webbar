@@ -2,6 +2,13 @@
 
 
 
+## 1.27.22 (2021-09-21)
+
+
+### Bug Fixes
+
+* encoding fix. ([4101e11](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4101e11c13e033a2b6d3343f991435b78ddc3aed))
+
 ## 1.27.21 (2021-09-20)
 
 
