@@ -16,6 +16,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { UserCompanyPatchRequestDto } from './user-company-patch-request.dto';
 import { UserAddressPatchRequestDto } from './user-address-patch-request.dto';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
+import { GroupDto } from '../group';
 
 export class UserPatchRequestDto {
   @IsOptional()
@@ -108,4 +109,10 @@ export class UserPatchRequestDto {
   @IsBoolean()
   @Expose()
   billingAddressEqualsAddress: boolean;
+
+  @IsOptional()
+  @Type(() => GroupDto)
+  @ValidateNested()
+  @Expose()
+  groups: GroupDto[];
 }

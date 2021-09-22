@@ -9,6 +9,6 @@ export * from './namespace-kubernetes-dashboard.dto';
 export * from './namespace-patch-request.dto';
 export * from './namespace-patch-response.dto';
 export * from './namespace-stage.dto';
+export * from './namespace-search-response.dto';
 export * from './namespace-user.dto';
 export * from './remove-user-from-namespace-group-request.dto';
-
