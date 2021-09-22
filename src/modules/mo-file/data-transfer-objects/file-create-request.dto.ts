@@ -5,30 +5,49 @@ import { DTO_VALIDATION_CONST } from '../../mo-core';
 export class FileCreateRequestDto {
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.FILE.LANGUAGE_CODE.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.FILE.LANGUAGE_CODE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.FILE.LANGUAGE_CODE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.LANGUAGE_CODE.MAX)
   )
   @Expose()
   languageCode: string;
 
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.FILE.ALT_TEXT.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.FILE.ALT_TEXT.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.FILE.ALT_TEXT.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.ALT_TEXT.MAX)
   )
   @Expose()
   altText: string;
 
+
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.FILE.NAME.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.FILE.TITLE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.FILE.NAME.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.TITLE.MAX)
   )
   @Expose()
-  name: string;
+  title?: string;
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.FILE.CAPTION.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.CAPTION.MAX)
+  )
+  @Expose()
+  caption?: string;
+
+  @IsOptional()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.FILE.COPYRIGHT.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.COPYRIGHT.MAX)
+  )
+  @Expose()
+  copyright?: string;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
@@ -36,4 +55,11 @@ export class FileCreateRequestDto {
   @IsBoolean()
   @Expose()
   published: boolean;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsOptional()
+  @IsBoolean()
+  @Expose()
+  defaultTranslation?: boolean;
 }

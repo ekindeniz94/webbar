@@ -38,13 +38,4 @@ export class FileDto extends BaseEntityDto {
 
   @Expose()
   deletedAt?: Date;
-
-  @Transform(({ value, obj }) => {
-    if (value && value.indexOf(`/${obj.seoUrl}`) === -1) {
-      return `${value}/${obj.seoUrl}`;
-    }
-    return value;
-  })
-  @Expose()
-  link: string;
 }

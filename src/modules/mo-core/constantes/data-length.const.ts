@@ -213,6 +213,23 @@ export const DTO_VALIDATION_CONST = {
       MAX: 512
     }
   },
+  FILE: {
+    ALT_TEXT: {
+      MAX: 256
+    },
+    TITLE: {
+      MAX: 256
+    },
+    CAPTION: {
+      MAX: 512000
+    },
+    COPYRIGHT: {
+      MAX: 256
+    },
+    LANGUAGE_CODE: {
+      MAX: 6
+    }
+  },
   MISC: {
     BLOG: {
       TAG: {
@@ -283,17 +300,6 @@ export const DTO_VALIDATION_CONST = {
       TEASER_TEXT: {
         MIN: 10,
         MAX: 256000
-      }
-    },
-    FILE: {
-      NAME: {
-        MAX: 256
-      },
-      ALT_TEXT: {
-        MAX: 256
-      },
-      LANGUAGE_CODE: {
-        MAX: 6
       }
     },
     CONTACT: {

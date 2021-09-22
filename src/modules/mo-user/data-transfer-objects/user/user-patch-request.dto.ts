@@ -26,7 +26,7 @@ export class UserPatchRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FIRST_NAME.MAX)
   )
   @Expose()
-  firstName: string;
+  firstName?: string;
 
   @IsOptional()
   @IsString()
@@ -35,7 +35,7 @@ export class UserPatchRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.LAST_NAME.MAX)
   )
   @Expose()
-  lastName: string;
+  lastName?: string;
 
   @IsOptional()
   @IsString()
@@ -45,12 +45,12 @@ export class UserPatchRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
   )
   @Expose()
-  email: string;
+  email?: string;
 
   @IsOptional()
   @IsString()
   @Expose()
-  oldPassword: string;
+  oldPassword?: string;
 
   @IsOptional()
   @IsString()
@@ -63,7 +63,7 @@ export class UserPatchRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PASSWORD.MAX)
   )
   @Expose()
-  password: string;
+  password?: string;
 
   @IsOptional()
   @IsString()
@@ -73,7 +73,7 @@ export class UserPatchRequestDto {
   )
   @IsInStringList(DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.IS_IN_STRING_LIST)
   @Expose()
-  phoneNumberPrefix: string;
+  phoneNumberPrefix?: string;
 
   @IsOptional()
   @IsString()
@@ -82,7 +82,7 @@ export class UserPatchRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
   )
   @Expose()
-  phoneNumber: string;
+  phoneNumber?: string;
 
   @IsOptional()
   @Type(() => UserCompanyPatchRequestDto)
@@ -94,7 +94,7 @@ export class UserPatchRequestDto {
   @Type(() => UserAddressPatchRequestDto)
   @ValidateNested()
   @Expose()
-  address: UserAddressPatchRequestDto;
+  address?: UserAddressPatchRequestDto;
 
   @IsOptional()
   @ValidateIf((obj) => obj?.billingAddressEqualsAddress === false)
@@ -114,5 +114,5 @@ export class UserPatchRequestDto {
   @Type(() => GroupDto)
   @ValidateNested()
   @Expose()
-  groups: GroupDto[];
+  groups?: GroupDto[];
 }

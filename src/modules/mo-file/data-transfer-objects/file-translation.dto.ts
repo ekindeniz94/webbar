@@ -1,5 +1,5 @@
 import { BaseEntityDto, LanguageCodeDto } from '../../mo-core';
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 
 export class FileTranslationDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)
@@ -26,4 +26,13 @@ export class FileTranslationDto extends BaseEntityDto {
 
   @Expose()
   deletedAt?: Date;
+
+  @Transform(({ value, obj }) => {
+    if (value && value.indexOf(`/${obj.seoUrl}`) === -1) {
+      return `${value}/${obj.seoUrl}`;
+    }
+    return value;
+  })
+  @Expose()
+  link: string;
 }
