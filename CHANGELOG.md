@@ -2,6 +2,13 @@
 
 
 
+## 1.27.34 (2021-09-23)
+
+
+### Bug Fixes
+
+* added plan order number. ([b7881f7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b7881f776b004d9a42180ea0b3caed4d9f9c5dae))
+
 ## 1.27.33 (2021-09-23)
 
 
