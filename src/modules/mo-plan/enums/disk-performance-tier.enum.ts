@@ -15,7 +15,7 @@ export enum DiskPerformanceTierEnum {
   PREMIUM_SSD_P80 = 'P80' // 32TB ~ 2763 €
 }
 
-export const ProductTypeEnum_ALL = [
+export const DiskPerformanceTierEnum_ALL = [
   DiskPerformanceTierEnum.PREMIUM_SSD_P1,
   DiskPerformanceTierEnum.PREMIUM_SSD_P2,
   DiskPerformanceTierEnum.PREMIUM_SSD_P4,
