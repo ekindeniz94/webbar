@@ -1,12 +1,11 @@
-import { Expose, Transform } from 'class-transformer';
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
+import { Expose } from 'class-transformer';
+import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
-import { CurrencyEnum } from '../../enums/currency.enum';
+import { ProductTypeEnum } from '../../enums';
+import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
 import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
 import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
 import { PaypalProductData } from '../../utils';
-import { CurrencyDto } from '../currency';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
@@ -52,6 +51,9 @@ export class ProductDto extends BaseEntityDto {
 
   @Expose()
   persistentDiskInMb: number;
+
+  @Expose()
+  diskPerformanceTier: DiskPerformanceTierEnum;
 
   @Expose()
   persistentAzureFilesInMb: number;

@@ -16,6 +16,7 @@ import { MoUtils } from '../../../../utils';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
 import { ProductTypeEnum } from '../../enums';
+import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
 import { CurrencyDto } from '../currency';
 
 export class ProductCreateRequestDto extends BaseEntityDto {
@@ -166,6 +167,11 @@ export class ProductCreateRequestDto extends BaseEntityDto {
     { toClassOnly: true }
   )
   persistentDiskInMb: number;
+
+  @Expose()
+  @IsEnum(DiskPerformanceTierEnum)
+  @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
+  diskPerformanceTier: DiskPerformanceTierEnum;
 
   @Expose()
   @IsNumber()
