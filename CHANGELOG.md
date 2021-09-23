@@ -2,6 +2,13 @@
 
 
 
+## 1.27.32 (2021-09-23)
+
+
+### Bug Fixes
+
+* create / patch file DTOs ([395e797](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/395e797ea588c1549019b34602f8280c11b0055f))
+
 ## 1.27.31 (2021-09-23)
 
 
