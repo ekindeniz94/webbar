@@ -19,16 +19,10 @@ export class FileTranslationDto extends BaseEntityDto {
   caption: string;
 
   @Expose()
-  copyright: string;
-
-  @Expose()
   published: boolean;
 
   @Expose()
   defaultTranslation: boolean;
-
-  @Expose()
-  deletedAt?: Date;
 
   @Transform(({ value, obj }) => {
     if (value && value.indexOf(`/${obj.seoUrl}`) === -1) {

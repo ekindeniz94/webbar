@@ -66,7 +66,7 @@ export class NamespaceCommandCreateRequestDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.BLOG.TOPIC.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.BLOG.TOPIC.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,

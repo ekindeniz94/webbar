@@ -35,7 +35,4 @@ export class FileDto extends BaseEntityDto {
 
   @Expose()
   published: boolean;
-
-  @Expose()
-  deletedAt?: Date;
 }

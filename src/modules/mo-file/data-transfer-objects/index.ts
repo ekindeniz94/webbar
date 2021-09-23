@@ -7,6 +7,5 @@ export * from './file-translation-create-request.dto';
 export * from './file-translation-patch-request.dto';
 export * from './file-patch-request.dto';
 export * from './file-patch-response.dto';
-export * from './file-size.dto';
 export * from './file-type.dto';
 export * from './mime-type';

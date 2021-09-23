@@ -14,11 +14,4 @@ export class FilePatchRequestDto extends FileCreateRequestDto{
   @ValidateNested()
   @Expose()
   translations: FileTranslationPatchRequestDto[];
-
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBooleanString(value) || isBoolean(value) ? value : false))
-  @IsNotEmpty()
-  @IsBoolean()
-  @Expose()
-  published: boolean;
 }
