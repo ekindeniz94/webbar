@@ -23,4 +23,7 @@ export class PlanDto extends BaseEntityDto {
 
   @Expose()
   state: PlanStateEnum;
+
+  @Expose()
+  order: number;
 }

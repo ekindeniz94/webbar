@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsDateString, IsEnum, IsString, ValidateNested } from 'class-validator';
+import { IsDateString, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { MoUtils } from '../../../../utils';
 import { BaseEntityDto } from '../../../mo-core';
@@ -62,4 +62,9 @@ export class PlanCreateRequestDto extends BaseEntityDto {
   @IsEnum(PlanStateEnum)
   @Transform(({ value }) => value ?? PlanStateEnum.ACTIVE)
   state: PlanStateEnum;
+
+  @Expose()
+  @Transform(({ value }) => value ?? 0)
+  @IsNumber()
+  order: number;
 }
