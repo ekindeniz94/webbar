@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
 import { BaseEntityDto } from '../../mo-core';
 import { UserPublicDto } from '../../mo-user';

@@ -1,4 +1,3 @@
-import { BaseEntityDto } from './base.entity.dto';
 import { Expose } from 'class-transformer';
 
 export class LanguageCodeDto {

@@ -3,6 +3,8 @@ export * from './file-translation.dto';
 export * from './file-public.dto';
 export * from './file-create-request.dto';
 export * from './file-create-response.dto';
+export * from './file-translation-create-request.dto';
+export * from './file-translation-patch-request.dto';
 export * from './file-patch-request.dto';
 export * from './file-patch-response.dto';
 export * from './file-size.dto';

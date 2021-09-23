@@ -25,6 +25,9 @@ export class FileTranslationDto extends BaseEntityDto {
   published: boolean;
 
   @Expose()
+  defaultTranslation: boolean;
+
+  @Expose()
   deletedAt?: Date;
 
   @Transform(({ value, obj }) => {
