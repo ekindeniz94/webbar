@@ -2,6 +2,13 @@
 
 
 
+## 1.27.33 (2021-09-23)
+
+
+### Bug Fixes
+
+* refactoring blog ([b1d098a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b1d098a21a98a622c36dde8a6e8012da3f706eae))
+
 ## 1.27.32 (2021-09-23)
 
 
