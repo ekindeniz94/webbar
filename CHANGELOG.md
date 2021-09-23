@@ -2,6 +2,13 @@
 
 
 
+## 1.27.30 (2021-09-23)
+
+
+### Bug Fixes
+
+* added diskperformancetier enum. ([47fec4d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/47fec4dfccc0600057d0354f8ba876a62658f22d))
+
 ## 1.27.29 (2021-09-22)
 
 
