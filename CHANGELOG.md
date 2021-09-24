@@ -2,6 +2,13 @@
 
 
 
+## 1.27.37 (2021-09-24)
+
+
+### Bug Fixes
+
+* reafctoring job DTOs ([cc7eaf4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cc7eaf4272329763ec375d2e5c144e0ba04329cb))
+
 ## 1.27.36 (2021-09-24)
 
 
