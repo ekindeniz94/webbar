@@ -2,6 +2,13 @@
 
 
 
+## 1.27.36 (2021-09-24)
+
+
+### Bug Fixes
+
+* deletedAt introduced for currency. ([0768efa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0768efab110261aed843b1ca3e5d002ce4a9eaba))
+
 ## 1.27.35 (2021-09-24)
 
 
