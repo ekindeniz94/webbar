@@ -41,7 +41,7 @@ export class ProductDto extends BaseEntityDto {
   endsOn: Date;
 
   @Expose()
-  deleted: boolean;
+  deletedAt?: Date;
 
   @Expose()
   kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
