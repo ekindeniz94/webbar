@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
-import { ProductRuntimeIntervalEnum, CurrencyEnum } from '../../enums';
+import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
 import { PaypalPlanData } from '../../utils/plan.utils';
 import { PlanDto } from '../plan';
 export class CurrencyDto extends BaseEntityDto {
@@ -21,6 +21,9 @@ export class CurrencyDto extends BaseEntityDto {
 
   @Expose()
   taxPercent: number;
+
+  @Expose()
+  deletedAt?: Date;
 
   get displayPricePerInterval(): string {
     if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {

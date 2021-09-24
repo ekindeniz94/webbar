@@ -2,6 +2,27 @@
 
 
 
+## 1.27.36 (2021-09-24)
+
+
+### Bug Fixes
+
+* deletedAt introduced for currency. ([0768efa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0768efab110261aed843b1ca3e5d002ce4a9eaba))
+
+## 1.27.35 (2021-09-24)
+
+
+### Bug Fixes
+
+* deletedAt introduced for plan and product. ([7249be8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7249be8983bcdd9d0af478b2f5a0701db430cd69))
+
+## 1.27.34 (2021-09-23)
+
+
+### Bug Fixes
+
+* added plan order number. ([b7881f7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b7881f776b004d9a42180ea0b3caed4d9f9c5dae))
+
 ## 1.27.33 (2021-09-23)
 
 
