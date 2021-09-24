@@ -250,6 +250,22 @@ export const DTO_VALIDATION_CONST = {
       MIN: 10
     }
   },
+  JOB: {
+    TAG: {
+      MAX: 128,
+      MAX_TAGS: 100
+    },
+    TITLE: {
+      MIN: 2,
+      MAX: 512
+    },
+    CONTENT: {
+      MIN: 10
+    },
+    TEASER_CONTENT: {
+      MIN: 10
+    }
+  },
   MISC: {
     DOCU: {
       NAV: {
@@ -270,34 +286,6 @@ export const DTO_VALIDATION_CONST = {
           MIN: 2,
           MAX: 512000
         }
-      }
-    },
-    JOB: {
-      TAG: {
-        MAX: 128,
-        MAX_TAGS: 100
-      },
-      NAME: {
-        MIN: 2,
-        MAX: 512
-      },
-      BG_COLOR: {
-        MAX: 8
-      },
-      TEXT_COLOR: {
-        MAX: 8
-      },
-      SHORT_NAME: {
-        MIN: 2,
-        MAX: 256
-      },
-      CONTENT: {
-        MIN: 10,
-        MAX: 512000
-      },
-      TEASER_TEXT: {
-        MIN: 10,
-        MAX: 256000
       }
     },
     CONTACT: {

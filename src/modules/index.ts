@@ -5,3 +5,4 @@ export * from './mo-plan';
 export * from './mo-user';
 export * from './mo-file';
 export * from './mo-blog';
+export * from './mo-job';
