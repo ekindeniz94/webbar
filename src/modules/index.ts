@@ -6,3 +6,4 @@ export * from './mo-user';
 export * from './mo-file';
 export * from './mo-blog';
 export * from './mo-job';
+export * from './mo-contact';

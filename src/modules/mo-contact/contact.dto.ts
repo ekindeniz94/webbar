@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
+import { BaseEntityDto } from '../mo-core';
 
-export class ContactMiscDataDto extends BaseEntityDto {
+export class ContactDto extends BaseEntityDto {
   // @Exclude()
   // createdBy: string;
 
@@ -30,10 +30,11 @@ export class ContactMiscDataDto extends BaseEntityDto {
   @Expose()
   subscribeNewsletter: boolean;
 
-  @Type(() => ContactMiscDataDto)
+  // TODO
+  @Type(() => ContactDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  translations: ContactMiscDataDto[];
+  translations: ContactDto[];
 
   get teaserTextString(): string {
     const content = this.subject?.replace(/<[^>]*>/g, '');

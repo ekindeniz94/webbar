@@ -13,9 +13,9 @@ import {
   ValidateNested
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../mo-core';
 
-export class ContactMiscDataCreateRequestDto {
+export class ContactCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) => value ?? 'en')
@@ -55,29 +55,29 @@ export class ContactMiscDataCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.MISC.CONTACT.INTEREST.MAX)
+  @MaxLength(DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.CONTACT.INTEREST.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
   )
   @Expose()
   interest: string;
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.MISC.CONTACT.SUBJECT.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.CONTACT.SUBJECT.MAX)
+  @MinLength(DTO_VALIDATION_CONST.CONTACT.SUBJECT.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.CONTACT.SUBJECT.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
   )
   @Expose()
   subject: string;
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.MISC.CONTACT.MESSAGE.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.MISC.CONTACT.MESSAGE.MAX)
+  @MinLength(DTO_VALIDATION_CONST.CONTACT.MESSAGE.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.MISC.CONTACT.MESSAGE.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
   )
   @Expose()
   message: string;
@@ -89,11 +89,11 @@ export class ContactMiscDataCreateRequestDto {
   @Expose()
   subscribeNewsletter: boolean;
 
-  @Type(() => ContactMiscDataCreateRequestDto)
+  @Type(() => ContactCreateRequestDto)
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ArrayMaxSize(2)
   @ValidateNested()
   @Expose()
-  translations: ContactMiscDataCreateRequestDto[];
+  translations: ContactCreateRequestDto[];
 }

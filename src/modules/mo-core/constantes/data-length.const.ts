@@ -266,6 +266,19 @@ export const DTO_VALIDATION_CONST = {
       MIN: 10
     }
   },
+  CONTACT: {
+    INTEREST: {
+      MAX: 256
+    },
+    SUBJECT: {
+      MIN: 5,
+      MAX: 256
+    },
+    MESSAGE: {
+      MIN: 10,
+      MAX: 3000
+    }
+  },
   MISC: {
     DOCU: {
       NAV: {
@@ -288,18 +301,5 @@ export const DTO_VALIDATION_CONST = {
         }
       }
     },
-    CONTACT: {
-      INTEREST: {
-        MAX: 256
-      },
-      SUBJECT: {
-        MIN: 5,
-        MAX: 256
-      },
-      MESSAGE: {
-        MIN: 10,
-        MAX: 3000
-      }
-    }
   }
 };
