@@ -1,6 +1,5 @@
 import { BaseEntityDto, LanguageCodeDto } from '../../mo-core';
 import { Expose, Type } from 'class-transformer';
-import { FileDto } from '../../mo-file';
 
 export class BlogTranslationDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)
@@ -21,10 +20,6 @@ export class BlogTranslationDto extends BaseEntityDto {
 
   @Expose()
   content: string;
-
-  @Type(() => FileDto)
-  @Expose()
-  teaserImage: FileDto;
 
   @Expose()
   seoUrl: string;

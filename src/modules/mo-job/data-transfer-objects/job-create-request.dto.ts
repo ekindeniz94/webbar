@@ -1,8 +1,14 @@
-import { isBoolean, IsBoolean, IsNotEmpty, ValidateNested } from 'class-validator';
+import { isBoolean, IsBoolean, IsNotEmpty, IsOptional, ValidateNested } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import { JobTranslationCreateRequestDto } from './job-translation-create-request.dto';
+import { FileDto } from '../../mo-file';
 
 export class JobCreateRequestDto {
+  @IsOptional()
+  @Type(() => FileDto)
+  @Expose()
+  teaserImage?: FileDto;
+
   @Type(() => JobTranslationCreateRequestDto)
   @ValidateNested()
   @Expose()

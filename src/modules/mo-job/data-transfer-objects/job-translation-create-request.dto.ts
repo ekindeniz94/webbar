@@ -12,7 +12,6 @@ import {
 } from 'class-validator';
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../mo-core';
 import { Expose, Transform, Type } from 'class-transformer';
-import { FileDto } from '../../mo-file';
 import * as _ from 'lodash';
 
 export class JobTranslationCreateRequestDto {
@@ -56,11 +55,6 @@ export class JobTranslationCreateRequestDto {
   @MinLength(DTO_VALIDATION_CONST.JOB.CONTENT.MIN)
   @Expose()
   content: string;
-
-  @IsOptional()
-  @Type(() => FileDto)
-  @Expose()
-  teaserImage?: FileDto;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))

@@ -66,11 +66,6 @@ export class BlogTranslationCreateRequestDto {
   @Expose()
   content: string;
 
-  @IsOptional()
-  @Type(() => FileDto)
-  @Expose()
-  teaserImage?: FileDto;
-
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @IsNotEmpty()
