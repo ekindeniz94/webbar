@@ -2,6 +2,13 @@
 
 
 
+## 1.27.41 (2021-09-27)
+
+
+### Bug Fixes
+
+* add srcImg property to teaser image ([85e949d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/85e949d7d20295f18fed4e2cf32ce4842c0b6e4b))
+
 ## 1.27.40 (2021-09-27)
 
 
