@@ -2,6 +2,13 @@
 
 
 
+## 1.27.40 (2021-09-27)
+
+
+### Bug Fixes
+
+* refactoring mo-contact ([9370e04](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9370e0421fa9d608eb466904c2a8d6074658a63f))
+
 ## 1.27.39 (2021-09-27)
 
 
