@@ -1,0 +1,29 @@
+import { Expose, Type } from 'class-transformer';
+import { FileTypeDto } from '../../mo-file';
+
+export class BlogPublicTeaserImageDto {
+  @Expose()
+  id: string;
+
+  @Expose()
+  createdAt: Date;
+
+  @Expose()
+  altText: string;
+
+  @Expose()
+  updatedAt: Date;
+
+  @Expose()
+  seoUrl: string;
+
+  @Expose()
+  title: string;
+
+  @Expose()
+  caption: string;
+
+  @Type(() => FileTypeDto)
+  @Expose()
+  fileType: FileTypeDto;
+}

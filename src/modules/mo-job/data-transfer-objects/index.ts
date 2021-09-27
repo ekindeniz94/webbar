@@ -6,3 +6,5 @@ export * from './job-patch-response.dto';
 export * from './job-translation.dto';
 export * from './job-translation-create-request.dto';
 export * from './job-translation-patch-request.dto';
+export * from './job-public.dto';
+export * from './job-public-teaser-image.dto';

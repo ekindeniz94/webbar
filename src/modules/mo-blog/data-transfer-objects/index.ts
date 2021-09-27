@@ -6,3 +6,5 @@ export * from './blog-patch-response.dto';
 export * from './blog-translation.dto';
 export * from './blog-translation-create-request.dto';
 export * from './blog-translation-patch-request.dto';
+export * from './blog-public.dto';
+export * from './blog-public-teaser-image.dto';
