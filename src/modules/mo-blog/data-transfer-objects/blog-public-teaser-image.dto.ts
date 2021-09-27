@@ -6,6 +6,9 @@ export class BlogPublicTeaserImageDto {
   id: string;
 
   @Expose()
+  imgSrc: string;
+
+  @Expose()
   createdAt: Date;
 
   @Expose()

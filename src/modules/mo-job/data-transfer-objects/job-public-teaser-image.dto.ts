@@ -6,6 +6,9 @@ export class JobPublicTeaserImageDto {
   id: string;
 
   @Expose()
+  imgSrc: string;
+
+  @Expose()
   createdAt: Date;
 
   @Expose()
