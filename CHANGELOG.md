@@ -2,6 +2,13 @@
 
 
 
+## 1.27.38 (2021-09-27)
+
+
+### Bug Fixes
+
+* update mo-blog DTOs ([adc9dba](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/adc9dbae5e8842db89a514c204ccce142edce522))
+
 ## 1.27.37 (2021-09-24)
 
 
