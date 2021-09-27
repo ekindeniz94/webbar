@@ -2,6 +2,13 @@
 
 
 
+## 1.27.39 (2021-09-27)
+
+
+### Bug Fixes
+
+* blob / job public DTOs ([b93b246](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b93b246c9369c54c352a4c46fa093e8bf8db33b0))
+
 ## 1.27.38 (2021-09-27)
 
 
