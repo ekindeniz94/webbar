@@ -7,3 +7,4 @@ export * from './mo-file';
 export * from './mo-blog';
 export * from './mo-job';
 export * from './mo-contact';
+export * from './mo-sitemap';
