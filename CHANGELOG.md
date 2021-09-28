@@ -2,6 +2,13 @@
 
 
 
+## 1.27.43 (2021-09-28)
+
+
+### Bug Fixes
+
+* update job / blog seoUrl ([14fd8d1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/14fd8d19ce8d14c9efedf2fe3c6983584d401264))
+
 ## 1.27.42 (2021-09-28)
 
 
