@@ -66,6 +66,19 @@ export class BlogTranslationCreateRequestDto {
   @Expose()
   content: string;
 
+  @IsNotEmpty()
+  @IsString()
+  @Transform(
+    ({ value, key, obj, type }) =>
+      value ??
+      `${obj?.title
+        ?.replace(/[^a-zA-Z]/g, ' ')
+        ?.replace(/ +/g, '-')
+        ?.toLowerCase()}`
+  )
+  @Expose()
+  seoUrl: string;
+
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @IsNotEmpty()
