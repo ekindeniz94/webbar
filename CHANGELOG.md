@@ -2,6 +2,13 @@
 
 
 
+## 1.27.42 (2021-09-28)
+
+
+### Bug Fixes
+
+* added sitemap dto. ([53f18d3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/53f18d3fd9ca0c3e9abca4bad5c2cbd5795442fb))
+
 ## 1.27.41 (2021-09-27)
 
 
