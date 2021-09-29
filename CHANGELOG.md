@@ -2,6 +2,13 @@
 
 
 
+## 1.27.44 (2021-09-29)
+
+
+### Bug Fixes
+
+* add properties to mo-user ([d234e90](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d234e900fa103442e08240607619c15365968fb7))
+
 ## 1.27.43 (2021-09-28)
 
 
