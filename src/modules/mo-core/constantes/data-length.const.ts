@@ -195,6 +195,12 @@ export const DTO_VALIDATION_CONST = {
     STREET: {
       MAX: 256
     },
+    HOUSE_NUMBER: {
+      MAX: 16
+    },
+    STATE: {
+      MAX: 128
+    },
     ZIP: {
       MAX: 128
     },
@@ -300,6 +306,6 @@ export const DTO_VALIDATION_CONST = {
           MAX: 512000
         }
       }
-    },
+    }
   }
 };

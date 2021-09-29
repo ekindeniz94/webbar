@@ -1,5 +1,15 @@
-import { Expose, Transform } from 'class-transformer';
-import { IsEmail, IsNotEmpty, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import {
+  isBoolean,
+  IsBoolean,
+  IsEmail,
+  IsNotEmpty,
+  isString,
+  IsString,
+  Matches,
+  MaxLength,
+  MinLength
+} from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class UserRegisterRequestDto {
@@ -30,6 +40,13 @@ export class UserRegisterRequestDto {
   )
   @Expose()
   email: string;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsNotEmpty()
+  @IsBoolean()
+  @Expose()
+  agreedTermsConditions: boolean;
 
   @IsNotEmpty()
   @IsString()

@@ -5,6 +5,12 @@ export class UserAddressDto {
   street: string;
 
   @Expose()
+  houseNumber: string;
+
+  @Expose()
+  state: string;
+
+  @Expose()
   zip: string;
 
   @Expose()

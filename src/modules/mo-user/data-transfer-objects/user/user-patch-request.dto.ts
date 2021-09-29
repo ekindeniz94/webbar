@@ -110,6 +110,13 @@ export class UserPatchRequestDto {
   @Expose()
   billingAddressEqualsAddress: boolean;
 
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsNotEmpty()
+  @IsBoolean()
+  @Expose()
+  agreedTermsConditions: boolean;
+
   @IsOptional()
   @Type(() => GroupDto)
   @ValidateNested()

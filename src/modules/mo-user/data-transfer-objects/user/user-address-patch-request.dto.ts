@@ -17,6 +17,26 @@ export class UserAddressPatchRequestDto {
   @ValidateIf((obj: UserAddressPatchRequestDto) => ValidateIfObjectNotEmpty(obj, UserAddressPatchRequestDto))
   @IsNotEmpty()
   @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.ADDRESS.HOUSE_NUMBER.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.ADDRESS.HOUSE_NUMBER.MAX)
+  )
+  @Expose()
+  houseNumber: string;
+
+  @ValidateIf((obj: UserAddressPatchRequestDto) => ValidateIfObjectNotEmpty(obj, UserAddressPatchRequestDto))
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.ADDRESS.STATE.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.ADDRESS.STATE.MAX)
+  )
+  @Expose()
+  state: string;
+
+  @ValidateIf((obj: UserAddressPatchRequestDto) => ValidateIfObjectNotEmpty(obj, UserAddressPatchRequestDto))
+  @IsNotEmpty()
+  @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.ZIP.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.ADDRESS.ZIP.MAX)
