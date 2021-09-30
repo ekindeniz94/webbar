@@ -2,6 +2,13 @@
 
 
 
+## 1.27.46 (2021-09-30)
+
+
+### Bug Fixes
+
+* add socket event enum ([ba3a9cb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ba3a9cbe016ccb87d77e92daecb3e6063a9d9482))
+
 ## 1.27.45 (2021-09-30)
 
 
