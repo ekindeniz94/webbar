@@ -2,6 +2,13 @@
 
 
 
+## 1.27.45 (2021-09-30)
+
+
+### Bug Fixes
+
+* add auth token DTOs ([9db68ab](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9db68ab3e899c3fc7ffd85bb4af33a5c313ba191))
+
 ## 1.27.44 (2021-09-29)
 
 
