@@ -193,21 +193,27 @@ export const DTO_VALIDATION_CONST = {
   },
   ADDRESS: {
     STREET: {
+      MIN: 2,
       MAX: 256
     },
     HOUSE_NUMBER: {
+      MIN: 1,
       MAX: 16
     },
     STATE: {
+      MIN: 2,
       MAX: 128
     },
     ZIP: {
+      MIN: 2,
       MAX: 128
     },
     COUNTRY: {
+      MIN: 2,
       MAX: 128
     },
     CITY: {
+      MIN: 2,
       MAX: 128
     }
   },
