@@ -2,6 +2,13 @@
 
 
 
+## 1.27.48 (2021-10-03)
+
+
+### Bug Fixes
+
+* confirm email DTOs ([e353fcf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e353fcf29eb68201a5b8db52121760022e3e0ab0))
+
 ## 1.27.47 (2021-09-30)
 
 
