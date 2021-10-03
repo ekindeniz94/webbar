@@ -2,15 +2,11 @@ import { IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { MoUtils } from '../../../../utils';
 
-export class EmailConfirmationMessageDto {
+export class ConfirmEmailRequestDto {
   @IsString()
   @Transform(({ value }) => value ?? MoUtils.nanoid())
   @Expose()
   id: string;
-
-  @IsString()
-  @Expose()
-  userId: string;
 
   @IsString()
   @Transform(({ value }) => value ?? Math.random().toString().substr(2, 6))
