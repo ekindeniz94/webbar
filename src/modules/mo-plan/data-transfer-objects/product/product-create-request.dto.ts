@@ -12,28 +12,12 @@ import {
   ValidateNested
 } from 'class-validator';
 import moment from 'moment';
-import { MoUtils } from '../../../../utils';
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { ProductTypeEnum } from '../../enums';
-import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
+import { DiskPerformanceTierEnum, ProductTypeEnum } from '../../enums';
 import { CurrencyDto } from '../currency';
 
-export class ProductCreateRequestDto extends BaseEntityDto {
-  @IsString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.id = MoUtils.nanoid();
-      return obj.id;
-    },
-    { toClassOnly: true }
-  )
-  @Expose()
-  id: string;
-
+export class ProductCreateRequestDto {
   @IsDateString()
   @Transform(
     ({ value, obj }) => {
@@ -62,10 +46,7 @@ export class ProductCreateRequestDto extends BaseEntityDto {
   @MaxLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX)
   @MinLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MIN)
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX
-    )
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX)
   )
   description: string;
 

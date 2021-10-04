@@ -1,26 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsDateString, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
-import { MoUtils } from '../../../../utils';
-import { BaseEntityDto } from '../../../mo-core';
-import { PlanStateEnum } from '../../enums/plan-state.enum';
 import { CurrencyDto } from '../currency';
+import { PlanStateEnum } from '../../enums';
 
-export class PlanCreateRequestDto extends BaseEntityDto {
-  @IsString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.id = MoUtils.nanoid();
-      return obj.id;
-    },
-    { toClassOnly: true }
-  )
-  @Expose()
-  id: string;
-
+export class PlanCreateRequestDto {
   @IsDateString()
   @Transform(
     ({ value, obj }) => {

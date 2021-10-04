@@ -1,8 +1,8 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { PlanStateEnum } from '../../enums/plan-state.enum';
-import { CurrencyDto } from '../currency/currency.dto';
 import { ProductDto } from '../product';
+import { CurrencyDto } from '../currency';
+import { PlanStateEnum } from '../../enums';
 
 export class PlanDto extends BaseEntityDto {
   @Expose()
