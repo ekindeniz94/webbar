@@ -2,6 +2,13 @@
 
 
 
+## 1.27.50 (2021-10-04)
+
+
+### Bug Fixes
+
+* color update. ([a361361](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a36136165d695c2fc162cf009daf39132a89ff53))
+
 ## 1.27.49 (2021-10-04)
 
 
