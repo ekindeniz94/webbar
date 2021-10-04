@@ -2,6 +2,13 @@
 
 
 
+## 1.27.49 (2021-10-04)
+
+
+### Bug Fixes
+
+* redisChannel ([ab7a298](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ab7a2983662c561f459858e1f1755c126ac59704))
+
 ## 1.27.48 (2021-10-03)
 
 
