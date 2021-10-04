@@ -2,6 +2,13 @@
 
 
 
+## 1.27.51 (2021-10-04)
+
+
+### Bug Fixes
+
+* plan DTOs ([170ff18](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/170ff185e92b4793d23731bcbefc9cb476abc994))
+
 ## 1.27.50 (2021-10-04)
 
 
