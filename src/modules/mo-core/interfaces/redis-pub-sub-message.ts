@@ -27,6 +27,7 @@ interface IRedisPubSubMessage {
  * Hint: data type is NamespaceSocketDataEventEnum
  */
 export interface IRedisPubSubMessageNamespace extends IRedisPubSubMessage {
+  redisChannel: 'mo_namespace';
   socketEvent: NamespaceSocketEventEnum.NAMESPACE_SERVICE;
   data: RedisPubSubMessageDataTypes<NamespaceSocketDataEventEnum>[];
 }
@@ -35,6 +36,7 @@ export interface IRedisPubSubMessageNamespace extends IRedisPubSubMessage {
  * Hint: data type is NamespaceInvitationSocketDataEventEnum
  */
 export interface IRedisPubSubMessageNamespaceInvitation extends IRedisPubSubMessage {
+  redisChannel: 'mo_namespace';
   socketEvent: NamespaceSocketEventEnum.NAMESPACE_INVITATION_SERVICE;
   data: RedisPubSubMessageDataTypes<NamespaceInvitationSocketDataEventEnum>[];
 }
@@ -43,6 +45,7 @@ export interface IRedisPubSubMessageNamespaceInvitation extends IRedisPubSubMess
  * Hint: data type is NamespaceCommandSocketDataEventEnum
  */
 export interface IRedisPubSubMessageNamespaceCommand extends IRedisPubSubMessage {
+  redisChannel: 'mo_namespace';
   socketEvent: NamespaceSocketEventEnum.NAMESPACE_COMMAND_SERVICE;
   data: RedisPubSubMessageDataTypes<NamespaceCommandSocketDataEventEnum>[];
 }
@@ -55,6 +58,7 @@ export interface IRedisPubSubMessageNamespaceCommand extends IRedisPubSubMessage
  * Hint: data type is UserSocketDataEventEnum
  */
 export interface IRedisPubSubMessageUser extends IRedisPubSubMessage {
+  redisChannel: 'mo_user';
   socketEvent: UserSocketEventEnum.USER_SERVICE;
   data: RedisPubSubMessageDataTypes<UserSocketDataEventEnum>[];
 }
@@ -63,6 +67,7 @@ export interface IRedisPubSubMessageUser extends IRedisPubSubMessage {
  * Hint: data type is UserSocketDataEventEnum
  */
 export interface IRedisPubSubMessageAuth extends IRedisPubSubMessage {
+  redisChannel: 'mo_user';
   socketEvent: UserSocketEventEnum.AUTH_SERVICE;
   data: RedisPubSubMessageDataTypes<UserSocketDataEventEnum>[];
 }
