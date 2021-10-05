@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
+import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
 import { ClusterDto } from '../kubernetes';
 import { NamespaceServiceDto } from '../namespace-service';
@@ -45,6 +46,9 @@ export class NamespaceDto extends BaseEntityDto {
 
   @Expose()
   bgColorStyle: string;
+
+  @Expose()
+  subscription: SubscriptionDto;
 
   get fullHostname(): string {
     if (
