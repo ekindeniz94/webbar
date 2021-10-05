@@ -2,6 +2,13 @@
 
 
 
+## 1.27.52 (2021-10-05)
+
+
+### Bug Fixes
+
+* added public plan dto. ([d533c4a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d533c4a07aa1ae872527179ed0a3e0b6d735ecfd))
+
 ## 1.27.51 (2021-10-04)
 
 
