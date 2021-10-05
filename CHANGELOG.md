@@ -2,6 +2,13 @@
 
 
 
+## 1.27.53 (2021-10-05)
+
+
+### Bug Fixes
+
+* added free product type. ([f05078d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f05078d9e671ac1d47f0372bd698f935bbd26472))
+
 ## 1.27.52 (2021-10-05)
 
 
