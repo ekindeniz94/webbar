@@ -2,6 +2,13 @@
 
 
 
+## 1.27.54 (2021-10-05)
+
+
+### Bug Fixes
+
+* subscription DTOs ([5b57405](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5b574050ffd6a9a61cc555df6a82e36ccfea09b6))
+
 ## 1.27.53 (2021-10-05)
 
 
