@@ -2,6 +2,13 @@
 
 
 
+## 1.27.55 (2021-10-05)
+
+
+### Bug Fixes
+
+* added subscription to namespace. ([845107b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/845107b10c3fd27f94f2f53288defc6ac4defcd6))
+
 ## 1.27.54 (2021-10-05)
 
 
