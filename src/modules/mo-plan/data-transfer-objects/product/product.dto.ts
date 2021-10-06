@@ -1,15 +1,19 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { ProductTypeEnum } from '../../enums';
+import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
 import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
 import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
 import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
 import { PaypalProductData } from '../../utils';
+import { PlanDto } from '../plan';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
   paypalId: string;
+
+  @Expose()
+  plans: PlanDto[];
 
   @Expose()
   name: string;
@@ -26,6 +30,9 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   paypalCategoryType: PaypalCategoryTypeEnum;
 
+  @Expose()
+  interval: ProductRuntimeIntervalEnum;
+
   // NEEDED FOR PAYPAL
   @Expose()
   imageUrl: string;
@@ -39,9 +46,6 @@ export class ProductDto extends BaseEntityDto {
 
   @Expose()
   endsOn: Date;
-
-  @Expose()
-  deletedAt?: Date;
 
   @Expose()
   kubernetesLimits: NamespaceServiceKubernetesSettingsDto;

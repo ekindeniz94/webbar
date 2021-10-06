@@ -1,8 +1,9 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { ProductDto } from '../product';
-import { CurrencyDto } from '../currency';
+import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { PlanStateEnum } from '../../enums';
+import { CurrencyDto } from '../currency';
+import { ProductDto } from '../product';
 
 export class PlanDto extends BaseEntityDto {
   @Expose()
@@ -10,6 +11,9 @@ export class PlanDto extends BaseEntityDto {
 
   @Expose()
   currencies: CurrencyDto[];
+
+  @Expose()
+  subscriptions: SubscriptionDto[];
 
   @Expose()
   name: string;
@@ -25,7 +29,4 @@ export class PlanDto extends BaseEntityDto {
 
   @Expose()
   order: number;
-
-  @Expose()
-  deletedAt?: Date;
 }

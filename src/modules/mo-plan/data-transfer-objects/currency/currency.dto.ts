@@ -1,14 +1,15 @@
 import { Expose } from 'class-transformer';
-import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
+import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
 import { PaypalPlanData } from '../../utils/plan.utils';
 import { PlanDto } from '../plan';
 export class CurrencyDto extends BaseEntityDto {
   @Expose()
-  @IsOptional()
-  @IsString()
   paypalId: string;
+
+  @Expose()
+  plan: PlanDto;
 
   @Expose()
   type: CurrencyEnum;
@@ -23,7 +24,7 @@ export class CurrencyDto extends BaseEntityDto {
   taxPercent: number;
 
   @Expose()
-  deletedAt?: Date;
+  subscriptions: SubscriptionDto[];
 
   get displayPricePerInterval(): string {
     if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {
@@ -32,7 +33,7 @@ export class CurrencyDto extends BaseEntityDto {
     return `${this.type} does not support displayPricePerInterval()`;
   }
 
-  paypalPlanData(plan:PlanDto, paypalProductId: string): PaypalPlanData {
+  paypalPlanData(plan: PlanDto, paypalProductId: string): PaypalPlanData {
     return PaypalPlanData.from(plan, this, paypalProductId);
   }
 }

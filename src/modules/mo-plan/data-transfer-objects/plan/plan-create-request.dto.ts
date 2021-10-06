@@ -1,24 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsDateString, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
-import { CurrencyDto } from '../currency';
 import { PlanStateEnum } from '../../enums';
+import { CurrencyDto } from '../currency';
 
 export class PlanCreateRequestDto {
-  @IsDateString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.createdAt = moment().format();
-      return obj.createdAt;
-    },
-    { toClassOnly: true }
-  )
-  @Expose()
-  createdAt: string;
-
   @Expose()
   @IsString()
   productId: string;

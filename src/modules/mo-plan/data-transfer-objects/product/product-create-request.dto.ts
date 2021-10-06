@@ -1,10 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
-  IsBoolean,
   IsDateString,
-  IsEnum,
-  IsHexColor,
-  IsNumber,
+  IsEnum, IsNumber,
   isString,
   IsString,
   MaxLength,
@@ -18,20 +15,6 @@ import { DiskPerformanceTierEnum, ProductTypeEnum } from '../../enums';
 import { CurrencyDto } from '../currency';
 
 export class ProductCreateRequestDto {
-  @IsDateString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.createdAt = moment().format();
-      return obj.createdAt;
-    },
-    { toClassOnly: true }
-  )
-  @Expose()
-  createdAt: string;
-
   @Expose()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.PLAN.PRODUCT.NAME.MAX)
@@ -87,20 +70,6 @@ export class ProductCreateRequestDto {
   @Type(() => CurrencyDto)
   @ValidateNested()
   currencies: CurrencyDto[];
-
-  @Expose()
-  @IsBoolean()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.deleted = false;
-      return obj.deleted;
-    },
-    { toClassOnly: true }
-  )
-  deleted: boolean;
 
   @Expose()
   @Transform(
@@ -185,13 +154,13 @@ export class ProductCreateRequestDto {
   icon: string;
 
   @Expose()
-  @IsHexColor()
+  @IsString()
   @Transform(
     ({ value, obj }) => {
       if (value) {
         return value;
       }
-      obj.bgColor = '#133737';
+      obj.bgColor = 'Color0';
       return obj.bgColor;
     },
     { toClassOnly: true }
