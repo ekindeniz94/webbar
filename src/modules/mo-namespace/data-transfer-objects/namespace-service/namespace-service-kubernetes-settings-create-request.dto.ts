@@ -23,4 +23,9 @@ export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   @Transform(({ value }) => value ?? NamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
+
+  @Expose()
+  @IsNotEmpty()
+  @IsNumber()
+  ephemeralStorageMB: number;
 }

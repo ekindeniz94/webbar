@@ -83,6 +83,7 @@ export class ProductCreateRequestDto {
       defaultLimit.limitMemoryMB = 128;
       defaultLimit.replicaCount = 1;
       defaultLimit.replicaCountMax = 1;
+      defaultLimit.ephemeralStorageMB = 200;
       obj.kubernetesLimits = defaultLimit;
       return obj.kubernetesLimits;
     },

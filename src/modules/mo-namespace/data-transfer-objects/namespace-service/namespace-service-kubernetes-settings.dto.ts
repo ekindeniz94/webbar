@@ -13,8 +13,11 @@ export class NamespaceServiceKubernetesSettingsDto {
 
   @Transform(({ obj }) => obj.replicaCount)
   @Expose()
-  replicaCountMax: number; // replicaCountMax=replicaCount
+  replicaCountMax: number; 
 
   @Expose()
   deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
+
+  @Expose()
+  ephemeralStorageMB: number;
 }

@@ -1,6 +1,6 @@
-import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { Exclude } from 'class-transformer';
 import { NamespaceServiceTypeEnum } from '../../enums';
+import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
