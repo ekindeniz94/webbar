@@ -2,6 +2,13 @@
 
 
 
+## 1.27.60 (2021-10-06)
+
+
+### Bug Fixes
+
+* update create namespace dto ([bbe6cfd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bbe6cfd074d4e5ecf71f3d92d30c6351aa307970))
+
 ## 1.27.59 (2021-10-06)
 
 
