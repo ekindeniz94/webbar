@@ -2,6 +2,13 @@
 
 
 
+## 1.27.59 (2021-10-06)
+
+
+### Bug Fixes
+
+* added availableResources interface. ([eddcfe6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/eddcfe6e4a7ac229f34bb70dd8714c7fe65b1490))
+
 ## 1.27.58 (2021-10-06)
 
 
