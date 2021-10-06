@@ -3,6 +3,7 @@ import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 import { ClusterDto, DEFAULT_KUBERNETES_CLUSTER } from '../kubernetes/cluster.dto';
 import { MoUtils } from '../../../../utils';
+import { SubscriptionDto } from '../../../mo-subscription-pool';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()
@@ -36,6 +37,11 @@ export class NamespaceCreateRequestDto {
   @IsInStringList(DTO_VALIDATION_CONST.MO_USER_DOMAINS)
   @Expose()
   domain: string;
+
+  @IsNotEmpty()
+  @Type(() => SubscriptionDto)
+  @Expose()
+  subscription: SubscriptionDto;
 
   @IsOptional()
   @IsString()
