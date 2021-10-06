@@ -2,6 +2,13 @@
 
 
 
+## 1.27.56 (2021-10-06)
+
+
+### Bug Fixes
+
+* removed deleted and createdAt stuff. minor changes in plans and products. ([2b29d0b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2b29d0ba33fe291241807391f1a01df05454ad53))
+
 ## 1.27.55 (2021-10-05)
 
 
