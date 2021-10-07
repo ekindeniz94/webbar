@@ -2,6 +2,13 @@
 
 
 
+## 1.27.62 (2021-10-07)
+
+
+### Bug Fixes
+
+* minor fix for plan creation. ([6662f3b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6662f3b00364ddbd56e65e544fbdd37e06400a69))
+
 ## 1.27.61 (2021-10-07)
 
 
