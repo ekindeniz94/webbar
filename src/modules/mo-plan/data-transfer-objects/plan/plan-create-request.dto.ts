@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsDateString, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { PlanStateEnum } from '../../enums';
-import { CurrencyDto } from '../currency';
+import { CurrencyCreateRequestDto, CurrencyDto } from '../currency';
 
 export class PlanCreateRequestDto {
   @Expose()
@@ -10,9 +10,9 @@ export class PlanCreateRequestDto {
   productId: string;
 
   @Expose()
-  @Type(() => CurrencyDto)
+  @Type(() => CurrencyCreateRequestDto)
   @ValidateNested()
-  currencies: CurrencyDto[];
+  currencies: CurrencyCreateRequestDto[];
 
   @Expose()
   @IsDateString()
