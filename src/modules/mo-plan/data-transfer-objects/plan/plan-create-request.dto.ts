@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsDateString, IsEnum, IsNumber, IsString, ValidateNested } from 'class-validator';
+import { IsDateString, IsEnum, IsIn, IsInt, IsNumber, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { PlanStateEnum } from '../../enums';
 import { CurrencyCreateRequestDto, CurrencyDto } from '../currency';
@@ -35,6 +35,6 @@ export class PlanCreateRequestDto {
 
   @Expose()
   @Transform(({ value }) => value ?? 0)
-  @IsNumber()
+  @IsInt()
   order: number;
 }
