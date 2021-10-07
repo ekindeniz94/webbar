@@ -2,6 +2,13 @@
 
 
 
+## 1.27.61 (2021-10-07)
+
+
+### Bug Fixes
+
+* added currency create request dto. ([b708283](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b708283a462ab5930960aff7a63b1ed70d6a41a0))
+
 ## 1.27.60 (2021-10-06)
 
 
