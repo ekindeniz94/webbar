@@ -2,6 +2,13 @@
 
 
 
+## 1.27.63 (2021-10-07)
+
+
+### Bug Fixes
+
+* update plan public dto ([ce6041d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ce6041da645d42d30d5d70703069f0c5d64eb4c0))
+
 ## 1.27.62 (2021-10-07)
 
 
