@@ -11,7 +11,7 @@ import {
   ProductRuntimeIntervalEnum,
   ProductTypeEnum
 } from '../../enums';
-import { ClusterDto } from './cluster.dto';
+import { ClusterDto } from './cluster/cluster.dto';
 
 export class ProductCreateRequestDto {
   @Expose()
