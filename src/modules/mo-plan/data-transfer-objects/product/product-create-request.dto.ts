@@ -5,6 +5,7 @@ import {
   IsNumber,
   isString,
   IsString,
+  IsUrl,
   MaxLength,
   MinLength
 } from 'class-validator';
@@ -41,6 +42,16 @@ export class ProductCreateRequestDto {
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PLAN.PRODUCT.DESCRIPTION.MAX)
   )
   description: string;
+
+  @Expose()
+  @IsString()
+  @IsUrl()
+  imageUrl: string;
+
+  @Expose()
+  @IsString()
+  @IsUrl()
+  homeUrl: string;
 
   @Expose()
   @IsEnum(ProductTypeEnum)
