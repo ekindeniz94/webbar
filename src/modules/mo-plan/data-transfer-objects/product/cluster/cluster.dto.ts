@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
+import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
 
-export class ClusterDto {
+export class ClusterDto extends BaseEntityDto  {
   @Expose()
   region: string;
 
