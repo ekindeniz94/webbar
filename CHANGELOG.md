@@ -2,6 +2,13 @@
 
 
 
+## 1.27.73 (2021-10-08)
+
+
+### Bug Fixes
+
+* add id to cluster patch request dto ([3407f50](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3407f502eb6c30c4a099526a9a137c694f212f17))
+
 ## 1.27.72 (2021-10-08)
 
 
