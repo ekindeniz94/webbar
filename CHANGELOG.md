@@ -2,6 +2,13 @@
 
 
 
+## 1.27.65 (2021-10-08)
+
+
+### Bug Fixes
+
+* minor data model fix. ([a51cf83](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a51cf83e026b1c723595785f504c889f75931cd6))
+
 ## 1.27.64 (2021-10-08)
 
 
