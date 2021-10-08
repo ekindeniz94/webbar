@@ -2,6 +2,13 @@
 
 
 
+## 1.27.64 (2021-10-08)
+
+
+### Bug Fixes
+
+* added color enum. ([e617a75](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e617a75b107ab55174e97ace3d5235f1c4d97a3f))
+
 ## 1.27.63 (2021-10-07)
 
 
