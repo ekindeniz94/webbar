@@ -2,6 +2,13 @@
 
 
 
+## 1.27.68 (2021-10-08)
+
+
+### Bug Fixes
+
+* currency DTO ([494b40e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/494b40e990fa200d4bb0246364bc0c77e0b8dd9c))
+
 ## 1.27.67 (2021-10-08)
 
 
