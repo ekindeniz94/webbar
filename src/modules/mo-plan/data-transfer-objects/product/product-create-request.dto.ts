@@ -1,18 +1,27 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import {
   IsDateString,
-  IsEnum, IsNumber,
+  IsEnum,
+  IsNumber,
   isString,
   IsString,
   MaxLength,
-  MinLength,
-  ValidateNested
+  MinLength
 } from 'class-validator';
 import moment from 'moment';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { DiskPerformanceTierEnum, ProductTypeEnum } from '../../enums';
-import { CurrencyDto } from '../currency';
+import {
+  NamespaceColorEnum,
+  NamespaceServiceDeploymentStrategyEnum,
+  NamespaceServiceKubernetesSettingsDto
+} from '../../../mo-namespace';
+import {
+  DiskPerformanceTierEnum,
+  PaypalCategoryTypeEnum,
+  PaypalProductTypeEnum,
+  ProductRuntimeIntervalEnum,
+  ProductTypeEnum
+} from '../../enums';
 
 export class ProductCreateRequestDto {
   @Expose()
@@ -37,6 +46,21 @@ export class ProductCreateRequestDto {
   @IsEnum(ProductTypeEnum)
   @Transform(({ value }) => value ?? ProductTypeEnum.STANDALONE)
   productType: ProductTypeEnum;
+
+  @Expose()
+  @IsEnum(PaypalProductTypeEnum)
+  @Transform(({ value }) => value ?? PaypalProductTypeEnum.SERVICE)
+  paypalProductType: PaypalProductTypeEnum;
+
+  @Expose()
+  @IsEnum(PaypalCategoryTypeEnum)
+  @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
+  paypalCategoryType: PaypalCategoryTypeEnum;
+
+  @Expose()
+  @IsEnum(ProductRuntimeIntervalEnum)
+  @Transform(({ value }) => value ?? ProductRuntimeIntervalEnum.MONTH)
+  interval: ProductRuntimeIntervalEnum;
 
   @Expose()
   @IsDateString()
@@ -65,11 +89,6 @@ export class ProductCreateRequestDto {
     { toClassOnly: true }
   )
   endsOn: string;
-
-  @Expose()
-  @Type(() => CurrencyDto)
-  @ValidateNested()
-  currencies: CurrencyDto[];
 
   @Expose()
   @Transform(
@@ -155,16 +174,7 @@ export class ProductCreateRequestDto {
   icon: string;
 
   @Expose()
-  @IsString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.bgColor = 'Color0';
-      return obj.bgColor;
-    },
-    { toClassOnly: true }
-  )
-  bgColor: string;
+  @IsEnum(NamespaceColorEnum)
+  @Transform(({ value }) => value ?? NamespaceColorEnum.COLOR1)
+  bgColor: NamespaceColorEnum;
 }
