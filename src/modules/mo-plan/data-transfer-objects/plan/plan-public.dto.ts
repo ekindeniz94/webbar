@@ -1,4 +1,4 @@
-import { Exclude, Expose, Transform, Type } from 'class-transformer';
+import { Exclude, Expose, plainToClass, Transform, Type } from 'class-transformer';
 import { PlanDto } from './plan.dto';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { CurrencyDto } from '../currency';
@@ -11,9 +11,8 @@ export class PlanPublicDto extends PlanDto {
   @Type(() => CurrencyDto)
   @Transform(({ value, obj }) => {
     const mouth = obj.currencies?.find((item: CurrencyDto) => item.interval === ProductRuntimeIntervalEnum.MONTH);
-
     const year = obj.currencies?.find((item: CurrencyDto) => item.interval === ProductRuntimeIntervalEnum.YEAR);
-    return year || mouth;
+    return plainToClass(CurrencyDto, year || mouth);
   })
   @Expose()
   currency: CurrencyDto;

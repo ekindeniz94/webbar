@@ -11,7 +11,7 @@ export enum NamespaceColorEnum {
 }
 
 export const ALL_NAMESPACE_COLORS = [
-  +NamespaceColorEnum.COLOR1,
+  NamespaceColorEnum.COLOR1,
   NamespaceColorEnum.COLOR2,
   NamespaceColorEnum.COLOR3,
   NamespaceColorEnum.COLOR4,
