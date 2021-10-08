@@ -1,5 +1,5 @@
-import { Expose, Transform } from 'class-transformer';
-import { IsDateString, IsEnum, IsNumber, isString, IsString, IsUrl, MaxLength, MinLength } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { IsDateString, IsEnum, IsNotEmpty, IsNumber, isString, IsString, IsUrl, MaxLength, MinLength } from 'class-validator';
 import moment from 'moment';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
@@ -11,6 +11,7 @@ import {
   ProductRuntimeIntervalEnum,
   ProductTypeEnum
 } from '../../enums';
+import { ClusterDto } from './cluster.dto';
 
 export class ProductCreateRequestDto {
   @Expose()
@@ -176,4 +177,9 @@ export class ProductCreateRequestDto {
   @IsEnum(NamespaceColorEnum)
   @Transform(({ value }) => value ?? NamespaceColorEnum.COLOR1)
   bgColor: NamespaceColorEnum;
+
+  @IsNotEmpty()
+  @Type(() => ClusterDto)
+  @Expose()
+  cluster: ClusterDto;
 }

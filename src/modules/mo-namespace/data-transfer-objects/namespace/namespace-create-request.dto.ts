@@ -1,8 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
-import { ClusterDto, DEFAULT_KUBERNETES_CLUSTER } from '../kubernetes/cluster.dto';
 import { MoUtils } from '../../../../utils';
+import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 
 export class NamespaceCreateRequestDto {
@@ -53,10 +52,4 @@ export class NamespaceCreateRequestDto {
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.ICON.MAX)
   @Expose()
   icon: string;
-
-  @IsOptional()
-  @Transform(({ value }) => value ?? DEFAULT_KUBERNETES_CLUSTER)
-  @Type(() => ClusterDto)
-  @Expose()
-  cluster: ClusterDto;
 }

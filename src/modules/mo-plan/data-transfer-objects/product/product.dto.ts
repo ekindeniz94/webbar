@@ -7,6 +7,7 @@ import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
 import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
 import { PaypalProductData } from '../../utils';
 import { PlanDto } from '../plan';
+import { ClusterDto } from './cluster.dto';
 
 export class ProductDto extends BaseEntityDto {
   @Expose()
@@ -67,6 +68,9 @@ export class ProductDto extends BaseEntityDto {
 
   @Expose()
   bgColor: string;
+
+  @Expose()
+  cluster: ClusterDto;
 
   get paypalProductData(): PaypalProductData {
     return PaypalProductData.fromProduct(this);

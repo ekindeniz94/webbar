@@ -2,7 +2,6 @@ import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
-import { ClusterDto } from '../kubernetes';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
 import { NamespaceStageEntityDto } from './namespace-stage.dto';
@@ -37,9 +36,6 @@ export class NamespaceDto extends BaseEntityDto {
   @Type(() => NamespaceStageEntityDto)
   @Expose()
   stages: NamespaceStageEntityDto[];
-
-  @Expose()
-  cluster: ClusterDto;
 
   @Expose()
   state: NamespaceStateEnum;
