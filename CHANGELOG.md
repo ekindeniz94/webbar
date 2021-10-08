@@ -2,6 +2,13 @@
 
 
 
+## 1.27.70 (2021-10-08)
+
+
+### Bug Fixes
+
+* cluster stuff. ([9221ac4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9221ac416050e4f6fd5e66eaf583175cd45f8f7a))
+
 ## 1.27.69 (2021-10-08)
 
 
