@@ -2,6 +2,14 @@
 
 
 
+## 1.27.69 (2021-10-08)
+
+
+### Bug Fixes
+
+* minor fix. ([c42b732](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c42b732e8299ea9d1de4aaca3e47e4828efcbdff))
+* minor fix. ([8d4ceca](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8d4ceca527fe187f2558de0f29fd1ef1d6948a89))
+
 ## 1.27.68 (2021-10-08)
 
 
