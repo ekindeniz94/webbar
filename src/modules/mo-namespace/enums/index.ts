@@ -1,5 +1,4 @@
 export * from './cluster-region.enum';
-export * from './namespace-bg-color-style.enum';
 export * from './namespace-color.enum';
 export * from './namespace-command-state.enum';
 export * from './namespace-envvar-type.enum';
