@@ -2,6 +2,13 @@
 
 
 
+## 1.27.78 (2021-10-11)
+
+
+### Bug Fixes
+
+* currency price ([8a5d9af](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8a5d9afc352f6b5bc065859becf71623ba166ba1))
+
 ## 1.27.77 (2021-10-11)
 
 
