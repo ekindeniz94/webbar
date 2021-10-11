@@ -2,6 +2,13 @@
 
 
 
+## 1.27.76 (2021-10-11)
+
+
+### Bug Fixes
+
+* updated service group patch request. ([340934b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/340934b9db1a92188921bf8a7b062884ea98461e))
+
 ## 1.27.75 (2021-10-11)
 
 
