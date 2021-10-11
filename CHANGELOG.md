@@ -2,6 +2,13 @@
 
 
 
+## 1.27.75 (2021-10-11)
+
+
+### Bug Fixes
+
+* NamespaceInvitationSocketDataEventEnum ([bddb919](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bddb91963cbbc5355f32ed153f30a093064b35db))
+
 ## 1.27.74 (2021-10-11)
 
 
