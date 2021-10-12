@@ -2,6 +2,13 @@
 
 
 
+## 1.27.80 (2021-10-12)
+
+
+### Bug Fixes
+
+* added service group dtos. ([bbdc0a5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bbdc0a5d135b68a6d309d64395e5cb6f23197f05))
+
 ## 1.27.79 (2021-10-12)
 
 
