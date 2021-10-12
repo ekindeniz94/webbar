@@ -2,6 +2,13 @@
 
 
 
+## 1.27.82 (2021-10-12)
+
+
+### Bug Fixes
+
+* currency id optional added. ([6fab268](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6fab268fe9895270f70c342536d8c3d14c7df361))
+
 ## 1.27.81 (2021-10-12)
 
 
