@@ -1,10 +1,10 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsEnum, IsNotEmpty, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
 
-export class NamespaceServiceEnvVarDtoCreateRequestDto {
+export class NamespaceServiceEnvVarCreateRequestDto {
   @IsString()
   @Transform(
     ({ value, obj }) => {
