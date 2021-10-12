@@ -2,6 +2,13 @@
 
 
 
+## 1.27.83 (2021-10-12)
+
+
+### Bug Fixes
+
+* redis socket events ([dc12a5a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dc12a5aaaceb9c0f88498bf1f8b88f304ccccce2))
+
 ## 1.27.82 (2021-10-12)
 
 
