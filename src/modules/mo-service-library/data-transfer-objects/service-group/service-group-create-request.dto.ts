@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsEnum, IsString, ValidateNested } from 'class-validator';
 import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { ServiceGroupStateEnum } from '../../enums';
-import { ServiceCreateRequestDto, ServiceDto } from '../service';
+import { ServiceCreateRequestDto } from '../service';
 
 export class ServiceGroupCreateRequestDto {
   @Expose()
@@ -23,6 +23,7 @@ export class ServiceGroupCreateRequestDto {
 
   @Expose()
   @Type(() => ServiceCreateRequestDto)
+  @Transform(({ value }) => value ?? [])
   @ValidateNested()
   services: ServiceCreateRequestDto[];
 
