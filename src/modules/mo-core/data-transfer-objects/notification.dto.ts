@@ -1,14 +1,13 @@
 import { Expose } from 'class-transformer';
-import { UserDto } from '../../mo-user';
+import { UserPublicDto } from '../../mo-user';
 import { NotificationContentTypeEnum, NotificationPositionEnum, NotificationTypeEnum } from '../enums';
-import { BaseEntityDto } from './base.entity.dto';
 
 export class NotificationDto {
   @Expose()
   id: string;
 
   @Expose()
-  user: UserDto;
+  user: UserPublicDto;
 
   @Expose()
   type: NotificationTypeEnum;
