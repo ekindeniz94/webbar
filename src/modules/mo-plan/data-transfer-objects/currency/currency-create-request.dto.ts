@@ -1,12 +1,14 @@
 import { Expose } from 'class-transformer';
-import { IsEnum, IsInt, IsNumber, Max, Min } from 'class-validator';
-import { isNumber } from 'lodash';
-import { BaseEntityDto } from '../../../mo-core';
-import { SubscriptionDto } from '../../../mo-subscription-pool';
+import { IsEnum, IsInt, IsOptional, IsString, IsUUID, Max, Min } from 'class-validator';
 import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
-import { PaypalPlanData } from '../../utils/plan.utils';
-import { PlanDto } from '../plan';
+
 export class CurrencyCreateRequestDto {
+  @IsOptional()
+  @IsString()
+  @IsUUID()
+  @Expose()
+  id?: string;
+
   @Expose()
   @IsEnum(CurrencyEnum)
   type: CurrencyEnum;
