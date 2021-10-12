@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
-import { NamespaceServiceEnvVarDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
+import { NamespaceServiceEnvVarCreateRequestDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
 
 export class ServiceCreateRequestDto {
   @Expose()
@@ -44,5 +44,5 @@ export class ServiceCreateRequestDto {
   @Expose()
   @ValidateNested()
   @Transform(({ value }) => value ?? [])
-  envVars: NamespaceServiceEnvVarDto[];
+  envVars: NamespaceServiceEnvVarCreateRequestDto[];
 }

@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
@@ -37,4 +37,38 @@ export class NamespaceServiceEnvVarCreateRequestDto {
   @IsEnum(NamespaceServiceEnvVarTypeEnum)
   @Expose()
   type: NamespaceServiceEnvVarTypeEnum;
+
+  @IsOptional()
+  @IsBoolean()
+  @Transform(({ value }) => (value === undefined ? true : value))
+  @Expose()
+  deactivateName: boolean;
+
+  @IsOptional()
+  @IsBoolean()
+  @Transform(({ value }) => (value === undefined ? false : value))
+  @Expose()
+  deactivateValue: boolean;
+
+  @IsOptional()
+  @IsBoolean()
+  @Expose()
+  @Transform(({ value }) => (value === undefined ? true : value))
+  deactivateType: boolean;
+
+  @IsOptional()
+  @IsBoolean()
+  @Expose()
+  @Transform(({ value }) => (value === undefined ? true : value))
+  deactivateDelete: boolean;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  dependsOn?: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  dependsOnMethod?: string;
 }
