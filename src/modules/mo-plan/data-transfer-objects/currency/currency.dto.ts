@@ -27,9 +27,13 @@ export class CurrencyDto extends BaseEntityDto {
   @Expose()
   subscriptions: SubscriptionDto[];
 
+  get price(): number {
+    return this.pricePerInterval / 100;
+  }
+
   get displayPricePerInterval(): string {
     if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {
-      return `${(this.pricePerInterval / 100).toFixed(2)}`;
+      return `${(this.price).toFixed(2)}`;
     }
     return `${this.type} does not support displayPricePerInterval()`;
   }
@@ -52,11 +56,11 @@ export class CurrencyDto extends BaseEntityDto {
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${this.pricePerInterval} ${currencyStr}` : `${this.pricePerInterval} ${this.type}`}`;
+      return `1 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`}`;
     }
     if (this.interval === ProductRuntimeIntervalEnum.YEAR) {
       return `12 x ${
-        currencyStr ? `${this.pricePerInterval} ${currencyStr}` : `${this.pricePerInterval} ${this.type}`
+        currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`
       }`;
     }
     return '???';
@@ -83,15 +87,15 @@ export class CurrencyDto extends BaseEntityDto {
   }
 
   public pricePerMonthToString(currencyStr?: string, monthStr?: string): string {
-    return `${this.pricePerInterval} ${currencyStr ?? this.type} per ${monthStr ?? 'month'}`;
+    return `${this.price} ${currencyStr ?? this.type} per ${monthStr ?? 'month'}`;
   }
 
   get netPrice(): number {
     if (this.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return this.pricePerInterval;
+      return this.price;
     }
     if (this.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return this.pricePerInterval * 12;
+      return this.price * 12;
     }
     return 0;
   }

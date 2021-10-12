@@ -1,3 +1,3 @@
-import { NamespaceServiceEnvVarDtoCreateRequestDto } from './namespace-service-envvar-create-request.dto';
+import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 
-export class NamespaceServiceEnvVarPatchRequestDto extends NamespaceServiceEnvVarDtoCreateRequestDto {}
+export class NamespaceServiceEnvVarPatchRequestDto extends NamespaceServiceEnvVarCreateRequestDto {}

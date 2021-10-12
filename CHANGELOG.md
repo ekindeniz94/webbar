@@ -2,6 +2,55 @@
 
 
 
+## 1.27.83 (2021-10-12)
+
+
+### Bug Fixes
+
+* redis socket events ([dc12a5a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dc12a5aaaceb9c0f88498bf1f8b88f304ccccce2))
+
+## 1.27.82 (2021-10-12)
+
+
+### Bug Fixes
+
+* currency id optional added. ([6fab268](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6fab268fe9895270f70c342536d8c3d14c7df361))
+
+## 1.27.81 (2021-10-12)
+
+
+### Bug Fixes
+
+* added service library. ([3c1b4b2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3c1b4b2642072d205696ba8e92692fff3931d6c8))
+
+## 1.27.80 (2021-10-12)
+
+
+### Bug Fixes
+
+* added service group dtos. ([bbdc0a5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bbdc0a5d135b68a6d309d64395e5cb6f23197f05))
+
+## 1.27.79 (2021-10-12)
+
+
+### Bug Fixes
+
+* added service group dtos. ([f56e707](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f56e70749828a95f49172434c7c09d46e7062011))
+
+## 1.27.78 (2021-10-11)
+
+
+### Bug Fixes
+
+* currency price ([8a5d9af](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8a5d9afc352f6b5bc065859becf71623ba166ba1))
+
+## 1.27.77 (2021-10-11)
+
+
+### Bug Fixes
+
+* updated service group patch request. ([e67a181](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e67a181df8b51750e98bab104a5101c0c39f8325))
+
 ## 1.27.76 (2021-10-11)
 
 
