@@ -2,6 +2,13 @@
 
 
 
+## 1.27.84 (2021-10-12)
+
+
+### Bug Fixes
+
+* added notificationDto. ([3250c88](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3250c884961b23c623a17ffde4f882d84f3d43b9))
+
 ## 1.27.83 (2021-10-12)
 
 
