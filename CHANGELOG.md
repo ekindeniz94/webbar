@@ -2,6 +2,13 @@
 
 
 
+## 1.27.81 (2021-10-12)
+
+
+### Bug Fixes
+
+* added service library. ([3c1b4b2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3c1b4b2642072d205696ba8e92692fff3931d6c8))
+
 ## 1.27.80 (2021-10-12)
 
 
