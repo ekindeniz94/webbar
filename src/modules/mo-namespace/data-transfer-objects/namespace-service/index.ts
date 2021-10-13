@@ -5,9 +5,9 @@ import {
   NamespaceServiceDockerTemplateCreateRequestDto,
   NamespaceServiceDockerTemplateDto
 } from './mo-services';
-import { NamespaceServiceTypeEnum } from '../../enums';
 import { plainToClass } from 'class-transformer';
 import { NamespaceServiceDto } from './namespace-service.dto';
+import { ServiceTypeEnum } from '../../../mo-service-library';
 
 export * from './mo-services';
 export * from './namespace-service.dto';
@@ -31,10 +31,10 @@ export type NamespaceServiceCreateTypes =
 export type NamespaceServiceTypes = NamespaceServiceDto | NamespaceServiceDockerDto | NamespaceServiceDockerTemplateDto;
 
 export const plainToClassNamespaceServiceDto = (item: NamespaceServiceTypes): NamespaceServiceTypes => {
-  if (item.serviceType === NamespaceServiceTypeEnum.DOCKER) {
+  if (item.serviceType === ServiceTypeEnum.DOCKER) {
     return plainToClass(NamespaceServiceDockerDto, item, { excludeExtraneousValues: true });
   }
-  if (item.serviceType === NamespaceServiceTypeEnum.DOCKER_TEMPLATE) {
+  if (item.serviceType === ServiceTypeEnum.DOCKER_TEMPLATE) {
     return plainToClass(NamespaceServiceDockerTemplateDto, item, { excludeExtraneousValues: true });
   }
   return plainToClass(NamespaceServiceDto, item, { excludeExtraneousValues: true });
@@ -48,14 +48,14 @@ export const plainToClassNamespaceServiceCreate = (
   });
 
   // DOCKER
-  if (data.serviceType === NamespaceServiceTypeEnum.DOCKER) {
+  if (data.serviceType === ServiceTypeEnum.DOCKER) {
     data = plainToClass(NamespaceServiceDockerCreateRequestDto, rawValue, {
       excludeExtraneousValues: true
     });
   }
 
   // DOCKER_TEMPLATE
-  if (data.serviceType === NamespaceServiceTypeEnum.DOCKER_TEMPLATE) {
+  if (data.serviceType === ServiceTypeEnum.DOCKER_TEMPLATE) {
     data = plainToClass(NamespaceServiceDockerTemplateCreateRequestDto, rawValue, {
       excludeExtraneousValues: true
     });

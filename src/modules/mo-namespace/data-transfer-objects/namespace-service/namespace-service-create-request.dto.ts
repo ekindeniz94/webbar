@@ -18,10 +18,10 @@ import {
 } from 'class-validator';
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST, GitBranchRefItemDto } from '../../../mo-core';
-import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
+import { ServiceTypeEnum } from '../../../mo-service-library';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -47,10 +47,10 @@ export class NamespaceServiceCreateRequestDto {
   description: string;
 
   @IsNotEmpty()
-  @IsEnum(NamespaceServiceTypeEnum)
-  @Transform(({ value }) => value ?? NamespaceServiceTypeEnum.DOCKER)
+  @IsEnum(ServiceTypeEnum)
+  @Transform(({ value }) => value ?? ServiceTypeEnum.DOCKER)
   @Expose()
-  serviceType: NamespaceServiceTypeEnum;
+  serviceType: ServiceTypeEnum;
 
   @IsNotEmpty()
   @IsString()

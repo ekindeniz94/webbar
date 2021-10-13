@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsBoolean } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
-import { NamespaceServiceTypeEnum } from '../../enums';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
+import { ServiceTypeEnum } from '../../../mo-service-library';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -24,7 +24,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
 
   @Expose()
-  serviceType: NamespaceServiceTypeEnum;
+  serviceType: ServiceTypeEnum;
 
   @Expose()
   cNames: string[];

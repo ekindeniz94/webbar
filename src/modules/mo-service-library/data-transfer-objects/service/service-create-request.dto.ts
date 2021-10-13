@@ -1,7 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { NamespaceServiceEnvVarCreateRequestDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
+import { ServiceTypeEnum } from '../../enums';
 
 export class ServiceCreateRequestDto {
   @Expose()
@@ -9,9 +10,13 @@ export class ServiceCreateRequestDto {
   name: string;
 
   @Expose()
+  @IsEnum(ServiceTypeEnum)
+  serviceType: ServiceTypeEnum;
+
+  @Expose()
   @IsString()
   description: string;
-  
+
   @Expose()
   @IsString()
   descriptionShort: string;
@@ -39,7 +44,7 @@ export class ServiceCreateRequestDto {
 
   @Expose()
   @IsBoolean()
-  expose: boolean
+  expose: boolean;
 
   @Expose()
   @ValidateNested()
