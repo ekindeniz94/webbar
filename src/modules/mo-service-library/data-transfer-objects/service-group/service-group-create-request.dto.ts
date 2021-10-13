@@ -19,6 +19,10 @@ export class ServiceGroupCreateRequestDto {
 
   @Type(() => FileDto)
   @Expose()
+  icon: FileDto;
+
+  @Type(() => FileDto)
+  @Expose()
   image: FileDto;
 
   @Expose()

@@ -15,6 +15,9 @@ export class ServiceGroupDto extends BaseEntityDto {
   description: string;
 
   @Expose()
+  icon: FileDto;
+
+  @Expose()
   image: FileDto;
 
   @Expose()
