@@ -2,6 +2,13 @@
 
 
 
+## 1.27.88 (2021-10-13)
+
+
+### Bug Fixes
+
+* ServiceDto, ServiceGroupDto ([6471fc8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6471fc84043ce035ae6e324b9b2ceb1d55798ee3))
+
 ## 1.27.87 (2021-10-13)
 
 
