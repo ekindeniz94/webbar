@@ -2,6 +2,13 @@
 
 
 
+## 1.27.90 (2021-10-13)
+
+
+### Bug Fixes
+
+* refactoring ServiceTypeEnum ([a6a8941](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a6a894144353580431da9f8f8010b1a08ff3daee))
+
 ## 1.27.89 (2021-10-13)
 
 
