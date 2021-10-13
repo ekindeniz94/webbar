@@ -1,13 +1,21 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsDateString, IsEnum, IsIn, IsInt, IsNumber, IsString, ValidateNested } from 'class-validator';
+import { IsDateString, IsEnum, IsInt, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { PlanStateEnum } from '../../enums';
-import { CurrencyCreateRequestDto, CurrencyDto } from '../currency';
+import { CurrencyCreateRequestDto } from '../currency';
 
 export class PlanCreateRequestDto {
   @Expose()
   @IsString()
   productId: string;
+
+  @Expose()
+  @IsString()
+  name: string;
+
+  @Expose()
+  @IsString()
+  description: string;
 
   @Expose()
   @Type(() => CurrencyCreateRequestDto)
