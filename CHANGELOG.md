@@ -2,6 +2,13 @@
 
 
 
+## 1.27.86 (2021-10-13)
+
+
+### Bug Fixes
+
+* added icon to service grouü. ([c231c18](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c231c187e8b71dc50c130290efbacd5313c10cac))
+
 ## 1.27.85 (2021-10-12)
 
 
