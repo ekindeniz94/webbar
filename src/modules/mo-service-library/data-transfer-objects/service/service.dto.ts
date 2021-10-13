@@ -1,7 +1,7 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { NamespaceServiceEnvVarDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
+import { FilePublicDto } from '../../../mo-file';
 
 export class ServiceDto extends BaseEntityDto {
   @Expose()
@@ -9,18 +9,20 @@ export class ServiceDto extends BaseEntityDto {
 
   @Expose()
   description: string;
-  
+
   @Expose()
   descriptionShort: string;
 
   @Expose()
   version: string;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  icon: FileDto;
+  icon: FilePublicDto;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  image: FileDto;
+  image: FilePublicDto;
 
   @Expose()
   folder: string;
@@ -29,8 +31,9 @@ export class ServiceDto extends BaseEntityDto {
   internalPort: number;
 
   @Expose()
-  expose: boolean
+  expose: boolean;
 
+  @Type(() => NamespaceServiceEnvVarDto)
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
 }

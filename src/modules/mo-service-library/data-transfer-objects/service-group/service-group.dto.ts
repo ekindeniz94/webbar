@@ -1,8 +1,8 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { ServiceGroupStateEnum } from '../../enums';
 import { ServiceDto } from '../service';
+import { FilePublicDto } from '../../../mo-file';
 
 export class ServiceGroupDto extends BaseEntityDto {
   @Expose()
@@ -14,12 +14,15 @@ export class ServiceGroupDto extends BaseEntityDto {
   @Expose()
   description: string;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  icon: FileDto;
+  icon: FilePublicDto;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  image: FileDto;
+  image: FilePublicDto;
 
+  @Type(() => ServiceDto)
   @Expose()
   services: ServiceDto[];
 
