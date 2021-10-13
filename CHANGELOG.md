@@ -2,6 +2,13 @@
 
 
 
+## 1.27.91 (2021-10-13)
+
+
+### Bug Fixes
+
+* service Dto. ([8f8ea30](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8f8ea30956852f6b5239fae5b498a2d421d8fc9a))
+
 ## 1.27.90 (2021-10-13)
 
 
