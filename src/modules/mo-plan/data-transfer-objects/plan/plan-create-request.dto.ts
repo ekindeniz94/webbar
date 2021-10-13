@@ -18,6 +18,10 @@ export class PlanCreateRequestDto {
   description: string;
 
   @Expose()
+  @IsString({ each: true })
+  bulletPoints: string[];
+
+  @Expose()
   @Type(() => CurrencyCreateRequestDto)
   @ValidateNested()
   currencies: CurrencyCreateRequestDto[];

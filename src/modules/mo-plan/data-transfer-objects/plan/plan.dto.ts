@@ -19,6 +19,9 @@ export class PlanDto extends BaseEntityDto {
   name: string;
 
   @Expose()
+  bulletPoints: string[];
+
+  @Expose()
   description: string;
 
   @Expose()
