@@ -2,6 +2,13 @@
 
 
 
+## 1.27.87 (2021-10-13)
+
+
+### Bug Fixes
+
+* plan added name and description. ([5f2251e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5f2251ec43071dffa459beaaef187e7494993a99))
+
 ## 1.27.86 (2021-10-13)
 
 
