@@ -2,6 +2,13 @@
 
 
 
+## 1.27.89 (2021-10-13)
+
+
+### Bug Fixes
+
+* plan bullet points. ([434d0cd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/434d0cded742112ffd55d193f85236cd5e657a46))
+
 ## 1.27.88 (2021-10-13)
 
 
