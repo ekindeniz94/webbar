@@ -2,6 +2,13 @@
 
 
 
+## 1.27.95 (2021-10-14)
+
+
+### Bug Fixes
+
+* upate NamespacePublicDto ([3222872](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3222872eb89d5c75e592c00b0ad128583e6ebbe7))
+
 ## 1.27.94 (2021-10-14)
 
 
