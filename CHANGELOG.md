@@ -2,6 +2,13 @@
 
 
 
+## 1.27.93 (2021-10-14)
+
+
+### Bug Fixes
+
+* added minKubernetes values to service. ([be29bae](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/be29baef14d5674f585e4423ef5666a1fb75d901))
+
 ## 1.27.92 (2021-10-14)
 
 
