@@ -47,6 +47,21 @@ export class ServiceCreateRequestDto {
   expose: boolean;
 
   @Expose()
+  @Transform(({ value }) => value ?? 0.1)
+  @IsNumber()
+  kubernetesMinCores: number;
+
+  @Expose()
+  @Transform(({ value }) => value ?? 16)
+  @IsNumber()
+  kubernetesMinRamMb: number;
+
+  @Expose()
+  @Transform(({ value }) => value ?? 10)
+  @IsNumber()
+  kubernetesMinTempStorageMb: number;
+
+  @Expose()
   @ValidateNested()
   @Transform(({ value }) => value ?? [])
   envVars: NamespaceServiceEnvVarCreateRequestDto[];

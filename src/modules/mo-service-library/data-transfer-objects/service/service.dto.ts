@@ -37,6 +37,15 @@ export class ServiceDto extends BaseEntityDto {
   @Expose()
   expose: boolean;
 
+  @Expose()
+  kubernetesMinCores: number;
+
+  @Expose()
+  kubernetesMinRamMb: number;
+
+  @Expose()
+  kubernetesMinTempStorageMb: number;
+
   @Type(() => NamespaceServiceEnvVarDto)
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
