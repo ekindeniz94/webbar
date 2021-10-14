@@ -2,6 +2,13 @@
 
 
 
+## 1.27.92 (2021-10-14)
+
+
+### Bug Fixes
+
+* refactoring namespace DTOs ([fec4114](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fec4114431e5acdcb04ed2a5e5a96a0e34d64807))
+
 ## 1.27.91 (2021-10-13)
 
 
