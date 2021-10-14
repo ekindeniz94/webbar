@@ -4,6 +4,7 @@ import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceKeypairPublicDto } from './namespace-keypair-public.dto';
 import { NamespaceStageEntityDto } from './namespace-stage.dto';
+import { SubscriptionDto } from '../../../mo-subscription-pool';
 
 export class NamespacePublicDto extends BaseEntityDto {
   @Expose()
@@ -41,6 +42,9 @@ export class NamespacePublicDto extends BaseEntityDto {
 
   @Expose()
   bgColorStyle: string;
+
+  @Expose()
+  subscription: SubscriptionDto;
 
   get fullHostname(): string {
     if (
