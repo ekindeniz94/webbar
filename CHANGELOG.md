@@ -2,6 +2,13 @@
 
 
 
+## 1.27.94 (2021-10-14)
+
+
+### Bug Fixes
+
+* recovered excidentially deleted file. ([90a6b5f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/90a6b5f3c0500a0eeaebb9c2955633c884d4f571))
+
 ## 1.27.93 (2021-10-14)
 
 
