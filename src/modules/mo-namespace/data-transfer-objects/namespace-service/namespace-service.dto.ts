@@ -1,49 +1,78 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsBoolean } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
+import { isArray, isBoolean, isString } from 'class-validator';
+import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
-import { NamespaceServiceGroupDto } from './namespace-service-group.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
-import { ServiceTypeEnum } from '../../../mo-service-library';
+import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
+import { TransformFnParams } from 'class-transformer/types/interfaces';
+import _ from 'lodash';
+import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
+  )
   @Expose()
   name: string;
 
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DESCRIPTION.MAX
+    )
+  )
   @Expose()
   description: string;
 
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX
+    )
+  )
   @Expose()
   gitRepository: string;
 
+  @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitBranchTransform(params))
   @Expose()
   gitBranch: string;
 
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
+    )
+  )
   @Expose()
-  kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
+  dockerfileName: string;
 
-  @Expose()
-  serviceType: ServiceTypeEnum;
-
+  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
   @Expose()
   cNames: string[];
 
   @Expose()
   internalPort: number;
 
-  @Type(() => NamespaceServiceGroupDto)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
-  serviceGroup: NamespaceServiceGroupDto;
+  expose: boolean;
+
+  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Expose()
+  kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
 
   @Type(() => NamespaceServiceEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
 
-  @IsBoolean()
+  @Type(() => ServiceDto)
   @Expose()
-  expose: boolean;
+  service: ServiceDto;
+
+  get serviceType(): ServiceTypeEnum {
+    return this.service.serviceType;
+  }
 
   get hostname(): string {
     return `${this.name.toLowerCase()}`;

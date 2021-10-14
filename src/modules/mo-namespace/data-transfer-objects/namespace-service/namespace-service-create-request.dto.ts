@@ -18,10 +18,9 @@ import {
 } from 'class-validator';
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST, GitBranchRefItemDto } from '../../../mo-core';
-import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
-import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
+import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
+import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
-import { ServiceTypeEnum } from '../../../mo-service-library';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -47,12 +46,6 @@ export class NamespaceServiceCreateRequestDto {
   description: string;
 
   @IsNotEmpty()
-  @IsEnum(ServiceTypeEnum)
-  @Transform(({ value }) => value ?? ServiceTypeEnum.DOCKER)
-  @Expose()
-  serviceType: ServiceTypeEnum;
-
-  @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
   @Transform(({ value }) =>
@@ -73,10 +66,17 @@ export class NamespaceServiceCreateRequestDto {
   gitBranch: string;
 
   @IsNotEmpty()
-  @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
-  @ValidateNested()
+  @IsString()
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
+    )
+  )
   @Expose()
-  kubernetesSettings: NamespaceServiceKubernetesSettingsCreateRequestDto;
+  dockerfileName: string;
 
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
@@ -88,30 +88,40 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   cNames: string[];
 
-  @IsOptional()
-  @Type(() => NamespaceServiceGroupCreateRequestDto)
-  @ValidateNested()
-  @Expose()
-  serviceGroup: NamespaceServiceGroupCreateRequestDto;
-
   @IsNotEmpty()
   @IsNumber()
   @Expose()
   internalPort: number;
-
-  @IsOptional()
-  @Type(() => NamespaceServiceEnvVarDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @ValidateNested()
-  @Expose()
-  envVars: NamespaceServiceEnvVarDto[];
 
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   expose: boolean;
 
-  protected static gitBranchTransform(params: TransformFnParams): string {
+  @IsNotEmpty()
+  @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
+  @ValidateNested()
+  @Expose()
+  kubernetesSettings: NamespaceServiceKubernetesSettingsCreateRequestDto;
+
+  @IsOptional()
+  @Type(() => NamespaceServiceEnvVarCreateRequestDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
+  @Expose()
+  envVars: NamespaceServiceEnvVarCreateRequestDto[];
+
+  @IsNotEmpty()
+  @Type(() => ServiceDto)
+  @ValidateNested()
+  @Expose()
+  service: ServiceDto;
+
+  get serviceType(): ServiceTypeEnum {
+    return this.service.serviceType;
+  }
+
+  public static gitBranchTransform(params: TransformFnParams): string {
     let value = params.value;
     if (value instanceof GitBranchRefItemDto) {
       value = value.name;

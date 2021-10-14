@@ -1,18 +1,11 @@
-import { Exclude } from 'class-transformer';
+import { Expose } from 'class-transformer';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
-import { NamespaceServiceGroupCreateRequestDto } from './namespace-service-group-create-request.dto';
-import { ServiceTypeEnum } from '../../../mo-service-library';
+import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
-  @Exclude()
-  name: string;
-
-  @Exclude()
-  serviceType: ServiceTypeEnum;
-
-  @Exclude()
-  gitRepository: string;
-
-  @Exclude()
-  serviceGroup: NamespaceServiceGroupCreateRequestDto;
+  @IsNotEmpty()
+  @IsString()
+  @IsUUID()
+  @Expose()
+  id: string;
 }

@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../../../mo-core';
+import { IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class NamespaceServiceDockerK8sPatchRequestDto {
   @Expose()
