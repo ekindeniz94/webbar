@@ -3,8 +3,8 @@ import { BaseEntityDto } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
-import { NamespaceKeypairDto } from './namespace-keypair.dto';
 import { NamespaceStageDto } from '../namespace-stage';
+import { NamespaceKeypairDto } from './namespace-keypair.dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
@@ -46,7 +46,7 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   stages: NamespaceStageDto[];
 
-  get fullHostname(): string {
+  fullHostname(stage: NamespaceStageDto): string {
     if (
       this.hostname &&
       this.hostname.length > 0 &&
@@ -55,16 +55,16 @@ export class NamespaceDto extends BaseEntityDto {
       this.shortId &&
       this.shortId?.length > 0
     ) {
-      return `${this.hostname}-${this.shortId}.${this.domain}`;
+      return `${this.hostname}-${stage.subdomain}-${this.shortId}.${this.domain}`;
     }
     return '__MISSING_DATA__';
   }
 
-  get fullHostnameWithProtocol(): string {
-    return `https://${this.fullHostname}`;
+  fullHostnameWithProtocol(stage: NamespaceStageDto): string {
+    return `https://${this.fullHostname(stage)}`;
   }
 
-  get kubernetesName(): string {
-    return `${this.hostname}-${this.shortId}`;
+  kubernetesName(stage: NamespaceStageDto): string {
+    return `${this.name}-${stage.subdomain}-${this.shortId}`;
   }
 }
