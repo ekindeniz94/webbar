@@ -3,8 +3,8 @@ import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceKeypairPublicDto } from './namespace-keypair-public.dto';
-import { NamespaceStageEntityDto } from './namespace-stage.dto';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
+import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespacePublicDto extends BaseEntityDto {
   @Expose()
@@ -33,9 +33,9 @@ export class NamespacePublicDto extends BaseEntityDto {
   @Expose()
   services: NamespaceServiceDto[];
 
-  @Type(() => NamespaceStageEntityDto)
+  @Type(() => NamespaceStageDto)
   @Expose()
-  stages: NamespaceStageEntityDto[];
+  stages: NamespaceStageDto[];
 
   @Expose()
   state: NamespaceStateEnum;

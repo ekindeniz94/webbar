@@ -28,12 +28,12 @@ export class CurrencyDto extends BaseEntityDto {
   subscriptions: SubscriptionDto[];
 
   get price(): number {
-    return this.pricePerInterval / 100;
+    return +(this.pricePerInterval / 100).toFixed(2);
   }
 
   get displayPricePerInterval(): string {
     if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {
-      return `${(this.price).toFixed(2)}`;
+      return `${this.price.toFixed(2)}`;
     }
     return `${this.type} does not support displayPricePerInterval()`;
   }
@@ -59,9 +59,7 @@ export class CurrencyDto extends BaseEntityDto {
       return `1 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`}`;
     }
     if (this.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${
-        currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`
-      }`;
+      return `12 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`}`;
     }
     return '???';
   }
@@ -95,16 +93,16 @@ export class CurrencyDto extends BaseEntityDto {
       return this.price;
     }
     if (this.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return this.price * 12;
+      return +(this.price * 12).toFixed(2);
     }
     return 0;
   }
 
   get tax(): number {
-    return (this.netPrice * this.taxPercent) / 100;
+    return +((this.netPrice * this.taxPercent) / 100).toFixed(2);
   }
 
   get grossPrice(): number {
-    return this.tax + this.netPrice;
+    return +(this.tax + this.netPrice).toFixed(2);
   }
 }

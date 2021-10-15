@@ -21,6 +21,7 @@ import { DTO_VALIDATION_CONST, GitBranchRefItemDto } from '../../../mo-core';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
+import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -116,6 +117,10 @@ export class NamespaceServiceCreateRequestDto {
   @ValidateNested()
   @Expose()
   service: ServiceDto;
+
+  @Type(() => NamespaceStageDto)
+  @Expose()
+  stage: NamespaceStageDto;
 
   get serviceType(): ServiceTypeEnum {
     return this.service.serviceType;

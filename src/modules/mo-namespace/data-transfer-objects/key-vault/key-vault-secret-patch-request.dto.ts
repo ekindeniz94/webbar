@@ -1,20 +1,11 @@
 import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsString, Matches, MaxLength } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
+import { KeyVaultSecretCreateRequestDto } from './key-vault-secret-create-request.dto';
 
-export class KeyVaultSecretPatchRequestDto {
+export class KeyVaultSecretPatchRequestDto extends KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.KEY_VAULT.NAME.MAX)
-  @Matches(/^[a-zA-Z0-9-_]{6,50}$/, {
-    message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 50 char'
-  })
+  @IsUUID()
   @Expose()
-  name: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.KEY_VAULT.VALUE.MAX)
-  @Expose()
-  value: string;
+  id: string;
 }

@@ -72,12 +72,16 @@ export const DTO_VALIDATION_CONST = {
     },
     STAGE: {
       NAME: {
-        MIN: 5,
-        MAX: 50
+        MIN: 2,
+        MAX: 30
       },
-      BRANCH: {
-        MIN: 5,
-        MAX: 512
+      SUBDOMAIN: {
+        MIN: 1,
+        MAX: 30,
+        MATCHES: /^[a-zA-Z0-9-]{1,30}$/
+      },
+      DESCRIPTION: {
+        MAX: 2048
       }
     },
     KEY_VAULT: {

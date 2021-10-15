@@ -4,7 +4,7 @@ import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
-import { NamespaceStageEntityDto } from './namespace-stage.dto';
+import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
@@ -33,10 +33,6 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   services: NamespaceServiceDto[];
 
-  @Type(() => NamespaceStageEntityDto)
-  @Expose()
-  stages: NamespaceStageEntityDto[];
-
   @Expose()
   state: NamespaceStateEnum;
 
@@ -45,6 +41,10 @@ export class NamespaceDto extends BaseEntityDto {
 
   @Expose()
   subscription: SubscriptionDto;
+
+  @Type(() => NamespaceStageDto)
+  @Expose()
+  stages: NamespaceStageDto[];
 
   get fullHostname(): string {
     if (

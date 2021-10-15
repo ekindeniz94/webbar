@@ -7,6 +7,7 @@ import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import _ from 'lodash';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
+import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -69,6 +70,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Type(() => ServiceDto)
   @Expose()
   service: ServiceDto;
+
+  @Type(() => NamespaceStageDto)
+  @Expose()
+  stage: NamespaceStageDto;
 
   get serviceType(): ServiceTypeEnum {
     return this.service.serviceType;
