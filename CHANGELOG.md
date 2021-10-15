@@ -2,6 +2,13 @@
 
 
 
+## 1.27.96 (2021-10-15)
+
+
+### Bug Fixes
+
+* namespace stage DTOs ([dc98e07](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dc98e070c6395ee3e79d10ad11283670c3a5de30))
+
 ## 1.27.95 (2021-10-14)
 
 
