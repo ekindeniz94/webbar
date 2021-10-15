@@ -2,6 +2,13 @@
 
 
 
+## 1.27.97 (2021-10-15)
+
+
+### Bug Fixes
+
+* added stages. ([76e8b4e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/76e8b4e7e6aaf2f157bb9d03b94c172658bcc6d3))
+
 ## 1.27.96 (2021-10-15)
 
 
