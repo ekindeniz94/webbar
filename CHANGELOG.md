@@ -2,6 +2,13 @@
 
 
 
+## 1.27.100 (2021-10-18)
+
+
+### Bug Fixes
+
+* redis pub.sub notification interface ([f7c5f1d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f7c5f1d3b78a5386bb9dce77c6b9dd686e60af95))
+
 ## 1.27.99 (2021-10-18)
 
 
