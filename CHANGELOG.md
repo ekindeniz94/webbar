@@ -2,6 +2,13 @@
 
 
 
+## 1.27.104 (2021-10-18)
+
+
+### Bug Fixes
+
+* notification refactored. ([2e06980](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2e069809b8bcc0b8bb4b50521b9ebff578e65221))
+
 ## 1.27.103 (2021-10-18)
 
 
