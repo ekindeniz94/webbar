@@ -63,7 +63,7 @@ export class ProductDto extends BaseEntityDto {
   diskPerformanceTier: DiskPerformanceTierEnum;
 
   @Expose()
-  persistentAzureFilesInMb: number;
+  maxContainerImageSizeMb: number;
 
   @Expose()
   icon: string;

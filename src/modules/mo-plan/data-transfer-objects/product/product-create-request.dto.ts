@@ -150,12 +150,12 @@ export class ProductCreateRequestDto {
       if (value) {
         return value;
       }
-      obj.persistentAzureFilesInMb = 0;
-      return obj.persistentAzureFilesInMb;
+      obj.maxContainerImageSizeMb = 256;
+      return obj.maxContainerImageSizeMb;
     },
     { toClassOnly: true }
   )
-  persistentAzureFilesInMb: number;
+  maxContainerImageSizeMb: number;
 
   @Expose()
   @IsString()
