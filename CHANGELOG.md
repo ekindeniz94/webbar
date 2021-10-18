@@ -2,6 +2,13 @@
 
 
 
+## 1.27.99 (2021-10-18)
+
+
+### Bug Fixes
+
+* namespace stage description is optional ([821e2ae](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/821e2ae5ccee36ae745f6adb63a650d7b1921e87))
+
 ## 1.27.98 (2021-10-15)
 
 
