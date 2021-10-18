@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
 import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
@@ -13,6 +13,7 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   paypalId: string;
 
+  @Type(() => PlanDto)
   @Expose()
   plans: PlanDto[];
 
@@ -48,6 +49,7 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   endsOn: Date;
 
+  @Type(() => NamespaceServiceKubernetesSettingsDto)
   @Expose()
   kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
 
@@ -69,6 +71,7 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   bgColor: string;
 
+  @Type(() => ClusterDto)
   @Expose()
   cluster: ClusterDto;
 

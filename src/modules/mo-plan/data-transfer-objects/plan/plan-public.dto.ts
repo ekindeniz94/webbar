@@ -5,6 +5,7 @@ import { CurrencyDto } from '../currency';
 import { PlanDto } from './plan.dto';
 
 export class PlanPublicDto extends PlanDto {
+  @Type(() => SubscriptionDto)
   @Exclude()
   subscriptions: SubscriptionDto[];
 

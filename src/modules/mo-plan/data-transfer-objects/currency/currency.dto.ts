@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
@@ -9,6 +9,7 @@ export class CurrencyDto extends BaseEntityDto {
   @Expose()
   paypalId: string;
 
+  @Type(() => PlanDto)
   @Expose()
   plan: PlanDto;
 
@@ -24,6 +25,7 @@ export class CurrencyDto extends BaseEntityDto {
   @Expose()
   taxPercent: number;
 
+  @Type(() => SubscriptionDto)
   @Expose()
   subscriptions: SubscriptionDto[];
 
