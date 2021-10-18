@@ -2,6 +2,13 @@
 
 
 
+## 1.27.108 (2021-10-18)
+
+
+### Bug Fixes
+
+* mo-plan update DTOs ([240167b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/240167badb900ee9736649615cadd031b439e97e))
+
 ## 1.27.107 (2021-10-18)
 
 
