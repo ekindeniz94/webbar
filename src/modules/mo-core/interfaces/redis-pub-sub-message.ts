@@ -5,13 +5,13 @@ import {
   NamespaceSocketEventEnum
 } from '../../mo-namespace';
 import { UserSocketDataEventEnum, UserSocketEventEnum } from '../../mo-user';
+import { K8sNotificationSocketDataEnum, K8sNotificationSocketEventEnum } from '../enums';
 import { IRedisPubSubMessageData, IRedisPubSubMessageNotificationBanner } from './redis-pub-sub-message-data';
-import { NotificationSocketDataEnum, NotificationSocketEventEnum } from '../enums';
 
 export type RedisPubSubMessageSocketEventTypes =
   | NamespaceSocketEventEnum
   | UserSocketEventEnum
-  | NotificationSocketEventEnum;
+  | K8sNotificationSocketEventEnum;
 export type RedisPubSubMessageTypes =
   | IRedisPubSubMessageNamespace
   | IRedisPubSubMessageNamespaceInvitation
@@ -90,8 +90,8 @@ export interface IRedisPubSubMessageUserNotification extends IRedisPubSubMessage
 /**
  * Hint: data type is NotificationSocketDataEnum
  */
-export interface IRedisPubSubMessageNotification extends IRedisPubSubMessage {
-  redisChannel: 'mo_notification';
-  socketEvent: NotificationSocketEventEnum.NOTIFICATION;
-  data: RedisPubSubMessageDataTypes<NotificationSocketDataEnum, any>[];
+export interface IRedisPubSubMessageK8sNotification extends IRedisPubSubMessage {
+  redisChannel: 'mo_k8s_notification';
+  socketEvent: K8sNotificationSocketEventEnum.NOTIFICATION;
+  data: RedisPubSubMessageDataTypes<K8sNotificationSocketDataEnum, any>[];
 }
