@@ -2,6 +2,7 @@ export * from './file-type.enum';
 export * from './http-status-code.enum';
 export * from './k8s-notification-socket-data.enum';
 export * from './k8s-notification-socket-event.enum';
+export * from './k8s-notification-state.enum';
 export * from './notification-content-type.enum';
 export * from './notification-position.enum';
 export * from './notification-type.enum';
