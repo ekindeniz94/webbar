@@ -2,6 +2,13 @@
 
 
 
+## 1.27.109 (2021-10-18)
+
+
+### Bug Fixes
+
+* removed azurefiles and replaced it with maxDockerImageSize. ([71bb257](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/71bb25724128753bb110b063d8d8cb867409353d))
+
 ## 1.27.108 (2021-10-18)
 
 
