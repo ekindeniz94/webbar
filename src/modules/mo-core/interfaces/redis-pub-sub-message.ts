@@ -6,13 +6,19 @@ import {
 } from '../../mo-namespace';
 import { UserSocketDataEventEnum, UserSocketEventEnum } from '../../mo-user';
 import { IRedisPubSubMessageData, IRedisPubSubMessageNotificationBanner } from './redis-pub-sub-message-data';
+import { NotificationSocketDataEnum, NotificationSocketEventEnum } from '../enums';
 
-export type RedisPubSubMessageSocketEventTypes = NamespaceSocketEventEnum | UserSocketEventEnum;
+export type RedisPubSubMessageSocketEventTypes =
+  | NamespaceSocketEventEnum
+  | UserSocketEventEnum
+  | NotificationSocketEventEnum;
 export type RedisPubSubMessageTypes =
   | IRedisPubSubMessageNamespace
   | IRedisPubSubMessageNamespaceInvitation
   | IRedisPubSubMessageNamespaceCommand;
-export type RedisPubSubMessageDataTypes<T> = IRedisPubSubMessageData<T> | IRedisPubSubMessageNotificationBanner;
+export type RedisPubSubMessageDataTypes<EVENT_DATA_TYPE, EVENT_DATA = any> =
+  | IRedisPubSubMessageData<EVENT_DATA_TYPE, EVENT_DATA>
+  | IRedisPubSubMessageNotificationBanner;
 
 interface IRedisPubSubMessage {
   toUserId: string;
@@ -75,8 +81,17 @@ export interface IRedisPubSubMessageAuth extends IRedisPubSubMessage {
 /**
  * Hint: data type is UserSocketDataEventEnum
  */
-export interface IRedisPubSubMessageNotification extends IRedisPubSubMessage {
+export interface IRedisPubSubMessageUserNotification extends IRedisPubSubMessage {
   redisChannel: 'mo_user';
   socketEvent: UserSocketEventEnum.NOTIFICATION_SERVICE;
   data: RedisPubSubMessageDataTypes<UserSocketDataEventEnum>[];
+}
+
+/**
+ * Hint: data type is NotificationSocketDataEnum
+ */
+export interface IRedisPubSubMessageNotification extends IRedisPubSubMessage {
+  redisChannel: 'mo_notification';
+  socketEvent: NotificationSocketEventEnum.NOTIFICATION;
+  data: RedisPubSubMessageDataTypes<NotificationSocketDataEnum, any>[];
 }

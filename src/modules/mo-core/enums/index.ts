@@ -7,3 +7,5 @@ export * from './request-method.enum';
 export * from './socket-data-event.enum';
 export * from './order.enum';
 export * from './socket-event.enum';
+export * from './notification-socket-event.enum';
+export * from './notification-socket-data.enum';
