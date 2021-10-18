@@ -10,6 +10,9 @@ export class K8sNotificationDto {
   namespaceId: string;
 
   @Expose()
+  serviceId: string;
+
+  @Expose()
   title: string;
 
   @Expose()
