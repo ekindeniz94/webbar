@@ -2,6 +2,13 @@
 
 
 
+## 1.27.107 (2021-10-18)
+
+
+### Bug Fixes
+
+* update IRedisPubSubMessageK8sNotification ([22bc02c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/22bc02cef5e609decc7b24c9288fbdfd8f5f270a))
+
 ## 1.27.106 (2021-10-18)
 
 
