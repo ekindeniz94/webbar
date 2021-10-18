@@ -7,8 +7,10 @@ export * from './gateway-status-response.dto';
 export * from './git-branch-ref-item.dto';
 export * from './git-refs-lists.dto';
 export * from './git-tag-ref-item.dto';
+export * from './k8s-notification.dto';
 export * from './language-code.dto';
+export * from './notification.dto';
 export * from './pagination-response.dto';
 export * from './search-request.dto';
 export * from './sms-message.dto';
-export * from './notification.dto';
+
