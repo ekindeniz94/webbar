@@ -2,7 +2,7 @@ import { Expose } from 'class-transformer';
 import { IsEnum } from 'class-validator';
 import { K8sNotificationStateEnum } from '../enums';
 
-export class NamespaceCommandDto {
+export class K8sNotificationDto {
   @Expose()
   id: string;
 
