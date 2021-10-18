@@ -2,6 +2,13 @@
 
 
 
+## 1.27.101 (2021-10-18)
+
+
+### Bug Fixes
+
+* notification rename. ([6f4b0d7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6f4b0d7d76d562fe65846b81c2dc38e21185a56a))
+
 ## 1.27.100 (2021-10-18)
 
 
