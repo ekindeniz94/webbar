@@ -2,6 +2,13 @@
 
 
 
+## 1.27.106 (2021-10-18)
+
+
+### Bug Fixes
+
+* notification msg updated. ([00e7591](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/00e75918681db9914167306eb3f8de7f9a1d09ba))
+
 ## 1.27.105 (2021-10-18)
 
 
