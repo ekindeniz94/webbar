@@ -20,7 +20,4 @@ export class NamespaceServiceKubernetesSettingsDto {
 
   @Expose()
   ephemeralStorageMB: number;
-
-  @Expose()
-  dockerImageCountMax: number;
 }

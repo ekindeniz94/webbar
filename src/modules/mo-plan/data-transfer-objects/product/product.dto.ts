@@ -66,6 +66,9 @@ export class ProductDto extends BaseEntityDto {
   maxContainerImageSizeMb: number;
 
   @Expose()
+  dockerImageCountMax: number;
+
+  @Expose()
   icon: string;
 
   @Expose()

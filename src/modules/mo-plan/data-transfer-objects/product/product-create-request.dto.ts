@@ -182,4 +182,19 @@ export class ProductCreateRequestDto {
   @Type(() => ClusterDto)
   @Expose()
   cluster: ClusterDto;
+
+
+  @Expose()
+  @IsNumber()
+  @Transform(
+    ({ value, obj }) => {
+      if (value) {
+        return value;
+      }
+      obj.dockerImageCountMax = 2;
+      return obj.dockerImageCountMax;
+    },
+    { toClassOnly: true }
+  )
+  dockerImageCountMax: number;
 }

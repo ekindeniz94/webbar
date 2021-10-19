@@ -28,9 +28,4 @@ export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   @IsNotEmpty()
   @IsNumber()
   ephemeralStorageMB: number;
-
-  @Expose()
-  @IsNotEmpty()
-  @IsNumber()
-  dockerImageCountMax: number;
 }
