@@ -2,6 +2,13 @@
 
 
 
+## 1.27.112 (2021-10-19)
+
+
+### Bug Fixes
+
+* refactoring notification ([062ac86](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/062ac86fd1d0d01d8e962db0c155637dfd5d47ea))
+
 ## 1.27.111 (2021-10-19)
 
 
