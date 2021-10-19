@@ -1,6 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsEnum } from 'class-validator';
-import { K8sNotificationStateEnum } from '../enums';
+import { K8sNotificationStateEnum, MessageTypeEnum, NotificationTypeEnum } from '../enums';
 
 export class K8sNotificationDto {
   @Expose()
@@ -21,10 +20,15 @@ export class K8sNotificationDto {
   @Expose()
   startedAt: string;
 
-  @IsEnum(K8sNotificationStateEnum)
   @Expose()
   state: K8sNotificationStateEnum;
 
   @Expose()
   durationMs: number;
+
+  @Expose()
+  type: NotificationTypeEnum;
+
+  @Expose()
+  messageType: MessageTypeEnum;
 }

@@ -1,4 +1,5 @@
-import { NotificationPositionEnum, NotificationTypeEnum, SocketDataEventEnum } from '../enums';
+import { NotificationPositionEnum, NotificationTypeEnum } from '../enums';
+import { SocketDataEventEnum } from '../../mo-core';
 
 export interface IRedisPubSubMessageData<EVENT_DATA_TYPE, EVENT_DATA = any> {
   event: EVENT_DATA_TYPE;
