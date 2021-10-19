@@ -2,6 +2,13 @@
 
 
 
+## 1.27.111 (2021-10-19)
+
+
+### Bug Fixes
+
+* added dockerImageCountMax. ([e8147af](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e8147aff029ab68b5e4591408b69d3816b871e40))
+
 ## 1.27.110 (2021-10-19)
 
 
