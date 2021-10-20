@@ -1,8 +1,9 @@
 import { Expose } from 'class-transformer';
 import { UserPublicDto } from '../../mo-user';
-import { NotificationContentTypeEnum, NotificationPositionEnum, NotificationTypeEnum } from '../enums';
+import { MessageTypeEnum, NotificationContentTypeEnum, NotificationTypeEnum } from '../enums';
+import { BaseEntityDto } from '../../mo-core';
 
-export class NotificationDto {
+export class NotificationDto extends BaseEntityDto {
   @Expose()
   id: string;
 
@@ -11,9 +12,6 @@ export class NotificationDto {
 
   @Expose()
   type: NotificationTypeEnum;
-
-  @Expose()
-  position: NotificationPositionEnum;
 
   @Expose()
   title: string;
@@ -26,4 +24,7 @@ export class NotificationDto {
 
   @Expose()
   extraData: any;
+
+  @Expose()
+  messageType: MessageTypeEnum;
 }
