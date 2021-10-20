@@ -2,6 +2,13 @@
 
 
 
+## 1.27.113 (2021-10-20)
+
+
+### Bug Fixes
+
+* NamespaceNotificationDto ([7a27100](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7a27100d2f62dabee932273b873f7422011253be))
+
 ## 1.27.112 (2021-10-19)
 
 
