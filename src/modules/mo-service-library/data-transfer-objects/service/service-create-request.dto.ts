@@ -39,6 +39,11 @@ export class ServiceCreateRequestDto {
   folder: string;
 
   @Expose()
+  @IsOptional()
+  @IsString()
+  setupCommands: string;
+
+  @Expose()
   @IsNumber()
   internalPort: number;
 

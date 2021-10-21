@@ -32,6 +32,9 @@ export class ServiceDto extends BaseEntityDto {
   folder: string;
 
   @Expose()
+  setupCommands: string;
+
+  @Expose()
   internalPort: number;
 
   @Expose()
