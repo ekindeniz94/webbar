@@ -2,6 +2,13 @@
 
 
 
+## 1.27.114 (2021-10-21)
+
+
+### Bug Fixes
+
+* setupcommands. ([9826c8e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9826c8ec5d0d18596c1d0b9efc70718c2f6876cc))
+
 ## 1.27.113 (2021-10-20)
 
 
