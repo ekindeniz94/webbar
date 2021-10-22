@@ -2,6 +2,13 @@
 
 
 
+## 1.27.117 (2021-10-22)
+
+
+### Bug Fixes
+
+* id added. ([798a444](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/798a444b0230493792ab0c5cd979e9dd1111c90d))
+
 ## 1.27.116 (2021-10-22)
 
 
