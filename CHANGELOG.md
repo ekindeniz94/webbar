@@ -2,6 +2,13 @@
 
 
 
+## 1.27.116 (2021-10-22)
+
+
+### Bug Fixes
+
+* stats improved. ([b05d4cd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b05d4cd00854c03a6a5326d455c62aa8f056c52c))
+
 ## 1.27.115 (2021-10-22)
 
 
