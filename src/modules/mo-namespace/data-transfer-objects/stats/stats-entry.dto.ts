@@ -1,10 +1,10 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose } from 'class-transformer';
 import { IsNumber, IsString } from 'class-validator';
 
-export class PodStatsShortDto {
+export class StatsEntryDto {
   @IsString()
   @Expose()
-  podId: string;
+  name: string;
 
   @IsNumber()
   @Expose()
@@ -21,4 +21,16 @@ export class PodStatsShortDto {
   @IsNumber()
   @Expose()
   memoryUsage: number;
+
+  @IsNumber()
+  @Expose()
+  ephemeralStorageLimit?: number;
+
+  @IsNumber()
+  @Expose()
+  ephemeralStorageUsage?: number;
+
+  @IsNumber()
+  @Expose()
+  overallTraffic?: number;
 }

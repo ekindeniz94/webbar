@@ -1,11 +1,17 @@
 import { Expose, Type } from 'class-transformer';
-import { TrafficStatsDto } from './traffic-stats.dto';
-import { StorageStatsDto } from './storage-stats.dto';
-import { MemoryStatsDto } from './memory-stats.dto';
 import { CpuStatsDto } from './cpu-stats.dto';
-import { PodStatsShortDto } from './pod-stats-short.dto';
+import { MemoryStatsDto } from './memory-stats.dto';
+import { StatsEntryDto } from './stats-entry.dto';
+import { StorageStatsDto } from './storage-stats.dto';
+import { TrafficStatsDto } from './traffic-stats.dto';
 
 export class ServiceStatsDto {
+  @Expose()
+  name: string;
+
+  @Expose()
+  timestamp: Date;
+
   @Type(() => CpuStatsDto)
   @Expose()
   cpu: CpuStatsDto;
@@ -16,13 +22,13 @@ export class ServiceStatsDto {
 
   @Type(() => StorageStatsDto)
   @Expose()
-  storage: StorageStatsDto;
+  storage?: StorageStatsDto;
 
   @Type(() => TrafficStatsDto)
   @Expose()
-  traffic: TrafficStatsDto;
+  traffic?: TrafficStatsDto;
 
-  @Type(() => PodStatsShortDto)
+  @Type(() => StatsEntryDto)
   @Expose()
-  pods: PodStatsShortDto[];
+  entries?: StatsEntryDto[];
 }
