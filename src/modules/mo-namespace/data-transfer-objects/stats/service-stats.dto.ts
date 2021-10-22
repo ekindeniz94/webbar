@@ -24,6 +24,10 @@ export class ServiceStatsDto {
   @Expose()
   storage?: StorageStatsDto;
 
+  @Type(() => StorageStatsDto)
+  @Expose()
+  ephemeralStorage?: StorageStatsDto;
+
   @Type(() => TrafficStatsDto)
   @Expose()
   traffic?: TrafficStatsDto;
