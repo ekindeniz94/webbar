@@ -4,9 +4,7 @@ import {
   ArrayMaxSize,
   isArray,
   isBoolean,
-  IsBoolean,
-  IsEnum,
-  IsFQDN,
+  IsBoolean, IsFQDN,
   IsNotEmpty,
   IsNumber,
   IsOptional,
@@ -19,9 +17,9 @@ import {
 import _ from 'lodash';
 import { DTO_VALIDATION_CONST, GitBranchRefItemDto } from '../../../mo-core';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
+import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
-import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()

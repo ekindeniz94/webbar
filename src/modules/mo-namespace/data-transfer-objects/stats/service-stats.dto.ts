@@ -10,6 +10,9 @@ export class ServiceStatsDto {
   name: string;
 
   @Expose()
+  id: string;
+
+  @Expose()
   timestamp: Date;
 
   @Type(() => CpuStatsDto)
