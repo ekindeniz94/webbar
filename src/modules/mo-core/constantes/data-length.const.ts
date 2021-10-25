@@ -45,13 +45,13 @@ export const DTO_VALIDATION_CONST = {
     },
     NAME: {
       MIN: 5,
-      MAX: 30,
-      MATCHES: /^[a-zA-Z0-9-]{6,30}$/
+      MAX: 24,
+      MATCHES: /^[a-z0-9-]{6,25}$/
     },
     HOSTNAME: {
       MIN: 5,
-      MAX: 30,
-      MATCHES: /^[a-zA-Z0-9-]{6,30}$/
+      MAX: 24,
+      MATCHES: /^[a-z0-9-]{6,25}$/
     },
     SHORT_ID: {
       MIN: 6,
@@ -73,7 +73,8 @@ export const DTO_VALIDATION_CONST = {
     STAGE: {
       NAME: {
         MIN: 2,
-        MAX: 30
+        MAX: 24,
+        MATCHES: /^[a-z0-9-]{2,25}$/
       },
       SUBDOMAIN: {
         MIN: 1,
