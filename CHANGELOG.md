@@ -2,6 +2,13 @@
 
 
 
+## 1.27.118 (2021-10-25)
+
+
+### Bug Fixes
+
+* add notificationState namespace notification ([e71c909](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e71c9098be437d08c077158b6865191be9d744da))
+
 ## 1.27.117 (2021-10-22)
 
 
