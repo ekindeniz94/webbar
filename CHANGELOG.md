@@ -2,6 +2,13 @@
 
 
 
+## 1.27.119 (2021-10-25)
+
+
+### Bug Fixes
+
+* added stageId and made serviceId optional. ([7250fa6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7250fa6327e4810486a8f4efbfadd18f28dca440))
+
 ## 1.27.118 (2021-10-25)
 
 
