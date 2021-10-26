@@ -2,6 +2,13 @@
 
 
 
+## 1.27.121 (2021-10-26)
+
+
+### Bug Fixes
+
+* refactoring notification enums ([5bf8507](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5bf85076b57113757f8d06a6a32eaa2f25e8734f))
+
 ## 1.27.120 (2021-10-26)
 
 
