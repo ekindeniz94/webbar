@@ -1,0 +1,4 @@
+export enum NotificationSocketDataEventEnum {
+  NOTIFICATION = 'NOTIFICATION',
+  GET_NOTIFICATION_LIST = 'GET_NOTIFICATION_LIST'
+}

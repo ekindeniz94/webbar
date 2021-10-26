@@ -1,4 +1,4 @@
-export enum K8sNotificationSocketDataEnum {
+export enum K8sNotificationSocketDataEventEnum {
   K8S_NOTIFICATION = 'K8S_NOTIFICATION',
   PIPELINE_NOTIFICATION = 'PIPELINE_NOTIFICATION'
 }

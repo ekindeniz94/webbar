@@ -6,6 +6,9 @@ export class K8sNotificationDto {
   id: string;
 
   @Expose()
+  jobId: string;
+
+  @Expose()
   namespaceId: string;
 
   @Expose()

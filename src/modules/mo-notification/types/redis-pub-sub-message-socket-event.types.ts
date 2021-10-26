@@ -1,6 +1,12 @@
-import { K8sNotificationSocketEventEnum, NamespaceSocketEventEnum, UserSocketEventEnum } from '../enums';
+import {
+  K8sNotificationSocketEventEnum,
+  NamespaceSocketEventEnum,
+  NotificationSocketEventEnum,
+  UserSocketEventEnum
+} from '../enums';
 
 export type RedisPubSubMessageSocketEventTypes =
   | NamespaceSocketEventEnum
   | UserSocketEventEnum
-  | K8sNotificationSocketEventEnum;
+  | K8sNotificationSocketEventEnum
+  | NotificationSocketEventEnum;

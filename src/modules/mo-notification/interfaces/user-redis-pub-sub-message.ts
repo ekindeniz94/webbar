@@ -23,12 +23,3 @@ export interface IRedisPubSubMessageAuth extends IRedisPubSubMessage {
   socketEvent: UserSocketEventEnum.AUTH_SERVICE;
   data: RedisPubSubMessageDataTypes<UserSocketDataEventEnum>[];
 }
-
-/**
- * Hint: data type is UserSocketDataEventEnum
- */
-export interface IRedisPubSubMessageUserNotification extends IRedisPubSubMessage {
-  redisChannel: 'mo_user';
-  socketEvent: UserSocketEventEnum.NOTIFICATION_SERVICE;
-  data: RedisPubSubMessageDataTypes<UserSocketDataEventEnum>[];
-}
