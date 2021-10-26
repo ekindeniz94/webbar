@@ -2,6 +2,13 @@
 
 
 
+## 1.27.120 (2021-10-26)
+
+
+### Bug Fixes
+
+* add stage to notification dto ([5f20db3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5f20db33342f5d1ef05cf402685525d26959d417))
+
 ## 1.27.119 (2021-10-25)
 
 
