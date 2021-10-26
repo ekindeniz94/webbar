@@ -1,6 +1,6 @@
 import { NotificationDto } from './notification.dto';
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceDto, NamespaceServiceDto } from '../../mo-namespace';
+import { NamespaceDto, NamespaceServiceDto, NamespaceStageDto } from '../../mo-namespace';
 import { K8sNotificationStateEnum } from '../enums';
 
 export class NamespaceNotificationDto extends NotificationDto {
@@ -11,6 +11,10 @@ export class NamespaceNotificationDto extends NotificationDto {
   @Type(() => NamespaceServiceDto)
   @Expose()
   namespaceService?: NamespaceServiceDto;
+
+  @Type(() => NamespaceStageDto)
+  @Expose()
+  namespaceStage?: NamespaceStageDto;
 
   @Transform(({ value }) => +value)
   @Expose()
