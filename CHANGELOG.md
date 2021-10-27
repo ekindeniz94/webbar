@@ -2,6 +2,13 @@
 
 
 
+## 1.27.129 (2021-10-27)
+
+
+### Bug Fixes
+
+* removed traffic from stats object. ([288510e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/288510e67f56bfa3522e8868c680784aef8ac540))
+
 ## 1.27.128 (2021-10-27)
 
 
