@@ -27,4 +27,22 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Type(() => NamespaceServiceDto)
   @Expose()
   services: NamespaceServiceDto[];
+
+  @Expose()
+  cpu: number;
+
+  @Expose()
+  memory: number;
+
+  @Expose()
+  storage: number;
+
+  @Expose()
+  traffic: number;
+
+  @Expose()
+  ephemeralStorage: number;
+
+  @Expose()
+  statsUpdateAt: Date;
 }
