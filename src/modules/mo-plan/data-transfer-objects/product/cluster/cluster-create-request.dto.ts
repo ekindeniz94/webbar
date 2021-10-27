@@ -21,4 +21,8 @@ export class ClusterCreateRequestDto {
   @IsNotEmpty()
   @Expose()
   k8smanagerUrl: string;
+
+  @IsNotEmpty()
+  @Expose()
+  host: string;
 }

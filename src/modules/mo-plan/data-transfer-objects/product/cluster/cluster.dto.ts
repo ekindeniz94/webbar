@@ -13,4 +13,7 @@ export class ClusterDto extends BaseEntityDto  {
 
   @Expose()
   k8smanagerUrl: string;
+
+  @Expose()
+  host: string;
 }
