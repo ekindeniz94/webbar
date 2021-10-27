@@ -2,6 +2,13 @@
 
 
 
+## 1.27.131 (2021-10-27)
+
+
+### Bug Fixes
+
+* update stage DTO (add stats) ([1fa10c1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1fa10c162af2d8ef6bd3c4a624677bc11f5c9f06))
+
 ## 1.27.130 (2021-10-27)
 
 
