@@ -2,6 +2,13 @@
 
 
 
+## 1.27.125 (2021-10-27)
+
+
+### Bug Fixes
+
+* cluster upate ([3fc56b2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3fc56b2fa0edbc5ccd08d69790047e4b6bf82964))
+
 ## 1.27.124 (2021-10-27)
 
 
