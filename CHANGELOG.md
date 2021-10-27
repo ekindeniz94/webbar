@@ -2,6 +2,13 @@
 
 
 
+## 1.27.124 (2021-10-27)
+
+
+### Bug Fixes
+
+* k8s msg and K8sNotificationStateEnum ([82d7167](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/82d716765b0a1c7f5a3b11ad0b6540a1ab23990b))
+
 ## 1.27.123 (2021-10-27)
 
 
