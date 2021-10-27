@@ -2,6 +2,13 @@
 
 
 
+## 1.27.123 (2021-10-27)
+
+
+### Bug Fixes
+
+* add k8s msg interfaces ([49fd005](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/49fd005aac9facd0f404f44eac428728230fe1f4))
+
 ## 1.27.122 (2021-10-27)
 
 
