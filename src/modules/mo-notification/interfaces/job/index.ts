@@ -1,3 +1,3 @@
 export * from './k8s-msg';
-export * from './k8s-msg-job-list';
-export * from './k8s-msg-task-list';
+export * from './k8s-msg-job';
+export * from './k8s-msg-task';
