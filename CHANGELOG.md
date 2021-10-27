@@ -2,6 +2,13 @@
 
 
 
+## 1.27.127 (2021-10-27)
+
+
+### Bug Fixes
+
+* added convenience functions for kubernetesname and hostname. ([f86cecb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f86cecb4674aa561a388128bd2870f944fd11c46))
+
 ## 1.27.126 (2021-10-27)
 
 
