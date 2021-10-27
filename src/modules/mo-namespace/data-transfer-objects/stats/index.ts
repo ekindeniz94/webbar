@@ -5,3 +5,5 @@ export * from './stats-entry.dto';
 export * from './stats.dto';
 export * from './storage-stats.dto';
 export * from './time-series.dto';
+export * from './traffic-stats-time-series.dto';
+export * from './traffic-stats.dto';

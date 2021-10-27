@@ -29,4 +29,8 @@ export class StatsEntryDto {
   @IsNumber()
   @Expose()
   ephemeralStorageUsage?: number;
+
+  @IsNumber()
+  @Expose()
+  overallTraffic?: number;
 }
