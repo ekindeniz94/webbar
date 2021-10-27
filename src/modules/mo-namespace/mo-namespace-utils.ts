@@ -21,7 +21,11 @@ export class MoNamespaceUtils {
     return `https://${hostname}`;
   }
 
-  static kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto): string {
-    return `${namespace.hostname}-${namespace.shortId}-${stage.subdomain}`;
+  static kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto, service?: NamespaceServiceDto): string {
+    let k8sName = `${namespace.hostname}-${namespace.shortId}-${stage.subdomain}`;
+    if (service) {
+      k8sName = `${service.hostname}-${k8sName}`;
+    }
+    return k8sName;
   }
 }
