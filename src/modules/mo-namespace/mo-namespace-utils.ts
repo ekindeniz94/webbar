@@ -21,7 +21,7 @@ export class MoNamespaceUtils {
     return `https://${hostname}`;
   }
 
-  kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto): string {
+  static kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto): string {
     return `${namespace.hostname}-${namespace.shortId}-${stage.subdomain}`;
   }
 }
