@@ -2,6 +2,13 @@
 
 
 
+## 1.27.128 (2021-10-27)
+
+
+### Bug Fixes
+
+* kubernetesname improved. ([07659db](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/07659db1e7fd46a03265c4526e4c2ed0510e1a07))
+
 ## 1.27.127 (2021-10-27)
 
 
