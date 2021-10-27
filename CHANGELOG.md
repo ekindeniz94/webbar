@@ -2,6 +2,13 @@
 
 
 
+## 1.27.130 (2021-10-27)
+
+
+### Reverts
+
+* Revert "fix: removed traffic from stats object." ([cc69be9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cc69be91c3a57ccaa70a30691d9d8721ae6f7597))
+
 ## 1.27.129 (2021-10-27)
 
 
