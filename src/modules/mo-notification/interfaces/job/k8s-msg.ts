@@ -9,5 +9,5 @@ export interface IK8sMsg {
   state: K8sNotificationStateEnum;
   messageType: MessageTypeEnum;
   type: string;
-  durationMs: string;
+  durationMs: number;
 }
