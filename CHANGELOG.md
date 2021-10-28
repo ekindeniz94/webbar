@@ -2,6 +2,13 @@
 
 
 
+## 1.27.132 (2021-10-28)
+
+
+### Bug Fixes
+
+* update k8s msg; namespace notification dto ([1168214](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1168214f6eff8a0080a2a65a743b3bbf1204fc7a))
+
 ## 1.27.131 (2021-10-27)
 
 
