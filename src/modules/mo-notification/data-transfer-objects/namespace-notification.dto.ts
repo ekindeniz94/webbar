@@ -21,7 +21,10 @@ export class NamespaceNotificationDto extends NotificationDto {
   subNotificationCount: number;
 
   @Expose()
-  commandId: string;
+  jobId: string;
+
+  @Expose()
+  taskId: string;
 
   @Expose()
   notificationState: K8sNotificationStateEnum;

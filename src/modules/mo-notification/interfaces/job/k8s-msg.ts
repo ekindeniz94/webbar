@@ -3,8 +3,11 @@ import { K8sNotificationStateEnum, MessageTypeEnum } from '../../enums';
 export interface IK8sMsg {
   id: string;
   jobId: string;
-  messageType: MessageTypeEnum;
-  state: K8sNotificationStateEnum;
+  startedAt: string;
   title: string;
+  message: string;
+  state: K8sNotificationStateEnum;
+  messageType: MessageTypeEnum;
   type: string;
+  durationMs: string;
 }
