@@ -1,26 +1,18 @@
 import {
-  ArrayMaxSize,
-  isArray,
-  isBoolean,
-  IsBoolean,
   IsEmail,
   IsNotEmpty,
-  IsOptional,
   isString,
   IsString,
   MaxLength,
   MinLength,
-  ValidateNested
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
-import { DTO_VALIDATION_CONST } from '../mo-core';
+import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
 
 export class ContactCreateRequestDto {
-  @IsNotEmpty()
-  @IsString()
-  @Transform(({ value }) => value ?? 'en')
+  @Type(() => LanguageCodeDto)
   @Expose()
-  langISO_639_1: string;
+  languageCode: LanguageCodeDto;
 
   @IsNotEmpty()
   @IsString()
@@ -81,19 +73,4 @@ export class ContactCreateRequestDto {
   )
   @Expose()
   message: string;
-
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @IsNotEmpty()
-  @IsBoolean()
-  @Expose()
-  subscribeNewsletter: boolean;
-
-  @Type(() => ContactCreateRequestDto)
-  @IsOptional()
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @ArrayMaxSize(2)
-  @ValidateNested()
-  @Expose()
-  translations: ContactCreateRequestDto[];
 }

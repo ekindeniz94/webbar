@@ -1,0 +1,5 @@
+export enum ContactPermissionsEnum {
+  CONTACT__ADMIN = 'CONTACT__ADMIN',
+  CONTACT__USER = 'CONTACT__USER',
+  CONTACT__VIEWER = 'CONTACT__VIEWER'
+}

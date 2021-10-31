@@ -176,6 +176,12 @@ export const DTO_VALIDATION_CONST = {
   PHONE_NUMBER: {
     MAX: 128
   },
+  REGISTER_BETA: {
+    FULL_NAME: {
+      MIN: 2,
+      MAX: 256
+    }
+  },
   FIRST_NAME: {
     MIN: 2,
     MAX: 256
