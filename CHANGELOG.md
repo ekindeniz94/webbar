@@ -2,6 +2,13 @@
 
 
 
+## 1.27.135 (2021-10-31)
+
+
+### Bug Fixes
+
+* contact & register for beta DTOs ([816e108](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/816e10844caca21bd01367d880f72f4f374089eb))
+
 ## 1.27.134 (2021-10-29)
 
 
