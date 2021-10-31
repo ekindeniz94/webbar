@@ -2,6 +2,13 @@
 
 
 
+## 1.27.136 (2021-10-31)
+
+
+### Bug Fixes
+
+* add agreedTermsConditions register beta dto and ALL_REGISTER_BETA_ROLE ([0405b43](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0405b438f2a938543856146799e313392bf54a52))
+
 ## 1.27.135 (2021-10-31)
 
 
