@@ -5,6 +5,7 @@ import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
+import { GitConnectionEntity } from '../git-connection';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
@@ -45,4 +46,8 @@ export class NamespaceDto extends BaseEntityDto {
   @Type(() => NamespaceStageDto)
   @Expose()
   stages: NamespaceStageDto[];
+
+  @Type(() => GitConnectionEntity)
+  @Expose()
+  gitConnections: NamespaceStageDto[];
 }
