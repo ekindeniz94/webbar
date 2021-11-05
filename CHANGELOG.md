@@ -2,6 +2,13 @@
 
 
 
+## 1.27.138 (2021-11-05)
+
+
+### Bug Fixes
+
+* add git-connections to namespace dto ([8705616](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8705616cde2ae35788f6f88b952074dcc4c2bad5))
+
 ## 1.27.137 (2021-11-05)
 
 
