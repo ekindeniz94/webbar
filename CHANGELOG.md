@@ -2,6 +2,13 @@
 
 
 
+## 1.27.137 (2021-11-05)
+
+
+### Bug Fixes
+
+* add git connection dto ([350be21](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/350be21c2f70ab0a00c7e6ae00bfd855c89fd121))
+
 ## 1.27.136 (2021-10-31)
 
 
