@@ -2,6 +2,13 @@
 
 
 
+## 1.27.139 (2021-11-07)
+
+
+### Bug Fixes
+
+* git connection ([682f543](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/682f543c66dba86c9f27df506a91f43c143479db))
+
 ## 1.27.138 (2021-11-05)
 
 
