@@ -5,3 +5,6 @@ export * from './namespace-invitation';
 export * from './namespace-service';
 export * from './namespace-stage';
 export * from './stats';
+
+export * from './github-repository.dto';
+export * from './github-branch.dto';

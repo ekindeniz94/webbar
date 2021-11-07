@@ -4,7 +4,8 @@ import {
   ArrayMaxSize,
   isArray,
   isBoolean,
-  IsBoolean, IsFQDN,
+  IsBoolean,
+  IsFQDN,
   IsNotEmpty,
   IsNumber,
   IsOptional,
@@ -20,6 +21,8 @@ import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
+import { GithubRepositoryDto } from '../github-repository.dto';
+import { GithubBranchDto } from '../github-branch.dto';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -47,12 +50,7 @@ export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX
-    )
-  )
+  @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitRepoTransform(params))
   @Expose()
   gitRepository: string;
 
@@ -126,8 +124,19 @@ export class NamespaceServiceCreateRequestDto {
 
   public static gitBranchTransform(params: TransformFnParams): string {
     let value = params.value;
-    if (value instanceof GitBranchRefItemDto) {
+    if (value instanceof GithubBranchDto) {
       value = value.name;
+    }
+    return (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX
+    );
+  }
+
+  public static gitRepoTransform(params: TransformFnParams): string {
+    let value = params.value;
+    if (value instanceof GithubRepositoryDto) {
+      value = value.clone_url;
     }
     return (value && isString(value) ? value.trim() : value)?.substring(
       0,
