@@ -2,6 +2,13 @@
 
 
 
+## 1.27.140 (2021-11-07)
+
+
+### Bug Fixes
+
+* git branch, git repo DTOs ([ab7d4c9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ab7d4c9ea24d0f06f0ff463077d4e2a268793115))
+
 ## 1.27.139 (2021-11-07)
 
 
