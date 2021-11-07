@@ -2,11 +2,15 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import moment from 'moment';
+import { GitConnectionTypeEnum } from '../../enums';
 
-export class GitConnectionEntity extends BaseEntityDto {
+export class GitConnectionDto extends BaseEntityDto {
   @Type(() => NamespaceDto)
   @Expose()
   namespace: NamespaceDto;
+
+  @Expose()
+  gitConnectionType: GitConnectionTypeEnum;
 
   @Expose()
   gitUserId: string;
