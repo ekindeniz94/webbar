@@ -21,8 +21,7 @@ import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
-import { GithubRepositoryDto } from '../github-repository.dto';
-import { GithubBranchDto } from '../github-branch.dto';
+import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()

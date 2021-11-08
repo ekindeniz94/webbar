@@ -5,7 +5,7 @@ import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
-import { GitConnectionDto } from '../git-connection';
+import { GitConnectionDto } from '../../../mo-git';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
