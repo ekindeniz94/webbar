@@ -2,6 +2,13 @@
 
 
 
+## 1.27.141 (2021-11-08)
+
+
+### Bug Fixes
+
+* refactoring git DTOs ([8a4fbb0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8a4fbb07806e45a549a7255b037add28948fcd96))
+
 ## 1.27.140 (2021-11-07)
 
 
