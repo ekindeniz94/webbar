@@ -2,6 +2,13 @@
 
 
 
+## 1.27.143 (2021-11-09)
+
+
+### Bug Fixes
+
+* create github repo request dto ([4f88bf7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4f88bf729f24ccd45ace9c64cc52abf69e45ed42))
+
 ## 1.27.142 (2021-11-09)
 
 
