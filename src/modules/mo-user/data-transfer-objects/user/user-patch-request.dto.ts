@@ -1,3 +1,4 @@
+import { Expose, Transform, Type } from 'class-transformer';
 import {
   isBoolean,
   IsBoolean,
@@ -12,11 +13,10 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { Expose, Transform, Type } from 'class-transformer';
-import { UserCompanyPatchRequestDto } from './user-company-patch-request.dto';
-import { UserAddressPatchRequestDto } from './user-address-patch-request.dto';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 import { GroupDto } from '../group';
+import { UserAddressPatchRequestDto } from './user-address-patch-request.dto';
+import { UserCompanyPatchRequestDto } from './user-company-patch-request.dto';
 
 export class UserPatchRequestDto {
   @IsOptional()
@@ -88,7 +88,7 @@ export class UserPatchRequestDto {
   @Type(() => UserCompanyPatchRequestDto)
   @ValidateNested()
   @Expose()
-  company: UserCompanyPatchRequestDto;
+  company?: UserCompanyPatchRequestDto;
 
   @IsOptional()
   @Type(() => UserAddressPatchRequestDto)
@@ -101,14 +101,14 @@ export class UserPatchRequestDto {
   @Type(() => UserAddressPatchRequestDto)
   @ValidateNested()
   @Expose()
-  billingAddress: UserAddressPatchRequestDto;
+  billingAddress?: UserAddressPatchRequestDto;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))
   @IsNotEmpty()
   @IsBoolean()
   @Expose()
-  billingAddressEqualsAddress: boolean;
+  billingAddressEqualsAddress?: boolean;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
