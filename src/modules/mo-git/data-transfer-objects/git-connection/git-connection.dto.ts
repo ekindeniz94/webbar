@@ -5,23 +5,26 @@ import { GitConnectionTypeEnum } from '../../enums';
 
 export class GitConnectionDto extends BaseEntityDto {
   @Expose()
+  login: string;
+
+  @Expose()
   gitConnectionType: GitConnectionTypeEnum;
 
-  @Expose()
-  gitUserId: string;
+  // @Expose()
+  // gitUserId: string;
 
-  @Expose()
-  installationId: string;
+  // @Expose()
+  // installationId: string;
 
-  @Expose()
-  accessToken: string;
+  // @Expose()
+  // accessToken: string;
 
   @Transform(({ value }) => moment(value).format(), { toClassOnly: true })
   @Expose()
   accessTokenExpiresAt: string;
 
-  @Expose()
-  refreshToken: string;
+  // @Expose()
+  // refreshToken: string;
 
   @Transform(({ value }) => moment(value).format(), { toClassOnly: true })
   @Expose()
