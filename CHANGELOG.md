@@ -2,6 +2,13 @@
 
 
 
+## 1.27.142 (2021-11-09)
+
+
+### Bug Fixes
+
+* minor fix for franky. ([b0ef71f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b0ef71f8f18eee8456d2dc8f1b22d461c5f490e8))
+
 ## 1.27.141 (2021-11-08)
 
 
