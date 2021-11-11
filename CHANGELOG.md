@@ -2,6 +2,13 @@
 
 
 
+## 1.27.147 (2021-11-11)
+
+
+### Bug Fixes
+
+* NamespaceServiceCreateRequestDto isNumberString ([61c3fa0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/61c3fa0384b87ddba647a5d9265e56e4c814a462))
+
 ## 1.27.146 (2021-11-11)
 
 
