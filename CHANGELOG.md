@@ -2,6 +2,13 @@
 
 
 
+## 1.27.146 (2021-11-11)
+
+
+### Bug Fixes
+
+* add accessToken to git connection dto ([4e613b6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4e613b6cbe4a07a18300d0f03eb0704c11ca1c78))
+
 ## 1.27.145 (2021-11-11)
 
 
