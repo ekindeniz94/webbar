@@ -2,6 +2,13 @@
 
 
 
+## 1.27.144 (2021-11-09)
+
+
+### Bug Fixes
+
+* update GitConnectionDto ([71fc26b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/71fc26bb6e58ad2fb4a39b78219c03c0022b46cb))
+
 ## 1.27.143 (2021-11-09)
 
 
