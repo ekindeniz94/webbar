@@ -2,6 +2,13 @@
 
 
 
+## 1.27.145 (2021-11-11)
+
+
+### Bug Fixes
+
+* add title to k8s msg job ([dcd6609](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dcd66090967c37e1a25dcf3b454099d9f2a96c64))
+
 ## 1.27.144 (2021-11-09)
 
 
