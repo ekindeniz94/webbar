@@ -8,6 +8,7 @@ import {
   IsFQDN,
   IsNotEmpty,
   IsNumber,
+  isNumberString,
   IsOptional,
   isString,
   IsString,
@@ -16,7 +17,7 @@ import {
   ValidateNested
 } from 'class-validator';
 import _ from 'lodash';
-import { DTO_VALIDATION_CONST, GitBranchRefItemDto } from '../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
@@ -85,6 +86,7 @@ export class NamespaceServiceCreateRequestDto {
   cNames: string[];
 
   @IsNotEmpty()
+  @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
   @Expose()
   internalPort: number;
