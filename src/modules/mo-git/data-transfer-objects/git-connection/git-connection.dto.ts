@@ -16,8 +16,8 @@ export class GitConnectionDto extends BaseEntityDto {
   // @Expose()
   // installationId: string;
 
-  // @Expose()
-  // accessToken: string;
+  @Expose()
+  accessToken: string;
 
   @Transform(({ value }) => moment(value).format(), { toClassOnly: true })
   @Expose()
