@@ -72,9 +72,9 @@ export const DTO_VALIDATION_CONST = {
     },
     STAGE: {
       NAME: {
-        MIN: 2,
+        MIN: 5,
         MAX: 24,
-        MATCHES: /^[a-z0-9-]{2,25}$/
+        MATCHES: /^[a-z0-9-]{6,25}$/
       },
       SUBDOMAIN: {
         MIN: 1,
@@ -109,7 +109,8 @@ export const DTO_VALIDATION_CONST = {
       },
       NAME: {
         MIN: 5,
-        MAX: 256
+        MAX: 24,
+        MATCHES: /^[a-z0-9-]{6,25}$/
       },
       DESCRIPTION: {
         MAX: 2048
