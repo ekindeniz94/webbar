@@ -2,6 +2,13 @@
 
 
 
+## 1.27.149 (2021-11-12)
+
+
+### Bug Fixes
+
+* create namespace / create service / create stage, name validation ([71acb97](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/71acb970bca42b32ab239c7d64478d8f7e33a1ed))
+
 ## 1.27.148 (2021-11-12)
 
 
