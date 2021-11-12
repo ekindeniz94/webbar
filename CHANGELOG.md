@@ -2,6 +2,13 @@
 
 
 
+## 1.27.150 (2021-11-12)
+
+
+### Bug Fixes
+
+* update DTO_VALIDATION_CONST ([a176429](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a1764291ffc81546dfaca07073718d1998ae5479))
+
 ## 1.27.149 (2021-11-12)
 
 
