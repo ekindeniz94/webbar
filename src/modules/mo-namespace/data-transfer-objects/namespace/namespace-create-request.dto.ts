@@ -9,6 +9,9 @@ export class NamespaceCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MAX)
+  @Matches(DTO_VALIDATION_CONST.NAMESPACE.NAME.MATCHES, {
+    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+  })
   @Expose()
   name: string;
 

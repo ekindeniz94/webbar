@@ -12,6 +12,7 @@ import {
   IsOptional,
   isString,
   IsString,
+  Matches,
   MaxLength,
   MinLength,
   ValidateNested
@@ -29,9 +30,9 @@ export class NamespaceServiceCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
-  )
+  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {
+    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+  })
   @Expose()
   name: string;
 
