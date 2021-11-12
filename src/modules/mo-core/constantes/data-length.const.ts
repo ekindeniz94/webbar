@@ -44,9 +44,9 @@ export const DTO_VALIDATION_CONST = {
       MAX_LENGTH: 100
     },
     NAME: {
-      MIN: 5,
+      MIN: 3,
       MAX: 24,
-      MATCHES: /^[a-z0-9-]{6,25}$/
+      MATCHES: /^[a-z0-9-]{4,25}$/
     },
     HOSTNAME: {
       MIN: 5,
@@ -72,14 +72,14 @@ export const DTO_VALIDATION_CONST = {
     },
     STAGE: {
       NAME: {
-        MIN: 5,
+        MIN: 1,
         MAX: 24,
-        MATCHES: /^[a-z0-9-]{6,25}$/
+        MATCHES: /^[a-z0-9-]{2,25}$/
       },
       SUBDOMAIN: {
         MIN: 1,
-        MAX: 30,
-        MATCHES: /^[a-zA-Z0-9-]{1,30}$/
+        MAX: 24,
+        MATCHES: /^[a-z0-9-]{2,25}$/
       },
       DESCRIPTION: {
         MAX: 2048
@@ -108,9 +108,9 @@ export const DTO_VALIDATION_CONST = {
         MAX: 256
       },
       NAME: {
-        MIN: 5,
+        MIN: 3,
         MAX: 24,
-        MATCHES: /^[a-z0-9-]{6,25}$/
+        MATCHES: /^[a-z0-9-]{4,25}$/
       },
       DESCRIPTION: {
         MAX: 2048
