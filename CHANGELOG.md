@@ -2,6 +2,13 @@
 
 
 
+## 1.27.153 (2021-11-13)
+
+
+### Bug Fixes
+
+* update kubernetes setting create request DTO ([638bc7e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/638bc7eba35a6625d31b079ab77cda655e8eb080))
+
 ## 1.27.152 (2021-11-13)
 
 
