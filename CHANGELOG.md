@@ -2,6 +2,13 @@
 
 
 
+## 1.27.154 (2021-11-13)
+
+
+### Bug Fixes
+
+* namesapce service request dto ([67b6a9e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/67b6a9edb8bb5aa23d206135428e565379a8c7be))
+
 ## 1.27.153 (2021-11-13)
 
 
