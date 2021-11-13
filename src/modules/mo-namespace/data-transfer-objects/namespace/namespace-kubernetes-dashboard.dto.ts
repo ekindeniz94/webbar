@@ -9,11 +9,13 @@ export class NamespaceKubernetesDashboardDto {
 
   @Expose()
   allocatedCpuCores: number;
+
   @Expose()
   usedCpuCores: number;
 
   @Expose()
   allocatedMemoryMB: number;
+
   @Expose()
   usedMemoryMB: number;
 

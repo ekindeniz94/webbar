@@ -10,7 +10,7 @@ export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   limitMemoryMB: number;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (isNumberString(value) ? +value : value))
+  @Transform(({ value }) => (isNumberString(value) ? parseFloat(value) : value))
   @IsNumber()
   @Expose()
   limitCpuCores: number;
