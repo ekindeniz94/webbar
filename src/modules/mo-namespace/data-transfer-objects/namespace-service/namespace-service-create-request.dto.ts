@@ -112,7 +112,7 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsNotEmpty()
   @Type(() => ServiceDto)
-  @ValidateNested()
+  // @ValidateNested()
   @Expose()
   service: ServiceDto;
 
