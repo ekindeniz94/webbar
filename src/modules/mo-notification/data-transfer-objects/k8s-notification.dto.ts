@@ -37,4 +37,10 @@ export class K8sNotificationDto {
 
   @Expose()
   messageType: MessageTypeEnum;
+
+  @Expose()
+  position: number;
+  
+  @Expose()
+  positionOf: number;
 }
