@@ -2,6 +2,13 @@
 
 
 
+## 1.27.151 (2021-11-13)
+
+
+### Bug Fixes
+
+* k8snotification added position and positionOf. ([4bbb7c1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4bbb7c12bebfd0ae88cb475600023ec2d8ad7a74))
+
 ## 1.27.150 (2021-11-12)
 
 
