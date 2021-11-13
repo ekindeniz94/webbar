@@ -2,6 +2,14 @@
 
 
 
+## 1.27.152 (2021-11-13)
+
+
+### Bug Fixes
+
+* add k8s job msg dto ([d2030ca](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d2030cabd81e670da6c01d52e36cf236a1be0d5a))
+* update release pool ([72614ac](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/72614ac629c7e040f2ae0be5b9a813ddbd52ee5d))
+
 ## 1.27.151 (2021-11-13)
 
 
