@@ -2,6 +2,13 @@
 
 
 
+## 1.27.155 (2021-11-14)
+
+
+### Bug Fixes
+
+* git connection dto (gitResponseData, avatar url) ([452e462](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/452e462da043af033449213d018af66255c7cb53))
+
 ## 1.27.154 (2021-11-13)
 
 
