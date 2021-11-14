@@ -30,6 +30,13 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   refreshTokenExpiresAt: string;
 
+  @Expose()
+  gitResponseData: any;
+
+  @Transform(({ value, obj }) => obj?.gitResponseData?.avatar_url)
+  @Expose()
+  avatarUrl: string;
+
   get isAccessTokenExpired(): boolean {
     return moment().isAfter(this.accessTokenExpiresAt);
   }
