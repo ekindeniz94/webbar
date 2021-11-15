@@ -2,6 +2,13 @@
 
 
 
+## 1.27.156 (2021-11-15)
+
+
+### Bug Fixes
+
+* update socket event namespace ([f05ab5e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f05ab5ea59d141761f80b1d71d687011a3be6b99))
+
 ## 1.27.155 (2021-11-14)
 
 
