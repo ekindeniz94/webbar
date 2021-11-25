@@ -1,16 +1,11 @@
-import { DockerTemplateDto } from './docker-template.dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
+import { PhoneCodeDto } from './phone-code.dto';
 
 export class ConfigDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   domains: string[];
-
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => DockerTemplateDto)
-  @Expose()
-  dockerTemplateProjects: DockerTemplateDto[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
@@ -19,4 +14,17 @@ export class ConfigDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   interests: string[];
+
+  @Type(() => PhoneCodeDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  phoneCodes: PhoneCodeDto[];
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  productTypes: string[];
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  imageSizes: string[];
 }

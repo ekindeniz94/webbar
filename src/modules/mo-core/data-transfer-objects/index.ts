@@ -8,6 +8,6 @@ export * from './git-refs-lists.dto';
 export * from './git-tag-ref-item.dto';
 export * from './language-code.dto';
 export * from './pagination-response.dto';
+export * from './phone-code.dto';
 export * from './search-request.dto';
 export * from './sms-message.dto';
-
