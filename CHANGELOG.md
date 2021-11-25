@@ -2,6 +2,15 @@
 
 
 
+## 1.27.157 (2021-11-25)
+
+
+### Bug Fixes
+
+* phone number prefix integration. ([0bf2241](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0bf2241d319077d0d971c7d7b86f3b6d448c66c2))
+* register beta form. ([06e5336](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/06e533638c4be628722b4a315f7501862034241d))
+* update azure pipeline ([6562a0b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6562a0b0eb99acd817ad879fe544f1dd632cc974))
+
 ## 1.27.156 (2021-11-15)
 
 
