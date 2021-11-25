@@ -1,24 +1,14 @@
 import { Expose, Transform, Type } from 'class-transformer';
+import { IsBoolean, IsEmail, IsEnum, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
 import { RegisterBetaRoleEnum } from '../../enums';
-import {
-  IsBoolean,
-  IsEmail,
-  IsEnum,
-  IsNotEmpty,
-  IsOptional,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength
-} from 'class-validator';
 
 export class RegisterBetaRequestDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)
   @Expose()
   languageCode: LanguageCodeDto;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MAX)
@@ -28,7 +18,7 @@ export class RegisterBetaRequestDto extends BaseEntityDto {
   @Expose()
   fullName: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @IsEmail()
   @MinLength(DTO_VALIDATION_CONST.EMAIL.MIN)
@@ -45,7 +35,7 @@ export class RegisterBetaRequestDto extends BaseEntityDto {
   @Expose()
   role: RegisterBetaRoleEnum;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsBoolean()
   @Expose()
   agreedTermsConditions: boolean;
