@@ -1,7 +1,8 @@
 import { Expose, Transform } from 'class-transformer';
 import { NamespaceServiceDeploymentStrategyEnum } from '../../enums';
+import { BaseEntityDto } from '../../../mo-core';
 
-export class NamespaceServiceKubernetesSettingsDto {
+export class NamespaceServiceKubernetesSettingsDto extends BaseEntityDto {
   @Expose()
   limitMemoryMB: number;
 
