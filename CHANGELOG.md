@@ -2,6 +2,13 @@
 
 
 
+## 1.27.158 (2021-11-26)
+
+
+### Bug Fixes
+
+* patch namespace service DTOs ([fb0ac1e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fb0ac1e100958cede957ea96af2661716dc321a5))
+
 ## 1.27.157 (2021-11-25)
 
 
