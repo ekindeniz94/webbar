@@ -2,6 +2,13 @@
 
 
 
+## 1.27.159 (2021-11-26)
+
+
+### Bug Fixes
+
+* update class-transformer, class-validator ([171db07](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/171db0754a7b90c21a8c07aeac51adff206d2f4c))
+
 ## 1.27.158 (2021-11-26)
 
 
