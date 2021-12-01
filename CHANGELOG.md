@@ -2,6 +2,13 @@
 
 
 
+## 1.27.161 (2021-12-01)
+
+
+### Bug Fixes
+
+* added pipeline log entry dtos. ([7394967](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7394967ef6375c038cbfb3cd851a4c46f71a705c))
+
 ## 1.27.160 (2021-12-01)
 
 
