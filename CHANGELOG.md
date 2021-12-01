@@ -2,6 +2,13 @@
 
 
 
+## 1.27.160 (2021-12-01)
+
+
+### Bug Fixes
+
+* added buildId to pushnotfication. ([87c1083](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/87c1083996041ebb6598752ed46d589305fac8fa))
+
 ## 1.27.159 (2021-11-26)
 
 
