@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsOptional } from 'class-validator';
+import { IsOptional, ValidateNested } from 'class-validator';
 import { CiCdPipelineLogEntry } from './cicdpipeline-log-entry.dto';
 
 export class CiCdPipelineEntry {
@@ -32,10 +32,11 @@ export class CiCdPipelineEntry {
 
   @IsOptional()
   @Expose()
-  order?: string;
+  order?: number;
 
   @IsOptional()
   @Type(() => CiCdPipelineLogEntry)
   @Expose()
+  @ValidateNested()
   log?: CiCdPipelineLogEntry;
 }

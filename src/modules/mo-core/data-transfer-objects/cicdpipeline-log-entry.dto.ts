@@ -1,9 +1,12 @@
 import { Expose } from 'class-transformer';
+import { IsOptional } from 'class-validator';
 
 export class CiCdPipelineLogEntry {
+  @IsOptional()
   @Expose()
-  id: string;
+  id: number;
 
+  @IsOptional()
   @Expose()
   url: string;
 }
