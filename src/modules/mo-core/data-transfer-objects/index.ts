@@ -11,3 +11,5 @@ export * from './pagination-response.dto';
 export * from './phone-code.dto';
 export * from './search-request.dto';
 export * from './sms-message.dto';
+export * from './cicdpipeline.dto';
+export * from './cicdpipeline-log-entry.dto';
