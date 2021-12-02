@@ -2,6 +2,13 @@
 
 
 
+## 1.27.164 (2021-12-02)
+
+
+### Bug Fixes
+
+* minor fix. ([ffdaebc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ffdaebcb6221dd7fbd0d0dc57353f28138423d9f))
+
 ## 1.27.163 (2021-12-01)
 
 
