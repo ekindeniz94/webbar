@@ -31,10 +31,6 @@ export class CiCdPipelineEntry {
   workerName?: string;
 
   @IsOptional()
-  @Expose()
-  order?: number;
-
-  @IsOptional()
   @Type(() => CiCdPipelineLogEntry)
   @Expose()
   @ValidateNested()
