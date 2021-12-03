@@ -2,6 +2,13 @@
 
 
 
+## 1.27.168 (2021-12-03)
+
+
+### Bug Fixes
+
+* namespace name and hostname validator ([c589abf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c589abf04b43d7028d54d096ea8352976f19b702))
+
 ## 1.27.167 (2021-12-03)
 
 
