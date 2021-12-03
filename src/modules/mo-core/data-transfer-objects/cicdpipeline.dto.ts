@@ -30,9 +30,8 @@ export class CiCdPipelineEntry {
   @Expose()
   workerName?: string;
 
-  // @IsOptional()
-  // @Type(() => CiCdPipelineLogEntry)
-  // @Expose()
-  // @ValidateNested()
-  // log?: CiCdPipelineLogEntry;
+  @IsOptional()
+  @Type(() => CiCdPipelineLogEntry)
+  @Expose()
+  log?: CiCdPipelineLogEntry;
 }

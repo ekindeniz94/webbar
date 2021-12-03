@@ -4,9 +4,9 @@ import { IsOptional } from 'class-validator';
 export class CiCdPipelineLogEntry {
   @IsOptional()
   @Expose()
-  id: number;
+  id?: number;
 
   @IsOptional()
   @Expose()
-  url: string;
+  url?: string;
 }
