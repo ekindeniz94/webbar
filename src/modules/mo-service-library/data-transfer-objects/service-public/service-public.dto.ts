@@ -3,7 +3,7 @@ import { IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { FilePublicDto } from '../../../mo-file';
 
-export class PublicServiceGroupDto extends BaseEntityDto {
+export class ServicePublicDto extends BaseEntityDto {
   @Expose()
   name: string;
 
