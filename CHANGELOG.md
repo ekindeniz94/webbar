@@ -2,6 +2,13 @@
 
 
 
+## 1.28.1 (2021-12-04)
+
+
+### Bug Fixes
+
+* servicePublicDto name. ([d722a51](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d722a514c695a55c406afa0c02d520172f7cb95a))
+
 # 1.28.0 (2021-12-04)
 
 
