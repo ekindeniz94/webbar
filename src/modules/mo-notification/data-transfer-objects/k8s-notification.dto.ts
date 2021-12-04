@@ -43,4 +43,7 @@ export class K8sNotificationDto {
   
   @Expose()
   positionOf: number;
+
+  @Expose()
+  buildId?: string;
 }

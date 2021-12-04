@@ -5,19 +5,19 @@ import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.co
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
 
 export class NamespaceServiceEnvVarCreateRequestDto {
-  @IsString()
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      obj.id = MoUtils.nanoid();
-      return obj.id;
-    },
-    { toClassOnly: true }
-  )
-  @Expose()
-  id: string;
+  // @IsString()
+  // @Transform(
+  //   ({ value, obj }) => {
+  //     if (value) {
+  //       return value;
+  //     }
+  //     obj.id = MoUtils.nanoid();
+  //     return obj.id;
+  //   },
+  //   { toClassOnly: true }
+  // )
+  // @Expose()
+  // id: string;
 
   @IsNotEmpty()
   @IsString()
@@ -40,7 +40,7 @@ export class NamespaceServiceEnvVarCreateRequestDto {
 
   @IsOptional()
   @IsBoolean()
-  @Transform(({ value }) => (value === undefined ? true : value))
+  @Transform(({ value }) => (value === undefined ? false : value))
   @Expose()
   deactivateName: boolean;
 
@@ -53,13 +53,13 @@ export class NamespaceServiceEnvVarCreateRequestDto {
   @IsOptional()
   @IsBoolean()
   @Expose()
-  @Transform(({ value }) => (value === undefined ? true : value))
+  @Transform(({ value }) => (value === undefined ? false : value))
   deactivateType: boolean;
 
   @IsOptional()
   @IsBoolean()
   @Expose()
-  @Transform(({ value }) => (value === undefined ? true : value))
+  @Transform(({ value }) => (value === undefined ? false : value))
   deactivateDelete: boolean;
 
   @IsOptional()

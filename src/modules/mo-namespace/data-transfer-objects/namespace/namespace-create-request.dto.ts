@@ -10,7 +10,7 @@ export class NamespaceCreateRequestDto {
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.NAME.MAX)
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.NAME.MATCHES, {
-    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+    message: '$property must conform to: a-z or 0-9 or - ;min 4, max 25 char'
   })
   @Expose()
   name: string;
@@ -29,7 +29,7 @@ export class NamespaceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.NAME.MATCHES, {
-    message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 30 char'
+    message: '$property must conform to: a-z or 0-9 or - ;min 4, max 25 char'
   })
   @Expose()
   hostname: string;

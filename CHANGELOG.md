@@ -2,6 +2,92 @@
 
 
 
+## 1.27.168 (2021-12-03)
+
+
+### Bug Fixes
+
+* namespace name and hostname validator ([c589abf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c589abf04b43d7028d54d096ea8352976f19b702))
+
+## 1.27.167 (2021-12-03)
+
+
+### Bug Fixes
+
+* minor fix. ([5747f61](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5747f61cb12582eea8a6a1795d4db6440d251108))
+
+## 1.27.166 (2021-12-03)
+
+
+### Bug Fixes
+
+* minor fix. ([ed4d9bb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ed4d9bba16ca4f01eea668daf04b91e426222344))
+
+## 1.27.165 (2021-12-03)
+
+
+### Bug Fixes
+
+* minor fix. ([e2ade5d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e2ade5df7769cb1890ce1a04551f1fc2b7a59b4c))
+
+## 1.27.164 (2021-12-02)
+
+
+### Bug Fixes
+
+* minor fix. ([ffdaebc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ffdaebcb6221dd7fbd0d0dc57353f28138423d9f))
+
+## 1.27.163 (2021-12-01)
+
+
+### Bug Fixes
+
+* added pipeline log entry dtos. ([1ad4335](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1ad43350ed35fface8e8da3027aaa8f5423471ce))
+
+## 1.27.162 (2021-12-01)
+
+
+### Bug Fixes
+
+* added pipeline log entry dtos. ([7c983fa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7c983fa1c72f10284caca008bee137241f6718da))
+
+## 1.27.161 (2021-12-01)
+
+
+### Bug Fixes
+
+* added pipeline log entry dtos. ([7394967](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7394967ef6375c038cbfb3cd851a4c46f71a705c))
+
+## 1.27.160 (2021-12-01)
+
+
+### Bug Fixes
+
+* added buildId to pushnotfication. ([87c1083](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/87c1083996041ebb6598752ed46d589305fac8fa))
+
+## 1.27.159 (2021-11-26)
+
+
+### Bug Fixes
+
+* update class-transformer, class-validator ([171db07](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/171db0754a7b90c21a8c07aeac51adff206d2f4c))
+
+## 1.27.158 (2021-11-26)
+
+
+### Bug Fixes
+
+* patch namespace service DTOs ([fb0ac1e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fb0ac1e100958cede957ea96af2661716dc321a5))
+
+## 1.27.157 (2021-11-25)
+
+
+### Bug Fixes
+
+* phone number prefix integration. ([0bf2241](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0bf2241d319077d0d971c7d7b86f3b6d448c66c2))
+* register beta form. ([06e5336](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/06e533638c4be628722b4a315f7501862034241d))
+* update azure pipeline ([6562a0b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6562a0b0eb99acd817ad879fe544f1dd632cc974))
+
 ## 1.27.156 (2021-11-15)
 
 
