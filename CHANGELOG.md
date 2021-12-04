@@ -2,6 +2,18 @@
 
 
 
+# 1.28.0 (2021-12-04)
+
+
+### Bug Fixes
+
+* merge. ([38e7010](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/38e7010e3b8f74e94a619c6ade9bcda689038d20))
+
+
+### Features
+
+* public service dto created. ([dccf235](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dccf2352e29ec1820d7738259cc95e73ec3e7cc9))
+
 ## 1.27.168 (2021-12-03)
 
 
