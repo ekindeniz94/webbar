@@ -2,6 +2,13 @@
 
 
 
+## 1.28.2 (2021-12-05)
+
+
+### Bug Fixes
+
+* update namespace socket data event ([15c73c6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/15c73c619f8e10a20e422027018911e7a301a3ec))
+
 ## 1.28.1 (2021-12-04)
 
 
