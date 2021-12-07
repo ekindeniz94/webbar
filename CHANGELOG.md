@@ -2,6 +2,13 @@
 
 
 
+## 1.28.4 (2021-12-07)
+
+
+### Bug Fixes
+
+* ServiceGroupCreateRequestDto + docuLink. ([b2f2809](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b2f2809e448e5eb3b7b5bf563af4d82e3577280c))
+
 ## 1.28.3 (2021-12-07)
 
 
