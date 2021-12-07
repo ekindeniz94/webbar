@@ -1,8 +1,8 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
+import { FilePublicDto } from '../../../mo-file';
 import { ServiceGroupStateEnum } from '../../enums';
 import { ServiceDto } from '../service';
-import { FilePublicDto } from '../../../mo-file';
 
 export class ServiceGroupDto extends BaseEntityDto {
   @Expose()
@@ -13,6 +13,9 @@ export class ServiceGroupDto extends BaseEntityDto {
 
   @Expose()
   description: string;
+
+  @Expose()
+  docuLink: string;
 
   @Type(() => FilePublicDto)
   @Expose()
