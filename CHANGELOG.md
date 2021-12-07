@@ -2,6 +2,13 @@
 
 
 
+## 1.28.3 (2021-12-07)
+
+
+### Bug Fixes
+
+* ServiceGroupDto + docuLink. ([c19ff00](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c19ff005b1c452462182e87edbaa71ed205c6e5b))
+
 ## 1.28.2 (2021-12-05)
 
 
