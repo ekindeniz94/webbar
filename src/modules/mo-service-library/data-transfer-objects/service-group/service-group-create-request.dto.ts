@@ -17,6 +17,10 @@ export class ServiceGroupCreateRequestDto {
   @IsString()
   description: string;
 
+  @Expose()
+  @IsString()
+  docuLink: string;
+
   @Type(() => FileDto)
   @Expose()
   icon: FileDto;
