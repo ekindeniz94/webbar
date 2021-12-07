@@ -2,6 +2,13 @@
 
 
 
+## 1.28.5 (2021-12-07)
+
+
+### Bug Fixes
+
+* naming docuLink. ([559b6c2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/559b6c25acc9b203f36c0f31bc8bacdbbfb50cb0))
+
 ## 1.28.4 (2021-12-07)
 
 
