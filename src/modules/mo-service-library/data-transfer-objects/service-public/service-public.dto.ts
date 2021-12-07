@@ -20,5 +20,5 @@ export class ServicePublicDto extends BaseEntityDto {
 
   @IsString()
   @Expose()
-  docuUrl: String;
+  docuLink: String;
 }
