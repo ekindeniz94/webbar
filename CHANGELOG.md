@@ -2,6 +2,13 @@
 
 
 
+## 1.28.7 (2021-12-08)
+
+
+### Bug Fixes
+
+* added kubernetes event dto. ([6bf7cad](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6bf7cad929b3045f3386562ba9e5d68ac5ce9334))
+
 ## 1.28.6 (2021-12-08)
 
 
