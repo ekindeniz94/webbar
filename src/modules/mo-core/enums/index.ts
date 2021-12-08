@@ -4,4 +4,7 @@ export * from './order.enum';
 export * from './request-method.enum';
 export * from './socket-data-event.enum';
 export * from './socket-event.enum';
-
+export * from './kubernetes-event-kind.enum';
+export * from './kubernetes-event-status-level.enum';
+export * from './kubernetes-event-status-type.enum';
+export * from './kubernetes-event-status-reason.enum';
