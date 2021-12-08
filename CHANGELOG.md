@@ -2,6 +2,13 @@
 
 
 
+## 1.28.6 (2021-12-08)
+
+
+### Bug Fixes
+
+* add UserPhonePatchRequestDto ([f1352b2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f1352b2183b86cfa59ce6dd0cab0f3ac64890d96))
+
 ## 1.28.5 (2021-12-07)
 
 
