@@ -5,6 +5,7 @@ export * from './user-company.dto';
 export * from './user-register-request.dto';
 export * from './user-register-response.dto';
 export * from './user-patch-request.dto';
+export * from './user-phone-patch-request.dto';
 export * from './user-patch-response.dto';
 export * from './user-company-patch-request.dto';
 export * from './user-address-patch-request.dto';
