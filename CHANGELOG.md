@@ -2,6 +2,13 @@
 
 
 
+## 1.28.8 (2021-12-09)
+
+
+### Bug Fixes
+
+* added cluster status dto. ([71133e1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/71133e13e7fe9afb16d6ab1983bd3ac5fb9686d9))
+
 ## 1.28.7 (2021-12-08)
 
 
