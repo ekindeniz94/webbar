@@ -2,6 +2,13 @@
 
 
 
+## 1.28.12 (2021-12-09)
+
+
+### Bug Fixes
+
+* KubernetesEvent (redis) ([c62acdd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c62acddf13b0433fb7f4ba04c28cf20e2da70ed1))
+
 ## 1.28.11 (2021-12-09)
 
 
