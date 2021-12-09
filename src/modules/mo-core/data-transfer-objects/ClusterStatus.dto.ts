@@ -1,4 +1,5 @@
 import { Expose, Type } from 'class-transformer';
+import { GeoCoordinatesDto } from 'src/modules';
 
 export class ClusterStatusDto {
   @Expose()
@@ -8,7 +9,8 @@ export class ClusterStatusDto {
   location: string;
 
   @Expose()
-  geoLocation: { lat: number; lng: number };
+  @Type(() => GeoCoordinatesDto)
+  geoLocation: GeoCoordinatesDto;
 
   @Expose()
   localTime: string;
