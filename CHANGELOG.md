@@ -2,6 +2,13 @@
 
 
 
+## 1.28.11 (2021-12-09)
+
+
+### Bug Fixes
+
+* added geocoordinates to cluster dto. ([c3f3b01](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c3f3b01673cd7aec9e80af8e14d5d34987c5baf9))
+
 ## 1.28.10 (2021-12-09)
 
 
