@@ -16,5 +16,5 @@ export * from './cicdpipeline-log-entry.dto';
 export * from './kubernetes-event-meta.dto';
 export * from './kubernetes-event-status.dto';
 export * from './kubernetes-event.dto';
-export * from './ClusterStatus.dto';
+export * from './cluster-status.dto';
 export * from './geo-coordinates.dto';

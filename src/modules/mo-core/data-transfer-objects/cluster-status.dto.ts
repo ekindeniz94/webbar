@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { GeoCoordinatesDto } from 'src/modules';
+import { GeoCoordinatesDto } from './geo-coordinates.dto';
 
 export class ClusterStatusDto {
   @Expose()
