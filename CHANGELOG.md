@@ -2,6 +2,13 @@
 
 
 
+## 1.28.9 (2021-12-09)
+
+
+### Bug Fixes
+
+* added geocoordinates dto. ([7969b47](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7969b47c7430d8d3309a9a7fd1b364113b6c268f))
+
 ## 1.28.8 (2021-12-09)
 
 
