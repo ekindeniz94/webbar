@@ -1,10 +1,13 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceServiceDto } from '../namespace-service';
 
 export class NamespaceStageDto extends BaseEntityDto {
+  @Expose()
+  shortId: string;
+
   @IsNotEmpty()
   @IsString()
   @Expose()

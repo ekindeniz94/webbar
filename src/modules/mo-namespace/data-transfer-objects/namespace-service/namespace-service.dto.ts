@@ -10,6 +10,9 @@ import { NamespaceServiceCreateRequestDto } from './namespace-service-create-req
 import { NamespaceStageDto } from '../namespace-stage';
 
 export class NamespaceServiceDto extends BaseEntityDto {
+  @Expose()
+  shortId: string;
+
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
   )

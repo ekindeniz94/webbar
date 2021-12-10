@@ -22,10 +22,9 @@ export class MoNamespaceUtils {
   }
 
   static kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto, service?: NamespaceServiceDto): string {
-    let k8sName = `${namespace.hostname}-${namespace.shortId}-${stage.subdomain}`;
     if (service) {
-      k8sName = `${service.hostname}-${k8sName}`;
+      return `${service.hostname}-${service.shortId}`; // SERVICE
     }
-    return k8sName;
+    return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}-000000`; // NAMESPACE OR STAGE Name
   }
 }
