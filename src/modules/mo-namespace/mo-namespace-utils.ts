@@ -25,6 +25,6 @@ export class MoNamespaceUtils {
     if (service) {
       return `${service.hostname}-${service.shortId}`; // SERVICE
     }
-    return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}-000000`; // NAMESPACE OR STAGE Name
+    return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}`; // NAMESPACE OR STAGE Name
   }
 }
