@@ -2,6 +2,13 @@
 
 
 
+## 1.28.13 (2021-12-10)
+
+
+### Bug Fixes
+
+* update namespace kubernetes names ([24daac6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/24daac672d90f300ef5f55d001da30fbab970824))
+
 ## 1.28.12 (2021-12-09)
 
 
