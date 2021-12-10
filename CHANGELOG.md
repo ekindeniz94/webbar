@@ -2,6 +2,13 @@
 
 
 
+## 1.28.14 (2021-12-10)
+
+
+### Bug Fixes
+
+* update kubernetesName ([44ee31a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/44ee31a55f096087a2140f20760121c521ee0865))
+
 ## 1.28.13 (2021-12-10)
 
 
