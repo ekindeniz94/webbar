@@ -2,6 +2,13 @@
 
 
 
+## 1.28.16 (2021-12-12)
+
+
+### Bug Fixes
+
+* namespace service pod ([f06e78a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f06e78a67ce199a500f20711963a70705a341520))
+
 ## 1.28.15 (2021-12-12)
 
 
