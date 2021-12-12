@@ -2,6 +2,13 @@
 
 
 
+## 1.28.15 (2021-12-12)
+
+
+### Bug Fixes
+
+* add deleted to namespace state ([ab9e392](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ab9e3924238bb490596a25600ee37d052932d6f5))
+
 ## 1.28.14 (2021-12-10)
 
 
