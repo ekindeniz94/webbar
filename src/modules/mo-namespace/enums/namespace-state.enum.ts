@@ -10,5 +10,6 @@ export const ALL_NAMESPACE_STATES = [
   NamespaceStateEnum.ACTIVE,
   NamespaceStateEnum.INACTIVE,
   NamespaceStateEnum.SUSPENDED,
-  NamespaceStateEnum.DISABLED
+  NamespaceStateEnum.DISABLED,
+  NamespaceStateEnum.DELETED
 ];

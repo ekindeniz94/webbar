@@ -8,6 +8,7 @@ import { TransformFnParams } from 'class-transformer/types/interfaces';
 import _ from 'lodash';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage';
+import { NamespaceServicePodDto } from './namespace-service-pod.dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -77,6 +78,11 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Type(() => NamespaceStageDto)
   @Expose()
   stage: NamespaceStageDto;
+
+  @Type(() => NamespaceServicePodDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  pods: NamespaceServicePodDto[];
 
   get serviceType(): ServiceTypeEnum {
     return this.service.serviceType;
