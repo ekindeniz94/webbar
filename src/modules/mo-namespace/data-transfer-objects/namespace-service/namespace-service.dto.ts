@@ -9,6 +9,7 @@ import _ from 'lodash';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServicePodDto } from './namespace-service-pod.dto';
+import { NamespaceServiceStateEnum } from '../../enums';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -78,6 +79,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Type(() => NamespaceStageDto)
   @Expose()
   stage: NamespaceStageDto;
+
+  @Expose()
+  state: NamespaceServiceStateEnum;
 
   @Type(() => NamespaceServicePodDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
