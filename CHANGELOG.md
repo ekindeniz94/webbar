@@ -2,6 +2,13 @@
 
 
 
+## 1.28.17 (2021-12-13)
+
+
+### Bug Fixes
+
+* namespace service state ([3f1fe62](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3f1fe621be071a2b61811a69bf5d4e44b1b020e9))
+
 ## 1.28.16 (2021-12-12)
 
 
