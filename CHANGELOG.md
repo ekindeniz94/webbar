@@ -2,6 +2,13 @@
 
 
 
+## 1.28.18 (2021-12-14)
+
+
+### Bug Fixes
+
+* update namespace/namespace pod state ([16d02c0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/16d02c06d1ffef24e2a6ec9cb8a921a70077a141))
+
 ## 1.28.17 (2021-12-13)
 
 
