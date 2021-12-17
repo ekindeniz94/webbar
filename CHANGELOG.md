@@ -2,6 +2,13 @@
 
 
 
+## 1.28.19 (2021-12-17)
+
+
+### Bug Fixes
+
+* update regex match password, namespace, stage, service ([5a10428](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5a104289f24e515eff6ad93bc6cee9e26b6ddadb))
+
 ## 1.28.18 (2021-12-14)
 
 
