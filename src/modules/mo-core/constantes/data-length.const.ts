@@ -46,7 +46,7 @@ export const DTO_VALIDATION_CONST = {
     NAME: {
       MIN: 3,
       MAX: 14,
-      MATCHES: /^([a-zA-Z])([a-zA-Z0-9-]){4,15}$/
+      MATCHES: /[^a-z0-9-]/
     },
     HOSTNAME: {
       MIN: 3,
@@ -74,7 +74,7 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 1,
         MAX: 14,
-        MATCHES: /^([a-zA-Z])([a-zA-Z0-9-]){2,15}$/
+        MATCHES: /[^a-z0-9-]/
       },
       SUBDOMAIN: {
         MIN: 1,
@@ -110,7 +110,7 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 3,
         MAX: 14,
-        MATCHES: /^([a-zA-Z])([a-zA-Z0-9-]){4,15}$/
+        MATCHES: /[^a-z0-9-]/
       },
       DESCRIPTION: {
         MAX: 2048
