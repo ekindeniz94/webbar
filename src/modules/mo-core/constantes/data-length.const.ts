@@ -46,17 +46,17 @@ export const DTO_VALIDATION_CONST = {
     NAME: {
       MIN: 3,
       MAX: 14,
-      MATCHES: /[^a-z0-9-]/
+      MATCHES: /^([a-z])([a-z0-9-])/
     },
     HOSTNAME: {
       MIN: 3,
       MAX: 14,
-      MATCHES: /^([a-zA-Z])([a-zA-Z0-9-]){4,15}$/
+      MATCHES: /^([a-z])([a-z0-9-])/
     },
     SHORT_ID: {
       MIN: 6,
       MAX: 6,
-      MATCHES: /^[a-z0-9]{6,6}$/
+      MATCHES: /^[a-z0-9]/
     },
     DESCRIPTION: {
       MAX: 2048
@@ -74,12 +74,12 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 1,
         MAX: 14,
-        MATCHES: /[^a-z0-9-]/
+        MATCHES: /^([a-z])([a-z0-9-])/
       },
       SUBDOMAIN: {
         MIN: 1,
         MAX: 14,
-        MATCHES: /^([a-zA-Z])([a-zA-Z0-9-]){2,15}$/
+        MATCHES: /^([a-z])([a-z0-9-])/
       },
       DESCRIPTION: {
         MAX: 2048
@@ -110,7 +110,7 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 3,
         MAX: 14,
-        MATCHES: /[^a-z0-9-]/
+        MATCHES: /^([a-z])([a-z0-9-])/
       },
       DESCRIPTION: {
         MAX: 2048
@@ -157,7 +157,7 @@ export const DTO_VALIDATION_CONST = {
       NAME: {
         MIN: 3,
         MAX: 256,
-        MATCHES: /^[a-zA-Z0-9-_]{4,256}$/
+        MATCHES: /^([a-z])([a-z0-9-_])/
       }
     }
   },
