@@ -2,6 +2,13 @@
 
 
 
+## 1.28.20 (2021-12-20)
+
+
+### Bug Fixes
+
+* validators. ([cddd21c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cddd21caf6e0d4db2cfeab6971353873a22dc7d8))
+
 ## 1.28.19 (2021-12-17)
 
 
