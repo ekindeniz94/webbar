@@ -2,6 +2,13 @@
 
 
 
+## 1.28.21 (2021-12-20)
+
+
+### Bug Fixes
+
+* update namespace/stage/service validation match pattern ([a13ae77](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a13ae777ead1b7e9a4cb85f2ebbbbe1370cb896b))
+
 ## 1.28.20 (2021-12-20)
 
 
