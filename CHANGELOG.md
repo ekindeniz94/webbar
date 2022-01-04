@@ -2,6 +2,13 @@
 
 
 
+## 1.28.22 (2022-01-04)
+
+
+### Bug Fixes
+
+* update namespace invitation dtos / enums ([1a33e13](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1a33e135a6e0f1786ef09e47b497312af99f4f59))
+
 ## 1.28.21 (2021-12-20)
 
 
