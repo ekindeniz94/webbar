@@ -3,10 +3,10 @@ import { Expose, Transform } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
 export class NamespaceInvitationCreateRequestDto {
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  namespaceId: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // @Expose()
+  // namespaceId: string;
 
   @IsNotEmpty()
   @IsString()
