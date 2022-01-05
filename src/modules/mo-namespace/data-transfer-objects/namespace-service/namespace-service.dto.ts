@@ -15,6 +15,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   shortId: string;
 
+  @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
+  @Expose()
+  displayName: string;
+
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
   )

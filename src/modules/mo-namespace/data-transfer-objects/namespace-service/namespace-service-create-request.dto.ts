@@ -28,6 +28,19 @@ import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MAX
+    )
+  )
+  @Expose()
+  displayName: string;
+
+  @IsNotEmpty()
+  @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {

@@ -12,6 +12,9 @@ export class NamespacePublicDto extends BaseEntityDto {
   shortId: string;
 
   @Expose()
+  displayName: string;
+
+  @Expose()
   name: string;
 
   @Type(() => NamespaceKeypairPublicDto)

@@ -1,15 +1,20 @@
-import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
+import { Expose, Transform, Type } from 'class-transformer';
+import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
 import { GitConnectionDto } from '../../../mo-git';
+import { isString } from 'class-validator';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
   shortId: string;
+
+  @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
+  @Expose()
+  displayName: string;
 
   @Expose()
   name: string;

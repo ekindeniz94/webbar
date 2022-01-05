@@ -17,6 +17,13 @@ export class NamespaceCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.DISPLAY_NAME.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.DISPLAY_NAME.MAX)
+  @Expose()
+  displayName: string;
+
+  @IsNotEmpty()
+  @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MAX)
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SHORT_ID.MATCHES, {

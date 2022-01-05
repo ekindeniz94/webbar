@@ -48,6 +48,13 @@ export const DTO_VALIDATION_CONST = {
       MAX: 14,
       MATCHES: /^([a-z])([a-z0-9-])/
     },
+    DISPLAY_NAME: {
+      MIN: 3,
+      MAX: 128
+    },
+    DOMAIN: {
+      MAX: 128
+    },
     HOSTNAME: {
       MIN: 3,
       MAX: 14,
@@ -71,6 +78,10 @@ export const DTO_VALIDATION_CONST = {
       ARRAY_MAX_SIZE: 10
     },
     STAGE: {
+      DISPLAY_NAME: {
+        MIN: 3,
+        MAX: 128
+      },
       NAME: {
         MIN: 1,
         MAX: 14,
@@ -106,6 +117,10 @@ export const DTO_VALIDATION_CONST = {
       BRANCH_NAME: {
         MIN: 1,
         MAX: 256
+      },
+      DISPLAY_NAME: {
+        MIN: 3,
+        MAX: 128
       },
       NAME: {
         MIN: 3,

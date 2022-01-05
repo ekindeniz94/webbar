@@ -5,6 +5,19 @@ import { Expose, Transform } from 'class-transformer';
 export class NamespaceStageCreateRequestDto {
   @IsNotEmpty()
   @IsString()
+  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MIN)
+  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MAX
+    )
+  )
+  @Expose()
+  displayName: string;
+
+  @IsNotEmpty()
+  @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MAX)
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MATCHES, {
