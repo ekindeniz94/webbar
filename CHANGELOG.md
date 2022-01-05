@@ -2,6 +2,13 @@
 
 
 
+## 1.28.24 (2022-01-05)
+
+
+### Bug Fixes
+
+* NamespacePublicDto display default value ([bfb182a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bfb182a01491ab5c6250494c3a9cda3f47113ee4))
+
 ## 1.28.23 (2022-01-05)
 
 
