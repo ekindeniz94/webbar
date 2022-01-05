@@ -2,6 +2,13 @@
 
 
 
+## 1.28.23 (2022-01-05)
+
+
+### Bug Fixes
+
+* 474 namespace / stage / service add displayName ([f8f68b7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f8f68b7e3a23ea672de3f9c849fecce7b2d3029c))
+
 ## 1.28.22 (2022-01-04)
 
 
