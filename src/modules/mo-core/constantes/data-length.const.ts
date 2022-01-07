@@ -66,7 +66,7 @@ export const DTO_VALIDATION_CONST = {
       MATCHES: /^[a-z0-9]/
     },
     DESCRIPTION: {
-      MAX: 2048
+      MAX: 512
     },
     ICON: {
       MAX: 256
@@ -93,7 +93,7 @@ export const DTO_VALIDATION_CONST = {
         MATCHES: /^([a-z])([a-z0-9-])/
       },
       DESCRIPTION: {
-        MAX: 2048
+        MAX: 512
       }
     },
     KEY_VAULT: {
@@ -128,7 +128,7 @@ export const DTO_VALIDATION_CONST = {
         MATCHES: /^([a-z])([a-z0-9-])/
       },
       DESCRIPTION: {
-        MAX: 2048
+        MAX: 512
       },
       GIT_REPOSITORY: {
         MIN: 10,
