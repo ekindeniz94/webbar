@@ -20,4 +20,7 @@ export class NamespaceServicePortBindingDto extends BaseEntityDto {
 
   @Expose()
   spectrumAppId?: string;
+
+  @Expose()
+  spectrumEnableTls: boolean;
 }
