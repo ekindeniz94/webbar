@@ -7,5 +7,7 @@ export * from './namespace-service-envvar.dto';
 export * from './namespace-service-kubernetes-settings-create-request.dto';
 export * from './namespace-service-kubernetes-settings.dto';
 export * from './namespace-service-patch-request.dto';
-export * from './namespace-service.dto';
 export * from './namespace-service-pod.dto';
+export * from './namespace-service-port-binding.dto';
+export * from './namespace-service.dto';
+
