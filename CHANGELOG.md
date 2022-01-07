@@ -2,6 +2,13 @@
 
 
 
+## 1.28.27 (2022-01-07)
+
+
+### Bug Fixes
+
+* added port-binding dto update. ([dd7b77b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dd7b77bb76c128b003da1e74403e95e9e70efc45))
+
 ## 1.28.26 (2022-01-07)
 
 
