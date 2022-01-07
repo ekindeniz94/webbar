@@ -2,6 +2,13 @@
 
 
 
+## 1.28.28 (2022-01-07)
+
+
+### Bug Fixes
+
+* add NamespaceListItemDto ([4d4fb2b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4d4fb2bbd8f812df4531cdca0e6822b2ee780a51))
+
 ## 1.28.27 (2022-01-07)
 
 
