@@ -13,14 +13,14 @@ export class NamespaceServicePortBindingDto extends BaseEntityDto {
   namespaceId: string;
 
   @Expose()
-  namespaceName: string;
+  namespaceName?: string;
 
   @Expose()
-  serviceName: string;
+  serviceName?: string;
 
   @Expose()
   spectrumAppId?: string;
 
   @Expose()
-  spectrumEnableTls: boolean;
+  spectrumEnableTls?: boolean;
 }
