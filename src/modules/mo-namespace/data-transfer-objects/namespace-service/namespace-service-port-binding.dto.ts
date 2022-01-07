@@ -7,6 +7,9 @@ export class NamespaceServicePortBindingDto extends BaseEntityDto {
   port: number;
 
   @Expose()
+  internalPort: number;
+
+  @Expose()
   type: NamespaceServicePortBindingTypeEnum;
 
   @Expose()
