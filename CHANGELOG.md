@@ -2,6 +2,13 @@
 
 
 
+## 1.28.30 (2022-01-09)
+
+
+### Bug Fixes
+
+* rm stages from namespace dto and namespace public dto ([240c32f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/240c32f9134d6d3c35d6c1f928ad745ad194b712))
+
 ## 1.28.29 (2022-01-07)
 
 
