@@ -39,9 +39,9 @@ export class NamespacePublicDto extends BaseEntityDto {
   @Expose()
   services: NamespaceServiceDto[];
 
-  @Type(() => NamespaceStageDto)
-  @Expose()
-  stages: NamespaceStageDto[];
+  // @Type(() => NamespaceStageDto)
+  // @Expose()
+  // stages: NamespaceStageDto[];
 
   @Expose()
   state: NamespaceStateEnum;

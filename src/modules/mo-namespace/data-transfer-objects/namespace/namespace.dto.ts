@@ -48,9 +48,9 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   subscription: SubscriptionDto;
 
-  @Type(() => NamespaceStageDto)
-  @Expose()
-  stages: NamespaceStageDto[];
+  // @Type(() => NamespaceStageDto)
+  // @Expose()
+  // stages: NamespaceStageDto[];
 
   @Type(() => GitConnectionDto)
   @Expose()
