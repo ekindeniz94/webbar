@@ -2,6 +2,13 @@
 
 
 
+## 1.28.31 (2022-01-11)
+
+
+### Bug Fixes
+
+* add tcp and udp port to service ([8dae715](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8dae71502e8dfc28eb025b0e83991dbc508a04fe))
+
 ## 1.28.30 (2022-01-09)
 
 
