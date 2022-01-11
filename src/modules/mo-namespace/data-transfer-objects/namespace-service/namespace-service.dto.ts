@@ -9,7 +9,8 @@ import _ from 'lodash';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServicePodDto } from './namespace-service-pod.dto';
-import { NamespaceServiceStateEnum } from '../../enums';
+import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '../../enums';
+import { NamespaceServicePortDto } from './namespace-service-port.dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -67,6 +68,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   expose: boolean;
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  ports: NamespaceServicePortDto[];
+
   @Type(() => NamespaceServiceKubernetesSettingsDto)
   @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
@@ -91,6 +96,20 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   pods: NamespaceServicePodDto[];
+
+  get tcpPort(): number | undefined {
+    return (
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.TCP)
+        ?.port ?? undefined
+    );
+  }
+
+  get udpPort(): number | undefined {
+    return (
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.UDP)
+        ?.port ?? undefined
+    );
+  }
 
   get serviceType(): ServiceTypeEnum {
     return this.service.serviceType;

@@ -110,6 +110,16 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   expose: boolean;
 
+  @IsBoolean()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Expose()
+  addTcpPort: boolean;
+
+  @IsBoolean()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Expose()
+  addUdpPort: boolean;
+
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
   @ValidateNested()
