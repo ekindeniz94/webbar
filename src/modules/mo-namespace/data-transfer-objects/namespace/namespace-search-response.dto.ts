@@ -1,11 +1,11 @@
-import { NamespacePublicDto } from './namespace-public.dto';
+import { NamespaceDto } from './namespace.dto';
 import { GroupDto } from '../../../mo-user';
 import { Expose, Type } from 'class-transformer';
 
 export class NamespaceSearchResponseDto {
-  @Type(() => NamespacePublicDto)
+  @Type(() => NamespaceDto)
   @Expose()
-  namespace: NamespacePublicDto;
+  namespace: NamespaceDto;
 
   @Type(() => GroupDto)
   @Expose()

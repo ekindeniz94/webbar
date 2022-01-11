@@ -118,7 +118,17 @@ export class NamespaceServiceCreateRequestDto {
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
+  tcpPortSpectrumEnableTls: boolean;
+
+  @IsBoolean()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Expose()
   addUdpPort: boolean;
+
+  @IsBoolean()
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Expose()
+  udpPortSpectrumEnableTls: boolean;
 
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)

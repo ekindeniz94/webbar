@@ -4,6 +4,6 @@ export class NamespaceKeypairDto {
   @Expose()
   publicKey: string;
 
-  @Expose()
-  privateKey: string;
+  // @Expose()
+  // privateKey: string;
 }

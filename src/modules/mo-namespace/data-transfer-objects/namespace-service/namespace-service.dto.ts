@@ -97,17 +97,17 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   pods: NamespaceServicePodDto[];
 
-  get tcpPort(): number | undefined {
+  get tcpPort(): NamespaceServicePortDto | undefined {
     return (
-      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.TCP)
-        ?.port ?? undefined
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.TCP) ??
+      undefined
     );
   }
 
-  get udpPort(): number | undefined {
+  get udpPort(): NamespaceServicePortDto | undefined {
     return (
-      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.UDP)
-        ?.port ?? undefined
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.UDP) ??
+      undefined
     );
   }
 

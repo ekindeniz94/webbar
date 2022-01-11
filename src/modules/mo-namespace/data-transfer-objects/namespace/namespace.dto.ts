@@ -3,7 +3,6 @@ import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-subscription-pool';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
-import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
 import { GitConnectionDto } from '../../../mo-git';
 import { isString } from 'class-validator';
