@@ -2,6 +2,13 @@
 
 
 
+## 1.28.32 (2022-01-11)
+
+
+### Bug Fixes
+
+* refactoring namespace service port ([db06ead](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/db06eadcc98fa8fa1765277dbfcd903104cebdec))
+
 ## 1.28.31 (2022-01-11)
 
 
