@@ -2,6 +2,13 @@
 
 
 
+## 1.28.33 (2022-01-11)
+
+
+### Bug Fixes
+
+* refactoring namespace dto ([d517bb9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d517bb9f74f0bece3c1fa7c991a6dec7f31a3c86))
+
 ## 1.28.32 (2022-01-11)
 
 
