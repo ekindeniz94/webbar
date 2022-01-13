@@ -110,6 +110,13 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   expose: boolean;
 
+  // @IsOptional()
+  // @Type(() => NamespaceServicePortCreateRequestDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @ValidateNested()
+  // @Expose()
+  // ports: NamespaceServicePortCreateRequestDto[];
+
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()

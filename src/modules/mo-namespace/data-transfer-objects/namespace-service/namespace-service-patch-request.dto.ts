@@ -23,4 +23,11 @@ export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateReque
   @ValidateNested()
   @Expose()
   envVars: NamespaceServiceEnvVarPatchRequestDto[];
+
+  // @IsOptional()
+  // @Type(() => NamespaceServicePortPatchRequestDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @ValidateNested()
+  // @Expose()
+  // ports: NamespaceServicePortPatchRequestDto[];
 }
