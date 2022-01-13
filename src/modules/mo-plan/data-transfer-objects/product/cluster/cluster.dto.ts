@@ -2,10 +2,10 @@ import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
 import { GeoCoordinatesDto } from '../../../../mo-core/data-transfer-objects/geo-coordinates.dto';
 
-export class ClusterDto extends BaseEntityDto  {
+export class ClusterDto extends BaseEntityDto {
   @Expose()
   region: string;
-  
+
   @Expose()
   @Type(() => GeoCoordinatesDto)
   geoLocation: GeoCoordinatesDto;
@@ -21,4 +21,18 @@ export class ClusterDto extends BaseEntityDto  {
 
   @Expose()
   host: string;
+
+  @Expose()
+  cloudflareTcpSubDomain: string;
+
+  @Expose()
+  cloudflareUdpSubDomain: string;
+
+  get cloudflareTcpDomain(): string {
+    return `${this.cloudflareTcpSubDomain}-${this.host}`;
+  }
+
+  get cloudflareUdpDomain(): string {
+    return `${this.cloudflareUdpSubDomain}-${this.host}`;
+  }
 }

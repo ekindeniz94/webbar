@@ -7,22 +7,33 @@ export class ClusterCreateRequestDto {
   @Expose()
   region: string;
 
-  @Expose()
   @IsNotEmpty()
   @IsString()
+  @Expose()
   name: string;
 
   @IsNotEmpty()
-  @Expose()
   @IsIP()
+  @Expose()
   loadbalancerIp: string;
 
-  @IsUrl()
   @IsNotEmpty()
+  @IsUrl()
   @Expose()
   k8smanagerUrl: string;
 
   @IsNotEmpty()
+  @IsString()
   @Expose()
   host: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  cloudflareTcpSubDomain: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  cloudflareUdpSubDomain: string;
 }
