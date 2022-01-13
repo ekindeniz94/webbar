@@ -2,6 +2,13 @@
 
 
 
+## 1.28.34 (2022-01-13)
+
+
+### Bug Fixes
+
+* update cluster DTOs ([ea907f0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ea907f0fb0483ec53d4351e567ee52e4fe2e6a2f))
+
 ## 1.28.33 (2022-01-11)
 
 
