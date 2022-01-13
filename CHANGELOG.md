@@ -2,6 +2,13 @@
 
 
 
+## 1.28.35 (2022-01-13)
+
+
+### Bug Fixes
+
+* namespace service port ([53370cd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/53370cd54bd340b647631b389563f0d9c2233d9a))
+
 ## 1.28.34 (2022-01-13)
 
 
