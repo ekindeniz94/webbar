@@ -38,7 +38,7 @@ export const DTO_VALIDATION_CONST = {
   CHANGELOG: {
     VERSION: {
       MIN: 5,
-      MAX: 255,
+      MAX: 16,
       MATCHES: /^\d+(\.\d+)*$/
     },
     TITLE: {
