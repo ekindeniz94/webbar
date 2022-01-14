@@ -2,6 +2,16 @@
 
 
 
+# 1.29.0 (2022-01-14)
+
+
+### Features
+
+* changelog. ([5e23152](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5e231520cdf12f8605824f4fbac3d493287577cc))
+* changelog. ([b68b683](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b68b6830438de6596c379f3043d1f6447d150649))
+* changelog. ([a08e3d0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a08e3d01ecd39bc8f9013de76c196b7dd0dc8bb1))
+* changelog. ([5cfeae3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5cfeae30310847c5bfe279050550d576906b5342))
+
 ## 1.28.35 (2022-01-13)
 
 
