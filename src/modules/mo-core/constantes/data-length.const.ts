@@ -35,6 +35,21 @@ export const DTO_VALIDATION_CONST = {
       }
     }
   },
+  CHANGELOG: {
+    VERSION: {
+      MIN: 5,
+      MAX: 16,
+      MATCHES: /^\d+(\.\d+)*$/
+    },
+    TITLE: {
+      MIN: 5,
+      MAX: 255
+    },
+    LOGTEXT: {
+      MIN: 0,
+      MAX: 8192
+    }
+  },
   PLAN_POOL: {
     MAX_PLANS: 100
   },

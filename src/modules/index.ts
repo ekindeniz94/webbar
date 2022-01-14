@@ -9,6 +9,7 @@ export * from './mo-namespace';
 export * from './mo-notification';
 export * from './mo-plan';
 export * from './mo-service-library';
+export * from './mo-changelog';
 export * from './mo-sitemap';
 export * from './mo-subscription-pool';
 export * from './mo-user';
