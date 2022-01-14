@@ -47,7 +47,7 @@ export const DTO_VALIDATION_CONST = {
     },
     LOGTEXT: {
       MIN: 0,
-      MAX: 4096
+      MAX: 8192
     }
   },
   PLAN_POOL: {
