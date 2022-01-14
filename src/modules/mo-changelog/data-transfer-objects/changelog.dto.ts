@@ -10,7 +10,4 @@ export class ChangelogDto extends BaseEntityDto {
 
   @Expose()
   logText: string;
-
-  @Expose()
-  publishedAt?: string;
 }
