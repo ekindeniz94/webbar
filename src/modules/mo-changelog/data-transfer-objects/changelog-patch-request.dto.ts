@@ -1,17 +1,11 @@
 import { Expose } from 'class-transformer';
-import { IsString } from 'class-validator';
-import { BaseEntityDto } from '../../mo-core';
+import { IsOptional, IsString, IsUUID } from 'class-validator';
+import { ChangelogCreateRequestDto } from './changelog-create-request.dto';
 
-export class ChangelogPatchRequestDto extends BaseEntityDto {
+export class ChangelogPatchRequestDto extends ChangelogCreateRequestDto {
+  @IsOptional()
   @IsString()
+  @IsUUID()
   @Expose()
-  version: string;
-
-  @IsString()
-  @Expose()
-  title: String;
-
-  @IsString()
-  @Expose()
-  logText: String;
+  id: string;
 }

@@ -1,11 +1,11 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
-import { SubscriptionDto } from '../../../mo-subscription-pool';
+import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceStateEnum } from '../../enums';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceKeypairDto } from './namespace-keypair.dto';
 import { GitConnectionDto } from '../../../mo-git';
 import { isString } from 'class-validator';
+import { SubscriptionDto } from '../../../mo-payment';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()

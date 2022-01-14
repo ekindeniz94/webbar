@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../mo-core';
-import { CurrencyDto, PlanDto, PlanPublicDto } from '../../mo-plan';
-import { UserPublicDto } from '../../mo-user';
+import { BaseEntityDto } from '../../../mo-core';
+import { CurrencyDto, PlanDto, PlanPublicDto } from '../../plan-product';
+import { UserPublicDto } from '../../../mo-user';
 import { SubscriptionStatusEnum } from '../enums';
 import { SubscriptionPoolDto } from './subscription-pool.dto';
 

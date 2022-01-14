@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsDateString, IsEnum, IsNotEmpty, IsNumber, isString, IsString, IsUrl, MaxLength, MinLength } from 'class-validator';
 import moment from 'moment';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
-import { NamespaceColorEnum } from '../../../mo-namespace/enums/namespace-color.enum';
+import { DTO_VALIDATION_CONST } from '../../../../mo-core';
+import { NamespaceServiceDeploymentStrategyEnum, NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
+import { NamespaceColorEnum } from '../../../../mo-namespace/enums/namespace-color.enum';
 import {
   DiskPerformanceTierEnum,
   PaypalCategoryTypeEnum,

@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
-import { NamespaceServiceKubernetesSettingsDto } from '../../../mo-namespace';
+import { BaseEntityDto } from '../../../../mo-core';
+import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
 import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
 import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
 import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';

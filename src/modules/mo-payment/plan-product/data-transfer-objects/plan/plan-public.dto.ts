@@ -1,5 +1,5 @@
 import { Exclude, Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { SubscriptionDto } from '../../../mo-subscription-pool';
+import { SubscriptionDto } from '../../../subscription-pool';
 import { ProductRuntimeIntervalEnum } from '../../enums';
 import { CurrencyDto } from '../currency';
 import { PlanDto } from './plan.dto';

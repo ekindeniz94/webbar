@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
-import { SubscriptionDto } from '../../../mo-subscription-pool';
+import { BaseEntityDto } from '../../../../mo-core';
+import { SubscriptionDto } from '../../../subscription-pool';
 import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
 import { PaypalPlanData } from '../../utils/plan.utils';
 import { PlanDto } from '../plan';

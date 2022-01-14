@@ -1,17 +1,19 @@
 import { Expose } from 'class-transformer';
-import { IsString } from 'class-validator';
-import { BaseEntityDto } from '../../mo-core';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class ChangelogCreateRequestDto extends BaseEntityDto {
+export class ChangelogCreateRequestDto {
+  @IsNotEmpty()
   @IsString()
   @Expose()
   version: string;
 
+  @IsNotEmpty()
   @IsString()
   @Expose()
-  title: String;
+  title: string;
 
+  @IsNotEmpty()
   @IsString()
   @Expose()
-  logText: String;
+  logText: string;
 }
