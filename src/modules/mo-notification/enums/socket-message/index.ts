@@ -18,3 +18,7 @@ export * from './namespace-socket-data-event.enum';
 // Notification
 export * from './notification-socket-event.enum';
 export * from './notification-socket-data-event.enum';
+
+// Changelog
+export * from './changelog-socket-event.enum';
+export * from './changelog-socket-data-event.enum';
