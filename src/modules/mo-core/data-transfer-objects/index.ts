@@ -18,3 +18,5 @@ export * from './kubernetes-event-status.dto';
 export * from './kubernetes-event.dto';
 export * from './cluster-status.dto';
 export * from './geo-coordinates.dto';
+export * from './persitent-file.dto';
+export * from './persitent-file-request.dto';
