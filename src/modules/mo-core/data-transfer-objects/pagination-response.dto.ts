@@ -1,5 +1,5 @@
 import { IsNumber } from 'class-validator';
-import { Exclude, Expose, Transform } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 
 export class PaginationResponseDto<T> {
   @IsNumber()
