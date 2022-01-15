@@ -2,6 +2,13 @@
 
 
 
+## 1.29.3 (2022-01-15)
+
+
+### Bug Fixes
+
+* add published to create changelog dto ([5879c80](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5879c80bd739d682d09993095cbcd5809b87dce2))
+
 ## 1.29.2 (2022-01-15)
 
 
