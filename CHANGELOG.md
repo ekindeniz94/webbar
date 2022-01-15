@@ -2,6 +2,13 @@
 
 
 
+## 1.29.6 (2022-01-15)
+
+
+### Bug Fixes
+
+* updated persistent file models. ([5595027](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/55950270d1f0fe24deb004ea3ac1cc108461fb4f))
+
 ## 1.29.5 (2022-01-15)
 
 
