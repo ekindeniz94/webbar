@@ -2,6 +2,13 @@
 
 
 
+## 1.29.1 (2022-01-14)
+
+
+### Bug Fixes
+
+* subscription (mo-payment) ([20cc343](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/20cc3437e9885b31b683332f6def3056e838615c))
+
 # 1.29.0 (2022-01-14)
 
 
