@@ -1,5 +1,5 @@
-import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsString } from 'class-validator';
+import {Expose, Transform, Type} from 'class-transformer';
+import {IsBoolean, isBoolean, IsNotEmpty, IsString} from 'class-validator';
 
 export class ChangelogCreateRequestDto {
   @IsNotEmpty()
@@ -16,4 +16,11 @@ export class ChangelogCreateRequestDto {
   @IsString()
   @Expose()
   logText: string;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsNotEmpty()
+  @IsBoolean()
+  @Expose()
+  published: boolean;
 }
