@@ -11,7 +11,7 @@ export const isGitUrl = (value: string) => {
   return regex.test(`${value}`);
 };
 
-@ValidatorConstraint({ name: 'isInStringList', async: false })
+@ValidatorConstraint({ name: 'isGitUrl', async: false })
 export class IsGitUrlConstraint implements ValidatorConstraintInterface {
   public validate(value: string, args: ValidationArguments) {
     return isGitUrl(value);
@@ -26,7 +26,7 @@ export class IsGitUrlConstraint implements ValidatorConstraintInterface {
 export function IsGitUrl(validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isInStringList',
+      name: 'isGitUrl',
       target: object.constructor,
       propertyName: propertyName,
       // constraints: [stringList],
