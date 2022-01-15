@@ -2,6 +2,13 @@
 
 
 
+## 1.29.7 (2022-01-15)
+
+
+### Bug Fixes
+
+* changelog socket event ([cf393e2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/cf393e236aea0f06fc3df6bcb7aaf2e63b634898))
+
 ## 1.29.6 (2022-01-15)
 
 
