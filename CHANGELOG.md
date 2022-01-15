@@ -2,6 +2,13 @@
 
 
 
+## 1.29.2 (2022-01-15)
+
+
+### Bug Fixes
+
+* add semantic version validator. update changelog dto ([933a4b6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/933a4b61551a5dd4053bf75a9a8ace249311a1cc))
+
 ## 1.29.1 (2022-01-14)
 
 
