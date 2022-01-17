@@ -1,5 +1,6 @@
 export * from './file-type.enum';
 export * from './http-status-code.enum';
+export * from './k8s-manager-permissions.enum';
 export * from './order.enum';
 export * from './request-method.enum';
 export * from './socket-data-event.enum';
