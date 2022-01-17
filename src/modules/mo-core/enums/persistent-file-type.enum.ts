@@ -1,4 +1,4 @@
 export enum PersistentFileTypeEnum {
-  FILE = 'FILE',
-  DIRECTORY = 'DIRECTORY'
+  FILE = 'file',
+  DIRECTORY = 'directory'
 }

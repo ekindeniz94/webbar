@@ -1,11 +1,12 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose } from 'class-transformer';
+import { PersistentFileTypeEnum } from '../enums';
 
 export class PersistentFileDto {
   @Expose()
   name: string;
 
   @Expose()
-  type: PersistentFileDto;
+  type: PersistentFileTypeEnum;
 
   @Expose()
   relativePath: string;
