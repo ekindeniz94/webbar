@@ -13,5 +13,5 @@ export class PersistentFileStatsDto {
     durationMs?: number;
 
     @Expose()
-    generatedAt?: Date;
+    generatedAt: string;
   }
