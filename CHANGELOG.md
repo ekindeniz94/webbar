@@ -2,6 +2,13 @@
 
 
 
+## 1.29.10 (2022-01-17)
+
+
+### Bug Fixes
+
+* improved nfs stats. ([7ef615c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7ef615c98ec2fa105e935b3e24a9f4b19dd72b78))
+
 ## 1.29.9 (2022-01-17)
 
 
