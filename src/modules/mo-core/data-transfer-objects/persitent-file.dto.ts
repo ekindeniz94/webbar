@@ -28,4 +28,13 @@ export class PersistentFileDto {
 
   @Expose()
   mimeType?: string;
+  
+  @Expose()
+  createdAt?: string;
+
+  @Expose()
+  modifiedAt?: string;
+
+  @Expose()
+  uid_gid?: string;
 }
