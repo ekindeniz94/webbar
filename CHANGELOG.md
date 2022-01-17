@@ -2,6 +2,13 @@
 
 
 
+## 1.29.8 (2022-01-17)
+
+
+### Bug Fixes
+
+* update persitent file dto ([7ec6116](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7ec6116a965484fad7379f6df4ecaf91307c0d93))
+
 ## 1.29.7 (2022-01-15)
 
 
