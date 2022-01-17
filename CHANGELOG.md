@@ -2,6 +2,34 @@
 
 
 
+## 1.29.12 (2022-01-17)
+
+
+### Bug Fixes
+
+* improved nfs stats. ([2b97dbb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2b97dbb09f4acf13ae20674dc4c158815cb98c3f))
+
+## 1.29.11 (2022-01-17)
+
+
+### Bug Fixes
+
+* improved nfs stats. ([7d14f6c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7d14f6c1f49d35e2a2a0c1439c8d5300a6e96d81))
+
+## 1.29.10 (2022-01-17)
+
+
+### Bug Fixes
+
+* improved nfs stats. ([7ef615c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7ef615c98ec2fa105e935b3e24a9f4b19dd72b78))
+
+## 1.29.9 (2022-01-17)
+
+
+### Bug Fixes
+
+* improved nfs stats. ([a12fc36](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a12fc366905f51922d25e7a51a9a0c33384b28d2))
+
 ## 1.29.8 (2022-01-17)
 
 
