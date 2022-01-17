@@ -2,6 +2,13 @@
 
 
 
+## 1.29.13 (2022-01-17)
+
+
+### Bug Fixes
+
+* add k8s-manager permissions enum ([7c8059f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7c8059fa1d2c229225b2647e137cae53ca9b2c68))
+
 ## 1.29.12 (2022-01-17)
 
 
