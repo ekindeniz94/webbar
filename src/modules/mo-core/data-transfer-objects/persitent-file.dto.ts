@@ -30,10 +30,10 @@ export class PersistentFileDto {
   mimeType?: string;
   
   @Expose()
-  createdAt?: string;
+  createdAt?: Date;
 
   @Expose()
-  modifiedAt?: string;
+  modifiedAt?: Date;
 
   @Expose()
   uid_gid?: string;
