@@ -17,8 +17,8 @@ export * from './language-code.dto';
 export * from './pagination-response.dto';
 export * from './persistent-file-stats.dto';
 export * from './persitent-file-request.dto';
+export * from './persitent-file-upload.dto';
 export * from './persitent-file.dto';
 export * from './phone-code.dto';
 export * from './search-request.dto';
 export * from './sms-message.dto';
-
