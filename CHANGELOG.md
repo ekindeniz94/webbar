@@ -2,6 +2,13 @@
 
 
 
+## 1.29.17 (2022-01-18)
+
+
+### Bug Fixes
+
+* added paypal models module. ([6fdb0de](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6fdb0debe80e0a72c5a9dda23fe02846d751cec6))
+
 ## 1.29.16 (2022-01-18)
 
 
