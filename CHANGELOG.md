@@ -2,6 +2,13 @@
 
 
 
+## 1.29.16 (2022-01-18)
+
+
+### Bug Fixes
+
+* files services minor fixes. ([55a19f3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/55a19f3ad4e23b9ab92ad4dd311841da5eb8069c))
+
 ## 1.29.15 (2022-01-17)
 
 
