@@ -2,6 +2,14 @@
 
 
 
+## 1.29.18 (2022-01-19)
+
+
+### Bug Fixes
+
+* paypal models updated. ([306271c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/306271c84fef38f296fd8a7cbd8551084070d76c))
+* paypal models updated. ([f15e848](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f15e848a0d15dafd856499ab134f08a1beb48868))
+
 ## 1.29.17 (2022-01-18)
 
 
