@@ -1,4 +1,4 @@
-import { PlanDto, CurrencyDto } from '../data-transfer-objects';
+import { CurrencyDto, PlanDto } from '../data-transfer-objects';
 
 export class PaypalPlanData {
   product_id: string;
@@ -20,7 +20,7 @@ export class PaypalPlanData {
             interval_count: 1
           },
           tenure_type: 'REGULAR',
-          sequence: 1, // every Month or Year
+          sequence: 1,
           total_cycles: 0, // infinit cycles
           pricing_scheme: {
             fixed_price: {
@@ -36,7 +36,7 @@ export class PaypalPlanData {
       },
       taxes: {
         percentage: currency.taxPercent,
-        inclusive: true
+        inclusive: false
       }
     };
   }
