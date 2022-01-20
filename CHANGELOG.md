@@ -2,6 +2,13 @@
 
 
 
+## 1.29.20 (2022-01-20)
+
+
+### Bug Fixes
+
+* add PaypalResourceDto ([82b0661](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/82b0661185d7051a8e72db41bf0863b96ea22883))
+
 ## 1.29.19 (2022-01-19)
 
 
