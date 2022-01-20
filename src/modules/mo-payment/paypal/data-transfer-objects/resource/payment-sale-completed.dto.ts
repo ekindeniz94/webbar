@@ -8,8 +8,15 @@ import {
 import { PaypalAmountTotalDto } from './dtos/paypal-amount-total.dto';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';
 import { PaypalTransactionFeeDto } from './dtos/paypal-transaction-fee.dto';
+import { PaypalResourceDto } from './paypal-resource.dto';
 
-export class PaypalResourcePaymentSaleCompletedDto {
+export class PaypalResourcePaymentSaleCompletedDto extends PaypalResourceDto {
+  // @Expose()
+  // id: string;
+  //
+  // @Expose()
+  // state: PaypalPaymentStateEnum;
+
   @Expose()
   amount: PaypalAmountTotalDto;
 
@@ -36,12 +43,6 @@ export class PaypalResourcePaymentSaleCompletedDto {
 
   @Expose()
   protection_eligibility: PaypalPaymentProtectionEligibilityEnum;
-
-  @Expose()
-  id: string;
-
-  @Expose()
-  state: PaypalPaymentStateEnum;
 
   @Expose()
   invoice_number: string;

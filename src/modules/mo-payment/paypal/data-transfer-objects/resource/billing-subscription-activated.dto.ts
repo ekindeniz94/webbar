@@ -3,13 +3,14 @@ import { PaypalSubscriptionStatusEnum } from '../../enums';
 import { PaypalAmountDto } from './dtos/paypal-amount.dto';
 import { PaypalBillingInfoDto } from './dtos/paypal-billing-info.dto';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';
+import { PaypalResourceDto } from './paypal-resource.dto';
 
-export class PaypalResourceBillingSubscriptionActivatedDto {
-  @Expose()
-  id: string;
-
-  @Expose()
-  plan_id: string;
+export class PaypalResourceBillingSubscriptionActivatedDto extends PaypalResourceDto {
+  // @Expose()
+  // id: string;
+  //
+  // @Expose()
+  // plan_id: string;
 
   @Expose()
   status: PaypalSubscriptionStatusEnum;
