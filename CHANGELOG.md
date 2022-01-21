@@ -2,6 +2,13 @@
 
 
 
+## 1.29.21 (2022-01-21)
+
+
+### Bug Fixes
+
+* update namespace dto (use [@type](https://dev.azure.com/type) for nested objects) ([32b26de](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/32b26dee34cd59f1ae36af6a68997d59571bca65))
+
 ## 1.29.20 (2022-01-20)
 
 
