@@ -44,6 +44,7 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   bgColorStyle: string;
 
+  @Type(() => SubscriptionDto)
   @Expose()
   subscription: SubscriptionDto;
 
