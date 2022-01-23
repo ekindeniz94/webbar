@@ -7,3 +7,5 @@ export * from './storage-stats.dto';
 export * from './time-series.dto';
 export * from './traffic-stats-time-series.dto';
 export * from './traffic-stats.dto';
+export * from './cloudflare-stats.dto';
+export * from './short-stage.dto';
