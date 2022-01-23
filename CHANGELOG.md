@@ -2,6 +2,13 @@
 
 
 
+## 1.29.22 (2022-01-23)
+
+
+### Bug Fixes
+
+* stats traffic prometheus. ([2a29539](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2a295397836afc8e2b5b688a055e6b550367f085))
+
 ## 1.29.21 (2022-01-21)
 
 
