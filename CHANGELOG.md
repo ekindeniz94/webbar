@@ -2,6 +2,13 @@
 
 
 
+## 1.29.23 (2022-01-24)
+
+
+### Bug Fixes
+
+* refactoring payment ([7b85436](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7b85436670e9ae1994230215e5b607a81dd4d2a2))
+
 ## 1.29.22 (2022-01-23)
 
 
