@@ -1,0 +1,5 @@
+export enum CountryPermissionsEnum {
+  COUNTRY__ADMIN = 'COUNTRY__ADMIN',
+  COUNTRY__USER = 'COUNTRY__USER',
+  COUNTRY__VIEWER = 'COUNTRY__VIEWER'
+}

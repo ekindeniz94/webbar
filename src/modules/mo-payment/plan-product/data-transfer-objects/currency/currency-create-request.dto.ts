@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsEnum, IsInt, IsOptional, IsString, IsUUID, Max, Min } from 'class-validator';
-import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
+import { ProductRuntimeIntervalEnum } from '../../enums';
+import { CountryDto } from '../../../../mo-core';
 
 export class CurrencyCreateRequestDto {
   @IsOptional()
@@ -10,8 +11,7 @@ export class CurrencyCreateRequestDto {
   id?: string;
 
   @Expose()
-  @IsEnum(CurrencyEnum)
-  type: CurrencyEnum;
+  country: CountryDto;
 
   @Expose()
   @IsEnum(ProductRuntimeIntervalEnum)
@@ -20,10 +20,4 @@ export class CurrencyCreateRequestDto {
   @Expose()
   @IsInt()
   pricePerInterval: number;
-
-  @Expose()
-  @IsInt()
-  @Min(0)
-  @Max(100)
-  taxPercent: number;
 }

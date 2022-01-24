@@ -25,7 +25,7 @@ export class PaypalPlanData {
           pricing_scheme: {
             fixed_price: {
               value: currency.pricePerInterval, // PRICE
-              currency_code: currency.type
+              currency_code: currency.country.currency
             }
           }
         }
@@ -34,8 +34,9 @@ export class PaypalPlanData {
         auto_bill_outstanding: true,
         payment_failure_threshold: 1
       },
+      // TODO
       taxes: {
-        percentage: currency.taxPercent,
+        percentage: currency.country.taxPercent,
         inclusive: false
       }
     };

@@ -1,4 +1,3 @@
-export * from './currency.enum';
 export * from './disk-performance-tier.enum';
 export * from './paypal-category-type.enum';
 export * from './paypal-product-type.enum';

@@ -1,11 +1,14 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core';
+import { BaseEntityDto, CountryDto } from '../../../../mo-core';
 import { SubscriptionDto } from '../../../subscription-pool';
-import { CurrencyEnum, ProductRuntimeIntervalEnum } from '../../enums';
+import { ProductRuntimeIntervalEnum } from '../../enums';
 import { PaypalPlanData } from '../../utils/plan.utils';
 import { PlanDto } from '../plan';
 import moment from 'moment';
 export class CurrencyDto extends BaseEntityDto {
+  @Expose()
+  country: CountryDto;
+
   @Expose()
   paypalId: string;
 
@@ -14,16 +17,10 @@ export class CurrencyDto extends BaseEntityDto {
   plan: PlanDto;
 
   @Expose()
-  type: CurrencyEnum;
-
-  @Expose()
   interval: ProductRuntimeIntervalEnum;
 
   @Expose()
   pricePerInterval: number;
-
-  @Expose()
-  taxPercent: number;
 
   @Type(() => SubscriptionDto)
   @Expose()
@@ -34,10 +31,7 @@ export class CurrencyDto extends BaseEntityDto {
   }
 
   get displayPricePerInterval(): string {
-    if (this.type === CurrencyEnum.EUR || this.type === CurrencyEnum.GBP || this.type === CurrencyEnum.USD) {
-      return `${this.price.toFixed(2)}`;
-    }
-    return `${this.type} does not support displayPricePerInterval()`;
+    return `${this.price.toFixed(2)}`;
   }
 
   paypalPlanData(plan: PlanDto, paypalProductId: string): PaypalPlanData {
@@ -45,23 +39,23 @@ export class CurrencyDto extends BaseEntityDto {
   }
 
   public getNetPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${this.netPrice} ${currencyStr}` : `${this.netPrice} ${this.type}`;
+    return currencyStr ? `${this.netPrice} ${currencyStr}` : `${this.netPrice} ${this.country.currency}`;
   }
 
   public getTaxToString(currencyStr?: string): string {
-    return currencyStr ? `${this.tax} ${currencyStr}` : `${this.tax} ${this.type}`;
+    return currencyStr ? `${this.tax} ${currencyStr}` : `${this.tax} ${this.country.currency}`;
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${this.grossPrice} ${currencyStr}` : `${this.grossPrice} ${this.type}`;
+    return currencyStr ? `${this.grossPrice} ${currencyStr}` : `${this.grossPrice} ${this.country.currency}`;
   }
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`}`;
+      return `1 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.country.currency}`}`;
     }
     if (this.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.type}`}`;
+      return `12 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.country.currency}`}`;
     }
     return '???';
   }
@@ -87,7 +81,7 @@ export class CurrencyDto extends BaseEntityDto {
   }
 
   public pricePerMonthToString(currencyStr?: string, monthStr?: string): string {
-    return `${this.price} ${currencyStr ?? this.type} per ${monthStr ?? 'month'}`;
+    return `${this.price} ${currencyStr ?? this.country.currency} per ${monthStr ?? 'month'}`;
   }
 
   get netPrice(): number {
@@ -101,7 +95,7 @@ export class CurrencyDto extends BaseEntityDto {
   }
 
   get tax(): number {
-    return +((this.netPrice * this.taxPercent) / 100).toFixed(2);
+    return +((this.netPrice * this.country.taxPercent) / 100).toFixed(2);
   }
 
   get grossPrice(): number {
