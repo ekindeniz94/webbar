@@ -1,5 +1,5 @@
-import {Expose, Transform, Type} from 'class-transformer';
-import {isArray, isBoolean, IsBoolean, IsNotEmpty, IsNumber, IsString} from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray, isBoolean, IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import _ from 'lodash';
 
 export class CountryCreateRequestDto {
@@ -31,6 +31,7 @@ export class CountryCreateRequestDto {
   @Expose()
   currencyName: string;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @IsNumber()
   @Expose()
