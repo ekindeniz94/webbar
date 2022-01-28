@@ -1,11 +1,14 @@
 import { Expose } from 'class-transformer';
 
-export class UserAddressDto {
+export class AddressDto {
   @Expose()
-  street: string;
+  addressLine1: string;
 
   @Expose()
-  houseNumber: string;
+  addressLine2: string;
+
+  @Expose()
+  addressLine3: string;
 
   @Expose()
   state: string;

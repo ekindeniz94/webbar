@@ -19,22 +19,6 @@ export const DTO_VALIDATION_CONST = {
     'https://mogenius.net',
     'https://mogenius.org'
   ],
-  PLAN: {
-    PRODUCT: {
-      NAME: {
-        MIN: 5,
-        MAX: 255
-      },
-      DESCRIPTION: {
-        MIN: 0,
-        MAX: 4096
-      },
-      ICON: {
-        MIN: 0,
-        MAX: 4096
-      }
-    }
-  },
   CHANGELOG: {
     VERSION: {
       MIN: 5,
@@ -49,9 +33,6 @@ export const DTO_VALIDATION_CONST = {
       MIN: 0,
       MAX: 8192
     }
-  },
-  PLAN_POOL: {
-    MAX_PLANS: 100
   },
   NAMESPACE: {
     CNAME: {
@@ -201,8 +182,7 @@ export const DTO_VALIDATION_CONST = {
     MATCHES: /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*?[^\w\s]|.*?_|.*?\.).{6,129}$/
   },
   PHONE_NUMBER_PREFIX: {
-    MAX: 3,
-    IS_IN_STRING_LIST: ['+49']
+    MAX: 3
   },
   PHONE_NUMBER: {
     MAX: 128
@@ -229,16 +209,20 @@ export const DTO_VALIDATION_CONST = {
     NAME: {
       MAX: 256
     },
-    TAX_NUMBER: {
+    VAT_ID: {
       MAX: 128
     }
   },
   ADDRESS: {
-    STREET: {
+    ADDRESS_LINE1: {
       MIN: 2,
       MAX: 256
     },
-    HOUSE_NUMBER: {
+    ADDRESS_LINE2: {
+      MIN: 1,
+      MAX: 16
+    },
+    ADDRESS_LINE3: {
       MIN: 1,
       MAX: 16
     },

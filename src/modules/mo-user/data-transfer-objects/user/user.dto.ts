@@ -1,8 +1,7 @@
-import { BaseEntityDto } from '../../../mo-core';
+import { AddressDto, BaseEntityDto } from '../../../mo-core';
 import { Exclude, Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsOptional, isString } from 'class-validator';
-import { UserCompanyDto } from './user-company.dto';
-import { UserAddressDto } from './user-address.dto';
+import { UserCompanyDto } from './company/user-company.dto';
 import { GroupDto } from '../group';
 import { UserPublicDto } from './user-public.dto';
 
@@ -29,13 +28,13 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   company: UserCompanyDto;
 
-  @Type(() => UserAddressDto)
+  @Type(() => AddressDto)
   @Expose()
-  address: UserAddressDto;
+  address: AddressDto;
 
-  @Type(() => UserAddressDto)
+  @Type(() => AddressDto)
   @Expose()
-  billingAddress: UserAddressDto;
+  billingAddress: AddressDto;
 
   @Transform(({ value }) => (isBoolean(value) ? value : true))
   @Expose()

@@ -15,7 +15,6 @@ export class UserPhonePatchRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
   )
-  @IsInStringList(DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.IS_IN_STRING_LIST)
   @Expose()
   phoneNumberPrefix: string;
 

@@ -13,9 +13,6 @@ export class NamespaceListItemDto extends BaseEntityDto {
   state: NamespaceStateEnum;
 
   @Expose()
-  planName: string;
-
-  @Expose()
   productName: string;
 
   @Type(() => Number)

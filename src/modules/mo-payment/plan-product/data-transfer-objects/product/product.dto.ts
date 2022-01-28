@@ -1,21 +1,49 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray, IsOptional, IsString, isString } from 'class-validator';
+import moment from 'moment';
 import { BaseEntityDto } from '../../../../mo-core';
-import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
-import { DiskPerformanceTierEnum } from '../../enums/disk-performance-tier.enum';
-import { PaypalCategoryTypeEnum } from '../../enums/paypal-category-type.enum';
-import { PaypalProductTypeEnum } from '../../enums/paypal-product-type.enum';
-import { PaypalProductData } from '../../utils';
-import { PlanDto } from '../plan';
-import { ClusterDto } from './cluster/cluster.dto';
+import {
+  DiskPerformanceTierEnum,
+  PaypalCategoryTypeEnum,
+  PaypalProductTypeEnum,
+  PlanStateEnum,
+  ProductTypeEnum
+} from '../../enums';
+import { NamespaceColorEnum, NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
+import { PriceIntervalDto } from '../price-interval/price-interval.dto';
+import { ClusterDto } from '../cluster/cluster.dto';
+import { ProductBulletPointDto } from './product-bullet-point.dto';
+import { UserPublicDto } from '../../../../mo-user';
 
 export class ProductDto extends BaseEntityDto {
+  @Type(() => PriceIntervalDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  paypalId: string;
+  priceIntervals: PriceIntervalDto[];
 
-  @Type(() => PlanDto)
+  @Type(() => UserPublicDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  plans: PlanDto[];
+  allowedForUsers: UserPublicDto[];
+
+  @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
+  @Expose()
+  productType: ProductTypeEnum;
+
+  @Type(() => Boolean)
+  @Expose()
+  bestPrice: boolean;
+
+  @Expose()
+  bestPriceTitle: string;
+
+  @Transform(({ value }) => value ?? null)
+  @Expose()
+  headerIcon: string;
+
+  @Transform(({ value }) => value ?? null)
+  @Expose()
+  headerText: string;
 
   @Expose()
   name: string;
@@ -23,62 +51,93 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   description: string;
 
+  @Type(() => ProductBulletPointDto)
+  @Transform(({ value }) => value ?? [])
   @Expose()
-  productType: ProductTypeEnum;
-
-  @Expose()
-  paypalProductType: PaypalProductTypeEnum;
-
-  @Expose()
-  paypalCategoryType: PaypalCategoryTypeEnum;
-
-  @Expose()
-  interval: ProductRuntimeIntervalEnum;
-
-  // NEEDED FOR PAYPAL
-  @Expose()
-  imageUrl: string;
-
-  // NEEDED FOR PAYPAL
-  @Expose()
-  homeUrl: string;
-
-  @Expose()
-  startsOn: Date;
-
-  @Expose()
-  endsOn: Date;
-
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
-  @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
-
-  @Expose()
-  trafficInMb: number;
-
-  @Expose()
-  persistentDiskInMb: number;
-
-  @Expose()
-  diskPerformanceTier: DiskPerformanceTierEnum;
-
-  @Expose()
-  maxContainerImageSizeMb: number;
-
-  @Expose()
-  dockerImageCountMax: number;
+  bulletPoints: ProductBulletPointDto[];
 
   @Expose()
   icon: string;
-
-  @Expose()
-  bgColor: string;
 
   @Type(() => ClusterDto)
   @Expose()
   cluster: ClusterDto;
 
-  get paypalProductData(): PaypalProductData {
-    return PaypalProductData.fromProduct(this);
-  }
+  @Transform(({ value }) => moment(value).toDate())
+  @Expose()
+  startsOn: Date;
+
+  @Transform(({ value }) => moment(value).toDate())
+  @Expose()
+  endsOn: Date;
+
+  @Transform(({ value }) => value ?? 0)
+  @Type(() => Number)
+  @Expose()
+  order: number;
+
+  @Transform(({ value }) => value ?? PlanStateEnum.ACTIVE)
+  @Expose()
+  state: PlanStateEnum;
+
+  /****************************** PAYPAL ******************************/
+  // @Transform(({ value }) => value ?? PaypalProductTypeEnum.SERVICE)
+  @Expose()
+  paypalProductType: PaypalProductTypeEnum | null;
+
+  // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
+  @Expose()
+  paypalProductCategoryType: PaypalCategoryTypeEnum | null;
+
+  @Expose()
+  paypalProductImageUrl: string;
+
+  @Expose()
+  paypalProductHomeUrl: string;
+
+  @Transform(({ value }) => (value && isString(value) ? value : ''))
+  @Expose()
+  paypalProductId: string;
+
+  @Transform(({ value }) => value ?? {})
+  @Expose()
+  paypalResponseData: any;
+  /*********************************************************************/
+
+  /***************************** LIMITS ********************************/
+  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Expose()
+  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+
+  @Type(() => Number)
+  @Expose()
+  trafficInMb: number;
+
+  @Type(() => Number)
+  @Expose()
+  persistentDiskInMb: number;
+
+  @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
+  @Expose()
+  diskPerformanceTier: DiskPerformanceTierEnum;
+
+  @Type(() => Number)
+  @Expose()
+  maxContainerImageSizeInMb: number;
+
+  @Type(() => Number)
+  @Expose()
+  dockerImageCountMax: number;
+
+  @Type(() => Number)
+  @Expose()
+  stageCountMax: number;
+
+  @Type(() => Number)
+  @Expose()
+  cNamesCountMax: number;
+
+  @Type(() => Boolean)
+  @Expose()
+  enableAnalytics: boolean;
 }

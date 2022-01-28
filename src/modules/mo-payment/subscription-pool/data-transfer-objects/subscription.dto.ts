@@ -1,27 +1,31 @@
-import {Expose, Transform, Type} from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { CurrencyDto, PlanPublicDto } from '../../plan-product';
 import { UserPublicDto } from '../../../mo-user';
 import { SubscriptionStatusEnum } from '../enums';
 import { SubscriptionPoolDto } from './subscription-pool.dto';
+import { PriceIntervalDto } from '../../plan-product/data-transfer-objects/price-interval';
 
 export class SubscriptionDto extends BaseEntityDto {
-  @Type(() => UserPublicDto)
-  @Expose()
-  createdBy: UserPublicDto;
-
   @Type(() => SubscriptionPoolDto)
   @Expose()
   subscriptionPool: SubscriptionPoolDto;
 
-  @Type(() => CurrencyDto)
+  @Type(() => PriceIntervalDto)
   @Expose()
-  currency: CurrencyDto;
+  priceInterval: PriceIntervalDto;
 
-  @Type(() => PlanPublicDto)
-  @Expose()
-  plan: PlanPublicDto;
-
+  @Transform(({ value }) => value ?? SubscriptionStatusEnum.PAYMENT_PENDING)
   @Expose()
   status: SubscriptionStatusEnum;
+
+  @Expose()
+  startedAt: Date;
+
+  @Expose()
+  endedAt: Date;
+
+  // @Type(() => PaypalWebhookEventDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @Expose()
+  // paypalWebhookEvents: PaypalWebhookEventDto[];
 }

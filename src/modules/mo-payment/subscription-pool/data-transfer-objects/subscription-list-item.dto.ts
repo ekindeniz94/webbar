@@ -1,7 +1,8 @@
 import { SubscriptionDto } from './subscription.dto';
 import { NamespaceDto } from '../../../mo-namespace';
-import {CurrencyDto, PlanDto, ProductDto} from '../../plan-product';
+import { ProductDto } from '../../plan-product';
 import { Expose, Type } from 'class-transformer';
+import { PriceIntervalDto } from '../../plan-product/data-transfer-objects/price-interval';
 
 export class SubscriptionListItemDto {
   @Type(() => SubscriptionDto)
@@ -12,15 +13,11 @@ export class SubscriptionListItemDto {
   @Expose()
   namespace: NamespaceDto;
 
-  @Type(() => PlanDto)
-  @Expose()
-  plan: PlanDto;
-
   @Type(() => ProductDto)
   @Expose()
   product: ProductDto;
 
-  @Type(() => CurrencyDto)
+  @Type(() => PriceIntervalDto)
   @Expose()
-  currency?: CurrencyDto;
+  priceInterval?: PriceIntervalDto;
 }

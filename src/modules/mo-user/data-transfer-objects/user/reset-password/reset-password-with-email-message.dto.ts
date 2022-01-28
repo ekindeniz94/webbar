@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import { MoUtils } from '../../../../utils';
+import { MoUtils } from '../../../../../utils';
 
 export class ResetPasswordWithEmailMessageDto {
   @IsString()

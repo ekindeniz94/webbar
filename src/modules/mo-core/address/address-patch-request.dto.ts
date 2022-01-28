@@ -1,8 +1,8 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
-import { PlanCreateRequestDto } from './plan-create-request.dto';
+import { AddressCreateRequestDto } from './address-create-request.dto';
 
-export class PlanPatchRequestDto extends PlanCreateRequestDto {
+export class AddressPatchRequestDto extends AddressCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @IsUUID()
