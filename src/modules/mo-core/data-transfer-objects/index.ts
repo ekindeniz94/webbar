@@ -22,3 +22,4 @@ export * from './persitent-file.dto';
 export * from './phone-code.dto';
 export * from './search-request.dto';
 export * from './sms-message.dto';
+export * from './k8s';
