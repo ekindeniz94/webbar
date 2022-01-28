@@ -2,6 +2,13 @@
 
 
 
+# 1.30.0 (2022-01-28)
+
+
+### Features
+
+* refactoring payment, user, products, prices, cluster, address ([984a9d3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/984a9d39f1169e65ea256431e33b8833eb819309))
+
 ## 1.29.25 (2022-01-28)
 
 
