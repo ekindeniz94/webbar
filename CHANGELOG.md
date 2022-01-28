@@ -2,6 +2,13 @@
 
 
 
+## 1.29.25 (2022-01-28)
+
+
+### Bug Fixes
+
+* added just some new dtos. ([e344ec0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e344ec0d56e9f6b22b944d9ba0702c3fdab733e6))
+
 ## 1.29.24 (2022-01-25)
 
 
