@@ -2,6 +2,13 @@
 
 
 
+## 1.30.1 (2022-01-30)
+
+
+### Bug Fixes
+
+* product public dto ([3e0b029](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3e0b029e37c908f8c8e412d45ba06cbead815c6e))
+
 # 1.30.0 (2022-01-28)
 
 
