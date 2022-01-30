@@ -76,26 +76,26 @@ export class ProductPublicDto extends BaseEntityDto {
 
   /****************************** PAYPAL ******************************/
   // @Transform(({ value }) => value ?? PaypalProductTypeEnum.SERVICE)
-  @Expose()
-  paypalProductType: PaypalProductTypeEnum | null;
-
-  // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
-  @Expose()
-  paypalProductCategoryType: PaypalCategoryTypeEnum | null;
-
-  @Expose()
-  paypalProductImageUrl: string;
-
-  @Expose()
-  paypalProductHomeUrl: string;
-
-  @Transform(({ value }) => (value && isString(value) ? value : ''))
-  @Expose()
-  paypalProductId: string;
-
-  @Transform(({ value }) => value ?? {})
-  @Expose()
-  paypalResponseData: any;
+  // @Expose()
+  // paypalProductType: PaypalProductTypeEnum | null;
+  //
+  // // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
+  // @Expose()
+  // paypalProductCategoryType: PaypalCategoryTypeEnum | null;
+  //
+  // @Expose()
+  // paypalProductImageUrl: string;
+  //
+  // @Expose()
+  // paypalProductHomeUrl: string;
+  //
+  // @Transform(({ value }) => (value && isString(value) ? value : ''))
+  // @Expose()
+  // paypalProductId: string;
+  //
+  // @Transform(({ value }) => value ?? {})
+  // @Expose()
+  // paypalResponseData: any;
   /*********************************************************************/
 
   /***************************** LIMITS ********************************/
