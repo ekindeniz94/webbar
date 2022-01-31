@@ -1,3 +1,3 @@
-export * from './plan-product';
-export * from './subscription-pool';
+export * from './product';
+export * from './subscription';
 export * from './paypal';

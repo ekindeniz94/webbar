@@ -1,47 +1,83 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isString } from 'class-validator';
+import {
+  isArray,
+  IsBoolean,
+  IsDate,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  IsUrl,
+  ValidateNested
+} from 'class-validator';
 import moment from 'moment';
-import { BaseEntityDto } from '../../../../mo-core';
 import {
   DiskPerformanceTierEnum,
   PaypalCategoryTypeEnum,
   PaypalProductTypeEnum,
-  PlanStateEnum,
+  ProductStateEnum,
   ProductTypeEnum
 } from '../../enums';
-import { NamespaceColorEnum, NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { PriceIntervalDto } from '../price-interval/price-interval.dto';
-import { ClusterPublicDto } from '../cluster';
+import {
+  ALL_NAMESPACE_COLORS,
+  NamespaceColorEnum,
+  NamespaceServiceKubernetesSettingsCreateRequestDto
+} from '../../../../mo-namespace';
+import { ClusterDto } from '../cluster/cluster.dto';
+import { PriceIntervalCreateRequestDto } from '../price-interval';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
+import { UserPublicDto } from '../../../../mo-user';
 
-export class ProductPublicDto extends BaseEntityDto {
-  @Type(() => PriceIntervalDto)
+export class ProductCreateRequestDto {
+  @IsOptional()
+  @Type(() => PriceIntervalCreateRequestDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
+  @Expose()
+  priceIntervals: PriceIntervalCreateRequestDto[];
+
+  @IsOptional()
+  @Type(() => UserPublicDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  priceIntervals: PriceIntervalDto[];
+  allowedForUsers: UserPublicDto[];
 
   @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
+  @IsEnum(ProductTypeEnum)
   @Expose()
   productType: ProductTypeEnum;
 
   @Type(() => Boolean)
+  @Transform(({ value }) => value ?? false)
+  @IsOptional()
+  @IsBoolean()
   @Expose()
   bestPrice: boolean;
 
+  @Transform(({ value }) => value ?? null)
+  @IsOptional()
+  @IsString()
   @Expose()
   bestPriceTitle: string;
 
   @Transform(({ value }) => value ?? null)
+  @IsOptional()
+  @IsString()
   @Expose()
   headerIcon: string;
 
   @Transform(({ value }) => value ?? null)
+  @IsOptional()
+  @IsString()
   @Expose()
   headerText: string;
 
+  @IsString()
   @Expose()
   name: string;
 
+  @IsString()
   @Expose()
   description: string;
 
@@ -50,88 +86,111 @@ export class ProductPublicDto extends BaseEntityDto {
   @Expose()
   bulletPoints: ProductBulletPointDto[];
 
+  @IsString()
   @Expose()
   icon: string;
 
-  @Type(() => ClusterPublicDto)
+  @IsNotEmpty()
+  @Type(() => ClusterDto)
   @Expose()
-  cluster: ClusterPublicDto;
+  cluster: ClusterDto;
 
+  @IsDate()
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
   startsOn: Date;
 
+  @IsDate()
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
   endsOn: Date;
 
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   order: number;
 
-  @Transform(({ value }) => value ?? PlanStateEnum.ACTIVE)
+  @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
+  @IsEnum(ProductStateEnum)
   @Expose()
-  state: PlanStateEnum;
+  state: ProductStateEnum;
 
   /****************************** PAYPAL ******************************/
+  @IsOptional()
+  @IsEnum(PaypalProductTypeEnum)
   // @Transform(({ value }) => value ?? PaypalProductTypeEnum.SERVICE)
-  // @Expose()
-  // paypalProductType: PaypalProductTypeEnum | null;
-  //
-  // // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
-  // @Expose()
-  // paypalProductCategoryType: PaypalCategoryTypeEnum | null;
-  //
-  // @Expose()
-  // paypalProductImageUrl: string;
-  //
-  // @Expose()
-  // paypalProductHomeUrl: string;
-  //
+  @Expose()
+  paypalProductType: PaypalProductTypeEnum;
+
+  @IsOptional()
+  @IsEnum(PaypalCategoryTypeEnum)
+  // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
+  @Expose()
+  paypalProductCategoryType: PaypalCategoryTypeEnum;
+
+  @IsUrl({ require_protocol: true })
+  @Expose()
+  paypalProductImageUrl: string;
+
+  @IsUrl({ require_protocol: true })
+  @Expose()
+  paypalProductHomeUrl: string;
+
   // @Transform(({ value }) => (value && isString(value) ? value : ''))
+  // @IsString()
   // @Expose()
   // paypalProductId: string;
-  //
+
   // @Transform(({ value }) => value ?? {})
+  // @IsOptional()
   // @Expose()
   // paypalResponseData: any;
   /*********************************************************************/
 
   /***************************** LIMITS ********************************/
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
+  @ValidateNested()
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: NamespaceServiceKubernetesSettingsCreateRequestDto;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   trafficInMb: number;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   persistentDiskInMb: number;
 
+  @IsEnum(DiskPerformanceTierEnum)
   @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
   @Expose()
   diskPerformanceTier: DiskPerformanceTierEnum;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   maxContainerImageSizeInMb: number;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   dockerImageCountMax: number;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   stageCountMax: number;
 
   @Type(() => Number)
+  @IsNumber()
   @Expose()
   cNamesCountMax: number;
 
   @Type(() => Boolean)
+  @IsBoolean()
   @Expose()
   enableAnalytics: boolean;
 }

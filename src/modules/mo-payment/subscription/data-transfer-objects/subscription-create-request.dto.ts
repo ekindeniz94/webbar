@@ -5,5 +5,10 @@ export class SubscriptionCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  currencyId: string;
+  priceIntervalId: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  countryId: string;
 }

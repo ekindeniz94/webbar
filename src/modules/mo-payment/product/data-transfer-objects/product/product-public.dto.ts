@@ -1,30 +1,20 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsOptional, IsString, isString } from 'class-validator';
+import { isArray } from 'class-validator';
 import moment from 'moment';
-import { BaseEntityDto } from '../../../../mo-core';
-import {
-  DiskPerformanceTierEnum,
-  PaypalCategoryTypeEnum,
-  PaypalProductTypeEnum,
-  PlanStateEnum,
-  ProductTypeEnum
-} from '../../enums';
-import { NamespaceColorEnum, NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { PriceIntervalDto } from '../price-interval/price-interval.dto';
-import { ClusterDto } from '../cluster/cluster.dto';
+import { ProductStateEnum, ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
+import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
+import { ClusterPublicDto } from '../cluster';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { UserPublicDto } from '../../../../mo-user';
+import { PriceIntervalPublicDto } from '../price-interval';
 
-export class ProductDto extends BaseEntityDto {
-  @Type(() => PriceIntervalDto)
+export class ProductPublicDto {
+  @Expose()
+  id: string;
+
+  @Type(() => PriceIntervalPublicDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  priceIntervals: PriceIntervalDto[];
-
-  @Type(() => UserPublicDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  allowedForUsers: UserPublicDto[];
+  priceIntervals: PriceIntervalPublicDto[];
 
   @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
   @Expose()
@@ -59,9 +49,9 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   icon: string;
 
-  @Type(() => ClusterDto)
+  @Type(() => ClusterPublicDto)
   @Expose()
-  cluster: ClusterDto;
+  cluster: ClusterPublicDto;
 
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
@@ -76,32 +66,32 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   order: number;
 
-  @Transform(({ value }) => value ?? PlanStateEnum.ACTIVE)
+  @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
   @Expose()
-  state: PlanStateEnum;
+  state: ProductStateEnum;
 
   /****************************** PAYPAL ******************************/
   // @Transform(({ value }) => value ?? PaypalProductTypeEnum.SERVICE)
-  @Expose()
-  paypalProductType: PaypalProductTypeEnum | null;
-
-  // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
-  @Expose()
-  paypalProductCategoryType: PaypalCategoryTypeEnum | null;
-
-  @Expose()
-  paypalProductImageUrl: string;
-
-  @Expose()
-  paypalProductHomeUrl: string;
-
-  @Transform(({ value }) => (value && isString(value) ? value : ''))
-  @Expose()
-  paypalProductId: string;
-
-  @Transform(({ value }) => value ?? {})
-  @Expose()
-  paypalResponseData: any;
+  // @Expose()
+  // paypalProductType: PaypalProductTypeEnum | null;
+  //
+  // // @Transform(({ value }) => value ?? PaypalCategoryTypeEnum.SERVICES)
+  // @Expose()
+  // paypalProductCategoryType: PaypalCategoryTypeEnum | null;
+  //
+  // @Expose()
+  // paypalProductImageUrl: string;
+  //
+  // @Expose()
+  // paypalProductHomeUrl: string;
+  //
+  // @Transform(({ value }) => (value && isString(value) ? value : ''))
+  // @Expose()
+  // paypalProductId: string;
+  //
+  // @Transform(({ value }) => value ?? {})
+  // @Expose()
+  // paypalResponseData: any;
   /*********************************************************************/
 
   /***************************** LIMITS ********************************/
@@ -117,9 +107,9 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   persistentDiskInMb: number;
 
-  @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
-  @Expose()
-  diskPerformanceTier: DiskPerformanceTierEnum;
+  // @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
+  // @Expose()
+  // diskPerformanceTier: DiskPerformanceTierEnum;
 
   @Type(() => Number)
   @Expose()
@@ -140,4 +130,8 @@ export class ProductDto extends BaseEntityDto {
   @Type(() => Boolean)
   @Expose()
   enableAnalytics: boolean;
+
+  getPriceIntervalByInterval(interval: ProductRuntimeIntervalEnum) {
+    return this.priceIntervals.find((item: PriceIntervalPublicDto) => item.interval === interval);
+  }
 }

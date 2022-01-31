@@ -1,8 +1,8 @@
 import { SubscriptionDto } from './subscription.dto';
 import { NamespaceDto } from '../../../mo-namespace';
-import { ProductDto } from '../../plan-product';
+import { ProductDto } from '../../product';
 import { Expose, Type } from 'class-transformer';
-import { PriceIntervalDto } from '../../plan-product/data-transfer-objects/price-interval';
+import { PriceIntervalDto } from '../../product/data-transfer-objects/price-interval';
 
 export class SubscriptionListItemDto {
   @Type(() => SubscriptionDto)

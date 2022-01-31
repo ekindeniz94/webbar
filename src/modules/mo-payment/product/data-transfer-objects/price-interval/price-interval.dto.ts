@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import {isArray, isString, IsString} from 'class-validator';
 import { ProductDto } from '../product/product.dto';
 import { BaseEntityDto } from '../../../../mo-core';
-import { SubscriptionDto } from '../../../subscription-pool';
+import { SubscriptionDto } from '../../../subscription';
 import { ProductRuntimeIntervalEnum } from '../../enums';
 
 export class PriceIntervalDto extends BaseEntityDto {

@@ -1,7 +1,10 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto, GeoCoordinatesDto } from '../../../../mo-core';
+import { GeoCoordinatesDto } from '../../../../mo-core';
 
-export class ClusterPublicDto extends BaseEntityDto {
+export class ClusterPublicDto {
+  @Expose()
+  id: string;
+
   @Expose()
   region: string;
 
@@ -9,8 +12,8 @@ export class ClusterPublicDto extends BaseEntityDto {
   @Type(() => GeoCoordinatesDto)
   geoLocation: GeoCoordinatesDto;
 
-  @Expose()
-  name: string;
+  // @Expose()
+  // name: string;
 
   @Expose()
   host: string;

@@ -3,7 +3,7 @@ import { BaseEntityDto } from '../../../mo-core';
 import { UserPublicDto } from '../../../mo-user';
 import { SubscriptionStatusEnum } from '../enums';
 import { SubscriptionPoolDto } from './subscription-pool.dto';
-import { PriceIntervalDto } from '../../plan-product/data-transfer-objects/price-interval';
+import { PriceIntervalDto } from '../../product/data-transfer-objects/price-interval';
 
 export class SubscriptionDto extends BaseEntityDto {
   @Type(() => SubscriptionPoolDto)
