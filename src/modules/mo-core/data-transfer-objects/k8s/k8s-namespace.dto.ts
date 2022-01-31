@@ -8,9 +8,6 @@ export class K8sNamespaceDto {
     shortId: string;
 
     @Expose()
-    k8sName: string; // MoNamespaceUtils.kubernetesName(namespace)
-
-    @Expose()
     displayName: string;
 
     @Expose()
