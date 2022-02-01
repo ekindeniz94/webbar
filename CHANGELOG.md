@@ -2,6 +2,13 @@
 
 
 
+## 1.30.4 (2022-02-01)
+
+
+### Bug Fixes
+
+* PriceIntervalPublicDto, create subscription dto ([284587c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/284587c199b76207974b9edc1a73b155845b6317))
+
 ## 1.30.3 (2022-01-31)
 
 
