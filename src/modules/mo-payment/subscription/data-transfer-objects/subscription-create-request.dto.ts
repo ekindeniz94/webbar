@@ -10,5 +10,5 @@ export class SubscriptionCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  countryId: string;
+  countryCode: string;
 }

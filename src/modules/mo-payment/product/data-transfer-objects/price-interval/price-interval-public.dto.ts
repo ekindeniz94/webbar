@@ -1,13 +1,15 @@
-import { Expose, Transform } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { ProductRuntimeIntervalEnum } from '../../enums';
+import { ProductPublicDto } from '../product';
+import { isString } from 'class-validator';
 
 export class PriceIntervalPublicDto {
   @Expose()
   id: string;
 
-  // @Type(() => ProductPublicDto)
-  // @Expose()
-  // product: ProductPublicDto;
+  @Type(() => ProductPublicDto)
+  @Expose()
+  product: ProductPublicDto;
   //
   // @Type(() => SubscriptionDto)
   // @Transform(({ value }) => (value && isArray(value) ? value : []))
@@ -15,9 +17,9 @@ export class PriceIntervalPublicDto {
   // subscriptions: SubscriptionDto[];
 
   /****************************** PAYPAL ******************************/
-  // @Transform(({ value }) => (value && isString(value) ? value : null))
-  // @Expose()
-  // paypalPlanId: string;
+  @Transform(({ value }) => (value && isString(value) ? value : null))
+  @Expose()
+  paypalPlanId: string;
   //
   // @Transform(({ value }) => value ?? {})
   // @Expose()
