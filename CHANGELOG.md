@@ -2,6 +2,13 @@
 
 
 
+## 1.30.5 (2022-02-01)
+
+
+### Bug Fixes
+
+* add pricedto ([d7c40bd](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d7c40bdb54310375ff363c123a99c4489af704b1))
+
 ## 1.30.4 (2022-02-01)
 
 
