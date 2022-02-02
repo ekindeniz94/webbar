@@ -2,6 +2,13 @@
 
 
 
+## 1.30.7 (2022-02-02)
+
+
+### Bug Fixes
+
+* default payment currency ([08a6828](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/08a6828789cd70e5a713830e353dbc10782b45f8))
+
 ## 1.30.6 (2022-02-02)
 
 
