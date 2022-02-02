@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsOptional, IsString, isString } from 'class-validator';
+import { isArray, isString } from 'class-validator';
 import moment from 'moment';
 import { BaseEntityDto } from '../../../../mo-core';
 import {
@@ -10,7 +10,7 @@ import {
   ProductRuntimeIntervalEnum,
   ProductTypeEnum
 } from '../../enums';
-import { NamespaceColorEnum, NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
+import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
 import { PriceIntervalDto } from '../price-interval/price-interval.dto';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { ProductBulletPointDto } from './product-bullet-point.dto';

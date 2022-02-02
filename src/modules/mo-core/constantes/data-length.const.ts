@@ -1,4 +1,5 @@
 export const DTO_VALIDATION_CONST = {
+  DEFAULT_PAYMENT_CURRENCY: 'USD',
   MO_USER_DOMAINS: [
     'mogenius.app',
     'mogenius.de',
