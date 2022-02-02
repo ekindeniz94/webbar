@@ -2,6 +2,13 @@
 
 
 
+## 1.30.11 (2022-02-02)
+
+
+### Bug Fixes
+
+* progress. ([8427f1f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8427f1f499858c7eaf2be48444f8141e9ed855c8))
+
 ## 1.30.10 (2022-02-02)
 
 
