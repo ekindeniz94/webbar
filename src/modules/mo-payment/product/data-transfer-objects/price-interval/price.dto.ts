@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import {CountryDto, DTO_VALIDATION_CONST} from '../../../../mo-core';
-import { ProductRuntimeIntervalEnum } from '../../enums';
 import moment from 'moment';
+import { CountryDto, DTO_VALIDATION_CONST } from '../../../../mo-core';
+import { ProductRuntimeIntervalEnum } from '../../enums';
 import { PriceIntervalDto } from './price-interval.dto';
 
 export class PriceDto {
@@ -22,7 +22,7 @@ export class PriceDto {
   }
 
   public getNetPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${this.netPrice} ${currencyStr}` : `${this.netPrice} ${this.currencyStr}`;
+    return currencyStr ? `${+(this.netPrice).toFixed(2)} ${currencyStr}` : `${+(this.netPrice).toFixed(2)} ${this.currencyStr}`;
   }
 
   public getTaxToString(currencyStr?: string): string {
@@ -30,15 +30,15 @@ export class PriceDto {
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${this.grossPrice} ${currencyStr}` : `${this.grossPrice} ${this.currencyStr}`;
+    return currencyStr ? `${+(this.grossPrice)}.toFixed(2) ${currencyStr}` : `${+(this.grossPrice).toFixed(2)} ${this.currencyStr}`;
   }
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.currencyStr}`}`;
+      return `1 x ${currencyStr ? `${+(this.price).toFixed(2)} ${currencyStr}` : `${+(this.price).toFixed(2)} ${this.currencyStr}`}`;
     }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${currencyStr ? `${this.price} ${currencyStr}` : `${this.price} ${this.currencyStr}`}`;
+      return `12 x ${currencyStr ? `${+(this.price).toFixed(2)} ${currencyStr}` : `${+(this.price).toFixed(2)} ${this.currencyStr}`}`;
     }
     return '???';
   }
@@ -64,12 +64,12 @@ export class PriceDto {
   }
 
   public pricePerMonthToString(currencyStr?: string, monthStr?: string): string {
-    return `${this.price} ${currencyStr ?? this.currencyStr} per ${monthStr ?? 'month'}`;
+    return `${+(this.price).toFixed(2)} ${currencyStr ?? this.currencyStr} per ${monthStr ?? 'month'}`;
   }
 
   get netPrice(): number {
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return this.price;
+      return +(this.price.toFixed(2));
     }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
       return +(this.price * 12).toFixed(2);
