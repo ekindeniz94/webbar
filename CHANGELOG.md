@@ -2,6 +2,13 @@
 
 
 
+## 1.30.14 (2022-02-03)
+
+
+### Bug Fixes
+
+* update user, subscription, paypal, address DTOs ([07121c5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/07121c54bf88c1228952c3ba25f400f1a31f5677))
+
 ## 1.30.13 (2022-02-03)
 
 
