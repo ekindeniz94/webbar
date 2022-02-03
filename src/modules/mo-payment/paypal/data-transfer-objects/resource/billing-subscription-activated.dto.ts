@@ -1,9 +1,10 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { PaypalSubscriptionStatusEnum } from '../../enums';
 import { PaypalAmountDto } from './dtos/paypal-amount.dto';
 import { PaypalBillingInfoDto } from './dtos/paypal-billing-info.dto';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';
 import { PaypalResourceDto } from './paypal-resource.dto';
+import { PaypalResourceSubscriberDto } from './dtos';
 
 export class PaypalResourceBillingSubscriptionActivatedDto extends PaypalResourceDto {
   // @Expose()
@@ -21,8 +22,9 @@ export class PaypalResourceBillingSubscriptionActivatedDto extends PaypalResourc
   @Expose()
   quantity: string;
 
+  @Type(() => PaypalResourceSubscriberDto)
   @Expose()
-  subscriber: string;
+  subscriber: PaypalResourceSubscriberDto;
 
   @Expose()
   create_time: string;

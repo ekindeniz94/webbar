@@ -236,10 +236,6 @@ export const DTO_VALIDATION_CONST = {
       MIN: 2,
       MAX: 128
     },
-    COUNTRY: {
-      MIN: 2,
-      MAX: 128
-    },
     CITY: {
       MIN: 2,
       MAX: 128

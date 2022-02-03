@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, isString, IsString, MaxLength, ValidateIf } from 'class-validator';
+import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, ValidateIf } from 'class-validator';
 import { ValidateIfObjectNotEmpty } from '../../../utils';
 import { DTO_VALIDATION_CONST } from '../constantes';
 
@@ -15,7 +15,7 @@ export class AddressCreateRequestDto {
   addressLine1: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.ADDRESS_LINE1.MAX)
   @Transform(({ value }) =>
@@ -25,7 +25,7 @@ export class AddressCreateRequestDto {
   addressLine2: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.ADDRESS_LINE1.MAX)
   @Transform(({ value }) =>
@@ -66,11 +66,6 @@ export class AddressCreateRequestDto {
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
   @IsNotEmpty()
-  @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.ADDRESS.COUNTRY.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.ADDRESS.COUNTRY.MAX)
-  )
   @Expose()
   country: string;
 }

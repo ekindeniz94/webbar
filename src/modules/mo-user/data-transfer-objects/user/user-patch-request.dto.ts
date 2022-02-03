@@ -18,7 +18,7 @@ export class UserPatchRequestDto extends UserCreateRequestDto {
   address?: AddressPatchRequestDto;
 
   @IsOptional()
-  @ValidateIf((obj) => obj?.billingAddressEqualsAddress === false)
+  // @ValidateIf((obj) => obj?.billingAddressEqualsAddress === false)
   @Type(() => AddressPatchRequestDto)
   @ValidateNested()
   @Expose()

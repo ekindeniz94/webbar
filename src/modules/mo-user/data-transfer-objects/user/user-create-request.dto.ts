@@ -95,14 +95,14 @@ export class UserCreateRequestDto {
   address?: AddressCreateRequestDto;
 
   @IsOptional()
-  @ValidateIf((obj) => obj?.billingAddressEqualsAddress === false)
+  // @ValidateIf((obj) => obj?.billingAddressEqualsAddress === false)
   @Type(() => AddressCreateRequestDto)
   @ValidateNested()
   @Expose()
   billingAddress?: AddressCreateRequestDto;
 
   @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
   @IsNotEmpty()
   @IsBoolean()
   @Expose()
