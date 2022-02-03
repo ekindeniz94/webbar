@@ -2,6 +2,41 @@
 
 
 
+## 1.30.11 (2022-02-02)
+
+
+### Bug Fixes
+
+* progress. ([8427f1f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8427f1f499858c7eaf2be48444f8141e9ed855c8))
+
+## 1.30.10 (2022-02-02)
+
+
+### Bug Fixes
+
+* progress. ([358dbeb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/358dbeb3e0ba7185246ca7102da78949be2d265e))
+
+## 1.30.9 (2022-02-02)
+
+
+### Bug Fixes
+
+* progress. ([2947735](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2947735547e711cc46badffe3997f71847ff91d9))
+
+## 1.30.8 (2022-02-02)
+
+
+### Bug Fixes
+
+* progress. ([4e54b7d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4e54b7d36be74872188a51752acea0497b58d401))
+
+## 1.30.7 (2022-02-02)
+
+
+### Bug Fixes
+
+* default payment currency ([08a6828](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/08a6828789cd70e5a713830e353dbc10782b45f8))
+
 ## 1.30.6 (2022-02-02)
 
 

@@ -39,6 +39,7 @@ export class MoNamespaceUtils {
     } else {
       fromMoment = toMoment.clone().set('date', subscriptionDate.date());
     }
-    return toMoment.diff(fromMoment, 'days');
+    const result = toMoment.diff(fromMoment, 'days');
+    return result <= 0 ? 1 : result;
   }
 }
