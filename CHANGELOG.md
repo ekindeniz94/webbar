@@ -2,6 +2,13 @@
 
 
 
+## 1.30.12 (2022-02-03)
+
+
+### Bug Fixes
+
+* user DTOs update ([209d15b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/209d15bed0c4ba4f715a51b22fcb919e5ac75214))
+
 ## 1.30.11 (2022-02-02)
 
 
