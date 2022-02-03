@@ -116,7 +116,23 @@ export class ProductDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
+  trafficWarning: number;
+
+  @Type(() => Number)
+  @Expose()
+  trafficShutdown: number;
+
+  @Type(() => Number)
+  @Expose()
   persistentDiskInMb: number;
+
+  @Type(() => Number)
+  @Expose()
+  persistentDiskWarning: number;
+
+  @Type(() => Number)
+  @Expose()
+  persistentDiskShutdown: number;
 
   @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
   @Expose()

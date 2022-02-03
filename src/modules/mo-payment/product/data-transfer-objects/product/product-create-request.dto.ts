@@ -162,7 +162,27 @@ export class ProductCreateRequestDto {
   @Type(() => Number)
   @IsNumber()
   @Expose()
+  trafficWarning: number;
+
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
+  trafficShutdown: number;
+
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
   persistentDiskInMb: number;
+
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
+  persistentDiskWarning: number;
+
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
+  persistentDiskShutdown: number;
 
   @IsEnum(DiskPerformanceTierEnum)
   @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
