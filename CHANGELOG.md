@@ -2,6 +2,13 @@
 
 
 
+## 1.30.13 (2022-02-03)
+
+
+### Bug Fixes
+
+* adding waring, shutdown values to product ([8d6462b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8d6462b0e55b28a37bfeca612e04604cbbef115c))
+
 ## 1.30.12 (2022-02-03)
 
 
