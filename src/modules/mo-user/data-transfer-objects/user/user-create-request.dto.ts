@@ -13,9 +13,9 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { AddressCreateRequestDto, DTO_VALIDATION_CONST, IsSemanticVersion } from '../../../mo-core';
+import { AddressCreateRequestDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { GroupDto } from '../group';
-import { UserCompanyPatchRequestDto } from './company/user-company-patch-request.dto';
+import {UserCompanyCreateRequestDto} from "./company";
 
 export class UserCreateRequestDto {
   @IsOptional()
@@ -83,10 +83,10 @@ export class UserCreateRequestDto {
   phoneNumber?: string;
 
   @IsOptional()
-  @Type(() => UserCompanyPatchRequestDto)
+  @Type(() => UserCompanyCreateRequestDto)
   @ValidateNested()
   @Expose()
-  company?: UserCompanyPatchRequestDto;
+  company?: UserCompanyCreateRequestDto;
 
   @IsOptional()
   @Type(() => AddressCreateRequestDto)
@@ -115,11 +115,11 @@ export class UserCreateRequestDto {
   @Expose()
   isActive: boolean;
 
-  @IsNotEmpty()
-  @IsString()
-  @IsSemanticVersion()
-  @Expose()
-  agreedPrivacyTermsConditionsVersion: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // @IsSemanticVersion()
+  // @Expose()
+  // agreedPrivacyTermsConditionsVersion: string;
 
   @IsOptional()
   @Type(() => GroupDto)

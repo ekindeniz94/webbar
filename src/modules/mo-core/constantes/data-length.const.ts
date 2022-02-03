@@ -1,5 +1,6 @@
 export const DTO_VALIDATION_CONST = {
   DEFAULT_PAYMENT_CURRENCY: 'USD',
+  PRIVACY_TERMS_CONDITIONS_VERSION: '1.0.0', // temporary
   MO_USER_DOMAINS: [
     'mogenius.app',
     'mogenius.de',
@@ -183,7 +184,7 @@ export const DTO_VALIDATION_CONST = {
     MATCHES: /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*?[^\w\s]|.*?_|.*?\.).{6,129}$/
   },
   PHONE_NUMBER_PREFIX: {
-    MAX: 3
+    MAX: 10
   },
   PHONE_NUMBER: {
     MAX: 128

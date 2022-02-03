@@ -3,7 +3,6 @@ export * from './reset-password';
 export * from './user.dto';
 export * from './user-public.dto';
 export * from './user-register-request.dto';
-export * from './user-register-response.dto';
 export * from './user-patch-request.dto';
 export * from './user-phone-patch-request.dto';
 export * from './email-confirmation-message.dto';

@@ -49,6 +49,12 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   isSuperAdmin: boolean;
 
+  @Expose()
+  agreedPrivacyTermsConditionsVersion: string;
+
+  @Expose()
+  agreedPrivacyTermsConditionsDate: Date;
+
   @IsOptional()
   @Type(() => GroupDto)
   @Expose()
