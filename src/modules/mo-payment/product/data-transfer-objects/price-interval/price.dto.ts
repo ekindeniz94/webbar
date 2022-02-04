@@ -26,7 +26,7 @@ export class PriceDto {
   }
 
   public getTaxToString(currencyStr?: string): string {
-    return currencyStr ? `${currencyStr}${+(this.tax).toFixed(2)}` : `${this.currencyStr}${+(this.tax).toFixed(2)}`;
+    return currencyStr ? `${currencyStr}${this.tax.toFixed(2)}` : `${this.currencyStr}${this.tax.toFixed(2)}`;
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
