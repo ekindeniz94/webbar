@@ -22,7 +22,7 @@ export class PriceDto {
   }
 
   public getNetPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${currencyStr}${+(this.netPrice).toFixed(2)}` : `${this.currencyStr}${+(this.netPrice).toFixed(2)}`;
+    return currencyStr ? `${currencyStr}${this.netPrice.toFixed(2)}` : `${this.currencyStr}${this.netPrice.toFixed(2)}`;
   }
 
   public getTaxToString(currencyStr?: string): string {
@@ -30,15 +30,15 @@ export class PriceDto {
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${currencyStr}${+(this.grossPrice).toFixed(2)}` : `${this.currencyStr}${+(this.grossPrice).toFixed(2)}`;
+    return currencyStr ? `${currencyStr}${this.grossPrice.toFixed(2)}` : `${this.currencyStr}${this.grossPrice.toFixed(2)}`;
   }
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${currencyStr}${+(this.price).toFixed(2)}` : `${this.currencyStr}${+(this.price).toFixed(2)}`}`;
+      return `1 x ${currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`}`;
     }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${currencyStr ? `${currencyStr}${+(this.price).toFixed(2)}` : `${this.currencyStr}${+(this.price).toFixed(2)}`}`;
+      return `12 x ${currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`}`;
     }
     return '???';
   }
@@ -64,7 +64,7 @@ export class PriceDto {
   }
 
   public pricePerMonthToString(currencyStr?: string, monthStr?: string): string {
-    return `${+(this.price).toFixed(2)} ${currencyStr ?? this.currencyStr} per ${monthStr ?? 'month'}`;
+    return `${this.price.toFixed(2)} ${currencyStr ?? this.currencyStr} per ${monthStr ?? 'month'}`;
   }
 
   get netPrice(): number {
