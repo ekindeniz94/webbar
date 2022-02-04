@@ -2,6 +2,13 @@
 
 
 
+## 1.30.15 (2022-02-04)
+
+
+### Bug Fixes
+
+* update price dto ([56e9eb1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/56e9eb112de381f9e8078d4f4353c7c9d705eb98))
+
 ## 1.30.14 (2022-02-03)
 
 
