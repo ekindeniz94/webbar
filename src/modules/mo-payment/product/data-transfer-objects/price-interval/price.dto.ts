@@ -22,42 +22,42 @@ export class PriceDto {
   }
 
   public getNetPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${+(this.netPrice).toFixed(2)} ${currencyStr}` : `${+(this.netPrice).toFixed(2)} ${this.currencyStr}`;
+    return currencyStr ? `${currencyStr}${+(this.netPrice).toFixed(2)}` : `${this.currencyStr}${+(this.netPrice).toFixed(2)}`;
   }
 
   public getTaxToString(currencyStr?: string): string {
-    return currencyStr ? `${+(this.tax).toFixed(2)} ${currencyStr}` : `${+(this.tax).toFixed(2)} ${this.currencyStr}`;
+    return currencyStr ? `${currencyStr}${+(this.tax).toFixed(2)}` : `${this.currencyStr}${+(this.tax).toFixed(2)}`;
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${+(this.grossPrice)}.toFixed(2) ${currencyStr}` : `${+(this.grossPrice).toFixed(2)} ${this.currencyStr}`;
+    return currencyStr ? `${currencyStr}${+(this.grossPrice).toFixed(2)}` : `${this.currencyStr}${+(this.grossPrice).toFixed(2)}`;
   }
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${+(this.price).toFixed(2)} ${currencyStr}` : `${+(this.price).toFixed(2)} ${this.currencyStr}`}`;
+      return `1 x ${currencyStr ? `${currencyStr}${+(this.price).toFixed(2)}` : `${this.currencyStr}${+(this.price).toFixed(2)}`}`;
     }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${currencyStr ? `${+(this.price).toFixed(2)} ${currencyStr}` : `${+(this.price).toFixed(2)} ${this.currencyStr}`}`;
+      return `12 x ${currencyStr ? `${currencyStr}${+(this.price).toFixed(2)}` : `${this.currencyStr}${+(this.price).toFixed(2)}`}`;
     }
     return '???';
   }
 
   public intervalDateToString(format: string = 'DD.MM.YYYY'): string {
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return `${moment().format(format)} - ${moment().add(30, 'day').format(format)}`;
     }
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
       return `${moment().format(format)} - ${moment().add(1, 'year').subtract(1, 'day').format(format)}`;
     }
     return '???';
   }
 
   public autoRenewAt(format: string = 'DD.MM.YYYY'): string {
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return `${moment().add(31, 'day').format(format)}`;
     }
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
       return `${moment().add(1, 'year').format(format)}`;
     }
     return '???';
@@ -68,10 +68,10 @@ export class PriceDto {
   }
 
   get netPrice(): number {
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return +(this.price.toFixed(2));
     }
-    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
       return +(this.price * 12).toFixed(2);
     }
     return 0;
