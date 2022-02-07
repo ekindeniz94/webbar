@@ -10,5 +10,5 @@ export class ProductHomepageDto {
 
   @Type(() => CountryDto)
   @Expose()
-  country: CountryDto[];
+  country: CountryDto;
 }
