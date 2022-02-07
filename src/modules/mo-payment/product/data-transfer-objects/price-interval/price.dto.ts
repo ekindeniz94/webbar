@@ -12,13 +12,17 @@ export class PriceDto {
   @Type(() => CountryDto)
   @Expose()
   country: CountryDto;
-  
-  get currencyStr():string{
-    return DTO_VALIDATION_CONST.DEFAULT_PAYMENT_CURRENCY
+
+  get currencyStr(): string {
+    return DTO_VALIDATION_CONST.DEFAULT_PAYMENT_CURRENCY;
   }
 
   get price(): number {
     return +(this.priceInterval.price / 100).toFixed(2);
+  }
+
+  get strikeThroughPrice(): number {
+    return +(this.priceInterval.strikethroughPrice / 100).toFixed(2);
   }
 
   public getNetPriceToString(currencyStr?: string): string {
@@ -30,15 +34,21 @@ export class PriceDto {
   }
 
   public getGrossPriceToString(currencyStr?: string): string {
-    return currencyStr ? `${currencyStr}${this.grossPrice.toFixed(2)}` : `${this.currencyStr}${this.grossPrice.toFixed(2)}`;
+    return currencyStr
+      ? `${currencyStr}${this.grossPrice.toFixed(2)}`
+      : `${this.currencyStr}${this.grossPrice.toFixed(2)}`;
   }
 
   public intervalPriceToString(currencyStr?: string): string {
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `1 x ${currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`}`;
+      return `1 x ${
+        currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`
+      }`;
     }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `12 x ${currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`}`;
+      return `12 x ${
+        currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`
+      }`;
     }
     return '???';
   }
@@ -69,7 +79,7 @@ export class PriceDto {
 
   get netPrice(): number {
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return +(this.price.toFixed(2));
+      return +this.price.toFixed(2);
     }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
       return +(this.price * 12).toFixed(2);
