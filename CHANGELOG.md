@@ -2,6 +2,27 @@
 
 
 
+## 1.30.25 (2022-02-07)
+
+
+### Bug Fixes
+
+* strike through price to Price.Dto. ([9c44b30](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9c44b301ca50e197ff5a8f6aeb11c8f340801982))
+
+## 1.30.24 (2022-02-07)
+
+
+### Bug Fixes
+
+* strike through price to Price.Dto. ([9d7251c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9d7251c9c7b55d7a4ab01a78d786e0e37b5fca0e))
+
+## 1.30.23 (2022-02-07)
+
+
+### Bug Fixes
+
+* progress. ([ee65976](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ee65976ba91c1dde681774cff1a8f878a86a8f69))
+
 ## 1.30.22 (2022-02-07)
 
 
