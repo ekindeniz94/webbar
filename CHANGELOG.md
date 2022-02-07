@@ -2,6 +2,13 @@
 
 
 
+## 1.30.20 (2022-02-07)
+
+
+### Bug Fixes
+
+* fixed homepage-product-dto ([e186394](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e1863945dd0616af2bf8aef598b3308068cece2d))
+
 ## 1.30.19 (2022-02-07)
 
 
