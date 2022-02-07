@@ -22,7 +22,7 @@ export class PriceDto {
   }
 
   get strikeThroughPrice(): number {
-    return +(this.priceInterval.strikethroughPrice / 100).toFixed(2);
+    return +this.priceInterval.strikethroughPrice.toFixed(2);
   }
 
   public getNetPriceToString(currencyStr?: string): string {
