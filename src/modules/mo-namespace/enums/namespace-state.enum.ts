@@ -6,7 +6,8 @@ export enum NamespaceStateEnum {
   SUSPENDED = 'suspended',
   DISABLED = 'disabled',
   DELETED = 'deleted',
-  WARNING = 'WARNING'
+  WARNING = 'WARNING',
+  INFO = 'INFO'
 }
 
 export const ALL_NAMESPACE_STATES = [
@@ -17,5 +18,6 @@ export const ALL_NAMESPACE_STATES = [
   NamespaceStateEnum.SUSPENDED,
   NamespaceStateEnum.DISABLED,
   NamespaceStateEnum.DELETED,
-  NamespaceStateEnum.WARNING
+  NamespaceStateEnum.WARNING,
+  NamespaceStateEnum.INFO
 ];
