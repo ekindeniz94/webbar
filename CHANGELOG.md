@@ -2,6 +2,13 @@
 
 
 
+## 1.30.26 (2022-02-07)
+
+
+### Bug Fixes
+
+* removed services from namespace dto. ([739d299](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/739d299565b69ca382003abdb7e651d03dd01226))
+
 ## 1.30.25 (2022-02-07)
 
 
