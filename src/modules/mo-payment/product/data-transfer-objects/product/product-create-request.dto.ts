@@ -1,5 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
+  ArrayMinSize,
+  ArrayNotEmpty,
   isArray,
   IsBoolean,
   IsDate,
@@ -19,11 +21,7 @@ import {
   ProductStateEnum,
   ProductTypeEnum
 } from '../../enums';
-import {
-  ALL_NAMESPACE_COLORS,
-  NamespaceColorEnum,
-  NamespaceServiceKubernetesSettingsCreateRequestDto
-} from '../../../../mo-namespace';
+import { NamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../../mo-namespace';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { PriceIntervalCreateRequestDto } from '../price-interval';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
@@ -33,6 +31,8 @@ export class ProductCreateRequestDto {
   @IsOptional()
   @Type(() => PriceIntervalCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ArrayNotEmpty()
+  @ArrayMinSize(1)
   @ValidateNested()
   @Expose()
   priceIntervals: PriceIntervalCreateRequestDto[];
