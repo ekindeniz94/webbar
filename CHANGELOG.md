@@ -2,6 +2,13 @@
 
 
 
+## 1.30.27 (2022-02-09)
+
+
+### Bug Fixes
+
+* add serviceCount to namespace-stage dto ([ef24ae6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ef24ae66e6a7f139b49dbb14d23cf5c5e4fc05b0))
+
 ## 1.30.26 (2022-02-07)
 
 
