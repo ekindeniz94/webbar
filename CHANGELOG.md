@@ -2,6 +2,13 @@
 
 
 
+## 1.30.28 (2022-02-09)
+
+
+### Bug Fixes
+
+* create product validation ([ff5518f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ff5518f75b3912cae9eaab949c3aa76026bd7ce8))
+
 ## 1.30.27 (2022-02-09)
 
 
