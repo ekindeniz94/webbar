@@ -2,6 +2,13 @@
 
 
 
+## 1.30.29 (2022-02-09)
+
+
+### Bug Fixes
+
+* add upgrade namespace dto ([796ebb3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/796ebb39646b489b6ecf5ff335a53092165fef72))
+
 ## 1.30.28 (2022-02-09)
 
 
