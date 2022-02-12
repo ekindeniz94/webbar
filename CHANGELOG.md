@@ -2,6 +2,13 @@
 
 
 
+## 1.30.30 (2022-02-12)
+
+
+### Bug Fixes
+
+* type number/ boolean, refactoring payment (rm cluster, add to namespace) ([5ccd0b7](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5ccd0b7b54523ca267ea69581bb8e272197841c9))
+
 ## 1.30.29 (2022-02-09)
 
 
