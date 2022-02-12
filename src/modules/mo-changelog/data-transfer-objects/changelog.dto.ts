@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 import { BaseEntityDto } from '../../mo-core';
 
 export class ChangelogDto extends BaseEntityDto {
@@ -11,6 +11,7 @@ export class ChangelogDto extends BaseEntityDto {
   @Expose()
   logText: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 }

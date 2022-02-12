@@ -35,6 +35,7 @@ export class RegisterBetaRequestDto extends BaseEntityDto {
   @Expose()
   role: RegisterBetaRoleEnum;
 
+  @Type(() => Boolean)
   @IsOptional()
   @IsBoolean()
   @Expose()

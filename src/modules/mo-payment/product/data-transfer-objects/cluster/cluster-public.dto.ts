@@ -12,8 +12,8 @@ export class ClusterPublicDto {
   @Type(() => GeoCoordinatesDto)
   geoLocation: GeoCoordinatesDto;
 
-  // @Expose()
-  // name: string;
+  @Expose()
+  name: string;
 
   @Expose()
   host: string;

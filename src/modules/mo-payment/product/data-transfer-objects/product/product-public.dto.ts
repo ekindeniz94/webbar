@@ -3,7 +3,7 @@ import { isArray } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { ClusterPublicDto } from '../cluster';
+import { ClusterDto, ClusterPublicDto } from '../cluster';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { PriceIntervalPublicDto } from '../price-interval';
 
@@ -49,9 +49,10 @@ export class ProductPublicDto {
   @Expose()
   icon: string;
 
-  @Type(() => ClusterPublicDto)
-  @Expose()
-  cluster: ClusterPublicDto;
+  // @Type(() => ClusterPublicDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @Expose()
+  // clusterList: ClusterPublicDto[];
 
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
@@ -61,6 +62,7 @@ export class ProductPublicDto {
   @Expose()
   endsOn: Date;
 
+  @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @Expose()

@@ -1,6 +1,7 @@
-import { Expose } from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 
 export class GithubRepositoryDto {
+  @Type(() => Number)
   @Expose()
   id: number;
 
@@ -27,6 +28,7 @@ export class GithubRepositoryDto {
   @Expose()
   permissions: any;
 
+  @Type(() => Number)
   @Expose()
   size: number;
 

@@ -37,6 +37,7 @@ export class ServiceDto extends BaseEntityDto {
   @Expose()
   internalPort: number;
 
+  @Type(() => Boolean)
   @Expose()
   expose: boolean;
 

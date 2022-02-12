@@ -33,6 +33,7 @@ export class FileDto extends BaseEntityDto {
   @Expose()
   fullOriginName: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 

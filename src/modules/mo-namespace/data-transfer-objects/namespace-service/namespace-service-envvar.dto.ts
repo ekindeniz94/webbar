@@ -1,4 +1,4 @@
-import { Expose, Transform } from 'class-transformer';
+import {Expose, Transform, Type} from 'class-transformer';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core/data-transfer-objects/base.entity.dto';
@@ -19,24 +19,28 @@ export class NamespaceServiceEnvVarDto extends BaseEntityDto {
   @Expose()
   type: NamespaceServiceEnvVarTypeEnum;
 
+  @Type(() => Boolean)
   @IsOptional()
   @IsBoolean()
   @Transform(({ value }) => (value === undefined ? false : value))
   @Expose()
   deactivateName: boolean;
 
+  @Type(() => Boolean)
   @IsOptional()
   @IsBoolean()
   @Transform(({ value }) => (value === undefined ? false : value))
   @Expose()
   deactivateValue: boolean;
 
+  @Type(() => Boolean)
   @IsOptional()
   @IsBoolean()
   @Expose()
   @Transform(({ value }) => (value === undefined ? false : value))
   deactivateType: boolean;
 
+  @Type(() => Boolean)
   @IsOptional()
   @IsBoolean()
   @Expose()

@@ -18,9 +18,11 @@ export class FileTranslationDto extends BaseEntityDto {
   @Expose()
   caption: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 
+  @Type(() => Boolean)
   @Expose()
   defaultTranslation: boolean;
 

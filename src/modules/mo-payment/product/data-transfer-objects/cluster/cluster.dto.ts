@@ -1,7 +1,22 @@
-import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto, GeoCoordinatesDto } from '../../../../mo-core';
+import { Expose, Transform, Type } from 'class-transformer';
+import { BaseEntityDto, CountryDto, GeoCoordinatesDto } from '../../../../mo-core';
+import { ProductDto } from '../product';
+import { isArray } from 'class-validator';
 
 export class ClusterDto extends BaseEntityDto {
+  @Type(() => ProductDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  products: ProductDto[];
+
+  @Type(() => CountryDto)
+  @Expose()
+  country: CountryDto;
+
+  @Type(() => Number)
+  @Expose()
+  namespaceMaxCount: number;
+
   @Expose()
   region: string;
 

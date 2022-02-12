@@ -32,6 +32,7 @@ export class PaypalResourceBillingSubscriptionActivatedDto extends PaypalResourc
   @Expose()
   custom_id: string;
 
+  @Type(() => Boolean)
   @Expose()
   plan_overridden: boolean;
 

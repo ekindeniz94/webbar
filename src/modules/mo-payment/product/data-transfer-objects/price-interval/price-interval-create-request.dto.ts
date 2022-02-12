@@ -14,6 +14,7 @@ export class PriceIntervalCreateRequestDto {
   @Expose()
   interval: ProductRuntimeIntervalEnum;
 
+  @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)

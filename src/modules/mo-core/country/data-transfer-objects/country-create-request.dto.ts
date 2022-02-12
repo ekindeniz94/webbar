@@ -13,6 +13,7 @@ export class CountryCreateRequestDto {
   @Expose()
   code3: string;
 
+  @Type(() => Number)
   @IsNotEmpty()
   @IsNumber()
   @Expose()
@@ -45,11 +46,13 @@ export class CountryCreateRequestDto {
   @Expose()
   capitalCity: string;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @IsNumber()
   @Expose()
   capitalCityLat: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @IsNumber()
   @Expose()

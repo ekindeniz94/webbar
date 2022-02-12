@@ -105,17 +105,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 5000
       }
     },
-    HTML: {
-      DOCUMENT_ROOT: {
-        MIN: 3,
-        MAX: 256
-      }
-    },
     SERVICE: {
-      BRANCH_NAME: {
-        MIN: 1,
-        MAX: 256
-      },
       DISPLAY_NAME: {
         MIN: 3,
         MAX: 128
@@ -124,17 +114,6 @@ export const DTO_VALIDATION_CONST = {
         MIN: 3,
         MAX: 14,
         MATCHES: /^([a-z])([a-z0-9-])/
-      },
-      DESCRIPTION: {
-        MAX: 512
-      },
-      GIT_REPOSITORY: {
-        MIN: 10,
-        MAX: 1028
-      },
-      GROUPNAME: {
-        MIN: 5,
-        MAX: 100
       },
       ENVVAR_NAME: {
         MATCHES: /^[a-zA-Z0-9-_]{3,50}$/,

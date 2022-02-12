@@ -22,6 +22,7 @@ export class FilePublicDto extends BaseEntityDto {
   @Expose()
   altText: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 

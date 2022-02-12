@@ -19,6 +19,7 @@ export class JobDto extends BaseEntityDto {
   @Expose()
   translations: JobTranslationDto[];
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 }

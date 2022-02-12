@@ -21,9 +21,11 @@ export class JobTranslationDto extends BaseEntityDto {
   @Expose()
   seoUrl: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 
+  @Type(() => Boolean)
   @Expose()
   defaultTranslation: boolean;
 

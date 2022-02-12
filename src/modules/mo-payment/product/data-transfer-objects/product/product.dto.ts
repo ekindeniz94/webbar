@@ -61,8 +61,9 @@ export class ProductDto extends BaseEntityDto {
   icon: string;
 
   @Type(() => ClusterDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  cluster: ClusterDto;
+  clusterList: ClusterDto[];
 
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
@@ -72,6 +73,7 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   endsOn: Date;
 
+  @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @Expose()

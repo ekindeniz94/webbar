@@ -51,43 +51,31 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DESCRIPTION.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DESCRIPTION.MAX
-    )
-  )
   @Expose()
   description: string;
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitRepoTransform(params))
   @Expose()
   gitRepository: string;
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MIN)
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitBranchTransform(params))
   @Expose()
   gitBranch: string;
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
-    )
-  )
   @Expose()
   dockerfileName: string;
+
+  @IsOptional()
+  @IsString()
+  @Transform(({ value }) => value ?? '.')
+  @Expose()
+  dockerContext: string;
 
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
@@ -99,12 +87,14 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   cNames: string[];
 
+  @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
   @Expose()
   internalPort: number;
 
+  @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
@@ -117,21 +107,25 @@ export class NamespaceServiceCreateRequestDto {
   // @Expose()
   // ports: NamespaceServicePortCreateRequestDto[];
 
+  @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   addTcpPort: boolean;
 
+  @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   tcpPortSpectrumEnableTls: boolean;
 
+  @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   addUdpPort: boolean;
 
+  @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
@@ -169,10 +163,7 @@ export class NamespaceServiceCreateRequestDto {
     if (value instanceof GithubBranchDto) {
       value = value.name;
     }
-    return (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX
-    );
+    return value && isString(value) ? value.trim() : value;
   }
 
   public static gitRepoTransform(params: TransformFnParams): string {
@@ -180,9 +171,6 @@ export class NamespaceServiceCreateRequestDto {
     if (value instanceof GithubRepositoryDto) {
       value = value.clone_url;
     }
-    return (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX
-    );
+    return value && isString(value) ? value.trim() : value;
   }
 }

@@ -1,4 +1,4 @@
-import { Expose, Transform } from 'class-transformer';
+import {Expose, Transform, Type} from 'class-transformer';
 import { IsNotEmpty, IsNumber, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 
@@ -11,42 +11,25 @@ export class NamespaceServiceDockerK8sPatchRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX
-    )
-  )
   @Expose()
   gitRepository: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.BRANCH_NAME.MAX
-    )
-  )
   @Expose()
   gitBranch: string;
 
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX)
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MIN)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
-    )
-  )
   @Expose()
   dockerfileName: string;
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  dockerContext: string;
+
+  @Type(() => Number)
   @IsOptional()
   @IsNumber()
   @Expose()

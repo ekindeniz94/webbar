@@ -29,10 +29,12 @@ export class PriceIntervalDto extends BaseEntityDto {
   @Expose()
   interval: ProductRuntimeIntervalEnum;
 
+  @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Expose()
   price: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Expose()
   strikethroughPrice: number;

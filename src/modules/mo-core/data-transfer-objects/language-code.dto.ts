@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 
 export class LanguageCodeDto {
   @Expose()
@@ -7,6 +7,7 @@ export class LanguageCodeDto {
   @Expose()
   language: string;
 
+  @Type(() => Boolean)
   @Expose()
   isActive: boolean;
 }

@@ -24,9 +24,11 @@ export class BlogTranslationDto extends BaseEntityDto {
   @Expose()
   seoUrl: string;
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 
+  @Type(() => Boolean)
   @Expose()
   defaultTranslation: boolean;
 

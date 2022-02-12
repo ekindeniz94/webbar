@@ -39,6 +39,7 @@ export class DockerTemplateDto {
   @Expose()
   internalPort: number;
 
+  @Type(() => Boolean)
   @IsNotEmpty()
   @IsBoolean()
   @Expose()

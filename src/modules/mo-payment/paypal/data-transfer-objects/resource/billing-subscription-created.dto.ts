@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 import { PaypalSubscriptionStatusEnum } from '../../enums';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';
 import {PaypalResourceDto} from "./paypal-resource.dto";
@@ -13,6 +13,7 @@ export class PaypalResourceBillingSubscriptionCreatedDto extends PaypalResourceD
   @Expose()
   status: PaypalSubscriptionStatusEnum;
 
+  @Type(() => Boolean)
   @Expose()
   plan_overridden: boolean;
 

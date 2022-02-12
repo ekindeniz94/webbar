@@ -1,20 +1,23 @@
-import { Expose, Transform } from 'class-transformer';
+import {Expose, Transform, Type} from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, isNumberString } from 'class-validator';
 import { NamespaceServiceDeploymentStrategyEnum } from '../../enums';
 
 export class NamespaceServiceKubernetesSettingsCreateRequestDto {
+  @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
   @Expose()
   limitMemoryMB: number;
 
+  @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => (isNumberString(value) ? parseFloat(value) : value))
   @IsNumber()
   @Expose()
   limitCpuCores: number;
 
+  @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
@@ -27,6 +30,7 @@ export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   @Expose()
   deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
 
+  @Type(() => Number)
   @Expose()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNotEmpty()

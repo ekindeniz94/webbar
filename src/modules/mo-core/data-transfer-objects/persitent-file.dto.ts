@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import {Expose, Type} from 'class-transformer';
 import { PersistentFileTypeEnum } from '../enums';
 
 export class PersistentFileDto {
@@ -11,12 +11,14 @@ export class PersistentFileDto {
   @Expose()
   relativePath: string;
 
+  @Type(() => Boolean)
   @Expose()
   isSymbolicLink: boolean;
 
   @Expose()
   extension?: string;
 
+  @Type(() => Number)
   @Expose()
   sizeInBytes: number;
 

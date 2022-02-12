@@ -26,21 +26,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   name: string;
 
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DESCRIPTION.MAX
-    )
-  )
   @Expose()
   description: string;
 
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.GIT_REPOSITORY.MAX
-    )
-  )
   @Expose()
   gitRepository: string;
 
@@ -48,12 +36,6 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   gitBranch: string;
 
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      DTO_VALIDATION_CONST.NAMESPACE.HTML.DOCUMENT_ROOT.MAX
-    )
-  )
   @Expose()
   dockerfileName: string;
 
@@ -61,9 +43,11 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   cNames: string[];
 
+  @Type(() => Number)
   @Expose()
   internalPort: number;
 
+  @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   expose: boolean;

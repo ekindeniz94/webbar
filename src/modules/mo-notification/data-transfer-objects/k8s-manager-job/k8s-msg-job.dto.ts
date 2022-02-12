@@ -12,6 +12,7 @@ export class K8sMsgJobDto {
   @Expose()
   data: K8sMsgTaskDto[];
 
+  @Type(() => Boolean)
   @Expose()
   finished: boolean;
 }

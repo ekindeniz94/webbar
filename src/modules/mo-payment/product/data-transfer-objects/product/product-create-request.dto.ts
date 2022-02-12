@@ -28,7 +28,7 @@ import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { UserPublicDto } from '../../../../mo-user';
 
 export class ProductCreateRequestDto {
-  @IsOptional()
+  @IsNotEmpty()
   @Type(() => PriceIntervalCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ArrayNotEmpty()
@@ -36,6 +36,14 @@ export class ProductCreateRequestDto {
   @ValidateNested()
   @Expose()
   priceIntervals: PriceIntervalCreateRequestDto[];
+
+  @IsNotEmpty()
+  @Type(() => ClusterDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ArrayNotEmpty()
+  @ArrayMinSize(1)
+  @Expose()
+  clusterList: ClusterDto[];
 
   @IsOptional()
   @Type(() => UserPublicDto)
@@ -90,11 +98,6 @@ export class ProductCreateRequestDto {
   @Expose()
   icon: string;
 
-  @IsNotEmpty()
-  @Type(() => ClusterDto)
-  @Expose()
-  cluster: ClusterDto;
-
   @IsDate()
   @Transform(({ value }) => moment(value).toDate())
   @Expose()
@@ -105,6 +108,7 @@ export class ProductCreateRequestDto {
   @Expose()
   endsOn: Date;
 
+  @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @IsNumber()

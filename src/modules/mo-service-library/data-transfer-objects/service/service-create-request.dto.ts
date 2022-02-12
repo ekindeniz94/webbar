@@ -47,6 +47,7 @@ export class ServiceCreateRequestDto {
   @IsNumber()
   internalPort: number;
 
+  @Type(() => Boolean)
   @Expose()
   @IsBoolean()
   expose: boolean;

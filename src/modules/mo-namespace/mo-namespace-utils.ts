@@ -3,7 +3,8 @@ import { NamespaceDto, NamespaceServiceDto, NamespaceStageDto } from './data-tra
 
 export class MoNamespaceUtils {
   static fullHostname(namespace: NamespaceDto, stage?: NamespaceStageDto, service?: NamespaceServiceDto): string {
-    let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.subscription.priceInterval.product.cluster.host}`;
+    // let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.subscription.priceInterval.product.cluster.host}`;
+    let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.cluster.host}`;
     if (stage) {
       hostname = `${stage.subdomain}-${hostname}`;
     }

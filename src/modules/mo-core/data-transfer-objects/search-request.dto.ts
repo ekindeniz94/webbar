@@ -1,4 +1,4 @@
-import { Expose, Transform } from 'class-transformer';
+import {Expose, Transform, Type} from 'class-transformer';
 import { isEnum, IsEnum, IsNumber, IsOptional, isString, IsString } from 'class-validator';
 import { OrderEnum } from '../enums';
 
@@ -9,6 +9,7 @@ export class SearchRequestDto {
   @Expose()
   searchString: string;
 
+  @Type(() => Number)
   @IsOptional()
   @IsNumber()
   @Transform(({ value }) => (value ? Number(value) : 1))

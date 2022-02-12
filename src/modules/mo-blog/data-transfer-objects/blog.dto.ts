@@ -22,6 +22,7 @@ export class BlogDto extends BaseEntityDto {
   @Expose()
   translations: BlogTranslationDto[];
 
+  @Type(() => Boolean)
   @Expose()
   published: boolean;
 }

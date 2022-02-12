@@ -9,6 +9,7 @@ export class CountryDto {
   @Expose()
   code3: string;
 
+  @Type(() => Number)
   @Expose()
   isoId: number;
 
@@ -21,6 +22,7 @@ export class CountryDto {
   @Expose()
   currencyName: string;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @Expose()
   taxPercent: number;
@@ -31,10 +33,12 @@ export class CountryDto {
   @Expose()
   capitalCity: string;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @Expose()
   capitalCityLat: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value && IsNumber(value) ? value : 0.0))
   @Expose()
   capitalCityLng: number;

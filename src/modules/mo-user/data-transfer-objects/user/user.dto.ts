@@ -36,6 +36,7 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   billingAddress: AddressDto;
 
+  @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))
   @Expose()
   billingAddressEqualsAddress: boolean;
@@ -46,6 +47,7 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   emailValidatedAt: string;
 
+  @Type(() => Boolean)
   @Expose()
   isSuperAdmin: boolean;
 

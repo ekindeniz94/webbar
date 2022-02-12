@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { MoUtils } from '../../../../utils';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
-import {SubscriptionDto} from "../../../mo-payment";
+import { ClusterPublicDto, SubscriptionDto } from '../../../mo-payment';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()
