@@ -1,11 +1,11 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, ValidateIf, ValidateNested } from 'class-validator';
+import { IsOptional, isString, IsString, MaxLength, ValidateIf, ValidateNested } from 'class-validator';
 import { ValidateIfObjectNotEmpty } from '../../../../../utils';
 import { AddressCreateRequestDto, DTO_VALIDATION_CONST } from '../../../../mo-core';
 
 export class UserCompanyCreateRequestDto {
   @ValidateIf((obj: UserCompanyCreateRequestDto) => ValidateIfObjectNotEmpty(obj, UserCompanyCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.COMPANY.NAME.MAX)
   @Transform(({ value }) =>
@@ -14,8 +14,7 @@ export class UserCompanyCreateRequestDto {
   @Expose()
   name: string;
 
-  @ValidateIf((obj: UserCompanyCreateRequestDto) => ValidateIfObjectNotEmpty(obj, UserCompanyCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.COMPANY.VAT_ID.MAX)
   @Transform(({ value }) =>

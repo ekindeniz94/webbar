@@ -1,11 +1,11 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, ValidateIf } from 'class-validator';
+import { IsOptional, isString, IsString, MaxLength, ValidateIf } from 'class-validator';
 import { ValidateIfObjectNotEmpty } from '../../../utils';
 import { DTO_VALIDATION_CONST } from '../constantes';
 
 export class AddressCreateRequestDto {
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.ADDRESS_LINE1.MAX)
   @Transform(({ value }) =>
@@ -35,7 +35,7 @@ export class AddressCreateRequestDto {
   addressLine3: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.STATE.MAX)
   @Transform(({ value }) =>
@@ -45,7 +45,7 @@ export class AddressCreateRequestDto {
   state: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.ZIP.MAX)
   @Transform(({ value }) =>
@@ -55,7 +55,7 @@ export class AddressCreateRequestDto {
   zip: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.ADDRESS.CITY.MAX)
   @Transform(({ value }) =>
@@ -65,7 +65,7 @@ export class AddressCreateRequestDto {
   city: string;
 
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))
-  @IsNotEmpty()
+  @IsOptional()
   @Expose()
   country: string;
 }
