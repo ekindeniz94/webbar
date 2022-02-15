@@ -2,6 +2,13 @@
 
 
 
+## 1.30.31 (2022-02-15)
+
+
+### Bug Fixes
+
+* optional address and company ([12774b8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/12774b84a7d6408fdc067b8d1e6c4fef61c8ff05))
+
 ## 1.30.30 (2022-02-12)
 
 
