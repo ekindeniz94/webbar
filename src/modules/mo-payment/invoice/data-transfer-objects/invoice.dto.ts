@@ -6,10 +6,13 @@ export class InvoiceDto {
   id: string;
 
   @Expose()
+  uuid: string;
+
+  @Expose()
   createdAt: Date;
 
   @Expose()
-  subscription: SubscriptionDto
+  subscription: SubscriptionDto;
 
   @Expose()
   state: string;
