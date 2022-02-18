@@ -2,6 +2,13 @@
 
 
 
+## 1.30.32 (2022-02-18)
+
+
+### Bug Fixes
+
+* add uuid to invoice dto ([b47b55c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b47b55c90ec0aa1adf899947e18d9445b995ab7b))
+
 ## 1.30.31 (2022-02-15)
 
 
