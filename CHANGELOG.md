@@ -2,6 +2,13 @@
 
 
 
+## 1.30.35 (2022-02-21)
+
+
+### Bug Fixes
+
+* added azure build log dto. ([b3dccc4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b3dccc4bae4fa4898f9d6a9aca89f5708fd7e43e))
+
 ## 1.30.34 (2022-02-21)
 
 
