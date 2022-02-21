@@ -39,13 +39,13 @@ export class K8sNotificationDto {
   positionOf: number;
 
   @Expose()
-  commitAuthor: string;
+  commitAuthor?: string;
 
   @Expose()
-  commitMessage: string;
+  commitMessage?: string;
 
   @Expose()
-  commitHash: string;
+  commitHash?: string;
 
   @Expose()
   buildId?: string;
