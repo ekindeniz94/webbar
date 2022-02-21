@@ -2,6 +2,13 @@
 
 
 
+## 1.30.38 (2022-02-21)
+
+
+### Bug Fixes
+
+* update namespace notification ([75b25df](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/75b25df9c4b15916a740101860242881eb1c0da7))
+
 ## 1.30.37 (2022-02-21)
 
 
