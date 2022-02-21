@@ -2,6 +2,13 @@
 
 
 
+## 1.30.37 (2022-02-21)
+
+
+### Bug Fixes
+
+* K8sNotificationDto commit params optional ([90fde6a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/90fde6a3ead5c9e6b8c221a8d78f9a658cb54500))
+
 ## 1.30.36 (2022-02-21)
 
 
