@@ -2,6 +2,13 @@
 
 
 
+## 1.30.33 (2022-02-21)
+
+
+### Bug Fixes
+
+* refactoring k8s notification ([4b24eb8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4b24eb8b97f2adddf78077bf8d8679ccbfd5350b))
+
 ## 1.30.32 (2022-02-18)
 
 
