@@ -2,6 +2,13 @@
 
 
 
+## 1.30.34 (2022-02-21)
+
+
+### Bug Fixes
+
+* namepace notification dto ([bfbeac6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bfbeac61134bd1e3a4fd86d5ef98b038ab55cdfd))
+
 ## 1.30.33 (2022-02-21)
 
 
