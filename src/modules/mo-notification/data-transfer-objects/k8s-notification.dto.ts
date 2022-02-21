@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { K8sNotificationStateEnum, MessageTypeEnum, NotificationTypeEnum } from '../enums';
+import { K8sNotificationStateEnum } from '../enums';
 
 export class K8sNotificationDto {
   @Expose()
@@ -37,6 +37,15 @@ export class K8sNotificationDto {
 
   @Expose()
   positionOf: number;
+
+  @Expose()
+  commitAuthor: string;
+
+  @Expose()
+  commitMessage: string;
+
+  @Expose()
+  commitHash: string;
 
   @Expose()
   buildId?: string;
