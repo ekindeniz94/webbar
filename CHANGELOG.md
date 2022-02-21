@@ -2,6 +2,13 @@
 
 
 
+## 1.30.36 (2022-02-21)
+
+
+### Bug Fixes
+
+* update k8s notification dto ([ceb99ca](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ceb99ca966cdbfedfa57a631ee6adcf0a94bd039))
+
 ## 1.30.35 (2022-02-21)
 
 
