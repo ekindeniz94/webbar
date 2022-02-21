@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceDto, NamespaceServiceDto, NamespaceServicePodDto, NamespaceStageDto } from '../../mo-namespace';
-import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 import { BaseEntityDto } from '../../mo-core';
-import {isString} from "class-validator";
+import {isEnum, isString} from 'class-validator';
+import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 
 export class NamespaceNotificationDto extends BaseEntityDto {
   @Type(() => NamespaceDto)
@@ -34,6 +34,9 @@ export class NamespaceNotificationDto extends BaseEntityDto {
   @Expose()
   taskId: string | null;
 
+  @Transform(({ value }) =>
+    value && isEnum(value, K8sNotificationStateEnum) ? value : K8sNotificationStateEnum.PENDING
+  )
   @Expose()
   state: K8sNotificationStateEnum;
 
@@ -43,6 +46,15 @@ export class NamespaceNotificationDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
   durationMs: number;
+
+  @Expose()
+  commitAuthor: string;
+
+  @Expose()
+  commitMessage: string;
+
+  @Expose()
+  commitHash: string;
 
   @Expose()
   buildId?: string;
