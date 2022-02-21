@@ -33,17 +33,17 @@ export class K8sNotificationDto {
   durationMs: number;
 
   @Expose()
-  type: NotificationTypeEnum;
-
-  @Expose()
-  messageType: MessageTypeEnum;
-
-  @Expose()
   position: number;
-  
+
   @Expose()
   positionOf: number;
 
   @Expose()
   buildId?: string;
+
+  @Expose()
+  buildState?: string; // Pending, Started, Finished, Failed
+
+  @Expose()
+  deploymentState?: string; // Pending, Started, Finished, Failed
 }
