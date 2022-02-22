@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceDto, NamespaceServiceDto, NamespaceServicePodDto, NamespaceStageDto } from '../../mo-namespace';
 import { BaseEntityDto } from '../../mo-core';
-import {isEnum, isString} from 'class-validator';
+import { isEnum, isString } from 'class-validator';
 import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 
 export class NamespaceNotificationDto extends BaseEntityDto {
@@ -64,4 +64,8 @@ export class NamespaceNotificationDto extends BaseEntityDto {
 
   @Expose()
   deploymentState?: DeploymentStateEnum;
+
+  get durationSec(): number {
+    return +(this.durationMs / 1000).toFixed(2);
+  }
 }

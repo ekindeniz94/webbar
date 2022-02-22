@@ -11,6 +11,7 @@ import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServicePodDto } from './namespace-service-pod.dto';
 import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '../../enums';
 import { NamespaceServicePortDto } from './namespace-service-port.dto';
+import { NamespaceNotificationDto } from '../../../mo-notification';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -80,6 +81,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   pods: NamespaceServicePodDto[];
+
+  @Type(() => NamespaceNotificationDto)
+  @Expose()
+  notifications: NamespaceNotificationDto[];
 
   get tcpPort(): NamespaceServicePortDto | undefined {
     return (

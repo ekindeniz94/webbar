@@ -1,6 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsOptional, ValidateNested } from 'class-validator';
-import { CiCdPipelineLogEntry } from './cicdpipeline-log-entry.dto';
+import { IsOptional } from 'class-validator';
 import { KubernetesEventMetaDto } from './kubernetes-event-meta.dto';
 import { KubernetesEventStatusDto } from './kubernetes-event-status.dto';
 

@@ -1,8 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, IsOptional, isString, IsString } from 'class-validator';
+import { isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceServiceDto } from '../namespace-service';
+import {NamespaceNotificationDto} from "../../../mo-notification";
 
 export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
@@ -56,4 +57,8 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Transform(({ value, obj }) => value ?? obj.services?.length)
   @Expose()
   serviceCount: number;
+
+  @Type(() => NamespaceNotificationDto)
+  @Expose()
+  notifications: NamespaceNotificationDto[];
 }
