@@ -2,6 +2,13 @@
 
 
 
+## 1.30.39 (2022-02-22)
+
+
+### Bug Fixes
+
+* cicd dto, namespace notifications ([9733fa6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9733fa64236a35ab38158a116d6338163244faf4))
+
 ## 1.30.38 (2022-02-21)
 
 
