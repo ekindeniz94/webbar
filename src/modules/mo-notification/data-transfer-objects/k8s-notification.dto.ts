@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { K8sNotificationStateEnum } from '../enums';
+import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 
 export class K8sNotificationDto {
   @Expose()
@@ -33,12 +33,6 @@ export class K8sNotificationDto {
   durationMs: number;
 
   @Expose()
-  position: number;
-
-  @Expose()
-  positionOf: number;
-
-  @Expose()
   commitAuthor?: string;
 
   @Expose()
@@ -51,8 +45,8 @@ export class K8sNotificationDto {
   buildId?: string;
 
   @Expose()
-  buildState?: string; // Pending, Started, Finished, Failed
+  buildState?: BuildStateEnum;
 
   @Expose()
-  deploymentState?: string; // Pending, Started, Finished, Failed
+  deploymentState?: DeploymentStateEnum;
 }

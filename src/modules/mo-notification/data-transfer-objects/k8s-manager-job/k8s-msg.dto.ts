@@ -29,12 +29,6 @@ export class K8sMsgDto {
   @Expose()
   durationMs: number;
 
-  @Expose()
-  position: number;
-
-  @Expose()
-  positionOf: number;
-
   get isJob(): boolean {
     if (this.jobId === undefined || this.jobId === 'undefined' || this.jobId === '') {
       return true;
