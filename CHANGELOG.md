@@ -2,6 +2,13 @@
 
 
 
+## 1.30.40 (2022-02-24)
+
+
+### Bug Fixes
+
+* k8s DTOs ([b6a4706](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b6a47060defcdb86f4e624907bdae915f27c2f69))
+
 ## 1.30.39 (2022-02-22)
 
 
