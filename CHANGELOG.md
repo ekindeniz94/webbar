@@ -2,6 +2,13 @@
 
 
 
+## 1.30.41 (2022-02-28)
+
+
+### Bug Fixes
+
+* update MoNamespaceUtils ([1fbe026](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1fbe02620dc127d7f09ee4f357e09ca70e18809d))
+
 ## 1.30.40 (2022-02-24)
 
 
