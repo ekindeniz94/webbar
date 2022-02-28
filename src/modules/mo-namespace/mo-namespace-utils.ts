@@ -32,7 +32,11 @@ export class MoNamespaceUtils {
 
   // CALCULATE DAYS IN CURRENT BILLING PERIOD
   static billingPeriodDays(namespace: NamespaceDto): number {
-    const subscriptionDate = moment(namespace.subscription.createdAt);
+    return MoNamespaceUtils.billingPeriodDaysByCreatedAt(namespace.subscription.createdAt);
+  }
+
+  static billingPeriodDaysByCreatedAt(createdAt: string | Date): number {
+    const subscriptionDate = moment(createdAt);
     var fromMoment: moment.Moment = moment();
     const toMoment = moment();
     if (subscriptionDate.date() > toMoment.date()) {
