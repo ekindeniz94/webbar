@@ -2,6 +2,13 @@
 
 
 
+## 1.30.42 (2022-03-01)
+
+
+### Bug Fixes
+
+* rm empty state BuildStateEnum ([fb856a3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fb856a352b21d6befbfc0763a9f294185d977d34))
+
 ## 1.30.41 (2022-02-28)
 
 
