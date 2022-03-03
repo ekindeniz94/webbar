@@ -2,6 +2,13 @@
 
 
 
+## 1.30.43 (2022-03-03)
+
+
+### Bug Fixes
+
+* add RepositoryVisibilityEnum ([28c138d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/28c138d4e20bb43df41edd156ce6f48cdfc2055d))
+
 ## 1.30.42 (2022-03-01)
 
 
