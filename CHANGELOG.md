@@ -2,6 +2,13 @@
 
 
 
+## 1.30.44 (2022-03-04)
+
+
+### Bug Fixes
+
+* added internalServiceName. ([1f44993](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1f4499369e2fdf27ccede74d8bb83b357ca8d01d))
+
 ## 1.30.43 (2022-03-03)
 
 
