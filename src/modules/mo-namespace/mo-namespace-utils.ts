@@ -30,6 +30,10 @@ export class MoNamespaceUtils {
     return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}`; // NAMESPACE OR STAGE Name
   }
 
+  static internalServiceName(service: NamespaceServiceDto): string {
+    return `${service.name}-${service.shortId}`;
+  }
+
   // CALCULATE DAYS IN CURRENT BILLING PERIOD
   static billingPeriodDays(namespace: NamespaceDto): number {
     return MoNamespaceUtils.billingPeriodDaysByCreatedAt(namespace.subscription.createdAt);
