@@ -2,6 +2,13 @@
 
 
 
+## 1.30.45 (2022-03-06)
+
+
+### Bug Fixes
+
+* add generateCorrelationId ([492d53a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/492d53abd780f1ec90e6cde8db3e3222920e0d49))
+
 ## 1.30.44 (2022-03-04)
 
 
