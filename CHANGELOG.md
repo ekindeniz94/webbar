@@ -2,6 +2,13 @@
 
 
 
+## 1.30.46 (2022-03-08)
+
+
+### Bug Fixes
+
+* k8s IResources ([e852fdc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e852fdcca1b4c82d09f84b9aeb2a7a5ab1daa31c))
+
 ## 1.30.45 (2022-03-06)
 
 
