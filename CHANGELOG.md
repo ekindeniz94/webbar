@@ -2,6 +2,13 @@
 
 
 
+## 1.30.47 (2022-03-09)
+
+
+### Bug Fixes
+
+* github / gitlab branch dto ([8f78574](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8f7857437697f3470f4af701aa2989808aecd885))
+
 ## 1.30.46 (2022-03-08)
 
 
