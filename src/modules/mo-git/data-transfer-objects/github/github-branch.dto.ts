@@ -1,12 +1,15 @@
-import {Expose, Type} from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { GithubBranchCommitDto } from './github-branch-commit.dto';
+import { GitConnectionTypeEnum } from '../../enums';
 
 export class GithubBranchDto {
-  // {sha: '9a0f67d67dbc19a3e83cf8516a15a6f56dd3ea80', url: 'https://api.github.com/repos/behrangal/test/commits/9a0f67d67dbc19a3e83cf8516a15a6f56dd3ea80'}
-  @Expose()
-  commit: any;
+  readonly type: GitConnectionTypeEnum.GIT_HUB = GitConnectionTypeEnum.GIT_HUB;
 
   @Expose()
   name: string;
+
+  @Expose()
+  commit: GithubBranchCommitDto;
 
   @Type(() => Boolean)
   @Expose()
