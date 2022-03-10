@@ -2,6 +2,13 @@
 
 
 
+## 1.30.49 (2022-03-10)
+
+
+### Bug Fixes
+
+* matches fix. ([dc533e9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dc533e9ca7ccac67f954767ba748c0eb303b1e4c))
+
 ## 1.30.48 (2022-03-10)
 
 
