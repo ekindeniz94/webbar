@@ -2,6 +2,13 @@
 
 
 
+## 1.30.52 (2022-03-10)
+
+
+### Bug Fixes
+
+* add dockerContext, add ports param to patch ns service request dto ([6112233](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6112233fe3321ed3786b154584fcfaaba9ffeb4e))
+
 ## 1.30.51 (2022-03-10)
 
 
