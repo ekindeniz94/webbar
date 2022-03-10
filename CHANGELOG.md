@@ -2,6 +2,13 @@
 
 
 
+## 1.30.51 (2022-03-10)
+
+
+### Bug Fixes
+
+* regex ENVVAR_VALUE ([3207f44](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3207f4471ee9f2347d367e64580246526a5fda11))
+
 ## 1.30.50 (2022-03-10)
 
 
