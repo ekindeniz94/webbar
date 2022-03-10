@@ -3,6 +3,7 @@ import { NamespaceServiceCreateRequestDto } from './namespace-service-create-req
 import { isArray, IsNotEmpty, IsOptional, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { NamespaceServiceKubernetesSettingsPatchRequestDto } from './namespace-service-kubernetes-settings-patch-request.dto';
 import { NamespaceServiceEnvVarPatchRequestDto } from './namespace-service-envvar-patch-request.dto';
+import {NamespaceServicePortPatchRequestDto} from "./namespace-service-port-patch-request.dto";
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -24,10 +25,9 @@ export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateReque
   @Expose()
   envVars: NamespaceServiceEnvVarPatchRequestDto[];
 
-  // @IsOptional()
-  // @Type(() => NamespaceServicePortPatchRequestDto)
-  // @Transform(({ value }) => (value && isArray(value) ? value : []))
-  // @ValidateNested()
-  // @Expose()
-  // ports: NamespaceServicePortPatchRequestDto[];
+  @IsOptional()
+  @Type(() => NamespaceServicePortPatchRequestDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  ports: NamespaceServicePortPatchRequestDto[];
 }

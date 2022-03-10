@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, isString } from 'class-validator';
+import { isArray, isBoolean, IsOptional, IsString, isString } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
@@ -39,6 +39,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   @Expose()
   dockerfileName: string;
+
+  @Transform(({ value }) => value ?? '.')
+  @Expose()
+  dockerContext: string;
 
   @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
   @Expose()
