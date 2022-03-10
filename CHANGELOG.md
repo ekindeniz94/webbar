@@ -2,6 +2,13 @@
 
 
 
+## 1.30.48 (2022-03-10)
+
+
+### Bug Fixes
+
+* matches fixes and templates removed. ([2618f13](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2618f1357ebe452799d41db149dfda0d96d8b267))
+
 ## 1.30.47 (2022-03-09)
 
 
