@@ -50,4 +50,7 @@ export class K8sServiceDto {
 
     @Expose()
     ports: K8sPortsDto[];
+
+    @Expose()
+    expose: boolean;
 }
