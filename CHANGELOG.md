@@ -2,6 +2,13 @@
 
 
 
+## 1.30.53 (2022-03-14)
+
+
+### Bug Fixes
+
+* added expose. ([f95306a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f95306a81139f1d083f9d27757273528ab7a693c))
+
 ## 1.30.52 (2022-03-10)
 
 
