@@ -2,6 +2,13 @@
 
 
 
+## 1.30.54 (2022-03-15)
+
+
+### Bug Fixes
+
+* add UserSocketDataEventEnum GET_USER_SILENT ([7682121](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/76821210082698a63c91a5cf3384f4a24b3c9c13))
+
 ## 1.30.53 (2022-03-14)
 
 
