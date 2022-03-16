@@ -2,6 +2,13 @@
 
 
 
+## 1.30.55 (2022-03-16)
+
+
+### Bug Fixes
+
+* subscription events ([036804d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/036804d161e0e3711fa8437c5cb256ddee21bc5a))
+
 ## 1.30.54 (2022-03-15)
 
 
