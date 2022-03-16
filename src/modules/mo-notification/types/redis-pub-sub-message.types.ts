@@ -7,6 +7,7 @@ import {
   IRedisPubSubMessageUser
 } from '../interfaces';
 import { IRedisPubSubMessageNotification } from '../interfaces/notification-redis-pub-sub-message';
+import { IRedisPubSubMessagePayment } from '../interfaces/payment-redis-pub-sub-message';
 
 export type RedisPubSubMessageTypes =
   // | IRedisPubSubMessage
@@ -15,4 +16,5 @@ export type RedisPubSubMessageTypes =
   | IRedisPubSubMessageNamespaceInvitation
   | IRedisPubSubMessageNotification
   | IRedisPubSubMessageUser
+  | IRedisPubSubMessagePayment
   | IRedisPubSubMessageAuth;
