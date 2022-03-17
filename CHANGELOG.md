@@ -2,6 +2,13 @@
 
 
 
+## 1.30.57 (2022-03-17)
+
+
+### Bug Fixes
+
+* k8sdtos updated for new port model. ([b324921](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b32492196c6aab5aa43f563937016cd9653bfe0a))
+
 ## 1.30.56 (2022-03-17)
 
 
