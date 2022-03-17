@@ -8,7 +8,10 @@ export class NamespaceServicePortDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  port: number;
+  internalPort: number;
+
+  @Expose()
+  externalPort: number;
 
   @Expose()
   expose: boolean;
