@@ -2,6 +2,13 @@
 
 
 
+## 1.30.56 (2022-03-17)
+
+
+### Bug Fixes
+
+* refactoring service ports / cname ([8b994fe](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8b994fe5ae96709048d305791b569ebdb7169e1c))
+
 ## 1.30.55 (2022-03-16)
 
 
