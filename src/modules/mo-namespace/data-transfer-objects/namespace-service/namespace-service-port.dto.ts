@@ -10,6 +10,9 @@ export class NamespaceServicePortDto extends BaseEntityDto {
   @Expose()
   port: number;
 
+  @Expose()
+  expose: boolean;
+
   @Type(() => Boolean)
   @Expose()
   spectrumEnableTls: boolean;
