@@ -2,6 +2,13 @@
 
 
 
+## 1.30.61 (2022-03-17)
+
+
+### Bug Fixes
+
+* namespace port request dto ([8bd04c5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8bd04c5ac6c0491945350e2479bef9ee6e956884))
+
 ## 1.30.60 (2022-03-17)
 
 
