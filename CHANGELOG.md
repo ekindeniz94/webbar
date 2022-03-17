@@ -2,6 +2,13 @@
 
 
 
+## 1.30.62 (2022-03-17)
+
+
+### Bug Fixes
+
+* ServicePortCreateRequestDto ([6198f00](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6198f00d317ff7043761b5f0a04dec463e7af765))
+
 ## 1.30.61 (2022-03-17)
 
 
