@@ -2,6 +2,13 @@
 
 
 
+## 1.30.63 (2022-03-17)
+
+
+### Bug Fixes
+
+* internal port Transform 0 ([d441eee](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d441eeebf8ffbc04f6de3aaac8ad7a50bed8cdad))
+
 ## 1.30.62 (2022-03-17)
 
 
