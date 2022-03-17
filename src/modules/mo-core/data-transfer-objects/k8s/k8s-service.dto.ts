@@ -1,4 +1,5 @@
 import { Expose } from "class-transformer";
+import { NamespaceServiceCnameDto } from "../../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname.dto";
 import { ServiceTypeEnum } from "../../../mo-service-library/enums/service-type.enum";
 import { K8sEnvVarDto } from "./k8s-envvar.dto";
 import { K8sPortsDto } from "./k8s-port.dto";
@@ -13,6 +14,9 @@ export class K8sServiceDto {
     id: string;
 
     @Expose()
+    displayName: string;
+
+    @Expose()
     shortId: string;
 
     @Expose()
@@ -22,10 +26,7 @@ export class K8sServiceDto {
     k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage, service)
 
     @Expose()
-    internalPort: number;
-
-    @Expose()
-    cNames: string[];
+    cNames: NamespaceServiceCnameDto[];
 
     @Expose()
     serviceType: ServiceTypeEnum;
@@ -50,7 +51,4 @@ export class K8sServiceDto {
 
     @Expose()
     ports: K8sPortsDto[];
-
-    @Expose()
-    expose: boolean;
 }

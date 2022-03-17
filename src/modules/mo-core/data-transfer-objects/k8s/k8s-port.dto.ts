@@ -7,6 +7,9 @@ export class K8sPortsDto {
     
     @Expose()
     port: number;
+
+    @Expose()
+    expose: boolean;
         
     @Expose()
     deletedAt?: Date;
