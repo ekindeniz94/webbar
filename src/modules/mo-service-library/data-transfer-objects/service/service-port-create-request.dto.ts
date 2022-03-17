@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
-import { NamespaceServicePortBindingTypeEnum } from '../../../mo-namespace';
+import {isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional} from 'class-validator';
+import { NamespaceServicePortBindingTypeEnum } from '../../../mo-namespace/enums/namespace-service-service-port-binding.enum';
 
 export class ServicePortCreateRequestDto {
   @IsNotEmpty()
@@ -15,7 +15,7 @@ export class ServicePortCreateRequestDto {
   internalPort: number;
 
   @Type(() => Number)
-  @Transform(({ value, obj }) => (obj?.portType === NamespaceServicePortBindingTypeEnum.HTTPS ? 80 : value))
+  // @Transform(({ value, obj }) => (obj?.portType === NamespaceServicePortBindingTypeEnum.HTTPS ? 80 : value))
   @IsOptional()
   @IsNumber()
   @Expose()
