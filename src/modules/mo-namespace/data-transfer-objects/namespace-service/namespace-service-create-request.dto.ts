@@ -24,6 +24,7 @@ import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
+import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -79,14 +80,12 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
-  @IsFQDN({}, { each: true })
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_LENGTH, {
-    each: true
-  })
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
   @Expose()
-  cNames: string[];
+  cNames: NamespaceServiceCnameCreateRequestDto[];
 
+  // TODO remove
   @Type(() => Number)
   @IsNotEmpty()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
@@ -94,6 +93,7 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   internalPort: number;
 
+  // TODO remove
   @Type(() => Boolean)
   @IsBoolean()
   @Transform(({ value }) => (isBoolean(value) ? value : false))

@@ -12,6 +12,7 @@ import { NamespaceServicePodDto } from './namespace-service-pod.dto';
 import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '../../enums';
 import { NamespaceServicePortDto } from './namespace-service-port.dto';
 import { NamespaceNotificationDto } from '../../../mo-notification';
+import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -44,14 +45,16 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   dockerContext: string;
 
-  @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []))
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  cNames: string[];
+  cNames: NamespaceServiceCnameDto[];
 
+  // TODO rm
   @Type(() => Number)
   @Expose()
   internalPort: number;
 
+  // TODO rm
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()

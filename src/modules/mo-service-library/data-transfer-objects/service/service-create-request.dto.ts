@@ -1,8 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { isArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { NamespaceServiceEnvVarCreateRequestDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
 import { ServiceTypeEnum } from '../../enums';
+import { ServicePortDto } from './service-port.dto';
+import { ServicePortCreateRequestDto } from './service-port-create-request.dto';
 
 export class ServiceCreateRequestDto {
   @Expose()
@@ -43,14 +45,22 @@ export class ServiceCreateRequestDto {
   @IsString()
   setupCommands: string;
 
+  // TODO remove
   @Expose()
   @IsNumber()
   internalPort: number;
 
+  // TODO remove
   @Type(() => Boolean)
   @Expose()
   @IsBoolean()
   expose: boolean;
+
+  @Type(() => ServicePortCreateRequestDto)
+  @ValidateNested()
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  ports: ServicePortCreateRequestDto[];
 
   @Expose()
   @Transform(({ value }) => value ?? 0.1)
