@@ -6,7 +6,10 @@ export class K8sPortsDto {
     portType: NamespaceServicePortBindingTypeEnum;
     
     @Expose()
-    port: number;
+    internalPort: number;
+
+    @Expose()
+    externalPort: number;
 
     @Expose()
     expose: boolean;
