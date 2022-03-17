@@ -25,6 +25,7 @@ import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envv
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
+import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -100,36 +101,12 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   expose: boolean;
 
-  // @IsOptional()
-  // @Type(() => NamespaceServicePortCreateRequestDto)
-  // @Transform(({ value }) => (value && isArray(value) ? value : []))
-  // @ValidateNested()
-  // @Expose()
-  // ports: NamespaceServicePortCreateRequestDto[];
-
-  @Type(() => Boolean)
-  @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsOptional()
+  @Type(() => NamespaceServicePortCreateRequestDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested()
   @Expose()
-  addTcpPort: boolean;
-
-  @Type(() => Boolean)
-  @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @Expose()
-  tcpPortSpectrumEnableTls: boolean;
-
-  @Type(() => Boolean)
-  @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @Expose()
-  addUdpPort: boolean;
-
-  @Type(() => Boolean)
-  @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @Expose()
-  udpPortSpectrumEnableTls: boolean;
+  ports: NamespaceServicePortCreateRequestDto[];
 
   @IsNotEmpty()
   @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
