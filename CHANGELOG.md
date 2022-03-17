@@ -2,6 +2,13 @@
 
 
 
+## 1.30.58 (2022-03-17)
+
+
+### Bug Fixes
+
+* added missing expose to port-dto. ([d9da743](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d9da7431143d290d442109891a5a8e9d470f4f5b))
+
 ## 1.30.57 (2022-03-17)
 
 
