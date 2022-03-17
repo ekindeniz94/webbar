@@ -89,7 +89,7 @@ export class NamespaceServiceCreateRequestDto {
   // TODO remove
   @Type(() => Number)
   @IsNotEmpty()
-  @Transform(({ value }) => (isNumberString(value) ? +value : value))
+  @Transform(({ value }) => 0)
   @IsNumber()
   @Expose()
   internalPort: number;
