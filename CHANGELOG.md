@@ -2,6 +2,13 @@
 
 
 
+## 1.30.64 (2022-03-18)
+
+
+### Bug Fixes
+
+* service types extended. ([ff0130d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ff0130d4affe0b580d1561648d3b7a66f1f7d66d))
+
 ## 1.30.63 (2022-03-17)
 
 
