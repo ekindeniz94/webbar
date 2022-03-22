@@ -2,6 +2,13 @@
 
 
 
+## 1.30.65 (2022-03-22)
+
+
+### Bug Fixes
+
+* update env value regex ([19f5751](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/19f5751f752067aab19c6fd4ca0db66cd1cd21ac))
+
 ## 1.30.64 (2022-03-18)
 
 
