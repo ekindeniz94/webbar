@@ -86,21 +86,6 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   cNames: NamespaceServiceCnameCreateRequestDto[];
 
-  // TODO remove
-  @Type(() => Number)
-  @IsNotEmpty()
-  @Transform(({ value }) => 0)
-  @IsNumber()
-  @Expose()
-  internalPort: number;
-
-  // TODO remove
-  @Type(() => Boolean)
-  @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @Expose()
-  expose: boolean;
-
   @IsOptional()
   @Type(() => NamespaceServicePortCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))

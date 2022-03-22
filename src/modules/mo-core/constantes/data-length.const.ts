@@ -121,7 +121,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 50
       },
       ENVVAR_VALUE: {
-        MATCHES: /^[\w\-:.\/%][\w\-:.\/% ]{0,50}$/,
+        MATCHES: /^[\w\-:.\/%@][\w\-:.\/% @]{0,50}$/,
         MIN: 0,
         MAX: 500
       },
