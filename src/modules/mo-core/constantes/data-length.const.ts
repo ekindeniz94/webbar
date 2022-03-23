@@ -121,7 +121,7 @@ export const DTO_VALIDATION_CONST = {
         MAX: 50
       },
       ENVVAR_VALUE: {
-        MATCHES: /^[\w\-:.\/%@][\w\-:.\/% @]{0,50}$/,
+        MATCHES: /^[\w\-_:.\/%@][\w\-_:.\/%@ ]{0,256}$/,
         MIN: 0,
         MAX: 500
       },
@@ -138,7 +138,7 @@ export const DTO_VALIDATION_CONST = {
       ENVVAR_CHOWN_FOLDER_VALUE: {
         MIN: 1,
         MAX: 256,
-        MATCHES: /^[a-zA-Z0-9\/_]{1,256}$/
+        MATCHES: /^[a-zA-Z0-9\/_-]{1,256}$/
       }
     },
     NAMESPACE_COMMAND: {
