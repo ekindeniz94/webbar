@@ -1,9 +1,10 @@
 import { Expose, Type } from 'class-transformer';
-import { IsFQDN, IsNotEmpty, IsNumber, MaxLength } from 'class-validator';
-import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
+import { IsFQDN, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import { BaseEntityDto } from '../../../mo-core';
 
 export class NamespaceServiceCnameCreateRequestDto extends BaseEntityDto {
-  @IsNotEmpty()
+  // @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
   @Type(() => Number)
   @Expose()
@@ -13,4 +14,8 @@ export class NamespaceServiceCnameCreateRequestDto extends BaseEntityDto {
   @IsFQDN({})
   @Expose()
   cName: string;
+
+  @IsOptional()
+  @Expose()
+  cloudflareResponse: any;
 }

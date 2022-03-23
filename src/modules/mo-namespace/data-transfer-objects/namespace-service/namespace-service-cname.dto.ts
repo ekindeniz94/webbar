@@ -7,4 +7,7 @@ export class NamespaceServiceCnameDto {
 
   @Expose()
   cName: string;
+
+  @Expose()
+  cloudflareResponse: any;
 }
