@@ -1,6 +1,9 @@
 import { Expose, Type } from 'class-transformer';
 
 export class NamespaceServiceCnameDto {
+  @Expose()
+  id: string;
+
   @Type(() => Number)
   @Expose()
   internalPort: number;

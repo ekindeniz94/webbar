@@ -32,6 +32,10 @@ export class ClusterCreateRequestDto {
   loadbalancerIp: string;
 
   @IsNotEmpty()
+  @Expose()
+  loadbalancerHost: string;
+
+  @IsNotEmpty()
   @IsUrl()
   @Expose()
   k8smanagerUrl: string;

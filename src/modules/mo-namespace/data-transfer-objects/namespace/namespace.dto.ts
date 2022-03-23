@@ -17,9 +17,9 @@ export class NamespaceDto extends BaseEntityDto {
   @Expose()
   name: string;
 
-  @Type(() => NamespaceKeypairDto)
-  @Expose()
-  keypair: NamespaceKeypairDto;
+  // @Type(() => NamespaceKeypairDto)
+  // @Expose()
+  // keypair: NamespaceKeypairDto;
 
   @Expose()
   users: string[];

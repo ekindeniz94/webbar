@@ -31,6 +31,9 @@ export class ClusterDto extends BaseEntityDto {
   loadbalancerIp: string;
 
   @Expose()
+  loadbalancerHost: string;
+
+  @Expose()
   k8smanagerUrl: string;
 
   @Expose()
