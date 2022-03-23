@@ -2,6 +2,13 @@
 
 
 
+## 1.30.67 (2022-03-23)
+
+
+### Bug Fixes
+
+* add loadbalancer host ([89714ed](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/89714ede30f2d704fed2ed0f0c43970fa487932a))
+
 ## 1.30.66 (2022-03-23)
 
 
