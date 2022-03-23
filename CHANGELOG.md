@@ -2,6 +2,13 @@
 
 
 
+## 1.30.66 (2022-03-23)
+
+
+### Bug Fixes
+
+* cname cf response ([376638e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/376638eccfd2001440fd75ef69ad6f5d70c24f98))
+
 ## 1.30.65 (2022-03-22)
 
 
