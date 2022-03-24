@@ -2,6 +2,13 @@
 
 
 
+## 1.30.69 (2022-03-24)
+
+
+### Bug Fixes
+
+* ENVVAR_VALUE max ([a0417c3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a0417c3a65ceafde4490bcd01fcda758ebd03607))
+
 ## 1.30.68 (2022-03-23)
 
 
