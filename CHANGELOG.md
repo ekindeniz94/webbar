@@ -2,6 +2,13 @@
 
 
 
+## 1.30.70 (2022-03-24)
+
+
+### Bug Fixes
+
+* user dto (isSuperAdmin) ([0348250](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0348250c783784a827cf7194fcdfb5a5f72581a3))
+
 ## 1.30.69 (2022-03-24)
 
 
