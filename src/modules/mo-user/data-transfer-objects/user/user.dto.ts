@@ -48,6 +48,7 @@ export class UserDto extends BaseEntityDto {
   emailValidatedAt: string;
 
   @Type(() => Boolean)
+  @Transform(({ value }) => (value === true ? value : undefined))
   @Expose()
   isSuperAdmin: boolean;
 
