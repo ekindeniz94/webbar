@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isString } from 'class-validator';
+import { isArray, IsNumber, isString } from 'class-validator';
 import moment from 'moment';
 import { BaseEntityDto } from '../../../../mo-core';
 import {
@@ -78,6 +78,12 @@ export class ProductDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
   order: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 1)
+  @IsNumber()
+  @Expose()
+  assignableCount: number;
 
   @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
   @Expose()

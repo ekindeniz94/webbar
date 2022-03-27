@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray } from 'class-validator';
+import {isArray, IsNumber} from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
@@ -67,6 +67,12 @@ export class ProductPublicDto {
   @Type(() => Number)
   @Expose()
   order: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 1)
+  @IsNumber()
+  @Expose()
+  assignableCount: number;
 
   @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
   @Expose()

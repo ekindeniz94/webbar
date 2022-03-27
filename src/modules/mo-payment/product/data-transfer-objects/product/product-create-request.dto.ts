@@ -115,6 +115,12 @@ export class ProductCreateRequestDto {
   @Expose()
   order: number;
 
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 1)
+  @IsNumber()
+  @Expose()
+  assignableCount: number;
+
   @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
   @IsEnum(ProductStateEnum)
   @Expose()
