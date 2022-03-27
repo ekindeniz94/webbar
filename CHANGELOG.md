@@ -2,6 +2,13 @@
 
 
 
+## 1.30.71 (2022-03-27)
+
+
+### Bug Fixes
+
+* add assignableCount to product ([c5ffb79](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c5ffb7972599f1630e28ee351790382232490792))
+
 ## 1.30.70 (2022-03-24)
 
 
