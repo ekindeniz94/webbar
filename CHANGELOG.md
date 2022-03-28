@@ -2,6 +2,13 @@
 
 
 
+## 1.30.72 (2022-03-28)
+
+
+### Bug Fixes
+
+* added absolutePath to PersistentFileDto. ([a929dac](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a929dac8881d984a8942a046a2b03ee08ef9e705))
+
 ## 1.30.71 (2022-03-27)
 
 
