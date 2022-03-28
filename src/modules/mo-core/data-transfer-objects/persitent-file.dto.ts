@@ -11,6 +11,9 @@ export class PersistentFileDto {
   @Expose()
   relativePath: string;
 
+  @Expose()
+  absolutePath: string;
+
   @Type(() => Boolean)
   @Expose()
   isSymbolicLink: boolean;
