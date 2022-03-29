@@ -33,6 +33,9 @@ export class PersistentFileDto {
 
   @Expose()
   mimeType?: string;
+
+  @Expose()
+  contentType?: string;
   
   @Expose()
   createdAt?: Date;
