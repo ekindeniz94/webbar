@@ -2,6 +2,13 @@
 
 
 
+## 1.30.73 (2022-03-29)
+
+
+### Bug Fixes
+
+* added mimetype. ([a673c2e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a673c2ec57447d285fb4c927e22c64df66500912))
+
 ## 1.30.72 (2022-03-28)
 
 
