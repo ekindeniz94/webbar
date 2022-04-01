@@ -2,6 +2,13 @@
 
 
 
+## 1.30.75 (2022-04-01)
+
+
+### Bug Fixes
+
+* rm sent invitation dto ([eefd54e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/eefd54e4ffcda5d02aad3ad73367f9dcceb05442))
+
 ## 1.30.74 (2022-04-01)
 
 
