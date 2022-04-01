@@ -2,6 +2,13 @@
 
 
 
+## 1.30.74 (2022-04-01)
+
+
+### Bug Fixes
+
+* add sent-invitation.dto ([f22b646](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f22b646b0830dbeaea8c4529bf07481d6632be2f))
+
 ## 1.30.73 (2022-03-29)
 
 
