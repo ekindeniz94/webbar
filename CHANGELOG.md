@@ -2,6 +2,13 @@
 
 
 
+## 1.30.76 (2022-04-07)
+
+
+### Bug Fixes
+
+* cNames Transform dto (filter empty cNames) ([11221d9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/11221d951ae419113f2907c70112b99522aaee11))
+
 ## 1.30.75 (2022-04-01)
 
 
