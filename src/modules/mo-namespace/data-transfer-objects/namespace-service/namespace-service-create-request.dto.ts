@@ -3,12 +3,7 @@ import { TransformFnParams } from 'class-transformer/types/interfaces';
 import {
   ArrayMaxSize,
   isArray,
-  isBoolean,
-  IsBoolean,
-  IsFQDN,
   IsNotEmpty,
-  IsNumber,
-  isNumberString,
   IsOptional,
   isString,
   IsString,
@@ -17,7 +12,6 @@ import {
   MinLength,
   ValidateNested
 } from 'class-validator';
-import _ from 'lodash';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
@@ -81,7 +75,12 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Transform(({ value }) => {
+    if (value && isArray(value)) {
+      return value.filter((item: NamespaceServiceCnameCreateRequestDto) => !!item.cName);
+    }
+    return [];
+  })
   @ValidateNested()
   @Expose()
   cNames: NamespaceServiceCnameCreateRequestDto[];

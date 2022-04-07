@@ -35,7 +35,12 @@ export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateReque
 
   @IsOptional()
   @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Transform(({ value }) => {
+    if (value && isArray(value)) {
+      return value.filter((item: NamespaceServiceCnamePatchRequestDto) => !!item.cName);
+    }
+    return [];
+  })
   @ValidateNested()
   @Expose()
   cNames: NamespaceServiceCnamePatchRequestDto[];
