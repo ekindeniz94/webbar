@@ -6,4 +6,4 @@ export * from './namespace-service-service-port-binding.enum';
 export * from './namespace-service-state.enum';
 export * from './namespace-state.enum';
 export * from './pod-stats-unit.enum';
-
+export * from './cloudflare-time-interval.enum';
