@@ -2,6 +2,13 @@
 
 
 
+## 1.30.77 (2022-04-11)
+
+
+### Bug Fixes
+
+* cf Timeinterval Enum added. ([b4fb8bc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b4fb8bcc1f08f9988d4f3d680022eaa240e74d90))
+
 ## 1.30.76 (2022-04-07)
 
 
