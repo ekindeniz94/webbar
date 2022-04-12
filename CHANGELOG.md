@@ -2,6 +2,13 @@
 
 
 
+## 1.30.78 (2022-04-12)
+
+
+### Bug Fixes
+
+* cf Timeinterval hour. ([75b61d4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/75b61d495df3c38c309bfafb03a3f93eb83e50c1))
+
 ## 1.30.77 (2022-04-11)
 
 
