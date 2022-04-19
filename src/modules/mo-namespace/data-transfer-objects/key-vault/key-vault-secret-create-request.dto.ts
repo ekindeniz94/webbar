@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString, Matches, MaxLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
+import { StripTags } from '../../../../utils';
 
 export class KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()
@@ -9,12 +10,14 @@ export class KeyVaultSecretCreateRequestDto {
   @Matches(/^[a-zA-Z0-9-_]{6,50}$/, {
     message: '$property must conform to: a-z or A-Z or 0-9 or - ;min 6, max 50 char'
   })
+  @StripTags()
   @Expose()
   name: string;
 
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.KEY_VAULT.VALUE.MAX)
+  @StripTags()
   @Expose()
   value: string;
 }

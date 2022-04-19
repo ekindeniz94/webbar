@@ -1,6 +1,7 @@
 import { IsNotEmpty, IsOptional, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
+import { StripTags } from '../../../../utils';
 
 export class NamespaceStageCreateRequestDto {
   @IsNotEmpty()
@@ -13,6 +14,7 @@ export class NamespaceStageCreateRequestDto {
       DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MAX
     )
   )
+  @StripTags()
   @Expose()
   displayName: string;
 
@@ -23,6 +25,7 @@ export class NamespaceStageCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MATCHES, {
     message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
   })
+  @StripTags()
   @Expose()
   name: string;
 
@@ -31,6 +34,7 @@ export class NamespaceStageCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.SUBDOMAIN.MATCHES, {
     message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 30 char'
   })
+  @StripTags()
   @Expose()
   subdomain: string;
 
@@ -43,6 +47,7 @@ export class NamespaceStageCreateRequestDto {
       DTO_VALIDATION_CONST.NAMESPACE.STAGE.DESCRIPTION.MAX
     )
   )
+  @StripTags()
   @Expose()
   description: string;
 }

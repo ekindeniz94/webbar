@@ -8,6 +8,7 @@ import {
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
+import { StripTags } from '../../../../utils';
 
 export class ContactCreateRequestDto {
   @Type(() => LanguageCodeDto)
@@ -21,6 +22,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FIRST_NAME.MAX)
   )
+  @StripTags()
   @Expose()
   firstName: string;
 
@@ -31,6 +33,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.LAST_NAME.MAX)
   )
+  @StripTags()
   @Expose()
   lastName: string;
 
@@ -42,6 +45,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
   )
+  @StripTags()
   @Expose()
   email: string;
 
@@ -51,6 +55,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
   )
+  @StripTags()
   @Expose()
   interest: string;
 
@@ -61,6 +66,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
   )
+  @StripTags()
   @Expose()
   subject: string;
 
@@ -71,6 +77,7 @@ export class ContactCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
   )
+  @StripTags()
   @Expose()
   message: string;
 }

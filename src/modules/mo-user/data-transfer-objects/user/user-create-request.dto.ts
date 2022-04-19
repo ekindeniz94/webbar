@@ -10,12 +10,12 @@ import {
   Matches,
   MaxLength,
   MinLength,
-  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { AddressCreateRequestDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { GroupDto } from '../group';
-import {UserCompanyCreateRequestDto} from "./company";
+import { UserCompanyCreateRequestDto } from './company';
+import { StripTags } from '../../../../utils';
 
 export class UserCreateRequestDto {
   @IsOptional()
@@ -24,6 +24,7 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FIRST_NAME.MAX)
   )
+  @StripTags()
   @Expose()
   firstName?: string;
 
@@ -33,6 +34,7 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.LAST_NAME.MAX)
   )
+  @StripTags()
   @Expose()
   lastName?: string;
 
@@ -43,11 +45,13 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
   )
+  @StripTags()
   @Expose()
   email?: string;
 
   @IsOptional()
   @IsString()
+  @StripTags()
   @Expose()
   oldPassword?: string;
 
@@ -61,6 +65,7 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PASSWORD.MAX)
   )
+  @StripTags()
   @Expose()
   password?: string;
 
@@ -70,6 +75,7 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
   )
+  @StripTags()
   @Expose()
   phoneNumberPrefix?: string;
 
@@ -79,6 +85,7 @@ export class UserCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
   )
+  @StripTags()
   @Expose()
   phoneNumber?: string;
 

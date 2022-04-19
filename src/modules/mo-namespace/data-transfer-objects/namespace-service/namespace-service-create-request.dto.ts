@@ -20,6 +20,7 @@ import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
+import { StripTags } from '../../../../utils';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -32,6 +33,7 @@ export class NamespaceServiceCreateRequestDto {
       DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MAX
     )
   )
+  @StripTags()
   @Expose()
   displayName: string;
 
@@ -42,34 +44,40 @@ export class NamespaceServiceCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {
     message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
   })
+  @StripTags()
   @Expose()
   name: string;
 
   @IsOptional()
   @IsString()
+  @StripTags()
   @Expose()
   description: string;
 
   @IsNotEmpty()
   @IsString()
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitRepoTransform(params))
+  @StripTags()
   @Expose()
   gitRepository: string;
 
   @IsNotEmpty()
   @IsString()
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitBranchTransform(params))
+  @StripTags()
   @Expose()
   gitBranch: string;
 
   @IsNotEmpty()
   @IsString()
+  @StripTags()
   @Expose()
   dockerfileName: string;
 
   @IsOptional()
   @IsString()
   @Transform(({ value }) => value ?? '.')
+  @StripTags()
   @Expose()
   dockerContext: string;
 

@@ -6,11 +6,13 @@ import { NamespaceServiceEnvVarPatchRequestDto } from './namespace-service-envva
 import { NamespaceServicePortPatchRequestDto } from './namespace-service-port-patch-request.dto';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceCnamePatchRequestDto } from './namespace-service-cname-patch-request.dto';
+import { StripTags } from '../../../../utils';
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @IsUUID()
+  @StripTags()
   @Expose()
   id: string;
 

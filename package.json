@@ -27,6 +27,9 @@
   ],
   "author": "Behrang Alavi, Benedikt Iltisberger",
   "license": "ISC",
+  "peerDependencies": {
+    "striptags": "^4.0.0-alpha.2"
+  },
   "dependencies": {
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
@@ -37,6 +40,7 @@
     "rxjs": "^6.6.3",
     "semver": "^7.3.5",
     "source-map-support": "^0.5.19",
+    "striptags": "^4.0.0-alpha.2",
     "uuid": "^8.3.1",
     "validator": "^13.5.2"
   },

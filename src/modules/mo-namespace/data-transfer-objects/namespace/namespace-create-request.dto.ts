@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { MoUtils } from '../../../../utils';
+import { MoUtils, StripTags } from '../../../../utils';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
-import { ClusterPublicDto, SubscriptionDto } from '../../../mo-payment';
+import { SubscriptionDto } from '../../../mo-payment';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()
@@ -12,6 +12,7 @@ export class NamespaceCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.NAME.MATCHES, {
     message: '$property must conform to: a-z or 0-9 or - ;min 4, max 25 char'
   })
+  @StripTags()
   @Expose()
   name: string;
 
@@ -19,6 +20,7 @@ export class NamespaceCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.DISPLAY_NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.DISPLAY_NAME.MAX)
+  @StripTags()
   @Expose()
   displayName: string;
 
@@ -30,6 +32,7 @@ export class NamespaceCreateRequestDto {
     message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
   })
   @Transform(({ value }) => value ?? MoUtils.nanoidSuperShort())
+  @StripTags()
   @Expose()
   shortId: string;
 
@@ -38,12 +41,14 @@ export class NamespaceCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.NAME.MATCHES, {
     message: '$property must conform to: a-z or 0-9 or - ;min 4, max 25 char'
   })
+  @StripTags()
   @Expose()
   hostname: string;
 
   @IsNotEmpty()
   @IsString()
   @IsInStringList(DTO_VALIDATION_CONST.MO_USER_DOMAINS)
+  @StripTags()
   @Expose()
   domain: string;
 
@@ -55,11 +60,13 @@ export class NamespaceCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.DESCRIPTION.MAX)
+  @StripTags()
   @Expose()
   description: string;
 
   @IsOptional()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.ICON.MAX)
+  @StripTags()
   @Expose()
   icon: string;
 }

@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsOptional, isString, IsString, MaxLength, ValidateIf, ValidateNested } from 'class-validator';
-import { ValidateIfObjectNotEmpty } from '../../../../../utils';
+import { StripTags, ValidateIfObjectNotEmpty } from '../../../../../utils';
 import { AddressCreateRequestDto, DTO_VALIDATION_CONST } from '../../../../mo-core';
 
 export class UserCompanyCreateRequestDto {
@@ -11,6 +11,7 @@ export class UserCompanyCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.COMPANY.NAME.MAX)
   )
+  @StripTags()
   @Expose()
   name: string;
 
@@ -20,6 +21,7 @@ export class UserCompanyCreateRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.COMPANY.VAT_ID.MAX)
   )
+  @StripTags()
   @Expose()
   vatNumber: string;
 

@@ -1,10 +1,12 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, IsOptional, isString, IsString, MaxLength } from 'class-validator';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
+import { StripTags } from '../../../../utils';
 
 export class UserPhonePatchRequestDto {
   @IsNotEmpty()
   @IsString()
+  @StripTags()
   @Expose()
   id: string;
 
@@ -15,6 +17,7 @@ export class UserPhonePatchRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
   )
+  @StripTags()
   @Expose()
   phoneNumberPrefix: string;
 
@@ -24,6 +27,7 @@ export class UserPhonePatchRequestDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
   )
+  @StripTags()
   @Expose()
   phoneNumber: string;
 }

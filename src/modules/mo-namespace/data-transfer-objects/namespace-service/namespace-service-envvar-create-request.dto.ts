@@ -1,6 +1,6 @@
-import {Expose, Transform, Type} from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { MoUtils } from '../../../../utils';
+import { StripTags } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
 
@@ -24,6 +24,7 @@ export class NamespaceServiceEnvVarCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MIN)
+  @StripTags()
   @Expose()
   name: string;
 
@@ -31,6 +32,7 @@ export class NamespaceServiceEnvVarCreateRequestDto {
   @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MIN)
+  @StripTags()
   @Expose()
   value: string;
 
@@ -69,11 +71,13 @@ export class NamespaceServiceEnvVarCreateRequestDto {
 
   @IsOptional()
   @IsString()
+  @StripTags()
   @Expose()
   dependsOn?: string;
 
   @IsOptional()
   @IsString()
+  @StripTags()
   @Expose()
   dependsOnMethod?: string;
 }
