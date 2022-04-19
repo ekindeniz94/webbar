@@ -2,6 +2,13 @@
 
 
 
+# 1.31.0 (2022-04-19)
+
+
+### Features
+
+* strip tags decorator ([e94b3ba](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e94b3ba752a9944e7a3095f9e4b9b8b8da37353b))
+
 ## 1.30.79 (2022-04-19)
 
 
