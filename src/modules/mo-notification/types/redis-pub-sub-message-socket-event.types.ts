@@ -1,7 +1,7 @@
 import {
   ChangelogSocketEventEnum,
   K8sNotificationSocketEventEnum,
-  KubernetesEventSocketEventEnum,
+  // KubernetesEventSocketEventEnum,
   NamespaceSocketEventEnum,
   NotificationSocketEventEnum,
   PaymentSocketEventEnum,
@@ -13,6 +13,6 @@ export type RedisPubSubMessageSocketEventTypes =
   | UserSocketEventEnum
   | PaymentSocketEventEnum
   | K8sNotificationSocketEventEnum
-  | KubernetesEventSocketEventEnum
+  // | KubernetesEventSocketEventEnum
   | NotificationSocketEventEnum
   | ChangelogSocketEventEnum;

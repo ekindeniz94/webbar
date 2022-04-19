@@ -1,0 +1,14 @@
+export enum KubernetesEventStatusReasonEnum {
+  SUCCESSFUL_CREATE = 'SuccessfulCreate',
+  SUCCESSFUL_DELETE = 'SuccessfulDelete',
+  SCHEDULED = 'Scheduled',
+  KILLING = 'Killing',
+  EVICTED = 'Evicted',
+  EXCEEDED_GRACE_PERIOD = 'ExceededGracePeriod',
+  FAILED_KILL_POD = 'FailedKillPod',
+  PULLING = 'Pulling',
+  PULLED = 'Pulled',
+  CREATED = 'Created',
+  STARTED = 'Started',
+  BACK_OFF = 'BackOff'
+}

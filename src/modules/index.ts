@@ -6,6 +6,7 @@ export * from './mo-git';
 export * from './mo-job';
 export * from './mo-misc-data';
 export * from './mo-namespace';
+export * from './mo-kubernetes';
 export * from './mo-payment';
 export * from './mo-notification';
 export * from './mo-service-library';

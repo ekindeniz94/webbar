@@ -1,6 +1,5 @@
 import {Expose} from 'class-transformer';
-import {BaseEntityDto, KubernetesEventDto} from '../../../mo-core';
-import {NamespaceServicePodStateEnum} from '../../enums';
+import {BaseEntityDto} from '../../../mo-core';
 
 export class NamespaceServicePodDto extends BaseEntityDto {
   @Expose()
@@ -10,8 +9,8 @@ export class NamespaceServicePodDto extends BaseEntityDto {
   k8sName: string;
 
   @Expose()
-  state: NamespaceServicePodStateEnum;
+  state: string;
 
   @Expose()
-  data: KubernetesEventDto;
+  data: any;
 }

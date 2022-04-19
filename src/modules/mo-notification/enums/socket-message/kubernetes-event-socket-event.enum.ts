@@ -1,3 +1,4 @@
-export enum KubernetesEventSocketEventEnum {
-  EVENT = 'EVENT'
-}
+// export enum KubernetesEventSocketEventEnum {
+//   EVENT = 'EVENT'
+// }
+//

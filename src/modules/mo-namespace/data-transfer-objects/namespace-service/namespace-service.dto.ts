@@ -84,6 +84,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   state: NamespaceServiceStateEnum;
 
+  @Expose()
+  messages: string[];
+
   @Type(() => NamespaceServicePodDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
