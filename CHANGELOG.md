@@ -2,6 +2,13 @@
 
 
 
+## 1.30.79 (2022-04-19)
+
+
+### Bug Fixes
+
+* kubernetes events dto (refactoring) ([888afe4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/888afe4e9aa259e8f3855e437d542515d29f4963))
+
 ## 1.30.78 (2022-04-12)
 
 
