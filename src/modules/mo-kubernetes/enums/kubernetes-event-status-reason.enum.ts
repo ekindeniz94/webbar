@@ -6,6 +6,7 @@ export enum KubernetesEventStatusReasonEnum {
   EVICTED = 'Evicted',
   EXCEEDED_GRACE_PERIOD = 'ExceededGracePeriod',
   FAILED_KILL_POD = 'FailedKillPod',
+  FAILED = 'Failed',
   PULLING = 'Pulling',
   PULLED = 'Pulled',
   CREATED = 'Created',
