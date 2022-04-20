@@ -2,6 +2,13 @@
 
 
 
+## 1.31.4 (2022-04-20)
+
+
+### Bug Fixes
+
+* update KubernetesPublicEventDto ([051bea3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/051bea399389efe129a0227ba6c33669ee403bf4))
+
 ## 1.31.3 (2022-04-20)
 
 
