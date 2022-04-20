@@ -1,17 +1,14 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { KubernetesEventMetadataDto } from './kubernetes-event-metadata.dto';
-import { KubernetesEventInvolvedObjectDto } from './kubernetes-event-involved-object.dto';
+import { Expose, Transform } from 'class-transformer';
 import { KubernetesEventStatusReasonEnum, KubernetesEventTypeEnum } from '../enums';
-import { KubernetesEventSourceDto } from './kubernetes-event-source.dto';
 
 export class KubernetesPublicEventDto {
-  @Transform(({ obj }) => obj?.metadata?.uid)
+  @Transform(({ value, obj }) => value ?? obj?.metadata?.uid)
   @Expose()
   uid: string;
 
-  @Transform(({ obj }) => obj?.metadata?.resourceVersion)
+  @Transform(({ value, obj }) => value ?? obj?.metadata?.creationTimestamp)
   @Expose()
-  resourceVersion: string;
+  creationTimestamp: string;
 
   @Expose()
   kind: 'Event';
