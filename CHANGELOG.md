@@ -2,6 +2,13 @@
 
 
 
+## 1.31.2 (2022-04-20)
+
+
+### Bug Fixes
+
+* update KubernetesEventStatusReasonEnum ([36fe4cf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/36fe4cf828b03d86782312e6e5b1e97d109e850c))
+
 ## 1.31.1 (2022-04-20)
 
 
