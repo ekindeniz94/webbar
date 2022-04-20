@@ -13,6 +13,7 @@ import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '
 import { NamespaceServicePortDto } from './namespace-service-port.dto';
 import { NamespaceNotificationDto } from '../../../mo-notification';
 import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
+import { KubernetesEventDto, KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -84,8 +85,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   state: NamespaceServiceStateEnum;
 
+  @Type(() => KubernetesPublicEventDto)
   @Expose()
-  messages: string[];
+  messages: KubernetesPublicEventDto[];
 
   @Type(() => NamespaceServicePodDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
