@@ -5,6 +5,14 @@ import { KubernetesEventStatusReasonEnum, KubernetesEventTypeEnum } from '../enu
 import { KubernetesEventSourceDto } from './kubernetes-event-source.dto';
 
 export class KubernetesPublicEventDto {
+  @Transform(({ obj }) => obj?.metadata?.uid)
+  @Expose()
+  uid: string;
+
+  @Transform(({ obj }) => obj?.metadata?.resourceVersion)
+  @Expose()
+  resourceVersion: string;
+
   @Expose()
   kind: 'Event';
 

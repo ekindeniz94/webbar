@@ -1,5 +1,6 @@
-import {Expose} from 'class-transformer';
-import {BaseEntityDto} from '../../../mo-core';
+import { Expose, Type } from 'class-transformer';
+import { BaseEntityDto } from '../../../mo-core';
+import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class NamespaceServicePodDto extends BaseEntityDto {
   @Expose()
@@ -11,6 +12,7 @@ export class NamespaceServicePodDto extends BaseEntityDto {
   @Expose()
   state: string;
 
+  @Type(() => KubernetesPublicEventDto)
   @Expose()
-  data: any;
+  data: KubernetesPublicEventDto;
 }
