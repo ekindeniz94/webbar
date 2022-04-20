@@ -2,6 +2,13 @@
 
 
 
+## 1.31.1 (2022-04-20)
+
+
+### Bug Fixes
+
+* add KubernetesPublicEventDto ([7fd32d9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7fd32d9cedf0148e0e1443fbecca083d08a33812))
+
 # 1.31.0 (2022-04-19)
 
 
