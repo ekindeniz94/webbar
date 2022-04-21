@@ -1,4 +1,4 @@
-import { isDate, IsDate, isEnum, IsEnum, IsNotEmpty, IsOptional, IsString, IsUrl } from 'class-validator';
+import { isEnum, IsEnum, IsNotEmpty, IsOptional, IsString, IsUrl } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { SitemapFrequencyEnum } from './../enums';
 
