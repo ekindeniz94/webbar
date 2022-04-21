@@ -1,4 +1,5 @@
 export enum NamespaceServiceStateEnum {
+  PENDING = 'PENDING',
   STOPPED = 'STOPPED',
   DEPLOYING = 'DEPLOYING',
   RUNNING = 'RUNNING',
@@ -13,6 +14,7 @@ export enum NamespaceServiceStateEnum {
 }
 
 export const ALL_NamespaceServiceStates = [
+  NamespaceServiceStateEnum.PENDING,
   NamespaceServiceStateEnum.STOPPED,
   NamespaceServiceStateEnum.DEPLOYING,
   NamespaceServiceStateEnum.RUNNING,
