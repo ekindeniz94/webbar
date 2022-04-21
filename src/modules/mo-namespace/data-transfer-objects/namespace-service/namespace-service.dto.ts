@@ -1,11 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, IsOptional, IsString, isString } from 'class-validator';
+import { isArray, isBoolean, isString } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
-import _ from 'lodash';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServicePodDto } from './namespace-service-pod.dto';
@@ -13,7 +12,7 @@ import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '
 import { NamespaceServicePortDto } from './namespace-service-port.dto';
 import { NamespaceNotificationDto } from '../../../mo-notification';
 import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
-import { KubernetesEventDto, KubernetesPublicEventDto } from '../../../mo-kubernetes';
+import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()

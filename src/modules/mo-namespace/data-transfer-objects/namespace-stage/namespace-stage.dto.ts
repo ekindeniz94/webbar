@@ -3,7 +3,7 @@ import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceServiceDto } from '../namespace-service';
-import {NamespaceNotificationDto} from "../../../mo-notification";
+import { NamespaceNotificationDto } from '../../../mo-notification';
 
 export class NamespaceStageDto extends BaseEntityDto {
   @Expose()

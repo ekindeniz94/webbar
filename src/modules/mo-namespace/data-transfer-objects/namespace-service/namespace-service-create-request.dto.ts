@@ -16,7 +16,9 @@ import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
-import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
+import {
+  NamespaceServiceKubernetesSettingsCreateRequestDto
+} from './namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';

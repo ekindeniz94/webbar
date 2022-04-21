@@ -1,5 +1,5 @@
 import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
-import {Expose, Type} from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { StripTags } from '../../../../utils';
 
 export class NamespaceInvitationActionRequestDto {

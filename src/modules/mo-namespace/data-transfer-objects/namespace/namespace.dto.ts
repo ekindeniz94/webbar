@@ -4,7 +4,6 @@ import { BaseEntityDto } from '../../../mo-core';
 import { GitConnectionDto } from '../../../mo-git';
 import { ClusterPublicDto, SubscriptionDto } from '../../../mo-payment';
 import { NamespaceStateEnum } from '../../enums';
-import { NamespaceKeypairDto } from './namespace-keypair.dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()

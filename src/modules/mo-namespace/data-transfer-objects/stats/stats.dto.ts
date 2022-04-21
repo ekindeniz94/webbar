@@ -1,4 +1,4 @@
-import {Expose, Transform, Type} from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { isNumber } from 'lodash';
 import { PodStatsUnitEnum } from '../../enums';
 

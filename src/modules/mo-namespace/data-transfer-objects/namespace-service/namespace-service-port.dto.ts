@@ -1,4 +1,4 @@
-import {Expose, Type} from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServicePortBindingTypeEnum } from '../../enums';
 
