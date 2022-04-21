@@ -1,6 +1,3 @@
-import { Expose, Type } from 'class-transformer';
-import { KubernetesEventKindEnum } from '../enums/kubernetes-event-kind.enum';
-
 // export class KubernetesEventMetaDto {
 //   @Expose()
 //   kind: KubernetesEventKindEnum;
