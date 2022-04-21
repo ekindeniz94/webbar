@@ -19,7 +19,7 @@ export class KubernetesPublicEventDto {
   @Expose()
   reason: KubernetesEventStatusReasonEnum;
 
-  @Transform(({ value }) => value.replace(/azurecr.io/g, '***'))
+  @Transform(({ value }) => value?.replace(/azurecr.io/g, '***'))
   @Expose()
   message: string;
 

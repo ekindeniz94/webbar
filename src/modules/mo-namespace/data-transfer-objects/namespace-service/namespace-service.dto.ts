@@ -47,6 +47,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   dockerContext: string;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServiceCnameDto)
   @Expose()
   cNames: NamespaceServiceCnameDto[];
 
@@ -62,6 +63,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   expose: boolean;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServicePortDto)
   @Expose()
   ports: NamespaceServicePortDto[];
 
@@ -69,8 +71,8 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   kubernetesSettings: NamespaceServiceKubernetesSettingsDto;
 
-  @Type(() => NamespaceServiceEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServiceEnvVarDto)
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
 
@@ -85,15 +87,17 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   state: NamespaceServiceStateEnum;
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => KubernetesPublicEventDto)
   @Expose()
   messages: KubernetesPublicEventDto[];
 
-  @Type(() => NamespaceServicePodDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServicePodDto)
   @Expose()
   pods: NamespaceServicePodDto[];
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => NamespaceNotificationDto)
   @Expose()
   notifications: NamespaceNotificationDto[];

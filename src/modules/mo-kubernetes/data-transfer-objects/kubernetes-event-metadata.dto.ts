@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
+import { isArray } from 'class-validator';
 
 export class KubernetesEventMetadataDto {
   // nginx-test-2-pxqksj-67d7c6dd8c-rcrrc.16e56ecb5c2bc2dd
@@ -40,6 +41,7 @@ export class KubernetesEventMetadataDto {
    *   }
    * }
    */
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   managedFields: any[];
 }

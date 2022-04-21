@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isString } from 'class-validator';
+import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { GitConnectionDto } from '../../../mo-git';
 import { ClusterPublicDto, SubscriptionDto } from '../../../mo-payment';
@@ -21,6 +21,7 @@ export class NamespaceDto extends BaseEntityDto {
   // @Expose()
   // keypair: NamespaceKeypairDto;
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   users: string[];
 

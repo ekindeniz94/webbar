@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isString } from 'class-validator';
+import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceServiceDto } from '../namespace-service';
@@ -26,6 +26,7 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
   namespace: NamespaceDto;
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => NamespaceServiceDto)
   @Expose()
   services: NamespaceServiceDto[];
@@ -58,6 +59,7 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
   serviceCount: number;
 
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => NamespaceNotificationDto)
   @Expose()
   notifications: NamespaceNotificationDto[];

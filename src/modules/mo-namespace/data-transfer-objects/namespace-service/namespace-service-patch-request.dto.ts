@@ -23,15 +23,15 @@ export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateReque
   kubernetesSettings: NamespaceServiceKubernetesSettingsPatchRequestDto;
 
   @IsOptional()
-  @Type(() => NamespaceServiceEnvVarPatchRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServiceEnvVarPatchRequestDto)
   @ValidateNested()
   @Expose()
   envVars: NamespaceServiceEnvVarPatchRequestDto[];
 
   @IsOptional()
-  @Type(() => NamespaceServicePortPatchRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServicePortPatchRequestDto)
   @Expose()
   ports: NamespaceServicePortPatchRequestDto[];
 
@@ -43,6 +43,7 @@ export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateReque
     }
     return [];
   })
+  @Type(() => NamespaceServiceCnamePatchRequestDto)
   @ValidateNested()
   @Expose()
   cNames: NamespaceServiceCnamePatchRequestDto[];

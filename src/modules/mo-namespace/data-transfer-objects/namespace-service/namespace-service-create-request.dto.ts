@@ -89,13 +89,14 @@ export class NamespaceServiceCreateRequestDto {
     }
     return [];
   })
+  @Type(() => NamespaceServiceCnameCreateRequestDto)
   @ValidateNested()
   @Expose()
   cNames: NamespaceServiceCnameCreateRequestDto[];
 
   @IsOptional()
-  @Type(() => NamespaceServicePortCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServicePortCreateRequestDto)
   @ValidateNested()
   @Expose()
   ports: NamespaceServicePortCreateRequestDto[];
@@ -107,8 +108,8 @@ export class NamespaceServiceCreateRequestDto {
   kubernetesSettings: NamespaceServiceKubernetesSettingsCreateRequestDto;
 
   @IsOptional()
-  @Type(() => NamespaceServiceEnvVarCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => NamespaceServiceEnvVarCreateRequestDto)
   @ValidateNested()
   @Expose()
   envVars: NamespaceServiceEnvVarCreateRequestDto[];
