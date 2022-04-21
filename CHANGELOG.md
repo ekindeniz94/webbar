@@ -2,6 +2,13 @@
 
 
 
+## 1.31.8 (2022-04-21)
+
+
+### Bug Fixes
+
+* add pending state NamespaceServiceStateEnum ([7cf5020](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7cf5020078a07fc9732d884d5fe05251cb55e22f))
+
 ## 1.31.7 (2022-04-21)
 
 
