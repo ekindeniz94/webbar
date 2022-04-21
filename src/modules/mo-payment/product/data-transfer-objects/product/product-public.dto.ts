@@ -1,9 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import {isArray, IsNumber} from 'class-validator';
+import { isArray, IsNumber } from 'class-validator';
 import moment from 'moment';
-import { ProductStateEnum, ProductRuntimeIntervalEnum, ProductTypeEnum } from '../../enums';
+import { ProductRuntimeIntervalEnum, ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { ClusterDto, ClusterPublicDto } from '../cluster';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { PriceIntervalPublicDto } from '../price-interval';
 

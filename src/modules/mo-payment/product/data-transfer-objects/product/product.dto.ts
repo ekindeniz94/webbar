@@ -6,8 +6,8 @@ import {
   DiskPerformanceTierEnum,
   PaypalCategoryTypeEnum,
   PaypalProductTypeEnum,
-  ProductStateEnum,
   ProductRuntimeIntervalEnum,
+  ProductStateEnum,
   ProductTypeEnum
 } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';

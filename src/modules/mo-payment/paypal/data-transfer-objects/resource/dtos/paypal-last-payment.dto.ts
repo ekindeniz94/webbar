@@ -1,5 +1,5 @@
-import { Expose } from "class-transformer";
-import { PaypalAmountDto } from "./paypal-amount.dto";
+import { Expose } from 'class-transformer';
+import { PaypalAmountDto } from './paypal-amount.dto';
 
 export class PaypalLastPaymentDto {
     @Expose()

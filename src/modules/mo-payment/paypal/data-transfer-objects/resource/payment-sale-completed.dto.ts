@@ -2,8 +2,7 @@ import { Expose } from 'class-transformer';
 import {
   PaypalPaymentModeEnum,
   PaypalPaymentProtectionEligibilityEnum,
-  PaypalPaymentProtectionEligibilityTypeEnum,
-  PaypalPaymentStateEnum
+  PaypalPaymentProtectionEligibilityTypeEnum
 } from '../../enums';
 import { PaypalAmountTotalDto } from './dtos/paypal-amount-total.dto';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';

@@ -1,6 +1,6 @@
-import {Expose, Transform, Type} from 'class-transformer';
-import {IsEnum, IsNotEmpty, IsNumber, IsOptional} from 'class-validator';
-import {ProductRuntimeIntervalEnum} from '../../enums';
+import { Expose, Transform, Type } from 'class-transformer';
+import { IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import { ProductRuntimeIntervalEnum } from '../../enums';
 
 export class PriceIntervalCreateRequestDto {
   // @IsNotEmpty()

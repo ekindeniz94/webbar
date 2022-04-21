@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
 import { ProductDto } from '../product/product.dto';
-import { BaseEntityDto, CountryDto } from '../../../../mo-core';
+import { BaseEntityDto } from '../../../../mo-core';
 import { SubscriptionDto } from '../../../subscription';
 import { ProductRuntimeIntervalEnum } from '../../enums';
 

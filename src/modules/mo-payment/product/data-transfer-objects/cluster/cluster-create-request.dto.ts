@@ -1,6 +1,5 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsIP, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
-import { ProductDto } from '../product';
+import { Expose, Type } from 'class-transformer';
+import { IsIP, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
 import { CountryDto } from '../../../../mo-core';
 
 export class ClusterCreateRequestDto {

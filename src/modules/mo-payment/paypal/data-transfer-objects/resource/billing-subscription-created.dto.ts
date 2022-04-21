@@ -1,7 +1,7 @@
-import {Expose, Type} from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { PaypalSubscriptionStatusEnum } from '../../enums';
 import { PaypalLinkDto } from './dtos/paypal-link.dto';
-import {PaypalResourceDto} from "./paypal-resource.dto";
+import { PaypalResourceDto } from './paypal-resource.dto';
 
 export class PaypalResourceBillingSubscriptionCreatedDto extends PaypalResourceDto {
   // @Expose()

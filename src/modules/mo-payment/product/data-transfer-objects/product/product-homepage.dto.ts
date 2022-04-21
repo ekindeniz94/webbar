@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto } from '../../../../mo-core';
+import { CountryDto } from '../../../../mo-core';
 import { ProductPublicDto } from './product-public.dto';
 import { ProductDto } from './product.dto';
 
