@@ -1,7 +1,6 @@
 import {
   ChangelogSocketEventEnum,
   K8sNotificationSocketEventEnum,
-  // KubernetesEventSocketEventEnum,
   NamespaceSocketEventEnum,
   NotificationSocketEventEnum,
   PaymentSocketEventEnum,

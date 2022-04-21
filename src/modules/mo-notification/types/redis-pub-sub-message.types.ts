@@ -1,5 +1,4 @@
 import {
-  IRedisPubSubMessage,
   IRedisPubSubMessageAuth,
   IRedisPubSubMessageK8sNotification,
   IRedisPubSubMessageNamespace,
