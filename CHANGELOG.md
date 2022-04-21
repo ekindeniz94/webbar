@@ -2,6 +2,14 @@
 
 
 
+## 1.31.5 (2022-04-21)
+
+
+### Bug Fixes
+
+* index export issue ([0eb810f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0eb810fffbceee37547c3d9169b270ac88b11cd0))
+* opt imports ([38f330f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/38f330f65891345f6725bc3cfe84b419733ceb92))
+
 ## 1.31.4 (2022-04-20)
 
 
