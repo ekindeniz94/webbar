@@ -1,10 +1,10 @@
-import {Expose, Transform, Type} from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { FilePublicDto } from '../../../mo-file';
 import { NamespaceServiceEnvVarDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
 import { ServiceTypeEnum } from '../../enums';
 import { ServicePortDto } from './service-port.dto';
-import {isArray} from "class-validator";
+import { isArray } from 'class-validator';
 
 export class ServiceDto extends BaseEntityDto {
   @Expose()

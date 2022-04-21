@@ -3,7 +3,6 @@ import { isArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNes
 import { FileDto } from '../../../mo-file/data-transfer-objects/file.dto';
 import { NamespaceServiceEnvVarCreateRequestDto } from '../../../mo-namespace/data-transfer-objects/namespace-service';
 import { ServiceTypeEnum } from '../../enums';
-import { ServicePortDto } from './service-port.dto';
 import { ServicePortCreateRequestDto } from './service-port-create-request.dto';
 
 export class ServiceCreateRequestDto {
