@@ -2,6 +2,19 @@
 
 
 
+## 1.31.6 (2022-04-21)
+
+
+### Bug Fixes
+
+* opt imports namespace ([3a81f13](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3a81f1329969e22a582513d4573ba2563d8af1e1))
+* opt imports notification ([5285fb1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5285fb194984f22209abfffc0f904d457fea4f52))
+* opt imports payment ([503b83f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/503b83fed89f12e22748e48cb9338f404a65e901))
+* opt imports service lib ([2404e46](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2404e4642a034147d5c123f4e5e387257aadbda8))
+* opt imports sitemap ([7237cf3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7237cf39ab2840ffa56addfccf4a892f9e93ab2c))
+* opt imports user ([0e75b3d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0e75b3d534ec72cbf4f208db5cb01583433dbab3))
+* Transform array types (empty array as default) ([2f95a3e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2f95a3ef8a5de03ec06c939e8918055b4945f8de))
+
 ## 1.31.5 (2022-04-21)
 
 
