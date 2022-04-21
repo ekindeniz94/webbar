@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsOptional, ValidateIf, ValidateNested } from 'class-validator';
+import { IsOptional, ValidateNested } from 'class-validator';
 import { AddressPatchRequestDto } from '../../../mo-core';
 import { UserCompanyPatchRequestDto } from './company/user-company-patch-request.dto';
 import { UserCreateRequestDto } from './user-create-request.dto';

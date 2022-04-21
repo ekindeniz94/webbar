@@ -1,5 +1,5 @@
-import {Expose, Type} from 'class-transformer';
-import {AddressDto} from "../../../../mo-core";
+import { Expose, Type } from 'class-transformer';
+import { AddressDto } from '../../../../mo-core';
 
 export class UserCompanyDto {
   @Expose()

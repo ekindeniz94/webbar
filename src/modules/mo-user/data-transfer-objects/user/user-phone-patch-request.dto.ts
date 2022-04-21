@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, IsOptional, isString, IsString, MaxLength } from 'class-validator';
-import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
+import { IsNotEmpty, isString, IsString, MaxLength } from 'class-validator';
+import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { StripTags } from '../../../../utils';
 
 export class UserPhonePatchRequestDto {

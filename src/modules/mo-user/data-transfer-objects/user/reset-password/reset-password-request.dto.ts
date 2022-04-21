@@ -1,4 +1,4 @@
-import { IsEmail, IsOptional, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsOptional, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
 import { MoUtils, StripTags } from '../../../../../utils';
