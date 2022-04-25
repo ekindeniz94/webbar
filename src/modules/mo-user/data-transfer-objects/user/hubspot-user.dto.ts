@@ -1,4 +1,5 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isString } from 'class-validator';
 
 export class HubspotUserDto {
   @Expose()
@@ -13,6 +14,19 @@ export class HubspotUserDto {
   @Expose()
   deletedAt: string;
 
+  @Transform(({ value }) => {
+    try {
+      if (isString(value) && value.startsWith('MO')) {
+        const valueArr = value.split('__');
+        valueArr.shift();
+        return valueArr.join('__');
+      }
+      return value;
+    } catch (err) {
+      console.error(err);
+    }
+    return value;
+  })
   @Expose()
   email: string;
 
