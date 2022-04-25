@@ -2,6 +2,13 @@
 
 
 
+## 1.31.10 (2022-04-25)
+
+
+### Bug Fixes
+
+* hubspot user dto (parse deleted email) ([ef99304](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ef993040d2c40d694085b2bbb1187489bc020929))
+
 ## 1.31.9 (2022-04-25)
 
 
