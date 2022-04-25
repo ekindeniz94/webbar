@@ -11,3 +11,4 @@ export * from './sms-confirmation-message.dto';
 export * from './reset-password/reset-password-with-email-request.dto';
 export * from './reset-password/reset-password-with-email-message.dto';
 export * from './reset-password/reset-password-request.dto';
+export * from './hubspot-user.dto';
