@@ -2,6 +2,13 @@
 
 
 
+## 1.31.9 (2022-04-25)
+
+
+### Bug Fixes
+
+* export hubspot-user.dto ([5d44772](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5d447726184a088b0009cf75b39d212f6357833e))
+
 ## 1.31.8 (2022-04-21)
 
 
