@@ -2,6 +2,13 @@
 
 
 
+## 1.31.11 (2022-04-26)
+
+
+### Bug Fixes
+
+* CiCdPipelineDto id tranform & opt imports mo-core dtos ([7dba3ca](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7dba3caf54ee072a82431c4f25c1bc760f47927c))
+
 ## 1.31.10 (2022-04-25)
 
 
