@@ -1,11 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsOptional } from 'class-validator';
 import { CiCdPipelineLogEntryDto } from './cicd-pipeline-log-entry.dto';
 import { MoUtils } from '../../../utils';
 import { CiCdPipelineResultEnum, CiCdPipelineStatusEnum } from '../enums';
 
 export class CiCdPipelineDto {
-  @Transform((value) => value ?? MoUtils.nanoid())
+  @Transform(({ value }) => value ?? MoUtils.nanoid())
   @Expose()
   id: string;
 

@@ -1,4 +1,4 @@
-import {Expose, Transform, Type} from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { isEnum, IsEnum, IsNumber, IsOptional, isString, IsString } from 'class-validator';
 import { OrderEnum } from '../enums';
 

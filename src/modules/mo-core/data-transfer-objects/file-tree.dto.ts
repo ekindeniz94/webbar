@@ -1,5 +1,5 @@
-import { isArray, IsEnum, IsMimeType, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { Expose, Transform, Type } from 'class-transformer';
+import { IsEnum, IsMimeType, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { Expose } from 'class-transformer';
 import { FileTypeEnum } from '../enums/file-type.enum';
 
 export class FileTreeDto {

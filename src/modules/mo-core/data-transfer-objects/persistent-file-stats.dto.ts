@@ -1,6 +1,6 @@
 // { directories: {}, sum: 0, durationMs: 0 }
 
-import { Expose } from "class-transformer";
+import { Expose } from 'class-transformer';
 
 export class PersistentFileStatsDto {
     @Expose()

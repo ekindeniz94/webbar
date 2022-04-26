@@ -1,5 +1,5 @@
-import { Expose } from "class-transformer";
-import { K8sServiceDto } from "./k8s-service.dto";
+import { Expose } from 'class-transformer';
+import { K8sServiceDto } from './k8s-service.dto';
 
 export class K8sStageDto {
     @Expose()
