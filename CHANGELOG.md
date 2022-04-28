@@ -2,6 +2,13 @@
 
 
 
+## 1.31.13 (2022-04-28)
+
+
+### Bug Fixes
+
+* mo-git refactoring ([f6932c8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f6932c822abda1a451d679bbb009366a65d73e44))
+
 ## 1.31.12 (2022-04-28)
 
 
