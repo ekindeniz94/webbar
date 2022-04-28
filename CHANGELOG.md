@@ -2,6 +2,13 @@
 
 
 
+## 1.31.14 (2022-04-28)
+
+
+### Bug Fixes
+
+* update k8s-msg ([2c99ea0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2c99ea08df2685216a75cc5edf4c0d274c0286bd))
+
 ## 1.31.13 (2022-04-28)
 
 
