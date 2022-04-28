@@ -1,6 +1,6 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
-import { IsNotEmpty, IsString, IsDateString } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsString } from 'class-validator';
 
 export class GitConnectionCreateRequestDto {
   @IsNotEmpty()

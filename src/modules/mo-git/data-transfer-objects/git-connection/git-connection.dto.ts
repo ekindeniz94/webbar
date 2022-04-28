@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import moment from 'moment';
 import { GitConnectionTypeEnum } from '../../enums';
+import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 
 export class GitConnectionDto extends BaseEntityDto {
   @Expose()
@@ -30,12 +31,17 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   refreshTokenExpiresAt: string;
 
+  @Type(() => GithubInstallationDto)
   @Expose()
-  gitResponseData: any;
+  gitResponseData: GithubInstallationDto;
 
-  @Transform(({ value, obj }) => obj?.gitResponseData?.avatar_url)
+  @Type(() => GithubUserDto)
   @Expose()
-  avatarUrl: string;
+  gitUser: GithubUserDto;
+
+  @Type(() => GithubAppDto)
+  @Expose()
+  gitApp: GithubAppDto;
 
   get isAccessTokenExpired(): boolean {
     return moment().isAfter(this.accessTokenExpiresAt);

@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { GitlabBranchCommitDto } from './gitlab-branch-commit.dto';
 import { GitConnectionTypeEnum } from '../../enums';
 
