@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { GithubUserDto } from './github-user.dto';
-import { GithubTargetType } from '../types/github-target-type.type';
+import { GithubTargetType } from '../../types/github-target-type.type';
 
 export class GithubInstallationDto {
   @Type(() => Number)

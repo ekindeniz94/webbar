@@ -1,4 +1,4 @@
-import { GithubAppDto, GithubInstallationDto, GithubTokenDto, GithubUserDto } from '../github';
+import { GithubAppDto, GithubInstallationDto, GithubTokenDto, GithubUserDto } from '../data-transfer-objects/github';
 import { GithubAuthorizedType } from '../types';
 
 export interface IGithubAuthorizedResponse {
