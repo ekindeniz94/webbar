@@ -2,6 +2,13 @@
 
 
 
+## 1.31.12 (2022-04-28)
+
+
+### Bug Fixes
+
+* mo-git ([f47b230](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f47b2307d19a148c69425396632cd822373d76ae))
+
 ## 1.31.11 (2022-04-26)
 
 
