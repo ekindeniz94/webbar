@@ -29,6 +29,18 @@ export class K8sMsgDto {
   @Expose()
   durationMs: number;
 
+  @Expose()
+  buildId?: string;
+
+  @Expose()
+  namespaceId: string;
+
+  @Expose()
+  namespaceStageId?: string;
+
+  @Expose()
+  namespaceServiceId?: string;
+
   get isJob(): boolean {
     if (this.jobId === undefined || this.jobId === 'undefined' || this.jobId === '') {
       return true;
