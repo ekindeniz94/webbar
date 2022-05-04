@@ -2,6 +2,13 @@
 
 
 
+# 1.32.0 (2022-05-04)
+
+
+### Features
+
+* mo-cloudflare ([dc459f4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/dc459f497b07e48c521fd61920181f0c266f043f))
+
 ## 1.31.14 (2022-04-28)
 
 
