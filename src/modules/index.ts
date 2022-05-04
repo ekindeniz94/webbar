@@ -11,5 +11,6 @@ export * from './mo-payment';
 export * from './mo-notification';
 export * from './mo-service-library';
 export * from './mo-changelog';
+export * from './mo-cloudflare';
 export * from './mo-sitemap';
 export * from './mo-user';
