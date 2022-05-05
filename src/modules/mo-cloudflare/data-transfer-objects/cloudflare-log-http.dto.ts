@@ -14,6 +14,9 @@ export class CloudflareLogHttpDto {
   originResponseStatus: number;
 
   @Expose()
+  mogeniusResponseBytes: number;
+
+  @Expose()
   edgeResponseBytes: number;
 
   @Expose()
