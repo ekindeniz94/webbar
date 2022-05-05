@@ -2,6 +2,13 @@
 
 
 
+## 1.32.4 (2022-05-05)
+
+
+### Bug Fixes
+
+* updated cloudflare log model. ([a24585a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a24585aef06ae6fb4ed12457721d50d6fbbd98ab))
+
 ## 1.32.3 (2022-05-05)
 
 
