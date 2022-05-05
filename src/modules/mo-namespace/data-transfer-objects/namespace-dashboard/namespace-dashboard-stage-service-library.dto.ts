@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { FilePublicDto } from '../../../mo-file';
 
 export class NamespaceDashboardStageServiceLibraryDto {
   @Expose()
@@ -7,9 +8,11 @@ export class NamespaceDashboardStageServiceLibraryDto {
   @Expose()
   name: string;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  iconId: string;
+  icon: FilePublicDto;
 
+  @Type(() => FilePublicDto)
   @Expose()
-  imageId: string;
+  image: FilePublicDto;
 }
