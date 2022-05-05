@@ -2,6 +2,13 @@
 
 
 
+## 1.32.6 (2022-05-05)
+
+
+### Bug Fixes
+
+* NamespaceDashboardStageServiceLibraryDto -> image: FilePublicDto;  icon: FilePublicDto; ([986e78b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/986e78b42e3210f8ce6a2e06474dbcd73d99ae0c))
+
 ## 1.32.5 (2022-05-05)
 
 
