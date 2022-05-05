@@ -16,4 +16,7 @@ export class CloudflareLogSpectrumDto {
 
   @Expose()
   originBytes: number;
+
+  @Expose()
+  connectionCount: number;
 }
