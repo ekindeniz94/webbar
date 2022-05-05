@@ -11,7 +11,10 @@ export class CloudflareLogHttpDto {
   cacheResponseBytes: number;
 
   @Expose()
-  originResponseBytes: number;
+  originResponseStatus: number;
+
+  @Expose()
+  edgeResponseBytes: number;
 
   @Expose()
   requestCount: number;
