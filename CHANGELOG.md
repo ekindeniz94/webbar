@@ -2,6 +2,13 @@
 
 
 
+## 1.32.5 (2022-05-05)
+
+
+### Bug Fixes
+
+* dashboard stage service dto ([175d40e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/175d40e0389f153ef52f17c57d1ee921d12288ca))
+
 ## 1.32.4 (2022-05-05)
 
 
