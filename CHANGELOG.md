@@ -2,6 +2,13 @@
 
 
 
+## 1.32.7 (2022-05-06)
+
+
+### Bug Fixes
+
+* add state to NamespaceDashboardStageServiceDto ([523acdf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/523acdfcff3b9b5b38dd50c47a621f8baa3ce89a))
+
 ## 1.32.6 (2022-05-05)
 
 
