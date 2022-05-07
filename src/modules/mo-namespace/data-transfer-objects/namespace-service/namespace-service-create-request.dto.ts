@@ -39,16 +39,16 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   displayName: string;
 
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
-  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {
-    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
-  })
-  @StripTags()
-  @Expose()
-  name: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)
+  // @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
+  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {
+  //   message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+  // })
+  // @StripTags()
+  // @Expose()
+  // name: string;
 
   @IsOptional()
   @IsString()

@@ -18,25 +18,25 @@ export class NamespaceStageCreateRequestDto {
   @Expose()
   displayName: string;
 
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MAX)
-  @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MATCHES, {
-    message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
-  })
-  @StripTags()
-  @Expose()
-  name: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.SUBDOMAIN.MATCHES, {
-    message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 30 char'
-  })
-  @StripTags()
-  @Expose()
-  subdomain: string;
+  // @IsNotEmpty()
+  // @IsString()
+  // @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MIN)
+  // @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MAX)
+  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MATCHES, {
+  //   message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
+  // })
+  // @StripTags()
+  // @Expose()
+  // name: string;
+  //
+  // @IsNotEmpty()
+  // @IsString()
+  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.SUBDOMAIN.MATCHES, {
+  //   message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 30 char'
+  // })
+  // @StripTags()
+  // @Expose()
+  // subdomain: string;
 
   @IsOptional()
   @IsString()
