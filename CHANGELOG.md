@@ -2,6 +2,13 @@
 
 
 
+## 1.32.8 (2022-05-07)
+
+
+### Bug Fixes
+
+* rm name from create namespace service, rm name & subdomain from create stage ([c7204df](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c7204df919ace5ed613d237b299c9dd1d8602012))
+
 ## 1.32.7 (2022-05-06)
 
 
