@@ -4,7 +4,7 @@ import { BaseEntityDto } from '../../../mo-core';
 import { MoUtils, StripTags } from '../../../../utils';
 
 export class NamespaceServiceCnameCreateRequestDto extends BaseEntityDto {
-  @Transform((value) => value ?? MoUtils.nanoid())
+  // @Transform(({ value }) => value ?? MoUtils.nanoid())
   @StripTags()
   @Expose()
   id: string;
