@@ -28,7 +28,8 @@
   "author": "Behrang Alavi, Benedikt Iltisberger",
   "license": "ISC",
   "peerDependencies": {
-    "striptags": "^4.0.0-alpha.2"
+    "striptags": "^4.0.0-alpha.2",
+    "phone": "3.1.17"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",
@@ -37,6 +38,7 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "nanoid": "^3.1.22",
+    "phone": "3.1.17",
     "rxjs": "^6.6.3",
     "semver": "^7.3.5",
     "source-map-support": "^0.5.19",
