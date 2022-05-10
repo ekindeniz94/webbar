@@ -2,6 +2,13 @@
 
 
 
+## 1.32.9 (2022-05-09)
+
+
+### Bug Fixes
+
+* NamespaceServiceCnameCreateRequestDto id param ([a41ef1c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a41ef1c27fcb9f7bec105fb0223e16402a948095))
+
 ## 1.32.8 (2022-05-07)
 
 
