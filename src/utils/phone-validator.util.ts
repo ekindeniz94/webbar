@@ -1,5 +1,5 @@
 import { instanceToPlain, plainToInstance } from 'class-transformer';
-import { isEmpty } from 'class-validator';
+import { isEmpty, isString } from 'class-validator';
 import phone from 'phone';
 
 const bosniaHerzegovina = (phoneNumber: string): boolean => {
@@ -17,15 +17,14 @@ const customValidator: { [key: string]: Function } = {
   '+387': bosniaHerzegovina
 };
 
-export const phoneValidate = (phoneNumberPrefix: string, phoneNumber: string): boolean => {
-  if (phoneNumberPrefix && phoneNumber) {
-    if (customValidator[phoneNumberPrefix]) {
-      if (!phoneNumberPrefix.startsWith('+')) {
-        phoneNumberPrefix = `+${phoneNumberPrefix}`;
-      }
-      return customValidator[phoneNumberPrefix](`${phoneNumberPrefix}${phoneNumber}`);
+export const phoneValidate = (phoneNumber: string): boolean => {
+  if (isString(phoneNumber)) {
+    const key = Object.keys(customValidator).find((item: string) => phoneNumber.startsWith(item));
+    if (key) {
+      return customValidator[key](`${phoneNumber}`);
     } else {
-      return phone(`${phoneNumberPrefix}${phoneNumber}`, { strictDetection: true }).isValid;
+      console.log(phoneNumber)
+      return phone(`${phoneNumber}`, { strictDetection: true }).isValid;
     }
   }
   return false;
