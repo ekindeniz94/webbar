@@ -2,6 +2,13 @@
 
 
 
+## 1.32.10 (2022-05-10)
+
+
+### Bug Fixes
+
+* add custom phone validator ([a3db59f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a3db59f6ea8e107e33b2f19c96bd9b925b9e9404))
+
 ## 1.32.9 (2022-05-09)
 
 
