@@ -2,6 +2,13 @@
 
 
 
+## 1.32.11 (2022-05-10)
+
+
+### Bug Fixes
+
+* update phoneValidate params ([9bab76e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9bab76e2c5b5b5e3155787bf8f47ade2df8693d5))
+
 ## 1.32.10 (2022-05-10)
 
 
