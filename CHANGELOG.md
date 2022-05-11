@@ -2,6 +2,13 @@
 
 
 
+## 1.32.12 (2022-05-11)
+
+
+### Bug Fixes
+
+* parse CloudflareLogHttpDto values (to number) ([4b534e2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4b534e29d9b50f950fde35fbd7032ffa2927c988))
+
 ## 1.32.11 (2022-05-10)
 
 
