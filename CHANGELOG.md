@@ -2,6 +2,13 @@
 
 
 
+## 1.32.13 (2022-05-12)
+
+
+### Bug Fixes
+
+* user phoneNumberPrefix + phoneNumber validation ([ba2c012](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ba2c0121b3795affc30774ccd75e847fb403435d))
+
 ## 1.32.12 (2022-05-11)
 
 
