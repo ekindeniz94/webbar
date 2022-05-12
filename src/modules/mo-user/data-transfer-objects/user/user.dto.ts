@@ -1,9 +1,10 @@
-import { AddressDto, BaseEntityDto } from '../../../mo-core';
+import { AddressDto, BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Exclude, Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsOptional, isString } from 'class-validator';
 import { UserCompanyDto } from './company/user-company.dto';
 import { GroupDto } from '../group';
 import { UserPublicDto } from './user-public.dto';
+import { StripTags } from '../../../../utils';
 
 export class UserDto extends BaseEntityDto {
   @Exclude()
@@ -18,9 +19,25 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   email: string;
 
+  @Transform(({ value }) => {
+    value = (value && isString(value) ? value.trim() : value)
+      ?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
+      ?.toLowerCase()
+      .replace(/[^0-9+]/g, ' ')
+      ?.replace(/ +/g, '');
+    return value;
+  })
   @Expose()
   phoneNumberPrefix: string;
 
+  @Transform(({ value }) => {
+    value = (value && isString(value) ? value.trim() : value)
+      ?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
+      ?.toLowerCase()
+      .replace(/[^0-9]/g, ' ')
+      ?.replace(/ +/g, '');
+    return value;
+  })
   @Expose()
   phoneNumber: string;
 

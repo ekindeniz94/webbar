@@ -23,7 +23,6 @@ export const phoneValidate = (phoneNumber: string): boolean => {
     if (key) {
       return customValidator[key](`${phoneNumber}`);
     } else {
-      console.log(phoneNumber)
       return phone(`${phoneNumber}`, { strictDetection: true }).isValid;
     }
   }

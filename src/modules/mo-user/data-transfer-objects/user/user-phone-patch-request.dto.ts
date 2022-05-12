@@ -14,9 +14,14 @@ export class UserPhonePatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
-  )
+  @Transform(({ value }) => {
+    value = (value && isString(value) ? value.trim() : value)
+      ?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER_PREFIX.MAX)
+      ?.toLowerCase()
+      .replace(/[^0-9+]/g, ' ')
+      ?.replace(/ +/g, '');
+    return value;
+  })
   @StripTags()
   @Expose()
   phoneNumberPrefix: string;
@@ -24,9 +29,14 @@ export class UserPhonePatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
-  )
+  @Transform(({ value }) => {
+    value = (value && isString(value) ? value.trim() : value)
+      ?.substring(0, DTO_VALIDATION_CONST.PHONE_NUMBER.MAX)
+      ?.toLowerCase()
+      .replace(/[^0-9]/g, ' ')
+      ?.replace(/ +/g, '');
+    return value;
+  })
   @StripTags()
   @Expose()
   phoneNumber: string;
