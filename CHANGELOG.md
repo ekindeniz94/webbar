@@ -2,6 +2,13 @@
 
 
 
+# 1.33.0 (2022-05-17)
+
+
+### Features
+
+* renaming / refactoring service-lib to app-lib ([4c6e767](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4c6e767c43d0537443b6f68c3405b73d03b094fe))
+
 ## 1.32.13 (2022-05-12)
 
 
