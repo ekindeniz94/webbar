@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceDashboardStageServiceLibraryDto } from './namespace-dashboard-stage-service-library.dto';
 import { NamespaceDashboardStageServiceNotificationDto } from './namespace-dashboard-stage-service-notification.dto';
 import { isArray } from 'class-validator';
 import { NamespaceServiceStateEnum } from '../../enums';
+import { NamespaceDashboardStageAppDto } from './namespace-dashboard-stage-app.dto';
 
 export class NamespaceDashboardStageServiceDto {
   @Expose()
@@ -25,7 +25,7 @@ export class NamespaceDashboardStageServiceDto {
   @Expose()
   notifications: NamespaceDashboardStageServiceNotificationDto[];
 
-  @Type(() => NamespaceDashboardStageServiceLibraryDto)
+  @Type(() => NamespaceDashboardStageAppDto)
   @Expose()
-  service: NamespaceDashboardStageServiceLibraryDto;
+  app: NamespaceDashboardStageAppDto;
 }

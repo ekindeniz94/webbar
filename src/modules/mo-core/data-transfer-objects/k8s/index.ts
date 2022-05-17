@@ -1,3 +1,4 @@
+export * from './k8s-app.dto';
 export * from './k8s-envvar.dto';
 export * from './k8s-namespace.dto';
 export * from './k8s-port.dto';

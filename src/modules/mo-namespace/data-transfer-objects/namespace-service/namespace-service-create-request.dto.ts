@@ -7,13 +7,11 @@ import {
   IsOptional,
   isString,
   IsString,
-  Matches,
   MaxLength,
   MinLength,
   ValidateNested
 } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { NamespaceStageDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import {
@@ -23,6 +21,8 @@ import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
 import { StripTags } from '../../../../utils';
+import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
+import { AppLibraryTypeEnum } from '../../../mo-app-library';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -117,17 +117,17 @@ export class NamespaceServiceCreateRequestDto {
   envVars: NamespaceServiceEnvVarCreateRequestDto[];
 
   @IsNotEmpty()
-  @Type(() => ServiceDto)
+  @Type(() => AppDto)
   // @ValidateNested()
   @Expose()
-  service: ServiceDto;
+  app: AppDto;
 
   @Type(() => NamespaceStageDto)
   @Expose()
   stage: NamespaceStageDto;
 
-  get serviceType(): ServiceTypeEnum {
-    return this.service.serviceType;
+  get appType(): AppLibraryTypeEnum {
+    return this.app.appType;
   }
 
   public static gitBranchTransform(params: TransformFnParams): string {

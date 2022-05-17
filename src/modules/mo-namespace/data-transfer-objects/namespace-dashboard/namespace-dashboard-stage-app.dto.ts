@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { FilePublicDto } from '../../../mo-file';
 
-export class NamespaceDashboardStageServiceLibraryDto {
+export class NamespaceDashboardStageAppDto {
   @Expose()
   id: string;
 

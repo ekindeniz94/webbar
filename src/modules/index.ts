@@ -1,3 +1,4 @@
+export * from './mo-app-library';
 export * from './mo-blog';
 export * from './mo-contact';
 export * from './mo-core';
@@ -9,7 +10,6 @@ export * from './mo-namespace';
 export * from './mo-kubernetes';
 export * from './mo-payment';
 export * from './mo-notification';
-export * from './mo-service-library';
 export * from './mo-changelog';
 export * from './mo-cloudflare';
 export * from './mo-sitemap';

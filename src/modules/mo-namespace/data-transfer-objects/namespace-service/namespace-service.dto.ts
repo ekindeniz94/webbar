@@ -3,7 +3,6 @@ import { isArray, isBoolean, isString } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
-import { ServiceDto, ServiceTypeEnum } from '../../../mo-service-library';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage';
@@ -13,6 +12,8 @@ import { NamespaceServicePortDto } from './namespace-service-port.dto';
 import { NamespaceNotificationDto } from '../../../mo-notification';
 import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
+import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
+import { AppLibraryTypeEnum } from '../../../mo-app-library';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -75,9 +76,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
   envVars: NamespaceServiceEnvVarDto[];
 
-  @Type(() => ServiceDto)
+  @Type(() => AppDto)
   @Expose()
-  service: ServiceDto;
+  app: AppDto;
 
   @Type(() => NamespaceStageDto)
   @Expose()
@@ -115,8 +116,8 @@ export class NamespaceServiceDto extends BaseEntityDto {
     );
   }
 
-  get serviceType(): ServiceTypeEnum {
-    return this.service.serviceType;
+  get appType(): AppLibraryTypeEnum {
+    return this.app.appType;
   }
 
   get hostname(): string {
