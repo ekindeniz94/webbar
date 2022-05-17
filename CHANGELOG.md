@@ -2,6 +2,13 @@
 
 
 
+## 1.33.1 (2022-05-17)
+
+
+### Bug Fixes
+
+* AppTagDto ([154ac64](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/154ac6479cd2fc64b7b3e457daae9b4eb976675a))
+
 # 1.33.0 (2022-05-17)
 
 
