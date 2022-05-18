@@ -12,17 +12,15 @@ import {
   ValidateNested
 } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { NamespaceStageDto } from '../namespace-stage';
+import { NamespaceStageDto, NamespaceStageIdDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
-import {
-  NamespaceServiceKubernetesSettingsCreateRequestDto
-} from './namespace-service-kubernetes-settings-create-request.dto';
+import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
 import { StripTags } from '../../../../utils';
 import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
-import { AppLibraryTypeEnum } from '../../../mo-app-library';
+import { AppIdDto, AppLibraryTypeEnum } from '../../../mo-app-library';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -120,15 +118,11 @@ export class NamespaceServiceCreateRequestDto {
   @Type(() => AppDto)
   // @ValidateNested()
   @Expose()
-  app: AppDto;
+  app: AppIdDto;
 
-  @Type(() => NamespaceStageDto)
+  @Type(() => NamespaceStageIdDto)
   @Expose()
-  stage: NamespaceStageDto;
-
-  get appType(): AppLibraryTypeEnum {
-    return this.app.appType;
-  }
+  stage: NamespaceStageIdDto;
 
   public static gitBranchTransform(params: TransformFnParams): string {
     let value = params.value;

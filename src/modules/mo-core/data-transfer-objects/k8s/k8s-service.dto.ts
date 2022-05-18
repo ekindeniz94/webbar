@@ -30,9 +30,6 @@ export class K8sServiceDto {
   cNames: NamespaceServiceCnameDto[];
 
   @Expose()
-  appType: AppLibraryTypeEnum;
-
-  @Expose()
   gitRepository: string;
 
   @Expose()
@@ -40,9 +37,6 @@ export class K8sServiceDto {
 
   @Expose()
   dockerfileName: string;
-
-  // @Expose()
-  // serviceGroup: K8sServiceGroupDto;
 
   @Type(() => K8sAppDto)
   @Expose()

@@ -21,7 +21,7 @@ export class AppCreateRequestDto {
   @IsNotEmpty()
   @IsEnum(AppLibraryTypeEnum)
   @Expose()
-  appType: AppLibraryTypeEnum;
+  type: AppLibraryTypeEnum;
 
   @IsNotEmpty()
   @IsString()

@@ -116,10 +116,6 @@ export class NamespaceServiceDto extends BaseEntityDto {
     );
   }
 
-  get appType(): AppLibraryTypeEnum {
-    return this.app.appType;
-  }
-
   get hostname(): string {
     return `${this.name.toLowerCase()}`;
   }

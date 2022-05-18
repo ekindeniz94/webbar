@@ -17,7 +17,7 @@ export class AppDto extends BaseEntityDto {
   name: string;
 
   @Expose()
-  appType: AppLibraryTypeEnum;
+  type: AppLibraryTypeEnum;
 
   @Expose()
   description: string;
