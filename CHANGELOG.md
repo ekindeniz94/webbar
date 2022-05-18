@@ -2,6 +2,13 @@
 
 
 
+## 1.33.3 (2022-05-18)
+
+
+### Bug Fixes
+
+* update K8sStageDto ([f2c8c63](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f2c8c63a8251902bc1c4ab3f65948adedf4bc28d))
+
 ## 1.33.2 (2022-05-18)
 
 
