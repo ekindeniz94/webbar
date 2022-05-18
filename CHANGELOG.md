@@ -2,6 +2,13 @@
 
 
 
+## 1.33.2 (2022-05-18)
+
+
+### Bug Fixes
+
+* refactoring app (appType to type) ([2743093](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/274309345ed7aa5ba611116b9a67ade1564ae2ba))
+
 ## 1.33.1 (2022-05-17)
 
 
