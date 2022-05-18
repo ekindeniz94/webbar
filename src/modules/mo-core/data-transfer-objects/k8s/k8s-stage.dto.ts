@@ -6,7 +6,7 @@ export class K8sStageDto {
     id: string;
 
     @Expose()
-    displayname: string;
+    displayName: string;
 
     @Expose()
     k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage)
