@@ -2,6 +2,13 @@
 
 
 
+## 1.33.4 (2022-05-19)
+
+
+### Bug Fixes
+
+* add AppEnvVarCreateRequestDto ([93f8320](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/93f83205445ee4d1cba82aceadd2909e7179cbc8))
+
 ## 1.33.3 (2022-05-18)
 
 
