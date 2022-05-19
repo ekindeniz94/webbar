@@ -1,6 +1,7 @@
 export * from './app-id.dto';
 export * from './app.dto';
 export * from './app-create-request.dto';
+export * from './app-envvar-create-request.dto';
 export * from './app-patch-request.dto';
 export * from './app-port.dto';
 export * from './app-port-create-request.dto';

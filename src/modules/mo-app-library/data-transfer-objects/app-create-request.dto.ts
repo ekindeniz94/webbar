@@ -3,8 +3,8 @@ import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, isString, IsString, 
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { FileDto } from '../../mo-file';
-import { NamespaceServiceEnvVarCreateRequestDto } from '../../mo-namespace';
 import { AppPortCreateRequestDto } from './app-port-create-request.dto';
+import { AppEnvVarCreateRequestDto } from './app-envvar-create-request.dto';
 
 export class AppCreateRequestDto {
   @IsOptional()
@@ -101,9 +101,9 @@ export class AppCreateRequestDto {
   @Expose()
   kubernetesMinTempStorageMb: number;
 
-  @Type(() => NamespaceServiceEnvVarCreateRequestDto)
+  @Type(() => AppEnvVarCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ValidateNested()
   @Expose()
-  envVars: NamespaceServiceEnvVarCreateRequestDto[];
+  envVars: AppEnvVarCreateRequestDto[];
 }
