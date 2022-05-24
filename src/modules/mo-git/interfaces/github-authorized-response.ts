@@ -9,5 +9,6 @@ export interface IGithubAuthorizedResponse {
   app: GithubAppDto;
   tokens?: GithubTokenDto;
   installations?: GithubInstallationDto[];
+  namespaceId?: string;
   installationsKey?: string;
 }
