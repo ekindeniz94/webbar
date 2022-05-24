@@ -2,6 +2,13 @@
 
 
 
+## 1.33.5 (2022-05-24)
+
+
+### Bug Fixes
+
+* update github auth response dto (add namespace id) ([a32407b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a32407b11df55c636c809766f18bf80f1aad520b))
+
 ## 1.33.4 (2022-05-19)
 
 
