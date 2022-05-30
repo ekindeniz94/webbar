@@ -42,4 +42,11 @@ export class MoUtils {
       .map(() => characters.charAt(Math.floor(Math.random() * characters.length)))
       .join('');
   }
+
+  static strEnum<T extends string>(o: Array<T>): { [K in T]: K } {
+    return o.reduce((res, key) => {
+      res[key] = key;
+      return res;
+    }, Object.create(null));
+  }
 }
