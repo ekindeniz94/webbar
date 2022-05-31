@@ -58,7 +58,7 @@ export class MoUtils {
     obj2: Record<string, any>,
     keyStr?: string,
     keyArr: any[] = []
-  ): Record<string, any> {
+  ): any {
     obj1 = instanceToPlain(obj1);
     obj2 = instanceToPlain(obj2);
     if (isArray(obj1)) {
