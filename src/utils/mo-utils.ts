@@ -1,4 +1,7 @@
 import { customAlphabet } from 'nanoid';
+import { isArray, isObject } from 'class-validator';
+import * as _ from 'lodash';
+import { instanceToPlain } from 'class-transformer';
 
 export class MoUtils {
   /**
@@ -48,5 +51,43 @@ export class MoUtils {
       res[key] = key;
       return res;
     }, Object.create(null));
+  }
+
+  static difference(
+    obj1: Record<string, any>,
+    obj2: Record<string, any>,
+    keyStr?: string,
+    keyArr: any[] = []
+  ): Record<string, any> {
+    obj1 = instanceToPlain(obj1);
+    obj2 = instanceToPlain(obj2);
+    if (isArray(obj1)) {
+      return obj1
+        .map((key: any, index: number) => {
+          return MoUtils.difference(obj1[key], obj2[key], `${index}`, keyArr);
+        })
+        .filter((item: any) => !!item && Object.keys(item).length > 0)
+        .flat();
+    }
+    if (isObject(obj1)) {
+      return Object.keys(obj1)
+        .map((key: string) => {
+          if (isObject((obj1 as any)[key])) {
+            keyArr.push(key);
+          }
+          return MoUtils.difference((obj1 as any)[key], obj2[key], `${key}`, keyArr);
+        })
+        .filter((item: any) => !!item && Object.keys(item).length > 0)
+        .flat();
+    }
+    if (keyStr?.indexOf('createdAt') === -1 && keyStr?.indexOf('updatedAt') === -1 && !_.isEqual(obj1, obj2)) {
+      const result: any = {};
+      result[`${[...keyArr, keyStr].join('.')}`] = {
+        prev: `${obj1}`,
+        next: `${obj2}`
+      };
+      return result;
+    }
+    return {};
   }
 }
