@@ -2,6 +2,13 @@
 
 
 
+## 1.33.7 (2022-05-31)
+
+
+### Bug Fixes
+
+* update strEnum ([426a3c3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/426a3c32e9edb513b37158bd3e20cb7fe92e7739))
+
 ## 1.33.6 (2022-05-30)
 
 
