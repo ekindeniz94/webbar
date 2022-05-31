@@ -2,6 +2,16 @@
 
 
 
+## 1.33.8 (2022-05-31)
+
+
+### Bug Fixes
+
+* add es2019 to lib ([54daa99](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/54daa99e666b429b6c34a4702a84c1f6c04e4e56))
+* azure build node version (16.x) ([ae137a4](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ae137a41c3ac9eefc35331ae0228fd1d830da6d4))
+* K8sAppDto add app id; MoUtils add difference obj ([8099776](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8099776dec972f867694f344a64335bd065c4ede))
+* MoUtil difference return type ([e6af160](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e6af1608d8e2c43a7d59675c2afcb8e1eb0cee4d))
+
 ## 1.33.7 (2022-05-31)
 
 
