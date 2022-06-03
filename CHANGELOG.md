@@ -2,6 +2,13 @@
 
 
 
+## 1.33.9 (2022-06-03)
+
+
+### Bug Fixes
+
+* update env var value match regex (add ;) ([9839d5d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9839d5d6e42db63f71040b5f6f9cb64cb6aa94a1))
+
 ## 1.33.8 (2022-05-31)
 
 
