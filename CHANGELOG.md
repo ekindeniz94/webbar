@@ -2,6 +2,13 @@
 
 
 
+## 1.33.10 (2022-06-08)
+
+
+### Bug Fixes
+
+* base entity dto add date transform to json ([13d7c78](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/13d7c78cfb18fddbfc7c87a432ca5d36d8e3d95f))
+
 ## 1.33.9 (2022-06-03)
 
 
