@@ -15,6 +15,7 @@ import { PriceIntervalDto } from '../price-interval/price-interval.dto';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { UserPublicDto } from '../../../../mo-user';
+import { ProductVoucherDto } from './product-voucher.dto';
 
 export class ProductDto extends BaseEntityDto {
   @Type(() => PriceIntervalDto)
@@ -65,11 +66,16 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   clusterList: ClusterDto[];
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Type(() => ProductVoucherDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  productVoucherList: ProductVoucherDto;
+
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startsOn: Date;
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   endsOn: Date;
 
@@ -165,6 +171,10 @@ export class ProductDto extends BaseEntityDto {
   @Type(() => Boolean)
   @Expose()
   enableAnalytics: boolean;
+
+  get isValid(): boolean {
+    return this.state === ProductStateEnum.ACTIVE && moment().isBetween(this.startsOn, this.endsOn);
+  }
 
   getPriceIntervalByInterval(interval: ProductRuntimeIntervalEnum) {
     return this.priceIntervals.find((item: PriceIntervalDto) => item.interval === interval);

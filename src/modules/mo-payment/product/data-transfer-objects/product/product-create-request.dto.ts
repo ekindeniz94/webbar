@@ -4,7 +4,6 @@ import {
   ArrayNotEmpty,
   isArray,
   IsBoolean,
-  IsDate,
   IsEnum,
   IsNotEmpty,
   IsNumber,
@@ -26,6 +25,7 @@ import { ClusterDto } from '../cluster/cluster.dto';
 import { PriceIntervalCreateRequestDto } from '../price-interval';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { UserPublicDto } from '../../../../mo-user';
+import { ProductVoucherDto } from './product-voucher.dto';
 
 export class ProductCreateRequestDto {
   @IsNotEmpty()
@@ -44,6 +44,11 @@ export class ProductCreateRequestDto {
   @ArrayMinSize(1)
   @Expose()
   clusterList: ClusterDto[];
+
+  @Type(() => ProductVoucherDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  productVoucherList: ProductVoucherDto;
 
   @IsOptional()
   @Type(() => UserPublicDto)
@@ -98,13 +103,11 @@ export class ProductCreateRequestDto {
   @Expose()
   icon: string;
 
-  @IsDate()
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startsOn: Date;
 
-  @IsDate()
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   endsOn: Date;
 

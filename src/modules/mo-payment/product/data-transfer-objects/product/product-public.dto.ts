@@ -53,11 +53,11 @@ export class ProductPublicDto {
   // @Expose()
   // clusterList: ClusterPublicDto[];
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startsOn: Date;
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   endsOn: Date;
 

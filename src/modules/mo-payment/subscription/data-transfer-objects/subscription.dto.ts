@@ -18,19 +18,19 @@ export class SubscriptionDto extends BaseEntityDto {
   @Expose()
   country: CountryDto;
 
-  @Type(() => PriceIntervalDto)
-  @Expose()
-  priceIntervalSnapshot: PriceIntervalDto;
+  // @Type(() => PriceIntervalDto)
+  // @Expose()
+  // priceIntervalSnapshot: PriceIntervalDto;
 
   @Transform(({ value }) => value ?? SubscriptionStatusEnum.PAYMENT_PENDING)
   @Expose()
   status: SubscriptionStatusEnum;
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startedAt: Date;
 
-  @Transform(({ value }) => moment(value).toDate())
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   endedAt: Date;
 
