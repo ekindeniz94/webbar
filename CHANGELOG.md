@@ -2,6 +2,18 @@
 
 
 
+# 1.34.0 (2022-06-08)
+
+
+### Bug Fixes
+
+* date utc fix ([3e2dd1e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3e2dd1ecf4a03d6f997ce3b1e892812898c14470))
+
+
+### Features
+
+* product voucher ([a17bac8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a17bac8e9f3cc5e0fc7cde03a7fb9d7f9cda35c8))
+
 ## 1.33.10 (2022-06-08)
 
 
