@@ -4,6 +4,7 @@ import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceNotificationDto } from '../../../mo-notification';
+import moment from 'moment';
 
 export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
@@ -51,6 +52,7 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
   ephemeralStorageCurrentInMB: number;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   statsUpdateAt: Date;
 

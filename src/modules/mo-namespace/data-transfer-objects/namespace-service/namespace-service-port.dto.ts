@@ -1,6 +1,7 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceServicePortBindingTypeEnum } from '../../enums';
+import moment from 'moment';
 
 export class NamespaceServicePortDto extends BaseEntityDto {
   @Expose()
@@ -23,6 +24,7 @@ export class NamespaceServicePortDto extends BaseEntityDto {
   @Expose()
   spectrumAppId: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   deletedAt?: Date;
 }

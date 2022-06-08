@@ -4,7 +4,7 @@ import { isBoolean, IsOptional, isString } from 'class-validator';
 import { UserCompanyDto } from './company/user-company.dto';
 import { GroupDto } from '../group';
 import { UserPublicDto } from './user-public.dto';
-import { StripTags } from '../../../../utils';
+import moment from 'moment';
 
 export class UserDto extends BaseEntityDto {
   @Exclude()
@@ -72,6 +72,7 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   agreedPrivacyTermsConditionsVersion: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   agreedPrivacyTermsConditionsDate: Date;
 

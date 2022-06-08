@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 import { BaseEntityDto } from '../../mo-core';
 import { SitemapFrequencyEnum } from './../enums';
@@ -10,6 +10,7 @@ export class SitemapDto extends BaseEntityDto {
   @Expose()
   loc: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   lastmod: Date;
 

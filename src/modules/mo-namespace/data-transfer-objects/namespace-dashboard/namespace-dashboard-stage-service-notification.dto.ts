@@ -1,5 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../../mo-notification';
+import moment from 'moment';
 
 export class NamespaceDashboardStageServiceNotificationDto {
   @Expose()
@@ -26,6 +27,7 @@ export class NamespaceDashboardStageServiceNotificationDto {
   @Expose()
   state: K8sNotificationStateEnum;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startedAt: Date;
 

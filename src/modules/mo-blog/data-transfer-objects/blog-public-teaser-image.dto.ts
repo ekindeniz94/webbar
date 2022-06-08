@@ -1,5 +1,6 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { FileTypeDto } from '../../mo-file';
+import moment from 'moment';
 
 export class BlogPublicTeaserImageDto {
   @Expose()
@@ -8,12 +9,14 @@ export class BlogPublicTeaserImageDto {
   @Expose()
   imgSrc: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   createdAt: Date;
 
   @Expose()
   altText: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   updatedAt: Date;
 

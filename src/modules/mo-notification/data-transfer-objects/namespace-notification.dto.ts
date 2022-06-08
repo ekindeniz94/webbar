@@ -3,6 +3,7 @@ import { NamespaceDto, NamespaceServiceDto, NamespaceServicePodDto, NamespaceSta
 import { BaseEntityDto } from '../../mo-core';
 import { isEnum, isString } from 'class-validator';
 import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
+import moment from 'moment';
 
 export class NamespaceNotificationDto extends BaseEntityDto {
   @Type(() => NamespaceDto)
@@ -40,6 +41,7 @@ export class NamespaceNotificationDto extends BaseEntityDto {
   @Expose()
   state: K8sNotificationStateEnum;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   startedAt: Date;
 

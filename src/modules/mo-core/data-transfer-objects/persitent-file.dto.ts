@@ -1,5 +1,6 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { PersistentFileTypeEnum } from '../enums';
+import moment from 'moment';
 
 export class PersistentFileDto {
   @Expose()
@@ -36,10 +37,12 @@ export class PersistentFileDto {
 
   @Expose()
   contentType?: string;
-  
+
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   createdAt?: Date;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   modifiedAt?: Date;
 

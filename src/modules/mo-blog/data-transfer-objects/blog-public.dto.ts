@@ -1,14 +1,17 @@
 import { BlogPublicTeaserImageDto } from './blog-public-teaser-image.dto';
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsString } from 'class-validator';
+import moment from 'moment';
 
 export class BlogPublicDto {
   @Expose()
   id: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   createdAt: Date;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   updatedAt: Date;
 

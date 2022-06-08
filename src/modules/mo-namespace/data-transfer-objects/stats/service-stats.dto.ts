@@ -5,6 +5,7 @@ import { StatsEntryDto } from './stats-entry.dto';
 import { StorageStatsDto } from './storage-stats.dto';
 import { TrafficStatsDto } from './traffic-stats.dto';
 import { isArray } from 'class-validator';
+import moment from 'moment';
 
 export class ServiceStatsDto {
   @Expose()
@@ -13,6 +14,7 @@ export class ServiceStatsDto {
   @Expose()
   id: string;
 
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
   @Expose()
   timestamp: Date;
 

@@ -1,21 +1,21 @@
-import { Expose } from 'class-transformer';
-import {
-  NamespaceServicePortBindingTypeEnum
-} from '../../../mo-namespace/enums/namespace-service-service-port-binding.enum';
+import { Expose, Transform } from 'class-transformer';
+import { NamespaceServicePortBindingTypeEnum } from '../../../mo-namespace/enums/namespace-service-service-port-binding.enum';
+import moment from 'moment';
 
 export class K8sPortsDto {
-    @Expose()
-    portType: NamespaceServicePortBindingTypeEnum;
-    
-    @Expose()
-    internalPort: number;
+  @Expose()
+  portType: NamespaceServicePortBindingTypeEnum;
 
-    @Expose()
-    externalPort: number;
+  @Expose()
+  internalPort: number;
 
-    @Expose()
-    expose: boolean;
-        
-    @Expose()
-    deletedAt?: Date;
+  @Expose()
+  externalPort: number;
+
+  @Expose()
+  expose: boolean;
+
+  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Expose()
+  deletedAt?: Date;
 }
