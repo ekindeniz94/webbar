@@ -2,6 +2,13 @@
 
 
 
+## 1.34.1 (2022-06-09)
+
+
+### Bug Fixes
+
+* date params (toJson to toDate) ([ea694a0](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ea694a0c826a3eca8935207f058d7f4108890164))
+
 # 1.34.0 (2022-06-08)
 
 
