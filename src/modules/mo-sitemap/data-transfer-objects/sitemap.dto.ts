@@ -10,7 +10,7 @@ export class SitemapDto extends BaseEntityDto {
   @Expose()
   loc: string;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   lastmod: Date;
 

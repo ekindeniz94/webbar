@@ -40,7 +40,7 @@ export class ProductVoucherDto extends BaseEntityDto {
   @Expose()
   maxUserCount: number;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   startedAt: Date;
 

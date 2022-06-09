@@ -26,11 +26,11 @@ export class SubscriptionDto extends BaseEntityDto {
   @Expose()
   status: SubscriptionStatusEnum;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   startedAt: Date;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   endedAt: Date;
 

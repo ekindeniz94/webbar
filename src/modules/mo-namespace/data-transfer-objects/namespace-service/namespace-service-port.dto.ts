@@ -24,7 +24,7 @@ export class NamespaceServicePortDto extends BaseEntityDto {
   @Expose()
   spectrumAppId: string;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   deletedAt?: Date;
 }

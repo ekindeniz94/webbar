@@ -9,7 +9,7 @@ export class InvoiceDto {
   @Expose()
   uuid: string;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
 

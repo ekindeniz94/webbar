@@ -55,7 +55,7 @@ export class ProductVoucherCreateRequestDto {
   maxUserCount: number;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   startedAt: Date;
 

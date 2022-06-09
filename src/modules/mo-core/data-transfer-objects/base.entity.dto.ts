@@ -10,11 +10,11 @@ export abstract class BaseEntityDto {
   @Expose()
   createdBy: UserPublicDto;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   createdAt: string | Date;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   updatedAt: string | Date;
 }

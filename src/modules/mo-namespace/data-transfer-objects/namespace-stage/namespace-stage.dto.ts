@@ -52,7 +52,7 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
   ephemeralStorageCurrentInMB: number;
 
-  @Transform(({ value }) => (value ? moment(value).toJSON() : value))
+  @Transform(({ value }) => (value ? moment(value).toDate() : value))
   @Expose()
   statsUpdateAt: Date;
 
