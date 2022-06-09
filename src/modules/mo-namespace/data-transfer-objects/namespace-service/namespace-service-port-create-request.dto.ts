@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceServicePortBindingTypeEnum } from '../../enums';
-import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
 
 export class NamespaceServicePortCreateRequestDto {
   @IsNotEmpty()
@@ -11,6 +11,8 @@ export class NamespaceServicePortCreateRequestDto {
   @Type(() => Number)
   @IsNumber()
   @IsNotEmpty()
+  @Min(0)
+  @Max(65535)
   @Expose()
   internalPort: number;
 
@@ -18,6 +20,8 @@ export class NamespaceServicePortCreateRequestDto {
   @Transform(({ value, obj }) => (obj?.portType === NamespaceServicePortBindingTypeEnum.HTTPS ? 80 : value))
   @IsOptional()
   @IsNumber()
+  @Min(0)
+  @Max(65535)
   @Expose()
   externalPort: number;
 
