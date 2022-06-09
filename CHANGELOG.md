@@ -2,6 +2,13 @@
 
 
 
+## 1.34.2 (2022-06-09)
+
+
+### Bug Fixes
+
+* ports can now only be between 0-65535. ([75e6802](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/75e6802405934beae417996a4952d407399217a4))
+
 ## 1.34.1 (2022-06-09)
 
 
