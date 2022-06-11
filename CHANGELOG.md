@@ -2,6 +2,13 @@
 
 
 
+## 1.34.3 (2022-06-11)
+
+
+### Bug Fixes
+
+* added missing property to k8s-service-data model. ([4972948](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/4972948f59333965cb6194f61116b1d058a0e238))
+
 ## 1.34.2 (2022-06-09)
 
 
