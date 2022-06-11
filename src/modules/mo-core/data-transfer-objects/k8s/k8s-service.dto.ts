@@ -38,6 +38,9 @@ export class K8sServiceDto {
   @Expose()
   dockerfileName: string;
 
+  @Expose()
+  dockerContext: string;
+
   @Type(() => K8sAppDto)
   @Expose()
   app: K8sAppDto;
