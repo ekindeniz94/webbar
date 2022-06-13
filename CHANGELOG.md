@@ -2,6 +2,13 @@
 
 
 
+## 1.34.4 (2022-06-13)
+
+
+### Bug Fixes
+
+* date transform (ignore undefined) ([c169c17](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c169c171743517f3e3078e0c8a1ed3c1a8e86dc3))
+
 ## 1.34.3 (2022-06-11)
 
 
