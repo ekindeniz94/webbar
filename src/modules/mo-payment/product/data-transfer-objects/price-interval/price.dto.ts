@@ -40,6 +40,11 @@ export class PriceDto {
   }
 
   public intervalPriceToString(currencyStr?: string): string {
+    if (this.priceInterval.interval === ProductRuntimeIntervalEnum.DAY) {
+      return `1 x ${
+        currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`
+      }`;
+    }
     if (this.priceInterval.interval === ProductRuntimeIntervalEnum.MONTH) {
       return `1 x ${
         currencyStr ? `${currencyStr}${this.price.toFixed(2)}` : `${this.currencyStr}${this.price.toFixed(2)}`
@@ -54,6 +59,9 @@ export class PriceDto {
   }
 
   public intervalDateToString(format: string = 'DD.MM.YYYY'): string {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.DAY) {
+      return `${moment().format(format)} - ${moment().add(1, 'day').format(format)}`;
+    }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return `${moment().format(format)} - ${moment().add(30, 'day').format(format)}`;
     }
@@ -64,6 +72,9 @@ export class PriceDto {
   }
 
   public autoRenewAt(format: string = 'DD.MM.YYYY'): string {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.DAY) {
+      return `${moment().add(1, 'day').format(format)}`;
+    }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return `${moment().add(31, 'day').format(format)}`;
     }
@@ -78,6 +89,9 @@ export class PriceDto {
   }
 
   get netPrice(): number {
+    if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.DAY) {
+      return +this.price.toFixed(2);
+    }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
       return +this.price.toFixed(2);
     }
