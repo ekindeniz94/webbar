@@ -2,6 +2,13 @@
 
 
 
+## 1.34.5 (2022-06-13)
+
+
+### Bug Fixes
+
+* price-dto fixes. ([edc2f4f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/edc2f4fcbf647a4239fbda641173032dc79178ea))
+
 ## 1.34.4 (2022-06-13)
 
 
