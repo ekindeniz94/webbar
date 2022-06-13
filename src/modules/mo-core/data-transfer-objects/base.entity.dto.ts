@@ -10,11 +10,11 @@ export abstract class BaseEntityDto {
   @Expose()
   createdBy: UserPublicDto;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: string | Date;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   updatedAt: string | Date;
 }

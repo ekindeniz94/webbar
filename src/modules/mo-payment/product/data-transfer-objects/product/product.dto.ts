@@ -71,11 +71,11 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   productVoucherList: ProductVoucherDto;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   startsOn: Date;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   endsOn: Date;
 

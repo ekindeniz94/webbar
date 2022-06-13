@@ -14,7 +14,7 @@ export class ServiceStatsDto {
   @Expose()
   id: string;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   timestamp: Date;
 

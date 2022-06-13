@@ -15,7 +15,7 @@ export class K8sPortsDto {
   @Expose()
   expose: boolean;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   deletedAt?: Date;
 }

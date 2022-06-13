@@ -9,14 +9,14 @@ export class JobPublicTeaserImageDto {
   @Expose()
   imgSrc: string;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
 
   @Expose()
   altText: string;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   updatedAt: Date;
 

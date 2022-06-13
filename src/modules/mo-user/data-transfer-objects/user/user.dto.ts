@@ -72,7 +72,7 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   agreedPrivacyTermsConditionsVersion: string;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   agreedPrivacyTermsConditionsDate: Date;
 

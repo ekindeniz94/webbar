@@ -9,7 +9,7 @@ export class InvoiceDto {
   @Expose()
   uuid: string;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
 

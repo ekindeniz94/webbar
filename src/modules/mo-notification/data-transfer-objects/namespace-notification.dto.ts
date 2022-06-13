@@ -41,7 +41,7 @@ export class NamespaceNotificationDto extends BaseEntityDto {
   @Expose()
   state: K8sNotificationStateEnum;
 
-  @Transform(({ value }) => (value ? moment(value).toDate() : value))
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   startedAt: Date;
 
