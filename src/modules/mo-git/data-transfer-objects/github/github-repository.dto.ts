@@ -16,6 +16,9 @@ export class GithubRepositoryDto {
   full_name: string;
 
   @Expose()
+  html_url: string;
+
+  @Expose()
   created_at: string;
 
   @Expose()
