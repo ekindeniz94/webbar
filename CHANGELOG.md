@@ -2,6 +2,13 @@
 
 
 
+## 1.34.6 (2022-06-23)
+
+
+### Bug Fixes
+
+* add html_url to github-repository-dto ([8d55def](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8d55defa7df64ed40de9b87a148b91846fdc9d8a))
+
 ## 1.34.5 (2022-06-13)
 
 
