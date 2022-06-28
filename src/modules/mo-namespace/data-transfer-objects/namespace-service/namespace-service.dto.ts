@@ -13,7 +13,6 @@ import { NamespaceNotificationDto } from '../../../mo-notification';
 import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
-import { AppLibraryTypeEnum } from '../../../mo-app-library';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -86,6 +85,11 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   @Expose()
   state: NamespaceServiceStateEnum;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @Expose()
+  switchedOn: boolean;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => KubernetesPublicEventDto)
