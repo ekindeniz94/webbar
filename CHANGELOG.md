@@ -2,6 +2,13 @@
 
 
 
+## 1.34.7 (2022-06-28)
+
+
+### Bug Fixes
+
+* add switchedOn to namespace-service dto ([a64a343](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a64a343e4c4b164bd55e9a29e904db2ab631dcf4))
+
 ## 1.34.6 (2022-06-23)
 
 
