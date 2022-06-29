@@ -2,6 +2,13 @@
 
 
 
+## 1.34.8 (2022-06-29)
+
+
+### Bug Fixes
+
+* introduced dtos for docker-compose. ([8007adf](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8007adf76ea2851372b3e4d0c947f85b1ac7c15c))
+
 ## 1.34.7 (2022-06-28)
 
 
