@@ -2,6 +2,13 @@
 
 
 
+## 1.34.9 (2022-06-30)
+
+
+### Bug Fixes
+
+* NamespaceServiceCreateRequestDto transform app type ([f935e2d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f935e2dd5e8dbe23c2693557557011a50e49216a))
+
 ## 1.34.8 (2022-06-29)
 
 
