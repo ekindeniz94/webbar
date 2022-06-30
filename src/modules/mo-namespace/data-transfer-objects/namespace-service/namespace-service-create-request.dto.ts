@@ -12,15 +12,14 @@ import {
   ValidateNested
 } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { NamespaceStageDto, NamespaceStageIdDto } from '../namespace-stage';
+import { NamespaceStageIdDto } from '../namespace-stage';
 import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
 import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
 import { StripTags } from '../../../../utils';
-import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
-import { AppIdDto, AppLibraryTypeEnum } from '../../../mo-app-library';
+import { AppIdDto } from '../../../mo-app-library';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -115,7 +114,7 @@ export class NamespaceServiceCreateRequestDto {
   envVars: NamespaceServiceEnvVarCreateRequestDto[];
 
   @IsNotEmpty()
-  @Type(() => AppDto)
+  @Type(() => AppIdDto)
   // @ValidateNested()
   @Expose()
   app: AppIdDto;
