@@ -2,6 +2,13 @@
 
 
 
+## 1.34.10 (2022-07-01)
+
+
+### Bug Fixes
+
+* update k8s manager DTOs (add switchedOn) ([e6a4eae](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e6a4eaecff90615be34ffd1f58c343727b60609b))
+
 ## 1.34.9 (2022-06-30)
 
 
