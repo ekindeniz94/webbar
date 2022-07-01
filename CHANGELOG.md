@@ -2,6 +2,13 @@
 
 
 
+## 1.34.11 (2022-07-01)
+
+
+### Bug Fixes
+
+* update NamespaceServiceStateEnum add switchedOn prop ([289d6f2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/289d6f26eea37dfaac7d7802c9f612160bc64642))
+
 ## 1.34.10 (2022-07-01)
 
 
