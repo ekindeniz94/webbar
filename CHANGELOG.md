@@ -2,6 +2,13 @@
 
 
 
+## 1.34.12 (2022-07-01)
+
+
+### Bug Fixes
+
+* add container image prop ([ffdc444](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ffdc444362e7c8edabf137e9860ff55645163b13))
+
 ## 1.34.11 (2022-07-01)
 
 
