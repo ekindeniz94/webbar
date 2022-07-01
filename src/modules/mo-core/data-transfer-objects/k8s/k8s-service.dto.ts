@@ -3,8 +3,6 @@ import { NamespaceServiceCnameDto } from '../../../mo-namespace/data-transfer-ob
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
-// import { K8sServiceGroupDto } from './k8s-servicegroup.dto';
-import { AppLibraryTypeEnum } from '../../../mo-app-library';
 import { K8sAppDto } from './k8s-app.dto';
 import { isBoolean } from 'class-validator';
 
@@ -36,6 +34,9 @@ export class K8sServiceDto {
 
   @Expose()
   gitBranch: string;
+
+  @Expose()
+  containerImage: string;
 
   @Expose()
   dockerfileName: string;

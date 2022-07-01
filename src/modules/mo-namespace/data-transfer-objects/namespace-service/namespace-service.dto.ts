@@ -39,6 +39,9 @@ export class NamespaceServiceDto extends BaseEntityDto {
   gitBranch: string;
 
   @Expose()
+  containerImage: string;
+
+  @Expose()
   dockerfileName: string;
 
   @Transform(({ value }) => value ?? '.')

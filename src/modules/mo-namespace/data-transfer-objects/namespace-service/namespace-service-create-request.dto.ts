@@ -9,6 +9,7 @@ import {
   IsString,
   MaxLength,
   MinLength,
+  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
@@ -53,19 +54,27 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   description: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  @ValidateIf((obj: NamespaceServiceCreateRequestDto) => !obj.containerImage)
   @IsString()
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitRepoTransform(params))
   @StripTags()
   @Expose()
   gitRepository: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  @ValidateIf((obj: NamespaceServiceCreateRequestDto) => !!obj.gitRepository)
   @IsString()
   @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitBranchTransform(params))
   @StripTags()
   @Expose()
   gitBranch: string;
+
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  containerImage: string;
 
   @IsNotEmpty()
   @IsString()

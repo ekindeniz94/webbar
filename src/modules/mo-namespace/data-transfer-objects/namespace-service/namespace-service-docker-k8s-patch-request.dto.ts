@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString, ValidateIf } from 'class-validator';
 import { StripTags } from '../../../../utils';
 
 export class NamespaceServiceDockerK8sPatchRequestDto {
@@ -11,17 +11,25 @@ export class NamespaceServiceDockerK8sPatchRequestDto {
   @Expose()
   namespaceServiceId: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  @ValidateIf((obj: NamespaceServiceDockerK8sPatchRequestDto) => !obj.containerImage)
   @IsString()
   @StripTags()
   @Expose()
   gitRepository: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  @ValidateIf((obj: NamespaceServiceDockerK8sPatchRequestDto) => !!obj.gitRepository)
   @IsString()
   @StripTags()
   @Expose()
   gitBranch: string;
+
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  containerImage: string;
 
   @IsOptional()
   @IsString()
