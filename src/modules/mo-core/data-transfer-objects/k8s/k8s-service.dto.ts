@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceServiceCnameDto } from '../../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname.dto';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
@@ -6,6 +6,7 @@ import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 // import { K8sServiceGroupDto } from './k8s-servicegroup.dto';
 import { AppLibraryTypeEnum } from '../../../mo-app-library';
 import { K8sAppDto } from './k8s-app.dto';
+import { isBoolean } from 'class-validator';
 
 // HIER NUR SERVICES DIE EXPOSE = TRUE UND INTERNALPORT > 0
 // fullHostname = MoNamespaceUtils.fullHostname(namespace, stage, service),
@@ -26,6 +27,7 @@ export class K8sServiceDto {
   @Expose()
   k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage, service)
 
+  @Type(() => NamespaceServiceCnameDto)
   @Expose()
   cNames: NamespaceServiceCnameDto[];
 
@@ -54,12 +56,20 @@ export class K8sServiceDto {
   @Expose()
   repositoryLink: string;
 
+  @Type(() => K8sServiceSettingsDto)
   @Expose()
   k8sSettings: K8sServiceSettingsDto;
 
+  @Type(() => K8sEnvVarDto)
   @Expose()
   envVars: K8sEnvVarDto[];
 
+  @Type(() => K8sPortsDto)
   @Expose()
   ports: K8sPortsDto[];
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @Expose()
+  switchedOn: boolean;
 }

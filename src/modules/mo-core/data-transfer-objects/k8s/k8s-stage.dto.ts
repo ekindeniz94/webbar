@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { K8sServiceDto } from './k8s-service.dto';
 
 export class K8sStageDto {
@@ -17,6 +17,7 @@ export class K8sStageDto {
     @Expose()
     storageSizeInMb: number; // namespace.subscription.plan.product.persistentDiskInMb
 
+    @Type(() => K8sServiceDto)
     @Expose()
     services: K8sServiceDto[];
 }
