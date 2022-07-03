@@ -72,7 +72,6 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsOptional()
   @IsString()
-  @StripTags()
   @Expose()
   containerImage: string;
 
