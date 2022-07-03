@@ -2,6 +2,13 @@
 
 
 
+## 1.34.13 (2022-07-03)
+
+
+### Bug Fixes
+
+* dockerfile property will now be set to Dockerfile by default. ([b5069d2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b5069d23fcadf67c37199c888ef996f7d32f2a8c))
+
 ## 1.34.12 (2022-07-01)
 
 
