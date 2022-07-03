@@ -76,8 +76,9 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   containerImage: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
+  @Transform(({ value }) => value ?? 'Dockerfile')
   @StripTags()
   @Expose()
   dockerfileName: string;
