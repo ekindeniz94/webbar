@@ -2,6 +2,13 @@
 
 
 
+## 1.34.14 (2022-07-03)
+
+
+### Bug Fixes
+
+* removed strip tags in containerImage. ([a221751](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a221751d85dc28f70b898d2422d8795927b338dd))
+
 ## 1.34.13 (2022-07-03)
 
 
