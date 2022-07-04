@@ -2,6 +2,13 @@
 
 
 
+## 1.34.16 (2022-07-04)
+
+
+### Bug Fixes
+
+* update app create dto ([c5dcb1d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c5dcb1d7978fe38390540a8ed4caf500e4bdf54a))
+
 ## 1.34.15 (2022-07-04)
 
 
