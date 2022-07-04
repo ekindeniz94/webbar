@@ -2,6 +2,13 @@
 
 
 
+## 1.34.15 (2022-07-04)
+
+
+### Bug Fixes
+
+* containerImageRepoSecret to namepace-service; add AppLibraryTypeEnum.CONTAINER_IMAGE ([b66c9eb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b66c9eb71c11f5031f62e712aae522e8a4331968))
+
 ## 1.34.14 (2022-07-03)
 
 
