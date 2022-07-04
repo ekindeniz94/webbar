@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsNumber, IsOptional, IsString, ValidateIf } from 'class-validator';
 import { StripTags } from '../../../../utils';
 import { KeyVaultSecretDto } from '../key-vault';
@@ -34,6 +34,7 @@ export class NamespaceServiceDockerK8sPatchRequestDto {
 
   @IsOptional()
   @Type(() => KeyVaultSecretDto)
+  @Transform(({ value }) => value ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 

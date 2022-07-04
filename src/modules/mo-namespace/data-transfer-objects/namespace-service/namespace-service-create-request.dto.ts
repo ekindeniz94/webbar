@@ -79,6 +79,7 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsOptional()
   @Type(() => KeyVaultSecretDto)
+  @Transform(({ value }) => value ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 

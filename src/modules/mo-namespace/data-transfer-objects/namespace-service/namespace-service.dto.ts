@@ -43,6 +43,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   containerImage: string;
 
   @Type(() => KeyVaultSecretDto)
+  @Transform(({ value }) => value ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 

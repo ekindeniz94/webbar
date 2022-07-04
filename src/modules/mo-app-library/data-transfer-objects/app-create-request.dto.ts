@@ -67,7 +67,7 @@ export class AppCreateRequestDto {
   @Expose()
   state: AppLibraryStateEnum;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   repositoryLink: string;
