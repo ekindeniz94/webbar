@@ -84,6 +84,7 @@ export class NamespaceServiceCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
+  @Transform(({ value }) => value ?? 'Dockerfile')
   @StripTags()
   @Expose()
   dockerfileName: string;
