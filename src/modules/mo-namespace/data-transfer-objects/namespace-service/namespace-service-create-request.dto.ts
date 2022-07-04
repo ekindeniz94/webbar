@@ -21,6 +21,7 @@ import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
 import { StripTags } from '../../../../utils';
 import { AppIdDto } from '../../../mo-app-library';
+import { KeyVaultSecretDto } from '../key-vault';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -75,6 +76,11 @@ export class NamespaceServiceCreateRequestDto {
   @StripTags()
   @Expose()
   containerImage: string;
+
+  @IsOptional()
+  @Type(() => KeyVaultSecretDto)
+  @Expose()
+  containerImageRepoSecret: KeyVaultSecretDto;
 
   @IsNotEmpty()
   @IsString()

@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, isString } from 'class-validator';
+import { isArray, isBoolean, IsOptional, isString } from 'class-validator';
 import { BaseEntityDto, DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceServiceEnvVarDto } from './namespace-service-envvar.dto';
 import { NamespaceServiceKubernetesSettingsDto } from './namespace-service-kubernetes-settings.dto';
@@ -13,6 +13,7 @@ import { NamespaceNotificationDto } from '../../../mo-notification';
 import { NamespaceServiceCnameDto } from './namespace-service-cname.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
+import { KeyVaultSecretDto } from '../key-vault';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -40,6 +41,10 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   @Expose()
   containerImage: string;
+
+  @Type(() => KeyVaultSecretDto)
+  @Expose()
+  containerImageRepoSecret: KeyVaultSecretDto;
 
   @Expose()
   dockerfileName: string;
