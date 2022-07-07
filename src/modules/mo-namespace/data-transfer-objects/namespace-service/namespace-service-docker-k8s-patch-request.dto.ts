@@ -42,6 +42,18 @@ export class NamespaceServiceDockerK8sPatchRequestDto {
   @IsString()
   @StripTags()
   @Expose()
+  containerImageCommand: string;
+
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  containerImageCommandArgs: string;
+
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
   dockerfileName: string;
 
   @IsOptional()

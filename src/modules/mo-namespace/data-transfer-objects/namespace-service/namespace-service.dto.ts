@@ -48,6 +48,12 @@ export class NamespaceServiceDto extends BaseEntityDto {
   containerImageRepoSecret: KeyVaultSecretDto;
 
   @Expose()
+  containerImageCommand: string;
+
+  @Expose()
+  containerImageCommandArgs: string;
+
+  @Expose()
   dockerfileName: string;
 
   @Transform(({ value }) => value ?? '.')

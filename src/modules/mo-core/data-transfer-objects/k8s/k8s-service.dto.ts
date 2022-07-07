@@ -43,6 +43,12 @@ export class K8sServiceDto {
   containerImageRepoSecretDecryptValue: string;
 
   @Expose()
+  containerImageCommand: string;
+
+  @Expose()
+  containerImageCommandArgs: string;
+
+  @Expose()
   dockerfileName: string;
 
   @Expose()

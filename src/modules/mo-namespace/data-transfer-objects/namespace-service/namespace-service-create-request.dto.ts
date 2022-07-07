@@ -83,6 +83,18 @@ export class NamespaceServiceCreateRequestDto {
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  containerImageCommand: string;
+
+  @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  containerImageCommandArgs: string;
+
   @IsNotEmpty()
   @IsString()
   @Transform(({ value }) => value ?? 'Dockerfile')

@@ -110,6 +110,9 @@ export const DTO_VALIDATION_CONST = {
         MIN: 3,
         MAX: 128
       },
+      CONTAINER_IMAGE_COMMAND_ARGS: {
+        MAX: 10000
+      },
       NAME: {
         MIN: 3,
         MAX: 14,
