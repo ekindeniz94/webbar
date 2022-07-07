@@ -2,6 +2,13 @@
 
 
 
+## 1.34.17 (2022-07-07)
+
+
+### Bug Fixes
+
+* add command and command args to namespace service ([31c5728](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/31c572830e191db1dd62d525a546bb2b3d6239c8))
+
 ## 1.34.16 (2022-07-04)
 
 
