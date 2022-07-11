@@ -2,6 +2,13 @@
 
 
 
+## 1.34.18 (2022-07-11)
+
+
+### Bug Fixes
+
+* added startDate in intervalDateToString(). ([057a199](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/057a19926f7de1f1121906858cfdeeeb1aed7079))
+
 ## 1.34.17 (2022-07-07)
 
 
