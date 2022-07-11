@@ -58,15 +58,16 @@ export class PriceDto {
     return '???';
   }
 
-  public intervalDateToString(format: string = 'DD.MM.YYYY'): string {
+  public intervalDateToString(format: string = 'DD.MM.YYYY', startDate?:Date): string {
+    const theStartDate = startDate ? startDate : new Date();
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.DAY) {
-      return `${moment().format(format)} - ${moment().add(1, 'day').format(format)}`;
+      return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(1, 'day').format(format)}`;
     }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.MONTH) {
-      return `${moment().format(format)} - ${moment().add(30, 'day').format(format)}`;
+      return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(30, 'day').format(format)}`;
     }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `${moment().format(format)} - ${moment().add(1, 'year').subtract(1, 'day').format(format)}`;
+      return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(1, 'year').subtract(1, 'year').format(format)}`;
     }
     return '???';
   }
