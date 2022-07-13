@@ -1,28 +1,11 @@
-import { Expose, Type } from 'class-transformer';
-import { IsFQDN, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
+import { Expose } from 'class-transformer';
+import { IsFQDN, IsString } from 'class-validator';
 import { StripTags } from '../../../../utils';
 
-export class NamespaceServiceCnameCreateRequestDto extends BaseEntityDto {
-  // @Transform(({ value }) => value ?? MoUtils.nanoid())
-  @StripTags()
-  @Expose()
-  id: string;
-
-  // @IsNotEmpty()
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  @Expose()
-  internalPort: number;
-
-  @IsNotEmpty()
+export class NamespaceServiceCnameCreateRequestDto {
+  @IsString()
   @IsFQDN({})
   @StripTags()
   @Expose()
   cName: string;
-
-  @IsOptional()
-  @Expose()
-  cloudflareResponse: any;
 }

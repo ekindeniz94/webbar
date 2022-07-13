@@ -1,7 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import {
-  ArrayMaxSize,
   isArray,
   IsNotEmpty,
   IsOptional,
@@ -110,7 +109,6 @@ export class NamespaceServiceCreateRequestDto {
   dockerContext: string;
 
   @IsOptional()
-  @ArrayMaxSize(DTO_VALIDATION_CONST.NAMESPACE.CNAME.MAX_ENTRIES)
   @Transform(({ value }) => {
     if (value && isArray(value)) {
       return value.filter((item: NamespaceServiceCnameCreateRequestDto) => !!item.cName);

@@ -1,5 +1,5 @@
 import { customAlphabet } from 'nanoid';
-import { isArray, isObject } from 'class-validator';
+import { isArray, isFQDN, isObject, isString } from 'class-validator';
 import * as _ from 'lodash';
 import { instanceToPlain } from 'class-transformer';
 
@@ -89,5 +89,43 @@ export class MoUtils {
       return result;
     }
     return {};
+  }
+
+  static getHostName(url: string): string | null {
+    if (isFQDN(url)) {
+      if (url.indexOf('http://') > -1 || url.indexOf('https://') > 0) {
+        url = new URL(url)?.hostname;
+      }
+      return url;
+    }
+    return null;
+  }
+
+  static getDomain(url: string): string | null {
+    const hostName = MoUtils.getHostName(url);
+    let domain = hostName;
+    if (hostName !== null) {
+      const parts = hostName.split('.').reverse();
+      if (parts !== null && parts.length > 1) {
+        domain = parts[1] + '.' + parts[0];
+
+        if (hostName.toLowerCase().indexOf('.co.uk') !== -1 && parts.length > 2) {
+          domain = parts[2] + '.' + domain;
+        }
+      }
+    }
+
+    return domain;
+  }
+
+  static cloudflareCustomHostname(url: string): string | null {
+    if (url !== MoUtils.getDomain(url)) {
+      const hostnameParts = url.split('.');
+      if (hostnameParts.length > 1) {
+        hostnameParts.shift();
+      }
+      url = hostnameParts.join('.');
+    }
+    return url;
   }
 }
