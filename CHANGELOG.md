@@ -2,6 +2,13 @@
 
 
 
+## 1.34.19 (2022-07-13)
+
+
+### Bug Fixes
+
+* modified PersistentFileDto. ([e840770](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e8407707fd12bc86a6d1aecf699105a0461b63af))
+
 ## 1.34.18 (2022-07-11)
 
 
