@@ -2,6 +2,13 @@
 
 
 
+## 1.34.20 (2022-07-13)
+
+
+### Bug Fixes
+
+* cloudflare cnames ([6b8540f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6b8540f41ec67c685ee1a8f4c57b829040dbafd5))
+
 ## 1.34.19 (2022-07-13)
 
 
