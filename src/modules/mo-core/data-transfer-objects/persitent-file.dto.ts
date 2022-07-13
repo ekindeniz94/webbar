@@ -48,4 +48,7 @@ export class PersistentFileDto {
 
   @Expose()
   uid_gid?: string;
+
+  @Expose()
+  mode?: number;
 }
