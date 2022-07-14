@@ -21,10 +21,16 @@ export class DockerComposeServiceDto {
   ports: string[];
 
   @Expose()
-  environment: string[];
+  environment: EnvVar[];
 
   @Expose()
   depends_on: string[];
-  
+}
 
+export class EnvVar {
+  @Expose()
+  name: string;
+
+  @Expose()
+  value: string;
 }
