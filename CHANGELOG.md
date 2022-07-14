@@ -2,6 +2,13 @@
 
 
 
+## 1.34.22 (2022-07-14)
+
+
+### Bug Fixes
+
+* cloudflare ssl status ([7e5fb9d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7e5fb9d807e18e507e7ad7e8bf83b70af6138c8e))
+
 ## 1.34.21 (2022-07-14)
 
 
