@@ -1,10 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { MoUtils } from '../../../utils';
-import { CloudflareCustomHostnameStatusEnum } from '../enums';
+import { isArray } from 'class-validator';
+import { CloudflareCustomHostnameStatusEnum, CloudflareSslStatusEnum } from '../enums';
 import { NamespaceServiceCnameDto } from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname.dto';
 import moment from 'moment';
-import { ICloudflareCustomHostnameDetailsSsl } from '../interfaces';
 import { CloudflareCustomHostnameResponseDto } from './cloudflare-custom-hostname-response.dto';
 
 export class CloudflareCustomHostnameDto {
@@ -25,6 +23,10 @@ export class CloudflareCustomHostnameDto {
   @Transform(({ value }) => value ?? CloudflareCustomHostnameStatusEnum.PENDING)
   @Expose()
   status: CloudflareCustomHostnameStatusEnum;
+
+  @Transform(({ value }) => value ?? CloudflareSslStatusEnum.PENDING_DEPLOYMENT)
+  @Expose()
+  sslStatus: CloudflareSslStatusEnum;
 
   @Transform(({ value }) => value ?? null)
   @Type(() => CloudflareCustomHostnameResponseDto)

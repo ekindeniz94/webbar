@@ -1,5 +1,9 @@
 import { CloudflareCustomHostnameStatusEnum } from '../enums';
-import { Expose } from 'class-transformer';
+import { Expose, Exclude, Transform } from 'class-transformer';
+import {
+  ICloudflareCustomHostnameDetailsSsl,
+  ICloudflareCustomHostnameDetailsSslValidationRecord
+} from '../interfaces';
 
 export class CloudflareCustomHostnameResponseDto {
   @Expose()
@@ -8,8 +12,13 @@ export class CloudflareCustomHostnameResponseDto {
   @Expose()
   hostname: string;
 
-  // @Expose()
-  // ssl: ICloudflareCustomHostnameDetailsSsl;
+  @Transform(({ value, obj }) => {
+    return {
+      validation_records: value.validation_records
+    };
+  })
+  @Expose()
+  ssl: ICloudflareCustomHostnameDetailsSsl;
 
   @Expose()
   status: CloudflareCustomHostnameStatusEnum;
@@ -23,6 +32,7 @@ export class CloudflareCustomHostnameResponseDto {
   @Expose()
   verification_errors: string[];
 
+  // Hostname pre-validation TXT
   @Expose()
   ownership_verification: {
     type: 'http' | 'txt' | 'email';
@@ -30,9 +40,14 @@ export class CloudflareCustomHostnameResponseDto {
     value: string; //  '98cd7251-1cf2-4dea-a64f-c642f958792a';
   };
 
+  // Hostname pre-validation HTTP
   @Expose()
   ownership_verification_http: {
     http_url: string; // 'http://<DOMAIN>/.well-known/cf-custom-hostname-challenge/8b4c8f24-85b9-4754-8a0f-52bb989ab94e';
     http_body: string; // '98cd7251-1cf2-4dea-a64f-c642f958792a';
   };
+
+  get validationRecords(): ICloudflareCustomHostnameDetailsSslValidationRecord[] {
+    return this.ssl.validation_records;
+  }
 }
