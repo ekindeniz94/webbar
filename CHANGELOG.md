@@ -2,6 +2,13 @@
 
 
 
+## 1.34.21 (2022-07-14)
+
+
+### Bug Fixes
+
+* update namspace service env min to 1 char ([b3020ea](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b3020eabff7b1eb3ea1c56e8a7d554e1f681b3f3))
+
 ## 1.34.20 (2022-07-13)
 
 
