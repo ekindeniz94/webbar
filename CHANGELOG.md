@@ -2,6 +2,13 @@
 
 
 
+## 1.34.25 (2022-07-14)
+
+
+### Bug Fixes
+
+* progress. ([159882e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/159882e55028de84f7880af2323df19e8e815e2d))
+
 ## 1.34.24 (2022-07-14)
 
 
