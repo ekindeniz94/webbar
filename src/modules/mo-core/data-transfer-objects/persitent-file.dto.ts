@@ -51,4 +51,7 @@ export class PersistentFileDto {
 
   @Expose()
   mode?: number;
+
+  @Expose()
+  new?: boolean;
 }
