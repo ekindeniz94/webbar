@@ -2,6 +2,13 @@
 
 
 
+## 1.34.26 (2022-07-15)
+
+
+### Bug Fixes
+
+* docker-compose added entrypoint. ([1aed1f3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1aed1f3f62898d6f130940a1c8e19971a3fc8795))
+
 ## 1.34.25 (2022-07-14)
 
 
