@@ -9,7 +9,7 @@ export class DockerComposeServiceDto {
   image: string;
 
   @Expose()
-  command: string;
+  command: Array<String> | Object | string;
 
   @Expose()
   restart: DockerComposeRestartEnum;
@@ -22,6 +22,9 @@ export class DockerComposeServiceDto {
 
   @Expose()
   environment: Array<String> | Object;
+
+  @Expose()
+  entrypoint: string;
 
   @Expose()
   depends_on: string[];
