@@ -2,6 +2,13 @@
 
 
 
+## 1.34.27 (2022-07-19)
+
+
+### Bug Fixes
+
+* PaypalTypesEnum ([5a22d7b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5a22d7b60cec1ac170bd79b0939384994fa18ff5))
+
 ## 1.34.26 (2022-07-15)
 
 
