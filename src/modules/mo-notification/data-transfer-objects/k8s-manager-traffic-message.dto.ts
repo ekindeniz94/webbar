@@ -6,5 +6,8 @@ export class K8sManagerTrafficMessageDto {
   podName: string;
 
   @Expose()
-  value: string;
+  receiveBytes: string;
+
+  @Expose()
+  transmitBytes: string;
 }
