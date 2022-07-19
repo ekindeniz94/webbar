@@ -2,6 +2,13 @@
 
 
 
+## 1.34.29 (2022-07-19)
+
+
+### Bug Fixes
+
+* updated K8sManagerTrafficMessageDto. ([d6c99bb](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d6c99bb2f242e44ff3783e4e6c05eb39a03ddd35))
+
 ## 1.34.28 (2022-07-19)
 
 
