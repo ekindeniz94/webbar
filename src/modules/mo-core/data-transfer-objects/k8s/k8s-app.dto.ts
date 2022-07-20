@@ -16,4 +16,10 @@ export class K8sAppDto {
 
   @Expose()
   repositoryLink: string;
+
+  @Expose()
+  containerImage: string;
+
+  @Expose()
+  containerImageCommand: string;
 }

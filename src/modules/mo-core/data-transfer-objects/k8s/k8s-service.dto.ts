@@ -5,7 +5,6 @@ import { K8sPortsDto } from './k8s-port.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 import { K8sAppDto } from './k8s-app.dto';
 import { isBoolean, IsOptional } from 'class-validator';
-import { KeyVaultSecretDto } from '../../../mo-namespace';
 
 // HIER NUR SERVICES DIE EXPOSE = TRUE UND INTERNALPORT > 0
 // fullHostname = MoNamespaceUtils.fullHostname(namespace, stage, service),
@@ -60,12 +59,6 @@ export class K8sServiceDto {
 
   @Expose()
   name: string;
-
-  @Expose()
-  setupCommands: string;
-
-  @Expose()
-  repositoryLink: string;
 
   @Type(() => K8sServiceSettingsDto)
   @Expose()
