@@ -2,6 +2,13 @@
 
 
 
+## 1.34.30 (2022-07-20)
+
+
+### Bug Fixes
+
+* add container image template ([621e552](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/621e5529e65105e72055a14b0ec137384fba7f3d))
+
 ## 1.34.29 (2022-07-19)
 
 
