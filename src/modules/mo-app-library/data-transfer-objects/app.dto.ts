@@ -57,7 +57,13 @@ export class AppDto extends BaseEntityDto {
   containerImage: string;
 
   @Expose()
+  containerImageSecret: string;
+
+  @Expose()
   containerImageCommand: string;
+
+  @Expose()
+  containerImageCommandArgs: string;
 
   @Type(() => AppPortDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
