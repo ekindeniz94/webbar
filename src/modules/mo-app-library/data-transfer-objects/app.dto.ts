@@ -57,7 +57,7 @@ export class AppDto extends BaseEntityDto {
   containerImage: string;
 
   @Expose()
-  containerImageSecret: string;
+  containerImageRepoSecret: string;
 
   @Expose()
   containerImageCommand: string;
