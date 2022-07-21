@@ -1,7 +1,9 @@
 import { customAlphabet } from 'nanoid';
-import { isArray, isFQDN, isObject, isString } from 'class-validator';
+import { isArray, isFQDN, isObject } from 'class-validator';
 import * as _ from 'lodash';
 import { instanceToPlain } from 'class-transformer';
+import { ProductRuntimeIntervalEnum } from '../modules/mo-payment/product/enums/product-runtime-interval.enum';
+import moment from 'moment';
 
 export class MoUtils {
   /**
@@ -127,5 +129,56 @@ export class MoUtils {
       url = hostnameParts.join('.');
     }
     return url;
+  }
+
+  static getSubscriptionIntervals(
+    startedAt: moment.Moment,
+    interval: ProductRuntimeIntervalEnum,
+    maxDepth: number = 1000
+  ): {
+    interval: ProductRuntimeIntervalEnum;
+    startedAt: moment.Moment;
+    endedAt: moment.Moment;
+  }[] {
+    const results: {
+      interval: ProductRuntimeIntervalEnum;
+      startedAt: moment.Moment;
+      endedAt: moment.Moment;
+    }[] = [];
+    let endedAt: moment.Moment;
+    switch (interval) {
+      case ProductRuntimeIntervalEnum.DAY:
+        endedAt = moment(startedAt).add(1, 'day');
+        break;
+      case ProductRuntimeIntervalEnum.WEEK:
+        endedAt = moment(startedAt).add(1, 'week').subtract(1, 'day');
+        break;
+      case ProductRuntimeIntervalEnum.MONTH:
+        endedAt = moment(startedAt).add(1, 'month').subtract(1, 'day');
+        break;
+      case ProductRuntimeIntervalEnum.YEAR:
+        endedAt = moment(startedAt).add(1, 'year').subtract(1, 'day');
+        break;
+      default:
+        return results;
+    }
+    results.push({
+      interval: interval,
+      startedAt: startedAt.clone().startOf('day'),
+      endedAt: endedAt.clone().endOf('day')
+    });
+    if (endedAt.isAfter(moment())) {
+      return results;
+    }
+    if (results.length === maxDepth) {
+      return results;
+    }
+    results.push(
+      ...MoUtils.getSubscriptionIntervals(
+        interval === ProductRuntimeIntervalEnum.DAY ? endedAt : moment(endedAt).clone().add(1, 'day'),
+        interval
+      )
+    );
+    return results;
   }
 }
