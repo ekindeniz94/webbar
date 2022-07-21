@@ -4,7 +4,7 @@ import { AppLibraryTypeEnum } from '../../../mo-app-library';
 export class K8sAppDto {
   @Expose()
   id: string;
-  
+
   @Expose()
   name: string;
 
@@ -22,4 +22,7 @@ export class K8sAppDto {
 
   @Expose()
   containerImageCommand: string;
+
+  @Expose()
+  containerImageCommandArgs: string;
 }

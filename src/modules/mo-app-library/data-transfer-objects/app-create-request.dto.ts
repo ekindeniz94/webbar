@@ -87,6 +87,9 @@ export class AppCreateRequestDto {
   @Expose()
   containerImageCommand: string;
 
+  @Expose()
+  containerImageCommandArgs: string;
+
   @Type(() => AppPortCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @ValidateNested()

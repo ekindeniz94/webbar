@@ -42,6 +42,9 @@ export class AppPublicDto extends BaseEntityDto {
   @Expose()
   containerImageCommand: string;
 
+  @Expose()
+  containerImageCommandArgs: string;
+
   @IsString()
   @Expose()
   documentationLink: String;
