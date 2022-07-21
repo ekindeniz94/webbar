@@ -2,6 +2,13 @@
 
 
 
+## 1.34.33 (2022-07-21)
+
+
+### Bug Fixes
+
+* added command args. ([42b5479](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/42b547914eedff539429b5e0359078ecef20b7e4))
+
 ## 1.34.32 (2022-07-21)
 
 
