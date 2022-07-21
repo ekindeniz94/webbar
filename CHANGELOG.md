@@ -2,6 +2,13 @@
 
 
 
+## 1.34.31 (2022-07-21)
+
+
+### Bug Fixes
+
+* added secret and commandargs. ([3afc7a1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3afc7a1bd1a518cccfcfdd6277c99c728c57eb13))
+
 ## 1.34.30 (2022-07-20)
 
 
