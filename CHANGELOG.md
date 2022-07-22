@@ -2,6 +2,13 @@
 
 
 
+## 1.34.35 (2022-07-22)
+
+
+### Bug Fixes
+
+* add skipCloudflareCustomHostnameCreation ([3411390](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3411390cfd24690bcaaaf753b35410eeb67a059b))
+
 ## 1.34.34 (2022-07-21)
 
 
