@@ -3,6 +3,7 @@ import {
   ArrayMinSize,
   ArrayNotEmpty,
   isArray,
+  isBoolean,
   IsBoolean,
   IsEnum,
   IsNotEmpty,
@@ -221,6 +222,12 @@ export class ProductCreateRequestDto {
   @IsNumber()
   @Expose()
   cNamesCountMax: number;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @IsBoolean()
+  @Expose()
+  skipCloudflareCustomHostnameCreation: boolean;
 
   @Type(() => Boolean)
   @IsBoolean()

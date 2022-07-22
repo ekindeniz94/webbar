@@ -24,6 +24,9 @@ export class ClusterPublicDto {
   @Expose()
   cloudflareUdpSubDomain: string;
 
+  @Expose()
+  loadbalancerHost: string;
+
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
   }

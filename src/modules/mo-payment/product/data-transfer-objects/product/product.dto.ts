@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsNumber, isString } from 'class-validator';
+import { isArray, isBoolean, IsNumber, isString } from 'class-validator';
 import moment from 'moment';
 import { BaseEntityDto } from '../../../../mo-core';
 import {
@@ -167,6 +167,11 @@ export class ProductDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
   cNamesCountMax: number;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Expose()
+  skipCloudflareCustomHostnameCreation: boolean;
 
   @Type(() => Boolean)
   @Expose()

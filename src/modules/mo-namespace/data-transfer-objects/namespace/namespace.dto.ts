@@ -40,6 +40,12 @@ export class NamespaceDto extends BaseEntityDto {
   bgColorStyle: string;
 
   @Type(() => SubscriptionDto)
+  @Transform(({ value, obj }) => {
+    if (value?.priceInterval?.product?.skipCloudflareCustomHostnameCreation === false) {
+      obj.cluster.loadbalancerHost = undefined;
+    }
+    return value;
+  })
   @Expose()
   subscription: SubscriptionDto;
 
