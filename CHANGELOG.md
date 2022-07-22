@@ -2,6 +2,13 @@
 
 
 
+## 1.34.34 (2022-07-21)
+
+
+### Bug Fixes
+
+* add getSubscriptionIntervals to utils ([580fffc](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/580fffc8d36a900f11e82aa2a92e85d9d680c02c))
+
 ## 1.34.33 (2022-07-21)
 
 
