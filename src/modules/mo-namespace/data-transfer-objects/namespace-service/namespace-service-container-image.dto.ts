@@ -12,6 +12,10 @@ export class NamespaceServiceContainerImageDto {
 
   @IsString()
   @Expose()
+  serviceShortId: string;
+
+  @IsString()
+  @Expose()
   imageName: string;
 
   @IsString()
