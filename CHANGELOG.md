@@ -2,6 +2,13 @@
 
 
 
+## 1.34.36 (2022-07-25)
+
+
+### Bug Fixes
+
+* added shortId to NamespaceServiceContainerImageDto. ([5f349ad](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5f349ad06559d332088a94b4de36df15ddd15034))
+
 ## 1.34.35 (2022-07-22)
 
 
