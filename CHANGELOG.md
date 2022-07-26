@@ -2,6 +2,13 @@
 
 
 
+## 1.34.38 (2022-07-26)
+
+
+### Bug Fixes
+
+* namespace container images ([2300624](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/23006242e8f4c6db4571feddbf3a86f86036f6a5))
+
 ## 1.34.37 (2022-07-26)
 
 
