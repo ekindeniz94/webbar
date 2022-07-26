@@ -181,4 +181,49 @@ export class MoUtils {
     );
     return results;
   }
+
+  static getSubscriptionIntervalsByCreatedAtDate(
+    subscriptionInterval: ProductRuntimeIntervalEnum,
+    subscriptionCreatedAt: Date
+  ): {
+    interval: ProductRuntimeIntervalEnum;
+    startedAt: moment.Moment;
+    endedAt: moment.Moment;
+  }[] {
+    let subscriptionIntervals: {
+      interval: ProductRuntimeIntervalEnum;
+      startedAt: moment.Moment;
+      endedAt: moment.Moment;
+    }[] = [];
+    switch (subscriptionInterval) {
+      case ProductRuntimeIntervalEnum.DAY:
+        subscriptionIntervals = MoUtils.getSubscriptionIntervals(
+          moment().startOf('day').set('date', moment(subscriptionCreatedAt).date()),
+          subscriptionInterval
+        );
+        break;
+      case ProductRuntimeIntervalEnum.WEEK:
+        subscriptionIntervals = MoUtils.getSubscriptionIntervals(
+          moment().startOf('day').set('date', moment(subscriptionCreatedAt).date()),
+          subscriptionInterval
+        );
+        break;
+      case ProductRuntimeIntervalEnum.MONTH:
+        subscriptionIntervals = MoUtils.getSubscriptionIntervals(
+          moment().startOf('day').set('month', moment(subscriptionCreatedAt).month()),
+          subscriptionInterval
+        );
+        break;
+      case ProductRuntimeIntervalEnum.YEAR:
+        subscriptionIntervals = MoUtils.getSubscriptionIntervals(
+          moment().startOf('year').set('year', moment(subscriptionCreatedAt).year()),
+          subscriptionInterval
+        );
+        break;
+      default:
+        break;
+    }
+
+    return subscriptionIntervals;
+  }
 }
