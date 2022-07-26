@@ -2,6 +2,14 @@
 
 
 
+## 1.34.37 (2022-07-26)
+
+
+### Bug Fixes
+
+* add DOCKER_COMPOSE to AppLibraryTypeEnum ([781c900](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/781c9002178649a8c4295ef84811f19456a8cee8))
+* traffic ([3cdd815](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3cdd815fd768061c5a52831c998087aee4f38348))
+
 ## 1.34.36 (2022-07-25)
 
 
