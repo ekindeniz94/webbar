@@ -42,6 +42,11 @@ export class ClusterCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
+  containerRegistryUrl: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
   host: string;
 
   @IsNotEmpty()
