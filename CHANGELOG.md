@@ -2,6 +2,13 @@
 
 
 
+## 1.34.39 (2022-07-28)
+
+
+### Bug Fixes
+
+* added NamespaceServiceDockerComposeResponseDto. ([ee9c07e](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ee9c07e0af9ce70944e136c494dba93748629849))
+
 ## 1.34.38 (2022-07-26)
 
 
