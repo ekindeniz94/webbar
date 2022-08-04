@@ -2,6 +2,13 @@
 
 
 
+## 1.34.42 (2022-08-04)
+
+
+### Bug Fixes
+
+* getSubscriptionIntervals endedAt set milliseconds to 0 ([b75b4b8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b75b4b848fa6861d0a35c24b9bb2b4789ef21f09))
+
 ## 1.34.41 (2022-08-04)
 
 
