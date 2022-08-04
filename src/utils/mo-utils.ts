@@ -165,7 +165,7 @@ export class MoUtils {
     results.push({
       interval: interval,
       startedAt: startedAt.clone().startOf('day'),
-      endedAt: endedAt.clone().endOf('day').subtract(1, 'second')
+      endedAt: endedAt.clone().endOf('day').set('milliseconds', 0)
     });
     if (endedAt.isAfter(moment())) {
       return results;
