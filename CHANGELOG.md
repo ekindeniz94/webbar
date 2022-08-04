@@ -2,6 +2,13 @@
 
 
 
+## 1.34.41 (2022-08-04)
+
+
+### Bug Fixes
+
+* getSubscriptionIntervals endedAt sub 1 sec (mysql issue) ([298c32a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/298c32af771a485fd3cf942586f3c0e23ea1b70a))
+
 ## 1.34.40 (2022-07-28)
 
 
