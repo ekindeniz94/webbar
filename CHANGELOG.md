@@ -2,6 +2,13 @@
 
 
 
+## 1.34.43 (2022-08-08)
+
+
+### Bug Fixes
+
+* minor fixes. ([e1a17c9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e1a17c904d9559882e632b524bb6aa1989a63f69))
+
 ## 1.34.42 (2022-08-04)
 
 
