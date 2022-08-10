@@ -2,6 +2,13 @@
 
 
 
+## 1.34.44 (2022-08-10)
+
+
+### Bug Fixes
+
+* update UpgradeNamespaceSubscriptionRequestDto (add priceIntervalId and countryCode) ([41fb1ca](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/41fb1ca6dfab721bd269a2e463f6ea6a98242602))
+
 ## 1.34.43 (2022-08-08)
 
 
