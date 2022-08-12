@@ -2,6 +2,13 @@
 
 
 
+## 1.34.46 (2022-08-12)
+
+
+### Bug Fixes
+
+* mo-utils getSubscriptionIntervals ([f1a2b2d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f1a2b2dcef6d09e7b75a91452a2d08b9ec9dad51))
+
 ## 1.34.45 (2022-08-12)
 
 
