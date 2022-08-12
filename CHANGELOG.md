@@ -1,5 +1,14 @@
 # Changelog
 
+
+
+## 1.34.45 (2022-08-12)
+
+
+### Bug Fixes
+
+* bump version ([ff201f3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ff201f36ba3da43b95b26d60af691bae6babe862))
+
 ## next
 
 ## 1.34.44 (2022-08-10)
