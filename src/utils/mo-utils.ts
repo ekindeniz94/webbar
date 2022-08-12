@@ -148,37 +148,34 @@ export class MoUtils {
     let endedAt: moment.Moment;
     switch (interval) {
       case ProductRuntimeIntervalEnum.DAY:
-        endedAt = moment(startedAt).add(1, 'day');
+        endedAt = moment(startedAt).add(24, 'hour');
         break;
       case ProductRuntimeIntervalEnum.WEEK:
-        endedAt = moment(startedAt).add(1, 'week').subtract(1, 'day');
+        endedAt = moment(startedAt).add(1, 'week');
         break;
       case ProductRuntimeIntervalEnum.MONTH:
-        endedAt = moment(startedAt).add(1, 'month').subtract(1, 'day');
+        endedAt = moment(startedAt).add(1, 'month');
         break;
       case ProductRuntimeIntervalEnum.YEAR:
-        endedAt = moment(startedAt).add(1, 'year').subtract(1, 'day');
+        endedAt = moment(startedAt).add(1, 'year');
         break;
       default:
         return results;
     }
+
     results.push({
       interval: interval,
-      startedAt: startedAt.clone().startOf('day'),
-      endedAt: endedAt.clone().endOf('day').set('milliseconds', 0)
+      startedAt: startedAt.clone().set('milliseconds', 0),
+      endedAt: endedAt.clone().set('milliseconds', 0)
     });
+
     if (endedAt.isAfter(moment())) {
       return results;
     }
     if (results.length === maxDepth) {
       return results;
     }
-    results.push(
-      ...MoUtils.getSubscriptionIntervals(
-        interval === ProductRuntimeIntervalEnum.DAY ? endedAt : moment(endedAt).clone().add(1, 'day'),
-        interval
-      )
-    );
+    results.push(...MoUtils.getSubscriptionIntervals(moment(endedAt).clone().add(1, 'second'), interval));
     return results;
   }
 
