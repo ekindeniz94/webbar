@@ -1,4 +1,5 @@
 import { Expose, Type } from 'class-transformer';
+import { AppLibraryTypeEnum } from '../../../mo-app-library/enums/app-library-type.enum';
 import { FilePublicDto } from '../../../mo-file';
 
 export class NamespaceDashboardStageAppDto {
@@ -15,4 +16,7 @@ export class NamespaceDashboardStageAppDto {
   @Type(() => FilePublicDto)
   @Expose()
   image: FilePublicDto;
+
+  @Expose()
+  type: AppLibraryTypeEnum;
 }

@@ -18,6 +18,9 @@ export class NamespaceDashboardStageServiceDto {
   displayName: string;
 
   @Expose()
+  containerImage: string | null;
+
+  @Expose()
   state: NamespaceServiceStateEnum;
 
   @Type(() => Boolean)
