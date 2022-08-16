@@ -2,6 +2,13 @@
 
 
 
+## 1.34.48 (2022-08-16)
+
+
+### Bug Fixes
+
+* mo-core-base update. ([3bd8e1c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/3bd8e1c416c9529799f4f906e0605633d01ef4a9))
+
 ## 1.34.47 (2022-08-16)
 
 
