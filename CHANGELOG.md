@@ -2,6 +2,13 @@
 
 
 
+## 1.34.47 (2022-08-16)
+
+
+### Bug Fixes
+
+* added appType and containerImage to DashboardStageServiceDto. ([abbe5e1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/abbe5e108e67897055c7b4275bbc512a715553df))
+
 ## 1.34.46 (2022-08-12)
 
 
