@@ -2,6 +2,13 @@
 
 
 
+## 1.34.49 (2022-08-30)
+
+
+### Bug Fixes
+
+* add parseBoolean to MoUtils ([7495e04](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7495e04b7aef017a87f44d9dbd1d49423d2ab1d4))
+
 ## 1.34.48 (2022-08-16)
 
 
