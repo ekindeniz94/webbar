@@ -1,5 +1,5 @@
 import { customAlphabet } from 'nanoid';
-import { isArray, isFQDN, isObject } from 'class-validator';
+import { isArray, isFQDN, isObject, isString } from 'class-validator';
 import * as _ from 'lodash';
 import { instanceToPlain } from 'class-transformer';
 import { ProductRuntimeIntervalEnum } from '../modules/mo-payment/product/enums/product-runtime-interval.enum';
@@ -222,5 +222,23 @@ export class MoUtils {
     }
 
     return subscriptionIntervals;
+  }
+
+  static parseBoolean(value: string | boolean | number): boolean {
+    if (isString(value)) {
+      value = value.toLowerCase();
+    }
+
+    switch (value) {
+      case true:
+      case 'true':
+      case 1:
+      case '1':
+        // case 'on':
+        // case 'yes':
+        return true;
+      default:
+        return false;
+    }
   }
 }
