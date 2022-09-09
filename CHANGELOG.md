@@ -2,6 +2,13 @@
 
 
 
+## 1.34.51 (2022-09-09)
+
+
+### Bug Fixes
+
+* traffic fix. ([a05c49f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a05c49f6fe9b254f9af03c8c15c0bc1be41de700))
+
 ## 1.34.50 (2022-09-09)
 
 
