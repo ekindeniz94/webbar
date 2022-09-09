@@ -195,25 +195,25 @@ export class MoUtils {
     switch (subscriptionInterval) {
       case ProductRuntimeIntervalEnum.DAY:
         subscriptionIntervals = MoUtils.getSubscriptionIntervals(
-          moment().startOf('day').set('date', moment(subscriptionCreatedAt).date()),
+          moment(subscriptionCreatedAt).startOf('day').set('date', moment(subscriptionCreatedAt).date()),
           subscriptionInterval
         );
         break;
       case ProductRuntimeIntervalEnum.WEEK:
         subscriptionIntervals = MoUtils.getSubscriptionIntervals(
-          moment().startOf('day').set('date', moment(subscriptionCreatedAt).date()),
+          moment(subscriptionCreatedAt).startOf('day').set('date', moment(subscriptionCreatedAt).date()),
           subscriptionInterval
         );
         break;
       case ProductRuntimeIntervalEnum.MONTH:
         subscriptionIntervals = MoUtils.getSubscriptionIntervals(
-          moment().startOf('day').set('month', moment(subscriptionCreatedAt).month()),
+          moment(subscriptionCreatedAt).startOf('day').set('month', moment(subscriptionCreatedAt).month()),
           subscriptionInterval
         );
         break;
       case ProductRuntimeIntervalEnum.YEAR:
         subscriptionIntervals = MoUtils.getSubscriptionIntervals(
-          moment().startOf('year').set('year', moment(subscriptionCreatedAt).year()),
+          moment(subscriptionCreatedAt).startOf('year').set('year', moment(subscriptionCreatedAt).year()),
           subscriptionInterval
         );
         break;
