@@ -2,6 +2,13 @@
 
 
 
+## 1.34.52 (2022-09-09)
+
+
+### Bug Fixes
+
+* add spectrum response DTOs ([d7aa099](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d7aa099bb470870a9115c33953e1e7dfda7381ff))
+
 ## 1.34.51 (2022-09-09)
 
 
