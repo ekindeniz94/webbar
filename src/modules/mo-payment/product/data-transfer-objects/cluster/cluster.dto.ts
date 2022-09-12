@@ -1,7 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto, CountryDto, GeoCoordinatesDto } from '../../../../mo-core';
 import { ProductDto } from '../product';
-import { isArray } from 'class-validator';
+import { isArray, isIP, IsNotEmpty } from 'class-validator';
+import _ from 'lodash';
 
 export class ClusterDto extends BaseEntityDto {
   @Type(() => ProductDto)
@@ -27,8 +28,11 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   name: string;
 
+  @Transform(({ value }) =>
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+  )
   @Expose()
-  loadbalancerIp: string;
+  loadbalancerIps: string[];
 
   @Expose()
   loadbalancerHost: string;

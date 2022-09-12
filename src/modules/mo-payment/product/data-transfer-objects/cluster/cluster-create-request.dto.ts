@@ -1,6 +1,7 @@
-import { Expose, Type } from 'class-transformer';
-import { IsIP, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray, isIP, IsIP, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
 import { CountryDto } from '../../../../mo-core';
+import _ from 'lodash';
 
 export class ClusterCreateRequestDto {
   @IsNotEmpty()
@@ -26,9 +27,11 @@ export class ClusterCreateRequestDto {
   name: string;
 
   @IsNotEmpty()
-  @IsIP()
+  @Transform(({ value }) =>
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+  )
   @Expose()
-  loadbalancerIp: string;
+  loadbalancerIps: string[];
 
   @IsNotEmpty()
   @Expose()
