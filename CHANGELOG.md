@@ -2,6 +2,13 @@
 
 
 
+## 1.34.53 (2022-09-12)
+
+
+### Bug Fixes
+
+* update cluster loadbalancer ip ([f5d4ad1](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f5d4ad17e37252639f8ba650c3231afaf76b4711))
+
 ## 1.34.52 (2022-09-09)
 
 
