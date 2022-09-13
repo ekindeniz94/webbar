@@ -2,6 +2,13 @@
 
 
 
+## 1.34.56 (2022-09-13)
+
+
+### Bug Fixes
+
+* add cluster vendor ([453061b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/453061b62d1649834db2ff4aefab462eb2a10fa4))
+
 ## 1.34.55 (2022-09-13)
 
 
