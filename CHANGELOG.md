@@ -2,6 +2,13 @@
 
 
 
+## 1.34.54 (2022-09-13)
+
+
+### Bug Fixes
+
+* rm stats params from namespace stage ([ef68c90](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/ef68c90b80af162fec6f276fdf8c7c5f750d434a))
+
 ## 1.34.53 (2022-09-12)
 
 
