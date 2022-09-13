@@ -1,8 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto, CountryDto, GeoCoordinatesDto } from '../../../../mo-core';
 import { ProductDto } from '../product';
-import { isArray, isIP, IsNotEmpty } from 'class-validator';
+import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
+import { ClusterVendorEnum } from '../../enums';
+import { FileDto } from '../../../../mo-file';
 
 export class ClusterDto extends BaseEntityDto {
   @Type(() => ProductDto)
@@ -51,6 +53,19 @@ export class ClusterDto extends BaseEntityDto {
 
   @Expose()
   cloudflareUdpSubDomain: string;
+
+  @Expose()
+  displayName: string;
+
+  @Expose()
+  description: string;
+
+  @Type(() => FileDto)
+  @Expose()
+  icon: FileDto;
+
+  @Expose()
+  vendor: ClusterVendorEnum;
 
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;

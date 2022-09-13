@@ -1,7 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isIP, IsIP, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
+import { isArray, IsEnum, isIP, IsIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
 import { CountryDto } from '../../../../mo-core';
 import _ from 'lodash';
+import { ClusterVendorEnum } from '../../enums';
+import { FileDto } from '../../../../mo-file';
 
 export class ClusterCreateRequestDto {
   @IsNotEmpty()
@@ -61,4 +63,23 @@ export class ClusterCreateRequestDto {
   @IsString()
   @Expose()
   cloudflareUdpSubDomain: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  displayName: string;
+
+  @IsString()
+  @Expose()
+  description: string;
+
+  @IsOptional()
+  @Type(() => FileDto)
+  @Expose()
+  icon: FileDto;
+
+  @IsEnum(ClusterVendorEnum)
+  @Transform(({ value }) => value ?? ClusterVendorEnum.AZURE)
+  @Expose()
+  vendor: ClusterVendorEnum;
 }

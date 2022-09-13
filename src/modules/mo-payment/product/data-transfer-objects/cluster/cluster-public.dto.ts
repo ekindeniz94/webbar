@@ -1,5 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { GeoCoordinatesDto } from '../../../../mo-core';
+import { ClusterVendorEnum } from '../../enums';
+import { FilePublicDto } from '../../../../mo-file';
 
 export class ClusterPublicDto {
   @Expose()
@@ -26,6 +28,19 @@ export class ClusterPublicDto {
 
   @Expose()
   loadbalancerHost: string;
+
+  @Expose()
+  displayName: string;
+
+  @Expose()
+  description: string;
+
+  @Type(() => FilePublicDto)
+  @Expose()
+  icon: FilePublicDto;
+
+  @Expose()
+  vendor: ClusterVendorEnum;
 
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
