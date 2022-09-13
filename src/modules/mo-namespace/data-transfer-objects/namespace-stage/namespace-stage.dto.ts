@@ -32,10 +32,6 @@ export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
   services: NamespaceServiceDto[];
 
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  statsUpdateAt: Date;
-
   @Type(() => Number)
   @Transform(({ value, obj }) => value ?? obj.services?.length)
   @Expose()
