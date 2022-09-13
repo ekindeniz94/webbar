@@ -2,6 +2,13 @@
 
 
 
+## 1.34.55 (2022-09-13)
+
+
+### Bug Fixes
+
+* rm statsUpdateAt ([1ff73ac](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1ff73ac7de1beb908b24ca9bd21a74ae08b0dbd2))
+
 ## 1.34.54 (2022-09-13)
 
 
