@@ -2,6 +2,13 @@
 
 
 
+## 1.34.57 (2022-09-15)
+
+
+### Bug Fixes
+
+* CloudflareLogSpectrumDto ([54d3ae5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/54d3ae5899ccd660994050da407200e72a708136))
+
 ## 1.34.56 (2022-09-13)
 
 
