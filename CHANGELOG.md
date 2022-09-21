@@ -2,6 +2,13 @@
 
 
 
+## 1.34.59 (2022-09-21)
+
+
+### Bug Fixes
+
+* removed strip tags from keyvault secret value. ([1c1a0a6](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1c1a0a6db03c376d70974ab8cfd02e96e83e00f5))
+
 ## 1.34.58 (2022-09-21)
 
 
