@@ -17,7 +17,7 @@ export class KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.KEY_VAULT.VALUE.MAX)
-  @StripTags()
+  //@StripTags()
   @Expose()
   value: string;
 }
