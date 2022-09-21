@@ -2,6 +2,13 @@
 
 
 
+## 1.34.58 (2022-09-21)
+
+
+### Bug Fixes
+
+* env value match ([d78706f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d78706f02adc239b94c8ecaf981c56e9171e55a0))
+
 ## 1.34.57 (2022-09-15)
 
 
