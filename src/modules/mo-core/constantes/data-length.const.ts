@@ -119,14 +119,14 @@ export const DTO_VALIDATION_CONST = {
         MATCHES: /^([a-z])([a-z0-9-])/
       },
       ENVVAR_NAME: {
-        MATCHES: /^[a-zA-Z0-9-_]{1,50}$/,
+        // MATCHES: /^[a-zA-Z0-9-_]{1,50}$/,
         MIN: 1,
         MAX: 50
       },
       ENVVAR_VALUE: {
-        MATCHES: /^[\w\-_:.\/%@][\w\-_:.\/%@; ]{0,256}$/,
+        // MATCHES: /^[\w\-_:.\/%@][\w\-_:.\/%@; ]{0,256}$/,
         MIN: 0,
-        MAX: 256
+        MAX: 512
       },
       ENVVAR_CHOWN_USER_VALUE: {
         MIN: 1,

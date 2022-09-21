@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 import { StripTags } from '../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../enums';
@@ -21,7 +21,7 @@ export class NamespaceServiceEnvVarCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MATCHES)
+  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_NAME.MIN)
   @StripTags()
@@ -29,10 +29,10 @@ export class NamespaceServiceEnvVarCreateRequestDto {
   name: string;
 
   @IsString()
-  @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MATCHES)
+  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MATCHES)
   @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MAX)
   @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MIN)
-  @StripTags()
+  // @StripTags()
   @Expose()
   value: string;
 
