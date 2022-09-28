@@ -12,6 +12,11 @@ export class OriginTrafficDto {
   @Expose()
   transmitBytes: number;
 
+  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Type(() => Number)
+  @Expose()
+  localBytes: number;
+
   get receiveInMb(): number {
     return Math.round((this.receiveBytes / 1024 ** 2) * 100) / 100;
   }
@@ -26,5 +31,18 @@ export class OriginTrafficDto {
 
   get transmitInGb(): number {
     return Math.round((this.transmitBytes / 1024 ** 3) * 100) / 100;
+  }
+
+  get trafficInBytes(): number {
+    const value = this.receiveBytes + this.transmitBytes - this.localBytes;
+    return value < 0 ? 0 : value;
+  }
+
+  get trafficInMb(): number {
+    return Math.round((this.trafficInBytes / 1024 ** 2) * 100) / 100;
+  }
+
+  get trafficInGb(): number {
+    return Math.round((this.trafficInBytes / 1024 ** 3) * 100) / 100;
   }
 }
