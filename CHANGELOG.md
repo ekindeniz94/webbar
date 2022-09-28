@@ -2,6 +2,13 @@
 
 
 
+## 1.34.60 (2022-09-28)
+
+
+### Bug Fixes
+
+* traffic dtos ([93e831a](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/93e831a944c5e874b9f214c1f7e20a3e5a729be3))
+
 ## 1.34.59 (2022-09-21)
 
 
