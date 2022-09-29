@@ -5,7 +5,7 @@ export class OriginTrafficDto {
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Type(() => Number)
   @Expose()
-  receiveBytes: number;
+  receivedBytes: number;
 
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Type(() => Number)
@@ -18,7 +18,7 @@ export class OriginTrafficDto {
   localBytes: number;
 
   get receiveInMb(): number {
-    return Math.round((this.receiveBytes / 1024 ** 2) * 100) / 100;
+    return Math.round((this.receivedBytes / 1024 ** 2) * 100) / 100;
   }
 
   get transmitInMb(): number {
@@ -26,7 +26,7 @@ export class OriginTrafficDto {
   }
 
   get receiveInGb(): number {
-    return Math.round((this.receiveBytes / 1024 ** 3) * 100) / 100;
+    return Math.round((this.receivedBytes / 1024 ** 3) * 100) / 100;
   }
 
   get transmitInGb(): number {
@@ -34,7 +34,7 @@ export class OriginTrafficDto {
   }
 
   get trafficInBytes(): number {
-    const value = this.receiveBytes + this.transmitBytes - this.localBytes;
+    const value = this.receivedBytes + this.transmitBytes - this.localBytes;
     return value < 0 ? 0 : value;
   }
 
