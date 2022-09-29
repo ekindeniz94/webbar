@@ -2,6 +2,13 @@
 
 
 
+## 1.34.61 (2022-09-29)
+
+
+### Bug Fixes
+
+* rename origin traffic dto props ([d1ca492](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d1ca49291bee63a96301103c1016636e057a3e90))
+
 ## 1.34.60 (2022-09-28)
 
 
