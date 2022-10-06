@@ -10,4 +10,4 @@ export * from './namespace-user.dto';
 export * from './namespace.dto';
 export * from './remove-user-from-namespace-group-request.dto';
 export * from './upgrade-namespace-subscription-request.dto';
-
+export * from './namespace-origin-traffic.dto';

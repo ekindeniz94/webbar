@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { isArray, IsNotEmpty, IsOptional, IsString, IsUUID, ValidateNested } from 'class-validator';
-import { NamespaceServiceKubernetesSettingsPatchRequestDto } from './namespace-service-kubernetes-settings-patch-request.dto';
-import { NamespaceServiceEnvVarPatchRequestDto } from './namespace-service-envvar-patch-request.dto';
-import { NamespaceServicePortPatchRequestDto } from './namespace-service-port-patch-request.dto';
-import { NamespaceServiceCnamePatchRequestDto } from './namespace-service-cname-patch-request.dto';
+import { NamespaceServiceKubernetesSettingsPatchRequestDto } from './namespace-service-kubernetes-settings/namespace-service-kubernetes-settings-patch-request.dto';
+import { NamespaceServiceEnvVarPatchRequestDto } from './namespace-service-envvar/namespace-service-envvar-patch-request.dto';
+import { NamespaceServicePortPatchRequestDto } from './namespace-service-port/namespace-service-port-patch-request.dto';
+import { NamespaceServiceCnamePatchRequestDto } from './namespace-service-cname/namespace-service-cname-patch-request.dto';
 import { StripTags } from '../../../../utils';
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {

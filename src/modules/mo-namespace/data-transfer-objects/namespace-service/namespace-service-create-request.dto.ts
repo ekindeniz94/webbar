@@ -13,11 +13,11 @@ import {
 } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { NamespaceStageIdDto } from '../namespace-stage';
-import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar-create-request.dto';
-import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings-create-request.dto';
+import { NamespaceServiceEnvVarCreateRequestDto } from './namespace-service-envvar/namespace-service-envvar-create-request.dto';
+import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-service-kubernetes-settings/namespace-service-kubernetes-settings-create-request.dto';
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
-import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname-create-request.dto';
-import { NamespaceServicePortCreateRequestDto } from './namespace-service-port-create-request.dto';
+import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname/namespace-service-cname-create-request.dto';
+import { NamespaceServicePortCreateRequestDto } from './namespace-service-port/namespace-service-port-create-request.dto';
 import { StripTags } from '../../../../utils';
 import { AppIdDto } from '../../../mo-app-library';
 import { KeyVaultSecretDto } from '../key-vault';

@@ -2,7 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import {
   NamespaceServiceEnvVarDto
-} from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar.dto';
+} from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar/namespace-service-envvar.dto';
 
 export class DockerTemplateDto {
   @IsNotEmpty()

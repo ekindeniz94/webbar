@@ -2,35 +2,65 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isNumber } from 'class-validator';
 
 export class OriginTrafficDto {
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
   @Type(() => Number)
   @Expose()
   receivedBytes: number;
 
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
   @Type(() => Number)
   @Expose()
   transmitBytes: number;
 
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
   @Type(() => Number)
   @Expose()
-  localBytes: number;
+  localReceivedBytes: number;
+
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
+  @Type(() => Number)
+  @Expose()
+  localTransmitBytes: number;
+
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
+  @Type(() => Number)
+  @Expose()
+  limitInMb: number;
 
   get receiveInMb(): number {
     return Math.round((this.receivedBytes / 1024 ** 2) * 100) / 100;
+  }
+
+  get localReceivedInMb(): number {
+    return Math.round((this.localReceivedBytes / 1024 ** 2) * 100) / 100;
   }
 
   get transmitInMb(): number {
     return Math.round((this.transmitBytes / 1024 ** 2) * 100) / 100;
   }
 
+  get localTransmitInMb(): number {
+    return Math.round((this.localTransmitBytes / 1024 ** 2) * 100) / 100;
+  }
+
   get receiveInGb(): number {
     return Math.round((this.receivedBytes / 1024 ** 3) * 100) / 100;
   }
 
+  get localReceivedInGb(): number {
+    return Math.round((this.localReceivedBytes / 1024 ** 3) * 100) / 100;
+  }
+
   get transmitInGb(): number {
     return Math.round((this.transmitBytes / 1024 ** 3) * 100) / 100;
+  }
+
+  get localTransmitInGb(): number {
+    return Math.round((this.localTransmitBytes / 1024 ** 3) * 100) / 100;
+  }
+
+  get localBytes(): number {
+    return this.localReceivedBytes + this.localTransmitBytes;
   }
 
   get trafficInBytes(): number {
@@ -44,5 +74,21 @@ export class OriginTrafficDto {
 
   get trafficInGb(): number {
     return Math.round((this.trafficInBytes / 1024 ** 3) * 100) / 100;
+  }
+
+  get limitBytes(): number {
+    return this.limitInMb * 1024 ** 2;
+  }
+
+  get limitInGb(): number {
+    return Math.round((this.limitBytes / 1024 ** 3) * 100) / 100;
+  }
+
+  get trafficInPercentage(): number {
+    if (!this.limitInMb) {
+      return 0;
+    }
+    const value = (this.trafficInMb ?? 0) / this.limitInMb;
+    return value && isNumber(value) ? +(Math.round(value * 100 * 100) / 100).toFixed(2) : 0;
   }
 }

@@ -18,6 +18,13 @@ export class StatsDto {
 
   @Type(() => Number)
   @Expose()
-  @Transform(({ value }) => (value && isNumber(value) ? Math.ceil(value * 100) : 0))
+  @Transform(({ value, obj }) => {
+    obj.limit = obj.limit ?? 0;
+    if (!obj.limit) {
+      return 0;
+    }
+    value = (obj.current ?? 0) / obj.limit;
+    return value && isNumber(value) ? +(Math.round(value * 100 * 100) / 100).toFixed(2) : 0;
+  })
   percentage: number;
 }

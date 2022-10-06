@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceServiceCnameDto } from '../../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname.dto';
+import { NamespaceServiceCnameDto } from '../../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname/namespace-service-cname.dto';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
