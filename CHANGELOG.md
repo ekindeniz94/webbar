@@ -2,6 +2,13 @@
 
 
 
+# 1.35.0 (2022-10-06)
+
+
+### Features
+
+* refactoring. update stats ([8ab4fd8](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8ab4fd8957ac1c0f200f1f6b4cadba124ccdb83f))
+
 ## 1.34.61 (2022-09-29)
 
 
