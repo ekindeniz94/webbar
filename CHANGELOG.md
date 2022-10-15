@@ -2,6 +2,13 @@
 
 
 
+## 1.35.1 (2022-10-15)
+
+
+### Bug Fixes
+
+* hubspot user dto (email) ([2744277](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/274427770e139cad651bdeea2d195b707fa7bb54))
+
 # 1.35.0 (2022-10-06)
 
 
