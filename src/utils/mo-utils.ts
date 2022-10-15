@@ -15,18 +15,24 @@ export class MoUtils {
     return str.replace(/([^:]\/)\/+/g, '$1');
   }
 
+  public static get nanoidAlphabet(): string {
+    return '0123456789abcdefghijklmnopqrstuvwxyz';
+  }
+
   public static get nanoid(): () => string {
-    const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     // Speed: 1000IDs per hour/second
     // ~4 million years needed, in order to have a 1% probability of at least one collision.
-    return customAlphabet(alphabet, 23);
+    return customAlphabet(MoUtils.nanoidAlphabet, 23);
+  }
+
+  public static get nanoidSuperShortAlphabet(): string {
+    return '0123456789abcdefghijklmnopqrstuvwxyz';
   }
 
   public static get nanoidSuperShort(): () => string {
-    const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
     // Speed: 1000IDs per hour/second
     // ~7 hours needed, in order to have a 1% probability of at least one collision.
-    return customAlphabet(alphabet, 6);
+    return customAlphabet(MoUtils.nanoidSuperShortAlphabet, 6);
   }
 
   /**

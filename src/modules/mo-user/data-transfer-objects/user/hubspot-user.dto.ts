@@ -1,5 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isString } from 'class-validator';
+import { MoUtils } from '../../../../utils';
 
 export class HubspotUserDto {
   @Expose()
@@ -16,9 +17,12 @@ export class HubspotUserDto {
 
   @Transform(({ value }) => {
     try {
-      if (isString(value) && value.startsWith('MO')) {
+      const regex = new RegExp(`(?<=MO)([${MoUtils.nanoidAlphabet}]{23})(?=__)`, 'g');
+      if (isString(value) && value.startsWith('MO') && value.match(regex)?.length === 1) {
         const valueArr = value.split('__');
-        valueArr.shift();
+        if (valueArr.length > 1) {
+          valueArr.shift();
+        }
         return valueArr.join('__');
       }
       return value;
