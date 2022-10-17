@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+import { GitConnectionTypeEnum } from '../../../mo-git';
 
 export class K8sNamespaceDto {
     @Expose()
@@ -12,6 +13,12 @@ export class K8sNamespaceDto {
 
     @Expose()
     gitAccessToken: string;
+
+    @Expose()
+    gitUserId: string;
+
+    @Expose()
+    gitConnectionType: GitConnectionTypeEnum;
 
     @Expose()
     clusterName: string;
