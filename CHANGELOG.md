@@ -2,6 +2,13 @@
 
 
 
+## 1.35.2 (2022-10-17)
+
+
+### Bug Fixes
+
+* update K8sNamespaceDto ([2cfd4f9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2cfd4f966ad13cd1a895ac88fca967d3f869eb1e))
+
 ## 1.35.1 (2022-10-15)
 
 
