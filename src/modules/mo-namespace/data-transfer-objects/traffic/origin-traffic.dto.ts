@@ -27,6 +27,28 @@ export class OriginTrafficDto {
   @Expose()
   limitInMb: number;
 
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 1.3))
+  @Type(() => Number)
+  @Expose()
+  trafficShutdownLimit: number;
+
+  @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0.9))
+  @Type(() => Number)
+  @Expose()
+  trafficWarningLimit: number;
+
+  get isReachingTrafficLimit(): boolean {
+    return this.trafficInPercentage > this.trafficWarningLimit * 100;
+  }
+
+  get isReachedTrafficLimit(): boolean {
+    return this.trafficInPercentage > 100;
+  }
+
+  get isTrafficShutdownLimit(): boolean {
+    return this.trafficInPercentage > this.trafficShutdownLimit * 100;
+  }
+
   get receiveInMb(): number {
     return Math.round((this.receivedBytes / 1024 ** 2) * 100) / 100;
   }
