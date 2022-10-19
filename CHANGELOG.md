@@ -2,6 +2,13 @@
 
 
 
+## 1.35.3 (2022-10-19)
+
+
+### Bug Fixes
+
+* update origin traffic dto ([bacde61](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bacde61308ee7d13f44fd5bfb0476d90107ad06c))
+
 ## 1.35.2 (2022-10-17)
 
 
