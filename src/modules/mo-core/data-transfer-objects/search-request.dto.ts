@@ -16,9 +16,16 @@ export class SearchRequestDto {
   @Expose()
   page: number;
 
+  @Type(() => Number)
   @IsOptional()
   @IsNumber()
-  @Transform(({ value }) => (value ? Number(value) : 20))
+  @Transform(({ value }) => {
+    value = value ? Number(value) : 20;
+    if (value > 100) {
+      return 100;
+    }
+    return value;
+  })
   @Expose()
   limit: number;
 
