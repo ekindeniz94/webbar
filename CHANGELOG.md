@@ -2,6 +2,13 @@
 
 
 
+## 1.35.4 (2022-10-26)
+
+
+### Bug Fixes
+
+* search request (limit max 100) ([a759251](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a75925118f472d11eb4c5bf5bda24860a8928c23))
+
 ## 1.35.3 (2022-10-19)
 
 
