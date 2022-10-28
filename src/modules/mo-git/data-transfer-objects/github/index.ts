@@ -6,3 +6,4 @@ export * from './github-installation.dto';
 export * from './github-repository.dto';
 export * from './github-token.dto';
 export * from './github-user.dto';
+export * from './github-authorized-response.dto';
