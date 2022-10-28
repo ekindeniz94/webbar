@@ -2,6 +2,13 @@
 
 
 
+## 1.35.6 (2022-10-28)
+
+
+### Bug Fixes
+
+* github response ([90d9192](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/90d91920e96d8225d8037105ed081101f509a50e))
+
 ## 1.35.5 (2022-10-27)
 
 
