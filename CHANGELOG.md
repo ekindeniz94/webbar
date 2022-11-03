@@ -2,6 +2,13 @@
 
 
 
+## 1.35.7 (2022-11-03)
+
+
+### Bug Fixes
+
+* NamespaceServiceBuildDto ([6016a24](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6016a246b2a8338ba82cbcaf3f341f42163cd994))
+
 ## 1.35.6 (2022-10-28)
 
 
