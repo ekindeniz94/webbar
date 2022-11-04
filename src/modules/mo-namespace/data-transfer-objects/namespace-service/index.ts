@@ -11,4 +11,4 @@ export * from './namespace-service-docker-k8s-patch-request.dto';
 export * from './namespace-service-origin-traffic.dto';
 export * from './namespace-service-patch-request.dto';
 export * from './namespace-service-stats.dto';
-export * from './namespace-service-build.dto';
+export * from './namespace-service-security.dto';

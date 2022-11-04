@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { BuildStateEnum } from '../../../mo-notification';
 import moment from 'moment/moment';
 
-export class NamespaceServiceBuildDto {
+export class NamespaceServiceSecurityDto {
   @Expose()
   id: string;
 
