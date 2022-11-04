@@ -2,6 +2,13 @@
 
 
 
+## 1.35.8 (2022-11-04)
+
+
+### Bug Fixes
+
+* NamespaceServiceSecurityDto ([e80363f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e80363fd75784360460e22dbf834c5da084867ee))
+
 ## 1.35.7 (2022-11-03)
 
 
