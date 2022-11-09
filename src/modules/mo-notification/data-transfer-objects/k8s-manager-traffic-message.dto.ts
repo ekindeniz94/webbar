@@ -1,8 +1,9 @@
 import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 
-const trafficServerStartDate = moment('2022-10-04 00:00:00');
+// const trafficServerStartDate = moment('2022-10-04 00:00:00');
 
+// TODO RENAME
 export class K8sManagerTrafficMessageDto {
   @Expose()
   podName: string;
@@ -49,21 +50,21 @@ export class K8sManagerTrafficMessageDto {
   @Expose()
   startTime: Date;
 
-  @Transform(({ value, obj }) => {
-    if (moment(trafficServerStartDate).isAfter(moment(new Date(obj.startTime)))) {
-      return 0;
-    }
-    return value;
-  })
-  @Expose()
-  transmitStartBytes: number;
-
-  @Transform(({ value, obj }) => {
-    if (moment(trafficServerStartDate).isAfter(moment(new Date(obj.startTime)))) {
-      return 0;
-    }
-    return value;
-  })
-  @Expose()
-  receivedStartBytes: number;
+  // @Transform(({ value, obj }) => {
+  //   if (moment(trafficServerStartDate).isAfter(moment(new Date(obj.startTime)))) {
+  //     return 0;
+  //   }
+  //   return value;
+  // })
+  // @Expose()
+  // transmitStartBytes: number;
+  //
+  // @Transform(({ value, obj }) => {
+  //   if (moment(trafficServerStartDate).isAfter(moment(new Date(obj.startTime)))) {
+  //     return 0;
+  //   }
+  //   return value;
+  // })
+  // @Expose()
+  // receivedStartBytes: number;
 }
