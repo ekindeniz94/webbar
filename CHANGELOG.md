@@ -2,6 +2,13 @@
 
 
 
+## 1.35.9 (2022-11-09)
+
+
+### Bug Fixes
+
+* update k8s traffic msg ([2db0345](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/2db034524def327f6307086ed19cd792fd5aecc4))
+
 ## 1.35.8 (2022-11-04)
 
 
