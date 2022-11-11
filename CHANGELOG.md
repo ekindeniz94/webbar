@@ -2,6 +2,13 @@
 
 
 
+## 1.35.10 (2022-11-11)
+
+
+### Bug Fixes
+
+* update user. add response dto ([28dffe9](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/28dffe97d699dd7492ee2ef1a32e82f85ac4f33c))
+
 ## 1.35.9 (2022-11-09)
 
 
