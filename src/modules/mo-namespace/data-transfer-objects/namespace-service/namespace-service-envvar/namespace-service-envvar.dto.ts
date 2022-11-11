@@ -12,7 +12,7 @@ export class NamespaceServiceEnvVarDto extends BaseEntityDto {
   @Expose()
   name: string;
 
-  @IsNotEmpty()
+  // @IsNotEmpty()
   @IsString()
   // @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.ENVVAR_VALUE.MATCHES)
   @Expose()

@@ -64,6 +64,9 @@ export class UserDto extends BaseEntityDto {
   @Expose()
   emailValidatedAt: string;
 
+  @Expose()
+  validatedAt: string;
+
   @Type(() => Boolean)
   @Transform(({ value }) => (value === true ? value : undefined))
   @Expose()
