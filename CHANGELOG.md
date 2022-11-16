@@ -2,6 +2,13 @@
 
 
 
+## 1.35.11 (2022-11-16)
+
+
+### Bug Fixes
+
+* add dtos for public repos ([7352d0d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7352d0d3fa4eab40d4febb63ea8f58d678ac020c))
+
 ## 1.35.10 (2022-11-11)
 
 
