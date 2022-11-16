@@ -1,4 +1,5 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose } from 'class-transformer';
+import { plainToInstance } from 'class-transformer';
 
 /**
  * Provider pagination patterns.
@@ -13,4 +14,21 @@ export class PaginationDto<T> {
 
   @Expose()
   next?: string;
+
+  @Expose()
+  static init<T>(values: T[], next?: string): PaginationDto<T> {
+    let plain: Record<string, any> = {}
+
+    plain.values = values;
+    if (next !== undefined) {
+        plain.next = next;
+    }
+
+    return plainToInstance(PaginationDto<T>,
+      plain,
+      {
+        excludeExtraneousValues: true
+      }
+    );
+  }
 }

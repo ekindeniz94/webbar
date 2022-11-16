@@ -1,5 +1,5 @@
 import { GitConnectionTypeEnum } from '../../enums/git-connection-type.enum';
-import { Expose } from 'class-transformer';
+import { Expose, plainToInstance } from 'class-transformer';
 
 /**
  * Project page with branch information.
@@ -34,5 +34,44 @@ export class RepositoryDto {
   @Expose()
   renderUrl(branch: string): string {
     return this.tpl_url.replace('{html_url}', this.html_url).replace('{branch}', encodeURIComponent(branch));
+  }
+
+  @Expose()
+  static init(
+    provider: GitConnectionTypeEnum,
+    name: string,
+    clone_url: string,
+    html_url: string,
+    tpl_url: string,
+    default_branch?: string | null
+  ): RepositoryDto {
+    return plainToInstance(
+      RepositoryDto,
+      {
+        provider: provider,
+        name: name,
+        clone_url: clone_url,
+        html_url: html_url,
+        tpl_url: tpl_url,
+        default_branch: default_branch || null
+      },
+      { excludeExtraneousValues: true }
+    );
+  }
+
+  constructor(
+    provider: GitConnectionTypeEnum,
+    name: string,
+    clone_url: string,
+    html_url: string,
+    tpl_url: string,
+    default_branch?: string | null
+  ) {
+    this.provider = provider;
+    this.name = name;
+    this.clone_url = clone_url;
+    this.html_url = html_url;
+    this.tpl_url = tpl_url;
+    this.default_branch = default_branch || null;
   }
 }

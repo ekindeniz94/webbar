@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, plainToInstance } from 'class-transformer';
 import { GitConnectionTypeEnum } from '../../enums';
 
 export class GitBranchDto {
@@ -7,4 +7,18 @@ export class GitBranchDto {
 
   @Expose()
   name: string;
+
+  @Expose()
+  static init(provider: GitConnectionTypeEnum, name: string): GitBranchDto {
+    return plainToInstance(
+      GitBranchDto,
+      {
+        provider: provider,
+        name: name
+      },
+      {
+        excludeExtraneousValues: true
+      }
+    );
+  }
 }
