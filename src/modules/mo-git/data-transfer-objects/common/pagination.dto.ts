@@ -31,4 +31,9 @@ export class PaginationDto<T> {
       }
     );
   }
+
+  constructor(values: T[], next?: string) {
+    this.values = values;
+    this.next = next;
+  }
 }

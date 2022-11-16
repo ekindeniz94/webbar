@@ -21,4 +21,9 @@ export class GitBranchDto {
       }
     );
   }
+
+  constructor(provider: GitConnectionTypeEnum, name: string) {
+    this.provider = provider;
+    this.name = name;
+  }
 }
