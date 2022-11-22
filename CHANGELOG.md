@@ -2,6 +2,13 @@
 
 
 
+## 1.35.12 (2022-11-22)
+
+
+### Bug Fixes
+
+* add traffic time series DTOs ([00e4472](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/00e447293197103f0ee000793996021de0de1637))
+
 ## 1.35.11 (2022-11-16)
 
 
