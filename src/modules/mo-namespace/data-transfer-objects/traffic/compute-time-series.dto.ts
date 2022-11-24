@@ -2,31 +2,31 @@ import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
 import { isNumber } from 'class-validator';
 
-export class TrafficTimeSeriesDto {
+export class ComputeTimeSeriesDto {
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
-  localReceivedBytes: number;
+  cpu: number;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
-  localTransmitBytes: number;
+  cpuLimit: number;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
-  packetsSum: number;
+  memory: number;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
-  receivedBytes: number;
+  memoryLimit: number;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
-  transmitBytes: number;
+  ephemeralStorageLimit: number;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
