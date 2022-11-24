@@ -2,6 +2,13 @@
 
 
 
+## 1.35.13 (2022-11-24)
+
+
+### Bug Fixes
+
+* stats dto ([b539496](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b539496a1bd4f082f60233b6d383fabae2b72fe5))
+
 ## 1.35.12 (2022-11-22)
 
 
