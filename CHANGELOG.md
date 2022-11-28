@@ -2,6 +2,13 @@
 
 
 
+## 1.35.14 (2022-11-28)
+
+
+### Bug Fixes
+
+* blog teaser dto. ([825d656](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/825d65688e1644d8f720d5e40e5c325fe040bdb6))
+
 ## 1.35.13 (2022-11-24)
 
 
