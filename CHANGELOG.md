@@ -2,6 +2,13 @@
 
 
 
+## 1.35.15 (2022-11-30)
+
+
+### Bug Fixes
+
+* edit service select github branch issue ([d54f980](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d54f9805c3c29f47be73ee30ec89bce17a3e1b63))
+
 ## 1.35.14 (2022-11-28)
 
 
