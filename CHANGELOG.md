@@ -2,6 +2,34 @@
 
 
 
+## 1.35.15 (2022-11-30)
+
+
+### Bug Fixes
+
+* edit service select github branch issue ([d54f980](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/d54f9805c3c29f47be73ee30ec89bce17a3e1b63))
+
+## 1.35.14 (2022-11-28)
+
+
+### Bug Fixes
+
+* blog teaser dto. ([825d656](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/825d65688e1644d8f720d5e40e5c325fe040bdb6))
+
+## 1.35.13 (2022-11-24)
+
+
+### Bug Fixes
+
+* stats dto ([b539496](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/b539496a1bd4f082f60233b6d383fabae2b72fe5))
+
+## 1.35.12 (2022-11-22)
+
+
+### Bug Fixes
+
+* add traffic time series DTOs ([00e4472](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/00e447293197103f0ee000793996021de0de1637))
+
 ## 1.35.11 (2022-11-16)
 
 

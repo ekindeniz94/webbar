@@ -1,5 +1,5 @@
 import { GitConnectionTypeEnum } from '../../enums/git-connection-type.enum';
-import { Expose, plainToInstance } from 'class-transformer';
+import { Expose, plainToInstance, Transform } from 'class-transformer';
 
 /**
  * Project page with branch information.
@@ -32,6 +32,9 @@ export class RepositoryDto {
   default_branch: string | null;
 
   @Expose()
+  full_name: string | null;
+
+  @Expose()
   renderUrl(branch: string): string {
     return this.tpl_url.replace('{html_url}', this.html_url).replace('{branch}', encodeURIComponent(branch));
   }
@@ -43,7 +46,8 @@ export class RepositoryDto {
     clone_url: string,
     html_url: string,
     tpl_url: string,
-    default_branch?: string | null
+    default_branch?: string | null,
+    full_name?: string | null
   ): RepositoryDto {
     return plainToInstance(
       RepositoryDto,
@@ -53,7 +57,8 @@ export class RepositoryDto {
         clone_url: clone_url,
         html_url: html_url,
         tpl_url: tpl_url,
-        default_branch: default_branch || null
+        default_branch: default_branch || null,
+        full_name: full_name || null
       },
       { excludeExtraneousValues: true }
     );
@@ -65,7 +70,8 @@ export class RepositoryDto {
     clone_url: string,
     html_url: string,
     tpl_url: string,
-    default_branch?: string | null
+    default_branch?: string | null,
+    full_name?: string | null
   ) {
     this.provider = provider;
     this.name = name;
@@ -73,5 +79,6 @@ export class RepositoryDto {
     this.html_url = html_url;
     this.tpl_url = tpl_url;
     this.default_branch = default_branch || null;
+    this.full_name = full_name || null;
   }
 }
