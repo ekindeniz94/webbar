@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class CommunityPlanApplicationDto {
+export class UserApplicationDto {
   @Expose() firstname: string;
   @Expose() lastname: string;
   @Expose() interests: string;

@@ -21,5 +21,5 @@ export * from './search-request.dto';
 export * from './sms-message.dto';
 export * from './k8s';
 export * from './response.dto';
-export * from './community-plan-application.dto';
-export * from './community-plan-item.dto';
+export * from './user-application.dto';
+export * from './user-application-item.dto';
