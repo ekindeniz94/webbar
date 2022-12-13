@@ -9,3 +9,4 @@ export * from './socket-data-event.enum';
 export * from './socket-event.enum';
 export * from './persistent-file-type.enum';
 export * from './user-application-status.enum';
+export * from './user-verification-status.enum';

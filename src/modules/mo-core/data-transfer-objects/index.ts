@@ -23,3 +23,4 @@ export * from './k8s';
 export * from './response.dto';
 export * from './user-application.dto';
 export * from './user-application-item.dto';
+export * from './user-verification-status.dto';
