@@ -1,5 +1,5 @@
-export enum UserApplicationStatus {
-  valid = 'valid',
-  invalid = 'invalid',
-  pending = 'pending'
+export enum UserApplicationStatusEnum {
+  pending = 'pending',
+  verified = 'verified',
+  rejected = 'rejected'
 }
