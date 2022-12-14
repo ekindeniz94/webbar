@@ -2,6 +2,18 @@
 
 
 
+## 1.35.16 (2022-12-14)
+
+
+### Bug Fixes
+
+* add validation ([59ae116](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/59ae116c88fee58db3d248043221fad83b16a213))
+* lock ([f829a76](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f829a76c56f4a40b89bb3afc76d0c82569139f2f))
+* moved enum ([34cc140](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/34cc1405ad343853e54634b411645d58ad497103))
+* new dto's ([7c8beea](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7c8beea64c3aba7ea96b4520de788c057e0ef032))
+* new version ([6858d6d](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6858d6d6a5bc4c2c52a5810539979ae4fc1ad4bf))
+* updated ([bcf3854](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/bcf3854dc59abeae785a937c1ad803ef6be59fd7))
+
 ## 1.35.15 (2022-11-30)
 
 
