@@ -1,10 +1,8 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose } from 'class-transformer';
+import { IsString } from 'class-validator';
 
 export class PaymentIntentDto {
   @Expose()
+  @IsString()
   client_secret: string;
-
-  constructor(client_secret: string) {
-    this.client_secret = client_secret;
-  }
 }
