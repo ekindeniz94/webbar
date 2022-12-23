@@ -2,6 +2,13 @@
 
 
 
+## 1.35.17 (2022-12-23)
+
+
+### Bug Fixes
+
+* adjust dto ([5faf6d2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/5faf6d2befe61ea23815185294522369b26c3c50))
+
 ## 1.35.16 (2022-12-14)
 
 
