@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsDate, IsString } from 'class-validator';
 import { UserApplicationStatusEnum } from '../enums';
-
+//
 export class UserApplicationItemDto {
   @Expose() @IsString() id: string;
   @Expose() @IsString() userid: string;
