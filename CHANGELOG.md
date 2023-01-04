@@ -2,6 +2,14 @@
 
 
 
+## 1.35.18 (2023-01-04)
+
+
+### Bug Fixes
+
+* update ([c660a4f](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/c660a4f7e7d22e0299e423639104189ebc8fe057))
+* update ([9aded97](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9aded973fbb366da20bf4bacaf70f891c3b83ddf))
+
 ## 1.35.17 (2022-12-23)
 
 
