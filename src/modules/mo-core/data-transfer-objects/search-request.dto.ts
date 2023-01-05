@@ -5,7 +5,7 @@ import { OrderEnum } from '../enums';
 export class SearchRequestDto {
   @IsOptional()
   @IsString()
-  @Transform(({ value }) => (value && isString(value) ? value : ''))
+  @Transform(({ value }) => (value && isString(value) ? decodeURIComponent(value) : ''))
   @Expose()
   searchString: string;
 
