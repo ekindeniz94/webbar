@@ -2,6 +2,13 @@
 
 
 
+## 1.35.19 (2023-01-05)
+
+
+### Bug Fixes
+
+* url decoding, min length ([7bf1d7b](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/7bf1d7b104f4ed9dfbed6564290774263603e751))
+
 ## 1.35.18 (2023-01-04)
 
 
