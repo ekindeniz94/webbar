@@ -2,6 +2,17 @@
 
 
 
+## 1.35.20 (2023-01-09)
+
+
+### Bug Fixes
+
+* add security log enum, interface ([36afaba](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/36afabadac5c62244b71545bcaadb66aa5ea7a05))
+* extend product dto, securoty log flag ([0d286fa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/0d286fa2dc28d092b562f640541b8a4e2401b5c1))
+* extend vulnerability dto ([f0344fa](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/f0344fa46174b4f8abb8ce138bda189aa332a486))
+* re-use security log compiler ([a930f79](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a930f792d57a1c9e9ed98237a901c42c5c068683))
+* update package-lock ([e90f071](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/e90f0717c8ae5ddffa178466caac7a0a4105fdb5))
+
 ## 1.35.19 (2023-01-05)
 
 
