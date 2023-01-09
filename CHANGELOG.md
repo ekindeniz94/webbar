@@ -2,6 +2,14 @@
 
 
 
+## 1.35.21 (2023-01-09)
+
+
+### Bug Fixes
+
+* update create product ([75a7753](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/75a775385319f84adcb160b5170f3cb3a176265d))
+* update public product ([1282598](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/1282598f20b5a78b6804c0fc075880ae98a9f206))
+
 ## 1.35.20 (2023-01-09)
 
 
