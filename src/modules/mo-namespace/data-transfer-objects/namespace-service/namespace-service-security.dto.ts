@@ -22,4 +22,7 @@ export class NamespaceServiceSecurityDto {
 
   @Expose()
   vulnerabilitiesData: string;
+
+  @Expose()
+  vulnerabilityInfo: string;
 }
