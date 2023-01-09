@@ -233,4 +233,9 @@ export class ProductCreateRequestDto {
   @IsBoolean()
   @Expose()
   enableAnalytics: boolean;
+
+  @Type(() => Boolean)
+  @IsBoolean()
+  @Expose()
+  enableSecurityLogs: boolean;
 }
