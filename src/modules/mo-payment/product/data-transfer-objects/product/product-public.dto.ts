@@ -159,6 +159,10 @@ export class ProductPublicDto {
   @Expose()
   enableAnalytics: boolean;
 
+  @Type(() => Boolean)
+  @Expose()
+  enableSecurityLogs: boolean;
+
   getPriceIntervalByInterval(interval: ProductRuntimeIntervalEnum) {
     return this.priceIntervals.find((item: PriceIntervalPublicDto) => item.interval === interval);
   }
