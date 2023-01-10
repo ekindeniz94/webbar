@@ -181,6 +181,10 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   enableSecurityLogs: boolean;
 
+  @Type(() => Boolean)
+  @Expose()
+  enableTeamCollaboration: boolean;
+
   get isValid(): boolean {
     return this.state === ProductStateEnum.ACTIVE && moment().isBetween(this.startsOn, this.endsOn);
   }
