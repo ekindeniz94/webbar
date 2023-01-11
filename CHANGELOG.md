@@ -2,6 +2,14 @@
 
 
 
+## 1.35.22 (2023-01-11)
+
+
+### Bug Fixes
+
+* update ([8ddcd86](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/8ddcd861bb87d244129999e65cbd136ce5848d43))
+* update pipline ([a5d98a2](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/a5d98a2a907f0fe429aec91573b0a4d0d3cf222a))
+
 ## 1.35.21 (2023-01-09)
 
 
