@@ -238,4 +238,9 @@ export class ProductCreateRequestDto {
   @IsBoolean()
   @Expose()
   enableSecurityLogs: boolean;
+
+  @Type(() => Boolean)
+  @IsBoolean()
+  @Expose()
+  enableTeamCollaboration: boolean;
 }
