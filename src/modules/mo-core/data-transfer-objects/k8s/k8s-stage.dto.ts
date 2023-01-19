@@ -20,4 +20,7 @@ export class K8sStageDto {
     @Type(() => K8sServiceDto)
     @Expose()
     services: K8sServiceDto[];
+
+    @Expose()
+    cloudflareProxied: boolean;
 }

@@ -67,6 +67,9 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   vendor: ClusterVendorEnum;
 
+  @Expose()
+  cloudflareProxied: boolean;
+
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
   }
