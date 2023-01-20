@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsEnum, isIP, IsIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
+import { isArray, IsBoolean, IsEnum, isIP, IsIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
 import { CountryDto } from '../../../../mo-core';
 import _ from 'lodash';
 import { ClusterVendorEnum } from '../../enums';
@@ -82,4 +82,9 @@ export class ClusterCreateRequestDto {
   @Transform(({ value }) => value ?? ClusterVendorEnum.AZURE)
   @Expose()
   vendor: ClusterVendorEnum;
+
+  @Expose()
+  @Transform(({ value }) => value ?? true)
+  cloudflareProxied: boolean;
+  
 }

@@ -42,6 +42,9 @@ export class ClusterPublicDto {
   @Expose()
   vendor: ClusterVendorEnum;
 
+  @Expose()
+  cloudflareProxied: boolean;
+
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
   }
