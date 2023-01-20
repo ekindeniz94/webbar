@@ -2,6 +2,13 @@
 
 
 
+## 1.35.24 (2023-01-20)
+
+
+### Bug Fixes
+
+* cloudflareProxied flag introduced. ([fd37ba5](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/fd37ba5d35d131029934bf10e0e2dd9c935efd1b))
+
 ## 1.35.23 (2023-01-19)
 
 
