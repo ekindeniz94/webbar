@@ -2,6 +2,13 @@
 
 
 
+## 1.35.25 (2023-01-24)
+
+
+### Bug Fixes
+
+* enum wrong. ([9f096ee](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/9f096ee2ff466d8659112cd5720a40e767cb5bda))
+
 ## 1.35.24 (2023-01-20)
 
 
