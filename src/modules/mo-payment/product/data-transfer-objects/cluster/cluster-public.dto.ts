@@ -48,7 +48,7 @@ export class ClusterPublicDto {
 
   @Expose()
   @IsOptional()
-  loadbalancerIp?: string;
+  clusterARecordIps?: string[];
 
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
