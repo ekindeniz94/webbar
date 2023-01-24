@@ -1,8 +1,9 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { GeoCoordinatesDto } from '../../../../mo-core';
 import { ClusterVendorEnum } from '../../enums';
 import { FilePublicDto } from '../../../../mo-file';
-import { IsOptional } from 'class-validator';
+import { isArray, isIP, IsOptional } from 'class-validator';
+import _ from 'lodash';
 
 export class ClusterPublicDto {
   @Expose()
@@ -47,8 +48,10 @@ export class ClusterPublicDto {
   cloudflareProxied: boolean;
 
   @Expose()
-  @IsOptional()
-  clusterARecordIps?: string[];
+  @Transform(({ value }) =>
+  _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+)
+  clusterARecordIps: string[];
 
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
