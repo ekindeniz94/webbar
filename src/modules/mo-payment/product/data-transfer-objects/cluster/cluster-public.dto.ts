@@ -2,6 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { GeoCoordinatesDto } from '../../../../mo-core';
 import { ClusterVendorEnum } from '../../enums';
 import { FilePublicDto } from '../../../../mo-file';
+import { IsOptional } from 'class-validator';
 
 export class ClusterPublicDto {
   @Expose()
@@ -44,6 +45,10 @@ export class ClusterPublicDto {
 
   @Expose()
   cloudflareProxied: boolean;
+
+  @Expose()
+  @IsOptional()
+  loadbalancerIp?: string;
 
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
