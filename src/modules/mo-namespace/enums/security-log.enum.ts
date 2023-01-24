@@ -1,5 +1,5 @@
 export enum SecurityLogSeverityEnum {
-  UNKNOWN_SEVERITY = 'UnknownSeverity',
+  UNKNOWN = 'Unknown',
   NEGLIGIBLE = 'Negligible',
   LOW = 'Low',
   MEDIUM = 'Medium',
@@ -8,7 +8,7 @@ export enum SecurityLogSeverityEnum {
 }
 
 export const ALL_SecurityLogSeverity = [
-  SecurityLogSeverityEnum.UNKNOWN_SEVERITY,
+  SecurityLogSeverityEnum.UNKNOWN,
   SecurityLogSeverityEnum.NEGLIGIBLE,
   SecurityLogSeverityEnum.LOW,
   SecurityLogSeverityEnum.MEDIUM,
