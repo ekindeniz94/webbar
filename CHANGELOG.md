@@ -2,6 +2,13 @@
 
 
 
+## 1.35.28 (2023-01-24)
+
+
+### Bug Fixes
+
+* added loadbalancerIp to display in ui. ([6575c34](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/6575c343e336996652816edded7090c75ebeaa64))
+
 ## 1.35.27 (2023-01-24)
 
 
