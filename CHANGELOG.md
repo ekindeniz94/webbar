@@ -2,6 +2,13 @@
 
 
 
+## 1.35.29 (2023-01-30)
+
+
+### Bug Fixes
+
+* env length. ([333ca2c](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/333ca2ca5f85c16e6661f6a6ff1dc3a8c2855452))
+
 ## 1.35.28 (2023-01-24)
 
 
