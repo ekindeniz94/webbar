@@ -121,12 +121,12 @@ export const DTO_VALIDATION_CONST = {
       ENVVAR_NAME: {
         // MATCHES: /^[a-zA-Z0-9-_]{1,50}$/,
         MIN: 1,
-        MAX: 50
+        MAX: 255
       },
       ENVVAR_VALUE: {
         // MATCHES: /^[\w\-_:.\/%@][\w\-_:.\/%@; ]{0,256}$/,
         MIN: 0,
-        MAX: 512
+        MAX: 10240
       },
       ENVVAR_CHOWN_USER_VALUE: {
         MIN: 1,
