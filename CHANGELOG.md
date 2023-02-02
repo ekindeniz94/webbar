@@ -2,6 +2,13 @@
 
 
 
+## 1.35.30 (2023-02-02)
+
+
+### Bug Fixes
+
+* add email whitelist dtos ([95da8b3](https://dev.azure.com/mogenius/gateway/_git/mo-core-base/commit/95da8b35f5d624d185c2efd0daa56dfa09b04c34))
+
 ## 1.35.29 (2023-01-30)
 
 
