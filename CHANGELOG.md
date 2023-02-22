@@ -2,6 +2,14 @@
 
 
 
+## 1.35.31 (2023-02-22)
+
+
+### Bug Fixes
+
+* rm mo user ([a0f17aa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a0f17aa68aaba48b4f55118b6427faacfe779d6c))
+* rm utils and install @mo/js-utils ([aacf4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aacf4e238b39538c1d6b923f7069d89598ffbdfa))
+
 ## 1.35.30 (2023-02-02)
 
 
