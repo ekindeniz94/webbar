@@ -1,6 +1,6 @@
 import { IsOptional } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
-import { GroupDto, UserPublicDto } from '../../../mo-user';
+import { GroupDto, UserPublicDto } from '@mo/user-dto';
 
 export class NamespaceUserDto {
   @IsOptional()

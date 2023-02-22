@@ -14,8 +14,8 @@ import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace'
 import { PriceIntervalDto } from '../price-interval/price-interval.dto';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { UserPublicDto } from '../../../../mo-user';
 import { ProductVoucherDto } from './product-voucher.dto';
+import { UserPublicDto } from '@mo/user-dto';
 
 export class ProductDto extends BaseEntityDto {
   @Type(() => PriceIntervalDto)

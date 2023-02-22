@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString, Min } from 'class-validator';
-import { UserPublicDto } from '../../../../mo-user';
 import { DiscountTypeEnum } from '../../enums';
 import { MoUtils } from '../../../../../utils';
 import moment from 'moment';
+import { UserPublicDto } from '@mo/user-dto';
 
 export class ProductVoucherCreateRequestDto {
   @IsOptional()

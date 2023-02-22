@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { UserPublicDto } from '../../mo-user/data-transfer-objects/user/user-public.dto';
 import moment from 'moment';
+import { UserPublicDto } from '@mo/user-dto';
 
 export abstract class BaseEntityDto {
   @Expose()

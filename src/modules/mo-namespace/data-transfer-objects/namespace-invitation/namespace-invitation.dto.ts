@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { GroupDto, UserPublicDto } from '../../../mo-user';
 import { IsOptional } from 'class-validator';
+import { GroupDto, UserPublicDto } from '@mo/user-dto';
 
 export class NamespaceInvitationDto {
   @Expose()

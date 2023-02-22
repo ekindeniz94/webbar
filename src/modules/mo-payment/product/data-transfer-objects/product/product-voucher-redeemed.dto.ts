@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core';
-import { UserPublicDto } from '../../../../mo-user';
 import { ProductPublicDto } from './product-public.dto';
+import { UserPublicDto } from '@mo/user-dto';
 
 export class ProductVoucherRedeemedEntity extends BaseEntityDto {
   @Expose()
