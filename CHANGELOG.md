@@ -2,6 +2,13 @@
 
 
 
+## 1.35.32 (2023-02-22)
+
+
+### Bug Fixes
+
+* update azure pipeline ([13e12dd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/13e12dd5ed161bb923b57de45c2d373c23429500))
+
 ## 1.35.31 (2023-02-22)
 
 
