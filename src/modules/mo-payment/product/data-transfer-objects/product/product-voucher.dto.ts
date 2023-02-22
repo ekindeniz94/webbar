@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 import { DiscountTypeEnum } from '../../enums';
-import { MoUtils } from '../../../../../utils';
 import moment from 'moment';
 import { BaseEntityDto } from '../../../../mo-core';
 import { UserPublicDto } from '@mo/user-dto';
+import { MoUtils } from '@mo/js-utils';
 
 export class ProductVoucherDto extends BaseEntityDto {
   @Type(() => UserPublicDto)

@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
-import { StripTags } from '../../../../../utils';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core/constantes/data-length.const';
 import { NamespaceServiceEnvVarTypeEnum } from '../../../enums';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServiceEnvVarCreateRequestDto {
   // @IsString()

@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { MoUtils } from '../../../../utils';
 import { SpectrumAppResultDto } from './spectrum-app-result.dto';
+import { MoUtils } from '@mo/js-utils';
 
 export class SpectrumAppResponseDto {
   @Type(() => SpectrumAppResultDto)

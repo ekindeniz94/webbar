@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsOptional, isString, IsString, MaxLength, ValidateIf } from 'class-validator';
-import { StripTags, ValidateIfObjectNotEmpty } from '../../../utils';
 import { DTO_VALIDATION_CONST } from '../constantes';
+import { StripTags, ValidateIfObjectNotEmpty } from '@mo/js-utils';
 
 export class AddressCreateRequestDto {
   @ValidateIf((obj: AddressCreateRequestDto) => ValidateIfObjectNotEmpty(obj, AddressCreateRequestDto))

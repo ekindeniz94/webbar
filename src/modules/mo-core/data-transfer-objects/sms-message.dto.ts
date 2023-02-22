@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsString, MaxLength, MinLength } from 'class-validator';
-import { MoUtils } from '../../../utils';
+import { MoUtils } from '@mo/js-utils';
 
 export class SmsMessageDto {
   @IsString()

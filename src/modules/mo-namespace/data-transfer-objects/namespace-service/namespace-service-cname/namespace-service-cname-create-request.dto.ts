@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsFQDN, IsString } from 'class-validator';
-import { StripTags } from '../../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServiceCnameCreateRequestDto {
   @IsString()

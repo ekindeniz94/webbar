@@ -1,4 +1,4 @@
-import { MoUtils } from '../../utils/mo-utils';
+import { MoUtils } from '@mo/js-utils';
 
 export * from './address';
 export * from './constantes';

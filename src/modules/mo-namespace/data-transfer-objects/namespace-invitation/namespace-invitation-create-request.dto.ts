@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, isString, IsString, MaxLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceInvitationCreateRequestDto {
   // @IsNotEmpty()

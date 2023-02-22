@@ -1,7 +1,6 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { MoUtils } from '../../../../utils';
-import { SpectrumAppResultDto } from './spectrum-app-result.dto';
+import { Expose, Transform } from 'class-transformer';
 import { isArray } from 'class-validator';
+import { MoUtils } from '@mo/js-utils';
 
 export class SpectrumAppResponseDeleteDto {
   @Expose()
