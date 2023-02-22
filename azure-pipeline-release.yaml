@@ -34,7 +34,7 @@ stages:
           - script: |
               touch .npmrc
               echo "registry=https://registry.npmjs.org/" >> .npmrc
-              echo "'@mo:registry'=https://pkgs.dev.azure.com/mogenius/_packaging/mogenius/npm/registry/" >> .npmrc
+              echo "@mo:registry=https://pkgs.dev.azure.com/mogenius/packages/_packaging/mo-packages/npm/registry/" >> .npmrc
               echo "always-auth=true" >> .npmrc
             displayName: 'create .npmrc for auth task'
 
