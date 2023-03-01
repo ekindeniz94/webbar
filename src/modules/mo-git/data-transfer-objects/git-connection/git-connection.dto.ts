@@ -14,12 +14,6 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   gitConnectionType: GitConnectionTypeEnum;
 
-  // @Expose()
-  // gitUserId: string;
-
-  // @Expose()
-  // installationId: string;
-
   @Expose()
   @IsOptional()
   @IsString()
