@@ -18,9 +18,9 @@ import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname/namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port/namespace-service-port-create-request.dto';
-import { StripTags } from '../../../../utils';
 import { AppIdDto } from '../../../mo-app-library';
 import { KeyVaultSecretDto } from '../key-vault';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()

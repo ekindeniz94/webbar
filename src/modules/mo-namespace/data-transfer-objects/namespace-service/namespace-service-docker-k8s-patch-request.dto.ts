@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNumber, IsOptional, IsString, ValidateIf } from 'class-validator';
-import { StripTags } from '../../../../utils';
 import { KeyVaultSecretDto } from '../key-vault';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServiceDockerK8sPatchRequestDto {
   @StripTags()

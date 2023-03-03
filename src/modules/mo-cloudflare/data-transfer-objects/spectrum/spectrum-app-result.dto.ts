@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isNotEmpty } from 'class-validator';
-import { MoUtils } from '../../../../utils';
 import { SpectrumAppProxyProtocolEnum, SpectrumAppTLSEnum, SpectrumAppTrafficTypeEnum } from '../../enums/spectrum';
 import { SpectrumAppResultDnsDto } from './spectrum-app-result-dns.dto';
 import { SpectrumAppResultEdgeIpsDto } from './spectrum-app-result-edge-ips.dto';
 import moment from 'moment/moment';
+import { MoUtils } from '@mo/js-utils';
 
 export class SpectrumAppResultDto {
   @Expose()

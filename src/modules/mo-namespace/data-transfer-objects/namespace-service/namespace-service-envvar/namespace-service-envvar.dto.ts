@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceServiceEnvVarTypeEnum } from '../../../enums';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, Matches } from 'class-validator';
 import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
-import { StripTags } from '../../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServiceEnvVarDto extends BaseEntityDto {
   @IsNotEmpty()

@@ -1,6 +1,6 @@
 import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceInvitationActionRequestDto {
   @IsNotEmpty()

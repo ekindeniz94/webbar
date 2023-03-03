@@ -5,7 +5,7 @@ import { NamespaceServiceKubernetesSettingsPatchRequestDto } from './namespace-s
 import { NamespaceServiceEnvVarPatchRequestDto } from './namespace-service-envvar/namespace-service-envvar-patch-request.dto';
 import { NamespaceServicePortPatchRequestDto } from './namespace-service-port/namespace-service-port-patch-request.dto';
 import { NamespaceServiceCnamePatchRequestDto } from './namespace-service-cname/namespace-service-cname-patch-request.dto';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceServicePatchRequestDto extends NamespaceServiceCreateRequestDto {
   @IsNotEmpty()

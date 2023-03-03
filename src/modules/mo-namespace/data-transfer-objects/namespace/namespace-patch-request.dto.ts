@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespacePatchRequestDto {
   @IsOptional()

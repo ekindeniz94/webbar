@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString, Matches, MaxLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()

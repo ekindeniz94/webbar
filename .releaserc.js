@@ -12,7 +12,7 @@ module.exports = {
    * repositoryUrl
    * Default: repository property in package.json or git origin url
    */
-  // repositoryUrl: 'https://mogenius@dev.azure.com/mogenius/gateway/_git/mo-core-base',
+  // repositoryUrl: 'https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base',
   /**
    * tagFormat
    * Default: v${version}

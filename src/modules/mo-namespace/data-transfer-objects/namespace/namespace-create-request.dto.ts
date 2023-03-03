@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { MoUtils, StripTags } from '../../../../utils';
 import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
 import { SubscriptionDto } from '../../../mo-payment';
+import { MoUtils, StripTags } from '@mo/js-utils';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()

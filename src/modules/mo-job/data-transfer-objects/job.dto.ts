@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../mo-core';
-import { UserPublicDto } from '../../mo-user';
 import { JobTranslationDto } from './job-translation.dto';
 import { isArray } from 'class-validator';
 import { FileDto } from '../../mo-file';
+import { UserPublicDto } from '@mo/user-dto';
 
 export class JobDto extends BaseEntityDto {
   @Type(() => UserPublicDto)

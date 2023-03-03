@@ -1,7 +1,7 @@
-import { IsNotEmpty, IsOptional, isString, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
-import { StripTags } from '../../../../utils';
+import { StripTags } from '@mo/js-utils';
 
 export class NamespaceStageCreateRequestDto {
   @IsNotEmpty()

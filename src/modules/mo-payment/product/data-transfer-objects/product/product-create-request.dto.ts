@@ -25,8 +25,8 @@ import { NamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../../
 import { ClusterDto } from '../cluster/cluster.dto';
 import { PriceIntervalCreateRequestDto } from '../price-interval';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { UserPublicDto } from '../../../../mo-user';
 import { ProductVoucherDto } from './product-voucher.dto';
+import { UserPublicDto } from '@mo/user-dto';
 
 export class ProductCreateRequestDto {
   @IsNotEmpty()

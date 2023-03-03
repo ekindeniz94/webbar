@@ -1,8 +1,8 @@
 {
   "name": "@mo/mo-core-base",
-  "version": "1.35.30",
+  "version": "1.35.32",
   "description": "Mogenius GmbH Core Base",
-  "homepage": "https://mogenius@dev.azure.com/mogenius/gateway/_git/mo-core-base",
+  "homepage": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base",
   "main": "dist/mo-core-base.js",
   "types": "dist/mo-core-base.d.ts",
   "files": [
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://mogenius@dev.azure.com/mogenius/gateway/_git/mo-core-base"
+    "url": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base"
   },
   "keywords": [
     "gateway"
@@ -28,10 +28,12 @@
   "author": "Behrang Alavi, Benedikt Iltisberger",
   "license": "ISC",
   "peerDependencies": {
-    "striptags": "^4.0.0-alpha.2",
-    "phone": "3.1.17"
+    "phone": "3.1.17",
+    "striptags": "^4.0.0-alpha.2"
   },
   "dependencies": {
+    "@mo/js-utils": "^1.0.6",
+    "@mo/user-dto": "^1.0.18",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "deepmerge": "^4.2.2",
@@ -53,6 +55,7 @@
     "@types/deepmerge": "^2.2.0",
     "@types/lodash": "^4.14.165",
     "@types/moment": "^2.13.0",
+    "@types/node": "^18.13.0",
     "@types/semver": "^7.3.9",
     "@types/uuid": "^8.3.0",
     "@types/validator": "^13.7.0",
