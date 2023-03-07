@@ -2,6 +2,13 @@
 
 
 
+## 1.35.33 (2023-03-07)
+
+
+### Bug Fixes
+
+* update cluster dto ([bb60a10](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bb60a109626ac3f9d70859f82172ad0b2c882e61))
+
 ## 1.35.32 (2023-02-22)
 
 
