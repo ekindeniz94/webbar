@@ -2,6 +2,13 @@
 
 
 
+## 1.35.34 (2023-03-07)
+
+
+### Bug Fixes
+
+* update patch cluster ([397254c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/397254ccdb5aae383b11a695a919b17f6eff29b2))
+
 ## 1.35.33 (2023-03-07)
 
 
