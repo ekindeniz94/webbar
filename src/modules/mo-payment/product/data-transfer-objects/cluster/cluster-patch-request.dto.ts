@@ -1,6 +1,7 @@
 import { ClusterCreateRequestDto } from './cluster-create-request.dto';
-import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
-import { Expose } from 'class-transformer';
+import { IsBoolean, IsNotEmpty, IsString, IsUUID } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { MoUtils } from '@mo/js-utils';
 
 export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsNotEmpty()
@@ -8,4 +9,14 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsUUID()
   @Expose()
   id: string;
+
+  @IsString()
+  @Expose()
+  clusterId: string;
+
+  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @IsNotEmpty()
+  @IsBoolean()
+  @Expose()
+  apiKeyIsActive: boolean;
 }

@@ -70,6 +70,18 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   cloudflareProxied: boolean;
 
+  @Expose()
+  clusterIp: string;
+
+  @Expose()
+  clusterId: string;
+
+  @Expose()
+  apiKey: string;
+
+  @Expose()
+  apiKeyIsActive: boolean;
+
   get cloudflareTcpDomain(): string {
     return `${this.cloudflareTcpSubDomain}-${this.host}`;
   }
