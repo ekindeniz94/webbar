@@ -12,6 +12,7 @@ export class ClusterDto extends BaseEntityDto {
   products: ProductDto[];
 
   @Type(() => CountryDto)
+  @Transform(({ value }) => (value?.code ? value : undefined))
   @Expose()
   country: CountryDto;
 

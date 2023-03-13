@@ -27,6 +27,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
 
   @Type(() => CountryDto)
   @IsOptional()
+  @Transform(({ value }) => (value?.code ? value : undefined))
   @Expose()
   country: CountryDto;
 
