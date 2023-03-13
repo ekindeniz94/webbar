@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsBoolean, isBoolean, IsNumber } from 'class-validator';
+import { isArray, isBoolean, IsNumber } from 'class-validator';
 import moment from 'moment';
 import { ProductRuntimeIntervalEnum, ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
