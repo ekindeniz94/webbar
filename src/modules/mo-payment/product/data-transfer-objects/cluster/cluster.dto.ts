@@ -60,7 +60,7 @@ export class ClusterDto extends BaseEntityDto {
 
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
   @Expose()
-  clusterSetup: string[];
+  clusterSetup: ClusterSetupDto;
 
   get spectrumHost(): string {
     return `${this.spectrumSubDomain}-${this.name}`;
