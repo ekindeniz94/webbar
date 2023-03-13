@@ -1,7 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { GeoCoordinatesDto } from '../../../../mo-core';
-import { ClusterVendorEnum } from '../../enums';
-import { FilePublicDto } from '../../../../mo-file';
+import { Expose, Transform } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 
@@ -13,8 +10,7 @@ export class ClusterPublicDto {
   region: string;
 
   @Expose()
-  @Type(() => GeoCoordinatesDto)
-  geoLocation: GeoCoordinatesDto;
+  displayName: string;
 
   @Expose()
   name: string;
@@ -23,41 +19,24 @@ export class ClusterPublicDto {
   host: string;
 
   @Expose()
-  cloudflareTcpSubDomain: string;
-
-  @Expose()
-  cloudflareUdpSubDomain: string;
+  spectrumSubDomain: string;
 
   @Expose()
   loadbalancerHost: string;
 
   @Expose()
-  displayName: string;
-
-  @Expose()
   description: string;
-
-  @Type(() => FilePublicDto)
-  @Expose()
-  icon: FilePublicDto;
-
-  @Expose()
-  vendor: ClusterVendorEnum;
 
   @Expose()
   cloudflareProxied: boolean;
 
-  @Expose()
   @Transform(({ value }) =>
-  _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
-)
-  clusterARecordIps: string[];
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+  )
+  @Expose()
+  loadbalancerIps: string[];
 
-  get cloudflareTcpDomain(): string {
-    return `${this.cloudflareTcpSubDomain}-${this.host}`;
-  }
-
-  get cloudflareUdpDomain(): string {
-    return `${this.cloudflareUdpSubDomain}-${this.host}`;
+  get spectrumHost(): string {
+    return `${this.spectrumSubDomain}-${this.name}`;
   }
 }

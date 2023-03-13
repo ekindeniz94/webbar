@@ -1,10 +1,9 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto, GeoCoordinatesDto } from '../../../../mo-core';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import { BaseEntityDto, CountryDto } from '../../../../mo-core';
 import { ProductDto } from '../product';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
-import { ClusterVendorEnum } from '../../enums';
-import { FileDto } from '../../../../mo-file';
+import { ClusterSetupDto } from './cluster-setup.dto';
 
 export class ClusterDto extends BaseEntityDto {
   @Type(() => ProductDto)
@@ -24,10 +23,6 @@ export class ClusterDto extends BaseEntityDto {
   region: string;
 
   @Expose()
-  @Type(() => GeoCoordinatesDto)
-  geoLocation: GeoCoordinatesDto;
-
-  @Expose()
   name: string;
 
   @Transform(({ value }) =>
@@ -40,19 +35,7 @@ export class ClusterDto extends BaseEntityDto {
   loadbalancerHost: string;
 
   @Expose()
-  k8smanagerUrl: string;
-
-  @Expose()
-  containerRegistryUrl: string;
-
-  @Expose()
   host: string;
-
-  @Expose()
-  cloudflareTcpSubDomain: string;
-
-  @Expose()
-  cloudflareUdpSubDomain: string;
 
   @Expose()
   displayName: string;
@@ -60,18 +43,8 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  @Type(() => FileDto)
-  @Expose()
-  icon: FileDto;
-
-  @Expose()
-  vendor: ClusterVendorEnum;
-
   @Expose()
   cloudflareProxied: boolean;
-
-  @Expose()
-  clusterIp: string;
 
   @Expose()
   clusterId: string;
@@ -82,11 +55,14 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   apiKeyIsActive: boolean;
 
-  get cloudflareTcpDomain(): string {
-    return `${this.cloudflareTcpSubDomain}-${this.host}`;
-  }
+  @Expose()
+  spectrumSubDomain: string;
 
-  get cloudflareUdpDomain(): string {
-    return `${this.cloudflareUdpSubDomain}-${this.host}`;
+  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  @Expose()
+  clusterSetup: string[];
+
+  get spectrumHost(): string {
+    return `${this.spectrumSubDomain}-${this.name}`;
   }
 }
