@@ -2,6 +2,13 @@
 
 
 
+## 1.35.38 (2023-03-15)
+
+
+### Bug Fixes
+
+* clustersetupdto added defaultbackend. ([b0c9e8d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b0c9e8d4399b3ffdc908ca009b2cbe9a83ab8d22))
+
 ## 1.35.37 (2023-03-13)
 
 
