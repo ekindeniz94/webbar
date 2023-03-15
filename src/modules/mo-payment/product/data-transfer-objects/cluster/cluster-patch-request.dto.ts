@@ -116,4 +116,19 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
   @Expose()
   clusterSetup: ClusterSetupDto;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  containerRegistryUrl: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  containerRegistryUser: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  containerRegistryPat: string;
 }

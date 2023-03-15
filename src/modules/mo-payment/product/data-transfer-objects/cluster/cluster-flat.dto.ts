@@ -1,21 +1,10 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto } from '../../../../mo-core';
-import { ProductDto } from '../product';
+import { BaseEntityDto } from '../../../../mo-core';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 
-export class ClusterDto extends BaseEntityDto {
-  @Type(() => ProductDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  products: ProductDto[];
-
-  @Type(() => CountryDto)
-  @Transform(({ value }) => (value?.code ? value : undefined))
-  @Expose()
-  country: CountryDto;
-
+export class ClusterFlatDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
   namespaceMaxCount: number;

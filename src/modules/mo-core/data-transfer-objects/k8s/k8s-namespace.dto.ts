@@ -22,4 +22,13 @@ export class K8sNamespaceDto {
 
     @Expose()
     clusterName: string;
+
+    @Expose()
+    containerRegistryUrl: string;
+
+    @Expose()
+    containerRegistryUser: string;
+
+    @Expose()
+    containerRegistryPat: string;
 }
