@@ -2,6 +2,13 @@
 
 
 
+## 1.35.39 (2023-03-15)
+
+
+### Bug Fixes
+
+* update cluster dto; add flat dtos ([f10eb5f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f10eb5f3ace03c183110001a0e6c3eef0335f970))
+
 ## 1.35.38 (2023-03-15)
 
 
