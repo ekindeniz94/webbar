@@ -49,4 +49,9 @@ export class ClusterSetupDto extends BaseEntityDto {
   @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
   @Expose()
   certManager: boolean;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @Expose()
+  defaultBackend: boolean;
 }
