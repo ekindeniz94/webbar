@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { K8sServiceDto } from './k8s-service.dto';
-import { isArray } from 'class-validator';
+import { isArray, isBoolean } from 'class-validator';
 
 export class K8sStageDto {
   @Expose()
@@ -23,6 +23,8 @@ export class K8sStageDto {
   @Expose()
   services: K8sServiceDto[];
 
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : false))
   @Expose()
   cloudflareProxied: boolean;
 }
