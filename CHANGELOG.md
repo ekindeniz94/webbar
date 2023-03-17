@@ -2,6 +2,13 @@
 
 
 
+## 1.35.42 (2023-03-17)
+
+
+### Bug Fixes
+
+* update k8s dto ([3e83cad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e83cad5b8ca70044b09c8ce48940371e660c186))
+
 ## 1.35.41 (2023-03-17)
 
 
