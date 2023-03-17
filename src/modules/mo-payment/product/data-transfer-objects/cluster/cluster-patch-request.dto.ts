@@ -35,34 +35,6 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   region: string;
 
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  displayName: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(3)
-  @MaxLength(64)
-  @Matches(/^([a-z])([a-z0-9-_])/, {
-    message: '$property must conform to: a-z, 0-9, - ;min 3, max 64 char'
-  })
-  @Transform(({ value }) => {
-    if (!value) {
-      return 'mogenius';
-    }
-    return value
-      ?.toLowerCase()
-      .replace(/[^a-z0-9-]/g, '-')
-      ?.replace(/ +/g, '')
-      ?.substring(0, 64)
-      .split('-')
-      .filter((item: string) => item && item.length > 0)
-      .join('-');
-  })
-  @Expose()
-  name: string;
-
   @Transform(({ value }) =>
     _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
   )
@@ -104,7 +76,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsOptional()
   @IsString()
   @Expose()
-  clusterId: string;
+  clusterMfaId: string;
 
   @Transform(({ value }) => MoUtils.parseBoolean(value))
   @IsOptional()
@@ -121,6 +93,12 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsString()
   @Expose()
   containerRegistryUrl: string;
+
+  @IsNotEmpty()
+  @Transform(({ value }) => MoUtils.removeLastSlashes(value))
+  @IsString()
+  @Expose()
+  containerRegistryPath: string;
 
   @IsOptional()
   @IsString()

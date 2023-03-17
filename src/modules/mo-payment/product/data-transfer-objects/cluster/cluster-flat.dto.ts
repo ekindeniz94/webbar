@@ -37,7 +37,7 @@ export class ClusterFlatDto extends BaseEntityDto {
   cloudflareProxied: boolean;
 
   @Expose()
-  clusterId: string;
+  clusterMfaId: string;
 
   @Expose()
   apiKey: string;
@@ -54,6 +54,9 @@ export class ClusterFlatDto extends BaseEntityDto {
 
   @Expose()
   containerRegistryUrl: string;
+
+  @Expose()
+  containerRegistryPath: string;
 
   @Expose()
   containerRegistryUser: string;
