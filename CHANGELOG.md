@@ -2,6 +2,13 @@
 
 
 
+## 1.35.41 (2023-03-17)
+
+
+### Bug Fixes
+
+* k8s dtos ([eadb1be](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/eadb1be379f846d4febc40460189d42a62fbc0da))
+
 ## 1.35.40 (2023-03-17)
 
 
