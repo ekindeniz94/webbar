@@ -2,6 +2,13 @@
 
 
 
+## 1.35.43 (2023-03-19)
+
+
+### Bug Fixes
+
+* update websocket dtos ([61b7805](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/61b7805f9fc398f0d738f7bf006daa56ee54a9ea))
+
 ## 1.35.42 (2023-03-17)
 
 
