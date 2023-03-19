@@ -14,3 +14,4 @@ export * from './mo-changelog';
 export * from './mo-cloudflare';
 export * from './mo-sitemap';
 export * from './mo-docker-compose';
+export * from './mo-websocket';
