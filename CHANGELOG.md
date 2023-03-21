@@ -2,6 +2,13 @@
 
 
 
+## 1.35.46 (2023-03-21)
+
+
+### Bug Fixes
+
+* update cluster helm dto ([77cb358](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/77cb358d80ffc94c889c7d8593f4527018977568))
+
 ## 1.35.45 (2023-03-21)
 
 
