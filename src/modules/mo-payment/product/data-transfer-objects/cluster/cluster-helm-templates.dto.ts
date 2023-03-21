@@ -12,6 +12,10 @@ export class ClusterHelmTemplatesDto {
 
   @IsString()
   @Expose()
+  installHelmStr: string;
+
+  @IsString()
+  @Expose()
   updateHelmStr: string;
 
   @IsString()
