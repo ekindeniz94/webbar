@@ -2,6 +2,13 @@
 
 
 
+## 1.35.47 (2023-03-21)
+
+
+### Bug Fixes
+
+* add cluster node ([e4368ec](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e4368ece269956fe5ee54faa32733cfbbc4c0e27))
+
 ## 1.35.46 (2023-03-21)
 
 
