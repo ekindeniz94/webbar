@@ -1,5 +1,0 @@
-export enum ChangelogPermissionsEnum {
-  CHANGELOG__ADMIN = 'CHANGELOG__ADMIN',
-  CHANGELOG__USER = 'CHANGELOG__USER',
-  CHANGELOG__VIEWER = 'CHANGELOG__VIEWER'
-}
