@@ -2,6 +2,13 @@
 
 
 
+## 1.35.45 (2023-03-21)
+
+
+### Bug Fixes
+
+* add ClusterHelmTemplatesDto ([c9d6fb3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c9d6fb3fbdb177fbe7f55d9a7ed187dd15afffd9))
+
 ## 1.35.44 (2023-03-21)
 
 
