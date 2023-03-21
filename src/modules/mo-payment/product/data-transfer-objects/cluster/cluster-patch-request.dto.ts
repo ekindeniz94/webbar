@@ -13,7 +13,7 @@ import {
   MinLength
 } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { IsSemanticVersion, MoUtils } from '@mo/js-utils';
 import { CountryDto } from '../../../../mo-core';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
@@ -83,6 +83,12 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsBoolean()
   @Expose()
   apiKeyIsActive: boolean;
+
+  @IsOptional()
+  @IsString()
+  @IsSemanticVersion()
+  @Expose()
+  appVersion: string
 
   @Type(() => ClusterSetupDto)
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))

@@ -57,6 +57,9 @@ export class ClusterDto extends BaseEntityDto {
   apiKeyIsActive: boolean;
 
   @Expose()
+  appVersion: string;
+
+  @Expose()
   spectrumSubDomain: string;
 
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))

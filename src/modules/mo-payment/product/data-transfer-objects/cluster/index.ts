@@ -4,3 +4,4 @@ export * from './cluster-create-request.dto';
 export * from './cluster-patch-request.dto';
 export * from './cluster-public.dto';
 export * from './cluster-setup.dto';
+export * from './current-k8s-manager-version.dto';
