@@ -2,6 +2,14 @@
 
 
 
+## 1.35.44 (2023-03-21)
+
+
+### Bug Fixes
+
+* rm blog, sitemap and changelog module ([0de693e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0de693e7772e29fbae390b2d9c488f293b8b9bbc))
+* update cluster dto (add appVersion); add current k8s manager dto ([381df6f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/381df6fb24ccfbd259f12e190d2427fe0a850227))
+
 ## 1.35.43 (2023-03-19)
 
 
