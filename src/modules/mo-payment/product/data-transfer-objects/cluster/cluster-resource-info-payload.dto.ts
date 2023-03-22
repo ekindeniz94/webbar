@@ -8,7 +8,7 @@ export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
   @IsString({ each: true })
   @Transform(({ value }) => (value && isArray(value) ? _.uniq(value) : []) as string[])
   @Expose()
-  loadBalancerIps: string[];
+  loadBalancerExternalIps: string[];
 
   @Type(() => ClusterNodeDto)
   @Expose()
