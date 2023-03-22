@@ -1,6 +1,6 @@
 import { RedisPubSubMessageSocketEventTypes } from '../types';
 
-export interface IRedisPubSubMessage {
+export interface IRedisPubSubMessageDeprecated {
   toUserId: string;
   redisChannel: string;
   socketEvent: RedisPubSubMessageSocketEventTypes;

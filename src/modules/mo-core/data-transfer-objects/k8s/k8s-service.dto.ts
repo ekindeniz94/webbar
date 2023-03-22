@@ -4,7 +4,7 @@ import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 import { K8sAppDto } from './k8s-app.dto';
-import { isBoolean, IsOptional } from 'class-validator';
+import { isArray, isBoolean, IsOptional } from 'class-validator';
 
 // HIER NUR SERVICES DIE EXPOSE = TRUE UND INTERNALPORT > 0
 // fullHostname = MoNamespaceUtils.fullHostname(namespace, stage, service),
@@ -65,10 +65,12 @@ export class K8sServiceDto {
   k8sSettings: K8sServiceSettingsDto;
 
   @Type(() => K8sEnvVarDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   envVars: K8sEnvVarDto[];
 
   @Type(() => K8sPortsDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   ports: K8sPortsDto[];
 

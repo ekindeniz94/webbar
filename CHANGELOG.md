@@ -2,6 +2,112 @@
 
 
 
+## 1.35.50 (2023-03-22)
+
+
+### Bug Fixes
+
+* update ClusterResourceInfoPayloadDto ([2dd5ed5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2dd5ed5138f56af97388ad7e6c567cfd048e7ac8))
+
+## 1.35.49 (2023-03-21)
+
+
+### Bug Fixes
+
+* update ClusterResourceInfoPayloadDto ([d6aa5d1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6aa5d16c5c774fa539e9aed9e31f4a51ba051a6))
+
+## 1.35.48 (2023-03-21)
+
+
+### Bug Fixes
+
+* add ClusterResourceInfoPayloadDto ([d671ea1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d671ea1e3a5ce2b6159944872c60a31904017cf9))
+
+## 1.35.47 (2023-03-21)
+
+
+### Bug Fixes
+
+* add cluster node ([e4368ec](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e4368ece269956fe5ee54faa32733cfbbc4c0e27))
+
+## 1.35.46 (2023-03-21)
+
+
+### Bug Fixes
+
+* update cluster helm dto ([77cb358](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/77cb358d80ffc94c889c7d8593f4527018977568))
+
+## 1.35.45 (2023-03-21)
+
+
+### Bug Fixes
+
+* add ClusterHelmTemplatesDto ([c9d6fb3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c9d6fb3fbdb177fbe7f55d9a7ed187dd15afffd9))
+
+## 1.35.44 (2023-03-21)
+
+
+### Bug Fixes
+
+* rm blog, sitemap and changelog module ([0de693e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0de693e7772e29fbae390b2d9c488f293b8b9bbc))
+* update cluster dto (add appVersion); add current k8s manager dto ([381df6f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/381df6fb24ccfbd259f12e190d2427fe0a850227))
+
+## 1.35.43 (2023-03-19)
+
+
+### Bug Fixes
+
+* update websocket dtos ([61b7805](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/61b7805f9fc398f0d738f7bf006daa56ee54a9ea))
+
+## 1.35.42 (2023-03-17)
+
+
+### Bug Fixes
+
+* update k8s dto ([3e83cad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e83cad5b8ca70044b09c8ce48940371e660c186))
+
+## 1.35.41 (2023-03-17)
+
+
+### Bug Fixes
+
+* k8s dtos ([eadb1be](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/eadb1be379f846d4febc40460189d42a62fbc0da))
+
+## 1.35.40 (2023-03-17)
+
+
+### Bug Fixes
+
+* update cluster dto ([14b83bc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/14b83bc5f4bc7d833d4d327deadbe18dab786516))
+
+## 1.35.39 (2023-03-15)
+
+
+### Bug Fixes
+
+* update cluster dto; add flat dtos ([f10eb5f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f10eb5f3ace03c183110001a0e6c3eef0335f970))
+
+## 1.35.38 (2023-03-15)
+
+
+### Bug Fixes
+
+* clustersetupdto added defaultbackend. ([b0c9e8d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b0c9e8d4399b3ffdc908ca009b2cbe9a83ab8d22))
+
+## 1.35.37 (2023-03-13)
+
+
+### Bug Fixes
+
+* update cluster dto ([690bff6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/690bff684fd52d9ab7a5ca7354a62e066cd6e20e))
+
+## 1.35.36 (2023-03-13)
+
+
+### Bug Fixes
+
+* update cluster dto ([20ab7ca](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/20ab7ca5c65a1f0c7ec0aef59bba846e4b501aec))
+
 ## 1.35.35 (2023-03-13)
 
 

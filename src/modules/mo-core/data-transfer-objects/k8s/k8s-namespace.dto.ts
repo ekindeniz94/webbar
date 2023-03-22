@@ -2,24 +2,42 @@ import { Expose } from 'class-transformer';
 import { GitConnectionTypeEnum } from '../../../mo-git';
 
 export class K8sNamespaceDto {
-    @Expose()
-    id: string;
+  @Expose()
+  id: string;
 
-    @Expose()
-    shortId: string;
+  @Expose()
+  shortId: string;
 
-    @Expose()
-    displayName: string;
+  @Expose()
+  displayName: string;
 
-    @Expose()
-    gitAccessToken: string;
+  @Expose()
+  gitAccessToken: string;
 
-    @Expose()
-    gitUserId: string;
+  @Expose()
+  gitUserId: string;
 
-    @Expose()
-    gitConnectionType: GitConnectionTypeEnum;
+  @Expose()
+  gitConnectionType: GitConnectionTypeEnum;
 
-    @Expose()
-    clusterName: string;
+  @Expose()
+  clusterId: string;
+
+  @Expose()
+  clusterName: string;
+
+  @Expose()
+  clusterMfaId: string;
+
+  @Expose()
+  containerRegistryPath: string;
+
+  @Expose()
+  containerRegistryUrl: string;
+
+  @Expose()
+  containerRegistryUser: string;
+
+  @Expose()
+  containerRegistryPat: string;
 }

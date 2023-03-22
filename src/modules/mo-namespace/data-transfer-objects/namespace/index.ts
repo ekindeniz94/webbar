@@ -8,6 +8,7 @@ export * from './namespace-patch-request.dto';
 export * from './namespace-search-response.dto';
 export * from './namespace-user.dto';
 export * from './namespace.dto';
+export * from './namespace-flat.dto';
 export * from './remove-user-from-namespace-group-request.dto';
 export * from './upgrade-namespace-subscription-request.dto';
 export * from './namespace-origin-traffic.dto';
