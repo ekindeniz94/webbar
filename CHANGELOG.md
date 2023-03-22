@@ -2,6 +2,13 @@
 
 
 
+## 1.35.50 (2023-03-22)
+
+
+### Bug Fixes
+
+* update ClusterResourceInfoPayloadDto ([2dd5ed5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2dd5ed5138f56af97388ad7e6c567cfd048e7ac8))
+
 ## 1.35.49 (2023-03-21)
 
 
