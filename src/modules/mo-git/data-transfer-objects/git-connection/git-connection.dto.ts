@@ -6,6 +6,7 @@ import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
 
 export class GitConnectionDto extends BaseEntityDto {
+  //
   @Expose()
   @IsOptional()
   @IsString()
