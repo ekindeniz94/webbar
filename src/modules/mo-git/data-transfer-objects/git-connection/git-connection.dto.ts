@@ -1,53 +1,77 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
 import moment from 'moment';
-import { GitConnectionTypeEnum } from '../../enums';
+import { GitConnectionTypeEnum, GitConnectionTokenTypeEnum } from '../../enums';
 import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
+import { IsOptional, IsString } from 'class-validator';
 
 export class GitConnectionDto extends BaseEntityDto {
   @Expose()
-  login: string;
+  @IsOptional()
+  @IsString()
+  login?: string;
 
   @Expose()
   gitConnectionType: GitConnectionTypeEnum;
 
-  // @Expose()
-  // gitUserId: string;
-
-  // @Expose()
-  // installationId: string;
+  @Expose()
+  gitConnectionTokenType: GitConnectionTokenTypeEnum;
 
   @Expose()
-  accessToken: string;
+  @IsOptional()
+  @IsString()
+  accessToken?: string;
 
-  @Transform(({ value }) => moment(value).format(), { toClassOnly: true })
+  @Transform(
+    ({ value }) => {
+      return value && moment(value).isValid() ? moment(value).format() : null;
+    },
+    { toClassOnly: true }
+  )
+  @IsOptional()
+  @IsString()
   @Expose()
-  accessTokenExpiresAt: string;
+  accessTokenExpiresAt?: string;
 
-  // @Expose()
-  // refreshToken: string;
-
-  @Transform(({ value }) => moment(value).format(), { toClassOnly: true })
+  @IsOptional()
+  @IsString()
   @Expose()
-  refreshTokenExpiresAt: string;
+  refreshToken?: string;
+
+  @Transform(
+    ({ value }) => {
+      return value && moment(value).isValid() ? moment(value).format() : null;
+    },
+    { toClassOnly: true }
+  )
+  @IsOptional()
+  @IsString()
+  @Expose()
+  refreshTokenExpiresAt?: string;
 
   @Type(() => GithubInstallationDto)
+  @IsOptional()
   @Expose()
-  gitResponseData: GithubInstallationDto;
+  gitResponseData?: GithubInstallationDto;
 
   @Type(() => GithubUserDto)
   @Expose()
   gitUser: GithubUserDto;
 
   @Type(() => GithubAppDto)
+  @IsOptional()
   @Expose()
-  gitApp: GithubAppDto;
+  gitApp?: GithubAppDto;
 
   get isAccessTokenExpired(): boolean {
-    return moment().isAfter(this.accessTokenExpiresAt);
+    return this.accessTokenExpiresAt && moment(this.accessTokenExpiresAt).isValid()
+      ? moment().isAfter(this.accessTokenExpiresAt)
+      : false;
   }
 
   get isRefreshTokenExpired(): boolean {
-    return moment().isAfter(this.refreshTokenExpiresAt);
+    return this.refreshTokenExpiresAt && moment(this.refreshTokenExpiresAt).isValid()
+      ? moment().isAfter(this.refreshTokenExpiresAt)
+      : false;
   }
 }

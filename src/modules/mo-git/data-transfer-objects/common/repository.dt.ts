@@ -1,5 +1,5 @@
 import { GitConnectionTypeEnum } from '../../enums/git-connection-type.enum';
-import { Expose, plainToInstance, Transform } from 'class-transformer';
+import { Expose, plainToInstance } from 'class-transformer';
 
 /**
  * Project page with branch information.

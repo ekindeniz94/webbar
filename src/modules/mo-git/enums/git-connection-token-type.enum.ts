@@ -1,0 +1,4 @@
+export enum GitConnectionTokenTypeEnum {
+  BEARER_TOKEN = 'BEARER_TOKEN',
+  PERSONAL_ACCESS_TOKEN = 'PERSONAL_ACCESS_TOKEN'
+}
