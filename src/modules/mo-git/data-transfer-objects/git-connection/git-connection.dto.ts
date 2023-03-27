@@ -64,6 +64,11 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   gitApp?: GithubAppDto;
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  customDomain?: string;
+
   get isAccessTokenExpired(): boolean {
     return this.accessTokenExpiresAt && moment(this.accessTokenExpiresAt).isValid()
       ? moment().isAfter(this.accessTokenExpiresAt)
