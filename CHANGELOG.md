@@ -2,6 +2,13 @@
 
 
 
+## 1.35.55 (2023-04-03)
+
+
+### Bug Fixes
+
+* k8s workload dto/enum ([a4bd3dd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a4bd3dd5a75503eb725af7e747234312d6350efa))
+
 ## 1.35.54 (2023-03-27)
 
 
