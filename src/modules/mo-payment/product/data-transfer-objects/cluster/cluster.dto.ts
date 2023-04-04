@@ -1,9 +1,10 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto } from '../../../../mo-core';
+import { BaseEntityDto } from '../../../../mo-core';
 import { ProductDto } from '../product';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
+import { CountryDto } from '@mo/database-dto';
 
 export class ClusterDto extends BaseEntityDto {
   @Type(() => ProductDto)

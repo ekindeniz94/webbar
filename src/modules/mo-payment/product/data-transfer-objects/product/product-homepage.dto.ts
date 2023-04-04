@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { CountryDto } from '../../../../mo-core';
 import { ProductPublicDto } from './product-public.dto';
 import { ProductDto } from './product.dto';
+import { CountryDto } from '@mo/database-dto';
 
 export class ProductHomepageDto {
   @Type(() => ProductDto)

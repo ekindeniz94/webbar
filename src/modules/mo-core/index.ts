@@ -1,6 +1,5 @@
 import { MoUtils } from '@mo/js-utils';
 
-export * from './address';
 export * from './constantes';
 export * from './country';
 export * from './data-transfer-objects';

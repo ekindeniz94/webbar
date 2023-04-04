@@ -1,9 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto } from '../../../mo-core';
+import { BaseEntityDto } from '../../../mo-core';
 import { SubscriptionStatusEnum } from '../enums';
 import { SubscriptionPoolDto } from './subscription-pool.dto';
 import { PriceIntervalDto } from '../../product/data-transfer-objects/price-interval';
 import moment from 'moment';
+import { CountryDto } from '@mo/database-dto';
 
 export class SubscriptionDto extends BaseEntityDto {
   @Type(() => SubscriptionPoolDto)
