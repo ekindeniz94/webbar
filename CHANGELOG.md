@@ -2,6 +2,13 @@
 
 
 
+## 1.35.56 (2023-04-04)
+
+
+### Bug Fixes
+
+* rm address & country dto; install database-dto ([272df69](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/272df695afb2457cf08ae927d041a6909d71d9be))
+
 ## 1.35.55 (2023-04-03)
 
 
