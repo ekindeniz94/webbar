@@ -1,8 +1,9 @@
 import { Expose, Type } from 'class-transformer';
 import moment from 'moment';
-import { CountryDto, DTO_VALIDATION_CONST } from '../../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 import { ProductRuntimeIntervalEnum } from '../../enums';
 import { PriceIntervalDto } from './price-interval.dto';
+import { CountryDto } from '@mo/database-dto';
 
 export class PriceDto {
   @Type(() => PriceIntervalDto)
@@ -58,7 +59,7 @@ export class PriceDto {
     return '???';
   }
 
-  public intervalDateToString(format: string = 'DD.MM.YYYY', startDate?:Date): string {
+  public intervalDateToString(format: string = 'DD.MM.YYYY', startDate?: Date): string {
     const theStartDate = startDate ? startDate : new Date();
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.DAY) {
       return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(1, 'day').format(format)}`;
@@ -67,7 +68,10 @@ export class PriceDto {
       return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(30, 'day').format(format)}`;
     }
     if (this.priceInterval?.interval === ProductRuntimeIntervalEnum.YEAR) {
-      return `${moment(theStartDate).format(format)} - ${moment(theStartDate).add(1, 'year').subtract(1, 'year').format(format)}`;
+      return `${moment(theStartDate).format(format)} - ${moment(theStartDate)
+        .add(1, 'year')
+        .subtract(1, 'year')
+        .format(format)}`;
     }
     return '???';
   }
