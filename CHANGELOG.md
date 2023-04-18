@@ -2,6 +2,13 @@
 
 
 
+## 1.35.57 (2023-04-18)
+
+
+### Bug Fixes
+
+* refactoring ([d809c5b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d809c5b356cef7d163235422e4baa404156617db))
+
 ## 1.35.56 (2023-04-04)
 
 
