@@ -2,6 +2,13 @@
 
 
 
+## 1.35.58 (2023-04-18)
+
+
+### Bug Fixes
+
+* fix crete project dto ([56a2a2b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/56a2a2b09c5c3456b58aad7db94b346b61bcae7d))
+
 ## 1.35.57 (2023-04-18)
 
 
