@@ -30,7 +30,7 @@ export class OrganizationCreateRequestDto {
   @Expose()
   address: AddressCreateRequestDto;
 
-  @ArrayNotEmpty()
+  // @ArrayNotEmpty()
   @Type(() => OrganizationUserGroupCreateRequestDto)
   @ValidateNested()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
