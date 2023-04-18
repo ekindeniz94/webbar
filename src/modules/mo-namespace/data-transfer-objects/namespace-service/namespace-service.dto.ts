@@ -7,13 +7,14 @@ import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceStageDto } from '../namespace-stage/namespace-stage.dto';
 import { NamespaceServicePodDto } from './namespace-service-pod/namespace-service-pod.dto';
-import { NamespaceServicePortBindingTypeEnum, NamespaceServiceStateEnum } from '../../enums';
+import { NamespaceServicePortBindingTypeEnum2, NamespaceServiceStateEnum } from '../../enums';
 import { NamespaceServicePortDto } from './namespace-service-port/namespace-service-port.dto';
 import { NamespaceNotificationDto } from '../../../mo-notification/data-transfer-objects/namespace-notification.dto';
 import { NamespaceServiceCnameDto } from './namespace-service-cname/namespace-service-cname.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
-import { AppDto } from '../../../mo-app-library/data-transfer-objects/app.dto';
 import { KeyVaultSecretDto } from '../key-vault/key-vault-secret.dto';
+import { AppDto } from '../../../mo-app-library-dto';
+import { PROJECT_CONST, ProjectNamespaceServicePortBindingEnum } from '../../../mo-project-dto';
 
 export class NamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -24,7 +25,7 @@ export class NamespaceServiceDto extends BaseEntityDto {
   displayName: string;
 
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.NAME.MAX)
   )
   @Expose()
   name: string;
@@ -123,14 +124,14 @@ export class NamespaceServiceDto extends BaseEntityDto {
 
   get tcpPort(): NamespaceServicePortDto | undefined {
     return (
-      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.TCP) ??
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === ProjectNamespaceServicePortBindingEnum.TCP) ??
       undefined
     );
   }
 
   get udpPort(): NamespaceServicePortDto | undefined {
     return (
-      this.ports.find((item: NamespaceServicePortDto) => item.portType === NamespaceServicePortBindingTypeEnum.UDP) ??
+      this.ports.find((item: NamespaceServicePortDto) => item.portType === ProjectNamespaceServicePortBindingEnum.UDP) ??
       undefined
     );
   }

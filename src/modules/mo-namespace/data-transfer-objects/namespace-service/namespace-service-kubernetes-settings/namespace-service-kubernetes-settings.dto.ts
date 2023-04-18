@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceServiceDeploymentStrategyEnum } from '../../../enums';
+import { NamespaceServiceDeploymentStrategyEnum2 } from '../../../enums';
 import { BaseEntityDto } from '../../../../mo-core';
 
 export class NamespaceServiceKubernetesSettingsDto extends BaseEntityDto {
@@ -21,7 +21,7 @@ export class NamespaceServiceKubernetesSettingsDto extends BaseEntityDto {
   replicaCountMax: number;
 
   @Expose()
-  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
+  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum2;
 
   @Type(() => Number)
   @Expose()

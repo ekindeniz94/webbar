@@ -1,9 +1,9 @@
-import { NamespaceServiceEnvVarTypeEnum } from '../index';
+import { NamespaceServiceEnvVarTypeEnum2 } from '../index';
 
 export interface IDockerTemplateEnvironmentVariable {
   name: string;
   value: string;
-  type: NamespaceServiceEnvVarTypeEnum;
+  type: NamespaceServiceEnvVarTypeEnum2;
   deactivateName?: boolean;
   deactivateValue?: boolean;
   deactivateType?: boolean;

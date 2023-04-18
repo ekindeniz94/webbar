@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceServiceContainerImageEnvVarDto } from './namespace-service-container-image-env-var.dto';
 import { NamespaceServiceContainerImagePortDto } from './namespace-service-container-image-port.dto';
 import moment from 'moment';
-import { AppDto } from '../../../../mo-app-library';
+import { AppDto } from '../../../../mo-app-library-dto';
 import { NamespaceServiceKubernetesSettingsDto } from '../namespace-service-kubernetes-settings/namespace-service-kubernetes-settings.dto';
 import { isBoolean, isString } from 'class-validator';
 import { DTO_VALIDATION_CONST } from '../../../../mo-core';
@@ -10,6 +10,7 @@ import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceServiceCreateRequestDto } from '../namespace-service-create-request.dto';
 import { KeyVaultSecretDto } from '../../key-vault';
 import { NamespaceServiceStateEnum } from '../../../enums';
+import { PROJECT_CONST } from '../../../../mo-project-dto';
 
 export class NamespaceServiceContainerImageServiceDto {
   @Expose()
@@ -31,7 +32,7 @@ export class NamespaceServiceContainerImageServiceDto {
   displayName: string;
 
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.NAME.MAX)
   )
   @Expose()
   name: string;

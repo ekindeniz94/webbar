@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
-import { NamespaceServiceEnvVarTypeEnum } from '../../../mo-namespace/enums/namespace-envvar-type.enum';
+import { NamespaceServiceEnvVarTypeEnum2 } from '../../../mo-namespace/enums/namespace-envvar-type.enum';
 
-export class K8sEnvVarDto {
+export class K8sEnvVarDto2 {
     @Expose()
     name: string;
 
@@ -9,5 +9,5 @@ export class K8sEnvVarDto {
     value: string;
 
     @Expose()
-    type: NamespaceServiceEnvVarTypeEnum;
+    type: NamespaceServiceEnvVarTypeEnum2;
 }

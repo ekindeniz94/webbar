@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsString } from 'class-validator';
-import { NamespaceServicePortBindingTypeEnum } from '../../../enums';
+import { NamespaceServicePortBindingTypeEnum2 } from '../../../enums';
 import moment from 'moment';
 
 export class NamespaceServiceContainerImagePortDto {
@@ -13,7 +13,7 @@ export class NamespaceServiceContainerImagePortDto {
   expose: boolean;
 
   @Expose()
-  portType: NamespaceServicePortBindingTypeEnum;
+  portType: NamespaceServicePortBindingTypeEnum2;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()

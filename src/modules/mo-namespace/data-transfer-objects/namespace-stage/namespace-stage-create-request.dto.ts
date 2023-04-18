@@ -2,16 +2,17 @@ import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, MinLength } from
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
 import { StripTags } from '@mo/js-utils';
+import { PROJECT_CONST } from '../../../mo-project-dto';
 
 export class NamespaceStageCreateRequestDto {
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MAX)
+  @MinLength(PROJECT_CONST.STAGE.DISPLAY_NAME.MIN)
+  @MaxLength(PROJECT_CONST.STAGE.DISPLAY_NAME.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,
-      DTO_VALIDATION_CONST.NAMESPACE.STAGE.DISPLAY_NAME.MAX
+      PROJECT_CONST.STAGE.DISPLAY_NAME.MAX
     )
   )
   @StripTags()
@@ -20,9 +21,9 @@ export class NamespaceStageCreateRequestDto {
 
   // @IsNotEmpty()
   // @IsString()
-  // @MinLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MIN)
-  // @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MAX)
-  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.NAME.MATCHES, {
+  // @MinLength(PROJECT_CONST.STAGE.NAME.MIN)
+  // @MaxLength(PROJECT_CONST.STAGE.NAME.MAX)
+  // @Matches(PROJECT_CONST.STAGE.NAME.MATCHES, {
   //   message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
   // })
   // @StripTags()
@@ -31,7 +32,7 @@ export class NamespaceStageCreateRequestDto {
   //
   // @IsNotEmpty()
   // @IsString()
-  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.STAGE.SUBDOMAIN.MATCHES, {
+  // @Matches(PROJECT_CONST.STAGE.SUBDOMAIN.MATCHES, {
   //   message: '$property must conform to: a-z or A-Z or 0-9 or - or _ ;min 6, max 30 char'
   // })
   // @StripTags()
@@ -40,11 +41,11 @@ export class NamespaceStageCreateRequestDto {
 
   @IsOptional()
   @IsString()
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.STAGE.DESCRIPTION.MAX)
+  @MaxLength(PROJECT_CONST.STAGE.DESCRIPTION.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,
-      DTO_VALIDATION_CONST.NAMESPACE.STAGE.DESCRIPTION.MAX
+      PROJECT_CONST.STAGE.DESCRIPTION.MAX
     )
   )
   @StripTags()

@@ -1,21 +1,24 @@
 import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mo/websocket-dto';
 import {
-  NamespaceInvitationSocketDataEventEnum,
-  NamespaceSocketDataEventEnum,
-  NamespaceSocketEventEnum
+  NamespaceInvitationSocketDataEventEnum2,
+  NamespaceSocketDataEventEnum2,
+  NamespaceSocketEventEnum2
 } from '../mo-notification';
 
-export interface IRedisPubSubMessageNamespaceInvitation
+export interface IRedisPubSubMessageNamespaceInvitation2
   extends IRedisPubSubMessage<
-    NamespaceSocketEventEnum,
-    IRedisPubSubMessageData<NamespaceInvitationSocketDataEventEnum, any>[]
+    NamespaceSocketEventEnum2,
+    IRedisPubSubMessageData<NamespaceInvitationSocketDataEventEnum2, any>[]
   > {
   redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
-  socketEvent: NamespaceSocketEventEnum.NAMESPACE_INVITATION_SERVICE;
+  socketEvent: NamespaceSocketEventEnum2.NAMESPACE_INVITATION_SERVICE;
 }
 
-export interface IRedisPubSubMessageNamespace
-  extends IRedisPubSubMessage<NamespaceSocketEventEnum, IRedisPubSubMessageData<NamespaceSocketDataEventEnum, any>[]> {
+export interface IRedisPubSubMessageNamespace2
+  extends IRedisPubSubMessage<
+    NamespaceSocketEventEnum2,
+    IRedisPubSubMessageData<NamespaceSocketDataEventEnum2, any>[]
+  > {
   redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
-  socketEvent: NamespaceSocketEventEnum.NAMESPACE_SERVICE;
+  socketEvent: NamespaceSocketEventEnum2.NAMESPACE_SERVICE;
 }

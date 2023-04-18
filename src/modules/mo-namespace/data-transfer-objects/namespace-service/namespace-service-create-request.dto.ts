@@ -18,19 +18,20 @@ import { NamespaceServiceKubernetesSettingsCreateRequestDto } from './namespace-
 import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { NamespaceServiceCnameCreateRequestDto } from './namespace-service-cname/namespace-service-cname-create-request.dto';
 import { NamespaceServicePortCreateRequestDto } from './namespace-service-port/namespace-service-port-create-request.dto';
-import { AppIdDto } from '../../../mo-app-library';
 import { KeyVaultSecretDto } from '../key-vault';
 import { StripTags } from '@mo/js-utils';
+import { IdDto } from '@mo/core-dto';
+import { PROJECT_CONST } from '../../../mo-project-dto';
 
 export class NamespaceServiceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
-  @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MIN)
-  @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MAX)
+  @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)
+  @MaxLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,
-      DTO_VALIDATION_CONST.NAMESPACE.SERVICE.DISPLAY_NAME.MAX
+      PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX
     )
   )
   @StripTags()
@@ -39,9 +40,9 @@ export class NamespaceServiceCreateRequestDto {
 
   // @IsNotEmpty()
   // @IsString()
-  // @MinLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MIN)
-  // @MaxLength(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
-  // @Matches(DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MATCHES, {
+  // @MinLength(PROJECT_CONST.SERVICE.NAME.MIN)
+  // @MaxLength(PROJECT_CONST.SERVICE.NAME.MAX)
+  // @Matches(PROJECT_CONST.SERVICE.NAME.MATCHES, {
   //   message: '$property must conform to: a-z or 0-9 ;min 6, max 6 char'
   // })
   // @StripTags()
@@ -141,10 +142,10 @@ export class NamespaceServiceCreateRequestDto {
   envVars: NamespaceServiceEnvVarCreateRequestDto[];
 
   @IsNotEmpty()
-  @Type(() => AppIdDto)
+  @Type(() => IdDto)
   // @ValidateNested()
   @Expose()
-  app: AppIdDto;
+  app: IdDto;
 
   @Type(() => NamespaceStageIdDto)
   @Expose()

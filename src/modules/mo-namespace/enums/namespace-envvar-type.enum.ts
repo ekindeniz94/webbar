@@ -1,4 +1,4 @@
-export enum NamespaceServiceEnvVarTypeEnum {
+export enum NamespaceServiceEnvVarTypeEnum2 {
   PLAINTEXT = 'PLAINTEXT',
   KEY_VAULT = 'KEY_VAULT',
   VOLUME_MOUNT = 'VOLUME_MOUNT',
@@ -7,11 +7,11 @@ export enum NamespaceServiceEnvVarTypeEnum {
   HOSTNAME = 'HOSTNAME'
 }
 
-export const ALL_NAMESPACE_SERVICE_ENVVAR_TYPES = [
-  NamespaceServiceEnvVarTypeEnum.PLAINTEXT,
-  NamespaceServiceEnvVarTypeEnum.KEY_VAULT,
-  NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT,
-  NamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED,
-  NamespaceServiceEnvVarTypeEnum.CHANGE_OWNER,
-  NamespaceServiceEnvVarTypeEnum.HOSTNAME
+export const ALL_NAMESPACE_SERVICE_ENVVAR_TYPES2 = [
+  NamespaceServiceEnvVarTypeEnum2.PLAINTEXT,
+  NamespaceServiceEnvVarTypeEnum2.KEY_VAULT,
+  NamespaceServiceEnvVarTypeEnum2.VOLUME_MOUNT,
+  NamespaceServiceEnvVarTypeEnum2.VOLUME_MOUNT_SEED,
+  NamespaceServiceEnvVarTypeEnum2.CHANGE_OWNER,
+  NamespaceServiceEnvVarTypeEnum2.HOSTNAME
 ];

@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { K8sServiceDto } from './k8s-service.dto';
+import { K8sServiceDto2 } from './k8s-service.dto';
 import { isArray, isBoolean } from 'class-validator';
 
-export class K8sStageDto {
+export class K8sStageDto2 {
   @Expose()
   id: string;
 
@@ -18,10 +18,10 @@ export class K8sStageDto {
   @Expose()
   storageSizeInMb: number; // namespace.subscription.plan.product.persistentDiskInMb
 
-  @Type(() => K8sServiceDto)
+  @Type(() => K8sServiceDto2)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  services: K8sServiceDto[];
+  services: K8sServiceDto2[];
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : false))

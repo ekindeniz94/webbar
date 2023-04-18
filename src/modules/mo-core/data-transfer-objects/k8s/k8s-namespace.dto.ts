@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { GitConnectionTypeEnum } from '../../../mo-git';
 
-export class K8sNamespaceDto {
+export class K8sNamespaceDto2 {
   @Expose()
   id: string;
 

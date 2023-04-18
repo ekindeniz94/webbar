@@ -5,6 +5,7 @@ import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceServiceCreateRequestDto } from './namespace-service-create-request.dto';
 import { NamespaceServiceStateEnum } from '../../enums';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
+import { PROJECT_CONST } from '../../../mo-project-dto';
 
 export class NamespaceServiceFlatDto extends BaseEntityDto {
   @Expose()
@@ -15,7 +16,7 @@ export class NamespaceServiceFlatDto extends BaseEntityDto {
   displayName: string;
 
   @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.NAMESPACE.SERVICE.NAME.MAX)
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.NAME.MAX)
   )
   @Expose()
   name: string;

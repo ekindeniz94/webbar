@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
-import { AppLibraryTypeEnum } from '../../../mo-app-library';
+import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
 
-export class K8sAppDto {
+export class K8sAppDto2 {
   @Expose()
   id: string;
 

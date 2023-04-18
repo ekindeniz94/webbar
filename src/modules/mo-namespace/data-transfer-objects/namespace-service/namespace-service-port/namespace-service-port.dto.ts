@@ -1,12 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core';
-import { NamespaceServicePortBindingTypeEnum } from '../../../enums';
 import moment from 'moment';
 import { Max, Min } from 'class-validator';
+import { ProjectNamespaceServicePortBindingEnum } from '../../../../mo-project-dto';
 
 export class NamespaceServicePortDto extends BaseEntityDto {
   @Expose()
-  portType: NamespaceServicePortBindingTypeEnum;
+  portType: ProjectNamespaceServicePortBindingEnum;
 
   @Type(() => Number)
   @Min(0)

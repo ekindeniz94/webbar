@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, isNumberString } from 'class-validator';
-import { NamespaceServiceDeploymentStrategyEnum } from '../../../enums';
+import { NamespaceServiceDeploymentStrategyEnum2 } from '../../../enums';
 
 export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -25,10 +25,10 @@ export class NamespaceServiceKubernetesSettingsCreateRequestDto {
   replicaCount: number;
 
   @IsNotEmpty()
-  @IsEnum(NamespaceServiceDeploymentStrategyEnum)
-  @Transform(({ value }) => value ?? NamespaceServiceDeploymentStrategyEnum.RECREATE)
+  @IsEnum(NamespaceServiceDeploymentStrategyEnum2)
+  @Transform(({ value }) => value ?? NamespaceServiceDeploymentStrategyEnum2.RECREATE)
   @Expose()
-  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
+  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum2;
 
   @Type(() => Number)
   @Expose()

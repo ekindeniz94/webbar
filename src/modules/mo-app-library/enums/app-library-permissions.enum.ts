@@ -1,5 +1,0 @@
-export enum AppLibraryPermissionsEnum {
-  APP_LIBRARY__ADMIN = 'APP_LIBRARY__ADMIN',
-  APP_LIBRARY__USER = 'APP_LIBRARY__USER',
-  APP_LIBRARY__VIEWER = 'APP_LIBRARY__VIEWER'
-}

@@ -1,4 +1,4 @@
-export enum NamespaceSocketDataEventEnum {
+export enum NamespaceSocketDataEventEnum2 {
   GET_NAMESPACE = 'GET_NAMESPACE',
   GET_NAMESPACE_LIST = 'GET_NAMESPACE_LIST',
   GET_NAMESPACE_STAGE_LIST = 'GET_NAMESPACE_STAGE_LIST',

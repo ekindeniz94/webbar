@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { GitConnectionDto } from '../../../mo-git';
-import { ClusterPublicDto, SubscriptionDto } from '../../../mo-payment';
+import { ClusterPublicDto } from '../../../mo-product-dto';
 import { NamespaceStateEnum } from '../../enums';
 
 export class NamespaceDto extends BaseEntityDto {
@@ -38,16 +38,6 @@ export class NamespaceDto extends BaseEntityDto {
 
   @Expose()
   bgColorStyle: string;
-
-  @Type(() => SubscriptionDto)
-  @Transform(({ value, obj }) => {
-    if (value?.priceInterval?.product?.skipCloudflareCustomHostnameCreation === false) {
-      obj.cluster.loadbalancerHost = undefined;
-    }
-    return value;
-  })
-  @Expose()
-  subscription: SubscriptionDto;
 
   @Type(() => GitConnectionDto)
   @Expose()

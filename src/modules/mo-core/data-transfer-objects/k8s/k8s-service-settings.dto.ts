@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { NamespaceServiceDeploymentStrategyEnum } from '../../../mo-namespace';
+import { NamespaceServiceDeploymentStrategyEnum2 } from '../../../mo-namespace';
 
-export class K8sServiceSettingsDto {
+export class K8sServiceSettingsDto2 {
   @Type(() => Number)
   @Expose()
   limitCpuCores: number;
@@ -19,5 +19,5 @@ export class K8sServiceSettingsDto {
   replicaCount: number;
 
   @Expose()
-  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum;
+  deploymentStrategy: NamespaceServiceDeploymentStrategyEnum2;
 }

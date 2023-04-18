@@ -1,4 +1,4 @@
-export enum NamespaceInvitationSocketDataEventEnum {
+export enum NamespaceInvitationSocketDataEventEnum2 {
   GET_SENT_INVITATION_LIST = 'GET_SENT_INVITATION_LIST',
   GET_RECEIVED_INVITATION_LIST = 'GET_RECEIVED_INVITATION_LIST'
 }
