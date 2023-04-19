@@ -2,6 +2,13 @@
 
 
 
+## 1.35.59 (2023-04-19)
+
+
+### Bug Fixes
+
+* rename namespace service to project namespace service ([9748507](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/97485073cce21e464e890554e8d7d99ae6f27661))
+
 ## 1.35.58 (2023-04-18)
 
 
