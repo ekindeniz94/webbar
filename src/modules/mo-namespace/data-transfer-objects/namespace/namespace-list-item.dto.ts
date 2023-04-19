@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../mo-core';
 import { ProjectNamespaceStateEnum } from '../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NamespaceListItemDto extends BaseEntityDto {
   @Expose()

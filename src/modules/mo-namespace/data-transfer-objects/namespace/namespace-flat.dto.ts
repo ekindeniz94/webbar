@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
 import { ProjectNamespaceStateEnum } from '../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NamespaceFlatDto extends BaseEntityDto {
   @Expose()

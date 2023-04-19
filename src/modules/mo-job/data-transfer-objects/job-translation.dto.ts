@@ -1,5 +1,6 @@
-import { BaseEntityDto, LanguageCodeDto } from '../../mo-core';
+import { LanguageCodeDto } from '../../mo-core';
 import { Expose, Type } from 'class-transformer';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class JobTranslationDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

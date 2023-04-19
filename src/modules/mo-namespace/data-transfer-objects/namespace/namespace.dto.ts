@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
 import { GitConnectionDto } from '../../../mo-git';
 import { ClusterPublicDto } from '../../../mo-product-dto';
 import { ProjectNamespaceStateEnum } from '../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()

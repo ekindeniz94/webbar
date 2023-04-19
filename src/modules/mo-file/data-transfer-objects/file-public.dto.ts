@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
-import { BaseEntityDto } from '../../mo-core';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class FilePublicDto extends BaseEntityDto {
   @Expose()

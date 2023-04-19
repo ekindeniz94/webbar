@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto, LanguageCodeDto } from '../../../mo-core';
+import { LanguageCodeDto } from '../../../mo-core';
 import { RegisterBetaRoleEnum } from '../../enums';
-import { IsNotEmpty } from 'class-validator';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class RegisterBetaDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

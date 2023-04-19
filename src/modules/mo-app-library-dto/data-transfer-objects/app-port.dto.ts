@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
-import { BaseEntityDto } from '../../mo-core';
 import { ProjectNamespaceServicePortBindingEnum } from '../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class AppPortDto extends BaseEntityDto {
   @Expose()

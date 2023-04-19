@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { MessageTypeEnum, NotificationContentTypeEnum, NotificationTypeEnum } from '../enums';
-import { BaseEntityDto } from '../../mo-core';
 import { UserPublicDto } from '@mo/user-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NotificationDto extends BaseEntityDto {
   @Expose()

@@ -15,13 +15,12 @@ import { GithubBranchDto, GithubRepositoryDto } from '../../../mo-git';
 import { KeyVaultSecretDto } from '../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { IdDto } from '@mo/core-dto';
-import {
-  PROJECT_CONST,
-  ProjectNamespaceServiceCnameCreateRequestDto,
-  ProjectNamespaceServiceEnvvarCreateRequestDto,
-  ProjectNamespaceServiceKubernetesSettingsCreateRequestDto,
-  ProjectNamespaceServicePortCreateRequestDto
-} from '../../../mo-project-dto';
+import { ProjectNamespaceServiceCnameCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-cname/project-namespace-service-cname-create-request.dto';
+import { ProjectNamespaceServiceEnvvarCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-envvar/project-namespace-service-envvar-create-request.dto';
+import { ProjectNamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings/project-namespace-service-kubernetes-settings-create-request.dto';
+import { ProjectNamespaceServicePortCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-port/project-namespace-service-port-create-request.dto';
+
+import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()

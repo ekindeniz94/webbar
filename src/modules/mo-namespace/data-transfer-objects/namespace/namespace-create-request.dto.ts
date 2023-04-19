@@ -1,8 +1,9 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST, IsInStringList } from '../../../mo-core';
+import { DTO_VALIDATION_CONST } from '../../../mo-core/constantes/data-length.const';
+import { IsInStringList } from '../../../mo-core/validation-decorators/is-in-string-list.validator';
 import { MoUtils, StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../../mo-project-dto';
+import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 
 export class NamespaceCreateRequestDto {
   @IsNotEmpty()

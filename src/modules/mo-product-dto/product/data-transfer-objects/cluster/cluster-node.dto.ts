@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterNodeDto extends BaseEntityDto {
   @Expose()

@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProductFlatDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)

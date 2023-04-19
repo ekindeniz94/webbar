@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { BaseEntityDto, LanguageCodeDto } from '../../../mo-core';
+import { LanguageCodeDto } from '../../../mo-core';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ContactDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
 import { NamespaceNotificationDto } from '../../../mo-notification';
 import moment from 'moment';
 import { ProjectNamespaceServiceDto } from '../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NamespaceStageDto extends BaseEntityDto {
   @Expose()

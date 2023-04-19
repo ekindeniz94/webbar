@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ClusterNodeDto } from './cluster-node.dto';
-import { BaseEntityDto } from '../../../../mo-core';
 import { isArray, IsString } from 'class-validator';
 import _ from 'lodash';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
   @IsString({ each: true })

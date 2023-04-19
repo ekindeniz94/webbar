@@ -1,10 +1,9 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core';
 import { ProductDto } from '../product';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
-import { CountryDto } from '@mo/database-dto';
+import { BaseEntityDto, CountryDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../organization';
 import { ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 

@@ -1,6 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsString } from 'class-validator';
-import { BaseEntityDto } from '../../mo-core';
 
 export class AppTagDto {
   @IsString()

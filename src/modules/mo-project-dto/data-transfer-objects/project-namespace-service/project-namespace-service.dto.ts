@@ -1,20 +1,22 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean, isString } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceNotificationDto } from '../../../mo-notification/data-transfer-objects/namespace-notification.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
 import { KeyVaultSecretDto } from '../key-vault/key-vault-secret.dto';
 import { AppDto } from '../../../mo-app-library-dto';
-import {
-  PROJECT_CONST,
-  ProjectNamespaceDto,
-  ProjectNamespaceServiceCnameDto,
-  ProjectNamespaceServiceCreateRequestDto,
-  ProjectNamespaceServiceEnvVarDto,
-  ProjectNamespaceServiceKubernetesSettingsDto, ProjectNamespaceServicePodDto, ProjectNamespaceServicePortBindingEnum,
-  ProjectNamespaceServicePortDto, ProjectNamespaceServiceStateEnum
-} from '../../../mo-project-dto';
+import { ProjectNamespaceDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace/project-namespace.dto';
+import { ProjectNamespaceServiceCnameDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-cname/project-namespace-service-cname.dto';
+import { ProjectNamespaceServiceCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service/project-namespace-service-create-request.dto';
+import { ProjectNamespaceServiceEnvVarDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-envvar/project-namespace-service-env-var.dto';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings/project-namespace-service-kubernetes-settings.dto';
+import { ProjectNamespaceServicePodDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-pod/project-namespace-service-pod.dto';
+import { ProjectNamespaceServicePortBindingEnum } from '../../../mo-project-dto/enums/project-namespace-service-port-binding.enum';
+import { ProjectNamespaceServicePortDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-port/project-namespace-service-port.dto';
+import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto/enums/project-namespace-service-state.enum';
+
+import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()

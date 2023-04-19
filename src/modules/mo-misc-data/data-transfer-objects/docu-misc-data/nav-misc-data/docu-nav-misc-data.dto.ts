@@ -1,5 +1,5 @@
 import { Exclude, Expose, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core/data-transfer-objects/base.entity.dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class DocuNavMiscDataDto extends BaseEntityDto {
   @Exclude()

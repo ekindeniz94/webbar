@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../../mo-project-dto';
+import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 
 export class NamespaceStageCreateRequestDto {
   @IsNotEmpty()

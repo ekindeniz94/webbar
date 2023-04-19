@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '../../../../mo-core';
 import { isBoolean } from 'class-validator';
 import { MoUtils } from '@mo/js-utils';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterSetupDto extends BaseEntityDto {
   @Transform(({ value }) => {

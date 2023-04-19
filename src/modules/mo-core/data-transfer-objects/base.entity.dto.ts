@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
 import { UserPublicDto } from '@mo/user-dto';
 
-export abstract class BaseEntityDto {
+export abstract class BaseEntityDto2 {
   @Expose()
   id: string;
 

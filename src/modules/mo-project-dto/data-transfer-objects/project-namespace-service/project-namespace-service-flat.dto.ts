@@ -1,13 +1,11 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean, isString } from 'class-validator';
-import { BaseEntityDto } from '../../../mo-core';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
-import {
-  PROJECT_CONST,
-  ProjectNamespaceServiceCreateRequestDto,
-  ProjectNamespaceServiceStateEnum
-} from '../../../mo-project-dto';
+import { ProjectNamespaceServiceCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service/project-namespace-service-create-request.dto';
+import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto/enums/project-namespace-service-state.enum';
+import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {
   @Expose()

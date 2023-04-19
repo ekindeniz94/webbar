@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsString } from 'class-validator';
-import { BaseEntityDto } from '../../mo-core';
 import { FilePublicDto } from '../../mo-file';
 import { AppTagDto } from './app-tag.dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class AppPublicDto extends BaseEntityDto {
   @Type(() => AppTagDto)

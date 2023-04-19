@@ -1,7 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 import moment from 'moment';
-import { BaseEntityDto } from '../../../../mo-core';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
@@ -9,6 +8,7 @@ import { UserPublicDto } from '@mo/user-dto';
 import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProductDto extends BaseEntityDto {
   @Type(() => ClusterDto)

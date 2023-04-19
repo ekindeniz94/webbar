@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceDto, NamespaceStageDto } from '../../mo-namespace';
-import { BaseEntityDto } from '../../mo-core';
 import { isEnum, isString } from 'class-validator';
 import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 import moment from 'moment';
 import { ProjectNamespaceServiceDto, ProjectNamespaceServicePodDto } from '../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
 export class NamespaceNotificationDto extends BaseEntityDto {
   @Type(() => NamespaceDto)
