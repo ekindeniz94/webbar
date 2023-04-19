@@ -2,6 +2,13 @@
 
 
 
+## 1.35.62 (2023-04-19)
+
+
+### Bug Fixes
+
+* update export ([f26dff2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f26dff260e8953e6fb37c82e1fc35987a55c49b0))
+
 ## 1.35.61 (2023-04-19)
 
 
