@@ -2,6 +2,13 @@
 
 
 
+## 1.35.61 (2023-04-19)
+
+
+### Bug Fixes
+
+* add patch project dto ([9abec20](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9abec20f63fdb5129b449272b3c7ae396b51ff61))
+
 ## 1.35.60 (2023-04-19)
 
 
