@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean, IsOptional } from 'class-validator';
-import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service/project-namespace-service-cname.dto';
 import { K8sAppDto } from './k8s-app.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
+import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
 
 export class K8sProjectNamespaceServiceDto {
   @Expose()

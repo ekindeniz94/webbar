@@ -2,8 +2,8 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsNumber } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
 
 export class ProductPublicDto {
   @Expose()
@@ -96,9 +96,9 @@ export class ProductPublicDto {
   /*********************************************************************/
 
   /***************************** LIMITS ********************************/
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 
   @Type(() => Number)
   @Expose()

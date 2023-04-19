@@ -11,11 +11,11 @@ import {
 } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { NamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../../mo-namespace';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { IdDto } from '@mo/core-dto';
 import { MoUtils } from '@mo/js-utils';
 import { ClusterDto } from '../cluster';
+import { ProjectNamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../../mo-project-dto';
 
 export class ProductCreateRequestDto {
   @IsOptional()
@@ -74,10 +74,10 @@ export class ProductCreateRequestDto {
 
   /***************************** LIMITS ********************************/
 
-  @Type(() => NamespaceServiceKubernetesSettingsCreateRequestDto)
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsCreateRequestDto)
   @ValidateNested()
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsCreateRequestDto;
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsCreateRequestDto;
 
   @Type(() => Number)
   @IsNumber()

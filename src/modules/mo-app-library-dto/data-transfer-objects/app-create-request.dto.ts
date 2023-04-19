@@ -5,7 +5,7 @@ import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { FileDto } from '../../mo-file';
 import { AppPortCreateRequestDto } from './app-port-create-request.dto';
 import { AppEnvVarCreateRequestDto } from './app-envvar-create-request.dto';
-import { NamespaceServiceKubernetesSettingsDto } from '../../mo-namespace';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../mo-project-dto';
 
 export class AppCreateRequestDto {
   @IsOptional()
@@ -97,11 +97,11 @@ export class AppCreateRequestDto {
   @Expose()
   ports: AppPortCreateRequestDto[];
 
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
-  @Transform(({ value }) => value ?? plainToInstance(NamespaceServiceKubernetesSettingsDto, {}))
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Transform(({ value }) => value ?? plainToInstance(ProjectNamespaceServiceKubernetesSettingsDto, {}))
   @ValidateNested()
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 
   @Type(() => AppEnvVarCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))

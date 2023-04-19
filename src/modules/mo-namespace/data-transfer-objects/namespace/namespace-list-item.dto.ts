@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../mo-core';
-import { NamespaceStateEnum } from '../../enums';
+import { ProjectNamespaceStateEnum } from '../../../mo-project-dto';
 
 export class NamespaceListItemDto extends BaseEntityDto {
   @Expose()
@@ -10,7 +10,7 @@ export class NamespaceListItemDto extends BaseEntityDto {
   bgColorStyle: string;
 
   @Expose()
-  state: NamespaceStateEnum;
+  state: ProjectNamespaceStateEnum;
 
   @Expose()
   productName: string;

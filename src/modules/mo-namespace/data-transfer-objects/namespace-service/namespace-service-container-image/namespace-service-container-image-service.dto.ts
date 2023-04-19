@@ -1,16 +1,13 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceServiceContainerImageEnvVarDto } from './namespace-service-container-image-env-var.dto';
-import { NamespaceServiceContainerImagePortDto } from './namespace-service-container-image-port.dto';
 import moment from 'moment';
-import { AppDto } from '../../../../mo-app-library-dto';
-import { NamespaceServiceKubernetesSettingsDto } from '../namespace-service-kubernetes-settings/namespace-service-kubernetes-settings.dto';
 import { isBoolean, isString } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../../mo-core';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
-import { NamespaceServiceCreateRequestDto } from '../namespace-service-create-request.dto';
-import { KeyVaultSecretDto } from '../../key-vault';
-import { NamespaceServiceStateEnum } from '../../../enums';
-import { PROJECT_CONST } from '../../../../mo-project-dto';
+import {
+  KeyVaultSecretDto,
+  PROJECT_CONST,
+  ProjectNamespaceServiceCreateRequestDto,
+  ProjectNamespaceServiceStateEnum
+} from '../../../../mo-project-dto';
 
 export class NamespaceServiceContainerImageServiceDto {
   @Expose()
@@ -43,7 +40,7 @@ export class NamespaceServiceContainerImageServiceDto {
   @Expose()
   gitRepository: string;
 
-  @Transform((params: TransformFnParams) => NamespaceServiceCreateRequestDto.gitBranchTransform(params))
+  @Transform((params: TransformFnParams) => ProjectNamespaceServiceCreateRequestDto.gitBranchTransform(params))
   @Expose()
   gitBranch: string;
 
@@ -69,7 +66,7 @@ export class NamespaceServiceContainerImageServiceDto {
   dockerContext: string;
 
   @Expose()
-  state: NamespaceServiceStateEnum;
+  state: ProjectNamespaceServiceStateEnum;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))

@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { ProjectEnvVarTypeEnum } from '../../enums/project-envvar-type.enum';
+import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums/project-namespace-service-envvar-type.enum';
 
 export class K8sEnvVarDto {
   @Expose()
@@ -9,5 +9,5 @@ export class K8sEnvVarDto {
   value: string;
 
   @Expose()
-  type: ProjectEnvVarTypeEnum;
+  type: ProjectNamespaceServiceEnvVarTypeEnum;
 }

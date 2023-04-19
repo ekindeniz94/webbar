@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { NamespaceDashboardStageServiceNotificationDto } from './namespace-dashboard-stage-service-notification.dto';
 import { isArray, isBoolean, IsOptional } from 'class-validator';
-import { NamespaceServiceStateEnum } from '../../enums';
 import { NamespaceDashboardStageAppDto } from './namespace-dashboard-stage-app.dto';
+import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto';
 
 export class NamespaceDashboardStageServiceDto {
   @Expose()
@@ -22,7 +22,7 @@ export class NamespaceDashboardStageServiceDto {
   containerImage: string;
 
   @Expose()
-  state: NamespaceServiceStateEnum;
+  state: ProjectNamespaceServiceStateEnum;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))

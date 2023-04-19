@@ -1,9 +1,9 @@
-import { NamespaceServiceEnvVarTypeEnum2 } from '../index';
+import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../mo-project-dto';
 
 export interface IDockerTemplateEnvironmentVariable {
   name: string;
   value: string;
-  type: NamespaceServiceEnvVarTypeEnum2;
+  type: ProjectNamespaceServiceEnvVarTypeEnum;
   deactivateName?: boolean;
   deactivateValue?: boolean;
   deactivateType?: boolean;

@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
-import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { Expose, Transform } from 'class-transformer';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto';

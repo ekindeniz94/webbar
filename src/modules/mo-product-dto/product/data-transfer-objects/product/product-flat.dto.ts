@@ -1,10 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '../../../../mo-core';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
 
 export class ProductFlatDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)
@@ -35,9 +35,9 @@ export class ProductFlatDto extends BaseEntityDto {
 
   /***************************** LIMITS ********************************/
 
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 
   @Type(() => Number)
   @Expose()

@@ -1,9 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { NamespaceDto, NamespaceServiceDto, NamespaceServicePodDto, NamespaceStageDto } from '../../mo-namespace';
+import { NamespaceDto, NamespaceStageDto } from '../../mo-namespace';
 import { BaseEntityDto } from '../../mo-core';
 import { isEnum, isString } from 'class-validator';
 import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../enums';
 import moment from 'moment';
+import { ProjectNamespaceServiceDto, ProjectNamespaceServicePodDto } from '../../mo-project-dto';
 
 export class NamespaceNotificationDto extends BaseEntityDto {
   @Type(() => NamespaceDto)
@@ -14,13 +15,13 @@ export class NamespaceNotificationDto extends BaseEntityDto {
   @Expose()
   namespaceStage: NamespaceStageDto;
 
-  @Type(() => NamespaceServiceDto)
+  @Type(() => ProjectNamespaceServiceDto)
   @Expose()
-  namespaceService: NamespaceServiceDto;
+  namespaceService: ProjectNamespaceServiceDto;
 
-  @Type(() => NamespaceServicePodDto)
+  @Type(() => ProjectNamespaceServicePodDto)
   @Expose()
-  namespaceServicePod: NamespaceServicePodDto;
+  namespaceServicePod: ProjectNamespaceServicePodDto;
 
   @Expose()
   title: string;

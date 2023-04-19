@@ -1,8 +1,13 @@
 import moment from 'moment';
-import { NamespaceDto, NamespaceServiceDto, NamespaceStageDto } from './data-transfer-objects';
+import { NamespaceDto, NamespaceStageDto } from './data-transfer-objects';
+import { ProjectNamespaceServiceDto } from '../mo-project-dto';
 
 export class MoNamespaceUtils {
-  static fullHostname(namespace: NamespaceDto, stage?: NamespaceStageDto, service?: NamespaceServiceDto): string {
+  static fullHostname(
+    namespace: NamespaceDto,
+    stage?: NamespaceStageDto,
+    service?: ProjectNamespaceServiceDto
+  ): string {
     // let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.subscription.priceInterval.product.cluster.host}`;
     let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.cluster.host}`;
     if (stage) {
@@ -17,20 +22,24 @@ export class MoNamespaceUtils {
   static fullHostnameWithProtocol(
     namespace: NamespaceDto,
     stage?: NamespaceStageDto,
-    service?: NamespaceServiceDto
+    service?: ProjectNamespaceServiceDto
   ): string {
     let hostname = this.fullHostname(namespace, stage, service);
     return `https://${hostname}`;
   }
 
-  static kubernetesName(namespace: NamespaceDto, stage: NamespaceStageDto, service?: NamespaceServiceDto): string {
+  static kubernetesName(
+    namespace: NamespaceDto,
+    stage: NamespaceStageDto,
+    service?: ProjectNamespaceServiceDto
+  ): string {
     if (service) {
       return `${service.hostname}-${service.shortId}`; // SERVICE
     }
     return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}`; // NAMESPACE OR STAGE Name
   }
 
-  static internalServiceName(service: NamespaceServiceDto): string {
+  static internalServiceName(service: ProjectNamespaceServiceDto): string {
     return `${service.name}-${service.shortId}`;
   }
 

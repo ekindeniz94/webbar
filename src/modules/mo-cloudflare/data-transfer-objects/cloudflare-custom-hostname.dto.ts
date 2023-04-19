@@ -1,15 +1,15 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 import { CloudflareCustomHostnameStatusEnum, CloudflareSslStatusEnum } from '../enums';
-import { NamespaceServiceCnameDto } from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-cname/namespace-service-cname.dto';
 import moment from 'moment';
 import { CloudflareCustomHostnameResponseDto } from './cloudflare-custom-hostname-response.dto';
+import { ProjectNamespaceServiceCnameDto } from '../../mo-project-dto';
 
 export class CloudflareCustomHostnameDto {
-  @Type(() => NamespaceServiceCnameDto)
+  @Type(() => ProjectNamespaceServiceCnameDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  namespaceServiceCNames: NamespaceServiceCnameDto[];
+  namespaceServiceCNames: ProjectNamespaceServiceCnameDto[];
 
   @Expose()
   id: string;

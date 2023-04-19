@@ -3,7 +3,7 @@ import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { GitConnectionDto } from '../../../mo-git';
 import { ClusterPublicDto } from '../../../mo-product-dto';
-import { NamespaceStateEnum } from '../../enums';
+import { ProjectNamespaceStateEnum } from '../../../mo-project-dto';
 
 export class NamespaceDto extends BaseEntityDto {
   @Expose()
@@ -34,7 +34,7 @@ export class NamespaceDto extends BaseEntityDto {
   description: string;
 
   @Expose()
-  state: NamespaceStateEnum;
+  state: ProjectNamespaceStateEnum;
 
   @Expose()
   bgColorStyle: string;

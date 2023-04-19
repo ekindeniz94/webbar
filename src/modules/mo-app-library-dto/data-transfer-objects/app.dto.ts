@@ -4,8 +4,8 @@ import { BaseEntityDto } from '../../mo-core';
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { FilePublicDto } from '../../mo-file';
-import { NamespaceServiceEnvVarDto, NamespaceServiceKubernetesSettingsDto } from '../../mo-namespace';
 import { AppPortDto } from './app-port.dto';
+import { ProjectNamespaceServiceEnvVarDto, ProjectNamespaceServiceKubernetesSettingsDto } from '../../mo-project-dto';
 
 export class AppDto extends BaseEntityDto {
   @Type(() => AppTagDto)
@@ -67,12 +67,12 @@ export class AppDto extends BaseEntityDto {
   @Expose()
   ports: AppPortDto[];
 
-  @Type(() => NamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: NamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 
-  @Type(() => NamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  envVars: NamespaceServiceEnvVarDto[];
+  envVars: ProjectNamespaceServiceEnvVarDto[];
 }

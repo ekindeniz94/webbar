@@ -2,9 +2,9 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString } from 'class-validator';
 import { BaseEntityDto } from '../../../mo-core';
 import { NamespaceDto } from '../namespace';
-import { NamespaceServiceDto } from '../namespace-service';
 import { NamespaceNotificationDto } from '../../../mo-notification';
 import moment from 'moment';
+import { ProjectNamespaceServiceDto } from '../../../mo-project-dto';
 
 export class NamespaceStageDto extends BaseEntityDto {
   @Expose()
@@ -28,9 +28,9 @@ export class NamespaceStageDto extends BaseEntityDto {
   namespace: NamespaceDto;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => NamespaceServiceDto)
+  @Type(() => ProjectNamespaceServiceDto)
   @Expose()
-  services: NamespaceServiceDto[];
+  services: ProjectNamespaceServiceDto[];
 
   @Type(() => Number)
   @Transform(({ value, obj }) => value ?? obj.services?.length)

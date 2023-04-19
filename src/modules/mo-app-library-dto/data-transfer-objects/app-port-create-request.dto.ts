@@ -1,14 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
-import {
-  NamespaceServicePortBindingTypeEnum2
-} from '../../mo-namespace/enums/namespace-service-service-port-binding.enum';
+import { ProjectNamespaceServicePortBindingEnum } from '../../mo-project-dto';
 
 export class AppPortCreateRequestDto {
   @IsNotEmpty()
-  @IsEnum(NamespaceServicePortBindingTypeEnum2)
+  @IsEnum(ProjectNamespaceServicePortBindingEnum)
   @Expose()
-  portType: NamespaceServicePortBindingTypeEnum2;
+  portType: ProjectNamespaceServicePortBindingEnum;
 
   @Type(() => Number)
   @IsNumber()

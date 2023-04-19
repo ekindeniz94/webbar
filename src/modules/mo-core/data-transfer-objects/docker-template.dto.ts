@@ -1,8 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
-import {
-  NamespaceServiceEnvVarDto
-} from '../../mo-namespace/data-transfer-objects/namespace-service/namespace-service-envvar/namespace-service-envvar.dto';
+import { ProjectNamespaceServiceEnvVarDto } from '../../mo-project-dto';
 
 export class DockerTemplateDto {
   @IsNotEmpty()
@@ -48,7 +46,7 @@ export class DockerTemplateDto {
   expose: boolean;
 
   @IsOptional()
-  @Type(() => NamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceEnvVarDto)
   @Expose()
-  envVars?: NamespaceServiceEnvVarDto[];
+  envVars?: ProjectNamespaceServiceEnvVarDto[];
 }

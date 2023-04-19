@@ -1,9 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, IsNumber } from 'class-validator';
-import moment from 'moment';
-import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { NamespaceServiceKubernetesSettingsDto } from '../../../../mo-namespace';
-import { ProductBulletPointDto } from './product-bullet-point.dto';
+import { Expose } from 'class-transformer';
 
 export class ProductNameDto {
   @Expose()

@@ -1,15 +1,2 @@
-export * from './namespace-service-cname';
 export * from './namespace-service-container-image';
-export * from './namespace-service-envvar';
-export * from './namespace-service-kubernetes-settings';
-export * from './namespace-service-pod';
-export * from './namespace-service-port';
-export * from './namespace-service.dto';
-export * from './namespace-service-flat.dto';
-export * from './namespace-service-create-request.dto';
-export * from './namespace-service-docker-compose-response.dto';
-export * from './namespace-service-docker-k8s-patch-request.dto';
-export * from './namespace-service-origin-traffic.dto';
-export * from './namespace-service-patch-request.dto';
-export * from './namespace-service-stats.dto';
-export * from './namespace-service-security.dto';
+

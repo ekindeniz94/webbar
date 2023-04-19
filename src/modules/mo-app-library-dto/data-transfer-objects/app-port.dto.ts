@@ -1,12 +1,10 @@
 import { Expose } from 'class-transformer';
 import { BaseEntityDto } from '../../mo-core';
-import {
-  NamespaceServicePortBindingTypeEnum2
-} from '../../mo-namespace/enums/namespace-service-service-port-binding.enum';
+import { ProjectNamespaceServicePortBindingEnum } from '../../mo-project-dto';
 
 export class AppPortDto extends BaseEntityDto {
   @Expose()
-  portType: NamespaceServicePortBindingTypeEnum2;
+  portType: ProjectNamespaceServicePortBindingEnum;
 
   @Expose()
   internalPort: number;

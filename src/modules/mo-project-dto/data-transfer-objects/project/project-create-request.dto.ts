@@ -1,9 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, isString, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
 import { IdDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { StripTags } from '@mo/js-utils';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 
 export class ProjectCreateRequestDto {
   @IsNotEmpty()
@@ -34,4 +35,10 @@ export class ProjectCreateRequestDto {
   )
   @Expose()
   name: string;
+
+  @IsOptional()
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @ValidateNested()
+  @Expose()
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 }
