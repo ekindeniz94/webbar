@@ -2,7 +2,6 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString, IsString } from 'class-validator';
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
-import { FilePublicDto } from '../../mo-file';
 import { AppPortDto } from './app-port.dto';
 import { ProjectNamespaceServiceEnvVarDto, ProjectNamespaceServiceKubernetesSettingsDto } from '../../mo-project-dto';
 import { BaseEntityDto } from '@mo/database-dto';
@@ -28,13 +27,11 @@ export class AppDto extends BaseEntityDto {
   @Expose()
   version: string;
 
-  @Type(() => FilePublicDto)
   @Expose()
-  icon: FilePublicDto;
+  icon: string;
 
-  @Type(() => FilePublicDto)
   @Expose()
-  image: FilePublicDto;
+  image: string;
 
   @Expose()
   color: string;

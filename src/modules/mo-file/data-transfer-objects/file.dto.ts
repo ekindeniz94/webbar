@@ -4,7 +4,7 @@ import { FileTranslationDto } from './file-translation.dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { BaseEntityDto } from '@mo/database-dto';
 
-export class FileDto extends BaseEntityDto {
+export class FileDto2 extends BaseEntityDto {
   @Type(() => FileTypeDto)
   @Expose()
   fileType: FileTypeDto;

@@ -2,7 +2,6 @@ import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
-import { FileDto } from '../../mo-file';
 import { AppPortCreateRequestDto } from './app-port-create-request.dto';
 import { AppEnvVarCreateRequestDto } from './app-envvar-create-request.dto';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../mo-project-dto';
@@ -41,14 +40,14 @@ export class AppCreateRequestDto {
   version: string;
 
   @IsOptional()
-  @Type(() => FileDto)
+  @IsString()
   @Expose()
-  icon: FileDto;
+  icon: string;
 
   @IsOptional()
-  @Type(() => FileDto)
+  @IsString()
   @Expose()
-  image: FileDto;
+  image: string;
 
   @Transform(({ value }) => (value && isString(value) ? value : '#000000'))
   @IsNotEmpty()

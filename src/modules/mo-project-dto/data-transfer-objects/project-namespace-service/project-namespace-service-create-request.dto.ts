@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import {
   isArray,
+  IsEnum,
   IsNotEmpty,
   IsOptional,
   isString,
@@ -21,8 +22,14 @@ import { ProjectNamespaceServiceKubernetesSettingsCreateRequestDto } from '../..
 import { ProjectNamespaceServicePortCreateRequestDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-port/project-namespace-service-port-create-request.dto';
 
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
+import { ServiceTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceCreateRequestDto {
+  @IsNotEmpty()
+  @IsEnum(ServiceTypeEnum)
+  @Expose()
+  type: ServiceTypeEnum;
+
   @IsNotEmpty()
   @IsString()
   @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)

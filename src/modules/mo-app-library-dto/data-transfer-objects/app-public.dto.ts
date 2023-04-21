@@ -1,6 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsString } from 'class-validator';
-import { FilePublicDto } from '../../mo-file';
 import { AppTagDto } from './app-tag.dto';
 import { BaseEntityDto } from '@mo/database-dto';
 
@@ -22,13 +21,11 @@ export class AppPublicDto extends BaseEntityDto {
   @Expose()
   descriptionShort: string;
 
-  @Type(() => FilePublicDto)
   @Expose()
-  icon: FilePublicDto;
+  icon: string;
 
-  @Type(() => FilePublicDto)
   @Expose()
-  image: FilePublicDto;
+  image: string;
 
   @Expose()
   color: string;

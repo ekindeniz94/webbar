@@ -8,6 +8,7 @@ import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionPublicDto } from '../../../mo-git/data-transfer-objects/git-connection/git-connection-public.dto';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
+import { GitConnectionDto } from '../../../mo-git';
 
 export class ProjectDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -22,9 +23,9 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   cluster: ClusterPublicDto;
 
-  @Type(() => GitConnectionPublicDto)
+  @Type(() => GitConnectionDto)
   @Expose()
-  gitConnection: GitConnectionPublicDto;
+  gitConnection: GitConnectionDto;
 
   @Type(() => Number)
   @Expose()

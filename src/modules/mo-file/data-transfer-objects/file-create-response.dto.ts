@@ -1,3 +1,3 @@
-import { FileDto } from './file.dto';
+import { FileDto2 } from './file.dto';
 
-export class FileCreateResponseDto extends FileDto {}
+export class FileCreateResponseDto extends FileDto2 {}
