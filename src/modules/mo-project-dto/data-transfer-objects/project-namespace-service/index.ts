@@ -9,3 +9,4 @@ export * from './project-namespace-service-stats.dto';
 export * from './project-namespace-service-security.dto';
 export * from './project-namespace-service-dashboard-cicd-response.dto';
 export * from './project-namespace-service-dashboard.dto';
+export * from './project-namespace-service-overview-item.dto';
