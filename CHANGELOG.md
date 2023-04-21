@@ -2,6 +2,13 @@
 
 
 
+## 1.35.66 (2023-04-21)
+
+
+### Bug Fixes
+
+* added namespace navigation. ([6030829](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6030829ee260bd18b37f4c26913068f831ebbf88))
+
 ## 1.35.65 (2023-04-21)
 
 
