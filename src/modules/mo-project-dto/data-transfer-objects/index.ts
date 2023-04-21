@@ -10,3 +10,5 @@ export * from './project-namespace-service-pod';
 export * from './project-namespace-service-port';
 
 export * from './create-project-cluster-item.dto';
+export * from './project-namespace-service-build';
+export * from './project-namespace-service-build-job';
