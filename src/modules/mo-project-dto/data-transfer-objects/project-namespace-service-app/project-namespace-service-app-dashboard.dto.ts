@@ -2,6 +2,9 @@ import { Expose } from 'class-transformer';
 
 export class ProjectNamespaceServiceAppDashboardDto {
   @Expose()
+  id: string;
+
+  @Expose()
   icon: string;
 
   @Expose()
@@ -12,4 +15,7 @@ export class ProjectNamespaceServiceAppDashboardDto {
 
   @Expose()
   type: string; // Enum
+
+  @Expose()
+  description: string;
 }
