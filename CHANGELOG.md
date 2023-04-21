@@ -2,6 +2,13 @@
 
 
 
+## 1.35.64 (2023-04-21)
+
+
+### Bug Fixes
+
+* Dashboard dtos. ([6da9ea6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6da9ea684b40f3af40ba67e7878015d7ae20863d))
+
 ## 1.35.63 (2023-04-21)
 
 
