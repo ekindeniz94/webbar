@@ -2,6 +2,16 @@
 
 
 
+## 1.35.65 (2023-04-21)
+
+
+### Bug Fixes
+
+* added app dtos. ([07bfae4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/07bfae42093fbfcae990646db31ed3623bfb0fb1))
+* added namespace navigation. ([dab510a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/dab510ab272475af477c70e36584fd0203e99665))
+* added namespace navigation. ([20c6712](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/20c6712f31167ec591ff43ae01b0830dcb9beea2))
+* Dashboard stats dtos. ([7f07bea](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7f07bead1e1f830da17f80016303ab677a585bf6))
+
 ## 1.35.64 (2023-04-21)
 
 
