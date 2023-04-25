@@ -2,6 +2,13 @@
 
 
 
+## 1.35.67 (2023-04-25)
+
+
+### Bug Fixes
+
+* add key vault sec dto ([55e2176](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55e2176e6f3e7fa4100f4ccc3b8a99e5456c5ceb))
+
 ## 1.35.66 (2023-04-21)
 
 
