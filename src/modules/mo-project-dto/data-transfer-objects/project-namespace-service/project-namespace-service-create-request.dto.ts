@@ -144,7 +144,7 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @Expose()
   envVars: ProjectNamespaceServiceEnvvarCreateRequestDto[];
 
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => IdDto)
   // @ValidateNested()
   @Expose()
