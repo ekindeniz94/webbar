@@ -2,6 +2,13 @@
 
 
 
+## 1.35.68 (2023-04-25)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceKubernetesSettingsDto ([d6349a9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6349a932d721af358ffb09a7428ea56603ddda6))
+
 ## 1.35.67 (2023-04-25)
 
 
