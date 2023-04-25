@@ -6,7 +6,6 @@ import { ProjectStateEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
-import { GitConnectionPublicDto } from '../../../mo-git/data-transfer-objects/git-connection/git-connection-public.dto';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { GitConnectionDto } from '../../../mo-git';
 

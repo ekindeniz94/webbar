@@ -99,7 +99,7 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
 
   @Type(() => ProjectNamespaceDto)
   @Expose()
-  stage: ProjectNamespaceDto;
+  projectNamespace: ProjectNamespaceDto;
 
   @Expose()
   state: ProjectNamespaceServiceStateEnum;

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
 
-export class ProjectNamespaceServiceKubernetesSettingsDto extends BaseEntityDto {
+export class ProjectNamespaceServiceKubernetesSettingsDto {
   @Type(() => Number)
   @Expose()
   limitMemoryMB: number;
