@@ -2,6 +2,13 @@
 
 
 
+## 1.36.2 (2023-04-26)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceOverviewItemDto ([f74a92f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f74a92f8abf3d5d701924e4470d9993f8462be87))
+
 ## 1.36.1 (2023-04-26)
 
 
