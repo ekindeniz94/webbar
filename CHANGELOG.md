@@ -2,6 +2,13 @@
 
 
 
+## 1.36.1 (2023-04-26)
+
+
+### Bug Fixes
+
+* namespace dtos ([c6a76d9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c6a76d9cea7ac2f324e7c9ece9e96006b1bef869))
+
 # 1.36.0 (2023-04-26)
 
 
