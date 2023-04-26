@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
 
 export class ProjectNamespaceServiceAppDashboardDto {
   @Expose()
@@ -14,7 +15,7 @@ export class ProjectNamespaceServiceAppDashboardDto {
   name: string;
 
   @Expose()
-  type: string; // Enum
+  type: AppLibraryTypeEnum; // Enum
 
   @Expose()
   description: string;

@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, isString } from 'class-validator';
+import { isArray, isBoolean, IsEnum, IsNotEmpty, isString } from 'class-validator';
 import { TransformFnParams } from 'class-transformer/types/interfaces';
 import { NamespaceNotificationDto } from '../../../mo-notification/data-transfer-objects/namespace-notification.dto';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
@@ -17,8 +17,12 @@ import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto/enums/
 
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 import { BaseEntityDto } from '@mo/database-dto';
+import { ServiceTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
+  @Expose()
+  type: ServiceTypeEnum;
+
   @Expose()
   shortId: string;
 
