@@ -2,6 +2,13 @@
 
 
 
+# 1.36.0 (2023-04-26)
+
+
+### Features
+
+* import. ([f7717aa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f7717aa96e07238c27ffc90f2ff309e0505e6211))
+
 ## 1.35.68 (2023-04-25)
 
 
