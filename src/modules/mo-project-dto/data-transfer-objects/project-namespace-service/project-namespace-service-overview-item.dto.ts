@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app';
 import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
 import moment from 'moment/moment';
+import { isBoolean } from 'class-validator';
 
 export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
@@ -21,6 +22,8 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   runningInstanceCount: number;
 
+  @Type(() => Boolean)
+  @Transform(({ value }) => (isBoolean(value) ? value : true))
   @Expose()
   switchedOn: boolean; // Enum ON/OFF;
 
