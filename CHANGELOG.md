@@ -2,6 +2,13 @@
 
 
 
+## 1.36.3 (2023-04-28)
+
+
+### Bug Fixes
+
+* project invitation ([8ec878b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ec878b4b592599ec207b3d72760364c4bde9e18))
+
 ## 1.36.2 (2023-04-26)
 
 
