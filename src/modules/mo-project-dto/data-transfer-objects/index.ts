@@ -1,6 +1,7 @@
 export * from './key-vault';
 export * from './k8s';
 export * from './project';
+export * from './project-invitation';
 export * from './project-namespace';
 export * from './project-namespace-service';
 export * from './project-namespace-service-cname';

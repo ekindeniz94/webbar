@@ -3,12 +3,7 @@ import { Expose, Transform } from 'class-transformer';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
 import { StripTags } from '@mo/js-utils';
 
-export class NamespaceInvitationCreateRequestDto {
-  // @IsNotEmpty()
-  // @IsString()
-  // @Expose()
-  // namespaceId: string;
-
+export class ProjectInvitationCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @StripTags()
