@@ -2,6 +2,13 @@
 
 
 
+## 1.36.4 (2023-05-02)
+
+
+### Bug Fixes
+
+* update k8s messages ([e06fa7a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e06fa7ae8d6be73626be813c7cac978ca356e67e))
+
 ## 1.36.3 (2023-04-28)
 
 
