@@ -1,10 +1,10 @@
 import { Expose } from 'class-transformer';
 import { IsNumber, IsString } from 'class-validator';
 
-export class VolumeStatsDto {
+export class VolumeRequestDto {
   @Expose()
   @IsString()
-  volumeId: string;
+  namespaceName: string;
 
   @Expose()
   @IsString()
@@ -12,13 +12,5 @@ export class VolumeStatsDto {
 
   @Expose()
   @IsNumber()
-  totalBytes: number;
-
-  @Expose()
-  @IsNumber()
-  freeBytes: number;
-
-  @Expose()
-  @IsNumber()
-  usedBytes: number;
+  sizeInGb: number;
 }

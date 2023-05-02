@@ -1,5 +1,5 @@
-import { Expose } from 'class-transformer/types/decorators';
-import { IsNumber, IsOptional, IsString } from 'class-validator/types/decorator/decorators';
+import { Expose } from 'class-transformer';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class VolumeBackupResponseDto {
   @Expose()

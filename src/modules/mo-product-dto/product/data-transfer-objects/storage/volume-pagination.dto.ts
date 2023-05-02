@@ -1,5 +1,5 @@
-import { Expose } from 'class-transformer/types/decorators';
-import { IsNumber } from 'class-validator/types/decorator/decorators';
+import { Expose } from 'class-transformer';
+import { IsNumber } from 'class-validator';
 import { VolumeStatsDto } from './volume-stats.dto';
 
 export class VolumePaginationDto {
