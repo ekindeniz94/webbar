@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, IsOptional } from 'class-validator';
+import { isArray, isBoolean } from 'class-validator';
 import { K8sAppDto } from './k8s-app.dto';
 import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
@@ -13,14 +13,14 @@ export class K8sProjectNamespaceServiceDto {
   @Expose()
   displayName: string;
 
-  @Expose()
-  shortId: string;
-
+  // @Expose()
+  // shortId: string;
+  //
   @Expose()
   fullHostname: string; // MoNamespaceUtils.fullHostname(namespace, stage, service)
 
-  @Expose()
-  k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage, service)
+  // @Expose()
+  // k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage, service)
 
   @Type(() => ProjectNamespaceServiceCnameDto)
   @Expose()
