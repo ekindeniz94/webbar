@@ -2,6 +2,13 @@
 
 
 
+## 1.36.5 (2023-05-03)
+
+
+### Bug Fixes
+
+* organization user group list item ([8550bd9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8550bd96365fc6e4a6ee9776a95397673561ba09))
+
 ## 1.36.4 (2023-05-02)
 
 
