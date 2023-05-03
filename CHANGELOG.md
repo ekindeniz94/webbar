@@ -2,6 +2,13 @@
 
 
 
+## 1.36.7 (2023-05-03)
+
+
+### Bug Fixes
+
+* export K8sNotificationDto ([8beec72](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8beec72a61263f08d58bd6289555de64671d6ee4))
+
 ## 1.36.6 (2023-05-03)
 
 
