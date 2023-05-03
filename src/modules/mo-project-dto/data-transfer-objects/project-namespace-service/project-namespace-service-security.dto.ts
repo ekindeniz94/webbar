@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
-import { BuildStateEnum } from '../../../mo-notification';
 import moment from 'moment/moment';
 import { SecurityLogInterface, SecurityLogSeverityEnum } from '../../../mo-namespace';
+import { BuildStateEnum } from '../../../mo-product-dto';
 
 export class ProjectNamespaceServiceSecurityDto {
   @Expose()

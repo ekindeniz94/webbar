@@ -1,5 +1,6 @@
-import { K8sNotificationStateEnum, MessageTypeEnum } from '../../enums';
+import { MessageTypeEnum } from '../../enums';
 import { Expose } from 'class-transformer';
+import { K8sNotificationStateEnum } from '../../../mo-product-dto';
 
 export class K8sMsgDto {
   @Expose()
