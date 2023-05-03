@@ -2,6 +2,13 @@
 
 
 
+## 1.36.6 (2023-05-03)
+
+
+### Bug Fixes
+
+* update k8s notification ([1c498f1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1c498f1214ef18db365f3f14be40c035908de649))
+
 ## 1.36.5 (2023-05-03)
 
 
