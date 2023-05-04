@@ -2,6 +2,13 @@
 
 
 
+## 1.36.10 (2023-05-04)
+
+
+### Bug Fixes
+
+* namespace stats ([57b1028](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/57b1028c00a2707b41acff97763703d77abe650b))
+
 ## 1.36.9 (2023-05-04)
 
 
