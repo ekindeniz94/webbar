@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isNumber } from 'lodash';
+import { isNumber } from 'class-validator';
 
-export class EphemeralStorageDto {
+export class StorageDto {
   @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Expose()

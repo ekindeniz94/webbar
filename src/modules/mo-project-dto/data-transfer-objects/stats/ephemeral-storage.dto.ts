@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isNumber } from 'class-validator';
 
-export class CpuDto {
+export class EphemeralStorageDto {
   @Type(() => Number)
   @Transform(({ value }) => value ?? 0)
   @Expose()

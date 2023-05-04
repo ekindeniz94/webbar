@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isNumber } from 'lodash';
+import { isNumber } from 'class-validator';
 
 export class MemoryDto {
   @Type(() => Number)
