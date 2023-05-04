@@ -1,4 +1,4 @@
-export * from './add-user-to-project-request.dto';
+export * from './change-project-user-group-request.dto';
 
 export * from './project.dto';
 export * from './project-create-request.dto';
