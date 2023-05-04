@@ -2,6 +2,13 @@
 
 
 
+## 1.36.8 (2023-05-04)
+
+
+### Bug Fixes
+
+* add ChangeOrganizationUserGroupRequestDto ([b9427da](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b9427da9ec44ff21e3906a01c69bf9c4c2c75b53))
+
 ## 1.36.7 (2023-05-03)
 
 
