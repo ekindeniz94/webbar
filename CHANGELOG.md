@@ -2,6 +2,13 @@
 
 
 
+## 1.36.9 (2023-05-04)
+
+
+### Bug Fixes
+
+* service overview list ([e21e594](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e21e594fc4151630241e7631d8ab0716ec124ee5))
+
 ## 1.36.8 (2023-05-04)
 
 
