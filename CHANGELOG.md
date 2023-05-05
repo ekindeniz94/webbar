@@ -2,6 +2,13 @@
 
 
 
+## 1.36.11 (2023-05-05)
+
+
+### Bug Fixes
+
+* add ProjectNamespaceServiceHostListItemDto ([7ab3f41](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7ab3f41bed4c5c13fccab2d7547e2eda75d0996b))
+
 ## 1.36.10 (2023-05-04)
 
 
