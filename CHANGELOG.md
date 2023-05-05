@@ -2,6 +2,13 @@
 
 
 
+## 1.36.13 (2023-05-05)
+
+
+### Bug Fixes
+
+* add ContainerBuildListItemDto ([7691d4a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7691d4a098bbd993e9c454c91274da3d9c3a46f0))
+
 ## 1.36.12 (2023-05-05)
 
 
