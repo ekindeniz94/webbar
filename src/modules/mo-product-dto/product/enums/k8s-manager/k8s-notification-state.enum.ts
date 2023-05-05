@@ -6,7 +6,7 @@ export enum K8sNotificationStateEnum {
   ERROR = 'ERROR'
 }
 
-export const K8sNotificationStateEnum_STATES = [
+export const K8sNotificationStateEnum_ALL = [
   K8sNotificationStateEnum.STARTED,
   K8sNotificationStateEnum.FAILED,
   K8sNotificationStateEnum.SUCCEEDED,

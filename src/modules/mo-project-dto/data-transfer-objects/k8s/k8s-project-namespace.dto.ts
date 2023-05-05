@@ -9,11 +9,14 @@ export class K8sProjectNamespaceDto {
   @Expose()
   displayName: string;
 
-  @Expose()
-  k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage)
+  // @Expose()
+  // k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage)
+  //
+  // @Expose()
+  // hostname: string; // MoNamespaceUtils.fullHostname(namespace, stage)
 
   @Expose()
-  hostname: string; // MoNamespaceUtils.fullHostname(namespace, stage)
+  name: string; // MoNamespaceUtils.kubernetesName(namespace, stage)
 
   @Expose()
   storageSizeInMb: number; // namespace.subscription.plan.product.persistentDiskInMb

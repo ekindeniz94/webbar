@@ -2,6 +2,55 @@
 
 
 
+## 1.36.10 (2023-05-04)
+
+
+### Bug Fixes
+
+* namespace stats ([57b1028](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/57b1028c00a2707b41acff97763703d77abe650b))
+
+## 1.36.9 (2023-05-04)
+
+
+### Bug Fixes
+
+* service overview list ([e21e594](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e21e594fc4151630241e7631d8ab0716ec124ee5))
+
+## 1.36.8 (2023-05-04)
+
+
+### Bug Fixes
+
+* add ChangeOrganizationUserGroupRequestDto ([b9427da](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b9427da9ec44ff21e3906a01c69bf9c4c2c75b53))
+
+## 1.36.7 (2023-05-03)
+
+
+### Bug Fixes
+
+* export K8sNotificationDto ([8beec72](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8beec72a61263f08d58bd6289555de64671d6ee4))
+
+## 1.36.6 (2023-05-03)
+
+
+### Bug Fixes
+
+* update k8s notification ([1c498f1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1c498f1214ef18db365f3f14be40c035908de649))
+
+## 1.36.5 (2023-05-03)
+
+
+### Bug Fixes
+
+* organization user group list item ([8550bd9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8550bd96365fc6e4a6ee9776a95397673561ba09))
+
+## 1.36.4 (2023-05-02)
+
+
+### Bug Fixes
+
+* update k8s messages ([e06fa7a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e06fa7ae8d6be73626be813c7cac978ca356e67e))
+
 ## 1.36.3 (2023-04-28)
 
 

@@ -3,10 +3,15 @@ import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-ser
 import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
 import moment from 'moment/moment';
 import { isBoolean } from 'class-validator';
+import { isNumber } from 'lodash';
+import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 
 export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   id: string;
+
+  @Expose()
+  displayName: string;
 
   @Expose()
   type: ServiceTypeEnum; // Enum
@@ -19,8 +24,14 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   updatedAt: Date;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  runningInstanceCount: number;
+  lastPodCreatedAt: Date;
+
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 0)
+  @Expose()
+  podCount: number;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (isBoolean(value) ? value : true))
@@ -33,20 +44,22 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   runningSince: Date;
 
+  @Type(() => CpuDto)
   @Expose()
-  cpuUsagePercentage: number;
+  cpu: CpuDto;
 
+  @Type(() => MemoryDto)
   @Expose()
-  ramUsagePercentage: number;
+  memory: MemoryDto;
 
+  @Type(() => EphemeralStorageDto)
   @Expose()
-  storageUsageBytes: number;
+  ephemeralStorage: EphemeralStorageDto;
 
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 0)
   @Expose()
-  trafficConsumptionBytes: number;
-
-  @Expose()
-  temporaryStorageUsageBytes: number;
+  trafficInBytes: number;
 
   @Type(() => ProjectNamespaceServiceAppDashboardDto)
   @Expose()

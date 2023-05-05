@@ -5,8 +5,8 @@ export class K8sProjectDto {
   @Expose()
   id: string;
 
-  @Expose()
-  shortId: string;
+  // @Expose()
+  // shortId: string;
 
   @Expose()
   displayName: string;

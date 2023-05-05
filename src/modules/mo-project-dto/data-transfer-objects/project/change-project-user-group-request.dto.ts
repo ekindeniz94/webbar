@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 
-export class AddUserToProjectRequestDto {
+export class ChangeProjectUserGroupRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()

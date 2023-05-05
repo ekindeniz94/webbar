@@ -1,5 +1,6 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceDashboardDto } from '../project-namespace-service/project-namespace-service-dashboard.dto';
+import { isArray } from 'class-validator';
 
 export class ProjectNamespaceDashboardResponseDto {
   @Expose()
@@ -11,6 +12,8 @@ export class ProjectNamespaceDashboardResponseDto {
   @Expose()
   updatedAt: Date;
 
+  @Type(() => ProjectNamespaceServiceDashboardDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   services: ProjectNamespaceServiceDashboardDto[];
 }
