@@ -2,6 +2,13 @@
 
 
 
+## 1.36.14 (2023-05-08)
+
+
+### Bug Fixes
+
+* service dto ([5f352fb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5f352fb5d8416b40d20b7f863fdd24dfb0fa5a4e))
+
 ## 1.36.13 (2023-05-05)
 
 
