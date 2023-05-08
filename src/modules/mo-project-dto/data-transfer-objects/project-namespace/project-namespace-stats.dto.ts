@@ -1,18 +1,25 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
+import { CpuDto, EphemeralStorageDto, MemoryDto, StorageDto } from '../stats';
 
 export class ProjectNamespaceStatsDto {
+  @Type(() => CpuDto)
   @Expose()
-  cpuAllocatedCores: number;
+  cpu: CpuDto;
 
+  @Type(() => MemoryDto)
   @Expose()
-  ramAllocatedBytes: number;
+  memory: MemoryDto;
 
+  @Type(() => EphemeralStorageDto)
   @Expose()
-  storageUsageBytes: number;
+  ephemeralStorage: EphemeralStorageDto;
 
+  @Type(() => StorageDto)
   @Expose()
-  trafficConsumptionBytes: number;
+  storage: StorageDto;
 
+  @Type(() => Number)
+  @Transform(({ value }) => value ?? 0)
   @Expose()
-  temporaryStorageUsageBytes: number;
+  trafficInBytes: number;
 }

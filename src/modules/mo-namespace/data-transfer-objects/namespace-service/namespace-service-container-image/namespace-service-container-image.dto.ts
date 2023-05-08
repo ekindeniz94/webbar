@@ -6,7 +6,7 @@ import { NamespaceServiceContainerImageServiceDto } from './namespace-service-co
 import { isArray } from 'class-validator';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
 
-export class NamespaceServiceContainerImageDto {
+export class NamespaceServiceContainerImageDto2 {
   @Expose()
   containerRegistryUrl: string;
 

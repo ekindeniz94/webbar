@@ -1,7 +1,8 @@
 import { NamespaceStageDto } from './namespace-stage';
-import { K8sNotificationStateEnum, NamespaceNotificationDto } from '../../mo-notification';
+import { NamespaceNotificationDto } from '../../mo-notification';
 import { Expose, Type } from 'class-transformer';
 import { IsEnum, IsOptional } from 'class-validator';
+import { K8sNotificationStateEnum } from '../../mo-product-dto';
 
 export class DashboardStageNotificationDto {
   @Type(() => Number)
