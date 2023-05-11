@@ -2,6 +2,13 @@
 
 
 
+## 1.36.15 (2023-05-11)
+
+
+### Bug Fixes
+
+* update kubernetes events ([be40268](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/be402681f142a9ba1789e27e655cc14b1750b3ae))
+
 ## 1.36.14 (2023-05-08)
 
 
