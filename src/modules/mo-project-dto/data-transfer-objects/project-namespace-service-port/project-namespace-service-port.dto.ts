@@ -22,14 +22,14 @@ export class ProjectNamespaceServicePortDto extends BaseEntityDto {
   @Expose()
   expose: boolean;
 
-  @Type(() => Boolean)
-  @Expose()
-  spectrumEnableTls: boolean;
-
-  @Expose()
-  spectrumAppId: string;
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  deletedAt?: Date;
+  // @Type(() => Boolean)
+  // @Expose()
+  // spectrumEnableTls: boolean;
+  //
+  // @Expose()
+  // spectrumAppId: string;
+  //
+  // @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  // @Expose()
+  // deletedAt?: Date;
 }

@@ -4,10 +4,7 @@ import { KubernetesEventStatusReasonEnum, KubernetesPublicEventDto } from '../..
 
 export class ProjectNamespaceServicePodDto extends BaseEntityDto {
   @Expose()
-  shortId: string;
-
-  @Expose()
-  k8sName: string;
+  name: string;
 
   @Expose()
   state: KubernetesEventStatusReasonEnum;

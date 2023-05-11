@@ -3,45 +3,45 @@ import { NamespaceDto, NamespaceStageDto } from './data-transfer-objects';
 import { ProjectNamespaceServiceDto } from '../mo-project-dto';
 
 export class MoNamespaceUtils {
-  static fullHostname(
-    namespace: NamespaceDto,
-    stage?: NamespaceStageDto,
-    service?: ProjectNamespaceServiceDto
-  ): string {
-    // let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.subscription.priceInterval.product.cluster.host}`;
-    let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.cluster.host}`;
-    if (stage) {
-      hostname = `${stage.subdomain}-${hostname}`;
-    }
-    if (stage && service) {
-      hostname = `${service.hostname}-${hostname}`;
-    }
-    return hostname;
-  }
+  // static fullHostname(
+  //   namespace: NamespaceDto,
+  //   stage?: NamespaceStageDto,
+  //   service?: ProjectNamespaceServiceDto
+  // ): string {
+  //   // let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.subscription.priceInterval.product.cluster.host}`;
+  //   let hostname = `${namespace.hostname}-${namespace.shortId}.${namespace.cluster.host}`;
+  //   if (stage) {
+  //     hostname = `${stage.subdomain}-${hostname}`;
+  //   }
+  //   if (stage && service) {
+  //     hostname = `${service.hostname}-${hostname}`;
+  //   }
+  //   return hostname;
+  // }
 
-  static fullHostnameWithProtocol(
-    namespace: NamespaceDto,
-    stage?: NamespaceStageDto,
-    service?: ProjectNamespaceServiceDto
-  ): string {
-    let hostname = this.fullHostname(namespace, stage, service);
-    return `https://${hostname}`;
-  }
+  // static fullHostnameWithProtocol(
+  //   namespace: NamespaceDto,
+  //   stage?: NamespaceStageDto,
+  //   service?: ProjectNamespaceServiceDto
+  // ): string {
+  //   let hostname = this.fullHostname(namespace, stage, service);
+  //   return `https://${hostname}`;
+  // }
 
-  static kubernetesName(
-    namespace: NamespaceDto,
-    stage: NamespaceStageDto,
-    service?: ProjectNamespaceServiceDto
-  ): string {
-    if (service) {
-      return `${service.hostname}-${service.shortId}`; // SERVICE
-    }
-    return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}`; // NAMESPACE OR STAGE Name
-  }
-
-  static internalServiceName(service: ProjectNamespaceServiceDto): string {
-    return `${service.name}-${service.shortId}`;
-  }
+  // static kubernetesName(
+  //   namespace: NamespaceDto,
+  //   stage: NamespaceStageDto,
+  //   service?: ProjectNamespaceServiceDto
+  // ): string {
+  //   if (service) {
+  //     return `${service.hostname}-${service.shortId}`; // SERVICE
+  //   }
+  //   return `${namespace.hostname}-${stage.subdomain}-${namespace.shortId}-${stage.shortId}`; // NAMESPACE OR STAGE Name
+  // }
+  //
+  // static internalServiceName(service: ProjectNamespaceServiceDto): string {
+  //   return `${service.name}-${service.shortId}`;
+  // }
 
   // CALCULATE DAYS IN CURRENT BILLING PERIOD
   static billingPeriodDays(namespace: NamespaceDto): number {
