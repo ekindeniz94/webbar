@@ -2,6 +2,13 @@
 
 
 
+## 1.36.16 (2023-05-12)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceCreateRequestDto ([424c0fe](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/424c0fe41b9dcc80e92e826de752fac8a16a007a))
+
 ## 1.36.15 (2023-05-11)
 
 
