@@ -2,6 +2,13 @@
 
 
 
+## 1.36.17 (2023-05-13)
+
+
+### Bug Fixes
+
+* add new project ws events ([a13eefb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a13eefb5585b15a5d68fb5e4eb5441ad0717923a))
+
 ## 1.36.16 (2023-05-12)
 
 
