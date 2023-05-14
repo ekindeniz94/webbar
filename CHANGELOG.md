@@ -2,6 +2,13 @@
 
 
 
+## 1.36.18 (2023-05-14)
+
+
+### Bug Fixes
+
+* log stream ([d6b7431](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6b7431cf92519e8979a4e81fd80dbdfaabe3323))
+
 ## 1.36.17 (2023-05-13)
 
 
