@@ -4,11 +4,6 @@ import { IsNumber, IsOptional, IsString } from 'class-validator';
 export class ServiceLogStreamRequestDto {
   @Expose()
   @IsString()
-  @IsOptional()
-  id?: string;
-
-  @Expose()
-  @IsString()
   namespace: string;
 
   @Expose()
@@ -18,4 +13,9 @@ export class ServiceLogStreamRequestDto {
   @Expose()
   @IsNumber()
   sinceSeconds: number = -1;
+
+  @Expose()
+  @IsString()
+  @IsOptional()
+  postTo?: string;
 }
