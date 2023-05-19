@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
-import { OriginTrafficDto } from '../../../mo-namespace';
+// import { OriginTrafficDto } from '../../../mo-namespace';
 
-export class ProjectNamespaceServicePodOriginTrafficDto extends OriginTrafficDto {
+export class ProjectNamespaceServicePodOriginTrafficDto /* extends OriginTrafficDto */ {
   @Expose()
   id: string;
 

@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
-import { OriginTrafficDto } from '../traffic';
+// import { OriginTrafficDto } from '../traffic';
 
-export class NamespaceStageOriginTrafficDto extends OriginTrafficDto {
+export class NamespaceStageOriginTrafficDto /*extends OriginTrafficDto*/ {
   @Expose()
   id: string;
 

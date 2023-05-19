@@ -9,6 +9,7 @@ export * from './project-namespace-service-envvar';
 export * from './project-namespace-service-kubernetes-settings';
 export * from './project-namespace-service-pod';
 export * from './project-namespace-service-port';
+export * from './traffic';
 
 export * from './create-project-cluster-item.dto';
 export * from './project-namespace-service-build';

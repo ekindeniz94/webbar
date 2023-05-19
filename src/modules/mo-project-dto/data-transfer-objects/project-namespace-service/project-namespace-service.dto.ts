@@ -9,6 +9,7 @@ import { ProjectNamespaceServiceContainerDto } from '../project-namespace-servic
 import { IdDto } from '@mo/core-dto';
 import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings/project-namespace-service-git-settings.dto';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { OriginTrafficDto } from '../traffic';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -65,10 +66,9 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
 
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0)
+  @Type(() => OriginTrafficDto)
   @Expose()
-  trafficInBytes: number;
+  traffic: OriginTrafficDto;
 
   // get tcpPort(): ProjectNamespaceServicePortDto | undefined {
   //   return (
