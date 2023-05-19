@@ -2,6 +2,13 @@
 
 
 
+## 1.36.21 (2023-05-19)
+
+
+### Bug Fixes
+
+* update traffic dto ([276f4ab](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/276f4abb17aab297db95bead98dfa8a14d5e0b2d))
+
 ## 1.36.20 (2023-05-16)
 
 
