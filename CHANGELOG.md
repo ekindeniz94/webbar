@@ -2,6 +2,13 @@
 
 
 
+## 1.36.22 (2023-05-22)
+
+
+### Bug Fixes
+
+* update ProjectSocketDataEventEnum ([d8a6477](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d8a647760494d8de23e90af69f53cd2efeec3866))
+
 ## 1.36.21 (2023-05-19)
 
 
