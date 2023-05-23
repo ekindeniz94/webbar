@@ -10,6 +10,7 @@ import { IdDto } from '@mo/core-dto';
 import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings/project-namespace-service-git-settings.dto';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { OriginTrafficDto } from '../traffic';
+import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -69,6 +70,11 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => OriginTrafficDto)
   @Expose()
   traffic: OriginTrafficDto;
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => KubernetesPublicEventDto)
+  @Expose()
+  messages: KubernetesPublicEventDto[];
 
   // get tcpPort(): ProjectNamespaceServicePortDto | undefined {
   //   return (
