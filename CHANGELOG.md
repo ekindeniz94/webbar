@@ -2,6 +2,13 @@
 
 
 
+## 1.36.24 (2023-05-23)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceDto ([e617522](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e61752226ed28ac233b27384704cafad01fa51cb))
+
 ## 1.36.23 (2023-05-23)
 
 
