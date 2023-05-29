@@ -2,6 +2,13 @@
 
 
 
+## 1.36.25 (2023-05-29)
+
+
+### Bug Fixes
+
+* update k8s reason enum ([e5276c3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e5276c3cc57fb3eae423136c5947a4bbd6bb90cf))
+
 ## 1.36.24 (2023-05-23)
 
 
