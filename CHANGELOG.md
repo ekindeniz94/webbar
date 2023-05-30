@@ -2,6 +2,13 @@
 
 
 
+## 1.36.26 (2023-05-30)
+
+
+### Bug Fixes
+
+* add name to ProjectNamespaceStatsDto ([49c5df1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/49c5df1f311749f1876d962a04e8a364678597f0))
+
 ## 1.36.25 (2023-05-29)
 
 
