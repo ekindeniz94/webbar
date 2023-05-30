@@ -9,6 +9,9 @@ export class ProjectNamespaceStatsDto {
   @Expose()
   displayName: string;
 
+  @Expose()
+  name: string;
+
   @Type(() => CpuDto)
   @Expose()
   cpu: CpuDto;
