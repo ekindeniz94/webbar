@@ -1,9 +1,12 @@
 import { Expose } from 'class-transformer';
-import { KubernetesWorkloadEnum } from '../enums';
 import { IsEnum } from 'class-validator';
+import { KubernetesWorkloadEnum } from '../../../enums';
 
-export class KubernetesWorkloadListRequestDto {
+export class KubernetesWorkloadDeleteRequestDto {
   @IsEnum(KubernetesWorkloadEnum)
   @Expose()
   kubernetesWorkload: KubernetesWorkloadEnum;
+
+  @Expose()
+  data: any;
 }

@@ -1,5 +1,6 @@
 export * from './k8s-manager';
 export * from './permissions';
+export * from './workload';
 
 export * from './cluster-provider.enum';
 export * from './cluster-type.enum';
