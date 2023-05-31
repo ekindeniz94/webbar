@@ -2,6 +2,13 @@
 
 
 
+## 1.36.27 (2023-05-31)
+
+
+### Bug Fixes
+
+* update k8s workload ([d220910](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d22091074987d32e5f5c66291251dc795edeff68))
+
 ## 1.36.26 (2023-05-30)
 
 
