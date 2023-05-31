@@ -2,6 +2,13 @@
 
 
 
+## 1.36.28 (2023-05-31)
+
+
+### Bug Fixes
+
+* added 2 new workloads. ([33f5c79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/33f5c792eb2c906bd67469dad087ff53c81fae32))
+
 ## 1.36.27 (2023-05-31)
 
 
