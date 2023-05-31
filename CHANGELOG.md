@@ -2,6 +2,13 @@
 
 
 
+## 1.36.29 (2023-05-31)
+
+
+### Bug Fixes
+
+* updated order. ([c181fff](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c181fff2567176ce13a4aff4b9435d76ce78b481))
+
 ## 1.36.28 (2023-05-31)
 
 
