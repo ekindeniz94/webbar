@@ -1,8 +1,8 @@
 export enum KubernetesWorkloadEnum {
-  DEPLOYMENT = 'deployment',
   NAMESPACE = 'namespace',
-  SERVICE = 'service',
   POD = 'pod',
+  DEPLOYMENT = 'deployment',
+  SERVICE = 'service',
   INGRESS = 'ingress',
   CONFIGMAP = 'configmap',
   SECRET = 'secret',
@@ -18,19 +18,19 @@ export enum KubernetesWorkloadEnum {
 }
 
 export const KubernetesWorkloadEnum_ALL = [
-  KubernetesWorkloadEnum.DEPLOYMENT,
   KubernetesWorkloadEnum.NAMESPACE,
-  KubernetesWorkloadEnum.SERVICE,
   KubernetesWorkloadEnum.POD,
+  KubernetesWorkloadEnum.DEPLOYMENT,
+  KubernetesWorkloadEnum.SERVICE,
   KubernetesWorkloadEnum.INGRESS,
   KubernetesWorkloadEnum.CONFIGMAP,
   KubernetesWorkloadEnum.SECRET,
   KubernetesWorkloadEnum.NODE,
   KubernetesWorkloadEnum.DAEMON_SET,
   KubernetesWorkloadEnum.STATEFUL_SET,
+  KubernetesWorkloadEnum.REPLICA_SET,
   KubernetesWorkloadEnum.JOB,
   KubernetesWorkloadEnum.CRON_JOB,
-  KubernetesWorkloadEnum.REPLICA_SET,
   KubernetesWorkloadEnum.PERSISTENT_VOLUME,
   KubernetesWorkloadEnum.PERSISTENT_VOLUME_CLAIM
 ];
