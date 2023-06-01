@@ -2,6 +2,13 @@
 
 
 
+## 1.36.31 (2023-06-01)
+
+
+### Bug Fixes
+
+* revert changes ([97b2570](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/97b257049543acd5176f2bff20e7866c73adaf69))
+
 ## 1.36.30 (2023-06-01)
 
 
