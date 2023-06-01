@@ -1,15 +1,11 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto, CountryDto } from '@mo/database-dto';
-import { ClusterPublicDto, OrganizationNameDto, ProductNameDto } from '../../mo-product-dto';
+import { CountryDto } from '@mo/database-dto';
+import { ClusterPublicDto, OrganizationNameDto } from '../../mo-product-dto';
 
-export class CreateProjectClusterItemDto {
+export class CreateUniqueProjectClusterItemDto {
   @Type(() => OrganizationNameDto)
   @Expose()
   organization: OrganizationNameDto;
-
-  @Type(() => ProductNameDto)
-  @Expose()
-  product: ProductNameDto;
 
   @Type(() => ClusterPublicDto)
   @Expose()
