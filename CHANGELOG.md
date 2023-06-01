@@ -2,6 +2,188 @@
 
 
 
+## 1.36.29 (2023-05-31)
+
+
+### Bug Fixes
+
+* updated order. ([c181fff](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c181fff2567176ce13a4aff4b9435d76ce78b481))
+
+## 1.36.28 (2023-05-31)
+
+
+### Bug Fixes
+
+* added 2 new workloads. ([33f5c79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/33f5c792eb2c906bd67469dad087ff53c81fae32))
+
+## 1.36.27 (2023-05-31)
+
+
+### Bug Fixes
+
+* update k8s workload ([d220910](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d22091074987d32e5f5c66291251dc795edeff68))
+
+## 1.36.26 (2023-05-30)
+
+
+### Bug Fixes
+
+* add name to ProjectNamespaceStatsDto ([49c5df1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/49c5df1f311749f1876d962a04e8a364678597f0))
+
+## 1.36.25 (2023-05-29)
+
+
+### Bug Fixes
+
+* update k8s reason enum ([e5276c3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e5276c3cc57fb3eae423136c5947a4bbd6bb90cf))
+
+## 1.36.24 (2023-05-23)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceDto ([e617522](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e61752226ed28ac233b27384704cafad01fa51cb))
+
+## 1.36.23 (2023-05-23)
+
+
+### Bug Fixes
+
+* update ProjectSocketDataEventEnum ([6bc38a1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6bc38a17c7f799d74880734c8591f19c4532e31c))
+
+## 1.36.22 (2023-05-22)
+
+
+### Bug Fixes
+
+* update ProjectSocketDataEventEnum ([d8a6477](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d8a647760494d8de23e90af69f53cd2efeec3866))
+
+## 1.36.21 (2023-05-19)
+
+
+### Bug Fixes
+
+* update traffic dto ([276f4ab](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/276f4abb17aab297db95bead98dfa8a14d5e0b2d))
+
+## 1.36.20 (2023-05-16)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceStatsDto ([5f072d0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5f072d0dacdd07982abe39cbf4e4b50a31bd7c28))
+
+## 1.36.19 (2023-05-16)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServicePatchRequestDto ([0bb11f8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0bb11f8acc5df77f6c5e9de991d3a5dccf4be5e9))
+
+## 1.36.18 (2023-05-14)
+
+
+### Bug Fixes
+
+* log stream ([d6b7431](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6b7431cf92519e8979a4e81fd80dbdfaabe3323))
+
+## 1.36.17 (2023-05-13)
+
+
+### Bug Fixes
+
+* add new project ws events ([a13eefb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a13eefb5585b15a5d68fb5e4eb5441ad0717923a))
+
+## 1.36.16 (2023-05-12)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceCreateRequestDto ([424c0fe](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/424c0fe41b9dcc80e92e826de752fac8a16a007a))
+
+## 1.36.15 (2023-05-11)
+
+
+### Bug Fixes
+
+* update kubernetes events ([be40268](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/be402681f142a9ba1789e27e655cc14b1750b3ae))
+
+## 1.36.14 (2023-05-08)
+
+
+### Bug Fixes
+
+* service dto ([5f352fb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5f352fb5d8416b40d20b7f863fdd24dfb0fa5a4e))
+
+## 1.36.13 (2023-05-05)
+
+
+### Bug Fixes
+
+* add ContainerBuildListItemDto ([7691d4a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7691d4a098bbd993e9c454c91274da3d9c3a46f0))
+
+## 1.36.12 (2023-05-05)
+
+
+### Bug Fixes
+
+* update ([9d471ed](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9d471ed8beb6c700f5ce4d9ec8f385ffb8bcfdb1))
+
+## 1.36.11 (2023-05-05)
+
+
+### Bug Fixes
+
+* add ProjectNamespaceServiceHostListItemDto ([7ab3f41](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7ab3f41bed4c5c13fccab2d7547e2eda75d0996b))
+
+## 1.36.10 (2023-05-04)
+
+
+### Bug Fixes
+
+* namespace stats ([57b1028](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/57b1028c00a2707b41acff97763703d77abe650b))
+
+## 1.36.9 (2023-05-04)
+
+
+### Bug Fixes
+
+* service overview list ([e21e594](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e21e594fc4151630241e7631d8ab0716ec124ee5))
+
+## 1.36.8 (2023-05-04)
+
+
+### Bug Fixes
+
+* add ChangeOrganizationUserGroupRequestDto ([b9427da](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b9427da9ec44ff21e3906a01c69bf9c4c2c75b53))
+
+## 1.36.7 (2023-05-03)
+
+
+### Bug Fixes
+
+* export K8sNotificationDto ([8beec72](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8beec72a61263f08d58bd6289555de64671d6ee4))
+
+## 1.36.6 (2023-05-03)
+
+
+### Bug Fixes
+
+* update k8s notification ([1c498f1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1c498f1214ef18db365f3f14be40c035908de649))
+
+## 1.36.5 (2023-05-03)
+
+
+### Bug Fixes
+
+* organization user group list item ([8550bd9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8550bd96365fc6e4a6ee9776a95397673561ba09))
+
+## 1.36.4 (2023-05-02)
+
+
+### Bug Fixes
+
+* update k8s messages ([e06fa7a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e06fa7ae8d6be73626be813c7cac978ca356e67e))
+
 ## 1.36.3 (2023-04-28)
 
 

@@ -1,3 +1,6 @@
+export * from './k8s-manager';
+export * from './workload';
+
 export * from './cluster.dto';
 export * from './cluster-flat.dto';
 export * from './cluster-create-request.dto';

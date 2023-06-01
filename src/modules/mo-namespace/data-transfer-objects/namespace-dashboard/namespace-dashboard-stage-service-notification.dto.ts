@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../../mo-notification';
 import moment from 'moment';
+import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../../mo-product-dto';
 
 export class NamespaceDashboardStageServiceNotificationDto {
   @Expose()

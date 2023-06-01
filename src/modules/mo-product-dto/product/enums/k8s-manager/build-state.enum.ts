@@ -5,7 +5,7 @@ export enum BuildStateEnum {
   FAILED = 'FAILED'
 }
 
-export const ALL_BUILD_STATE_ENUM = [
+export const BuildStateEnum_ALL = [
   BuildStateEnum.PENDING,
   BuildStateEnum.STARTED,
   BuildStateEnum.FINISHED,

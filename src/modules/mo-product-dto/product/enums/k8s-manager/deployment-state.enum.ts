@@ -5,7 +5,7 @@ export enum DeploymentStateEnum {
   FAILED = 'FAILED'
 }
 
-export const ALL_DEPLOYMENT_STATE_ENUM = [
+export const DeploymentStateEnum_ALL = [
   DeploymentStateEnum.PENDING,
   DeploymentStateEnum.STARTED,
   DeploymentStateEnum.FINISHED,

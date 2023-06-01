@@ -152,7 +152,7 @@ export class ProjectNamespaceServiceCreateRequestDto {
 
   @Type(() => IdDto)
   @Expose()
-  stage: IdDto;
+  projectNamespace: IdDto;
 
   public static gitBranchTransform(params: TransformFnParams): string {
     let value = params.value;

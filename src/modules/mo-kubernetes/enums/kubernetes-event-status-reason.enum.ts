@@ -11,5 +11,12 @@ export enum KubernetesEventStatusReasonEnum {
   PULLED = 'Pulled',
   CREATED = 'Created',
   STARTED = 'Started',
-  BACK_OFF = 'BackOff'
+  BACK_OFF = 'BackOff',
+  POD_SCHEDULED = 'PodScheduled',
+  SUCCESSFUL_ASSIGN = 'SuccessfulAssign',
+  FAILED_CREATE = 'FailedCreate',
+  FAILED_DELETE = 'FailedDelete',
+  FAILED_MOUNT = 'FailedMount',
+  FAILED_SCHEDULING = 'FailedScheduling',
+  FAILED_VALIDATION = 'FailedValidation'
 }
