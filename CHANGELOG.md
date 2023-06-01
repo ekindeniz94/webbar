@@ -2,6 +2,14 @@
 
 
 
+## 1.36.30 (2023-06-01)
+
+
+### Bug Fixes
+
+* new cluster item ([ff83aec](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ff83aec5a9b3101a1da8f899ed3be91c51f2da23))
+* new cluster item ([6c4510b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6c4510b224b61975a0ee7fdaf52c9b9bb18bc3b2))
+
 ## 1.36.29 (2023-05-31)
 
 
