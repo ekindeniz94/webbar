@@ -2,6 +2,13 @@
 
 
 
+## 1.36.32 (2023-06-02)
+
+
+### Bug Fixes
+
+* added more entries to KubernetesWorkloadEnum. ([bccc6e7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bccc6e7a7d9e2aeb4d2cc9b2e4e8e6463f8289d8))
+
 ## 1.36.31 (2023-06-01)
 
 
