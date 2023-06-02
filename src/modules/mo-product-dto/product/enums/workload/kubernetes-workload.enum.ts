@@ -13,8 +13,14 @@ export enum KubernetesWorkloadEnum {
   CRON_JOB = 'cron_job',
   REPLICA_SET = 'replica_set',
   PERSISTENT_VOLUME = 'persistent_volume',
-  PERSISTENT_VOLUME_CLAIM = 'persistent_volume_claim'
-
+  PERSISTENT_VOLUME_CLAIM = 'persistent_volume_claim',
+  HORIZONTAL_POD_AUTOSCALER = 'horizontal_pod_autoscaler',
+  EVENT = 'event',
+  CERTIFICATE = 'certificate',
+  CERTIFICATE_REQUEST = 'certificaterequest',
+  ORDER = 'orders',
+  ISSUER = 'issuer',
+  CLUSTER_ISSUER = 'clusterissuer'
 }
 
 export const KubernetesWorkloadEnum_ALL = [
@@ -32,5 +38,12 @@ export const KubernetesWorkloadEnum_ALL = [
   KubernetesWorkloadEnum.JOB,
   KubernetesWorkloadEnum.CRON_JOB,
   KubernetesWorkloadEnum.PERSISTENT_VOLUME,
-  KubernetesWorkloadEnum.PERSISTENT_VOLUME_CLAIM
+  KubernetesWorkloadEnum.PERSISTENT_VOLUME_CLAIM,
+  KubernetesWorkloadEnum.HORIZONTAL_POD_AUTOSCALER,
+  KubernetesWorkloadEnum.EVENT,
+  KubernetesWorkloadEnum.CERTIFICATE,
+  KubernetesWorkloadEnum.CERTIFICATE_REQUEST,
+  KubernetesWorkloadEnum.ORDER,
+  KubernetesWorkloadEnum.ISSUER,
+  KubernetesWorkloadEnum.CLUSTER_ISSUER
 ];
