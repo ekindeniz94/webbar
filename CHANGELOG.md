@@ -2,6 +2,14 @@
 
 
 
+## 1.36.34 (2023-06-12)
+
+
+### Bug Fixes
+
+* add probesOn to other dto's ([31df3d4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/31df3d4898e04c468dee66a76fd71cebeabfd40f))
+* add probesOn to other dto's ([efa43c9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/efa43c932cc4a58c6feea928db579d6b9355365e))
+
 ## 1.36.33 (2023-06-12)
 
 
