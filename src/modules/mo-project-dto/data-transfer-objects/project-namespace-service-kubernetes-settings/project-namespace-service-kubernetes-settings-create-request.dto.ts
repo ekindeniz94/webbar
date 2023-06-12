@@ -36,4 +36,10 @@ export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
   @IsNotEmpty()
   @IsNumber()
   ephemeralStorageMB: number;
+
+  @Type(() => Boolean)
+  @Transform(({ value }) => (value && isBoolean(value) ? value : false))
+  @IsOptional()
+  @Expose()
+  probesOn: boolean;
 }
