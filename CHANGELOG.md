@@ -2,6 +2,14 @@
 
 
 
+## 1.36.33 (2023-06-12)
+
+
+### Bug Fixes
+
+* add probes ([9172b44](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9172b441aa2511e4217aa9ca11000c7f4ebdcecf))
+* move probesOn into k8sSettings ([f30493f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f30493f7fb67110a581cd325cb8bd5b15c97f460))
+
 ## 1.36.32 (2023-06-02)
 
 
