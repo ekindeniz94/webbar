@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsNumber, isNumberString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsNumber, IsOptional, isBoolean, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
 
 export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
