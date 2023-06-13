@@ -2,6 +2,13 @@
 
 
 
+## 1.36.35 (2023-06-13)
+
+
+### Bug Fixes
+
+* add UPDATE_PROJECT_NAMESPACE_SERVICE_MESSAGES (ProjectSocketDataEventEnum) ([421b2fb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/421b2fbe25dfe4e3e44b2f3c18c0d9bf9087a295))
+
 ## 1.36.34 (2023-06-12)
 
 
