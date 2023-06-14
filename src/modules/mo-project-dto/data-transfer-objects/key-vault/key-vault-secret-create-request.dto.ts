@@ -7,7 +7,7 @@ export class KeyVaultSecretCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(PROJECT_CONST.KEY_VAULT.NAME.MAX)
-  @Matches(/^[a-zA-Z0-9-_]{6,50}$/, {
+  @Matches(/^[a-zA-Z0-9-_]{1,50}$/, {
     message: '$property must conform to: a-z or A-Z or 0-9 or - ;min 6, max 50 char'
   })
   @StripTags()

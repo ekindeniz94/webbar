@@ -62,9 +62,9 @@ export const PROJECT_CONST = {
   },
   KEY_VAULT: {
     NAME: {
-      MIN: 5,
+      MIN: 1,
       MAX: 50,
-      MATCHES: /^[a-zA-Z0-9-_]{6,50}$/
+      MATCHES: /^[a-zA-Z0-9-_]{1,50}$/
     },
     VALUE: {
       MIN: 1,
