@@ -2,6 +2,13 @@
 
 
 
+## 1.36.36 (2023-06-14)
+
+
+### Bug Fixes
+
+* fix ([360a75a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/360a75acbd1ed3033815aafa439c72a92628ba57))
+
 # 1.0.0 (2023-06-14)
 
 
