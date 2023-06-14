@@ -2,6 +2,13 @@
 
 
 
+## 1.36.37 (2023-06-14)
+
+
+### Bug Fixes
+
+* workloads progress. ([537f43c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/537f43c3610e0784b40b8cc0b1798e9577b0b29a))
+
 ## 1.36.36 (2023-06-14)
 
 
