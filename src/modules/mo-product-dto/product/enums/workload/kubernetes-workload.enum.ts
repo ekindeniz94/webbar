@@ -20,7 +20,12 @@ export enum KubernetesWorkloadEnum {
   CERTIFICATE_REQUEST = 'certificaterequest',
   ORDER = 'orders',
   ISSUER = 'issuer',
-  CLUSTER_ISSUER = 'clusterissuer'
+  CLUSTER_ISSUER = 'clusterissuer',
+  SERVICE_ACCOUNT = "service_account",
+  ROLE = "role",
+  ROLE_BINDING = "role_binding",
+  CLUSTER_ROLE = "cluster_role",
+  CLUSTER_ROLE_BINDING = "cluster_role_binding"
 }
 
 export const KubernetesWorkloadEnum_ALL = [
@@ -45,5 +50,10 @@ export const KubernetesWorkloadEnum_ALL = [
   KubernetesWorkloadEnum.CERTIFICATE_REQUEST,
   KubernetesWorkloadEnum.ORDER,
   KubernetesWorkloadEnum.ISSUER,
-  KubernetesWorkloadEnum.CLUSTER_ISSUER
+  KubernetesWorkloadEnum.CLUSTER_ISSUER,
+  KubernetesWorkloadEnum.SERVICE_ACCOUNT,
+  KubernetesWorkloadEnum.ROLE,
+  KubernetesWorkloadEnum.ROLE_BINDING,
+  KubernetesWorkloadEnum.CLUSTER_ROLE,
+  KubernetesWorkloadEnum.CLUSTER_ROLE_BINDING
 ];
