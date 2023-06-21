@@ -3,15 +3,15 @@ import { isString } from 'class-validator';
 import { GroupDto, USER_CONST, UserPublicDto } from '@mo/user-dto';
 import { StripTags } from '@mo/js-utils';
 
-export class ProjectInvitationDto {
+export class OrganizationInvitationDto {
   @Expose()
   id: string;
 
   @Expose()
-  projectName: string;
+  organizationName: string;
 
   @Expose()
-  projectRole: string;
+  organizationRole: string;
 
   @Type(() => UserPublicDto)
   @Expose()

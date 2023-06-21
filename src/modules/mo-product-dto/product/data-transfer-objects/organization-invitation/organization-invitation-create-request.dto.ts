@@ -3,7 +3,7 @@ import { Expose, Transform } from 'class-transformer';
 import { StripTags } from '@mo/js-utils';
 import { USER_CONST } from '@mo/user-dto';
 
-export class ProjectInvitationCreateRequestDto {
+export class OrganizationInvitationCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @StripTags()

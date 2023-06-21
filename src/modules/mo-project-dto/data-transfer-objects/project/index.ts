@@ -6,3 +6,4 @@ export * from './project-patch-request.dto';
 export * from './project-dashboard-stats-response.dto';
 export * from './project-user.dto';
 export * from './project-display-name.dto';
+export * from './project-user-role.dto';
