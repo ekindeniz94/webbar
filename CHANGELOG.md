@@ -2,6 +2,13 @@
 
 
 
+## 1.36.38 (2023-06-21)
+
+
+### Bug Fixes
+
+* invitation organization ([83341c3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/83341c33d0e4503792dd04ce07cd8094c35e186a))
+
 ## 1.36.37 (2023-06-14)
 
 
