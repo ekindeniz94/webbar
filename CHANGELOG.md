@@ -2,6 +2,13 @@
 
 
 
+## 1.36.39 (2023-06-21)
+
+
+### Bug Fixes
+
+* invitation enum ([cc26f4a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cc26f4a69cd659675ce2262470797ad1cc2f5332))
+
 ## 1.36.38 (2023-06-21)
 
 
