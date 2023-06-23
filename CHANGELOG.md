@@ -2,6 +2,13 @@
 
 
 
+## 1.36.40 (2023-06-23)
+
+
+### Bug Fixes
+
+* update KubernetesEventStatusReasonEnum ([057915c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/057915ce43281014534974b3abde086af2334a8d))
+
 ## 1.36.39 (2023-06-21)
 
 
