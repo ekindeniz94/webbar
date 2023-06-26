@@ -2,6 +2,13 @@
 
 
 
+## 1.36.41 (2023-06-26)
+
+
+### Bug Fixes
+
+* add BackOffStart to KubernetesEventStatusReasonEnum ([6e30cb9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6e30cb9d7abe5e62db6f375165e2839d0a9816f2))
+
 ## 1.36.40 (2023-06-23)
 
 
