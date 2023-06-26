@@ -55,5 +55,6 @@ export enum KubernetesEventStatusReasonEnum {
   SANDBOX_CHANGED = 'SandboxChanged',
   FAILED_CREATE_POD_SAND_BOX = 'FailedCreatePodSandBox',
   FAILED_POD_SAND_BOX_STATUS = 'FailedPodSandBoxStatus',
-  FAILED_MOUNT_ON_FILESYSTEM_MISMATCH = 'FailedMountOnFilesystemMismatch'
+  FAILED_MOUNT_ON_FILESYSTEM_MISMATCH = 'FailedMountOnFilesystemMismatch',
+  BACK_OFF_START = 'BackOffStart'
 }
