@@ -2,6 +2,13 @@
 
 
 
+## 1.36.42 (2023-06-28)
+
+
+### Bug Fixes
+
+* first attemp on cicd dtos. ([b2a5302](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b2a53022a2dc6fcf365ce0c0fcf2bcf0f04739ca))
+
 ## 1.36.41 (2023-06-26)
 
 
