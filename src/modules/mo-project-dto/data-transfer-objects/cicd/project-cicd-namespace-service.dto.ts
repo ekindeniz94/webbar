@@ -1,5 +1,6 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { ProjectCiCdNamespaceServiceBuildDto } from './project-cicd-namespace-service-build.dto';
+import { ProjectNamespaceDisplayNameDto } from '../project-namespace';
 
 export class ProjectCiCdNamespaceServiceDto {
   @Expose()
@@ -8,6 +9,11 @@ export class ProjectCiCdNamespaceServiceDto {
   @Expose()
   displayName: string;
 
+  @Type(() => ProjectNamespaceDisplayNameDto)
+  @Expose()
+  projectNamespace: ProjectNamespaceDisplayNameDto;
+
+  @Type(() => ProjectCiCdNamespaceServiceBuildDto)
   @Expose()
   latestBuild: ProjectCiCdNamespaceServiceBuildDto;
 }

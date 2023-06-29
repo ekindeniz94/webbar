@@ -1,5 +1,6 @@
-import { Expose } from 'class-transformer';
-import { BuildStateEnum } from 'src/mo-core-base';
+import { Expose, Transform } from 'class-transformer';
+import { BuildStateEnum } from '../../../mo-product-dto';
+import moment from 'moment';
 
 export class ProjectCiCdNamespaceServiceBuildDto {
   @Expose()
@@ -15,14 +16,13 @@ export class ProjectCiCdNamespaceServiceBuildDto {
   commitMessage: string;
 
   @Expose()
-  duration: number;
-
-  @Expose()
   id: string;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   updatedAt: Date;
 
@@ -33,5 +33,5 @@ export class ProjectCiCdNamespaceServiceBuildDto {
   commitLink: string;
 
   @Expose()
-  durationInMs: number;
+  durationMs: number;
 }

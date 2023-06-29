@@ -1,10 +1,13 @@
-import { Expose } from 'class-transformer';
-import { CiCdPipelineResultEnum } from 'src/mo-core-base';
+import { Expose, Transform } from 'class-transformer';
+import { CiCdPipelineResultEnum } from '../../../mo-core';
+import moment from 'moment';
 
 export class ProjectCiCdNamespaceServiceBuildJobDto {
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   startTime: Date;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   finishTime: Date;
 
