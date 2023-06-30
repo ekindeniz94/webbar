@@ -2,6 +2,13 @@
 
 
 
+## 1.36.44 (2023-06-30)
+
+
+### Bug Fixes
+
+* cicd events ([b2487ea](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b2487ea8f3f024207f14bbfaf973b6277111857e))
+
 ## 1.36.43 (2023-06-29)
 
 
