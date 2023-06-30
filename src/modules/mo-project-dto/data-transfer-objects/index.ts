@@ -17,3 +17,4 @@ export * from './project-namespace-service-build-job';
 export * from './project-namespace-service-app';
 export * from './stats';
 export * from './cicd';
+export * from './project-notification';
