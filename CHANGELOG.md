@@ -2,6 +2,13 @@
 
 
 
+## 1.36.45 (2023-07-05)
+
+
+### Bug Fixes
+
+* update ProjectCiCdNamespaceServiceDto (add project) ([9cc9381](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9cc938132b265232197b7cbebce189379422a7dc))
+
 ## 1.36.44 (2023-06-30)
 
 
