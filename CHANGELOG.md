@@ -2,6 +2,13 @@
 
 
 
+## 1.36.46 (2023-07-06)
+
+
+### Bug Fixes
+
+* add ProjectStorageDto ([f1bc262](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f1bc2629f710e286c63348a3125fecebfafa30d4))
+
 ## 1.36.45 (2023-07-05)
 
 
