@@ -11,6 +11,7 @@ export enum ProjectNamespaceServiceStateEnum {
   // BUILD_FAILED = 'BUILD_FAILED',
   // DEPLOYMENT_FAILED = 'DEPLOYMENT_FAILED',
   // DEPLOYED = 'DEPLOYED'
+  //
 }
 
 export const ProjectNamespaceServiceStateEnum_ALL = [
