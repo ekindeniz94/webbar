@@ -3,14 +3,15 @@ export enum ProjectNamespaceServiceStateEnum {
   STOPPED = 'STOPPED',
   DEPLOYING = 'DEPLOYING',
   RUNNING = 'RUNNING',
-  ERROR = 'ERROR'
+  ERROR = 'ERROR',
   // CREATED = 'CREATED',
-  // WARNING = 'WARNING',
+  WARNING = 'WARNING'
   // INITIALIZING = 'INITIALIZING',
   // BUILDING = 'BUILDING',
   // BUILD_FAILED = 'BUILD_FAILED',
   // DEPLOYMENT_FAILED = 'DEPLOYMENT_FAILED',
   // DEPLOYED = 'DEPLOYED'
+  //
 }
 
 export const ProjectNamespaceServiceStateEnum_ALL = [
@@ -18,12 +19,12 @@ export const ProjectNamespaceServiceStateEnum_ALL = [
   ProjectNamespaceServiceStateEnum.STOPPED,
   ProjectNamespaceServiceStateEnum.DEPLOYING,
   ProjectNamespaceServiceStateEnum.RUNNING,
-  ProjectNamespaceServiceStateEnum.ERROR
-  // NamespaceServiceStateEnum.CREATED,
-  // NamespaceServiceStateEnum.WARNING,
-  // NamespaceServiceStateEnum.INITIALIZING,
-  // NamespaceServiceStateEnum.BUILDING,
-  // NamespaceServiceStateEnum.BUILD_FAILED,
-  // NamespaceServiceStateEnum.DEPLOYMENT_FAILED,
-  // NamespaceServiceStateEnum.DEPLOYED,
+  ProjectNamespaceServiceStateEnum.ERROR,
+  // ProjectNamespaceServiceStateEnum.CREATED,
+  ProjectNamespaceServiceStateEnum.WARNING
+  // ProjectNamespaceServiceStateEnum.INITIALIZING,
+  // ProjectNamespaceServiceStateEnum.BUILDING,
+  // ProjectNamespaceServiceStateEnum.BUILD_FAILED,
+  // ProjectNamespaceServiceStateEnum.DEPLOYMENT_FAILED,
+  // ProjectNamespaceServiceStateEnum.DEPLOYED,
 ];
