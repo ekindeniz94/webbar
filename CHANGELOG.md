@@ -2,6 +2,13 @@
 
 
 
+## 1.36.47 (2023-07-07)
+
+
+### Bug Fixes
+
+* add state ([3a7ede0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3a7ede08ba80159decf231dd861036df84903ef5))
+
 ## 1.36.46 (2023-07-06)
 
 
