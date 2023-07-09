@@ -1,5 +1,6 @@
 export * from './k8s-manager';
 export * from './workload';
+export * from './admin';
 
 export * from './cluster.dto';
 export * from './cluster-flat.dto';

@@ -1,5 +1,4 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { ProductDto } from '../product';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
@@ -8,10 +7,10 @@ import { OrganizationNameDto } from '../organization';
 import { ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 
 export class ClusterDto extends BaseEntityDto {
-  @Type(() => ProductDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  products: ProductDto[];
+  // @Type(() => ProductDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @Expose()
+  // products: ProductDto[];
 
   @Type(() => CountryDto)
   @Transform(({ value }) => (value?.code ? value : undefined))
@@ -32,7 +31,7 @@ export class ClusterDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  namespaceMaxCount: number;
+  projectMaxCount: number;
 
   @Expose()
   region: string;

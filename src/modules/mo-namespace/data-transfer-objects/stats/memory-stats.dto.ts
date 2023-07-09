@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { StatsDto } from './stats.dto';
 import { PodStatsUnitEnum } from '../../enums';
 

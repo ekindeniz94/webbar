@@ -137,6 +137,11 @@ export class ProductCreateRequestDto {
   @Expose()
   enableTeamCollaboration: boolean;
 
+  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @IsBoolean()
+  @Expose()
+  enableCreateCluster: boolean;
+
   /***************************** CLOUDFLARE ********************************/
 
   @Transform(({ value }) => MoUtils.parseBoolean(value))

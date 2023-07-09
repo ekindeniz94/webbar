@@ -1,14 +1,14 @@
-import { ClusterCreateRequestDto } from './cluster-create-request.dto';
 import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
-import { Exclude, Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import { IsSemanticVersion, MoUtils } from '@mo/js-utils';
 import _ from 'lodash';
-import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
-import { ClusterProviderEnum } from '../../enums';
-import { ProductDto } from '../product';
+import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
+import { OrganizationNameDto } from '../../organization';
+import { ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';
+import { ClusterSetupDto } from '../cluster-setup.dto';
 
-export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
+export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @IsUUID()
@@ -20,6 +20,15 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Transform(({ value }) => (value?.code ? value : undefined))
   @Expose()
   country: CountryDto;
+
+  @Type(() => OrganizationNameDto)
+  @Expose()
+  organization: OrganizationNameDto;
+
+  @IsEnum(ClusterTypeEnum)
+  @Transform(({ value }) => value ?? ClusterTypeEnum.BRING_YOUR_OWN)
+  @Expose()
+  type: ClusterTypeEnum;
 
   @IsEnum(ClusterProviderEnum)
   @Transform(({ value }) => value ?? ClusterProviderEnum.BRING_YOUR_OWN)
@@ -47,6 +56,16 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   host: string;
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  spectrumSubDomain: string;
+
+  @IsOptional()
+  @IsBoolean()
+  @Expose()
+  cloudflareProxied: boolean;
+
   @Type(() => Number)
   @IsOptional()
   @IsNumber()
@@ -68,11 +87,22 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   image: string;
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  clusterMfaId: string;
+
   @Transform(({ value }) => MoUtils.parseBoolean(value))
   @IsOptional()
   @IsBoolean()
   @Expose()
   apiKeyIsActive: boolean;
+
+  @IsOptional()
+  @IsString()
+  @IsSemanticVersion()
+  @Expose()
+  appVersion: string;
 
   @Type(() => ClusterSetupDto)
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
@@ -99,9 +129,4 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsString()
   @Expose()
   containerRegistryPat: string;
-
-  @IsOptional()
-  @Type(() => ProductDto)
-  @Exclude()
-  product: ProductDto;
 }

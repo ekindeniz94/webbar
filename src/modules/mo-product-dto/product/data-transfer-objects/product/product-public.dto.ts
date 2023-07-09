@@ -160,4 +160,8 @@ export class ProductPublicDto {
   @Type(() => Boolean)
   @Expose()
   enableTeamCollaboration: boolean;
+
+  @Type(() => Boolean)
+  @Expose()
+  enableCreateCluster: boolean;
 }

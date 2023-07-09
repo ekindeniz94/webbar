@@ -1,6 +1,6 @@
 import { IDockerTemplateEnvironmentVariable } from './docker-template-environment-variable';
 
-export interface IDockerTemplate {
+export interface IDockerTemplate2 {
   name: string;
   id: string;
   version: string;

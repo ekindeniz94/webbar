@@ -113,6 +113,10 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   enableTeamCollaboration: boolean;
 
+  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @Expose()
+  enableCreateCluster: boolean;
+
   /***************************** CLOUDFLARE ********************************/
 
   @Transform(({ value }) => MoUtils.parseBoolean(value))
