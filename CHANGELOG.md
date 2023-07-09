@@ -2,6 +2,13 @@
 
 
 
+## 1.36.48 (2023-07-09)
+
+
+### Bug Fixes
+
+* cleanup namespace; create/patch cluster ([0604aa9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0604aa90ac9ca390030fb44ab3d29629001bbf1a))
+
 ## 1.36.47 (2023-07-07)
 
 
