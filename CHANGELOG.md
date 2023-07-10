@@ -2,6 +2,13 @@
 
 
 
+## 1.36.49 (2023-07-10)
+
+
+### Bug Fixes
+
+* update project patch dto ([5fc65f5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5fc65f5f944761df7e8414b912d6b8e239888774))
+
 ## 1.36.48 (2023-07-09)
 
 
