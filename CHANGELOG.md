@@ -2,6 +2,13 @@
 
 
 
+## 1.36.50 (2023-07-10)
+
+
+### Bug Fixes
+
+* K8S_NAME MAX 50 ([7d3c2c5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7d3c2c5cb155cef9eec0abcbc46330615e20c111))
+
 ## 1.36.49 (2023-07-10)
 
 
