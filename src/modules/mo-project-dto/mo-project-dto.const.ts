@@ -6,7 +6,7 @@ export const PROJECT_CONST = {
   },
   K8S_NAME: {
     MIN: 3,
-    MAX: 63
+    MAX: 50
   },
   CNAME: {
     MAX_ENTRIES: 10,
