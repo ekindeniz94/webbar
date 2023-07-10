@@ -28,4 +28,10 @@ export class ProjectPatchRequestDto {
   )
   @Expose()
   description: string;
+
+  @IsOptional()
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @ValidateNested()
+  @Expose()
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 }
