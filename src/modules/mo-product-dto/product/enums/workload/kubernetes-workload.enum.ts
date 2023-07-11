@@ -25,7 +25,8 @@ export enum KubernetesWorkloadEnum {
   ROLE = "role",
   ROLE_BINDING = "role_binding",
   CLUSTER_ROLE = "cluster_role",
-  CLUSTER_ROLE_BINDING = "cluster_role_binding"
+  CLUSTER_ROLE_BINDING = "cluster_role_binding",
+  VOLUME_ATTACHMENT = "volume_attachment"
 }
 
 export const KubernetesWorkloadEnum_ALL = [
@@ -55,5 +56,6 @@ export const KubernetesWorkloadEnum_ALL = [
   KubernetesWorkloadEnum.ROLE,
   KubernetesWorkloadEnum.ROLE_BINDING,
   KubernetesWorkloadEnum.CLUSTER_ROLE,
-  KubernetesWorkloadEnum.CLUSTER_ROLE_BINDING
+  KubernetesWorkloadEnum.CLUSTER_ROLE_BINDING,
+  KubernetesWorkloadEnum.VOLUME_ATTACHMENT
 ];
