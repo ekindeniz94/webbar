@@ -2,6 +2,13 @@
 
 
 
+## 1.36.52 (2023-07-11)
+
+
+### Bug Fixes
+
+* added workloads netpol and storageclass. ([7b7a3b4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7b7a3b41935b7aeaca56419a6b28fafb8e627246))
+
 ## 1.36.51 (2023-07-11)
 
 
