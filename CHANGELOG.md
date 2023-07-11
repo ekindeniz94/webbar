@@ -2,6 +2,13 @@
 
 
 
+## 1.36.51 (2023-07-11)
+
+
+### Bug Fixes
+
+* added workload volume_attachment. ([7aa8771](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7aa877149fd1d2c1a5693788ad565e00add9fc36))
+
 ## 1.36.50 (2023-07-10)
 
 
