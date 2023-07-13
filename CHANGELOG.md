@@ -2,6 +2,13 @@
 
 
 
+## 1.36.53 (2023-07-13)
+
+
+### Bug Fixes
+
+* added projectCount to ClusterDto#. ([e24f3b9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e24f3b9421656f3ff758b4165053fc47e5b688d2))
+
 ## 1.36.52 (2023-07-11)
 
 
