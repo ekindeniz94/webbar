@@ -28,7 +28,13 @@ export enum KubernetesWorkloadEnum {
   CLUSTER_ROLE_BINDING = "cluster_role_binding",
   VOLUME_ATTACHMENT = "volume_attachment",
   NETWORK_POLICY = "network_policy",
-  STORAGECLASS = "storageclass"
+  STORAGECLASS = "storageclass",
+  CUSTOM_RESOURCE_DEFINITIONS = "crds",
+  ENDPOINTS = "endpoints",
+  LEASES = "leases",
+  PRIORITYCLASSES = "priorityclasses",
+  VOLUMESNAPSHOTS = "volumesnapshots",
+  RESOURCEQUOTAS = "resourcequotas"
 }
 
 export const KubernetesWorkloadEnum_ALL = [
