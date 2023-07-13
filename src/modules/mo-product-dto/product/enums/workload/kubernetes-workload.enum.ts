@@ -67,5 +67,11 @@ export const KubernetesWorkloadEnum_ALL = [
   KubernetesWorkloadEnum.CLUSTER_ROLE_BINDING,
   KubernetesWorkloadEnum.VOLUME_ATTACHMENT,
   KubernetesWorkloadEnum.STORAGECLASS,
-  KubernetesWorkloadEnum.NETWORK_POLICY
+  KubernetesWorkloadEnum.NETWORK_POLICY,
+  KubernetesWorkloadEnum.CUSTOM_RESOURCE_DEFINITIONS,
+  KubernetesWorkloadEnum.ENDPOINTS,
+  KubernetesWorkloadEnum.LEASES,
+  KubernetesWorkloadEnum.PRIORITYCLASSES,
+  KubernetesWorkloadEnum.VOLUMESNAPSHOTS,
+  KubernetesWorkloadEnum.RESOURCEQUOTAS
 ];
