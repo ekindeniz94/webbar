@@ -29,9 +29,14 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   provider: ClusterProviderEnum;
 
+  @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @Expose()
   projectMaxCount: number;
+
+  @Type(() => Number)
+  @Expose()
+  projectCount: number;
 
   @Expose()
   region: string;
