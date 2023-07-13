@@ -2,6 +2,13 @@
 
 
 
+## 1.36.54 (2023-07-13)
+
+
+### Bug Fixes
+
+* six new workloads. ([c301853](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c301853ecec8d57b49f793d35f0f9641a4a9d7e2))
+
 ## 1.36.53 (2023-07-13)
 
 
