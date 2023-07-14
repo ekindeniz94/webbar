@@ -32,6 +32,11 @@ export class ClusterCreateRequestDto {
   @Expose()
   provider: ClusterProviderEnum;
 
+  @IsString()
+  @Transform(({ value }) => value ?? 'mogenius')
+  @Expose()
+  namespaceName: String;
+
   @IsNotEmpty()
   @Type(() => ProductDto)
   @Expose()
