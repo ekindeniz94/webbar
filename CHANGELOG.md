@@ -2,6 +2,27 @@
 
 
 
+## 1.36.55 (2023-07-13)
+
+
+### Bug Fixes
+
+* six new workloads. ([7b1fb64](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7b1fb64bac586182a17fef16b5559dde9d272bc4))
+
+## 1.36.54 (2023-07-13)
+
+
+### Bug Fixes
+
+* six new workloads. ([c301853](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c301853ecec8d57b49f793d35f0f9641a4a9d7e2))
+
+## 1.36.53 (2023-07-13)
+
+
+### Bug Fixes
+
+* added projectCount to ClusterDto#. ([e24f3b9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e24f3b9421656f3ff758b4165053fc47e5b688d2))
+
 ## 1.36.52 (2023-07-11)
 
 
