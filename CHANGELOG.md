@@ -2,6 +2,13 @@
 
 
 
+## 1.36.56 (2023-07-14)
+
+
+### Bug Fixes
+
+* added namespaceName to ClusterCreateRequestDto#. ([5a7aad3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5a7aad3095a6388d3191675ebbb3e4508b8370d3))
+
 ## 1.36.55 (2023-07-13)
 
 
