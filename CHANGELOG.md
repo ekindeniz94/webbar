@@ -2,6 +2,13 @@
 
 
 
+## 1.36.57 (2023-07-21)
+
+
+### Bug Fixes
+
+* updated class-validator. ([890e757](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/890e75749ddbb487111932b5972808e21a8b2dfb))
+
 ## 1.36.56 (2023-07-14)
 
 
