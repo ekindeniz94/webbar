@@ -12,3 +12,4 @@ export * from './current-k8s-manager-version.dto';
 export * from './cluster-helm-templates.dto';
 export * from './cluster-node.dto';
 export * from './cluster-resource-info-payload.dto';
+export * from './cluster-demo-request.dto';
