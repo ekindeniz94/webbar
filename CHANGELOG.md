@@ -2,6 +2,13 @@
 
 
 
+## 1.36.58 (2023-07-24)
+
+
+### Bug Fixes
+
+* add ClusterDemoRequestDto ([34db7a4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/34db7a4ff9d7777dbb6a522ab224fb74fff803c1))
+
 ## 1.36.57 (2023-07-21)
 
 
