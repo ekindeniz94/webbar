@@ -12,3 +12,4 @@ export * from './project-namespace-service-dashboard.dto';
 export * from './project-namespace-service-overview-item.dto';
 export * from './project-namespace-service-host-list-item.dto';
 export * from './project-namespace-service-azure-build-log.dto';
+export * from './project-namespace-service-name-unique-request.dto';
