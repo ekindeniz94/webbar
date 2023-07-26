@@ -6,5 +6,6 @@ export enum KubernetesEventKindEnum {
   Ingress = 'Ingress',
   Namespace = 'Namespace',
   Node = 'Node',
-  Lease = 'Lease'
+  Lease = 'Lease',
+  PersistentVolumeClaim = 'PersistentVolumeClaim'
 }

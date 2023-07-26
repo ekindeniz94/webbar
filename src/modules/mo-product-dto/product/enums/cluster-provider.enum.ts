@@ -4,13 +4,12 @@ export enum ClusterProviderEnum {
   AKS = 'AKS', // Azure Kubernetes Service
   GKE = 'GKE', // Google Kubernetes Engine
   EKS = 'EKS', // Amazon Elastic Kubernetes Service
-  DO = 'DO', // Digital Ocean Kubernetes
   K3S = 'K3S', // K3S
   K3D = 'K3D', // K3D
   MINIKUBE = 'MINIKUBE', // Minikube
   KIND = 'KIND', // Kind
   KUBERNETES = 'KUBERNETES', // Kubernetes
-  SELF_HOSTED = 'SELF_HOSTED', // Self Hosted
+  // SELF_HOSTED = 'SELF_HOSTED', // Self Hosted
   DOKS = 'DOKS', // Digital Ocean Kubernetes
   LINODE = 'LINODE', // Linode Kubernetes
   IBM = 'IBM', // IBM Kubernetes
@@ -19,7 +18,6 @@ export enum ClusterProviderEnum {
   OTC = 'OTC', // Telekom cloud
   OPEN_SHIFT = 'OPEN_SHIFT', // Telekom cloud,
   GKE_ON_PREM = 'GKE_ON_PREM', // Google Kubernetes Engine On-Prem
-  RANCHER = 'RANCHER', // Rancher Kubernetes Engine
   RKE = 'RKE', // Rancher Kubernetes Engine
   KUBEADM = 'KUBEADM', // Kubeadm
   KUBEADM_ON_PREM = 'KUBEADM_ON_PREM', // Kubeadm On-Prem
@@ -41,13 +39,12 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   ClusterProviderEnum.AKS,
   ClusterProviderEnum.GKE,
   ClusterProviderEnum.EKS,
-  ClusterProviderEnum.DO,
   ClusterProviderEnum.K3S,
   ClusterProviderEnum.K3D,
   ClusterProviderEnum.MINIKUBE,
   ClusterProviderEnum.KIND,
   ClusterProviderEnum.KUBERNETES,
-  ClusterProviderEnum.SELF_HOSTED,
+  // ClusterProviderEnum.SELF_HOSTED,
   ClusterProviderEnum.DOKS,
   ClusterProviderEnum.LINODE,
   ClusterProviderEnum.IBM,
@@ -56,7 +53,6 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   ClusterProviderEnum.OTC,
   ClusterProviderEnum.OPEN_SHIFT,
   ClusterProviderEnum.GKE_ON_PREM,
-  ClusterProviderEnum.RANCHER,
   ClusterProviderEnum.RKE,
   ClusterProviderEnum.KUBEADM,
   ClusterProviderEnum.KUBEADM_ON_PREM,
