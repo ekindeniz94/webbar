@@ -2,6 +2,13 @@
 
 
 
+## 1.36.59 (2023-07-26)
+
+
+### Bug Fixes
+
+* service unique request dto ([c7e198c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c7e198c3da0585dc14edeb3053362537f9915add))
+
 ## 1.36.58 (2023-07-24)
 
 
