@@ -2,6 +2,13 @@
 
 
 
+## 1.36.60 (2023-07-26)
+
+
+### Bug Fixes
+
+* kubernetes reason enum update; update cluster provider; update volume request dto ([2dae4bf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2dae4bf5ee93886ab02bd553c1f51fbbe9127f46))
+
 ## 1.36.59 (2023-07-26)
 
 
