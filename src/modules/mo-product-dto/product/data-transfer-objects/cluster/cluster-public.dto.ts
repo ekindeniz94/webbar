@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
-import { ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 
 export class ClusterPublicDto {
   @Expose()
@@ -24,17 +24,21 @@ export class ClusterPublicDto {
   @Expose()
   provider: ClusterProviderEnum;
 
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Expose()
+  buildServerTypeEnum: ClusterBuildServerTypeEnum;
+
   @Expose()
   icon: string;
 
   @Expose()
   image: string;
 
-  @Expose()
-  host: string;
+  // @Expose()
+  // host: string;
 
-  @Expose()
-  spectrumSubDomain: string;
+  // @Expose()
+  // spectrumSubDomain: string;
 
   @Expose()
   loadbalancerHost: string;
@@ -51,7 +55,7 @@ export class ClusterPublicDto {
   @Expose()
   loadbalancerIps: string[];
 
-  get spectrumHost(): string {
-    return `${this.spectrumSubDomain}-${this.name}`;
-  }
+  // get spectrumHost(): string {
+  //   return `${this.spectrumSubDomain}-${this.name}`;
+  // }
 }

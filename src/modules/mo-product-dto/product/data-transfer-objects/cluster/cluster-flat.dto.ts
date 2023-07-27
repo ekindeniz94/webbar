@@ -2,7 +2,7 @@ import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
-import { ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterFlatDto extends BaseEntityDto {
@@ -20,6 +20,10 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ClusterProviderEnum.BRING_YOUR_OWN)
   @Expose()
   provider: ClusterProviderEnum;
+
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Expose()
+  buildServerTypeEnum: ClusterBuildServerTypeEnum;
 
   @Expose()
   name: string;
@@ -39,8 +43,8 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Expose()
   loadbalancerHost: string;
 
-  @Expose()
-  host: string;
+  // @Expose()
+  // host: string;
 
   @Expose()
   displayName: string;
@@ -63,8 +67,8 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Expose()
   appVersion: string;
 
-  @Expose()
-  spectrumSubDomain: string;
+  // @Expose()
+  // spectrumSubDomain: string;
 
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
   @Expose()

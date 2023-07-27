@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { BaseEntityDto, CountryDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../organization';
-import { ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 
 export class ClusterDto extends BaseEntityDto {
   // @Type(() => ProductDto)
@@ -28,6 +28,10 @@ export class ClusterDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ClusterProviderEnum.BRING_YOUR_OWN)
   @Expose()
   provider: ClusterProviderEnum;
+
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Expose()
+  buildServerTypeEnum: ClusterBuildServerTypeEnum;
 
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
@@ -59,8 +63,8 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   loadbalancerHost: string;
 
-  @Expose()
-  host: string;
+  // @Expose()
+  // host: string;
 
   @Expose()
   displayName: string;
@@ -83,8 +87,8 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   appVersion: string;
 
-  @Expose()
-  spectrumSubDomain: string;
+  // @Expose()
+  // spectrumSubDomain: string;
 
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
   @Expose()

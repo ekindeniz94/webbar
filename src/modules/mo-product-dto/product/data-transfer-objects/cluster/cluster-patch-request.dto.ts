@@ -5,7 +5,7 @@ import { MoUtils } from '@mo/js-utils';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
-import { ClusterProviderEnum } from '../../enums';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
 import { ProductDto } from '../product';
 
 export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
@@ -25,6 +25,10 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Transform(({ value }) => value ?? ClusterProviderEnum.BRING_YOUR_OWN)
   @Expose()
   provider: ClusterProviderEnum;
+
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Expose()
+  buildServerTypeEnum: ClusterBuildServerTypeEnum;
 
   @IsOptional()
   @Expose()

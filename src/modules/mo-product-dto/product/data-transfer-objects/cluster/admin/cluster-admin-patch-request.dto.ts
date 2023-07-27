@@ -5,7 +5,7 @@ import _ from 'lodash';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
 import { OrganizationNameDto } from '../../organization';
-import { ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';
 import { ClusterSetupDto } from '../cluster-setup.dto';
 
 export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
@@ -35,6 +35,10 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   provider: ClusterProviderEnum;
 
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Expose()
+  buildServerTypeEnum: ClusterBuildServerTypeEnum;
+
   @IsOptional()
   @Expose()
   region: string;
@@ -51,15 +55,15 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   loadbalancerHost: string;
 
-  @IsOptional()
-  @IsString()
-  @Expose()
-  host: string;
+  // @IsOptional()
+  // @IsString()
+  // @Expose()
+  // host: string;
 
-  @IsOptional()
-  @IsString()
-  @Expose()
-  spectrumSubDomain: string;
+  // @IsOptional()
+  // @IsString()
+  // @Expose()
+  // spectrumSubDomain: string;
 
   @IsOptional()
   @IsBoolean()
