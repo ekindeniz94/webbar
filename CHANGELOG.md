@@ -2,6 +2,13 @@
 
 
 
+## 1.36.61 (2023-07-27)
+
+
+### Bug Fixes
+
+* update cluster (rm host, spectrumSubdomain, add buildServerTypeEnum) ([32acf80](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/32acf801fe53f6334c346a2a6cb994e2c9f93f1d))
+
 ## 1.36.60 (2023-07-26)
 
 
