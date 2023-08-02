@@ -28,7 +28,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
 
   @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
   @Expose()
-  buildServerTypeEnum: ClusterBuildServerTypeEnum;
+  buildServerType: ClusterBuildServerTypeEnum;
 
   @IsOptional()
   @Expose()

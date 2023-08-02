@@ -31,7 +31,7 @@ export class ClusterDto extends BaseEntityDto {
 
   @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
   @Expose()
-  buildServerTypeEnum: ClusterBuildServerTypeEnum;
+  buildServerType: ClusterBuildServerTypeEnum;
 
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)

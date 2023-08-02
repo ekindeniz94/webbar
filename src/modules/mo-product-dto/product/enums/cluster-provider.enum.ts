@@ -1,6 +1,7 @@
 export enum ClusterProviderEnum {
   BRING_YOUR_OWN = 'BRING_YOUR_OWN',
   DOCKER_ENTERPRISE = 'DOCKER_ENTERPRISE', // Docker
+  DOCKER_DESKTOP = 'DOCKER_DESKTOP', // Docker
   AKS = 'AKS', // Azure Kubernetes Service
   GKE = 'GKE', // Google Kubernetes Engine
   EKS = 'EKS', // Amazon Elastic Kubernetes Service

@@ -26,7 +26,7 @@ export class ClusterPublicDto {
 
   @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
   @Expose()
-  buildServerTypeEnum: ClusterBuildServerTypeEnum;
+  buildServerType: ClusterBuildServerTypeEnum;
 
   @Expose()
   icon: string;

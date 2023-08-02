@@ -1,7 +1,10 @@
 import { Expose, Transform } from 'class-transformer';
 import { isArray } from 'class-validator';
 
-export class ProjectNamespaceServiceAzureBuildLogDto {
+export class ProjectCiCdNamespaceServiceBuildLogDto {
+  @Expose()
+  name: string;
+
   @Expose()
   count: number;
 
