@@ -2,6 +2,13 @@
 
 
 
+## 1.36.62 (2023-08-02)
+
+
+### Bug Fixes
+
+* in cluster build; update product type enum; update cluster provider ([0076fb6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0076fb6fd7dbb115e6c4fc6a5da5f2939bee60b9))
+
 ## 1.36.61 (2023-07-27)
 
 
