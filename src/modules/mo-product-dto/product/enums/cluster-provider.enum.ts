@@ -37,6 +37,7 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   //
   ClusterProviderEnum.BRING_YOUR_OWN,
   ClusterProviderEnum.DOCKER_ENTERPRISE,
+  ClusterProviderEnum.DOCKER_DESKTOP,
   ClusterProviderEnum.AKS,
   ClusterProviderEnum.GKE,
   ClusterProviderEnum.EKS,
