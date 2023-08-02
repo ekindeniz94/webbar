@@ -2,6 +2,13 @@
 
 
 
+## 1.36.63 (2023-08-02)
+
+
+### Bug Fixes
+
+* update ClusterProviderEnum_ALL ([f54716c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f54716cd4b5d168d52591ed7e14e254e95b96740))
+
 ## 1.36.62 (2023-08-02)
 
 
