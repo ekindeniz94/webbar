@@ -2,6 +2,13 @@
 
 
 
+## 1.36.66 (2023-08-07)
+
+
+### Bug Fixes
+
+* update mo packages ([ee85beb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ee85beb0d9ba89da4d1e2c866f47d3ce3d4c07f8))
+
 ## 1.36.65 (2023-08-07)
 
 
