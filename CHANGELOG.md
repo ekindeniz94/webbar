@@ -2,6 +2,13 @@
 
 
 
+## 1.36.65 (2023-08-07)
+
+
+### Bug Fixes
+
+* rename cluster project count ([bdb4228](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bdb42280e00d5db24e76f28e6197906bcd344387))
+
 ## 1.36.64 (2023-08-07)
 
 
