@@ -2,6 +2,13 @@
 
 
 
+## 1.36.64 (2023-08-07)
+
+
+### Bug Fixes
+
+* cleanup product DTOs; ([56f1a0d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/56f1a0d5e8981b01199924eb52242d6daad0c84f))
+
 ## 1.36.63 (2023-08-02)
 
 
