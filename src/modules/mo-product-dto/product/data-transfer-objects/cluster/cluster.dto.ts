@@ -36,7 +36,7 @@ export class ClusterDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @Expose()
-  projectMaxCount: number;
+  projectCountMax: number;
 
   @Type(() => Number)
   @Expose()

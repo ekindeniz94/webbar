@@ -55,7 +55,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsOptional()
   @IsNumber()
   @Expose()
-  projectMaxCount: number;
+  projectCountMax: number;
 
   @IsOptional()
   @IsString()

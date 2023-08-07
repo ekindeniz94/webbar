@@ -74,7 +74,7 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @IsOptional()
   @IsNumber()
   @Expose()
-  projectMaxCount: number;
+  projectCountMax: number;
 
   @IsOptional()
   @IsString()

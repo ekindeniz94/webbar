@@ -8,7 +8,7 @@ import { BaseEntityDto } from '@mo/database-dto';
 export class ClusterFlatDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
-  projectMaxCount: number;
+  projectCountMax: number;
 
   @Expose()
   region: string;
