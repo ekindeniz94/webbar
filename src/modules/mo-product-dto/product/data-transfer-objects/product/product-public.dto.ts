@@ -124,34 +124,11 @@ export class ProductPublicDto {
   @Expose()
   persistentDiskShutdown: number;
 
-  // @Transform(({ value }) => value ?? DiskPerformanceTierEnum.PREMIUM_SSD_P1)
-  // @Expose()
-  // diskPerformanceTier: DiskPerformanceTierEnum;
-
-  @Type(() => Number)
   @Expose()
-  maxContainerImageSizeInMb: number;
+  clusterCountMax?: number;
 
-  @Type(() => Number)
   @Expose()
-  dockerImageCountMax: number;
-
-  @Type(() => Number)
-  @Expose()
-  stageCountMax: number;
-
-  @Type(() => Number)
-  @Expose()
-  cNamesCountMax: number;
-
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
-  @Expose()
-  skipCloudflareCustomHostnameCreation: boolean;
-
-  @Type(() => Boolean)
-  @Expose()
-  enableAnalytics: boolean;
+  projectCountMax?: number;
 
   @Type(() => Boolean)
   @Expose()

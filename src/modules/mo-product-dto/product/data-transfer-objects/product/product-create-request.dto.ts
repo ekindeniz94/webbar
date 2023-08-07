@@ -120,15 +120,15 @@ export class ProductCreateRequestDto {
   @Expose()
   persistentDiskShutdown: number;
 
-  @Type(() => Number)
+  @IsOptional()
   @IsNumber()
   @Expose()
-  maxContainerImageSizeInMb: number;
+  clusterCountMax?: number;
 
-  @Type(() => Number)
+  @IsOptional()
   @IsNumber()
   @Expose()
-  dockerImageCountMax: number;
+  projectCountMax?: number;
 
   /****************************************************************/
 
@@ -143,20 +143,4 @@ export class ProductCreateRequestDto {
   enableCreateCluster: boolean;
 
   /***************************** CLOUDFLARE ********************************/
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @IsNotEmpty()
-  @IsBoolean()
-  @Expose()
-  enableCloudflare: boolean;
-
-  @Type(() => Number)
-  @IsNumber()
-  @Expose()
-  cNamesCountMax: number;
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @IsBoolean()
-  @Expose()
-  enableAnalytics: boolean;
 }

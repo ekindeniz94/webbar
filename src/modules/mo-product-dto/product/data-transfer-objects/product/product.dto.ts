@@ -99,13 +99,11 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   persistentDiskShutdown: number;
 
-  @Type(() => Number)
   @Expose()
-  maxContainerImageSizeInMb: number;
+  clusterCountMax?: number;
 
-  @Type(() => Number)
   @Expose()
-  dockerImageCountMax: number;
+  projectCountMax?: number;
 
   /****************************************************************/
 
@@ -116,20 +114,6 @@ export class ProductDto extends BaseEntityDto {
   @Transform(({ value }) => MoUtils.parseBoolean(value))
   @Expose()
   enableCreateCluster: boolean;
-
-  /***************************** CLOUDFLARE ********************************/
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @Expose()
-  enableCloudflare: boolean;
-
-  @Type(() => Number)
-  @Expose()
-  cNamesCountMax: number;
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @Expose()
-  enableAnalytics: boolean;
 
   get isValid(): boolean {
     return this.state === ProductStateEnum.ACTIVE && moment().isBetween(this.startsOn, this.endsOn);

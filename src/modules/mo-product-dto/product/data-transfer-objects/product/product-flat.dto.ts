@@ -5,6 +5,7 @@ import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
 import { BaseEntityDto } from '@mo/database-dto';
+import moment from 'moment/moment';
 
 export class ProductFlatDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)
@@ -14,6 +15,14 @@ export class ProductFlatDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
   @Expose()
   productType: ProductTypeEnum;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  startsOn: Date;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  endsOn: Date;
 
   @Expose()
   name: string;
@@ -73,13 +82,11 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   persistentDiskShutdown: number;
 
-  @Type(() => Number)
   @Expose()
-  maxContainerImageSizeInMb: number;
+  clusterCountMax?: number;
 
-  @Type(() => Number)
   @Expose()
-  dockerImageCountMax: number;
+  projectCountMax?: number;
 
   /****************************************************************/
 
@@ -91,17 +98,4 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   enableCreateCluster: boolean;
 
-  /***************************** CLOUDFLARE ********************************/
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @Expose()
-  enableCloudflare: boolean;
-
-  @Type(() => Number)
-  @Expose()
-  cNamesCountMax: number;
-
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @Expose()
-  enableAnalytics: boolean;
 }
