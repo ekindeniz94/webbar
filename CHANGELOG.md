@@ -2,6 +2,13 @@
 
 
 
+## 1.36.67 (2023-08-09)
+
+
+### Bug Fixes
+
+* update OrganizationCreateRequestDto / OrganizationPatchRequestDto ([5e39d5d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5e39d5d3ea8691623a7cbe5dd44d04782a9fc399))
+
 ## 1.36.66 (2023-08-07)
 
 
