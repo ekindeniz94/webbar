@@ -3,8 +3,14 @@ import { ArrayNotEmpty, isArray, IsNotEmpty, IsString, IsUUID, ValidateNested } 
 import { OrganizationCreateRequestDto } from './organization-create-request.dto';
 import { AddressPatchRequestDto } from '@mo/database-dto';
 import { OrganizationUserGroupPatchRequestDto } from './organization-user-group-patch-request.dto';
+import { IdDto } from '@mo/core-dto';
 
 export class OrganizationPatchRequestDto extends OrganizationCreateRequestDto {
+  @Type(() => IdDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  clusters: IdDto[];
+
   @IsNotEmpty()
   @IsString()
   @IsUUID()
@@ -23,7 +29,7 @@ export class OrganizationPatchRequestDto extends OrganizationCreateRequestDto {
   @Expose()
   address: AddressPatchRequestDto;
 
-  @ArrayNotEmpty()
+  // @ArrayNotEmpty()
   @Type(() => OrganizationUserGroupPatchRequestDto)
   @ValidateNested()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
