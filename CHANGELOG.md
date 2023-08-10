@@ -2,6 +2,13 @@
 
 
 
+## 1.36.68 (2023-08-10)
+
+
+### Bug Fixes
+
+* update build list item ([b52a8a6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b52a8a6221df27d9ad9b479f6d1d25d8310871fd))
+
 ## 1.36.67 (2023-08-09)
 
 
