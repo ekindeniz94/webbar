@@ -7,6 +7,9 @@ import { MoUtils } from '@mo/js-utils';
 
 export class ContainerBuildListItemDto {
   @Expose()
+  serviceId: string;
+
+  @Expose()
   serviceDisplayName: string;
 
   @Expose()
