@@ -5,6 +5,7 @@ import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { K8sPortsDto } from './k8s-port.dto';
 import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
+import { ServiceTypeEnum } from '../../enums';
 
 export class K8sProjectNamespaceServiceDto {
   @Expose()
@@ -75,4 +76,7 @@ export class K8sProjectNamespaceServiceDto {
   @Transform(({ value }) => (isBoolean(value) ? value : true))
   @Expose()
   switchedOn: boolean;
+
+  @Expose()
+  serviceType: ServiceTypeEnum;
 }
