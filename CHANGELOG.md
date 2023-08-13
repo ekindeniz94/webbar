@@ -2,6 +2,13 @@
 
 
 
+## 1.36.70 (2023-08-13)
+
+
+### Bug Fixes
+
+* update ProjectNamespaceServiceAppDto ([8d2e90a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8d2e90a8c014f4c746c0e7ad3fd0d7a8220457f1))
+
 ## 1.36.69 (2023-08-13)
 
 
