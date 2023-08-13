@@ -1,5 +1,6 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
+import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 
 export class ProjectNamespaceServiceAppDto {
   @Expose()
@@ -19,4 +20,8 @@ export class ProjectNamespaceServiceAppDto {
 
   @Expose()
   description: string;
+
+  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Expose()
+  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
 }
