@@ -2,6 +2,13 @@
 
 
 
+## 1.36.69 (2023-08-13)
+
+
+### Bug Fixes
+
+* update ContainerBuildListItemDto ([c53467a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c53467abd9de67bc14317ffba1a2568e230a62e8))
+
 ## 1.36.68 (2023-08-10)
 
 
