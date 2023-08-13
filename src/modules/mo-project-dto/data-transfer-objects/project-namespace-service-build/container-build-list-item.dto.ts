@@ -7,6 +7,24 @@ import { MoUtils } from '@mo/js-utils';
 
 export class ContainerBuildListItemDto {
   @Expose()
+  projectId: string;
+
+  @Expose()
+  projectDisplayName: string;
+
+  @Expose()
+  projectName: string;
+
+  @Expose()
+  projectNamespaceId: string;
+
+  @Expose()
+  projectNamespaceDisplayName: string;
+
+  @Expose()
+  projectNamespaceName: string;
+
+  @Expose()
   serviceId: string;
 
   @Expose()
@@ -14,9 +32,6 @@ export class ContainerBuildListItemDto {
 
   @Expose()
   containerRegistryPath: string;
-
-  @Expose()
-  projectNamespaceName: string;
 
   @Expose()
   containerName: string;
