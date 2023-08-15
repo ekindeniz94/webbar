@@ -2,6 +2,13 @@
 
 
 
+## 1.36.71 (2023-08-15)
+
+
+### Bug Fixes
+
+* update ClsuterDemoRequest; add SalesRequestDto ([66237b6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/66237b6f02fdcb210e1e88bc9e5deb37ae091f3b))
+
 ## 1.36.70 (2023-08-13)
 
 
