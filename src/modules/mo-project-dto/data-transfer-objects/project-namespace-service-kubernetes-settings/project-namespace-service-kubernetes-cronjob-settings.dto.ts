@@ -1,8 +1,8 @@
 import { Expose, Type } from 'class-transformer';
-import { IsEnum } from 'class-validator';
 import { ServiceTypeEnum } from '../../enums';
+import { IsEnum } from 'class-validator';
 
-export class K8sCronJobSettingsDto {
+export class ProjectNamespaceServiceKubernetesCronjobSettingsDto {
   @IsEnum(ServiceTypeEnum)
   @Expose()
   source: ServiceTypeEnum;
@@ -19,3 +19,4 @@ export class K8sCronJobSettingsDto {
   @Expose()
   schedule: string;
 }
+//

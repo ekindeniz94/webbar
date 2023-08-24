@@ -5,3 +5,4 @@ export * from './k8s-project.dto';
 export * from './k8s-project-namespace.dto';
 export * from './k8s-project-namespace-service.dto';
 export * from './k8s-service-settings.dto';
+export * from './k8s-cronjob-settings.dto';

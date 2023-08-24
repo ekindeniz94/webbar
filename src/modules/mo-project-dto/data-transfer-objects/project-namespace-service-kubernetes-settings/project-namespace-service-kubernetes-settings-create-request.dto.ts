@@ -1,6 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, IsOptional, isBoolean, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
+import { ProjectNamespaceServiceKubernetesCronjobSettingsDto } from './project-namespace-service-kubernetes-cronjob-settings.dto';
 
 export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -42,4 +43,9 @@ export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
   @IsOptional()
   @Expose()
   probesOn: boolean;
+
+  @Type(() => ProjectNamespaceServiceKubernetesCronjobSettingsDto)
+  @IsOptional()
+  @Expose()
+  cronjobSettings: ProjectNamespaceServiceKubernetesCronjobSettingsDto;
 }
