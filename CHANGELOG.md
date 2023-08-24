@@ -2,6 +2,13 @@
 
 
 
+## 1.36.72 (2023-08-24)
+
+
+### Bug Fixes
+
+* cronjob; extend dto's ([f6d3ada](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f6d3adaf5aa2f73debf447533d9e356c055073ea))
+
 ## 1.36.71 (2023-08-15)
 
 
