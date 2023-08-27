@@ -2,6 +2,13 @@
 
 
 
+## 1.36.77 (2023-08-27)
+
+
+### Bug Fixes
+
+* get service name from cronjob/job events ([1da4c1e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1da4c1ea414a55d355a266769912faab92367753))
+
 ## 1.36.76 (2023-08-27)
 
 
