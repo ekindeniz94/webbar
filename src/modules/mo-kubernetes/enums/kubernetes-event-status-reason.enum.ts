@@ -60,5 +60,6 @@ export enum KubernetesEventStatusReasonEnum {
   WAIT_FOR_FIRST_CONSUMER = 'WaitForFirstConsumer',
   PROVISIONING = 'Provisioning',
   EXTERNAL_PROVISIONING = 'ExternalProvisioning',
-  PROVISIONING_SUCCEEDED = 'ProvisioningSucceeded'
+  PROVISIONING_SUCCEEDED = 'ProvisioningSucceeded',
+  COMPLETED = 'Completed' // Job
 }

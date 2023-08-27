@@ -7,5 +7,7 @@ export enum KubernetesEventKindEnum {
   Namespace = 'Namespace',
   Node = 'Node',
   Lease = 'Lease',
-  PersistentVolumeClaim = 'PersistentVolumeClaim'
+  PersistentVolumeClaim = 'PersistentVolumeClaim',
+  CronJob = 'CronJob',
+  Job = 'Job'
 }
