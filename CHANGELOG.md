@@ -2,6 +2,13 @@
 
 
 
+## 1.36.75 (2023-08-27)
+
+
+### Bug Fixes
+
+* add service type 'active' ([130af7c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/130af7c7c0df2c66a0b0d4de56d735c5ba27f30d))
+
 ## 1.36.74 (2023-08-27)
 
 
