@@ -47,5 +47,5 @@ export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
   @Type(() => ProjectNamespaceServiceKubernetesCronjobSettingsDto)
   @IsOptional()
   @Expose()
-  cronjobSettings: ProjectNamespaceServiceKubernetesCronjobSettingsDto;
+  cronjobSettings?: ProjectNamespaceServiceKubernetesCronjobSettingsDto;
 }
