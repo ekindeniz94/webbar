@@ -5,13 +5,13 @@ export enum ProjectNamespaceServiceStateEnum {
   RUNNING = 'RUNNING',
   ERROR = 'ERROR',
   // CREATED = 'CREATED',
-  WARNING = 'WARNING'
+  WARNING = 'WARNING',
   // INITIALIZING = 'INITIALIZING',
   // BUILDING = 'BUILDING',
   // BUILD_FAILED = 'BUILD_FAILED',
   // DEPLOYMENT_FAILED = 'DEPLOYMENT_FAILED',
   // DEPLOYED = 'DEPLOYED'
-  //
+  ACTIVE = 'ACTIVE'
 }
 
 export const ProjectNamespaceServiceStateEnum_ALL = [
@@ -21,10 +21,11 @@ export const ProjectNamespaceServiceStateEnum_ALL = [
   ProjectNamespaceServiceStateEnum.RUNNING,
   ProjectNamespaceServiceStateEnum.ERROR,
   // ProjectNamespaceServiceStateEnum.CREATED,
-  ProjectNamespaceServiceStateEnum.WARNING
+  ProjectNamespaceServiceStateEnum.WARNING,
   // ProjectNamespaceServiceStateEnum.INITIALIZING,
   // ProjectNamespaceServiceStateEnum.BUILDING,
   // ProjectNamespaceServiceStateEnum.BUILD_FAILED,
   // ProjectNamespaceServiceStateEnum.DEPLOYMENT_FAILED,
   // ProjectNamespaceServiceStateEnum.DEPLOYED,
+  ProjectNamespaceServiceStateEnum.ACTIVE
 ];
