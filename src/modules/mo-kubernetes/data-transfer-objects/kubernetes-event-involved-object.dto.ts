@@ -37,6 +37,13 @@ export class KubernetesEventInvolvedObjectDto {
       metaNameArr.pop();
 
       return metaNameArr.join('-');
+    } else if (this.namespace && this.kind === KubernetesEventKindEnum.Job) {
+      const metaNameArr = this.name.split('-');
+      metaNameArr.pop();
+
+      return metaNameArr.join('-');
+    } else if (this.namespace && this.kind === KubernetesEventKindEnum.CronJob) {
+      return this.name;
     }
     return null;
   }
