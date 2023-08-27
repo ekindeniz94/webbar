@@ -37,5 +37,5 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
   @Type(() => K8sCronJobSettingsDto)
   @IsOptional()
   @Expose()
-  k8sCronJobSettingsDto: K8sCronJobSettingsDto;
+  k8sCronJobSettingsDto?: K8sCronJobSettingsDto;
 }
