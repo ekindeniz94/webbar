@@ -2,6 +2,13 @@
 
 
 
+## 1.36.76 (2023-08-27)
+
+
+### Bug Fixes
+
+* add missing queue dto ([3d842e1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3d842e12ba7cdd2b0df8d11a4e96ab312a188305))
+
 ## 1.36.75 (2023-08-27)
 
 
