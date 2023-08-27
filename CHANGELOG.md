@@ -2,6 +2,13 @@
 
 
 
+## 1.36.74 (2023-08-27)
+
+
+### Bug Fixes
+
+* k8s events ([cef087a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cef087a4b34352c85c96c29aecc11b0a554cc7f1))
+
 ## 1.36.73 (2023-08-27)
 
 
