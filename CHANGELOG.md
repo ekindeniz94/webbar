@@ -2,6 +2,13 @@
 
 
 
+## 1.36.78 (2023-08-28)
+
+
+### Bug Fixes
+
+* additonal event status reasons for jobs ([2b57b02](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2b57b02e18b417304facee48e30e2ed0c71cdb54))
+
 ## 1.36.77 (2023-08-27)
 
 
