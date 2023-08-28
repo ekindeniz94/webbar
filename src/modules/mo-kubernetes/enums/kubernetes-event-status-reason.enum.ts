@@ -61,5 +61,7 @@ export enum KubernetesEventStatusReasonEnum {
   PROVISIONING = 'Provisioning',
   EXTERNAL_PROVISIONING = 'ExternalProvisioning',
   PROVISIONING_SUCCEEDED = 'ProvisioningSucceeded',
-  COMPLETED = 'Completed' // Job
+  COMPLETED = 'Completed', // Job
+  BACKOFF_LIMIT_EXCEEDED = 'BackoffLimitExceeded', // Job
+  DEADLINE_EXCEEDED = 'DeadlineExceeded' // Job
 }
