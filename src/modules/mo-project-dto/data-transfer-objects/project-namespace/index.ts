@@ -6,3 +6,4 @@ export * from './project-namespace-dashboard-stats.dto';
 export * from './project-namespace-navigation-item.dto';
 export * from './project-namespace-stats.dto';
 export * from './project-namespace-display-name.dto';
+export * from './project-namespace-name-unique-request.dto';
