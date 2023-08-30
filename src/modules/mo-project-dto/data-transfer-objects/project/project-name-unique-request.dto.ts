@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class ProjectNamespaceServiceNameUniqueRequestDto {
+export class ProjectNameUniqueRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -10,5 +10,5 @@ export class ProjectNamespaceServiceNameUniqueRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  projectNamespaceId: string;
+  clusterId: string;
 }
