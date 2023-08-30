@@ -2,6 +2,14 @@
 
 
 
+## 1.36.79 (2023-08-30)
+
+
+### Bug Fixes
+
+* Added new DTOs for unique name checks. ([3c44893](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3c44893ad59ef530242faafec1dd135748044f0d))
+* Removed BaseEntity extension. ([8d5a003](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8d5a0039d2429bd9c807f11d5a5433d4fac70de5))
+
 ## 1.36.78 (2023-08-28)
 
 
