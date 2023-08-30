@@ -2,6 +2,13 @@
 
 
 
+## 1.36.80 (2023-08-30)
+
+
+### Bug Fixes
+
+* Added export statements for new DTOs. ([824079a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/824079a711a7238e0b583da4b029087341a36a75))
+
 ## 1.36.79 (2023-08-30)
 
 
