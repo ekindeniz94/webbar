@@ -1,8 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { BaseEntityDto } from '@mo/database-dto';
 
-export class ProjectNamespaceNameUniqueRequestDto extends BaseEntityDto {
+export class ProjectNamespaceNameUniqueRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
