@@ -12,7 +12,20 @@ export class MoProjectDtoUtils {
     if (!value) {
       return value;
     }
+    const numberToWord: { [key: string]: string } = {
+      '0': 'zero',
+      '1': 'one',
+      '2': 'two',
+      '3': 'three',
+      '4': 'four',
+      '5': 'five',
+      '6': 'six',
+      '7': 'seven',
+      '8': 'eight',
+      '9': 'nine'
+    };
     return value
+      .replace(/^([0-9])/, (match) => numberToWord[match] || match)
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
       .replace(/ +/g, '-')
