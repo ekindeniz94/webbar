@@ -2,6 +2,13 @@
 
 
 
+## 1.36.81 (2023-09-06)
+
+
+### Bug Fixes
+
+* ProductCreateRequestDto ([30f3473](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/30f3473d2007e7343d9577f8efa74b330a0af8bf))
+
 ## 1.36.80 (2023-08-30)
 
 
