@@ -3,7 +3,6 @@ import {
   isArray,
   IsBoolean,
   IsEnum,
-  IsNotEmpty,
   IsNumber,
   IsOptional,
   IsString,
@@ -120,11 +119,13 @@ export class ProductCreateRequestDto {
   @Expose()
   persistentDiskShutdown: number;
 
+  @Type(() => Number)
   @IsOptional()
   @IsNumber()
   @Expose()
   clusterCountMax?: number;
 
+  @Type(() => Number)
   @IsOptional()
   @IsNumber()
   @Expose()
