@@ -25,9 +25,9 @@ export class MoProjectDtoUtils {
       '9': 'nine'
     };
     return value
-      .replace(/^([0-9])/, (match) => numberToWord[match] || match)
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
+      .replace(/(^|-)([0-9])/g, (_match, p1, p2) => p1 + numberToWord[p2])
       .replace(/ +/g, '-')
       .replace(/[(-)\1+]/g, '-')
       .substring(0, maxLength)
