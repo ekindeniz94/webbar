@@ -34,13 +34,13 @@ export class K8sMsgDto {
   buildId?: string;
 
   @Expose()
-  namespaceId: string;
+  projectId: string;
 
   @Expose()
-  namespaceStageId?: string;
+  projectNamespaceId?: string;
 
   @Expose()
-  namespaceServiceId?: string;
+  projectNamespaceServiceId?: string;
 
   get isJob(): boolean {
     if (this.jobId === undefined || this.jobId === 'undefined' || this.jobId === '') {
