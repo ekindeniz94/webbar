@@ -2,6 +2,13 @@
 
 
 
+## 1.36.82 (2023-09-08)
+
+
+### Bug Fixes
+
+* update k8s msg dto ([1603c09](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1603c0988a0462bc95645e50948a3adf2aa8f3a4))
+
 ## 1.36.81 (2023-09-06)
 
 
