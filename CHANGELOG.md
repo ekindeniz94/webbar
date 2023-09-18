@@ -2,6 +2,14 @@
 
 
 
+## 1.36.83 (2023-09-18)
+
+
+### Bug Fixes
+
+* Added check for service names beginning with a number. ([fe7c447](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fe7c4474f255552eca9077114cdece704fd33571))
+* Improved k8s name transformations. ([26007a8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/26007a88218c342aea9196686b1fdefd4834eef3))
+
 ## 1.36.82 (2023-09-08)
 
 
