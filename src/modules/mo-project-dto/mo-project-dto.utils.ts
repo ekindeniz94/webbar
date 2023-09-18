@@ -12,9 +12,22 @@ export class MoProjectDtoUtils {
     if (!value) {
       return value;
     }
+    const numberToWord: { [key: string]: string } = {
+      '0': 'zero',
+      '1': 'one',
+      '2': 'two',
+      '3': 'three',
+      '4': 'four',
+      '5': 'five',
+      '6': 'six',
+      '7': 'seven',
+      '8': 'eight',
+      '9': 'nine'
+    };
     return value
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
+      .replace(/(^|-)([0-9])/g, (_match, p1, p2) => p1 + numberToWord[p2])
       .replace(/ +/g, '-')
       .replace(/[(-)\1+]/g, '-')
       .substring(0, maxLength)
