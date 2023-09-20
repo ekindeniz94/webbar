@@ -2,6 +2,13 @@
 
 
 
+## 1.36.84 (2023-09-20)
+
+
+### Bug Fixes
+
+* k8sName MoProjectDtoUtils ([8c2641f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8c2641fdca90d7c0ad5dff28ddbf7d1c16b3f895))
+
 ## 1.36.83 (2023-09-18)
 
 
