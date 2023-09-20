@@ -27,7 +27,8 @@ export class MoProjectDtoUtils {
     return value
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
-      .replace(/(^|-)([0-9])/g, (_match, p1, p2) => p1 + numberToWord[p2])
+      .replace(/^-+/, '')
+      .replace(/^[0-9]/, (p) => numberToWord[p])
       .replace(/ +/g, '-')
       .replace(/[(-)\1+]/g, '-')
       .substring(0, maxLength)
