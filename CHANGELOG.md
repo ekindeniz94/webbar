@@ -2,6 +2,18 @@
 
 
 
+# 2.0.0 (2023-09-28)
+
+
+### Bug Fixes
+
+* update packages ([a7b209b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a7b209ba595f2f0551bbb000ddfc4cfc8ce9a467))
+
+
+### BREAKING CHANGES
+
+* update to node v20; ts target es2020
+
 ## 1.36.84 (2023-09-20)
 
 
