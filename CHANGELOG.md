@@ -2,6 +2,13 @@
 
 
 
+## 2.0.2 (2023-10-10)
+
+
+### Bug Fixes
+
+* add pipelineId; add github-action and github-workflow dtos ([a27fc7f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a27fc7fcf6590bb93f4d9ce5bdd47a6937eb0762))
+
 ## 2.0.1 (2023-09-28)
 
 
