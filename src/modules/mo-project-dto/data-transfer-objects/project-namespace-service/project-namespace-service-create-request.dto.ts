@@ -4,6 +4,7 @@ import {
   isArray,
   IsEnum,
   IsNotEmpty,
+  IsNumber,
   IsOptional,
   isString,
   IsString,
@@ -34,8 +35,9 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @IsString()
   @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)
   @MaxLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -73,6 +75,12 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @StripTags()
   @Expose()
   gitBranch: string;
+
+  @IsOptional()
+  @IsNumber()
+  @StripTags()
+  @Expose()
+  pipelineId: number;
 
   @IsOptional()
   @IsString()

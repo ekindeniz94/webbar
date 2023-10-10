@@ -7,3 +7,5 @@ export * from './github-repository.dto';
 export * from './github-token.dto';
 export * from './github-user.dto';
 export * from './github-authorized-response.dto';
+export * from './github-workflow.dto';
+export * from './github-action.dto';
