@@ -11,6 +11,9 @@ export class ProjectNamespaceServiceGitSettingsDto extends BaseEntityDto {
   @Expose()
   gitBranch: string;
 
+  @Expose()
+  pipelineId: number;
+
   @Transform(({ value }) => (isString(value) ? value : 'Dockerfile'))
   @Expose()
   dockerfileName: string;

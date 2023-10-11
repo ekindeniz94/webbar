@@ -34,6 +34,9 @@ export class K8sProjectNamespaceServiceDto {
   gitBranch: string;
 
   @Expose()
+  pipelineId: number;
+
+  @Expose()
   containerImage: string;
 
   @Expose()
