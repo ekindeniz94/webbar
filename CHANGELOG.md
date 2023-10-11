@@ -2,6 +2,13 @@
 
 
 
+## 2.0.3 (2023-10-11)
+
+
+### Bug Fixes
+
+* add pipelineid to git settings ([80d3572](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/80d35725b84ea897a49099b4db1d90fefb0f15b7))
+
 ## 2.0.2 (2023-10-10)
 
 
