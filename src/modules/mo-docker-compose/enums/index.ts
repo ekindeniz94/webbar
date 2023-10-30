@@ -1,2 +1,2 @@
 export * from './docker-compose-restart.enum';
-export * from './log-level.enum';
+export * from './compose-log-level.enum';
