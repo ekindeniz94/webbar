@@ -1,4 +1,3 @@
-export * from './compose';
 export * from './key-vault';
 export * from './k8s';
 export * from './project';
