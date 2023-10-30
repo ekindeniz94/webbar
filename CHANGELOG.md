@@ -2,6 +2,14 @@
 
 
 
+## 2.0.6 (2023-10-30)
+
+
+### Bug Fixes
+
+* rename compose log level ([4ac4b92](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4ac4b92c660c165580c87209b5476376347f6d8d))
+* rename compose log level ([c6c8b82](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c6c8b8208b9534ba8fcdde2991853854aebdc239))
+
 ## 2.0.5 (2023-10-30)
 
 
