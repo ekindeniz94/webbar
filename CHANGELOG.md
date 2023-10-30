@@ -2,6 +2,14 @@
 
 
 
+## 2.0.5 (2023-10-30)
+
+
+### Bug Fixes
+
+* add compose dtos ([14759be](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/14759be9ecbd8108e81f0cc09c831a3d48c3a585))
+* compose dto's ([c724ecd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c724ecd3faf3e6a6130c3daedb3468ab8036ce59))
+
 ## 2.0.4 (2023-10-30)
 
 
