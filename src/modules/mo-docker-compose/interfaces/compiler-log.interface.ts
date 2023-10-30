@@ -1,9 +1,9 @@
-import { LogLevel } from '../enums';
+import { ComposeLogLevel } from '../enums';
 
 export interface ICompilerLog {
   consecutive: number;
   timestamp: number;
-  severity: LogLevel;
+  severity: ComposeLogLevel;
   msg: string;
   lvl: number;
   path: string[];
