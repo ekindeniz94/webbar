@@ -2,6 +2,13 @@
 
 
 
+## 2.0.4 (2023-10-30)
+
+
+### Bug Fixes
+
+* fixes. ([0d3c06f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0d3c06fd090928ae3d0ae3ed7a52a1622c21ba7c))
+
 ## 2.0.3 (2023-10-11)
 
 
