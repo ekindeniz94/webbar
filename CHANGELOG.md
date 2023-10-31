@@ -2,6 +2,13 @@
 
 
 
+## 2.0.7 (2023-10-31)
+
+
+### Bug Fixes
+
+* app lib dtos ([cffb39f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cffb39f9fcdb7e5582da3318b574d79bef9b40fc))
+
 ## 2.0.6 (2023-10-30)
 
 
