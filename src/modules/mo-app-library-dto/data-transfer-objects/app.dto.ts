@@ -1,12 +1,27 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isString, IsString } from 'class-validator';
+import { isArray, IsOptional, isString, IsString } from 'class-validator';
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { AppPortDto } from './app-port.dto';
-import { ProjectNamespaceServiceEnvVarDto, ProjectNamespaceServiceKubernetesSettingsDto } from '../../mo-project-dto';
+import {
+  ProjectDisplayNameDto,
+  ProjectNamespaceServiceEnvVarDto,
+  ProjectNamespaceServiceKubernetesSettingsDto
+} from '../../mo-project-dto';
 import { BaseEntityDto } from '@mo/database-dto';
+import { OrganizationNameDto } from '../../mo-product-dto';
 
 export class AppDto extends BaseEntityDto {
+  @IsOptional()
+  @Type(() => OrganizationNameDto)
+  @Expose()
+  organization: OrganizationNameDto;
+
+  @IsOptional()
+  @Type(() => ProjectDisplayNameDto)
+  @Expose()
+  project: ProjectDisplayNameDto;
+
   @Type(() => AppTagDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
@@ -30,12 +45,6 @@ export class AppDto extends BaseEntityDto {
   @Expose()
   icon: string;
 
-  @Expose()
-  image: string;
-
-  @Expose()
-  color: string;
-
   @Transform(({ value }) => (value && isString(value) ? value : 'https://docs.mogenius.com/'))
   @IsString()
   @Expose()
@@ -44,20 +53,36 @@ export class AppDto extends BaseEntityDto {
   @Expose()
   state: AppLibraryStateEnum;
 
+  /************************************************************************************************************
+   * type => DOCKER_TEMPLATE
+   ************************************************************************************************************/
   @Expose()
   repositoryLink: string;
 
   @Expose()
-  setupCommands: string;
+  repositoryUser?: string;
 
   @Expose()
+  repositoryPAT?: string;
+
+  @Expose()
+  setupCommands: string;
+
+  /************************************************************************************************************
+   * type => CONTAINER_IMAGE_TEMPLATE
+   ************************************************************************************************************/
+  @Expose()
   containerImage: string;
+
+  @Expose()
+  containerImageRepoSecret?: string;
 
   @Expose()
   containerImageCommand: string;
 
   @Expose()
   containerImageCommandArgs: string;
+  /************************************************************************************************************/
 
   @Type(() => AppPortDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))

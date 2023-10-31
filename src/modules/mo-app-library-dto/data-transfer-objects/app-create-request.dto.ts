@@ -44,17 +44,6 @@ export class AppCreateRequestDto {
   @Expose()
   icon: string;
 
-  @IsOptional()
-  @IsString()
-  @Expose()
-  image: string;
-
-  @Transform(({ value }) => (value && isString(value) ? value : '#000000'))
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  color: string;
-
   @Transform(({ value }) => (value && isString(value) ? value : 'https://docs.mogenius.com/'))
   @IsNotEmpty()
   @IsString()
@@ -67,6 +56,9 @@ export class AppCreateRequestDto {
   @Expose()
   state: AppLibraryStateEnum;
 
+  /************************************************************************************************************
+   * type => DOCKER_TEMPLATE
+   ************************************************************************************************************/
   @IsOptional()
   @IsString()
   @Expose()
@@ -75,8 +67,21 @@ export class AppCreateRequestDto {
   @IsOptional()
   @IsString()
   @Expose()
+  repositoryUser?: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  repositoryPAT?: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
   setupCommands: string;
 
+  /************************************************************************************************************
+   * type => CONTAINER_IMAGE_TEMPLATE
+   ************************************************************************************************************/
   @IsOptional()
   @IsString()
   @Expose()
@@ -85,10 +90,18 @@ export class AppCreateRequestDto {
   @IsOptional()
   @IsString()
   @Expose()
+  containerImageRepoSecret?: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
   containerImageCommand: string;
 
+  @IsOptional()
+  @IsString()
   @Expose()
   containerImageCommandArgs: string;
+  /************************************************************************************************************/
 
   @Type(() => AppPortCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
