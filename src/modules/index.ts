@@ -9,6 +9,4 @@ export * from './mo-product-dto';
 export * from './mo-project-dto';
 export * from './mo-notification';
 export * from './mo-cloudflare';
-export * from './mo-docker-compose';
 export * from './mo-websocket';
-
