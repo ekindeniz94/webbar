@@ -2,6 +2,13 @@
 
 
 
+## 2.0.8 (2023-11-03)
+
+
+### Bug Fixes
+
+* remove unnecessary lib ([0ffc734](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0ffc734339489a542c754494534bea92fe704235))
+
 ## 2.0.7 (2023-10-31)
 
 
