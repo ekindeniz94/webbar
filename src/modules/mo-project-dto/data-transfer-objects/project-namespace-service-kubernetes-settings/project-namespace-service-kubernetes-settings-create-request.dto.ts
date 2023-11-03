@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, IsOptional, isBoolean, isNumberString } from 'class-validator';
-import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ProjectNamespaceServiceImagePullPolicy } from '../../enums';
 import { ProjectNamespaceServiceKubernetesCronjobSettingsDto } from './project-namespace-service-kubernetes-cronjob-settings.dto';
 
 export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
@@ -30,6 +30,12 @@ export class ProjectNamespaceServiceKubernetesSettingsCreateRequestDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @IsNotEmpty()
+  @IsEnum(ProjectNamespaceServiceImagePullPolicy)
+  @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicy.IF_NOT_PRESENT)
+  @Expose()
+  imagePullPolicy: ProjectNamespaceServiceImagePullPolicy;
 
   @Type(() => Number)
   @Expose()

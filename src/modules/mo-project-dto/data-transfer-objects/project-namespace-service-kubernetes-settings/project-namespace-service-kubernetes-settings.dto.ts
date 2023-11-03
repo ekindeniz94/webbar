@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ProjectNamespaceServiceImagePullPolicy } from '../../enums';
 import { IsOptional, isBoolean } from 'class-validator';
 import { K8sCronJobSettingsDto } from '../k8s';
 
@@ -23,6 +23,9 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
 
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @Expose()
+  imagePullPolicy: ProjectNamespaceServiceImagePullPolicy;
 
   @Type(() => Number)
   @Expose()
