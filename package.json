@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@mo/database-dto": "^2.0.3",
-    "@mo/mo-docker-compose": "^1.2.11",
     "@mo/js-utils": "^2.0.3",
     "@mo/user-dto": "^2.0.4",
     "@mo/websocket-dto": "^2.0.2",
