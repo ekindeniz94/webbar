@@ -2,6 +2,13 @@
 
 
 
+## 2.0.10 (2023-11-03)
+
+
+### Bug Fixes
+
+* clusternodestat updated. ([f2d8e7b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f2d8e7ba3a78699635c9a04c6c5b8e624ed3bfcc))
+
 ## 2.0.9 (2023-11-03)
 
 
