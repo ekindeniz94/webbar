@@ -33,6 +33,10 @@ export class GithubAuthorizedResponseDto {
 
   @IsOptional()
   @Expose()
+  organizationId?: string;
+
+  @IsOptional()
+  @Expose()
   projectId?: string;
 
   @IsOptional()

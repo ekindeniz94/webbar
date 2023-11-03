@@ -1,9 +1,14 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
+import { IdDto } from '@mo/core-dto';
 
 export class K8sAppDto {
   @Expose()
   id: string;
+
+  @Type(() => IdDto)
+  @Expose()
+  organization: IdDto;
 
   @Expose()
   name: string;
@@ -18,7 +23,16 @@ export class K8sAppDto {
   repositoryLink: string;
 
   @Expose()
+  repositoryUser?: string;
+
+  @Expose()
+  repositoryPAT?: string;
+
+  @Expose()
   containerImage: string;
+
+  @Expose()
+  containerImageRepoSecret?: string;
 
   @Expose()
   containerImageCommand: string;
