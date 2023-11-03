@@ -2,6 +2,13 @@
 
 
 
+## 2.0.11 (2023-11-03)
+
+
+### Bug Fixes
+
+* update K8sAppDto; github; update app lib ([5dd8b58](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5dd8b585f6f94124a57208c8f8edcd6c9518495d))
+
 ## 2.0.10 (2023-11-03)
 
 
