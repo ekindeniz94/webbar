@@ -2,6 +2,13 @@
 
 
 
+## 2.0.14 (2023-11-07)
+
+
+### Bug Fixes
+
+* update k8s manager; cluster dto ([e9760c6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e9760c6d77de0699a32a074fad1a20f55a2818d1))
+
 ## 2.0.13 (2023-11-03)
 
 
