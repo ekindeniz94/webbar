@@ -55,7 +55,9 @@ export class ClusterDto extends BaseEntityDto {
   image: string;
 
   @Transform(({ value }) =>
-    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter(
+      (item: string) => isIP(item) || item === 'localhost'
+    )
   )
   @Expose()
   loadbalancerIps: string[];

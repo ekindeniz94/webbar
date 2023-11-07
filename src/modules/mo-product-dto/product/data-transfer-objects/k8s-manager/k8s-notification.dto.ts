@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../../enums';
+import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../enums';
 
 export class K8sNotificationDto {
   @Expose()

@@ -1,4 +1,5 @@
 export enum ClusterProviderEnum {
+  UNKNOWN = 'UNKNOWN',
   BRING_YOUR_OWN = 'BRING_YOUR_OWN',
   DOCKER_ENTERPRISE = 'DOCKER_ENTERPRISE', // Docker
   DOCKER_DESKTOP = 'DOCKER_DESKTOP', // Docker
@@ -10,14 +11,14 @@ export enum ClusterProviderEnum {
   MINIKUBE = 'MINIKUBE', // Minikube
   KIND = 'KIND', // Kind
   KUBERNETES = 'KUBERNETES', // Kubernetes
-  // SELF_HOSTED = 'SELF_HOSTED', // Self Hosted
+  SELF_HOSTED = 'SELF_HOSTED', // Self Hosted
   DOKS = 'DOKS', // Digital Ocean Kubernetes
   LINODE = 'LINODE', // Linode Kubernetes
   IBM = 'IBM', // IBM Kubernetes
   ACK = 'ACK', // Alibaba Cloud Kubernetes
   OKE = 'OKE', // Oracle Cloud Kubernetes
   OTC = 'OTC', // Telekom cloud
-  OPEN_SHIFT = 'OPEN_SHIFT', // Telekom cloud,
+  OPEN_SHIFT = 'OPEN_SHIFT', // RED HAT OpenShift
   GKE_ON_PREM = 'GKE_ON_PREM', // Google Kubernetes Engine On-Prem
   RKE = 'RKE', // Rancher Kubernetes Engine
   KUBEADM = 'KUBEADM', // Kubeadm
@@ -31,10 +32,25 @@ export enum ClusterProviderEnum {
   SYS_ELEVEN = 'SYS_ELEVEN', // Managed Kubernetes by SysEleven
   STACKIT = 'SKE', // STACKIT Kubernetes Engine (SKE)
   IONOS = 'IONOS', // IONOS Cloud Managed
-  SCALEWAY = 'SCALEWAY' // scaleway
+  SCALEWAY = 'SCALEWAY', // scaleway
+  VMWARE = 'VMWARE', // VMware Tanzu Kubernetes Grid Integrated Edition
+  MICROK8S = 'MICROK8S', // MicroK8s
+  CIVO = 'CIVO', // Civo Kubernetes
+  GIANTSWARM = 'GIANTSWARM', // Giant Swarm Kubernetes
+  OVHCLOUD = 'OVHCLOUD', // OVHCloud Kubernetes
+  GARDENER = 'GARDENER', // SAP Gardener Kubernetes
+  HUAWEI = 'HUAWEI', // Huawei Cloud Kubernetes
+  NIRMATA = 'NIRMATA', // Nirmata Kubernetes
+  PF9 = 'PF9', // Platform9 Kubernetes
+  NKS = 'NKS', // Netapp Kubernetes Service
+  APPSCODE = 'APPSCODE', // AppsCode Kubernetes
+  LOFT = 'LOFT', // Loft Kubernetes
+  SPECTROCLOUD = 'SPECTROCLOUD', // Spectro Cloud Kubernetes
+  DIAMANTI = 'DIAMANTI' // Diamanti Kubernetes
 }
 export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   //
+  ClusterProviderEnum.UNKNOWN,
   ClusterProviderEnum.BRING_YOUR_OWN,
   ClusterProviderEnum.DOCKER_ENTERPRISE,
   ClusterProviderEnum.DOCKER_DESKTOP,
@@ -46,7 +62,7 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   ClusterProviderEnum.MINIKUBE,
   ClusterProviderEnum.KIND,
   ClusterProviderEnum.KUBERNETES,
-  // ClusterProviderEnum.SELF_HOSTED,
+  ClusterProviderEnum.SELF_HOSTED,
   ClusterProviderEnum.DOKS,
   ClusterProviderEnum.LINODE,
   ClusterProviderEnum.IBM,
@@ -67,5 +83,19 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   ClusterProviderEnum.SYS_ELEVEN,
   ClusterProviderEnum.STACKIT,
   ClusterProviderEnum.IONOS,
-  ClusterProviderEnum.SCALEWAY
+  ClusterProviderEnum.SCALEWAY,
+  ClusterProviderEnum.VMWARE,
+  ClusterProviderEnum.MICROK8S,
+  ClusterProviderEnum.CIVO,
+  ClusterProviderEnum.GIANTSWARM,
+  ClusterProviderEnum.OVHCLOUD,
+  ClusterProviderEnum.GARDENER,
+  ClusterProviderEnum.HUAWEI,
+  ClusterProviderEnum.NIRMATA,
+  ClusterProviderEnum.PF9,
+  ClusterProviderEnum.NKS,
+  ClusterProviderEnum.APPSCODE,
+  ClusterProviderEnum.LOFT,
+  ClusterProviderEnum.SPECTROCLOUD,
+  ClusterProviderEnum.DIAMANTI
 ];

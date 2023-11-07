@@ -50,7 +50,9 @@ export class ClusterPublicDto {
   cloudflareProxied: boolean;
 
   @Transform(({ value }) =>
-    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter(
+      (item: string) => isIP(item) || item === 'localhost'
+    )
   )
   @Expose()
   loadbalancerIps: string[];
