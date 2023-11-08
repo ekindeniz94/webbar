@@ -35,9 +35,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   region: string;
 
   @Transform(({ value }) =>
-    _.uniq((value && isArray(value) ? value : []) as string[]).filter(
-      (item: string) => isIP(item) || item === 'localhost'
-    )
+    _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
   )
   @IsOptional()
   @Expose()
