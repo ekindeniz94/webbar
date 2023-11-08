@@ -2,6 +2,13 @@
 
 
 
+## 2.0.15 (2023-11-08)
+
+
+### Bug Fixes
+
+* update  cluster loadbalancer ip; cluster updated event ([aa9289f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aa9289f7c7a479d01d7a36ad87f53c155a9c1513))
+
 ## 2.0.14 (2023-11-07)
 
 
