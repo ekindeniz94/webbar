@@ -2,6 +2,13 @@
 
 
 
+## 2.0.17 (2023-11-09)
+
+
+### Bug Fixes
+
+* update K8sSystemCheckEntryDto ([5b1db2a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5b1db2ab7e19c4a8c417493f5275ee867b07a3f7))
+
 ## 2.0.16 (2023-11-09)
 
 
