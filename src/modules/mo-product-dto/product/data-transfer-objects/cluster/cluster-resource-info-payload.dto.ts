@@ -29,7 +29,7 @@ export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
   @Expose()
   country: CountryDto;
 
-  // @Transform(({ value }) => (isEnum(ClusterProviderEnum, value) ? value : undefined))
+  @Transform(({ value }) => value ?? ClusterProviderEnum.UNKNOWN)
   @Expose()
   provider: ClusterProviderEnum;
 }

@@ -1,3 +1,5 @@
+import { KUBERNETES_CONST } from '../mo-kubernetes';
+
 export const PROJECT_CONST = {
   NAME: {
     MIN: 3,
@@ -5,8 +7,8 @@ export const PROJECT_CONST = {
     MATCHES: /^([a-z])([a-z0-9-])/
   },
   K8S_NAME: {
-    MIN: 3,
-    MAX: 50
+    MIN: KUBERNETES_CONST.LABEL_NAME.MIN,
+    MAX: KUBERNETES_CONST.LABEL_NAME.MAX
   },
   CNAME: {
     MAX_ENTRIES: 10,

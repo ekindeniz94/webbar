@@ -22,7 +22,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   country: CountryDto;
 
   @IsEnum(ClusterProviderEnum)
-  @Transform(({ value }) => value ?? ClusterProviderEnum.BRING_YOUR_OWN)
+  @Transform(({ value }) => value ?? ClusterProviderEnum.UNKNOWN)
   @Expose()
   provider: ClusterProviderEnum;
 
