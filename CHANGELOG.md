@@ -2,6 +2,13 @@
 
 
 
+## 2.0.16 (2023-11-09)
+
+
+### Bug Fixes
+
+* cluster dto (provider); update product const ([021ca1a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/021ca1a43ea488175a2e876220e79d4b98c549fc))
+
 ## 2.0.15 (2023-11-08)
 
 
