@@ -2,6 +2,13 @@
 
 
 
+## 2.0.18 (2023-11-10)
+
+
+### Bug Fixes
+
+* add AppLibraryListTypeEnum ([abf1d86](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/abf1d869ed848328eb0fa01b5890dbac70036116))
+
 ## 2.0.17 (2023-11-09)
 
 
