@@ -24,6 +24,14 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
+  cpuInCoresRequested: number;
+
+  @Type(() => Number)
+  @Expose()
+  CpuInCoresLimited: number;
+
+  @Type(() => Number)
+  @Expose()
   ephemeralInBytes: number;
 
   @Expose()
@@ -38,7 +46,19 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
+  TotalPods: number;
+
+  @Type(() => Number)
+  @Expose()
   memoryInBytes: number;
+
+  @Type(() => Number)
+  @Expose()
+  MemoryInBytesRequested: number;
+
+  @Type(() => Number)
+  @Expose()
+  MemoryInBytesLimited: number;
 
   @Type(() => Number)
   @Expose()
