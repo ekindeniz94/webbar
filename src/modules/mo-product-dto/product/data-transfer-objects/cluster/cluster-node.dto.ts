@@ -20,7 +20,7 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  CpuInCoresUtilized: number;
+  cpuInCoresUtilized: number;
 
   @Type(() => Number)
   @Expose()
@@ -28,7 +28,7 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  CpuInCoresLimited: number;
+  cpuInCoresLimited: number;
 
   @Type(() => Number)
   @Expose()
@@ -46,7 +46,7 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  TotalPods: number;
+  totalPods: number;
 
   @Type(() => Number)
   @Expose()
@@ -54,13 +54,13 @@ export class ClusterNodeDto extends BaseEntityDto {
 
   @Type(() => Number)
   @Expose()
-  MemoryInBytesRequested: number;
+  memoryInBytesRequested: number;
 
   @Type(() => Number)
   @Expose()
-  MemoryInBytesLimited: number;
+  memoryInBytesLimited: number;
 
   @Type(() => Number)
   @Expose()
-  MemoryInBytesUtilized: number;
+  memoryInBytesUtilized: number;
 }
