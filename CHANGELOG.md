@@ -2,6 +2,13 @@
 
 
 
+## 2.0.19 (2023-11-14)
+
+
+### Bug Fixes
+
+* added request and limit and total. ([3e82d43](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e82d4359e7afce79857cc22c7321ff014100f70))
+
 ## 2.0.18 (2023-11-10)
 
 
