@@ -2,6 +2,13 @@
 
 
 
+## 2.0.21 (2023-11-16)
+
+
+### Bug Fixes
+
+* update index k8s-manager ([91fe4a6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/91fe4a6f420fd9e64e22cb5191b3dea890f53b01))
+
 ## 2.0.20 (2023-11-14)
 
 
