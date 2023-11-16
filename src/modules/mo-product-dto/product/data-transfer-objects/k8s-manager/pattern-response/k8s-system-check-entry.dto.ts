@@ -3,6 +3,10 @@ import { isEmpty } from 'class-validator';
 import { K8sSystemCheckEntryStatusEnum } from '../../../enums/k8s-manager/k8s-system-check-entry-status.enum';
 
 export class K8sSystemCheckEntryDto {
+  @Type(() => Boolean)
+  @Expose()
+  isRequired: boolean;
+
   @Type(() => String)
   @Expose()
   checkName: string;
