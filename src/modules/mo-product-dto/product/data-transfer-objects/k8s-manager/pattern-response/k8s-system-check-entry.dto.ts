@@ -26,7 +26,12 @@ export class K8sSystemCheckEntryDto {
 
   get isInfo(): boolean {
     return (
-      !this.installPattern || isEmpty(this.installPattern) || !this.uninstallPattern || isEmpty(this.uninstallPattern)
+      !this.installPattern ||
+      isEmpty(this.installPattern) ||
+      this.installPattern === '' ||
+      !this.uninstallPattern ||
+      isEmpty(this.uninstallPattern) ||
+      this.uninstallPattern === ''
     );
   }
 }
