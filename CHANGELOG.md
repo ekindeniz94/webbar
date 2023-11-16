@@ -2,6 +2,13 @@
 
 
 
+## 2.0.23 (2023-11-16)
+
+
+### Bug Fixes
+
+* update k8s-manager-check-entry ([1b2dc2b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1b2dc2bc7f66465b5fb8cbfaa74f3fbc929619bc))
+
 ## 2.0.22 (2023-11-16)
 
 
