@@ -2,6 +2,13 @@
 
 
 
+## 2.0.24 (2023-11-17)
+
+
+### Bug Fixes
+
+* update IRedisPubSubMessageProductOrganization ([467c202](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/467c202465f391c054047e76dd685c83f6b6102e))
+
 ## 2.0.23 (2023-11-16)
 
 
