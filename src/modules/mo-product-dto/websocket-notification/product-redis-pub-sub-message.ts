@@ -12,7 +12,7 @@ export interface IRedisPubSubMessageProductCluster
   socketEvent: ProductSocketEventEnum.PRODUCT_CLUSTER_SERVICE;
 }
 
-export interface IRedisPubSubMessageProductOrganizationInvitation
+export interface IRedisPubSubMessageProductOrganization
   extends IRedisPubSubMessage<
     ProductSocketEventEnum,
     IRedisPubSubMessageData<ProductOrganizationSocketDataEventEnum, any>[]
