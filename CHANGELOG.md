@@ -2,6 +2,13 @@
 
 
 
+## 2.0.26 (2023-11-20)
+
+
+### Bug Fixes
+
+* rm product from create/edit cluster ([4208456](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4208456273c56dd691ff1bd8a2671a670823d52a))
+
 ## 2.0.25 (2023-11-20)
 
 
