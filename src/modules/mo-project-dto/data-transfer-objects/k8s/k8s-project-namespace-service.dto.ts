@@ -17,21 +17,26 @@ export class K8sProjectNamespaceServiceDto {
   // @Expose()
   // shortId: string;
   //
-  @Expose()
-  fullHostname: string; // MoNamespaceUtils.fullHostname(namespace, stage, service)
+  // @Expose()
+  // fullHostname: string; // MoNamespaceUtils.fullHostname(namespace, stage, service)
 
   // @Expose()
   // k8sName: string; // MoNamespaceUtils.kubernetesName(namespace, stage, service)
 
-  @Type(() => ProjectNamespaceServiceCnameDto)
   @Expose()
-  cNames: ProjectNamespaceServiceCnameDto[];
+  cNames: string[];
 
   @Expose()
   gitRepository: string;
 
   @Expose()
   gitBranch: string;
+
+  @Expose()
+  dockerfileName: string;
+
+  @Expose()
+  dockerContext: string;
 
   @Expose()
   pipelineId: number;
@@ -47,12 +52,6 @@ export class K8sProjectNamespaceServiceDto {
 
   @Expose()
   containerImageCommandArgs: string;
-
-  @Expose()
-  dockerfileName: string;
-
-  @Expose()
-  dockerContext: string;
 
   @Type(() => K8sAppDto)
   @Expose()
@@ -82,4 +81,7 @@ export class K8sProjectNamespaceServiceDto {
 
   @Expose()
   serviceType: ServiceTypeEnum;
+
+  @Expose()
+  settingsYaml: string;
 }
