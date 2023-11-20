@@ -6,7 +6,6 @@ import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
-import { ProductDto } from '../product';
 
 export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsNotEmpty()
@@ -104,8 +103,8 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   containerRegistryPat: string;
 
-  @IsOptional()
-  @Type(() => ProductDto)
-  @Exclude()
-  product: ProductDto;
+  // @IsOptional()
+  // @Type(() => ProductDto)
+  // @Exclude()
+  // product: ProductDto;
 }

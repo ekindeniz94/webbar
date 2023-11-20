@@ -1,8 +1,7 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 import { MoProjectDtoUtils, PROJECT_CONST } from '../../../../mo-project-dto';
 import { ClusterProviderEnum } from '../../enums';
-import { ProductDto } from '../product';
 
 export class ClusterCreateRequestDto {
   @IsNotEmpty()
@@ -37,8 +36,8 @@ export class ClusterCreateRequestDto {
   @Expose()
   namespaceName: String;
 
-  @IsNotEmpty()
-  @Type(() => ProductDto)
-  @Expose()
-  product: ProductDto;
+  // @IsNotEmpty()
+  // @Type(() => ProductDto)
+  // @Expose()
+  // product: ProductDto;
 }
