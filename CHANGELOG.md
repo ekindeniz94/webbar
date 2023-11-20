@@ -2,6 +2,13 @@
 
 
 
+## 2.0.25 (2023-11-20)
+
+
+### Bug Fixes
+
+* update k8s dto ([b012e85](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b012e856aea99491886a22b58fd32fc39dee4b62))
+
 ## 2.0.24 (2023-11-17)
 
 
