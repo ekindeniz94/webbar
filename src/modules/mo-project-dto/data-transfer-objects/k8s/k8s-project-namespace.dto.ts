@@ -1,6 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean } from 'class-validator';
 import { K8sProjectNamespaceServiceDto } from './k8s-project-namespace-service.dto';
+import {MoUtils} from "@mo/js-utils";
 
 export class K8sProjectNamespaceDto {
   @Expose()
@@ -26,8 +27,7 @@ export class K8sProjectNamespaceDto {
   @Expose()
   services: K8sProjectNamespaceServiceDto[];
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
   @Expose()
   cloudflareProxied: boolean;
 }
