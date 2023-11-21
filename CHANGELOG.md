@@ -2,6 +2,13 @@
 
 
 
+## 2.0.27 (2023-11-21)
+
+
+### Bug Fixes
+
+* cluster dtos ([b66d545](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b66d54576a04461ee929f3f3cb1966d789586db6))
+
 ## 2.0.26 (2023-11-20)
 
 
