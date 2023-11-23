@@ -2,6 +2,13 @@
 
 
 
+## 2.0.28 (2023-11-23)
+
+
+### Bug Fixes
+
+* update permissions enums ([bd19580](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bd19580d518016430751a9c4a30458a8c5dbfd99))
+
 ## 2.0.27 (2023-11-21)
 
 
