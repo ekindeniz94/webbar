@@ -2,6 +2,13 @@
 
 
 
+## 2.0.29 (2023-11-28)
+
+
+### Bug Fixes
+
+* update KubernetesWorkloadListRequestDto ([0b6bb69](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0b6bb69c631f10bc353cf4dd9513a77b9e1ec1ee))
+
 ## 2.0.28 (2023-11-23)
 
 
