@@ -2,6 +2,13 @@
 
 
 
+## 2.0.30 (2023-11-29)
+
+
+### Bug Fixes
+
+* added new model for backups. ([629ff97](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/629ff970cba466d10d79e00be5b20b6e391a72fa))
+
 ## 2.0.29 (2023-11-28)
 
 
