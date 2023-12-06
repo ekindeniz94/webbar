@@ -2,6 +2,13 @@
 
 
 
+## 2.0.31 (2023-12-06)
+
+
+### Bug Fixes
+
+* rm vulnerabilities ([ea3b682](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ea3b6821eb522ec3c350b6e7115bb6f2de111ace))
+
 ## 2.0.30 (2023-11-29)
 
 
