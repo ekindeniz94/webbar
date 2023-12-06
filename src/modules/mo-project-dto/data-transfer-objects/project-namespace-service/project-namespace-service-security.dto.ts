@@ -22,12 +22,6 @@ export class ProjectNamespaceServiceSecurityDto {
   buildState?: BuildStateEnum;
 
   @Expose()
-  vulnerabilitiesData: string;
-
-  @Expose()
-  vulnerabilityInfo: string;
-
-  @Expose()
   static compileLogData(
     csvString: string
   ): {

@@ -1,0 +1,8 @@
+export enum K8sBuildScanResultInfoEnum {
+  FAILED = 'FAILED',
+  SUCCEEDED = 'SUCCEEDED',
+  STARTED = 'STARTED',
+  PENDING = 'PENDING',
+  CANCELED = 'CANCELED',
+  TIMEOUT = 'TIMEOUT'
+}
