@@ -2,6 +2,13 @@
 
 
 
+## 2.0.32 (2023-12-11)
+
+
+### Bug Fixes
+
+* citt ([995a582](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/995a5824528fe79a86314d40e31496a90ff57456))
+
 ## 2.0.31 (2023-12-06)
 
 
