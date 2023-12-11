@@ -32,8 +32,9 @@
     "striptags": "^4.0.0-alpha.2"
   },
   "dependencies": {
+    "@mo/core-dto": "^2.0.6",
     "@mo/database-dto": "^2.0.3",
-    "@mo/js-utils": "^2.0.3",
+    "@mo/js-utils": "^2.0.4",
     "@mo/user-dto": "^2.0.4",
     "@mo/websocket-dto": "^2.0.2",
     "class-transformer": "^0.5.1",
