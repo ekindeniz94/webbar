@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
 import { DockerComposeRestartEnum } from '../enums/docker-compose-restart.enum';
 
+// deprecated, remove after next update
 export class DockerComposeServiceDto {
   @Expose()
   name: string;
