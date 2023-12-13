@@ -2,6 +2,13 @@
 
 
 
+## 2.0.33 (2023-12-13)
+
+
+### Bug Fixes
+
+* add k8s controller enum and resource items ([0542957](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0542957ba55dc05a8dad209b8864a75aec8a39b2))
+
 ## 2.0.32 (2023-12-11)
 
 
