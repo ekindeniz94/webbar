@@ -6,6 +6,7 @@ import {
   ProjectNamespaceServiceStatusKindType
 } from './project-namespace-service-status.enum';
 import moment from 'moment';
+import { cloneDeep } from 'lodash';
 
 export class ProjectNamespaceServiceStatusResourceItemDto {
   @Expose()
@@ -47,7 +48,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     const next: ProjectNamespaceServiceStatusResourceItemDto[] = [];
     for (const item of items) {
       if (this.name == item.ownerName) {
-        next.push(item);
+        next.push(cloneDeep(item));
       }
     }
 
@@ -59,9 +60,9 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     kind: ProjectNamespaceServiceStatusKindType
   ): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
-    for (const item of items) {
+    for (const item of items || []) {
       if (item.kind === kind) {
-        resources.push(item);
+        resources.push(cloneDeep(item));
       }
     }
 
@@ -73,11 +74,11 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
       case ProjectNamespaceServiceStatusController.Deployment: {
         const state = (this.statusObject?.conditions ?? [])
           .sort((a: any, b: any) => {
-            const ma = moment(a.lastTransitionTime, moment.ISO_8601);
-            const mb = moment(b.lastTransitionTime, moment.ISO_8601);
+            const ma = moment(a?.lastTransitionTime, moment.ISO_8601);
+            const mb = moment(b?.lastTransitionTime, moment.ISO_8601);
             return ma.diff(mb);
           })
-          .pop();
+          .slice(-1);
 
         const replicas = this.statusObject?.replicas;
 
