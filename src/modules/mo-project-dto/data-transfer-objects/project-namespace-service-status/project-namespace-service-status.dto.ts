@@ -69,18 +69,17 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     return resources;
   }
 
-  test(): void {}
-
   status(): any {
     switch (this.kind) {
       case ProjectNamespaceServiceStatusController.Deployment: {
-        const state = cloneDeep(this.statusObject?.conditions ?? [])
+        const conditions = cloneDeep(this.statusObject?.conditions ?? []);
+        const state = conditions
           .sort((a: any, b: any) => {
             const ma = moment(a?.lastTransitionTime, moment.ISO_8601);
             const mb = moment(b?.lastTransitionTime, moment.ISO_8601);
             return ma.diff(mb);
           })
-          .slice(-1);
+          .pop();
 
         const replicas = this.statusObject?.replicas;
 
