@@ -2,6 +2,14 @@
 
 
 
+## 2.0.36 (2023-12-15)
+
+
+### Bug Fixes
+
+* cleanup ([374d009](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/374d009f95afb4c5064b171d540629e0bd4d1a83))
+* extend for k8s status ([a5f504a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a5f504a33930efd4968a0103359c92592f637135))
+
 ## 2.0.35 (2023-12-15)
 
 
