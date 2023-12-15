@@ -2,6 +2,13 @@
 
 
 
+## 2.0.35 (2023-12-15)
+
+
+### Bug Fixes
+
+* add status, fix ([c4448cf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c4448cff6497a5288dd096c2289c75d03c1a7404))
+
 ## 2.0.34 (2023-12-14)
 
 
