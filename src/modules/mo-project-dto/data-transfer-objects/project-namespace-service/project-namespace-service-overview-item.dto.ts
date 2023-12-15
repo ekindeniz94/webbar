@@ -2,9 +2,9 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app';
 import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
 import moment from 'moment/moment';
-import { isBoolean } from 'class-validator';
-import { isNumber } from 'lodash';
+import { isArray, isBoolean } from 'class-validator';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { ProjectNamespaceServiceStatusResourceItemDto } from '../project-namespace-service-status';
 
 export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
@@ -38,6 +38,7 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   switchedOn: boolean; // Enum ON/OFF;
 
+  // @todo: remove
   @Expose()
   state: ProjectNamespaceServiceStateEnum; // Enum ERROR/BUILDING...
 
@@ -64,4 +65,9 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Type(() => ProjectNamespaceServiceAppDashboardDto)
   @Expose()
   app: ProjectNamespaceServiceAppDashboardDto;
+
+  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  status: ProjectNamespaceServiceStatusResourceItemDto[];
 }
