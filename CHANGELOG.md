@@ -2,6 +2,13 @@
 
 
 
+## 2.0.34 (2023-12-14)
+
+
+### Bug Fixes
+
+* fix popping items from reference ([3989114](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3989114a6fe74c82a1cce058282d1d2ed05795af))
+
 ## 2.0.33 (2023-12-13)
 
 
