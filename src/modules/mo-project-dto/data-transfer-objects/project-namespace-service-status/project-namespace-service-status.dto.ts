@@ -86,7 +86,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         return {
           replicas: replicas,
           reason: condition?.reason,
-          status: condition?.status,
+          status: condition?.status === 'True',
           type: condition?.type
         };
       }
