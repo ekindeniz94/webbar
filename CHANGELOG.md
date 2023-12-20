@@ -2,6 +2,13 @@
 
 
 
+## 2.0.41 (2023-12-20)
+
+
+### Bug Fixes
+
+* fix ([ae65f99](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ae65f999198cf9a27ac7a9e9e57e207df4eaeb6a))
+
 ## 2.0.40 (2023-12-20)
 
 
