@@ -2,6 +2,13 @@
 
 
 
+## 2.0.37 (2023-12-18)
+
+
+### Bug Fixes
+
+* add new socket event for new status ([56c195d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/56c195de3419b2c853186213318d35a579aa2424))
+
 ## 2.0.36 (2023-12-15)
 
 
