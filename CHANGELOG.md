@@ -2,6 +2,13 @@
 
 
 
+## 2.0.39 (2023-12-20)
+
+
+### Bug Fixes
+
+* status as bool ([fb22f67](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fb22f6752b6c6a20edbd4d92a19d7ddda181c8b8))
+
 ## 2.0.38 (2023-12-20)
 
 
