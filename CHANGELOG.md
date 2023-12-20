@@ -2,6 +2,13 @@
 
 
 
+## 2.0.43 (2023-12-20)
+
+
+### Bug Fixes
+
+* calulation ([9fea44f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9fea44fc1c5668ffdcd84152c21ac99e179a2e70))
+
 ## 2.0.42 (2023-12-20)
 
 
