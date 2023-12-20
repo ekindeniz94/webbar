@@ -2,6 +2,13 @@
 
 
 
+## 2.0.44 (2023-12-20)
+
+
+### Bug Fixes
+
+* status convinience ([8eddbf5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8eddbf56260c563def13a2e84e243480243b99c1))
+
 ## 2.0.43 (2023-12-20)
 
 
