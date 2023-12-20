@@ -2,6 +2,13 @@
 
 
 
+## 2.0.42 (2023-12-20)
+
+
+### Bug Fixes
+
+* calcualtion ([dbaafae](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/dbaafaeb7407efed2733da5faa0b75da7581117f))
+
 ## 2.0.41 (2023-12-20)
 
 
