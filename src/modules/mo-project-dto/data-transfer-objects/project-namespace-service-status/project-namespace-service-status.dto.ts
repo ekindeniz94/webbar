@@ -81,8 +81,8 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           })
           .pop();
 
-        const replicas = Math.min(0, +this.statusObject?.replicas);
-        const available = Math.min(0, replicas - +this.statusObject?.unavailableReplicas);
+        const replicas = Math.max(0, +this.statusObject?.replicas);
+        const available = Math.max(0, replicas - +this.statusObject?.unavailableReplicas);
 
         return {
           replicas: replicas,
