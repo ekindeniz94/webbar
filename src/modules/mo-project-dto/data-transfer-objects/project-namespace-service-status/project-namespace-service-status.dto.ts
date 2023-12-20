@@ -81,13 +81,16 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           })
           .pop();
 
-        const replicas = this.statusObject?.replicas;
+        const replicas = Math.min(0, +this.statusObject?.replicas);
+        const available = Math.min(0, replicas - +this.statusObject?.unavailableReplicas);
 
         return {
           replicas: replicas,
+          available: available,
           reason: condition?.reason,
           status: condition?.status === 'True',
-          type: condition?.type
+          type: condition?.type,
+          ready: `${available}/${replicas}`
         };
       }
       case ProjectNamespaceServiceStatusController.CronJob:
