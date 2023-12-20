@@ -2,6 +2,13 @@
 
 
 
+## 2.0.38 (2023-12-20)
+
+
+### Bug Fixes
+
+* extend resourceitemdto status ([20fff8b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/20fff8b6dff7ea44d793802c1b85e382c97302d7))
+
 ## 2.0.37 (2023-12-18)
 
 
