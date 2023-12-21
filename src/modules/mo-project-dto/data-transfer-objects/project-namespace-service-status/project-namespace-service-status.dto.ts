@@ -30,7 +30,9 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
   @IsOptional()
   statusObject: any;
 
-  getRootNodes(items: ProjectNamespaceServiceStatusResourceItemDto[]): ProjectNamespaceServiceStatusResourceItemDto[] {
+  static getRootNodes(
+    items: ProjectNamespaceServiceStatusResourceItemDto[]
+  ): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
     for (const item of items || []) {
       if (item.ownerName === undefined) {
