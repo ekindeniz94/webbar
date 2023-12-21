@@ -2,6 +2,13 @@
 
 
 
+## 2.0.47 (2023-12-21)
+
+
+### Bug Fixes
+
+* static function for root nodes ([9c75883](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9c75883f7a4adc4ae4d395d51102e63a6c40f50c))
+
 ## 2.0.46 (2023-12-21)
 
 
