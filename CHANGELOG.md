@@ -2,6 +2,13 @@
 
 
 
+## 2.0.45 (2023-12-21)
+
+
+### Bug Fixes
+
+* rollback desired replica for deployment status ([edd2d51](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/edd2d519adbfb959f9ff5703f1c9985394e0a831))
+
 ## 2.0.44 (2023-12-20)
 
 
