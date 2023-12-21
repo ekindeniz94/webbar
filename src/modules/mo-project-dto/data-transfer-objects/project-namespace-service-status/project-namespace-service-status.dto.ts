@@ -150,4 +150,89 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         return {};
     }
   }
+
+  static buildHash(
+    nodes: ProjectNamespaceServiceStatusResourceItemDto[],
+    hashCallback: (stringified: string) => string = (stringified) => {
+      return stringified;
+    }
+  ): string {
+    //
+    let hash = '';
+    const order = [ProjectNamespaceServiceStatusKind.BuildJob, undefined];
+    const roots = ProjectNamespaceServiceStatusResourceItemDto.getRootNodes(nodes);
+    const compareByAttributes = (
+      a: ProjectNamespaceServiceStatusResourceItemDto,
+      b: ProjectNamespaceServiceStatusResourceItemDto,
+      attributes: string[]
+    ): number => {
+      let aa: any, bb: any;
+      attributes.forEach((key) => {
+        aa += (a as any)[key];
+        bb += (b as any)[key];
+      });
+
+      if (aa < bb) {
+        return -1; // a comes first
+      }
+      if (aa > bb) {
+        return 1; // b comes first
+      }
+      return 0; // no change in order
+    };
+    const sorted = nodes.sort((a, b) => compareByAttributes(a, b, ['name', 'kind']));
+    const noHash = (stringified: string): string => {
+      return stringified;
+    };
+
+    hashCallback = hashCallback ?? noHash;
+
+    const stableStringify = (obj: any): string => {
+      if (typeof obj === 'object' && obj !== null) {
+        if (Array.isArray(obj)) {
+          return '[' + obj.map(stableStringify).join(',') + ']';
+        } else {
+          return (
+            '{' +
+            Object.keys(obj)
+              .sort()
+              .map((key) => {
+                return JSON.stringify(key) + ':' + stableStringify(obj[key]);
+              })
+              .join(',') +
+            '}'
+          );
+        }
+      } else {
+        return JSON.stringify(obj);
+      }
+    };
+
+    const traverse = (node: ProjectNamespaceServiceStatusResourceItemDto): string => {
+      let hash = hashCallback(stableStringify(node));
+
+      for (const next of sorted) {
+        if (node.name === next.ownerName && node.kind === next.ownerKind) {
+          hash = hashCallback(`${hash}${traverse(next)}`);
+        }
+      }
+
+      return hash;
+    };
+
+    for (const key of order) {
+      let root: ProjectNamespaceServiceStatusResourceItemDto | undefined;
+      if (key === undefined) {
+        root = roots.find((root) => root.kind !== ProjectNamespaceServiceStatusKind.BuildJob);
+      } else {
+        root = roots.find((root) => root.kind === key);
+      }
+
+      if (root !== undefined) {
+        hash = hashCallback(`${hash}${traverse(root)}`);
+      }
+    }
+
+    return hash;
+  }
 }
