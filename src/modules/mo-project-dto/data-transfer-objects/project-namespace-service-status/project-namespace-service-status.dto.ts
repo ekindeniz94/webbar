@@ -85,32 +85,26 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         const availableReplicas = +(this.statusObject?.availableReplicas ?? 0);
         const unavailableReplicas = +(this.statusObject?.unavailableReplicas ?? 0);
 
-        let desiredReplicas = replicas;
-        if (replicas < availableReplicas + unavailableReplicas) {
-          desiredReplicas = availableReplicas + unavailableReplicas;
-        }
-
         let availability = 'n.a.';
-        if (desiredReplicas === availableReplicas + unavailableReplicas) {
+        if (replicas === availableReplicas + unavailableReplicas) {
           availability = availableReplicas.toString();
         } else if (availableReplicas > 0) {
           availability = availableReplicas.toString();
         } else if (unavailableReplicas > 0) {
-          availability = (desiredReplicas - unavailableReplicas).toString();
+          availability = (replicas - unavailableReplicas).toString();
         } else {
           //
         }
 
         return {
           replicas: replicas,
-          desiredReplicas: desiredReplicas,
           availableReplicas: availableReplicas,
           unavailableReplicas: unavailableReplicas,
           reason: condition?.reason,
           status: condition?.status === 'True',
           type: condition?.type,
-          ready: `${availability}/${desiredReplicas}`,
-          isHappy: desiredReplicas === availableReplicas
+          ready: `${availability}/${replicas}`,
+          isHappy: replicas === availableReplicas
         };
       }
       case ProjectNamespaceServiceStatusController.CronJob:
