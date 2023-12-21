@@ -30,12 +30,23 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
   @IsOptional()
   statusObject: any;
 
+  getRootNodes(items: ProjectNamespaceServiceStatusResourceItemDto[]): ProjectNamespaceServiceStatusResourceItemDto[] {
+    const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
+    for (const item of items || []) {
+      if (item.ownerName === undefined) {
+        resources.push(cloneDeep(item));
+      }
+    }
+
+    return resources;
+  }
+
   getParent(
     items: ProjectNamespaceServiceStatusResourceItemDto[]
   ): ProjectNamespaceServiceStatusResourceItemDto | undefined {
     for (const item of items) {
       if (this.ownerName == item.name) {
-        return item;
+        return cloneDeep(item);
       }
     }
 
