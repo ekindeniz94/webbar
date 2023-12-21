@@ -2,6 +2,13 @@
 
 
 
+## 2.0.46 (2023-12-21)
+
+
+### Bug Fixes
+
+* getRootNodes for status array ([15cd1c5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/15cd1c57782826e9288ac2513d6bfaa5fef1354e))
+
 ## 2.0.45 (2023-12-21)
 
 
