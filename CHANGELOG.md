@@ -2,6 +2,13 @@
 
 
 
+## 2.0.48 (2023-12-21)
+
+
+### Bug Fixes
+
+* add buildhash util ([c80a1da](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c80a1da4dcf3ce30fe9ca2b342da5a9f4e6f5448))
+
 ## 2.0.47 (2023-12-21)
 
 
