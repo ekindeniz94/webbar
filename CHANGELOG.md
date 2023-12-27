@@ -2,6 +2,13 @@
 
 
 
+## 2.0.49 (2023-12-27)
+
+
+### Bug Fixes
+
+* update storage ([012b4cd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/012b4cd0a8ecebd2df1a6a4137a02a9db8f4bb91))
+
 ## 2.0.48 (2023-12-21)
 
 
