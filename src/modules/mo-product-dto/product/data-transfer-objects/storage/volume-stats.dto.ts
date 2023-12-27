@@ -2,9 +2,9 @@ import { Expose } from 'class-transformer';
 import { IsNumber, IsString } from 'class-validator';
 
 export class VolumeStatsDto {
-  @Expose()
-  @IsString()
-  volumeId: string;
+  // @Expose()
+  // @IsString()
+  // volumeId: string;
 
   @Expose()
   @IsString()

@@ -17,7 +17,7 @@ export * from './project-namespace-service-kubernetes-settings';
 export * from './project-namespace-service-pod';
 export * from './project-namespace-service-port';
 export * from './project-namespace-service-status';
-export * from './project-namespace-storage';
+// export * from './project-namespace-storage';
 export * from './project-notification';
 export * from './stats';
 export * from './traffic';
