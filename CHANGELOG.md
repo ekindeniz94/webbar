@@ -2,6 +2,13 @@
 
 
 
+## 2.0.50 (2024-01-04)
+
+
+### Bug Fixes
+
+* ProjectCiCdSocketDataEventEnum add BUILD_LOGS ([6059ac1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6059ac1c7d927a5f57ae848ad247abe03992a114))
+
 ## 2.0.49 (2023-12-27)
 
 
