@@ -2,6 +2,13 @@
 
 
 
+## 2.0.51 (2024-01-05)
+
+
+### Bug Fixes
+
+* added single property to systemcheck. ([77fa633](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/77fa6335028f6bdec4d18cb44844ff3a28dc8815))
+
 ## 2.0.50 (2024-01-04)
 
 
