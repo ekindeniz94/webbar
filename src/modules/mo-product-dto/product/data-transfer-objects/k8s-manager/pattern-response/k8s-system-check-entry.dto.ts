@@ -7,6 +7,10 @@ export class K8sSystemCheckEntryDto {
   @Expose()
   isRequired: boolean;
 
+  @Type(() => Boolean)
+  @Expose()
+  wantsToBeInstalled: boolean;
+
   @Type(() => String)
   @Expose()
   checkName: string;
