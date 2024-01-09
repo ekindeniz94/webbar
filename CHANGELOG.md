@@ -2,6 +2,13 @@
 
 
 
+## 2.0.52 (2024-01-09)
+
+
+### Bug Fixes
+
+* add BreadcrumbResultDto, BreadcrumbListTypeEnum ([8eee737](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8eee73744ed8bb4dfd771fd5a67f16909ec6663f))
+
 ## 2.0.51 (2024-01-05)
 
 
