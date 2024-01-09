@@ -1,3 +1,4 @@
+export * from './mo-api-service';
 export * from './mo-app-library-dto';
 export * from './mo-contact';
 export * from './mo-core';
