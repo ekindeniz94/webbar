@@ -2,6 +2,13 @@
 
 
 
+## 2.0.53 (2024-01-10)
+
+
+### Bug Fixes
+
+* added description to K8sSystemCheckEntryDto. ([dadc02b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/dadc02bacb686cc7ea760cf166d1841ceb42bab8))
+
 ## 2.0.52 (2024-01-09)
 
 
