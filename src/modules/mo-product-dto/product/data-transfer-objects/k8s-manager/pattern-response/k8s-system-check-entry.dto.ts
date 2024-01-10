@@ -19,6 +19,10 @@ export class K8sSystemCheckEntryDto {
   @Expose()
   message: string;
 
+  @Type(() => String)
+  @Expose()
+  description: string;
+
   @Expose()
   installPattern: string;
 
