@@ -2,6 +2,13 @@
 
 
 
+## 2.0.58 (2024-01-12)
+
+
+### Bug Fixes
+
+* fix availablity in status ([3ffdcd1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3ffdcd1c019f16921cffa53ebd9f703d93878977))
+
 ## 2.0.57 (2024-01-12)
 
 
