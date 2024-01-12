@@ -2,6 +2,14 @@
 
 
 
+## 2.0.56 (2024-01-12)
+
+
+### Bug Fixes
+
+* impl paused status ([f50c8c8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f50c8c8e81dc17d4209e6104057e0280f8cd1ba4))
+* update status dto ([8df379c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8df379ced37593f85e4de93ec8828271cce6d921))
+
 ## 2.0.55 (2024-01-12)
 
 
