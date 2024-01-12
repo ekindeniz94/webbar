@@ -3,7 +3,7 @@ import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-ser
 import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
 import moment from 'moment';
 import { isBoolean } from 'class-validator';
-import { ProjectNamespaceServiceStatusResourceItemDto } from '../project-namespace-service-status';
+import { ProjectNamespaceServiceStatusResourceDto } from '../project-namespace-service-status';
 
 export class ProjectNamespaceServiceDashboardDto {
   @Expose()
@@ -32,8 +32,9 @@ export class ProjectNamespaceServiceDashboardDto {
   @Expose()
   state: ProjectNamespaceServiceStateEnum; // Enum ### Not the build state
 
+  @Type(() => ProjectNamespaceServiceStatusResourceDto)
   @Expose()
-  status: ProjectNamespaceServiceStatusResourceItemDto[];
+  status: ProjectNamespaceServiceStatusResourceDto;
 
   @Type(() => ProjectNamespaceServiceAppDashboardDto)
   @Expose()
