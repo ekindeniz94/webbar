@@ -2,6 +2,13 @@
 
 
 
+## 2.0.54 (2024-01-12)
+
+
+### Bug Fixes
+
+* add status wrapper, move status convinient fct into wrapper ([c3a1fb2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c3a1fb225f8dbcd5408ad9ddf3272642e5e3f54c))
+
 ## 2.0.53 (2024-01-10)
 
 
