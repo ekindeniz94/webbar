@@ -10,15 +10,20 @@ import { isArray } from 'class-validator';
 
 export class ProjectNamespaceServiceStatusResourceDto {
   @Expose()
+  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  items: ProjectNamespaceServiceStatusResourceItemDto[];
+
+  @Expose()
   get switchedOn(): boolean {
     switch (true) {
       case this.hasDeployment: {
         const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
-        return status.replicas !== 0;
+        return !status.paused;
       }
       case this.hasCronJob: {
-        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
-        // @todo
+        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).pop()?.status();
+        return !status.suspend;
       }
     }
     return false;
@@ -53,11 +58,6 @@ export class ProjectNamespaceServiceStatusResourceDto {
   get hasBuild(): boolean {
     return this.getItemsOfType(ProjectNamespaceServiceStatusKind.BuildJob).length > 0;
   }
-
-  @Expose()
-  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  items: ProjectNamespaceServiceStatusResourceItemDto[];
 
   public getRootNodes(): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
