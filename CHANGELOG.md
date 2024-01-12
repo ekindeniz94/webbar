@@ -2,6 +2,13 @@
 
 
 
+## 2.0.55 (2024-01-12)
+
+
+### Bug Fixes
+
+* replace new status wrapper in dashboard dtos ([618edb8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/618edb8d24aad281b372d78d64260f99fd168ad5))
+
 ## 2.0.54 (2024-01-12)
 
 
