@@ -10,6 +10,11 @@ import { isArray } from 'class-validator';
 
 export class ProjectNamespaceServiceStatusResourceDto {
   @Expose()
+  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  items: ProjectNamespaceServiceStatusResourceItemDto[];
+
+  @Expose()
   get switchedOn(): boolean {
     switch (true) {
       case this.hasDeployment: {
@@ -53,11 +58,6 @@ export class ProjectNamespaceServiceStatusResourceDto {
   get hasBuild(): boolean {
     return this.getItemsOfType(ProjectNamespaceServiceStatusKind.BuildJob).length > 0;
   }
-
-  @Expose()
-  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  items: ProjectNamespaceServiceStatusResourceItemDto[];
 
   public getRootNodes(): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];

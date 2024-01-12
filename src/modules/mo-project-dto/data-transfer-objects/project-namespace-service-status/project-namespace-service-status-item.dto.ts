@@ -42,7 +42,10 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           })
           .pop();
 
-        const replicas = +(this.statusObject?.replicas ?? 0);
+        const image = this.statusObject?.image ?? '';
+        const paused = this.statusObject?.paused ?? false;
+        const replicas = paused ? 0 : +(this.statusObject?.replicas ?? 0);
+        const expectedReplicas = +(this.statusObject?.status?.replicas ?? 0);
         const availableReplicas = +(this.statusObject?.availableReplicas ?? 0);
         const unavailableReplicas = +(this.statusObject?.unavailableReplicas ?? 0);
 
@@ -58,7 +61,10 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         }
 
         return {
+          image: image,
+          paused: paused,
           replicas: replicas,
+          expectedReplicas: expectedReplicas,
           availableReplicas: availableReplicas,
           unavailableReplicas: unavailableReplicas,
           reason: condition?.reason,
@@ -68,8 +74,15 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           isHappy: replicas === availableReplicas
         };
       }
-      case ProjectNamespaceServiceStatusController.CronJob:
-        break;
+      case ProjectNamespaceServiceStatusController.CronJob: {
+        const image = this.statusObject?.image ?? '';
+        const suspend = this.statusObject?.suspend ?? false;
+
+        return {
+          image: image,
+          suspend: suspend
+        };
+      }
       case ProjectNamespaceServiceStatusController.Job:
         break;
       case ProjectNamespaceServiceStatusKind.BuildJob:
