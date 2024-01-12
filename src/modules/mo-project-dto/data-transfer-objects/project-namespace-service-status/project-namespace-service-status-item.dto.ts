@@ -33,7 +33,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
   status(): any {
     switch (this.kind) {
       case ProjectNamespaceServiceStatusController.Deployment: {
-        const conditions = cloneDeep(this.statusObject?.conditions ?? []);
+        const conditions = cloneDeep(this.statusObject?.status?.conditions ?? []);
         const condition = conditions
           .sort((a: any, b: any) => {
             const ma = moment(a?.lastTransitionTime, moment.ISO_8601);
@@ -46,8 +46,8 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         const paused = this.statusObject?.paused ?? false;
         const replicas = paused ? 0 : +(this.statusObject?.replicas ?? 0);
         const expectedReplicas = +(this.statusObject?.status?.replicas ?? 0);
-        const availableReplicas = +(this.statusObject?.availableReplicas ?? 0);
-        const unavailableReplicas = +(this.statusObject?.unavailableReplicas ?? 0);
+        const availableReplicas = +(this.statusObject?.status?.availableReplicas ?? 0);
+        const unavailableReplicas = +(this.statusObject?.status?.unavailableReplicas ?? 0);
 
         let availability = 'n.a.';
         if (replicas === availableReplicas + unavailableReplicas) {
