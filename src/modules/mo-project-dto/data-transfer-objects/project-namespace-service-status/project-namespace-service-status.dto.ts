@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import {
   ProjectNamespaceServiceStatusController,
   ProjectNamespaceServiceStatusKind,
@@ -6,6 +6,7 @@ import {
 } from './project-namespace-service-status.enum';
 import { cloneDeep } from 'lodash';
 import { ProjectNamespaceServiceStatusResourceItemDto } from './project-namespace-service-status-item.dto';
+import { isArray } from 'class-validator';
 
 export class ProjectNamespaceServiceStatusResourceDto {
   @Expose()
@@ -55,6 +56,7 @@ export class ProjectNamespaceServiceStatusResourceDto {
 
   @Expose()
   @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   items: ProjectNamespaceServiceStatusResourceItemDto[];
 
   public getRootNodes(): ProjectNamespaceServiceStatusResourceItemDto[] {
