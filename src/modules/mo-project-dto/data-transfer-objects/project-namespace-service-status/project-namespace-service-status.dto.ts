@@ -19,11 +19,11 @@ export class ProjectNamespaceServiceStatusResourceDto {
     switch (true) {
       case this.hasDeployment: {
         const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
-        return status.replicas !== 0;
+        return !status.paused;
       }
       case this.hasCronJob: {
-        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
-        // @todo
+        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).pop()?.status();
+        return !status.suspend;
       }
     }
     return false;
