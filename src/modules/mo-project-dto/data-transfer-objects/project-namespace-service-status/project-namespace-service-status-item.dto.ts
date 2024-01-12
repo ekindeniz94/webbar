@@ -49,7 +49,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         const availableReplicas = +(this.statusObject?.status?.availableReplicas ?? 0);
         const unavailableReplicas = +(this.statusObject?.status?.unavailableReplicas ?? 0);
 
-        let availability = 'n.a.';
+        let availability = `0`;
         if (replicas === availableReplicas + unavailableReplicas) {
           availability = availableReplicas.toString();
         } else if (availableReplicas > 0) {
