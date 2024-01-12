@@ -1,40 +1,65 @@
-import { Expose } from 'class-transformer';
-import { IsOptional } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
 import {
   ProjectNamespaceServiceStatusController,
   ProjectNamespaceServiceStatusKind,
   ProjectNamespaceServiceStatusKindType
 } from './project-namespace-service-status.enum';
-import moment from 'moment';
 import { cloneDeep } from 'lodash';
+import { ProjectNamespaceServiceStatusResourceItemDto } from './project-namespace-service-status-item.dto';
 
-export class ProjectNamespaceServiceStatusResourceItemDto {
+export class ProjectNamespaceServiceStatusResourceDto {
   @Expose()
-  kind: ProjectNamespaceServiceStatusKindType;
+  get switchedOn(): boolean {
+    switch (true) {
+      case this.hasDeployment: {
+        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
+        return status.replicas !== 0;
+      }
+      case this.hasCronJob: {
+        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
+        // @todo
+      }
+    }
+    return false;
+  }
 
   @Expose()
-  name: string;
+  get hasPods(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.Pod).length > 0;
+  }
 
   @Expose()
-  namespace: string;
+  get hasContainers(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.Container).length > 0;
+  }
 
   @Expose()
-  @IsOptional()
-  ownerName: string;
+  get hasDeployment(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).length > 0;
+  }
 
   @Expose()
-  @IsOptional()
-  ownerKind: string;
+  get hasJob(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusController.Job).length > 0;
+  }
 
   @Expose()
-  @IsOptional()
-  statusObject: any;
+  get hasCronJob(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).length > 0;
+  }
 
-  static getRootNodes(
-    items: ProjectNamespaceServiceStatusResourceItemDto[]
-  ): ProjectNamespaceServiceStatusResourceItemDto[] {
+  @Expose()
+  get hasBuild(): boolean {
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.BuildJob).length > 0;
+  }
+
+  @Expose()
+  @Type(() => ProjectNamespaceServiceStatusResourceItemDto)
+  items: ProjectNamespaceServiceStatusResourceItemDto[];
+
+  public getRootNodes(): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
-    for (const item of items || []) {
+    for (const item of this.items || []) {
       if (item.ownerName === undefined) {
         resources.push(cloneDeep(item));
       }
@@ -43,11 +68,11 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     return resources;
   }
 
-  getParent(
-    items: ProjectNamespaceServiceStatusResourceItemDto[]
+  public getParent(
+    forItem: ProjectNamespaceServiceStatusResourceItemDto
   ): ProjectNamespaceServiceStatusResourceItemDto | undefined {
-    for (const item of items) {
-      if (this.ownerName == item.name) {
+    for (const item of this.items) {
+      if (item.name == forItem.ownerName) {
         return cloneDeep(item);
       }
     }
@@ -55,25 +80,22 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     return undefined;
   }
 
-  getNextItems(
-    items: ProjectNamespaceServiceStatusResourceItemDto[]
-  ): ProjectNamespaceServiceStatusResourceItemDto[] | undefined {
+  public getNextItems(
+    forItem: ProjectNamespaceServiceStatusResourceItemDto
+  ): ProjectNamespaceServiceStatusResourceItemDto[] {
     const next: ProjectNamespaceServiceStatusResourceItemDto[] = [];
-    for (const item of items) {
-      if (this.name == item.ownerName) {
+    for (const item of this.items) {
+      if (item.ownerName == forItem.name) {
         next.push(cloneDeep(item));
       }
     }
 
-    return next.length > 0 ? next : undefined;
+    return next;
   }
 
-  static getItemsOfType(
-    items: ProjectNamespaceServiceStatusResourceItemDto[],
-    kind: ProjectNamespaceServiceStatusKindType
-  ): ProjectNamespaceServiceStatusResourceItemDto[] {
+  public getItemsOfType(kind: ProjectNamespaceServiceStatusKindType): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
-    for (const item of items || []) {
+    for (const item of this.items || []) {
       if (item.kind === kind) {
         resources.push(cloneDeep(item));
       }
@@ -82,77 +104,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     return resources;
   }
 
-  status(): any {
-    switch (this.kind) {
-      case ProjectNamespaceServiceStatusController.Deployment: {
-        const conditions = cloneDeep(this.statusObject?.conditions ?? []);
-        const condition = conditions
-          .sort((a: any, b: any) => {
-            const ma = moment(a?.lastTransitionTime, moment.ISO_8601);
-            const mb = moment(b?.lastTransitionTime, moment.ISO_8601);
-            return ma.diff(mb);
-          })
-          .pop();
-
-        const replicas = +(this.statusObject?.replicas ?? 0);
-        const availableReplicas = +(this.statusObject?.availableReplicas ?? 0);
-        const unavailableReplicas = +(this.statusObject?.unavailableReplicas ?? 0);
-
-        let availability = 'n.a.';
-        if (replicas === availableReplicas + unavailableReplicas) {
-          availability = availableReplicas.toString();
-        } else if (availableReplicas > 0) {
-          availability = availableReplicas.toString();
-        } else if (unavailableReplicas > 0) {
-          availability = (replicas - unavailableReplicas).toString();
-        } else {
-          //
-        }
-
-        return {
-          replicas: replicas,
-          availableReplicas: availableReplicas,
-          unavailableReplicas: unavailableReplicas,
-          reason: condition?.reason,
-          status: condition?.status === 'True',
-          type: condition?.type,
-          ready: `${availability}/${replicas}`,
-          isHappy: replicas === availableReplicas
-        };
-      }
-      case ProjectNamespaceServiceStatusController.CronJob:
-        break;
-      case ProjectNamespaceServiceStatusController.Job:
-        break;
-      case ProjectNamespaceServiceStatusKind.BuildJob:
-        return { state: this.statusObject?.state };
-      case ProjectNamespaceServiceStatusKind.Pod:
-        return { state: this.statusObject?.phase };
-      case ProjectNamespaceServiceStatusKind.Container: {
-        let state: string;
-        const obj = this.statusObject?.state ?? {};
-        if ('waiting' in obj) {
-          state = 'waiting';
-        } else if ('running' in obj) {
-          state = 'running';
-        } else if ('terminated' in obj) {
-          state = 'terminated';
-        } else {
-          state = 'unkown';
-        }
-
-        const restartCount = this.statusObject?.restartCount;
-        const name = this.statusObject?.name;
-
-        return { restartCount: restartCount, state: state, name: name };
-      }
-      default:
-        return {};
-    }
-  }
-
-  static buildHash(
-    nodes: ProjectNamespaceServiceStatusResourceItemDto[],
+  public hash(
     hashCallback: (stringified: string) => string = (stringified) => {
       return stringified;
     }
@@ -160,7 +112,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
     //
     let hash = '';
     const order = [ProjectNamespaceServiceStatusKind.BuildJob, undefined];
-    const roots = ProjectNamespaceServiceStatusResourceItemDto.getRootNodes(nodes);
+    const roots = this.getRootNodes();
     const compareByAttributes = (
       a: ProjectNamespaceServiceStatusResourceItemDto,
       b: ProjectNamespaceServiceStatusResourceItemDto,
@@ -180,7 +132,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
       }
       return 0; // no change in order
     };
-    const sorted = nodes.sort((a, b) => compareByAttributes(a, b, ['name', 'kind']));
+    const sorted = this.items.sort((a, b) => compareByAttributes(a, b, ['name', 'kind']));
     const noHash = (stringified: string): string => {
       return stringified;
     };
