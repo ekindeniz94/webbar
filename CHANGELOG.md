@@ -2,6 +2,14 @@
 
 
 
+## 2.0.59 (2024-01-17)
+
+
+### Bug Fixes
+
+* applied switchedOn logic ([b634112](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b634112dcdbdf656a206b6980f51d39f2c414156))
+* applied switchedOn logic ([4f7abd7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4f7abd7f72caddaed9e53da8d77a25b11fb4ad13))
+
 ## 2.0.58 (2024-01-12)
 
 
