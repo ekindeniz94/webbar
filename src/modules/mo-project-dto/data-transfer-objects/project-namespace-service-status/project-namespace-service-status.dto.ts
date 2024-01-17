@@ -16,17 +16,14 @@ export class ProjectNamespaceServiceStatusResourceDto {
 
   @Expose()
   get switchedOn(): boolean {
-    switch (true) {
-      case this.hasDeployment: {
-        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
-        return !status.paused;
-      }
-      case this.hasCronJob: {
-        const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).pop()?.status();
-        return !status.suspend;
-      }
+    if (this.hasDeployment) {
+      const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
+      return status.replicas > 0;
+    } else if (this.hasCronJob) {
+      const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).pop()?.status();
+      return !status.suspend;
     }
-    return false;
+    return true;
   }
 
   @Expose()
