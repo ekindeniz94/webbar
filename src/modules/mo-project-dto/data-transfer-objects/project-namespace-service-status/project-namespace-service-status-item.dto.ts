@@ -44,7 +44,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
 
         const image = this.statusObject?.image ?? '';
         const paused = this.statusObject?.paused ?? false;
-        const replicas = paused ? 0 : +(this.statusObject?.replicas ?? 0);
+        const replicas = +(this.statusObject?.replicas ?? 0);
         const expectedReplicas = +(this.statusObject?.status?.replicas ?? 0);
         const availableReplicas = +(this.statusObject?.status?.availableReplicas ?? 0);
         const unavailableReplicas = +(this.statusObject?.status?.unavailableReplicas ?? 0);
