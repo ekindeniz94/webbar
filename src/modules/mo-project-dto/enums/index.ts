@@ -12,3 +12,4 @@ export * from './project-namespace-service-port-binding.enum';
 export * from './project-user-state.enum';
 export * from './project-namespace-service-state.enum';
 export * from './project-namespace-service-image-pull-policy.enum';
+export * from './roles.enum';
