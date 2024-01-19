@@ -2,6 +2,13 @@
 
 
 
+## 2.0.60 (2024-01-19)
+
+
+### Bug Fixes
+
+* add product and project roles ([5877cc4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5877cc42135ca4d1e829b3e82ae77ddc4a4ab373))
+
 ## 2.0.59 (2024-01-17)
 
 
