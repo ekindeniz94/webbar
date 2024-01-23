@@ -2,6 +2,13 @@
 
 
 
+## 2.0.62 (2024-01-23)
+
+
+### Bug Fixes
+
+* remove clusterName ([11895b9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/11895b91ddf6d0100a2b3b996175f1e334bf6dc2))
+
 ## 2.0.61 (2024-01-23)
 
 
