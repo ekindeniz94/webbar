@@ -2,6 +2,13 @@
 
 
 
+## 2.0.61 (2024-01-23)
+
+
+### Bug Fixes
+
+* update cluster dtos (rm name) ([2f00725](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2f00725e95eb48cd316ee9efedc82154f7cb71c4))
+
 ## 2.0.60 (2024-01-19)
 
 
