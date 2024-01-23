@@ -33,19 +33,10 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
   status(): any {
     switch (this.kind) {
       case ProjectNamespaceServiceStatusController.Deployment: {
-        const conditions = cloneDeep(this.statusObject?.status?.conditions ?? []);
-        const condition = conditions
-          .sort((a: any, b: any) => {
-            const ma = moment(a?.lastTransitionTime, moment.ISO_8601);
-            const mb = moment(b?.lastTransitionTime, moment.ISO_8601);
-            return ma.diff(mb);
-          })
-          .pop();
-
         const image = this.statusObject?.image ?? '';
         const paused = this.statusObject?.paused ?? false;
         const replicas = +(this.statusObject?.replicas ?? 0);
-        const expectedReplicas = +(this.statusObject?.status?.replicas ?? 0);
+        const expectedReplicas = +(this.statusObject?.status?.replicas ?? replicas);
         const availableReplicas = +(this.statusObject?.status?.availableReplicas ?? 0);
         const unavailableReplicas = +(this.statusObject?.status?.unavailableReplicas ?? 0);
 
@@ -67,11 +58,9 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           expectedReplicas: expectedReplicas,
           availableReplicas: availableReplicas,
           unavailableReplicas: unavailableReplicas,
-          reason: condition?.reason,
-          status: condition?.status === 'True',
-          type: condition?.type,
           ready: `${availability}/${replicas}`,
-          isHappy: replicas === availableReplicas
+          isHappy: replicas === availableReplicas,
+          hasImagePlaceholder: image === 'PLACEHOLDER-UNTIL-BUILDSERVER-OVERWRITES-THIS-IMAGE'
         };
       }
       case ProjectNamespaceServiceStatusController.CronJob: {
