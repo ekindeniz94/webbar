@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { GitConnectionTypeEnum } from '../../../mo-git';
 
 export class K8sProjectDto {
@@ -25,6 +25,12 @@ export class K8sProjectDto {
 
   @Expose()
   clusterDisplayName: string;
+
+  @Transform(({ value, obj }) => {
+    return obj.displayName;
+  })
+  @Expose()
+  clusterName: string;
 
   @Expose()
   clusterMfaId: string;
