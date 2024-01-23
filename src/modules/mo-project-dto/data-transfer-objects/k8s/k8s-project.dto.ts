@@ -24,7 +24,7 @@ export class K8sProjectDto {
   clusterId: string;
 
   @Expose()
-  clusterName: string;
+  clusterDisplayName: string;
 
   @Expose()
   clusterMfaId: string;
