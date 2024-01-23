@@ -1,10 +1,10 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import {isArray, isBoolean, isIP} from 'class-validator';
+import { isArray, isBoolean, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
-import {MoUtils} from "@mo/js-utils";
+import { MoUtils } from '@mo/js-utils';
 
 export class ClusterFlatDto extends BaseEntityDto {
   @Type(() => Number)
@@ -25,9 +25,6 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
   @Expose()
   buildServerType: ClusterBuildServerTypeEnum;
-
-  @Expose()
-  name: string;
 
   @Expose()
   icon: string;

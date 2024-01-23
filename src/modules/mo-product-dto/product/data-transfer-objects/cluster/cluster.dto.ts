@@ -47,9 +47,6 @@ export class ClusterDto extends BaseEntityDto {
   region: string;
 
   @Expose()
-  name: string;
-
-  @Expose()
   icon: string;
 
   @Expose()

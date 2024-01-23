@@ -1,26 +1,9 @@
-import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { MoProjectDtoUtils, PROJECT_CONST } from '../../../../../mo-project-dto';
+import { Expose } from 'class-transformer';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class ClusterAdminCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
   displayName: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(3)
-  @MaxLength(64)
-  @Matches(/^([a-z])([a-z0-9-_])/, {
-    message: '$property must conform to: a-z, 0-9, - ;min 3, max 64 char'
-  })
-  @Transform(({ value }) => {
-    if (!value) {
-      return 'mogenius';
-    }
-    return MoProjectDtoUtils.k8sName(value, PROJECT_CONST.K8S_NAME.MAX);
-  })
-  @Expose()
-  name: string;
 }

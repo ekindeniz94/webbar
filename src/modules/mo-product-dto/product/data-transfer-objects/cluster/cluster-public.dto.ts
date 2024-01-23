@@ -14,9 +14,6 @@ export class ClusterPublicDto {
   @Expose()
   displayName: string;
 
-  @Expose()
-  name: string;
-
   @Transform(({ value }) => value ?? ClusterTypeEnum.BRING_YOUR_OWN)
   @Expose()
   type: ClusterTypeEnum;
