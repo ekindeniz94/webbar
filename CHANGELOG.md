@@ -2,6 +2,13 @@
 
 
 
+## 2.0.63 (2024-01-23)
+
+
+### Bug Fixes
+
+* add clusterName to K8sProjectDto (clusterName is clusterDisplayName) ([85a9a62](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/85a9a623916a129bb31bdaf4074efe49fbb02039))
+
 ## 2.0.62 (2024-01-23)
 
 
