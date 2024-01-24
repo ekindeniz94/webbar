@@ -2,6 +2,13 @@
 
 
 
+## 2.0.65 (2024-01-24)
+
+
+### Bug Fixes
+
+* ProductOrganizationSocketDataEventEnum add deleted org ([40323e6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/40323e613b45e78978e787991fd3521dc176a0ab))
+
 ## 2.0.64 (2024-01-23)
 
 
