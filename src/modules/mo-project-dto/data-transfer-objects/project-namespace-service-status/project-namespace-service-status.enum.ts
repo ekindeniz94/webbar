@@ -1,4 +1,4 @@
-export enum ProjectNamespaceServiceStatusController {
+export enum ProjectNamespaceServiceStatusControllerEnum {
   Deployment = 'Deployment',
   ReplicaSet = 'ReplicaSet',
   StatefulSet = 'StatefulSet',
@@ -7,12 +7,12 @@ export enum ProjectNamespaceServiceStatusController {
   CronJob = 'CronJob'
 }
 
-export enum ProjectNamespaceServiceStatusKind {
+export enum ProjectNamespaceServiceStatusKindEnum {
   BuildJob = 'BuildJob',
   Pod = 'Pod',
   Container = 'Container'
 }
 
-export type ProjectNamespaceServiceStatusKindType =
-  | ProjectNamespaceServiceStatusController
-  | ProjectNamespaceServiceStatusKind;
+export type ProjectNamespaceServiceStatusKindTypeEnum =
+  | ProjectNamespaceServiceStatusControllerEnum
+  | ProjectNamespaceServiceStatusKindEnum;

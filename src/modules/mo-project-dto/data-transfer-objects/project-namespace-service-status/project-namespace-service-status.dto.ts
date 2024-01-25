@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
-  ProjectNamespaceServiceStatusController,
-  ProjectNamespaceServiceStatusKind,
-  ProjectNamespaceServiceStatusKindType
+  ProjectNamespaceServiceStatusControllerEnum,
+  ProjectNamespaceServiceStatusKindEnum,
+  ProjectNamespaceServiceStatusKindTypeEnum
 } from './project-namespace-service-status.enum';
 import { cloneDeep } from 'lodash';
 import { ProjectNamespaceServiceStatusResourceItemDto } from './project-namespace-service-status-item.dto';
@@ -17,10 +17,10 @@ export class ProjectNamespaceServiceStatusResourceDto {
   @Expose()
   get switchedOn(): boolean {
     if (this.hasDeployment) {
-      const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).pop()?.status();
+      const status = this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.Deployment).pop()?.status();
       return status.replicas > 0;
     } else if (this.hasCronJob) {
-      const status = this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).pop()?.status();
+      const status = this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.CronJob).pop()?.status();
       return !status.suspend;
     }
     return true;
@@ -28,32 +28,32 @@ export class ProjectNamespaceServiceStatusResourceDto {
 
   @Expose()
   get hasPods(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.Pod).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKindEnum.Pod).length > 0;
   }
 
   @Expose()
   get hasContainers(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.Container).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKindEnum.Container).length > 0;
   }
 
   @Expose()
   get hasDeployment(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusController.Deployment).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.Deployment).length > 0;
   }
 
   @Expose()
   get hasJob(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusController.Job).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.Job).length > 0;
   }
 
   @Expose()
   get hasCronJob(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusController.CronJob).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.CronJob).length > 0;
   }
 
   @Expose()
   get hasBuild(): boolean {
-    return this.getItemsOfType(ProjectNamespaceServiceStatusKind.BuildJob).length > 0;
+    return this.getItemsOfType(ProjectNamespaceServiceStatusKindEnum.BuildJob).length > 0;
   }
 
   public getRootNodes(): ProjectNamespaceServiceStatusResourceItemDto[] {
@@ -92,7 +92,9 @@ export class ProjectNamespaceServiceStatusResourceDto {
     return next;
   }
 
-  public getItemsOfType(kind: ProjectNamespaceServiceStatusKindType): ProjectNamespaceServiceStatusResourceItemDto[] {
+  public getItemsOfType(
+    kind: ProjectNamespaceServiceStatusKindTypeEnum
+  ): ProjectNamespaceServiceStatusResourceItemDto[] {
     const resources: ProjectNamespaceServiceStatusResourceItemDto[] = [];
     for (const item of this.items || []) {
       if (item.kind === kind) {
@@ -110,7 +112,7 @@ export class ProjectNamespaceServiceStatusResourceDto {
   ): string {
     //
     let hash = '';
-    const order = [ProjectNamespaceServiceStatusKind.BuildJob, undefined];
+    const order = [ProjectNamespaceServiceStatusKindEnum.BuildJob, undefined];
     const roots = this.getRootNodes();
     const compareByAttributes = (
       a: ProjectNamespaceServiceStatusResourceItemDto,
@@ -174,7 +176,7 @@ export class ProjectNamespaceServiceStatusResourceDto {
     for (const key of order) {
       let root: ProjectNamespaceServiceStatusResourceItemDto | undefined;
       if (key === undefined) {
-        root = roots.find((root) => root.kind !== ProjectNamespaceServiceStatusKind.BuildJob);
+        root = roots.find((root) => root.kind !== ProjectNamespaceServiceStatusKindEnum.BuildJob);
       } else {
         root = roots.find((root) => root.kind === key);
       }

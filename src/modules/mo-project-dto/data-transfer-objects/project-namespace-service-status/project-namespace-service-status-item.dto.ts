@@ -1,16 +1,16 @@
 import { Expose } from 'class-transformer';
 import { IsOptional } from 'class-validator';
 import {
-  ProjectNamespaceServiceStatusController,
-  ProjectNamespaceServiceStatusKind,
-  ProjectNamespaceServiceStatusKindType
+  ProjectNamespaceServiceStatusControllerEnum,
+  ProjectNamespaceServiceStatusKindEnum,
+  ProjectNamespaceServiceStatusKindTypeEnum
 } from './project-namespace-service-status.enum';
 import moment from 'moment';
 import { cloneDeep } from 'lodash';
 
 export class ProjectNamespaceServiceStatusResourceItemDto {
   @Expose()
-  kind: ProjectNamespaceServiceStatusKindType;
+  kind: ProjectNamespaceServiceStatusKindTypeEnum;
 
   @Expose()
   name: string;
@@ -32,7 +32,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
 
   status(): any {
     switch (this.kind) {
-      case ProjectNamespaceServiceStatusController.Deployment: {
+      case ProjectNamespaceServiceStatusControllerEnum.Deployment: {
         const image = this.statusObject?.image ?? '';
         const paused = this.statusObject?.paused ?? false;
         const replicas = +(this.statusObject?.replicas ?? 0);
@@ -63,7 +63,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           hasImagePlaceholder: image === 'PLACEHOLDER-UNTIL-BUILDSERVER-OVERWRITES-THIS-IMAGE'
         };
       }
-      case ProjectNamespaceServiceStatusController.CronJob: {
+      case ProjectNamespaceServiceStatusControllerEnum.CronJob: {
         const image = this.statusObject?.image ?? '';
         const suspend = this.statusObject?.suspend ?? false;
 
@@ -72,13 +72,13 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
           suspend: suspend
         };
       }
-      case ProjectNamespaceServiceStatusController.Job:
+      case ProjectNamespaceServiceStatusControllerEnum.Job:
         break;
-      case ProjectNamespaceServiceStatusKind.BuildJob:
+      case ProjectNamespaceServiceStatusKindEnum.BuildJob:
         return { state: this.statusObject?.state };
-      case ProjectNamespaceServiceStatusKind.Pod:
+      case ProjectNamespaceServiceStatusKindEnum.Pod:
         return { state: this.statusObject?.phase };
-      case ProjectNamespaceServiceStatusKind.Container: {
+      case ProjectNamespaceServiceStatusKindEnum.Container: {
         let state: string;
         const obj = this.statusObject?.state ?? {};
         if ('waiting' in obj) {
