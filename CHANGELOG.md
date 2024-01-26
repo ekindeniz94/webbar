@@ -2,6 +2,13 @@
 
 
 
+## 2.0.67 (2024-01-26)
+
+
+### Bug Fixes
+
+* add Enum suffix to enum types ([ef85bc2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ef85bc204a7a0d1040f9d80c59794088a2ffe4de))
+
 ## 2.0.66 (2024-01-26)
 
 
