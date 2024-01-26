@@ -30,6 +30,9 @@ export class K8sSystemCheckEntryDto {
   uninstallPattern: string;
 
   @Expose()
+  upgradePattern: string;
+
+  @Expose()
   status: K8sSystemCheckEntryStatusEnum;
 
   get isInfo(): boolean {
