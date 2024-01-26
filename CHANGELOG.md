@@ -2,6 +2,13 @@
 
 
 
+## 2.0.66 (2024-01-26)
+
+
+### Bug Fixes
+
+* added additional pattern. ([16434d5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16434d5241b6a46cc77ab75d82dab43b2734ecb0))
+
 ## 2.0.65 (2024-01-24)
 
 
