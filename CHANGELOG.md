@@ -2,6 +2,13 @@
 
 
 
+## 2.0.68 (2024-01-29)
+
+
+### Bug Fixes
+
+* system check model extended. ([a810488](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a8104888579bb3ad4b68a261a0c76b1316dc62ac))
+
 ## 2.0.67 (2024-01-26)
 
 
