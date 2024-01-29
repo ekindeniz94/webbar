@@ -5,8 +5,6 @@ import {
   ProjectNamespaceServiceStatusKindEnum,
   ProjectNamespaceServiceStatusKindTypeEnum
 } from './project-namespace-service-status.enum';
-import moment from 'moment';
-import { cloneDeep } from 'lodash';
 
 export class ProjectNamespaceServiceStatusResourceItemDto {
   @Expose()
@@ -67,13 +65,26 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         const image = this.statusObject?.image ?? '';
         const suspend = this.statusObject?.suspend ?? false;
 
+        const originStatusObject = this.statusObject?.status;
+
         return {
           image: image,
-          suspend: suspend
+          suspend: suspend,
+          isActive: (originStatusObject?.active ?? []).length > 0,
+          hasImagePlaceholder: image === 'PLACEHOLDER-UNTIL-BUILDSERVER-OVERWRITES-THIS-IMAGE'
         };
       }
       case ProjectNamespaceServiceStatusControllerEnum.Job:
-        break;
+        const active = this.statusObject?.active;
+        const terminating = this.statusObject?.terminating;
+        const ready = this.statusObject?.ready;
+        const succeeded = this.statusObject?.succeeded;
+        const failed = this.statusObject?.failed;
+
+        return {
+          isActive: active > 0 || terminating > 0 || ready > 0 || succeeded > 0,
+          isFailed: failed > 0
+        };
       case ProjectNamespaceServiceStatusKindEnum.BuildJob:
         return { state: this.statusObject?.state };
       case ProjectNamespaceServiceStatusKindEnum.Pod:
