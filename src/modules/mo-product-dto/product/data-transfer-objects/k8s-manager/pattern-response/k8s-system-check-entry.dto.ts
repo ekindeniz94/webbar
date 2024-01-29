@@ -33,6 +33,12 @@ export class K8sSystemCheckEntryDto {
   upgradePattern: string;
 
   @Expose()
+  versionInstalled: string;
+
+  @Expose()
+  versionAvailable: string;
+
+  @Expose()
   status: K8sSystemCheckEntryStatusEnum;
 
   get isInfo(): boolean {
