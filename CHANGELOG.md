@@ -2,6 +2,13 @@
 
 
 
+## 2.0.69 (2024-01-29)
+
+
+### Bug Fixes
+
+* add cronjob/job logic ([ccac808](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ccac80807dfd58fa6a45ce765e89f0e5aded15ec))
+
 ## 2.0.68 (2024-01-29)
 
 
