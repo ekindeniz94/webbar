@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ProjectNamespaceServiceImagePullPolicy } from '../../enums';
-import { IsOptional, isBoolean } from 'class-validator';
+import {IsOptional, isBoolean, ValidateNested} from 'class-validator';
 import { K8sCronJobSettingsDto } from '../k8s';
 
 export class ProjectNamespaceServiceKubernetesSettingsDto {
@@ -39,6 +39,7 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
 
   @Type(() => K8sCronJobSettingsDto)
   @IsOptional()
+  @ValidateNested()
   @Expose()
   k8sCronJobSettingsDto?: K8sCronJobSettingsDto;
 }

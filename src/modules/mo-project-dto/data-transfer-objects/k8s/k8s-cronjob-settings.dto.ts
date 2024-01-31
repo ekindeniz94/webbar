@@ -1,20 +1,21 @@
 import { Expose, Type } from 'class-transformer';
-import { IsEnum } from 'class-validator';
-import { ServiceTypeEnum } from '../../enums';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class K8sCronJobSettingsDto {
-  @IsEnum(ServiceTypeEnum)
-  @Expose()
-  source: ServiceTypeEnum;
-
+  @IsNotEmpty()
+  @IsNumber()
   @Type(() => Number)
   @Expose()
   backoffLimit: number;
 
+  @IsNotEmpty()
+  @IsNumber()
   @Type(() => Number)
   @Expose()
   activeDeadlineSeconds: number;
 
+  @IsNotEmpty()
+  @IsString()
   @Type(() => String)
   @Expose()
   schedule: string;
