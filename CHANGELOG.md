@@ -2,6 +2,13 @@
 
 
 
+## 2.0.70 (2024-01-31)
+
+
+### Bug Fixes
+
+* k8s cron job enum ([68e6900](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/68e6900f4931de62dd040ed4e0e9085b15c1ea94))
+
 ## 2.0.69 (2024-01-29)
 
 
