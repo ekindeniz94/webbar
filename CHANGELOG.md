@@ -2,6 +2,18 @@
 
 
 
+# 2.1.0-develop.1 (2024-02-13)
+
+
+### Bug Fixes
+
+* packages json repository url ([c8d602c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c8d602ce33e4bf259f3b5e02dcf0318f66b56b6c))
+
+
+### Features
+
+* dev release ([88111e6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88111e68d134079ae1b09a36e8509662f4194817))
+
 ## 2.0.70 (2024-01-31)
 
 
