@@ -18,7 +18,7 @@ export enum ServiceTypeEnum {
   K8S_CRON_JOB_CONTAINER_IMAGE_TEMPLATE = 'K8S_CRON_JOB_CONTAINER_IMAGE_TEMPLATE',
   K8S_CRON_JOB_CONTAINER_IMAGE = 'K8S_CRON_JOB_CONTAINER_IMAGE'
   // Docker Compose
-  // DOCKER_COMPOSE = 'DOCKER_COMPOSE'
+  DOCKER_COMPOSE = 'DOCKER_COMPOSE'
 }
 
 export const ServiceTypeEnum_ALL: ServiceTypeEnum[] = [
@@ -34,8 +34,8 @@ export const ServiceTypeEnum_ALL: ServiceTypeEnum[] = [
   ServiceTypeEnum.K8S_CRON_JOB_GIT_REPOSITORY_TEMPLATE,
   ServiceTypeEnum.K8S_CRON_JOB_GIT_REPOSITORY,
   ServiceTypeEnum.K8S_CRON_JOB_CONTAINER_IMAGE_TEMPLATE,
-  ServiceTypeEnum.K8S_CRON_JOB_CONTAINER_IMAGE
-  // ServiceTypeEnum.DOCKER_COMPOSE
+  ServiceTypeEnum.K8S_CRON_JOB_CONTAINER_IMAGE,
+  ServiceTypeEnum.DOCKER_COMPOSE
 ];
 
 export const isServiceContainerImageType = (type: ServiceTypeEnum | undefined): boolean => {
