@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.3 (2024-02-13)
+
+
+### Bug Fixes
+
+* add docker-compose to service type ([646e046](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/646e046cfe9f30904a06ad78207938981ad5009d))
+* ServiceTypeEnum ([efaedd8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/efaedd887b152b8c298370a03bd77917030394d6))
+
 # 2.1.0-develop.2 (2024-02-13)
 
 
