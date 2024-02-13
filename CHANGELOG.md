@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.2 (2024-02-13)
+
+
+### Features
+
+* create service (update); service types update ([2f5a7ea](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2f5a7ea69c736eea4a94aac87fa9c3426d2cdd05))
+
 # 2.1.0-develop.1 (2024-02-13)
 
 
