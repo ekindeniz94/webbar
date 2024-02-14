@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { ProjectNamespaceServiceDeploymentStrategyEnum, ProjectNamespaceServiceImagePullPolicy } from '../../enums';
-import {IsOptional, isBoolean, ValidateNested} from 'class-validator';
+import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
+import { isBoolean, ValidateNested } from 'class-validator';
 import { K8sCronJobSettingsDto } from '../k8s';
 
 export class ProjectNamespaceServiceKubernetesSettingsDto {
@@ -12,20 +12,8 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
   @Expose()
   limitCpuCores: number;
 
-  @Type(() => Number)
   @Expose()
-  replicaCount: number;
-
-  @Type(() => Number)
-  @Transform(({ obj }) => obj.replicaCount)
-  @Expose()
-  replicaCountMax: number;
-
-  @Expose()
-  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
-
-  @Expose()
-  imagePullPolicy: ProjectNamespaceServiceImagePullPolicy;
+  imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
   @Type(() => Number)
   @Expose()
@@ -33,12 +21,10 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
 
   @Type(() => Boolean)
   @Transform(({ value }) => (value && isBoolean(value) ? value : false))
-  @IsOptional()
   @Expose()
   probesOn: boolean;
 
   @Type(() => K8sCronJobSettingsDto)
-  @IsOptional()
   @ValidateNested()
   @Expose()
   k8sCronJobSettingsDto?: K8sCronJobSettingsDto;

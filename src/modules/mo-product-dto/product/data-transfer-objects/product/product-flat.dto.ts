@@ -3,9 +3,9 @@ import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
 import { BaseEntityDto } from '@mo/database-dto';
 import moment from 'moment/moment';
+import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductFlatDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)
@@ -44,9 +44,9 @@ export class ProductFlatDto extends BaseEntityDto {
 
   /***************************** LIMITS ********************************/
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProductKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProductKubernetesSettingsDto;
 
   @Type(() => Number)
   @Expose()
@@ -97,5 +97,4 @@ export class ProductFlatDto extends BaseEntityDto {
   @Transform(({ value }) => MoUtils.parseBoolean(value))
   @Expose()
   enableCreateCluster: boolean;
-
 }

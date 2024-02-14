@@ -51,10 +51,6 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   containers: ProjectNamespaceServiceContainerDto[];
 
-  @Type(() => ProjectNamespaceServiceGitSettingsDto)
-  @Expose()
-  gitSettings: ProjectNamespaceServiceGitSettingsDto;
-
   @Type(() => CpuDto)
   @Expose()
   cpu: CpuDto;

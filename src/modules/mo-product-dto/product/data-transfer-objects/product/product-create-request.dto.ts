@@ -1,20 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import {
-  isArray,
-  IsBoolean,
-  IsEnum,
-  IsNumber,
-  IsOptional,
-  IsString,
-  ValidateNested
-} from 'class-validator';
+import { isArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { IdDto } from '@mo/core-dto';
 import { MoUtils } from '@mo/js-utils';
 import { ClusterDto } from '../cluster';
-import { ProjectNamespaceServiceKubernetesSettingsCreateRequestDto } from '../../../../mo-project-dto';
+import { ProductKubernetesSettingsCreateRequestDto } from './product-kubernetes-settings-create-request.dto';
 
 export class ProductCreateRequestDto {
   @IsOptional()
@@ -73,10 +65,10 @@ export class ProductCreateRequestDto {
 
   /***************************** LIMITS ********************************/
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsCreateRequestDto)
+  @Type(() => ProductKubernetesSettingsCreateRequestDto)
   @ValidateNested()
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsCreateRequestDto;
+  kubernetesLimits: ProductKubernetesSettingsCreateRequestDto;
 
   @Type(() => Number)
   @IsNumber()

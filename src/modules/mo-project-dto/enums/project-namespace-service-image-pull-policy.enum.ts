@@ -1,11 +1,11 @@
-export enum ProjectNamespaceServiceImagePullPolicy {
+export enum ProjectNamespaceServiceImagePullPolicyEnum {
   ALWAYS = 'Always',
   NEVER = 'Never',
   IF_NOT_PRESENT = 'IfNotPresent'
 }
 
-export const ProjectNamespaceServiceImagePullPolicy_ALL: ProjectNamespaceServiceImagePullPolicy[] = [
-  ProjectNamespaceServiceImagePullPolicy.ALWAYS,
-  ProjectNamespaceServiceImagePullPolicy.NEVER,
-  ProjectNamespaceServiceImagePullPolicy.IF_NOT_PRESENT
+export const ProjectNamespaceServiceImagePullPolicyEnum_ALL: ProjectNamespaceServiceImagePullPolicyEnum[] = [
+  ProjectNamespaceServiceImagePullPolicyEnum.ALWAYS,
+  ProjectNamespaceServiceImagePullPolicyEnum.NEVER,
+  ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT
 ];

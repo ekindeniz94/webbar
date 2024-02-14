@@ -3,7 +3,7 @@ import { isBoolean, IsNumber } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto';
+import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductPublicDto {
   @Expose()
@@ -96,9 +96,9 @@ export class ProductPublicDto {
   /*********************************************************************/
 
   /***************************** LIMITS ********************************/
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProductKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProductKubernetesSettingsDto;
 
   @Type(() => Number)
   @Expose()

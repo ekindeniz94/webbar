@@ -19,10 +19,12 @@ import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cn
 import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
 import { ProjectNamespaceServicePodDto } from '../project-namespace-service-pod';
 import { BaseEntityDto } from '@mo/database-dto';
+import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -48,14 +50,19 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImageCommand: string;
 
   @MaxLength(PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(
-      0,
-      PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX
-    )
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(
+        0,
+        PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX
+      )
   )
   @Expose()
   containerImageCommandArgs: string;
+
+  @Type(() => ProjectNamespaceServiceGitSettingsDto)
+  @Expose()
+  gitSettings: ProjectNamespaceServiceGitSettingsDto;
 
   @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   @Expose()
