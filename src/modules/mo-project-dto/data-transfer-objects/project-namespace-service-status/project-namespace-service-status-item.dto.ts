@@ -1,10 +1,11 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { IsOptional } from 'class-validator';
 import {
   ProjectNamespaceServiceStatusControllerEnum,
   ProjectNamespaceServiceStatusKindEnum,
   ProjectNamespaceServiceStatusKindTypeEnum
 } from './project-namespace-service-status.enum';
+import { KubernetesEventDto } from '../../../../modules/mo-kubernetes/data-transfer-objects/kubernetes-event.dto';
 
 export class ProjectNamespaceServiceStatusResourceItemDto {
   @Expose()
@@ -27,6 +28,11 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
   @Expose()
   @IsOptional()
   statusObject: any;
+
+  @Expose()
+  @Type(() => KubernetesEventDto)
+  @IsOptional()
+  events: KubernetesEventDto[];
 
   status(): any {
     switch (this.kind) {
@@ -92,12 +98,16 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
       case ProjectNamespaceServiceStatusKindEnum.Container: {
         let state: string;
         const obj = this.statusObject?.state ?? {};
+        let reason;
         if ('waiting' in obj) {
           state = 'waiting';
+          reason = obj.waiting?.reason;
         } else if ('running' in obj) {
           state = 'running';
+          reason = obj.running?.reason;
         } else if ('terminated' in obj) {
           state = 'terminated';
+          reason = obj.terminated?.reason;
         } else {
           state = 'unkown';
         }
@@ -105,7 +115,7 @@ export class ProjectNamespaceServiceStatusResourceItemDto {
         const restartCount = this.statusObject?.restartCount;
         const name = this.statusObject?.name;
 
-        return { restartCount: restartCount, state: state, name: name };
+        return { restartCount: restartCount, state: state, name: name, reason: reason };
       }
       default:
         return {};
