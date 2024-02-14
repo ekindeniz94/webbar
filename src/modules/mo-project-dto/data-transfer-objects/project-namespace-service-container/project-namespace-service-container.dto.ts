@@ -8,9 +8,12 @@ import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespa
 import { ProjectNamespaceServiceEnvVarDto } from '../project-namespace-service-envvar';
 import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
 import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
-import { ProjectNamespaceServicePodDto } from '../project-namespace-service-pod';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings';
+import { ServiceTypeEnum } from '../../enums';
+import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { OriginTrafficDto } from '../traffic';
+import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(
@@ -19,6 +22,9 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   )
   @Expose()
   displayName: string;
+
+  @Expose()
+  type: ServiceTypeEnum;
 
   @StripTags()
   @Transform(({ value, obj }) =>
@@ -78,7 +84,25 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   ports: ProjectNamespaceServicePortDto[];
 
-  @Type(() => ProjectNamespaceServicePodDto)
+  @Type(() => CpuDto)
   @Expose()
-  pods: ProjectNamespaceServicePodDto[];
+  cpu: CpuDto;
+
+  @Type(() => MemoryDto)
+  @Expose()
+  memory: MemoryDto;
+
+  @Type(() => EphemeralStorageDto)
+  @Expose()
+  ephemeralStorage: EphemeralStorageDto;
+
+  @Type(() => OriginTrafficDto)
+  @Expose()
+  traffic: OriginTrafficDto;
+
+  // deployment message
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => KubernetesPublicEventDto)
+  @Expose()
+  messages: KubernetesPublicEventDto[];
 }

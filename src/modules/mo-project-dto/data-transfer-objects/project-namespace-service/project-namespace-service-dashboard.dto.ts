@@ -1,36 +1,18 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app/project-namespace-service-app-dashboard.dto';
-import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
-import moment from 'moment';
-import { isBoolean } from 'class-validator';
 import { ProjectNamespaceServiceStatusResourceDto } from '../project-namespace-service-status';
+import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
+import { isArray } from 'class-validator';
+import { BaseEntityDto } from '@mo/database-dto';
 
-export class ProjectNamespaceServiceDashboardDto {
-  @Expose()
-  id: string;
-
-  @Expose()
-  type: ServiceTypeEnum;
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  createdAt: Date;
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  updatedAt: Date;
-
+export class ProjectNamespaceServiceDashboardDto extends BaseEntityDto {
   @Expose()
   displayName: string;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @Type(() => ProjectNamespaceServiceContainerNameDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  switchedOn: boolean;
-
-  // @todo: remove
-  @Expose()
-  state: ProjectNamespaceServiceStateEnum; // Enum ### Not the build state
+  containers: ProjectNamespaceServiceContainerNameDto[];
 
   @Type(() => ProjectNamespaceServiceStatusResourceDto)
   @Expose()
