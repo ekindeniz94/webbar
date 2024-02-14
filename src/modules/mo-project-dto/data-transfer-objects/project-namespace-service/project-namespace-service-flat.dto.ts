@@ -1,8 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, isString } from 'class-validator';
-import { KubernetesPublicEventDto } from '../../../mo-kubernetes/data-transfer-objects/kubernetes-public-event.dto';
-import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto/enums/project-namespace-service-state.enum';
+import { isNumberString, isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
+import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums';
 
 export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
@@ -12,16 +11,12 @@ export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {
   @Expose()
   description: string;
 
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @Expose()
-  state: ProjectNamespaceServiceStateEnum;
+  replicaCount: number;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : true))
+  @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
-  switchedOn: boolean;
-
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => KubernetesPublicEventDto)
-  @Expose()
-  messages: KubernetesPublicEventDto[];
+  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 }

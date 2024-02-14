@@ -6,9 +6,9 @@ import { ProjectStateEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { GitConnectionDto } from '../../../mo-git';
 import { MoUtils } from '@mo/js-utils';
+import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -67,7 +67,7 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   bgColorStyle: string;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectKubernetesLimitsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectKubernetesLimitsDto;
 }
