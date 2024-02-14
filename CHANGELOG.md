@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.5 (2024-02-14)
+
+
+### Bug Fixes
+
+* update service dtos ([c9c6a34](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c9c6a34f6fe599179f38347f4a099cb3f658d845))
+
 # 2.1.0-develop.4 (2024-02-14)
 
 
