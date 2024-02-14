@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+
 // import { OriginTrafficDto } from '../../../mo-namespace';
 
 export class ProjectNamespaceServicePodOriginTrafficDto /* extends OriginTrafficDto */ {

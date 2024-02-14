@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { KubernetesWorkloadEnum } from '../../../enums';
 
 export class KubernetesWorkloadDescribeRequestDto {

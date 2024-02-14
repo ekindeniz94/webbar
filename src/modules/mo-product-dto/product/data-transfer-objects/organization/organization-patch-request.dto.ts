@@ -1,5 +1,5 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
-import { ArrayNotEmpty, isArray, IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
+import { isArray, IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { OrganizationCreateRequestDto } from './organization-create-request.dto';
 import { AddressPatchRequestDto } from '@mo/database-dto';
 import { OrganizationUserGroupPatchRequestDto } from './organization-user-group-patch-request.dto';

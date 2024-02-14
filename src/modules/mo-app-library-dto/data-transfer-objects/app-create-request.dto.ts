@@ -1,5 +1,5 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { isArray, IsEnum, IsNotEmpty, IsNumber, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
+import { isArray, IsEnum, IsNotEmpty, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
 import { AppTagDto } from './app-tag.dto';
 import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { AppPortCreateRequestDto } from './app-port-create-request.dto';

@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums/project-namespace-service-deployment-strategy.enum';
-import { IsOptional, isBoolean } from 'class-validator';
+import { isBoolean, IsOptional } from 'class-validator';
 import { K8sCronJobSettingsDto } from './k8s-cronjob-settings.dto';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 

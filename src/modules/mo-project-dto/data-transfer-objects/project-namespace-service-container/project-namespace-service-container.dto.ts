@@ -1,15 +1,6 @@
 import { StripTags } from '@mo/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
-import {
-  isArray,
-  IsNotEmpty,
-  IsOptional,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength,
-  ValidateNested
-} from 'class-validator';
+import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';

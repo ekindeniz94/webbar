@@ -7,7 +7,7 @@ export class FileTreeDto {
   @IsString()
   @Expose()
   name: string;
-    
+
   @IsEnum(FileTypeEnum)
   @Expose()
   type: FileTypeEnum;

@@ -1,9 +1,9 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, isBoolean, isBooleanString, IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
+import { IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { FileCreateRequestDto } from './file-create-request.dto';
 import { FileTranslationPatchRequestDto } from './file-translation-patch-request.dto';
 
-export class FilePatchRequestDto extends FileCreateRequestDto{
+export class FilePatchRequestDto extends FileCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @IsUUID()

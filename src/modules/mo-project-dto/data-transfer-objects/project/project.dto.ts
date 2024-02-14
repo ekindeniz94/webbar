@@ -8,7 +8,7 @@ import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { GitConnectionDto } from '../../../mo-git';
-import {MoUtils} from "@mo/js-utils";
+import { MoUtils } from '@mo/js-utils';
 
 export class ProjectDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -43,8 +43,8 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   citt: boolean;
 
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;

@@ -1,5 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import moment from 'moment';
+import { Expose, Type } from 'class-transformer';
 import { Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';

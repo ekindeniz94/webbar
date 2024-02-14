@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, IsNumber } from 'class-validator';
+import { IsNumber } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';

@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { GitConnectionTypeEnum, GitConnectionTokenTypeEnum } from '../../enums';
+import { GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
 import { GithubUserDto } from '../github';
 import { BaseEntityDto } from '@mo/database-dto';
 

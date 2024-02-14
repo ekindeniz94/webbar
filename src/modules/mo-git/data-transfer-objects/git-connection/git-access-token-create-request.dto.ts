@@ -1,6 +1,6 @@
 import { GitConnectionTypeEnum } from '../../enums';
 
-import { Expose, Type } from 'class-transformer';
+import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class GitAccessTokenCreateRequestDto {
