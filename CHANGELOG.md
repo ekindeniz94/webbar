@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.6 (2024-02-15)
+
+
+### Bug Fixes
+
+* merge feature/status-item; update ProjectNamespaceServiceContainerPatchRequestDto ([8ea1276](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ea1276e95da905c7ca1a03ddc6d106aefd9eda1))
+* rename service status related enums and add Enum suffix ([16d7be9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16d7be910d4000e2dbc98d8d7ce6d9072b14a05e))
+
 # 2.1.0-develop.5 (2024-02-14)
 
 
