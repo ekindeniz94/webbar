@@ -2,6 +2,13 @@
 
 
 
+## 2.0.71 (2024-02-15)
+
+
+### Bug Fixes
+
+* extend status object ([8376352](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8376352e54c39638ca95395e16fa9344ad778f55))
+
 ## 2.0.70 (2024-01-31)
 
 
