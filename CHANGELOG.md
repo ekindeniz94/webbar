@@ -4,6 +4,7 @@
 
 # 2.1.0-develop.5 (2024-02-14)
 
+## 2.0.71 (2024-02-15)
 
 ### Bug Fixes
 
@@ -42,6 +43,7 @@
 ### Features
 
 * dev release ([88111e6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88111e68d134079ae1b09a36e8509662f4194817))
+* extend status object ([8376352](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8376352e54c39638ca95395e16fa9344ad778f55))
 
 ## 2.0.70 (2024-01-31)
 
