@@ -6,6 +6,7 @@ import {
   IsOptional,
   isString,
   IsString,
+  IsUUID,
   ValidateIf,
   ValidateNested
 } from 'class-validator';
@@ -21,6 +22,13 @@ import { ProjectNamespaceServicePortPatchRequestDto } from '../../project-namesp
 import { ProjectNamespaceServiceCnamePatchRequestDto } from '../../project-namespace-service-cname';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
+  @IsOptional()
+  @IsString()
+  @IsUUID()
+  @StripTags()
+  @Expose()
+  id: string;
+
   @IsNotEmpty()
   @IsEnum(ServiceTypeEnum)
   @Expose()
@@ -33,14 +41,14 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @Expose()
   displayName: string;
 
-  @StripTags()
-  @Transform(({ value, obj }) =>
-    value
-      ? MoProjectDtoUtils.k8sName(value, PROJECT_CONST.K8S_NAME.MAX)
-      : MoProjectDtoUtils.k8sName(obj.displayName, PROJECT_CONST.K8S_NAME.MAX)
-  ) // containerImageName ohne tag xxx:yyy, type=git = controllerName // TODO
-  @Expose()
-  name: string;
+  // @StripTags()
+  // @Transform(({ value, obj }) =>
+  //   value
+  //     ? MoProjectDtoUtils.k8sName(value, PROJECT_CONST.K8S_NAME.MAX)
+  //     : MoProjectDtoUtils.k8sName(obj.displayName, PROJECT_CONST.K8S_NAME.MAX)
+  // ) // containerImageName ohne tag xxx:yyy, type=git = controllerName // TODO
+  // @Expose()
+  // name: string;
 
   @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceKubernetesSettingsPatchRequestDto)
