@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.9 (2024-02-19)
+
+
+### Bug Fixes
+
+* update import; update ProjectNamespaceServiceGitSettingsPatchRequestDto ([6de9fdf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6de9fdf8647bfeb1e9e95c73dbf44e7f77488767))
+
 # 2.1.0-develop.8 (2024-02-15)
 
 
