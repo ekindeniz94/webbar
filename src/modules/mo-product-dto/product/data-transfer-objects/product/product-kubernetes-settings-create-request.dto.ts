@@ -2,9 +2,9 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional } from 'class-validator';
 import {
   ProjectNamespaceServiceDeploymentStrategyEnum,
-  ProjectNamespaceServiceImagePullPolicyEnum,
-  ProjectNamespaceServiceKubernetesCronjobSettingsDto
-} from '../../../../mo-project-dto';
+  ProjectNamespaceServiceImagePullPolicyEnum
+} from '../../../../mo-project-dto/enums';
+import { ProjectNamespaceServiceKubernetesCronjobSettingsDto } from '../../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings/project-namespace-service-kubernetes-cronjob-settings.dto';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
