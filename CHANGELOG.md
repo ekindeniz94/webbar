@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.11 (2024-02-19)
+
+
+### Bug Fixes
+
+* move logic from platform to dto ([d52e94f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d52e94fb5b73599f3a1f1bd98187e0f8f25e045a))
+
 # 2.1.0-develop.10 (2024-02-19)
 
 
