@@ -12,22 +12,23 @@ import {
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
-import { IdDto } from '@mo/core-dto';
+import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from './project-namespace-service-container-create-request.dto';
 
 export class ProjectNamespaceServiceCreateRequestDto {
-  @Type(() => IdDto)
+  @IsNotEmpty()
+  @Type(() => IdRequiredDto)
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  projectNamespace: IdDto;
+  projectNamespace: IdRequiredDto;
 
   @IsNotEmpty()
   @IsString()
   @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)
   @MaxLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -48,8 +49,8 @@ export class ProjectNamespaceServiceCreateRequestDto {
   containers: ProjectNamespaceServiceContainerCreateRequestDto[];
 
   @IsOptional()
-  @Type(() => IdDto)
-  // @ValidateNested()
+  @Type(() => IdRequiredDto)
+  @ValidateNested()
   @Expose()
-  app: IdDto;
+  app: IdRequiredDto;
 }

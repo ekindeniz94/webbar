@@ -1,5 +1,14 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsOptional, isString, IsString, ValidateIf, ValidateNested } from 'class-validator';
+import {
+  IsEnum,
+  IsNotEmpty,
+  IsObject,
+  IsOptional,
+  isString,
+  IsString,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator';
 import { KeyVaultSecretDto } from '../../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
@@ -13,9 +22,8 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   @Expose()
   type: ServiceTypeEnum;
 
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -30,10 +38,11 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   name: string;
 
   /****** Repository type ******/
+  @IsNotEmpty()
+  @IsObject({ message: '$property must be an object' })
   @Type(() => ProjectNamespaceServiceGitSettingsCreateRequestDto)
   @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceGitRepositoryType(obj.type))
-  @IsNotEmpty()
-  @ValidateNested()
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   gitSettings: ProjectNamespaceServiceGitSettingsCreateRequestDto;
 
