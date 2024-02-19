@@ -16,3 +16,19 @@ export enum ProjectNamespaceServiceStatusKindEnum {
 export type ProjectNamespaceServiceStatusKindTypeEnum =
   | ProjectNamespaceServiceStatusControllerEnum
   | ProjectNamespaceServiceStatusKindEnum;
+
+export enum ProjectNamespaceServiceStatusEnum {
+  PENDING = 'PENDING',
+  SUCCESS = 'SUCCESS',
+  WARNING = 'WARNING',
+  ERROR = 'ERROR',
+  UNKOWN = 'UNKOWN'
+}
+
+export const ProjectNamespaceServiceStatusEnum_ALL = [
+  ProjectNamespaceServiceStatusEnum.PENDING,
+  ProjectNamespaceServiceStatusEnum.SUCCESS,
+  ProjectNamespaceServiceStatusEnum.WARNING,
+  ProjectNamespaceServiceStatusEnum.ERROR,
+  ProjectNamespaceServiceStatusEnum.UNKOWN
+];
