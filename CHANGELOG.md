@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.12 (2024-02-20)
+
+
+### Bug Fixes
+
+* update create service dto ([4546339](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/45463398d49cad3d47c87f3f723317a1b7059e0d))
+
 # 2.1.0-develop.11 (2024-02-19)
 
 
