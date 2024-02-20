@@ -73,3 +73,15 @@ export const isServiceCronJobServiceType = (type: ServiceTypeEnum | undefined): 
     ServiceTypeEnum.K8S_CRON_JOB_CONTAINER_IMAGE
   ].includes(type);
 };
+
+export const isServiceTemplateType = (type: ServiceTypeEnum | undefined): boolean => {
+  if (!type) {
+    return false;
+  }
+  return [
+    ServiceTypeEnum.GIT_REPOSITORY_TEMPLATE,
+    ServiceTypeEnum.CONTAINER_IMAGE_TEMPLATE,
+    ServiceTypeEnum.K8S_CRON_JOB_GIT_REPOSITORY_TEMPLATE,
+    ServiceTypeEnum.K8S_CRON_JOB_CONTAINER_IMAGE_TEMPLATE
+  ].includes(type);
+};

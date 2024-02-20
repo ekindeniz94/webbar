@@ -58,6 +58,7 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsOptional()
   @Type(() => KeyVaultSecretDto)
   @Transform(({ value }) => value ?? null)
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 

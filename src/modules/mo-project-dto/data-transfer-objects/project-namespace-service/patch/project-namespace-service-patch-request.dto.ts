@@ -32,9 +32,8 @@ export class ProjectNamespaceServicePatchRequestDto {
   @IsString()
   @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)
   @MaxLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -46,16 +45,17 @@ export class ProjectNamespaceServicePatchRequestDto {
   @Expose()
   description: string;
 
+  @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceContainerPatchRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @IsArray()
-  @ValidateNested({ each: true })
+  @ValidateNested({ each: true, message: '$property must be an array' })
   @ArrayMinSize(1)
   @Expose()
   containers: ProjectNamespaceServiceContainerPatchRequestDto[];
 
-  @Type(() => Number)
   @IsNotEmpty()
+  @Type(() => Number)
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
   @Expose()

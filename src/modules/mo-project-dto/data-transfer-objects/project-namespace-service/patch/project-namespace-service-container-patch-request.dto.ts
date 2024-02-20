@@ -14,7 +14,6 @@ import { KeyVaultSecretDto } from '../../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { isServiceContainerImageType, isServiceGitRepositoryType, ServiceTypeEnum } from '../../../enums';
-import { MoProjectDtoUtils } from '../../../mo-project-dto.utils';
 import { ProjectNamespaceServiceGitSettingsPatchRequestDto } from '../../project-namespace-service-git-settings';
 import { ProjectNamespaceServiceKubernetesSettingsPatchRequestDto } from '../../project-namespace-service-kubernetes-settings';
 import { ProjectNamespaceServiceEnvvarPatchRequestDto } from '../../project-namespace-service-envvar';
@@ -34,9 +33,8 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @Expose()
   type: ServiceTypeEnum;
 
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;

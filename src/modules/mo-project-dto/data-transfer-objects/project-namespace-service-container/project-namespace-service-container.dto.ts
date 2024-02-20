@@ -16,9 +16,8 @@ import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -39,7 +38,7 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImage: string;
 
   @Type(() => KeyVaultSecretDto)
-  @Transform(({ value }) => value ?? null)
+  @Transform(({ value }) => (value && value.id) ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
@@ -47,12 +46,11 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImageCommand: string;
 
   @MaxLength(PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX)
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(
-        0,
-        PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX
-      )
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(
+      0,
+      PROJECT_CONST.SERVICE.CONTAINER_IMAGE_COMMAND_ARGS.MAX
+    )
   )
   @Expose()
   containerImageCommandArgs: string;

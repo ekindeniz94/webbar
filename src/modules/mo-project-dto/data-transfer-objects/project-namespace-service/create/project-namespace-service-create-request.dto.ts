@@ -9,12 +9,14 @@ import {
   IsString,
   MaxLength,
   MinLength,
+  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
 import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from './project-namespace-service-container-create-request.dto';
+import { isServiceTemplateType } from '../../../enums';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -40,15 +42,20 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @Expose()
   description: string;
 
+  @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceContainerCreateRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @IsArray()
-  @ValidateNested({ each: true })
+  @ValidateNested({ each: true, message: '$property must be an array' })
   @ArrayMinSize(1)
   @Expose()
   containers: ProjectNamespaceServiceContainerCreateRequestDto[];
 
-  @IsOptional()
+  @IsNotEmpty()
+  // TODO app multi container
+  @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) =>
+    obj?.containers?.some((container) => isServiceTemplateType(container.type))
+  )
   @Type(() => IdRequiredDto)
   @ValidateNested()
   @Expose()
