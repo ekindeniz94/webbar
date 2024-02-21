@@ -4,7 +4,7 @@ import {
   ProjectNamespaceServiceStatusControllerEnum,
   ProjectNamespaceServiceStatusKindEnum,
   ProjectNamespaceServiceStatusKindTypeEnum
-} from './project-namespace-service-status.enum';
+} from '../../enums/project-namespace-service-status.enum';
 import { KubernetesEventDto } from '../../../../modules/mo-kubernetes/data-transfer-objects/kubernetes-event.dto';
 
 export class ProjectNamespaceServiceStatusResourceItemDto {

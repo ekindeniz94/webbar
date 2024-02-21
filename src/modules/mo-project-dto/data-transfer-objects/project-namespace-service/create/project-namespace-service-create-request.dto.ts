@@ -3,6 +3,7 @@ import {
   ArrayMinSize,
   IsArray,
   isArray,
+  IsEnum,
   IsNotEmpty,
   IsOptional,
   isString,
@@ -16,7 +17,7 @@ import { StripTags } from '@mo/js-utils';
 import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from './project-namespace-service-container-create-request.dto';
-import { isServiceTemplateType } from '../../../enums';
+import { isServiceTemplateType, ServiceControllerEnum } from '../../../enums';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -24,6 +25,11 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
   projectNamespace: IdRequiredDto;
+
+  @IsNotEmpty()
+  @IsEnum(ServiceControllerEnum)
+  @Expose()
+  controller: ServiceControllerEnum;
 
   @IsNotEmpty()
   @IsString()

@@ -4,7 +4,7 @@ import {
   ProjectNamespaceServiceStatusEnum,
   ProjectNamespaceServiceStatusKindEnum,
   ProjectNamespaceServiceStatusKindTypeEnum
-} from './project-namespace-service-status.enum';
+} from '../../enums/project-namespace-service-status.enum';
 import { cloneDeep } from 'lodash';
 import { ProjectNamespaceServiceStatusResourceItemDto } from './project-namespace-service-status-item.dto';
 import { isArray } from 'class-validator';

@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isNumberString, isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
-import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { UserPublicDto } from '@mo/user-dto';
 import { ProjectNamespaceServiceAppDto } from '../project-namespace-service-app';
 import { ProjectNamespaceServiceContainerDto } from '../project-namespace-service-container/project-namespace-service-container.dto';
@@ -19,6 +19,9 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
   @Expose()
   displayName: string;
+
+  @Expose()
+  controller: ServiceControllerEnum;
 
   @Expose()
   controllerName: string;
