@@ -3,6 +3,14 @@
 
 
 # 2.1.0-develop.14 (2024-02-21)
+## 2.0.72 (2024-02-20)
+
+
+### Bug Fixes
+
+* move logic from platform to dto ([f64daa4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f64daa4b744ec428d672b47fe8ff5a2d800b17b8))
+
+## 2.0.71 (2024-02-15)
 
 
 ### Bug Fixes
