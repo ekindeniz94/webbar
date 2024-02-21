@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.15 (2024-02-21)
+
+
+### Bug Fixes
+
+* Merge branch 'main' into develop ([e9d5979](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e9d597912d4b2652f4ba3def564079ed2397e746))
+* move logic from platform to dto ([f64daa4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f64daa4b744ec428d672b47fe8ff5a2d800b17b8))
+
 # 2.1.0-develop.14 (2024-02-21)
 ## 2.0.72 (2024-02-20)
 
