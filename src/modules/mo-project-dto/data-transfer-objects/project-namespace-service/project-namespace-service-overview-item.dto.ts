@@ -12,6 +12,9 @@ export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
   displayName: string;
 
   @Expose()
+  controllerName: string;
+
+  @Expose()
   controller: ServiceControllerEnum;
 
   @Expose()
