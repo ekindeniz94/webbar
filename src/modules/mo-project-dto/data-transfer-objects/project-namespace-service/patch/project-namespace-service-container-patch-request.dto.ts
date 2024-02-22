@@ -13,12 +13,12 @@ import {
 import { KeyVaultSecretDto } from '../../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { isServiceContainerImageType, isServiceGitRepositoryType, ServiceTypeEnum } from '../../../enums';
 import { ProjectNamespaceServiceGitSettingsPatchRequestDto } from '../../project-namespace-service-git-settings';
 import { ProjectNamespaceServiceKubernetesSettingsPatchRequestDto } from '../../project-namespace-service-kubernetes-settings';
 import { ProjectNamespaceServiceEnvvarPatchRequestDto } from '../../project-namespace-service-envvar';
 import { ProjectNamespaceServicePortPatchRequestDto } from '../../project-namespace-service-port';
 import { ProjectNamespaceServiceCnamePatchRequestDto } from '../../project-namespace-service-cname';
+import { ContainerTypeEnum } from '../../../enums';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -29,9 +29,9 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   id: string;
 
   @IsNotEmpty()
-  @IsEnum(ServiceTypeEnum)
+  @IsEnum(ContainerTypeEnum)
   @Expose()
-  type: ServiceTypeEnum;
+  type: ContainerTypeEnum;
 
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
@@ -81,35 +81,35 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
 
   /****** Repository type ******/
   @Type(() => ProjectNamespaceServiceGitSettingsPatchRequestDto)
-  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => isServiceGitRepositoryType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @IsNotEmpty()
   @ValidateNested()
   @Expose()
   gitSettings: ProjectNamespaceServiceGitSettingsPatchRequestDto;
 
   /****** Container image type ******/
-  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsNotEmpty()
   @IsString()
   @StripTags()
   @Expose()
   containerImage: string;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @Type(() => KeyVaultSecretDto)
   @Transform(({ value }) => value ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
   @StripTags()
   @Expose()
   containerImageCommand: string;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
   @StripTags()

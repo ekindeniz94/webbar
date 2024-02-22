@@ -1,11 +1,11 @@
 import { Expose, Type } from 'class-transformer';
-import { ServiceTypeEnum } from '../../enums';
+import { ContainerTypeEnum } from '../../enums';
 import { IsEnum } from 'class-validator';
 
 export class ProjectNamespaceServiceKubernetesCronjobSettingsDto {
-  @IsEnum(ServiceTypeEnum)
+  @IsEnum(ContainerTypeEnum)
   @Expose()
-  source: ServiceTypeEnum;
+  source: ContainerTypeEnum;
 
   @Type(() => Number)
   @Expose()

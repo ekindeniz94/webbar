@@ -10,10 +10,10 @@ import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cn
 import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings';
-import { ServiceTypeEnum } from '../../enums';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
+import { ContainerTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -23,7 +23,7 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   displayName: string;
 
   @Expose()
-  type: ServiceTypeEnum;
+  type: ContainerTypeEnum;
 
   @StripTags()
   @Transform(({ value, obj }) =>

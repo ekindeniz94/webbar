@@ -17,7 +17,7 @@ import { StripTags } from '@mo/js-utils';
 import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from './project-namespace-service-container-create-request.dto';
-import { isServiceTemplateType, ServiceControllerEnum } from '../../../enums';
+import { ServiceControllerEnum } from '../../../enums';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -59,9 +59,9 @@ export class ProjectNamespaceServiceCreateRequestDto {
 
   @IsNotEmpty()
   // TODO app multi container
-  @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) =>
-    obj?.containers?.some((container) => isServiceTemplateType(container.type))
-  )
+  // @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) =>
+  //   obj?.containers?.some((container) => isServiceTemplateType(container.type))
+  // )
   @Type(() => IdRequiredDto)
   @ValidateNested()
   @Expose()

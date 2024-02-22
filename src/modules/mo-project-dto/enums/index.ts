@@ -1,5 +1,6 @@
 export * from './permissions';
 
+export * from './container-type.enum';
 export * from './k8s-build-scan-result-info.enum';
 export * from './project-color.enum';
 export * from './project-namespace-service-deployment-strategy.enum';
@@ -13,4 +14,3 @@ export * from './project-namespace-state.enum';
 export * from './project-user-state.enum';
 export * from './roles.enum';
 export * from './service-controller.enum';
-export * from './service-type.enum';

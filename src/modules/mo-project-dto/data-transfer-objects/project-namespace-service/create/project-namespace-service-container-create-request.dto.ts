@@ -12,15 +12,15 @@ import {
 import { KeyVaultSecretDto } from '../../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { isServiceContainerImageType, isServiceGitRepositoryType, ServiceTypeEnum } from '../../../enums';
 import { MoProjectDtoUtils } from '../../../mo-project-dto.utils';
 import { ProjectNamespaceServiceGitSettingsCreateRequestDto } from '../../project-namespace-service-git-settings';
+import { ContainerTypeEnum } from '../../../enums';
 
 export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsNotEmpty()
-  @IsEnum(ServiceTypeEnum)
+  @IsEnum(ContainerTypeEnum)
   @Expose()
-  type: ServiceTypeEnum;
+  type: ContainerTypeEnum;
 
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
@@ -41,20 +41,20 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsNotEmpty()
   @IsObject({ message: '$property must be an object' })
   @Type(() => ProjectNamespaceServiceGitSettingsCreateRequestDto)
-  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceGitRepositoryType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
   gitSettings: ProjectNamespaceServiceGitSettingsCreateRequestDto;
 
   /****** Container image type ******/
-  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsNotEmpty()
   @IsString()
   @StripTags()
   @Expose()
   containerImage: string;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @Type(() => KeyVaultSecretDto)
   @Transform(({ value }) => value ?? null)
@@ -62,14 +62,14 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
   @StripTags()
   @Expose()
   containerImageCommand: string;
 
-  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => isServiceContainerImageType(obj.type))
+  @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
   @StripTags()

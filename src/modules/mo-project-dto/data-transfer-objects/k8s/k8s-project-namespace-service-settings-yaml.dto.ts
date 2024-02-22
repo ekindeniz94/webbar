@@ -4,11 +4,11 @@ import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { isArray } from 'class-validator';
 import { K8sPortsDto } from './k8s-port.dto';
 import { IdDto } from '@mo/core-dto';
-import { ServiceTypeEnum } from '../../enums';
+import { ContainerTypeEnum } from '../../enums';
 
 export class K8sProjectNamespaceServiceSettingsYamlDto {
   @Expose()
-  serviceType: ServiceTypeEnum;
+  serviceType: ContainerTypeEnum;
 
   @Expose()
   displayName: string;
