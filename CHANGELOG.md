@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.20 (2024-02-22)
+
+
+### Bug Fixes
+
+* update dashboard dto; ([4ceffb2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4ceffb2692e2a5d1707c4bba175e6b7f844538c0))
+
 # 2.1.0-develop.19 (2024-02-22)
 
 
