@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.19 (2024-02-22)
+
+
+### Bug Fixes
+
+* refactoring service container ([7c9a8e5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7c9a8e5813cb2c3190c877d217b99c9475deafdf))
+
 # 2.1.0-develop.18 (2024-02-22)
 
 
