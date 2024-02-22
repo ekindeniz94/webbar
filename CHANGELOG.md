@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.17 (2024-02-22)
+
+
+### Bug Fixes
+
+* refactoring container type ([53af743](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/53af74387bd9e47f42f1e979a55a70e299163d07))
+
 # 2.1.0-develop.16 (2024-02-21)
 
 
