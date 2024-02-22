@@ -1,15 +1,10 @@
 import { Expose } from 'class-transformer';
 import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
+import { BaseEntityDto } from '@mo/database-dto/dist/data-transfer-objects/base.entity.dto';
 
-export class ProjectNamespaceServiceAppDashboardDto {
-  @Expose()
-  id: string;
-
+export class ProjectNamespaceServiceAppDashboardDto extends BaseEntityDto {
   @Expose()
   icon: string;
-
-  @Expose()
-  image: string;
 
   @Expose()
   name: string;
@@ -19,4 +14,7 @@ export class ProjectNamespaceServiceAppDashboardDto {
 
   @Expose()
   description: string;
+
+  @Expose()
+  descriptionShort: string;
 }

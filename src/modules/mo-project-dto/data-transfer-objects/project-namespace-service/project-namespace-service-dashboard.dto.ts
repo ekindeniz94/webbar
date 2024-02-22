@@ -6,9 +6,12 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceDashboardDto extends BaseEntityDto {
-  @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
+  @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.controllerName))
   @Expose()
   displayName: string;
+
+  @Expose()
+  controllerName: string;
 
   @Expose()
   controller: ServiceControllerEnum;

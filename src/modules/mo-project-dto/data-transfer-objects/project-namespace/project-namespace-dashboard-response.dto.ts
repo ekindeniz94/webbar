@@ -10,6 +10,9 @@ export class ProjectNamespaceDashboardResponseDto {
   displayName: string;
 
   @Expose()
+  name: string;
+
+  @Expose()
   updatedAt: Date;
 
   @Type(() => ProjectNamespaceServiceDashboardDto)
