@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.18 (2024-02-22)
+
+
+### Bug Fixes
+
+* refactoring cron jobsettings ([af04b6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/af04b6daf4449476989bd118c494576b79ca32ce))
+
 # 2.1.0-develop.17 (2024-02-22)
 
 
