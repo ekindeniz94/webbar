@@ -1,6 +1,7 @@
 export * from './create';
 export * from './patch';
 
+export * from './cronjob-settings.dto';
 export * from './project-namespace-service.dto';
 export * from './project-namespace-service-dashboard.dto';
 export * from './project-namespace-service-flat.dto';

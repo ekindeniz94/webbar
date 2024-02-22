@@ -13,12 +13,14 @@ import {
   IsUUID,
   MaxLength,
   MinLength,
+  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerPatchRequestDto } from './project-namespace-service-container-patch-request.dto';
-import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../enums';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../../enums';
+import { CronjobSettingsDto } from '../cronjob-settings.dto';
 
 export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()
@@ -27,6 +29,10 @@ export class ProjectNamespaceServicePatchRequestDto {
   @StripTags()
   @Expose()
   id: string;
+
+  @IsEnum(ServiceControllerEnum)
+  @Expose()
+  controller: ServiceControllerEnum;
 
   @IsNotEmpty()
   @IsString()
@@ -55,6 +61,7 @@ export class ProjectNamespaceServicePatchRequestDto {
   containers: ProjectNamespaceServiceContainerPatchRequestDto[];
 
   @IsNotEmpty()
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.DEPLOYMENT)
   @Type(() => Number)
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @IsNumber()
@@ -62,8 +69,16 @@ export class ProjectNamespaceServicePatchRequestDto {
   replicaCount: number;
 
   @IsNotEmpty()
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.DEPLOYMENT)
   @IsEnum(ProjectNamespaceServiceDeploymentStrategyEnum)
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @IsNotEmpty()
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.CRON_JOB)
+  @Type(() => CronjobSettingsDto)
+  @ValidateNested({ message: '$property must be an object' })
+  @Expose()
+  cronJobSettings?: CronjobSettingsDto;
 }

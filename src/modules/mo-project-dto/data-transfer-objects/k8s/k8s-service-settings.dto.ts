@@ -1,7 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums/project-namespace-service-deployment-strategy.enum';
 import { isBoolean, IsOptional } from 'class-validator';
-import { K8sCronJobSettingsDto } from './k8s-cronjob-settings.dto';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 
 export class K8sServiceSettingsDto {
@@ -32,9 +31,4 @@ export class K8sServiceSettingsDto {
   @IsOptional()
   @Expose()
   probesOn: boolean;
-
-  @Type(() => K8sCronJobSettingsDto)
-  @IsOptional()
-  @Expose()
-  k8sCronJobSettingsDto: K8sCronJobSettingsDto;
 }

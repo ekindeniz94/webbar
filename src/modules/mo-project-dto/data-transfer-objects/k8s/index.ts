@@ -1,7 +1,6 @@
 export * from './k8s-app.dto';
 export * from './k8s-build-scan-result.dto';
 export * from './k8s-build-scan-result-info.dto';
-export * from './k8s-cronjob-settings.dto';
 export * from './k8s-envvar.dto';
 export * from './k8s-port.dto';
 export * from './k8s-project.dto';

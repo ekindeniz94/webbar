@@ -3,6 +3,7 @@ import { isNumberString, isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { IdDto } from '@mo/core-dto';
+import { CronjobSettingsDto } from './cronjob-settings.dto';
 
 export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {
   @Type(() => IdDto)
@@ -38,4 +39,8 @@ export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @Type(() => CronjobSettingsDto)
+  @Expose()
+  cronJobSettings?: CronjobSettingsDto;
 }

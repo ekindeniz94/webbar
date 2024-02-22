@@ -10,7 +10,6 @@ import {
   IsString,
   MaxLength,
   MinLength,
-  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';

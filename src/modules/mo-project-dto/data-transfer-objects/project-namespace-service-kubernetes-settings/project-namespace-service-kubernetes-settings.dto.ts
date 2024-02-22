@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 import { isBoolean, ValidateNested } from 'class-validator';
-import { K8sCronJobSettingsDto } from '../k8s';
+import { CronjobSettingsDto } from '../project-namespace-service';
 
 export class ProjectNamespaceServiceKubernetesSettingsDto {
   @Type(() => Number)
@@ -24,8 +24,8 @@ export class ProjectNamespaceServiceKubernetesSettingsDto {
   @Expose()
   probesOn: boolean;
 
-  @Type(() => K8sCronJobSettingsDto)
+  @Type(() => CronjobSettingsDto)
   @ValidateNested()
   @Expose()
-  k8sCronJobSettingsDto?: K8sCronJobSettingsDto;
+  k8sCronJobSettingsDto?: CronjobSettingsDto;
 }
