@@ -1,31 +1,31 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
-import { isBoolean, ValidateNested } from 'class-validator';
-import { CronjobSettingsDto } from '../project-namespace-service';
+import { IsBoolean, isBoolean, IsEnum, IsNotEmpty, IsNumber } from 'class-validator';
 
-export class ProjectNamespaceServiceKubernetesSettingsDto {
+export class ProjectNamespaceServiceContainerKubernetesSettingsDto {
+  @IsNumber()
   @Type(() => Number)
   @Expose()
   limitMemoryMB: number;
 
+  @IsNumber()
   @Type(() => Number)
   @Expose()
   limitCpuCores: number;
 
+  @IsNotEmpty()
+  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
   @Expose()
   imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
+  @IsNumber()
   @Type(() => Number)
   @Expose()
   ephemeralStorageMB: number;
 
+  @IsBoolean()
   @Type(() => Boolean)
   @Transform(({ value }) => (value && isBoolean(value) ? value : false))
   @Expose()
   probesOn: boolean;
-
-  @Type(() => CronjobSettingsDto)
-  @ValidateNested()
-  @Expose()
-  k8sCronJobSettingsDto?: CronjobSettingsDto;
 }

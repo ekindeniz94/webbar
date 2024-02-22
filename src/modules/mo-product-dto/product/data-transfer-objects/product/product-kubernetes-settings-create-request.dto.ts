@@ -4,7 +4,7 @@ import {
   ProjectNamespaceServiceDeploymentStrategyEnum,
   ProjectNamespaceServiceImagePullPolicyEnum
 } from '../../../../mo-project-dto/enums';
-import { ProjectNamespaceServiceKubernetesCronjobSettingsDto } from '../../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings/project-namespace-service-kubernetes-cronjob-settings.dto';
+import { CronjobSettingsDto } from '../../../../mo-project-dto';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -53,8 +53,8 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   probesOn: boolean;
 
-  @Type(() => ProjectNamespaceServiceKubernetesCronjobSettingsDto)
+  @Type(() => CronjobSettingsDto)
   @IsOptional()
   @Expose()
-  cronjobSettings?: ProjectNamespaceServiceKubernetesCronjobSettingsDto;
+  cronjobSettings?: CronjobSettingsDto;
 }

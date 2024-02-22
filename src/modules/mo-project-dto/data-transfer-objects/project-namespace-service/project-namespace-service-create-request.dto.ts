@@ -14,9 +14,9 @@ import {
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
 import { IdRequiredDto } from '@mo/core-dto';
-import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { ProjectNamespaceServiceContainerCreateRequestDto } from './project-namespace-service-container-create-request.dto';
-import { ServiceControllerEnum } from '../../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerCreateRequestDto } from '../project-namespace-service-container/project-namespace-service-container-create-request.dto';
+import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()

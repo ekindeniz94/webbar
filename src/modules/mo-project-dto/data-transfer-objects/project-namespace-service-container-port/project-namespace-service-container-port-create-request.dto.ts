@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 
-export class ProjectNamespaceServicePortCreateRequestDto {
+export class ProjectNamespaceServiceContainerPortCreateRequestDto {
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServicePortBindingEnum)
   @Expose()

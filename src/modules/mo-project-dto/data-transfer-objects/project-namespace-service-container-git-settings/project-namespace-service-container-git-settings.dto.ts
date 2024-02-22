@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import { isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
 
-export class ProjectNamespaceServiceGitSettingsDto extends BaseEntityDto {
+export class ProjectNamespaceServiceContainerGitSettingsDto extends BaseEntityDto {
   @Transform(({ value }) => (isString(value) ? value : null))
   @Expose()
   gitRepository: string;

@@ -1,7 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, isString, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectPatchRequestDto {

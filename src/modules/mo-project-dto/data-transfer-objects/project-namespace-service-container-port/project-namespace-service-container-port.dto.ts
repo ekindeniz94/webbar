@@ -3,7 +3,7 @@ import { Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 
-export class ProjectNamespaceServicePortDto extends BaseEntityDto {
+export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {
   @Expose()
   portType: ProjectNamespaceServicePortBindingEnum;
 

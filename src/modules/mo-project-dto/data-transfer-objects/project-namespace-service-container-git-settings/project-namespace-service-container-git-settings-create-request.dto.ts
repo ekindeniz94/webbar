@@ -1,8 +1,9 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, IsNumber, IsOptional, IsString, isString } from 'class-validator';
+import { BaseEntityDto } from '@mo/database-dto';
 import { StripTags } from '@mo/js-utils';
 
-export class ProjectNamespaceServiceGitSettingsPatchRequestDto {
+export class ProjectNamespaceServiceContainerGitSettingsCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()
   @IsString()
   @StripTags()

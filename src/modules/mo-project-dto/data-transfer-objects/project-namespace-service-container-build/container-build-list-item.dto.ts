@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { isArray } from 'class-validator';
-import { ProjectNamespaceServiceEnvVarDto } from '../project-namespace-service-envvar';
-import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
+import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { MoUtils } from '@mo/js-utils';
+import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from '../project-namespace-service-container';
 
 export class ContainerBuildListItemDto {
   @Expose()
@@ -39,19 +39,19 @@ export class ContainerBuildListItemDto {
   @Expose()
   buildId: string;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceContainerEnvVarDto)
   @Expose()
-  envVars: ProjectNamespaceServiceEnvVarDto[];
+  envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServicePortDto)
+  @Type(() => ProjectNamespaceServiceContainerPortDto)
   @Expose()
-  ports: ProjectNamespaceServicePortDto[];
+  ports: ProjectNamespaceServiceContainerPortDto[];
 
   get containerImage(): string {
     return MoUtils.cleanUpUrl(

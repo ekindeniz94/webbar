@@ -5,7 +5,7 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { ContainerTypeEnum } from '../../enums';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 
-export class ProjectNamespaceServiceContainerNameDto extends BaseEntityDto {
+export class ProjectNamespaceServiceContainerOverviewDto extends BaseEntityDto {
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
   )

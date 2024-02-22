@@ -1,24 +1,20 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
 
-export class ProjectNamespaceServiceEnvvarCreateRequestDto {
+export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @IsNotEmpty()
   @IsString()
-  // @Matches(PROJECT_CONST.SERVICE.ENVVAR_NAME.MATCHES)
-  @MaxLength(PROJECT_CONST.SERVICE.ENVVAR_NAME.MAX)
-  @MinLength(PROJECT_CONST.SERVICE.ENVVAR_NAME.MIN)
   @StripTags()
+  // @Matches(PROJECT_CONST.SERVICE.ENVVAR_NAME.MATCHES)
   @Expose()
   name: string;
 
+  // @IsNotEmpty()
   @IsString()
   // @Matches(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MATCHES)
-  @MaxLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MAX)
-  @MinLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MIN)
-  // @StripTags()
   @Expose()
   value: string;
 
@@ -57,13 +53,11 @@ export class ProjectNamespaceServiceEnvvarCreateRequestDto {
 
   @IsOptional()
   @IsString()
-  @StripTags()
   @Expose()
   dependsOn?: string;
 
   @IsOptional()
   @IsString()
-  @StripTags()
   @Expose()
   dependsOnMethod?: string;
 }

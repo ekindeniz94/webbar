@@ -10,15 +10,15 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { KeyVaultSecretDto } from '../../key-vault';
+import { KeyVaultSecretDto } from '../key-vault';
 import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { ProjectNamespaceServiceGitSettingsPatchRequestDto } from '../../project-namespace-service-git-settings';
-import { ProjectNamespaceServiceKubernetesSettingsPatchRequestDto } from '../../project-namespace-service-kubernetes-settings';
-import { ProjectNamespaceServiceEnvvarPatchRequestDto } from '../../project-namespace-service-envvar';
-import { ProjectNamespaceServicePortPatchRequestDto } from '../../project-namespace-service-port';
-import { ProjectNamespaceServiceCnamePatchRequestDto } from '../../project-namespace-service-cname';
-import { ContainerTypeEnum } from '../../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
+import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-namespace-service-container-port';
+import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
+import { ContainerTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from './project-namespace-service-container-kubernetes-settings.dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -49,23 +49,23 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   // name: string;
 
   @IsNotEmpty()
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsPatchRequestDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
   @ValidateNested()
   @Expose()
-  kubernetesSettings: ProjectNamespaceServiceKubernetesSettingsPatchRequestDto;
+  kubernetesSettings: ProjectNamespaceServiceContainerKubernetesSettingsDto;
 
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceEnvvarPatchRequestDto)
+  @Type(() => ProjectNamespaceServiceContainerEnvvarPatchRequestDto)
   @ValidateNested()
   @Expose()
-  envVars: ProjectNamespaceServiceEnvvarPatchRequestDto[];
+  envVars: ProjectNamespaceServiceContainerEnvvarPatchRequestDto[];
 
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServicePortPatchRequestDto)
+  @Type(() => ProjectNamespaceServiceContainerPortPatchRequestDto)
   @Expose()
-  ports: ProjectNamespaceServicePortPatchRequestDto[];
+  ports: ProjectNamespaceServiceContainerPortPatchRequestDto[];
 
   @IsOptional()
   @Transform(({ value }) => {
@@ -80,12 +80,12 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   cNames: ProjectNamespaceServiceCnamePatchRequestDto[];
 
   /****** Repository type ******/
-  @Type(() => ProjectNamespaceServiceGitSettingsPatchRequestDto)
+  @Type(() => ProjectNamespaceServiceContainerGitSettingsPatchRequestDto)
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @IsNotEmpty()
   @ValidateNested()
   @Expose()
-  gitSettings: ProjectNamespaceServiceGitSettingsPatchRequestDto;
+  gitSettings: ProjectNamespaceServiceContainerGitSettingsPatchRequestDto;
 
   /****** Container image type ******/
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)

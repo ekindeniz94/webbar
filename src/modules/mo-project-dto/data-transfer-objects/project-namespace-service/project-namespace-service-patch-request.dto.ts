@@ -17,10 +17,10 @@ import {
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { ProjectNamespaceServiceContainerPatchRequestDto } from './project-namespace-service-container-patch-request.dto';
-import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../../enums';
-import { CronjobSettingsDto } from '../cronjob-settings.dto';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-namespace-service-container/project-namespace-service-container-patch-request.dto';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
+import { CronjobSettingsDto } from './cronjob-settings.dto';
 
 export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()

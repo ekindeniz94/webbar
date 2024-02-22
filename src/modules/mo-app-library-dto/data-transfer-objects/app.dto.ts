@@ -5,8 +5,8 @@ import { AppLibraryStateEnum, AppLibraryTypeEnum } from '../enums';
 import { AppPortDto } from './app-port.dto';
 import {
   ProjectDisplayNameDto,
-  ProjectNamespaceServiceEnvVarDto,
-  ProjectNamespaceServiceKubernetesSettingsDto
+  ProjectNamespaceServiceContainerEnvVarDto,
+  ProjectNamespaceServiceContainerKubernetesSettingsDto
 } from '../../mo-project-dto';
 import { BaseEntityDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../../mo-product-dto';
@@ -89,12 +89,12 @@ export class AppDto extends BaseEntityDto {
   @Expose()
   ports: AppPortDto[];
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
 
-  @Type(() => ProjectNamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceContainerEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  envVars: ProjectNamespaceServiceEnvVarDto[];
+  envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 }

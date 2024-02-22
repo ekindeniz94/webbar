@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, isNumberString } from 'class-validator';
 import {
+  CronjobSettingsDto,
   ProjectNamespaceServiceDeploymentStrategyEnum,
-  ProjectNamespaceServiceImagePullPolicyEnum,
-  ProjectNamespaceServiceKubernetesCronjobSettingsDto
+  ProjectNamespaceServiceImagePullPolicyEnum
 } from '../../../../mo-project-dto';
 
 export class ProductKubernetesSettingsDto {
@@ -40,7 +40,7 @@ export class ProductKubernetesSettingsDto {
   @Expose()
   probesOn: boolean;
 
-  @Type(() => ProjectNamespaceServiceKubernetesCronjobSettingsDto)
+  @Type(() => CronjobSettingsDto)
   @Expose()
-  cronjobSettings?: ProjectNamespaceServiceKubernetesCronjobSettingsDto;
+  cronjobSettings?: CronjobSettingsDto;
 }

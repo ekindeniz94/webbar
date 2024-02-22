@@ -4,16 +4,16 @@ import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
-import { ProjectNamespaceServiceEnvVarDto } from '../project-namespace-service-envvar';
-import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
-import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
+import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-container-cname';
+import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { BaseEntityDto } from '@mo/database-dto';
-import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings';
+import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from './project-namespace-service-container-kubernetes-settings.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -55,32 +55,32 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   containerImageCommandArgs: string;
 
-  @Type(() => ProjectNamespaceServiceGitSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerGitSettingsDto)
   @Expose()
-  gitSettings: ProjectNamespaceServiceGitSettingsDto;
+  gitSettings: ProjectNamespaceServiceContainerGitSettingsDto;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
 
   // @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   // @Expose()
   // kubernetesRequests: ProjectNamespaceServiceKubernetesSettingsDto;
 
-  @Type(() => ProjectNamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceContainerEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  envVars: ProjectNamespaceServiceEnvVarDto[];
+  envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => ProjectNamespaceServiceCnameDto)
   @Expose()
   cNames: ProjectNamespaceServiceCnameDto[];
 
-  @Type(() => ProjectNamespaceServicePortDto)
+  @Type(() => ProjectNamespaceServiceContainerPortDto)
   @Transform(({ value }) => (isArray(value) ? value : undefined))
   @Expose()
-  ports: ProjectNamespaceServicePortDto[];
+  ports: ProjectNamespaceServiceContainerPortDto[];
 
   @Type(() => CpuDto)
   @Expose()

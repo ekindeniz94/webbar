@@ -9,12 +9,12 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { KeyVaultSecretDto } from '../../key-vault';
+import { KeyVaultSecretDto } from '../key-vault';
 import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../../mo-project-dto.const';
-import { MoProjectDtoUtils } from '../../../mo-project-dto.utils';
-import { ProjectNamespaceServiceGitSettingsCreateRequestDto } from '../../project-namespace-service-git-settings';
-import { ContainerTypeEnum } from '../../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
+import { ProjectNamespaceServiceContainerGitSettingsCreateRequestDto } from '../project-namespace-service-container-git-settings';
+import { ContainerTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsNotEmpty()
@@ -40,11 +40,11 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   /****** Repository type ******/
   @IsNotEmpty()
   @IsObject({ message: '$property must be an object' })
-  @Type(() => ProjectNamespaceServiceGitSettingsCreateRequestDto)
+  @Type(() => ProjectNamespaceServiceContainerGitSettingsCreateRequestDto)
   @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  gitSettings: ProjectNamespaceServiceGitSettingsCreateRequestDto;
+  gitSettings: ProjectNamespaceServiceContainerGitSettingsCreateRequestDto;
 
   /****** Container image type ******/
   @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
