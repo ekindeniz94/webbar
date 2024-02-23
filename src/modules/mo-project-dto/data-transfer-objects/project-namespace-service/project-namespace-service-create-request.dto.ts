@@ -56,7 +56,7 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @Expose()
   containers: ProjectNamespaceServiceContainerCreateRequestDto[];
 
-  @IsNotEmpty()
+  @IsOptional()
   // TODO app multi container
   // @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) =>
   //   obj?.containers?.some((container) => isServiceTemplateType(container.type))
