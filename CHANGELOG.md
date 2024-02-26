@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.23 (2024-02-26)
+
+
+### Bug Fixes
+
+* update k8s project,namespace, service dto ([b00f7e5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b00f7e589845bf371720d08aaa662e2822bcdad6))
+
 # 2.1.0-develop.22 (2024-02-26)
 
 
