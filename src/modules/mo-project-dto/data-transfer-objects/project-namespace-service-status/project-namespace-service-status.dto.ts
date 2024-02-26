@@ -18,6 +18,9 @@ export class ProjectNamespaceServiceStatusResourceDto {
 
   @Expose()
   get switchedOn(): boolean {
+    if (this.items.length === 0) {
+      return false;
+    }
     if (this.hasDeployment) {
       const status = this.getItemsOfType(ProjectNamespaceServiceStatusControllerEnum.Deployment).pop()?.status();
       return status.replicas > 0;
