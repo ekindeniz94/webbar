@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
-import { GitConnectionTypeEnum } from '../../../mo-git';
+import { GitConnectionTypeEnum } from '../../../../mo-git';
 
-export class K8sProjectDto {
+export class K8sProjectDto2 {
   @Expose()
   id: string;
 

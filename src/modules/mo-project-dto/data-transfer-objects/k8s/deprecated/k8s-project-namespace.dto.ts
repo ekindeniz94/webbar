@@ -1,9 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean } from 'class-validator';
-import { K8sProjectNamespaceServiceDto } from './k8s-project-namespace-service.dto';
+import { K8sProjectNamespaceServiceDto2 } from './k8s-project-namespace-service.dto';
 import { MoUtils } from '@mo/js-utils';
 
-export class K8sProjectNamespaceDto {
+export class K8sProjectNamespaceDto2 {
   @Expose()
   id: string;
 
@@ -22,12 +22,12 @@ export class K8sProjectNamespaceDto {
   @Expose()
   storageSizeInMb: number; // namespace.subscription.plan.product.persistentDiskInMb
 
-  @Type(() => K8sProjectNamespaceServiceDto)
+  @Type(() => K8sProjectNamespaceServiceDto2)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  services: K8sProjectNamespaceServiceDto[];
+  services: K8sProjectNamespaceServiceDto2[];
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
-  @Expose()
-  cloudflareProxied: boolean;
+  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @Expose()
+  // cloudflareProxied: boolean;
 }

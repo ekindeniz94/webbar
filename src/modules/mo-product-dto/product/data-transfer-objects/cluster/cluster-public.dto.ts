@@ -44,9 +44,9 @@ export class ClusterPublicDto {
   @Expose()
   description: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
-  @Expose()
-  cloudflareProxied: boolean;
+  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @Expose()
+  // cloudflareProxied: boolean;
 
   @Transform(({ value }) =>
     _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))

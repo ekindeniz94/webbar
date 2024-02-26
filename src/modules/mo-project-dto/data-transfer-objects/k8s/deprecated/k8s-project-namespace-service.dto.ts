@@ -1,12 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isBoolean } from 'class-validator';
-import { K8sAppDto } from './k8s-app.dto';
-import { K8sServiceSettingsDto } from './k8s-service-settings.dto';
-import { K8sEnvVarDto } from './k8s-envvar.dto';
-import { K8sPortsDto } from './k8s-port.dto';
-import { ContainerTypeEnum } from '../../enums';
+import { K8sAppDto } from '../k8s-app.dto';
+import { K8sServiceSettingsDto } from '../k8s-service-settings.dto';
+import { K8sEnvVarDto } from '../k8s-envvar.dto';
+import { K8sPortsDto } from '../k8s-port.dto';
+import { ContainerTypeEnum } from '../../../enums';
 
-export class K8sProjectNamespaceServiceDto {
+export class K8sProjectNamespaceServiceDto2 {
   @Expose()
   id: string;
 

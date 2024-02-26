@@ -3,8 +3,5 @@ export * from './k8s-build-scan-result.dto';
 export * from './k8s-build-scan-result-info.dto';
 export * from './k8s-envvar.dto';
 export * from './k8s-port.dto';
-export * from './k8s-project.dto';
-export * from './k8s-project-namespace.dto';
-export * from './k8s-project-namespace-service.dto';
 export * from './k8s-project-namespace-service-settings-yaml.dto';
 export * from './k8s-service-settings.dto';

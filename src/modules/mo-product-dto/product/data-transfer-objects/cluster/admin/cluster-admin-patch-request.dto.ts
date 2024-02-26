@@ -65,10 +65,10 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   // @Expose()
   // spectrumSubDomain: string;
 
-  @IsOptional()
-  @IsBoolean()
-  @Expose()
-  cloudflareProxied: boolean;
+  // @IsOptional()
+  // @IsBoolean()
+  // @Expose()
+  // cloudflareProxied: boolean;
 
   @Type(() => Number)
   @IsOptional()
