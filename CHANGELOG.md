@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.24 (2024-02-27)
+
+
+### Bug Fixes
+
+* VolumeRequestDto; update build job payload; rm gateway-status ([d6fa4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6fa4e22f9087c5f86d4a28b915f41649e1f1ff5))
+
 # 2.1.0-develop.23 (2024-02-26)
 
 
