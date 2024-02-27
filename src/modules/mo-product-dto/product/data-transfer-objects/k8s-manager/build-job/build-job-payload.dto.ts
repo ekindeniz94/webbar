@@ -17,7 +17,7 @@ export class BuildJobPayloadDto {
   serviceId: string;
 
   @Expose()
-  serviceName: string;
+  controllerName: string;
 
   @Expose()
   gitRepo: string;
