@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.25 (2024-02-28)
+
+
+### Bug Fixes
+
+* add FileListFullDto ([07cc380](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/07cc380ebd99ed176b6ca0c3f2ac8e4d287d1ebf))
+
 # 2.1.0-develop.24 (2024-02-27)
 
 
