@@ -5,3 +5,4 @@ export * from './file-chown-request.dto';
 export * from './file-create-folder-request.dto';
 export * from './file-rename-request.dto';
 export * from './file-request.dto';
+export * from './file-event-update.dto';
