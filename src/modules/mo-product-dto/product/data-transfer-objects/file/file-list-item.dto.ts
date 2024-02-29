@@ -1,5 +1,6 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsDate, IsInt, IsString } from 'class-validator';
+import { MoUtils } from '@mo/js-utils';
 
 export class FileListItemDto {
   @Expose()
@@ -43,6 +44,7 @@ export class FileListItemDto {
   mode: string;
 
   @Expose()
+  @Transform(({ value }) => (value ? MoUtils.removeLastSlashes(value.replace(/^\/\//, '/')) : value))
   @IsString()
   absolutePath: string;
 
