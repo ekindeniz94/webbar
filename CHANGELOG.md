@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.27 (2024-02-29)
+
+
+### Bug Fixes
+
+* file item dto ([3ef5aab](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3ef5aab1fe298d5eaf93581cc4f57131535800f8))
+
 # 2.1.0-develop.26 (2024-02-28)
 
 
