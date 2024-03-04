@@ -6,6 +6,7 @@ export class FileListDto {
   @Expose()
   @IsString()
   path: string;
+
   @Expose()
   @Type(() => FileListItemDto)
   items: FileListItemDto[];
