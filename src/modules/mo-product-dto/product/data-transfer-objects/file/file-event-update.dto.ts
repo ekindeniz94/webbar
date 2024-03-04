@@ -1,6 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { FileListItemDto } from './file-list-item.dto';
 import { IsOptional, IsString } from 'class-validator';
+import { FileEventUpdateEnum } from '../../enums/file-event-update.enum';
 
 export class FileEventUpdateDto {
   @Expose()
@@ -8,7 +9,7 @@ export class FileEventUpdateDto {
   absolutePath: string;
 
   @Expose()
-  event: 'DELETED' | 'CREATED' | 'UPDATED';
+  event: FileEventUpdateEnum;
 
   @Expose()
   @IsOptional()
