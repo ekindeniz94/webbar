@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsString } from 'class-validator';
-import { AppTagDto } from './app-tag.dto';
+import { AppTagDto } from '../app-tag.dto';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class AppPublicDto extends BaseEntityDto {
@@ -38,5 +38,5 @@ export class AppPublicDto extends BaseEntityDto {
 
   @IsString()
   @Expose()
-  documentationLink: String;
+  documentationLink: string;
 }

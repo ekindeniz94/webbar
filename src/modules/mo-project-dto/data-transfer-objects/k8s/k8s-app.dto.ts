@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
 import { IdDto } from '@mo/core-dto';
+import { ServiceControllerEnum } from '../../enums';
 
 export class K8sAppDto {
   @Expose()
@@ -11,10 +11,13 @@ export class K8sAppDto {
   organization: IdDto;
 
   @Expose()
-  name: string;
+  displayName: string;
 
   @Expose()
-  type: AppLibraryTypeEnum;
+  controllerName: string;
+
+  @Expose()
+  controller: ServiceControllerEnum;
 
   @Expose()
   setupCommands: string;
