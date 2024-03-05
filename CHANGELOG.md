@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.28 (2024-03-05)
+
+
+### Bug Fixes
+
+* refactoring app ([8ed89f7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ed89f73a52c1fe8c588260918151367c8c20641))
+
 # 2.1.0-develop.27 (2024-02-29)
 
 
