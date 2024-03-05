@@ -1,16 +1,19 @@
 import { Expose } from 'class-transformer';
-import { AppLibraryTypeEnum } from '../../../mo-app-library-dto';
 import { BaseEntityDto } from '@mo/database-dto/dist/data-transfer-objects/base.entity.dto';
+import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceAppDashboardDto extends BaseEntityDto {
   @Expose()
   icon: string;
 
   @Expose()
-  name: string;
+  displayName: string;
 
   @Expose()
-  type: AppLibraryTypeEnum; // Enum
+  controllerName: string;
+
+  @Expose()
+  controller: ServiceControllerEnum; // Enum
 
   @Expose()
   description: string;

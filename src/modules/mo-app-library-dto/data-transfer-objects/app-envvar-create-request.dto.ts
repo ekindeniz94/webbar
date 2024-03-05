@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
 import { IsOptional, IsString, MaxLength, MinLength, ValidateIf } from 'class-validator';
-import { PROJECT_CONST, ProjectNamespaceServiceContainerEnvvarCreateRequestDto } from '../../mo-project-dto';
+import { ProjectNamespaceServiceContainerEnvvarCreateRequestDto } from '../../mo-project-dto/data-transfer-objects/project-namespace-service-container-envvar/project-namespace-service-container-envvar-create-request.dto';
+import { PROJECT_CONST } from '../../mo-project-dto/mo-project-dto.const';
 
 export class AppEnvVarCreateRequestDto extends ProjectNamespaceServiceContainerEnvvarCreateRequestDto {
   @IsOptional()

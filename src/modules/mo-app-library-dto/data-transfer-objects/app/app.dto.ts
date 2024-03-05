@@ -1,16 +1,27 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
-import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
-import { AppTagDto } from '../../../mo-app-library-dto/data-transfer-objects/app-tag.dto';
-import { AppLibraryStateEnum } from '../../../mo-app-library-dto/enums/app-library-state.enum';
 import { isArray, isNumberString, isString } from 'class-validator';
-import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { CronjobSettingsDto } from '../project-namespace-service';
+import { AppTagDto } from '../app-tag.dto';
+import { AppLibraryStateEnum } from '../../enums';
+import {
+  CronjobSettingsDto,
+  MoProjectDtoUtils,
+  PROJECT_CONST,
+  ProjectDisplayNameDto,
+  ProjectNamespaceServiceDeploymentStrategyEnum,
+  ServiceControllerEnum
+} from '../../../mo-project-dto';
+import { BaseEntityDto } from '@mo/database-dto';
+import { OrganizationNameDto } from '../../../mo-product-dto';
+import { AppContainerDto } from '../app-container/app-container.dto';
 
-export class ProjectNamespaceServiceAppDto {
+export class AppDto extends BaseEntityDto {
+  @Type(() => OrganizationNameDto)
   @Expose()
-  id: string;
+  organization: OrganizationNameDto;
+
+  @Type(() => ProjectDisplayNameDto)
+  @Expose()
+  project: ProjectDisplayNameDto;
 
   @Type(() => AppTagDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))

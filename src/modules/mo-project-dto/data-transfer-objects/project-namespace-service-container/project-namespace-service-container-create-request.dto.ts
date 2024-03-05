@@ -15,6 +15,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { ProjectNamespaceServiceContainerGitSettingsCreateRequestDto } from '../project-namespace-service-container-git-settings';
 import { ContainerTypeEnum } from '../../enums';
+import { IdRequiredDto } from '@mo/core-dto';
 
 export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsNotEmpty()
@@ -75,4 +76,10 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   @StripTags()
   @Expose()
   containerImageCommandArgs: string;
+
+  @IsOptional()
+  @Type(() => IdRequiredDto)
+  @ValidateNested()
+  @Expose()
+  appContainer: IdRequiredDto;
 }
