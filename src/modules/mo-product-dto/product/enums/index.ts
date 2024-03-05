@@ -10,3 +10,5 @@ export * from './product-type.enum';
 export * from './organization-user-state.enum';
 export * from './roles.enum';
 export * from './pvc-phase.enum';
+export * from './file-event-update.enum';
+export * from './volume-event-update.enum';
