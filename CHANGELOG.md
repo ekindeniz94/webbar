@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.30 (2024-03-05)
+
+
+### Bug Fixes
+
+* add new dtos for storage events ([64ed050](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/64ed050f601f6bb3185fea89853d167c611d798f))
+* add storage related dto ([760b114](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/760b1149c0df74d956d21a202ae26fbc3ddfdd7f))
+
 # 2.1.0-develop.29 (2024-03-05)
 
 
