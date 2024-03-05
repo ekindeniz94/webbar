@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsOptional, IsString, isString } from 'class-vali
 import { BaseEntityDto } from '@mo/database-dto';
 import { StripTags } from '@mo/js-utils';
 
-export class ProjectNamespaceServiceContainerGitSettingsCreateRequestDto extends BaseEntityDto {
+export class ProjectNamespaceServiceContainerGitSettingsCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @StripTags()
