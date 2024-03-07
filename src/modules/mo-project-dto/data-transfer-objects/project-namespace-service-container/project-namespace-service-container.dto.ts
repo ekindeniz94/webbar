@@ -14,6 +14,7 @@ import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from './project-namespace-service-container-kubernetes-settings.dto';
+import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -103,4 +104,8 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Type(() => KubernetesPublicEventDto)
   @Expose()
   messages: KubernetesPublicEventDto[];
+
+  @Type(() => AppContainerDto)
+  @Expose()
+  appContainer: AppContainerDto;
 }
