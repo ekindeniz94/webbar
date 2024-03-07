@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.32 (2024-03-07)
+
+
+### Bug Fixes
+
+* add app container to service dto ([9e907af](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9e907afc7fef9c1cba6d1537df752d148794d15f))
+
 # 2.1.0-develop.31 (2024-03-07)
 
 
