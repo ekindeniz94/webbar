@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.31 (2024-03-07)
+
+
+### Bug Fixes
+
+* add KubernetesEventKindEnum persitentvolume ([baf4e53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/baf4e5374078daceb54c7ad4da106c773a01e957))
+
 # 2.1.0-develop.30 (2024-03-05)
 
 
