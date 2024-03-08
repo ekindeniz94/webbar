@@ -22,7 +22,7 @@ export class ClusterPublicDto {
   @Expose()
   provider: ClusterProviderEnum;
 
-  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.MO_AZURE)
+  @Transform(({ value }) => value ?? ClusterBuildServerTypeEnum.IN_CLUSTER)
   @Expose()
   buildServerType: ClusterBuildServerTypeEnum;
 
