@@ -2,6 +2,13 @@
 
 
 
+## 2.0.73 (2024-03-08)
+
+
+### Bug Fixes
+
+* default in_cluster build ([5509101](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55091014ab320e1c5ff9bdc1d5a0783a9f005094))
+
 ## 2.0.72 (2024-02-20)
 
 
