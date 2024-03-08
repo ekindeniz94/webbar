@@ -1,5 +1,15 @@
 # Changelog
 
+
+
+# 2.1.0-develop.33 (2024-03-08)
+
+
+### Bug Fixes
+
+* default in_cluster build ([5509101](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55091014ab320e1c5ff9bdc1d5a0783a9f005094))
+* Merge branch 'main' into develop ([1f84f79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1f84f7943bf37926787c3ebf7c8f1b2014ef1ec1))
+
 ## 2.0.73 (2024-03-08)
 * default in_cluster build ([5509101](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55091014ab320e1c5ff9bdc1d5a0783a9f005094))
 
