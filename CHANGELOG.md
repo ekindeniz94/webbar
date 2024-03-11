@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.34 (2024-03-11)
+
+
+### Bug Fixes
+
+* update namespace service dto ([5b72ca6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5b72ca66965a0c07ff50e9966cfbc06448377d0d))
+
 # 2.1.0-develop.33 (2024-03-08)
 
 
