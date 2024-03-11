@@ -95,10 +95,6 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
 
-  @Type(() => OriginTrafficDto)
-  @Expose()
-  traffic: OriginTrafficDto;
-
   // deployment message
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => KubernetesPublicEventDto)
