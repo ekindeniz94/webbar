@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.35 (2024-03-13)
+
+
+### Bug Fixes
+
+* project boolean property ([9a385bb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9a385bba07c5cae7758e875b1eafd4298c0a2235))
+
 # 2.1.0-develop.34 (2024-03-11)
 
 
