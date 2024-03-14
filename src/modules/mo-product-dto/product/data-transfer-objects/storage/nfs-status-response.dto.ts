@@ -2,7 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { K8sNotificationStateEnum } from '../../enums';
 import { KubernetesEventDto } from '../../../../../modules/mo-kubernetes';
 import { IsOptional, IsString } from 'class-validator';
-
+//
 export class StorageStatus {
   @Expose()
   @IsString()
