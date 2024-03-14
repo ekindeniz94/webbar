@@ -18,7 +18,7 @@ export class StorageStatus {
 
   @Expose()
   @IsOptional()
-  persistenVolume?: any;
+  persistentVolume?: any;
 
   @Expose()
   @IsOptional()
@@ -49,9 +49,9 @@ export class NfsStatusResponseDto {
     if (!this.storageStatus && this.error) {
       return K8sNotificationStateEnum.ERROR;
     } else if (this.storageStatus) {
-      if (this.storageStatus.persistentVolumeClaim && this.storageStatus.persistenVolume) {
+      if (this.storageStatus.persistentVolumeClaim && this.storageStatus.persistentVolume) {
         let bounded = true;
-        bounded &&= this.storageStatus.persistenVolume?.status?.phase === 'Bound';
+        bounded &&= this.storageStatus.persistentVolume?.status?.phase === 'Bound';
         bounded &&= this.storageStatus.persistentVolumeClaim?.status?.phase === 'Bound';
 
         if (bounded) {
@@ -59,8 +59,8 @@ export class NfsStatusResponseDto {
         }
 
         let notOk = false;
-        notOk ||= this.storageStatus.persistenVolume?.status?.phase === 'Failed';
-        notOk ||= this.storageStatus.persistenVolume?.status?.phase === 'Lost';
+        notOk ||= this.storageStatus.persistentVolume?.status?.phase === 'Failed';
+        notOk ||= this.storageStatus.persistentVolume?.status?.phase === 'Lost';
 
         if (notOk) {
           return K8sNotificationStateEnum.FAILED;
