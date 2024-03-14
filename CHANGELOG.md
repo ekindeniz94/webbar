@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.39 (2024-03-14)
+
+
+### Bug Fixes
+
+* add constraints for storage status ([25335fc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/25335fcb592833f3f30f9063929bb8a0cff5725e))
+
 # 2.1.0-develop.38 (2024-03-14)
 
 
