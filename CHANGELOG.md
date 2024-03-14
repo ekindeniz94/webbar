@@ -2,6 +2,53 @@
 
 
 
+# 2.1.0-develop.36 (2024-03-14)
+
+
+### Bug Fixes
+
+* update stats dto ([99a7187](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/99a7187c810c4874894b3505d392b026d120e085))
+
+# 2.1.0-develop.35 (2024-03-13)
+
+
+### Bug Fixes
+
+* project boolean property ([9a385bb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9a385bba07c5cae7758e875b1eafd4298c0a2235))
+
+# 2.1.0-develop.34 (2024-03-11)
+
+
+### Bug Fixes
+
+* update namespace service dto ([5b72ca6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5b72ca66965a0c07ff50e9966cfbc06448377d0d))
+
+# 2.1.0-develop.33 (2024-03-08)
+
+
+### Bug Fixes
+
+* default in_cluster build ([5509101](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55091014ab320e1c5ff9bdc1d5a0783a9f005094))
+* Merge branch 'main' into develop ([1f84f79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1f84f7943bf37926787c3ebf7c8f1b2014ef1ec1))
+
+## 2.0.73 (2024-03-08)
+* default in_cluster build ([5509101](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55091014ab320e1c5ff9bdc1d5a0783a9f005094))
+
+
+# 2.1.0-develop.32 (2024-03-07)
+
+
+### Bug Fixes
+
+* add app container to service dto ([9e907af](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9e907afc7fef9c1cba6d1537df752d148794d15f))
+
+# 2.1.0-develop.31 (2024-03-07)
+
+
+### Bug Fixes
+
+* add KubernetesEventKindEnum persitentvolume ([baf4e53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/baf4e5374078daceb54c7ad4da106c773a01e957))
+
 # 2.1.0-develop.30 (2024-03-05)
 
 

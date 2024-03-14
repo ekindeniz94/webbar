@@ -1,7 +1,8 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
+import { MoUtils } from '@mo/js-utils';
 
 export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {
   @Expose()
@@ -18,6 +19,7 @@ export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {
   @Expose()
   externalPort: number;
 
+  @Transform(({ value }) => MoUtils.parseBoolean(value))
   @Expose()
   expose: boolean;
 

@@ -1,5 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isNumber } from 'class-validator';
+import moment from 'moment';
 
 export class OriginTrafficDto {
   @Transform(({ value }) => (isNumber(value) && value > 0 ? value : 0))
@@ -36,6 +37,15 @@ export class OriginTrafficDto {
   @Type(() => Number)
   @Expose()
   trafficWarningLimit: number;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  startTime: string;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  createdAt: string;
+
 
   get isReachingTrafficLimit(): boolean {
     return this.trafficInPercentage > this.trafficWarningLimit * 100;
