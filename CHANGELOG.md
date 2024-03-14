@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.36 (2024-03-14)
+
+
+### Bug Fixes
+
+* update stats dto ([99a7187](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/99a7187c810c4874894b3505d392b026d120e085))
+
 # 2.1.0-develop.35 (2024-03-13)
 
 
