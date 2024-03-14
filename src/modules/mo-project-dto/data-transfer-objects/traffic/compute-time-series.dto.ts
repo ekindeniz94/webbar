@@ -26,6 +26,11 @@ export class ComputeTimeSeriesDto {
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
+  ephemeralStorage: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Expose()
   ephemeralStorageLimit: number;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
