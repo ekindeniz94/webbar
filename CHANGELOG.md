@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.37 (2024-03-14)
+
+
+### Bug Fixes
+
+* extend storage ([7e95542](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7e955429a3090e229db0ef4c83781e08ebd3b24a))
+
 # 2.1.0-develop.36 (2024-03-14)
 
 
