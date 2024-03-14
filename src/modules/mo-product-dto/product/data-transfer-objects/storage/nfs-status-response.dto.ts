@@ -50,14 +50,6 @@ export class NfsStatusResponseDto {
       return K8sNotificationStateEnum.ERROR;
     } else if (this.storageStatus) {
       if (this.storageStatus.persistentVolumeClaim && this.storageStatus.persistentVolume) {
-        let bounded = true;
-        bounded &&= this.storageStatus.persistentVolume?.status?.phase === 'Bound';
-        bounded &&= this.storageStatus.persistentVolumeClaim?.status?.phase === 'Bound';
-
-        if (bounded) {
-          return K8sNotificationStateEnum.SUCCEEDED;
-        }
-
         let notOk = false;
         notOk ||= this.storageStatus.persistentVolume?.status?.phase === 'Failed';
         notOk ||= this.storageStatus.persistentVolume?.status?.phase === 'Lost';
@@ -65,8 +57,23 @@ export class NfsStatusResponseDto {
         if (notOk) {
           return K8sNotificationStateEnum.FAILED;
         }
+
+        let success = true;
+        success &&= this.storageStatus.persistentVolume?.status?.phase === 'Bound';
+        success &&= this.storageStatus.persistentVolumeClaim?.status?.phase === 'Bound';
+        success &&=
+          this.storageStatus.usedByPods?.find(
+            (pod) =>
+              pod.metadata?.name?.startsWith(this.storageStatus?.persistentVolumeClaim?.metadata?.name) &&
+              pod.metadata?.namespace === this.storageStatus?.namespace
+          )?.status?.phase === 'Running';
+
+        if (success) {
+          return K8sNotificationStateEnum.SUCCEEDED;
+        }
       }
     }
+
     return K8sNotificationStateEnum.PENDING;
   }
 }
