@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.40 (2024-03-15)
+
+
+### Bug Fixes
+
+* move logic into operator, simplify dto ([fccf139](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fccf139af003ca314574fbc7846915d3f0045b8e))
+
 # 2.1.0-develop.39 (2024-03-14)
 
 
