@@ -17,8 +17,4 @@ export class ProjectKubernetesLimitsDto {
   @IsNumber()
   @Expose()
   ephemeralStorageMB: number;
-
-  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
-  @Expose()
-  imagePullPolicy: number;
 }
