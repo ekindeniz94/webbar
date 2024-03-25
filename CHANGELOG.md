@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.42 (2024-03-25)
+
+
+### Bug Fixes
+
+* changed order of validators to fix project create. ([759aad9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/759aad9071d074b821d716acc1f25f5829c258f8))
+
 # 2.1.0-develop.41 (2024-03-25)
 
 
