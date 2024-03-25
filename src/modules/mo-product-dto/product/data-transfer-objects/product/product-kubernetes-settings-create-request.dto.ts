@@ -34,9 +34,9 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 
-  @IsNotEmpty()
-  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
   @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
+  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
+  @IsNotEmpty()
   @Expose()
   imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
