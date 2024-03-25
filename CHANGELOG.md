@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.43 (2024-03-25)
+
+
+### Bug Fixes
+
+* rollback fuckup. ([ad45469](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ad454697fd30a218fc77a66b29cdca4afdb10800))
+
 # 2.1.0-develop.42 (2024-03-25)
 
 
