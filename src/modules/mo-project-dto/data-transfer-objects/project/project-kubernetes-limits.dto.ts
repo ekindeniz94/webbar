@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNumber } from 'class-validator';
+import { IsEnum, IsNumber } from 'class-validator';
+import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 
 export class ProjectKubernetesLimitsDto {
   @Type(() => Number)
@@ -16,4 +17,8 @@ export class ProjectKubernetesLimitsDto {
   @IsNumber()
   @Expose()
   ephemeralStorageMB: number;
+
+  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
+  @Expose()
+  imagePullPolicy: number;
 }
