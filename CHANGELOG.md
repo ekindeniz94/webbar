@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.44 (2024-04-03)
+
+
+### Bug Fixes
+
+* git dtos ([3193aa9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3193aa911e2237a56303139d6781bfcba787f8bf))
+
 # 2.1.0-develop.43 (2024-03-25)
 
 
