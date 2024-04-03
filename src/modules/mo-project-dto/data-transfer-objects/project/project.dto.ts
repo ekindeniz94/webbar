@@ -11,18 +11,22 @@ import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   createdBy: UserPublicDto;
 
   @Type(() => ProductFlatDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   product: ProductFlatDto;
 
   @Type(() => ClusterPublicDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   cluster: ClusterPublicDto;
 
   @Type(() => GitConnectionDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   gitConnection: GitConnectionDto;
 

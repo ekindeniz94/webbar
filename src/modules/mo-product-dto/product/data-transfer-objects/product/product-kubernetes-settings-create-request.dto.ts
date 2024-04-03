@@ -1,10 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional } from 'class-validator';
-import {
-  ProjectNamespaceServiceDeploymentStrategyEnum,
-  ProjectNamespaceServiceImagePullPolicyEnum
-} from '../../../../mo-project-dto/enums';
-import { CronjobSettingsDto } from '../../../../mo-project-dto';
+import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto/enums';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -21,12 +17,12 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   limitCpuCores: number;
 
-  @Type(() => Number)
-  @IsNotEmpty()
-  @Transform(({ value }) => (isNumberString(value) ? +value : value))
-  @IsNumber()
-  @Expose()
-  replicaCount: number;
+  // @Type(() => Number)
+  // @IsNotEmpty()
+  // @Transform(({ value }) => (isNumberString(value) ? +value : value))
+  // @IsNumber()
+  // @Expose()
+  // replicaCount: number;
 
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServiceDeploymentStrategyEnum)
@@ -34,11 +30,11 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 
-  @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
-  @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
-  @IsNotEmpty()
-  @Expose()
-  imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
+  // @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
+  // @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
+  // @IsNotEmpty()
+  // @Expose()
+  // imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
   @Type(() => Number)
   @Expose()
@@ -52,9 +48,4 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @IsOptional()
   @Expose()
   probesOn: boolean;
-
-  @Type(() => CronjobSettingsDto)
-  @IsOptional()
-  @Expose()
-  cronjobSettings?: CronjobSettingsDto;
 }

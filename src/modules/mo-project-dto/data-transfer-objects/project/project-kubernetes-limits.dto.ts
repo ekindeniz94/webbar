@@ -1,6 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsEnum, IsNumber } from 'class-validator';
-import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
+import { IsNumber } from 'class-validator';
 
 export class ProjectKubernetesLimitsDto {
   @Type(() => Number)

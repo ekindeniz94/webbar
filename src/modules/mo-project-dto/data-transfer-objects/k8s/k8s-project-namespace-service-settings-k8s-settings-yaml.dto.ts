@@ -3,7 +3,7 @@ import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../enums/proje
 import { isBoolean, IsOptional } from 'class-validator';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 
-export class K8sServiceSettingsDto {
+export class K8sProjectNamespaceServiceSettingsK8sSettingsYamlDto {
   @Type(() => Number)
   @Expose()
   limitCpuCores: number;

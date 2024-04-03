@@ -1,10 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, isNumberString } from 'class-validator';
-import {
-  CronjobSettingsDto,
-  ProjectNamespaceServiceDeploymentStrategyEnum,
-  ProjectNamespaceServiceImagePullPolicyEnum
-} from '../../../../mo-project-dto';
+import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto';
 
 export class ProductKubernetesSettingsDto {
   @Type(() => Number)
@@ -17,18 +13,18 @@ export class ProductKubernetesSettingsDto {
   @Expose()
   limitCpuCores: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumberString(value) ? +value : value))
-  @Expose()
-  replicaCount: number;
+  // @Type(() => Number)
+  // @Transform(({ value }) => (isNumberString(value) ? +value : value))
+  // @Expose()
+  // replicaCount: number;
 
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 
-  @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
-  @Expose()
-  imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
+  // @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
+  // @Expose()
+  // imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
@@ -39,8 +35,4 @@ export class ProductKubernetesSettingsDto {
   @Transform(({ value }) => (value && isBoolean(value) ? value : false))
   @Expose()
   probesOn: boolean;
-
-  @Type(() => CronjobSettingsDto)
-  @Expose()
-  cronjobSettings?: CronjobSettingsDto;
 }

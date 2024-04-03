@@ -16,4 +16,9 @@ export class GitlabCreateRequestDto {
   @IsNumber()
   @Expose()
   namespace_id?: number;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  appId?: string;
 }

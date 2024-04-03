@@ -1,9 +1,11 @@
 import { GitConnectionTypeEnum } from '../../enums';
 
 import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import {IsEnum, IsNotEmpty, IsOptional, IsString} from 'class-validator';
 
 export class GitAccessTokenCreateRequestDto {
+  @IsNotEmpty()
+  @IsEnum(GitConnectionTypeEnum)
   @Expose()
   provider: GitConnectionTypeEnum;
 
@@ -17,8 +19,8 @@ export class GitAccessTokenCreateRequestDto {
   @Expose()
   token: string;
 
-  @IsOptional()
-  @IsString()
-  @Expose()
-  namespace_id?: string;
+  // @IsOptional()
+  // @IsString()
+  // @Expose()
+  // namespace_id?: string;
 }

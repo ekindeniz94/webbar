@@ -104,4 +104,9 @@ export class GithubCreateRequestDto {
   @IsBoolean()
   @Expose()
   is_template?: boolean;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  appId?: string;
 }

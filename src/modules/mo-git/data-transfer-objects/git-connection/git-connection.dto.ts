@@ -7,10 +7,13 @@ import { BaseEntityDto } from '@mo/database-dto';
 
 export class GitConnectionDto extends BaseEntityDto {
   //
+  // @Expose()
+  // @IsOptional()
+  // @IsString()
+  // login?: string;
+
   @Expose()
-  @IsOptional()
-  @IsString()
-  login?: string;
+  installationId?: string;
 
   @Expose()
   gitConnectionType: GitConnectionTypeEnum;
