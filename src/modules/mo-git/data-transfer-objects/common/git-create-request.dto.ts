@@ -6,7 +6,7 @@ export class GitCreateRequestDto {
   //   This is only to choose which validators to use based on the connection type
   @IsNotEmpty()
   @Expose()
-  connectionType: GitConnectionTypeEnum;
+  provider: GitConnectionTypeEnum;
 
   @IsNotEmpty()
   @IsString()
