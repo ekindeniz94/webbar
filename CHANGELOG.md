@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.47 (2024-04-04)
+
+
+### Bug Fixes
+
+* update GitRepositoryDto ([90c4a12](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/90c4a12ca51a81c62a250ce3225e474e63d86584))
+
 # 2.1.0-develop.46 (2024-04-04)
 
 
