@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.48 (2024-04-04)
+
+
+### Bug Fixes
+
+* created unified logic for git repository settings. ([b7ef5b7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b7ef5b7d105aafec442b4ebef8292ccdcbd5299a))
+* public repo added to GitSettings. ([732dbd8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/732dbd83ec94f87d874cdbcc2098f63fcb9ab51b))
+
 # 2.1.0-develop.47 (2024-04-04)
 
 
