@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.49 (2024-04-04)
+
+
+### Bug Fixes
+
+* forgot to add the new git-create-request to index. ([e3bb771](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e3bb771bb8cec21228b36b11b81e3e607322698a))
+
 # 2.1.0-develop.48 (2024-04-04)
 
 
