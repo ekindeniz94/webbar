@@ -2,6 +2,14 @@
 
 
 
+# 2.1.0-develop.45 (2024-04-04)
+
+
+### Bug Fixes
+
+* rm gitlab webhook dto ([ec4320c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ec4320c131954312d5b9e840bd0e474990f38853))
+* update gitlab index ([2edad89](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2edad89f748f7bd83bdb70e3fee9c96f27c556cd))
+
 # 2.1.0-develop.44 (2024-04-03)
 
 
