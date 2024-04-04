@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.50 (2024-04-04)
+
+
+### Bug Fixes
+
+* changed naming. ([7b7b07d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7b7b07d8bc056d4d11a70474102787594dcce9ae))
+
 # 2.1.0-develop.49 (2024-04-04)
 
 
