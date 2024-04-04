@@ -34,7 +34,7 @@ export class GitRepositoryDto {
     if (value) return value;
     if (obj.provider === GitConnectionTypeEnum.GIT_LAB) return obj.name_with_namespace;
     if (obj.provider === GitConnectionTypeEnum.GIT_HUB) return obj.full_name;
-    return obj.full_name;
+    return obj.full_name || obj.name_with_namespace;
   })
   @Expose()
   full_name: string | null;
@@ -43,7 +43,7 @@ export class GitRepositoryDto {
     if (value) return value;
     if (obj.provider === GitConnectionTypeEnum.GIT_LAB) return obj.http_url_to_repo;
     if (obj.provider === GitConnectionTypeEnum.GIT_HUB) return obj.clone_url;
-    return obj.clone_url;
+    return obj.clone_url || obj.http_url_to_repo;
   })
   @Expose()
   clone_url: string;
@@ -52,7 +52,7 @@ export class GitRepositoryDto {
     if (value) return value;
     if (obj.provider === GitConnectionTypeEnum.GIT_LAB) return obj.web_url;
     if (obj.provider === GitConnectionTypeEnum.GIT_HUB) return obj.html_url;
-    return obj.html_url;
+    return obj.html_url || obj.web_url;
   })
   @Expose()
   html_url: string;
