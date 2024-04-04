@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsOptional, IsString, isString, IsUUID } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
+import { isBoolean, IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, isString, IsUUID } from 'class-validator';
+import { MoUtils, StripTags } from '@mo/js-utils';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProjectNamespaceServiceContainerGitSettingsPatchRequestDto extends BaseEntityDto {
@@ -22,6 +22,12 @@ export class ProjectNamespaceServiceContainerGitSettingsPatchRequestDto extends 
   @StripTags()
   @Expose()
   gitBranch: string;
+
+  @IsOptional()
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @IsBoolean()
+  @Expose()
+  publicRepo: boolean;
 
   @IsOptional()
   @IsNumber()
