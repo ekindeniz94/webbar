@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.51 (2024-04-06)
+
+
+### Bug Fixes
+
+* add repositoryBranch to app dto ([3d2809a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3d2809a265cec6a6aeafad61f36093f2496917c4))
+
 # 2.1.0-develop.50 (2024-04-04)
 
 
