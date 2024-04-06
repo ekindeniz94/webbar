@@ -33,6 +33,9 @@ export class AppContainerDto extends BaseEntityDto {
   repositoryLink?: string;
 
   @Expose()
+  repositoryBranch?: string;
+
+  @Expose()
   repositoryUser?: string;
 
   @Expose()

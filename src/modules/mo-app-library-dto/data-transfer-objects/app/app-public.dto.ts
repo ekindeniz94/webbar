@@ -28,6 +28,9 @@ export class AppPublicDto extends BaseEntityDto {
   repositoryLink: string;
 
   @Expose()
+  repositoryBranch: string;
+
+  @Expose()
   containerImage: string;
 
   @Expose()

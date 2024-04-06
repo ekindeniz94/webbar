@@ -26,6 +26,9 @@ export class K8sAppDto {
   repositoryLink: string;
 
   @Expose()
+  repositoryBranch: string;
+
+  @Expose()
   repositoryUser?: string;
 
   @Expose()

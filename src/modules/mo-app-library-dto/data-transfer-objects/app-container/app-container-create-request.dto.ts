@@ -57,6 +57,12 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   @Expose()
   repositoryLink?: string;
 
+  @IsNotEmpty()
+  @IsString()
+  @ValidateIf((obj: AppContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
+  @Expose()
+  repositoryBranch?: string;
+
   @IsOptional()
   @IsString()
   @Expose()
