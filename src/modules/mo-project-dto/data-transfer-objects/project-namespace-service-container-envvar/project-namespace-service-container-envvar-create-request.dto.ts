@@ -55,15 +55,15 @@ export class ProjectNamespaceServiceContainerEnvvarCreateRequestDto {
   @Transform(({ value }) => (value === undefined ? false : value))
   deactivateDelete: boolean;
 
-  @IsOptional()
-  @IsString()
-  @StripTags()
-  @Expose()
-  dependsOn?: string;
-
-  @IsOptional()
-  @IsString()
-  @StripTags()
-  @Expose()
-  dependsOnMethod?: string;
+  // @IsOptional()
+  // @IsString()
+  // @StripTags()
+  // @Expose()
+  // dependsOn?: string;
+  //
+  // @IsOptional()
+  // @IsString()
+  // @StripTags()
+  // @Expose()
+  // dependsOnMethod?: string;
 }

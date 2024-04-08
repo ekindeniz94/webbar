@@ -51,13 +51,13 @@ export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @Transform(({ value }) => (value === undefined ? false : value))
   deactivateDelete: boolean;
 
-  @IsOptional()
-  @IsString()
-  @Expose()
-  dependsOn?: string;
-
-  @IsOptional()
-  @IsString()
-  @Expose()
-  dependsOnMethod?: string;
+  // @IsOptional()
+  // @IsString()
+  // @Expose()
+  // dependsOn?: string;
+  //
+  // @IsOptional()
+  // @IsString()
+  // @Expose()
+  // dependsOnMethod?: string;
 }
