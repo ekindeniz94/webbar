@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.52 (2024-04-08)
+
+
+### Bug Fixes
+
+* rm dependsOn and dependsOnMethod from app; rm CHANGE_OWNER from ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT ([8940411](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/894041186e47872a662ba75124c5007d3623945e))
+
 # 2.1.0-develop.51 (2024-04-06)
 
 
