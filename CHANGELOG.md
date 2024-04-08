@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.54 (2024-04-08)
+
+
+### Bug Fixes
+
+* added logic for provider create git repository. ([9c0a425](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9c0a425a7f345ad4d622b8eb886773504a5bfaec))
+
 # 2.1.0-develop.53 (2024-04-08)
 
 
