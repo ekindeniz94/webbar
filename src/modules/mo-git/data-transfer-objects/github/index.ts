@@ -1,7 +1,7 @@
 export * from './github-app.dto';
 // export * from './github-branch.dto';
 export * from './github-branch-commit.dto';
-export * from './github-create-request.dto';
+// export * from './github-create-request.dto';
 export * from './github-installation.dto';
 // export * from './github-repository.dto';
 export * from './github-token.dto';
