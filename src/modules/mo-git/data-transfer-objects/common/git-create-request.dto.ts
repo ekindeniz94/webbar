@@ -3,7 +3,6 @@ import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, ValidateIf } fro
 import { GitConnectionTypeEnum } from '../../enums';
 
 export class GitCreateRequestDto {
-  //   This is only to choose which validators to use based on the connection type
   @IsNotEmpty()
   @Expose()
   provider: GitConnectionTypeEnum;
@@ -15,38 +14,38 @@ export class GitCreateRequestDto {
 
   // Check if the connection type is GitLab, if so, handle the namespace_id, if not, ignore it and remove possible values
   @Transform(({ value, obj }) => {
-    if (obj.connectionType === GitConnectionTypeEnum.GIT_LAB) {
+    if (obj.provider === GitConnectionTypeEnum.GIT_LAB) {
       return value;
     } else {
       return undefined;
     }
   })
-  @ValidateIf((object, value) => object.connectionType === GitConnectionTypeEnum.GIT_LAB)
+  @ValidateIf((object, value) => object.provider === GitConnectionTypeEnum.GIT_LAB)
   @IsNumber()
   @Expose()
   namespace_id?: number;
 
   @Transform(({ value, obj }) => {
-    if (obj.connectionType === GitConnectionTypeEnum.GIT_HUB) {
+    if (obj.provider === GitConnectionTypeEnum.GIT_HUB) {
       return value;
     } else {
       return undefined;
     }
   })
-  @ValidateIf((object, value) => object.connectionType === GitConnectionTypeEnum.GIT_HUB)
+  @ValidateIf((object, value) => object.provider === GitConnectionTypeEnum.GIT_HUB)
   @Type(() => Boolean)
   @IsBoolean()
   @Expose()
   private?: boolean;
 
   @Transform(({ value, obj }) => {
-    if (obj.connectionType === GitConnectionTypeEnum.GIT_LAB) {
+    if (obj.provider === GitConnectionTypeEnum.GIT_LAB) {
       return value;
     } else {
       return undefined;
     }
   })
-  @ValidateIf((object, value) => object.connectionType === GitConnectionTypeEnum.GIT_LAB)
+  @ValidateIf((object, value) => object.provider === GitConnectionTypeEnum.GIT_LAB)
   @IsNotEmpty()
   @IsString()
   @Expose()
