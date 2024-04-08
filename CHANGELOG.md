@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.53 (2024-04-08)
+
+
+### Bug Fixes
+
+* rm git create dto ([c347125](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c3471252cf3af0e98a144858e669265b1033060e))
+
 # 2.1.0-develop.52 (2024-04-08)
 
 
