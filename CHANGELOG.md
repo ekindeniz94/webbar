@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.55 (2024-04-12)
+
+
+### Bug Fixes
+
+* update BuildJobInfosPayloadDto; xterm dtos ([dbb37fd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/dbb37fd706fb44fb2716ca372d7f760f56a8e0fd))
+
 # 2.1.0-develop.54 (2024-04-08)
 
 
