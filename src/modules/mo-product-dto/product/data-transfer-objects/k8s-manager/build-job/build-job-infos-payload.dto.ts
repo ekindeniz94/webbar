@@ -4,6 +4,9 @@ import moment from 'moment/moment';
 
 export class BuildJobInfosPayloadDto {
   @Expose()
+  projectId: string;
+
+  @Expose()
   buildId: string;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))

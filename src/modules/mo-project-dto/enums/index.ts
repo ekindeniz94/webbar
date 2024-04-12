@@ -14,3 +14,5 @@ export * from './project-namespace-state.enum';
 export * from './project-user-state.enum';
 export * from './roles.enum';
 export * from './service-controller.enum';
+export * from './xterm-cmd.enum';
+export * from './xterm-request-type.enum';

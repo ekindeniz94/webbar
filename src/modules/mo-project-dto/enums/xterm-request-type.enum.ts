@@ -1,0 +1,5 @@
+export enum XtermRequestTypeEnum {
+  SERVICE_POD = 'SERVICE_POD',
+  SERVICE_BUILD = 'SERVICE_BUILD',
+  WORKLOAD = 'WORKLOAD'
+}
