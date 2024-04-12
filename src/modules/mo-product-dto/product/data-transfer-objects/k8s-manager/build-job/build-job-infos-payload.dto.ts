@@ -7,6 +7,9 @@ export class BuildJobInfosPayloadDto {
   projectId: string;
 
   @Expose()
+  buildId: string;
+
+  @Expose()
   namespace: string;
 
   @Expose()
@@ -14,10 +17,7 @@ export class BuildJobInfosPayloadDto {
 
   @Expose()
   container: string;
-
-  @Expose()
-  buildId: string;
-
+  
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   startTime: Date;

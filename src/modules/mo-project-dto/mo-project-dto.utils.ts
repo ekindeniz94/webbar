@@ -47,7 +47,19 @@ export class MoProjectDtoUtils {
     const results: BuildTaskItemDto[] = [];
     for (const allowedBuildTask of allowedBuildTasks) {
       let buildTaskState = 'PENDING';
+      let projectId = '';
+      let namespace = '';
+      let controller = '';
+      let container = '';
       if (buildInfo.hasOwnProperty(allowedBuildTask)) {
+        // @ts-ignore
+        projectId = buildInfo[allowedBuildTask].projectId;
+        // @ts-ignore
+        namespace = buildInfo[allowedBuildTask].namespace;
+        // @ts-ignore
+        controller = buildInfo[allowedBuildTask].controller;
+        // @ts-ignore
+        container = buildInfo[allowedBuildTask].container;
         // @ts-ignore
         buildTaskState = buildInfo[allowedBuildTask].state;
       }
@@ -55,9 +67,10 @@ export class MoProjectDtoUtils {
         plainToInstance(
           BuildTaskItemDto,
           {
-            namespace: buildInfo.namespace,
-            controller: buildInfo.controller,
-            container: buildInfo.container,
+            projectId: projectId,
+            namespace: namespace,
+            controller: controller,
+            container: container,
             buildId: buildInfo.buildId,
             buildTask: allowedBuildTask,
             buildTaskState: buildTaskState

@@ -4,6 +4,21 @@ import { isString } from 'class-validator';
 
 export class BuildJobInfoPayloadDto {
   @Expose()
+  buildId: string;
+
+  @Expose()
+  projectId: string;
+
+  @Expose()
+  namespace: string;
+
+  @Expose()
+  controller: string;
+
+  @Expose()
+  container: string;
+
+  @Expose()
   state: 'FAILED' | 'SUCCEEDED' | 'STARTED' | 'PENDING';
 
   @Transform(({ value, obj }) => {
