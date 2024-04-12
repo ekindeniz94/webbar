@@ -1,5 +1,8 @@
 import { MoUtils } from '@mo/js-utils';
 import { PROJECT_CONST } from './mo-project-dto.const';
+import { BuildTaskItemDto } from './data-transfer-objects/cicd/build-task-item.dto';
+import { plainToInstance } from 'class-transformer';
+import { BuildJobInfosPayloadDto } from '../mo-product-dto';
 
 export class MoProjectDtoUtils {
   static generateK8sName(value: string): string {
@@ -35,5 +38,35 @@ export class MoProjectDtoUtils {
       .split('-')
       .filter((item) => item && item.length > 0)
       .join('-');
+  }
+
+  public static createBuildTaskItemList(
+    buildInfo: BuildJobInfosPayloadDto,
+    allowedBuildTasks: string[] = ['clone', 'ls', 'build', 'push']
+  ): BuildTaskItemDto[] {
+    const results: BuildTaskItemDto[] = [];
+    for (const allowedBuildTask of allowedBuildTasks) {
+      let buildTaskState = 'PENDING';
+      if (buildInfo.hasOwnProperty(allowedBuildTask)) {
+        // @ts-ignore
+        buildTaskState = buildInfo[allowedBuildTask].state;
+      }
+      results.push(
+        plainToInstance(
+          BuildTaskItemDto,
+          {
+            namespace: buildInfo.namespace,
+            controller: buildInfo.controller,
+            container: buildInfo.container,
+            buildId: buildInfo.buildId,
+            buildTask: allowedBuildTask,
+            buildTaskState: buildTaskState
+            // data: lastBuildInfo[allowedBuildTask]
+          },
+          { excludeExtraneousValues: true }
+        )
+      );
+    }
+    return results;
   }
 }

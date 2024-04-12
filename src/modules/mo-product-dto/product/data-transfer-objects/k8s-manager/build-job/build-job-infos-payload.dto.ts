@@ -7,6 +7,15 @@ export class BuildJobInfosPayloadDto {
   projectId: string;
 
   @Expose()
+  namespace: string;
+
+  @Expose()
+  controller: string;
+
+  @Expose()
+  container: string;
+
+  @Expose()
   buildId: string;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
