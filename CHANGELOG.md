@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.57 (2024-04-12)
+
+
+### Bug Fixes
+
+* update build dto ([35551b0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/35551b08509698a0b9558d8efc4de04d0b218c14))
+
 # 2.1.0-develop.56 (2024-04-12)
 
 
