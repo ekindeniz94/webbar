@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.56 (2024-04-12)
+
+
+### Bug Fixes
+
+* update BuildJobInfosPayloadDto; add createBuildTaskItemList ([8103ad5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8103ad52a3edd4fdf0526766631f18c6efe8d765))
+
 # 2.1.0-develop.55 (2024-04-12)
 
 
