@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.58 (2024-04-14)
+
+
+### Bug Fixes
+
+* add k8s to XtermRequestTypeEnum ([4252afa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4252afa049e90a817728e964e754980d743b24b6))
+
 # 2.1.0-develop.57 (2024-04-12)
 
 
