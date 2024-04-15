@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.59 (2024-04-15)
+
+
+### Bug Fixes
+
+* scan image ([86aac7f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/86aac7f7e53bf3e4dfb27ca77e3301c561aa1598))
+
 # 2.1.0-develop.58 (2024-04-14)
 
 
