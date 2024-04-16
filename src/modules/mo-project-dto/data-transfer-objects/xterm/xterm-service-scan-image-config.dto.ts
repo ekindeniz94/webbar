@@ -1,6 +1,6 @@
 import { XtermBaseConfigDto } from './xterm-base-config.dto';
 import { Expose, Transform } from 'class-transformer';
-import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
+import { XtermCmdEnum, XtermRequestTypeEnum, XtermScanImageTypeEnum } from '../../enums';
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class XtermServiceScanImageConfigDto extends XtermBaseConfigDto {
@@ -8,11 +8,17 @@ export class XtermServiceScanImageConfigDto extends XtermBaseConfigDto {
   @Expose()
   type: XtermRequestTypeEnum.SERVICE_SCAN_IMAGE;
 
-  @Transform(() => XtermCmdEnum.LOG)
+  @Transform(({ value }) => value ?? XtermCmdEnum.LOG)
   @IsNotEmpty()
   @IsString()
   @Expose()
   cmd: XtermCmdEnum;
+
+  @Transform(({ value }) => value ?? XtermScanImageTypeEnum.GRYPE)
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  scanImageType: XtermScanImageTypeEnum;
 
   @IsNotEmpty()
   @IsString()
