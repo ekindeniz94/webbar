@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.60 (2024-04-16)
+
+
+### Bug Fixes
+
+* update version ([34c6ee3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/34c6ee371cd338efbdac4f1030adf4408c6bea6c))
+
 # 2.1.0-develop.59 (2024-04-15)
 
 
