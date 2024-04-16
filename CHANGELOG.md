@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.61 (2024-04-16)
+
+
+### Bug Fixes
+
+* add ClusterSyncUpdatePayloadDto ([1be8f0d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1be8f0d68ed228fb0b2bb193e1d75ee33e110937))
+
 # 2.1.0-develop.60 (2024-04-16)
 
 
