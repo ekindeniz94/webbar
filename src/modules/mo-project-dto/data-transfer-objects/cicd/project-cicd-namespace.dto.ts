@@ -9,5 +9,5 @@ export class ProjectCiCdNamespaceDto {
   displayName: string;
 
   @Expose()
-  services: ProjectCiCdNamespaceServiceDto[] | null;
+  services: ProjectCiCdNamespaceServiceDto[];
 }

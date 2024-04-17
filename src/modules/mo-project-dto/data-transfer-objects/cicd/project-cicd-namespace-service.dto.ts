@@ -1,9 +1,7 @@
-import { Expose, Type } from 'class-transformer';
-import { ProjectNamespaceDisplayNameDto } from '../project-namespace';
-import { ProjectDisplayNameDto } from '../project';
-import { ProjectCiCdNamespaceServiceContainerDto } from './project-cicd-namespace-service-container.dto';
-import { BuildStateEnum } from 'dist/modules';
+import { Expose } from 'class-transformer';
 import moment from 'moment';
+import { BuildStateEnum } from '../../../mo-product-dto/product/enums/k8s-manager/build-state.enum';
+import { ProjectCiCdNamespaceServiceContainerDto } from './project-cicd-namespace-service-container.dto';
 
 export class ProjectCiCdNamespaceServiceDto {
   @Expose()
@@ -12,20 +10,15 @@ export class ProjectCiCdNamespaceServiceDto {
   @Expose()
   displayName: string;
 
-  @Type(() => ProjectDisplayNameDto)
   @Expose()
-  project: ProjectDisplayNameDto;
-
-  @Type(() => ProjectNamespaceDisplayNameDto)
-  @Expose()
-  projectNamespace: ProjectNamespaceDisplayNameDto;
+  controllerName: string;
 
   @Expose()
   containers: ProjectCiCdNamespaceServiceContainerDto[]; // Always
 
   @Expose()
   public latestBuildState(): BuildStateEnum | undefined {
-    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.FINISHED, BuildStateEnum.PENDING];
+    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
 
     return this.containers.reduce((acc: BuildStateEnum | undefined, container) => {
       if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(container.latestBuild.buildState)) {
