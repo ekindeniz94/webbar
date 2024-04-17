@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isNumberString } from 'class-validator';
 
-export class BuildTaskItemDto {
+export class ProjectCiCdNamespaceServiceBuildTaskDto {
   @Expose()
   projectId: string;
 

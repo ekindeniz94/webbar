@@ -1,7 +1,9 @@
 import { Expose, Type } from 'class-transformer';
-import { ProjectCiCdNamespaceServiceBuildDto } from './project-cicd-namespace-service-build.dto';
 import { ProjectNamespaceDisplayNameDto } from '../project-namespace';
 import { ProjectDisplayNameDto } from '../project';
+import { ProjectCiCdNamespaceServiceContainerDto } from './project-cicd-namespace-service-container.dto';
+import { BuildStateEnum } from 'dist/modules';
+import moment from 'moment';
 
 export class ProjectCiCdNamespaceServiceDto {
   @Expose()
@@ -18,7 +20,30 @@ export class ProjectCiCdNamespaceServiceDto {
   @Expose()
   projectNamespace: ProjectNamespaceDisplayNameDto;
 
-  @Type(() => ProjectCiCdNamespaceServiceBuildDto)
   @Expose()
-  latestBuild: ProjectCiCdNamespaceServiceBuildDto;
+  containers: ProjectCiCdNamespaceServiceContainerDto[]; // Always
+
+  @Expose()
+  public latestBuildState(): BuildStateEnum | undefined {
+    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.FINISHED, BuildStateEnum.PENDING];
+
+    return this.containers.reduce((acc: BuildStateEnum | undefined, container) => {
+      if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(container.latestBuild.buildState)) {
+        return container.latestBuild.buildState;
+      } else {
+        return acc;
+      }
+    }, undefined);
+  }
+
+  @Expose()
+  public latestBuildTime(): Date | undefined {
+    return this.containers.reduce((acc: Date | undefined, container) => {
+      if (!acc || moment(container.latestBuild.createdAt).isAfter(moment(acc))) {
+        return container.latestBuild.createdAt;
+      } else {
+        return acc;
+      }
+    }, undefined);
+  }
 }

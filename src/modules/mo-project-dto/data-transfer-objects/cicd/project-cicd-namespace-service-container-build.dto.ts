@@ -1,8 +1,9 @@
 import { Expose, Transform } from 'class-transformer';
 import { BuildStateEnum } from '../../../mo-product-dto';
 import moment from 'moment';
+import { ProjectCiCdNamespaceServiceBuildTaskDto } from './project-cicd-namespace-service-build-task.dto';
 
-export class ProjectCiCdNamespaceServiceBuildDto {
+export class ProjectCiCdNamespaceServiceContainerBuildDto {
   @Expose()
   buildId: string;
 
@@ -34,4 +35,7 @@ export class ProjectCiCdNamespaceServiceBuildDto {
 
   @Expose()
   durationMs: number;
+
+  @Expose()
+  tasks: ProjectCiCdNamespaceServiceBuildTaskDto[] | null;
 }

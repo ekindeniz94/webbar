@@ -2,6 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import { CiCdPipelineResultEnum } from '../../../mo-core';
 import moment from 'moment';
 
+//! TODO DEPRECATED?
 export class ProjectCiCdNamespaceServiceBuildJobDto {
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
