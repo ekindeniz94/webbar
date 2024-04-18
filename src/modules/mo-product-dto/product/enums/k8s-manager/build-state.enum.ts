@@ -1,13 +1,13 @@
 export enum BuildStateEnum {
   PENDING = 'PENDING',
   STARTED = 'STARTED',
-  FINISHED = 'FINISHED',
+  SUCCEEDED = 'SUCCEEDED',
   FAILED = 'FAILED'
 }
 
 export const BuildStateEnum_ALL = [
   BuildStateEnum.PENDING,
   BuildStateEnum.STARTED,
-  BuildStateEnum.FINISHED,
+  BuildStateEnum.SUCCEEDED,
   BuildStateEnum.FAILED
 ];
