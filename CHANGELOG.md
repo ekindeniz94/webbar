@@ -2,6 +2,15 @@
 
 
 
+# 2.1.0-develop.62 (2024-04-18)
+
+
+### Bug Fixes
+
+* behrang refinement. ([154fbfb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/154fbfb2c2fd4df736645cb5f225c02441eac026))
+* cicd dtos ([5e2bf5d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5e2bf5d486d2397ced35dd634fe8803f0d7c595e))
+* new types. ([85d5dac](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/85d5dacd41be2416e825c84d95e20ebd8d186ae5))
+
 # 2.1.0-develop.61 (2024-04-16)
 
 
