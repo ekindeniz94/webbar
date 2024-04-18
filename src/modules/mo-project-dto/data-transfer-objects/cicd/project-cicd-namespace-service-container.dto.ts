@@ -1,11 +1,10 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { ContainerTypeEnum } from '../../enums';
-import { ProjectCiCdNamespaceServiceContainerBuildDto } from './project-cicd-namespace-service-container-build.dto';
+import { BaseEntityDto } from '@mo/database-dto';
+import { isArray } from 'class-validator';
+import { BuildJobInfoPayloadDto, BuildStateEnum } from '../../../mo-product-dto';
 
-export class ProjectCiCdNamespaceServiceContainerDto {
-  @Expose()
-  id: string;
-
+export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   displayName: string;
 
@@ -22,11 +21,19 @@ export class ProjectCiCdNamespaceServiceContainerDto {
   gitBranch: string;
 
   @Expose()
-  gitRepositoryUrl: string;
+  latestBuild: BuildJobInfoPayloadDto | null;
+
+  @Transform(({ value }) => (value && isArray(value) ? value : null))
+  @Expose()
+  builds: BuildJobInfoPayloadDto[] | null;
 
   @Expose()
-  latestBuild: ProjectCiCdNamespaceServiceContainerBuildDto;
+  get latestBuildState(): BuildStateEnum | undefined {
+    return this.latestBuild ? this.latestBuild.buildState() : undefined;
+  }
 
   @Expose()
-  builds: ProjectCiCdNamespaceServiceContainerBuildDto[] | null;
+  get latestBuildTime(): Date | undefined {
+    return this.latestBuild ? this.latestBuild.startTime : undefined;
+  }
 }

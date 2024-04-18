@@ -2,11 +2,9 @@ import { Expose } from 'class-transformer';
 import moment from 'moment';
 import { BuildStateEnum } from '../../../mo-product-dto/product/enums/k8s-manager/build-state.enum';
 import { ProjectCiCdNamespaceServiceContainerDto } from './project-cicd-namespace-service-container.dto';
+import { BaseEntityDto } from '@mo/database-dto';
 
-export class ProjectCiCdNamespaceServiceDto {
-  @Expose()
-  id: string;
-
+export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   displayName: string;
 
@@ -21,8 +19,11 @@ export class ProjectCiCdNamespaceServiceDto {
     const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
 
     return this.containers.reduce((acc: BuildStateEnum | undefined, container) => {
-      if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(container.latestBuild.buildState)) {
-        return container.latestBuild.buildState;
+      if (!container.latestBuildState) {
+        return acc;
+      }
+      if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(container.latestBuildState)) {
+        return container.latestBuildState;
       } else {
         return acc;
       }
@@ -32,8 +33,11 @@ export class ProjectCiCdNamespaceServiceDto {
   @Expose()
   public latestBuildTime(): Date | undefined {
     return this.containers.reduce((acc: Date | undefined, container) => {
-      if (!acc || moment(container.latestBuild.createdAt).isAfter(moment(acc))) {
-        return container.latestBuild.createdAt;
+      if (!container.latestBuildTime) {
+        return acc;
+      }
+      if (!acc || moment(container.latestBuildTime).isAfter(moment(acc))) {
+        return container.latestBuildTime;
       } else {
         return acc;
       }

@@ -1,13 +1,14 @@
-import { Expose, Transform } from 'class-transformer';
-import moment from 'moment';
-import { isString } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { BuildJobInfoEntryPayloadDto } from './build-job-info-entry-payload.dto';
+import moment from 'moment/moment';
+import { BuildStateEnum } from '../../../enums';
 
 export class BuildJobInfoPayloadDto {
   @Expose()
-  buildId: string;
+  projectId: string;
 
   @Expose()
-  projectId: string;
+  buildId: string;
 
   @Expose()
   namespace: string;
@@ -19,19 +20,16 @@ export class BuildJobInfoPayloadDto {
   container: string;
 
   @Expose()
-  state: 'FAILED' | 'SUCCEEDED' | 'STARTED' | 'PENDING';
+  commitHash: string;
 
-  @Transform(({ value, obj }) => {
-    obj.results = [];
-    obj.count = 0;
-    if (isString(value)) {
-      obj.results = (value as string).split('/');
-      obj.count = obj.results.length;
-    }
-    return value;
-  })
   @Expose()
-  result: string;
+  commitLink: string;
+
+  @Expose()
+  commitAuthor: string;
+
+  @Expose()
+  commitMessage: string;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
@@ -41,9 +39,60 @@ export class BuildJobInfoPayloadDto {
   @Expose()
   finishTime: Date;
 
+  @Transform(({ value, obj }) => {
+    obj.startTime =
+      obj.startTime && obj.startTime !== 'undefined' && obj.startTime !== 'null'
+        ? moment(obj.startTime).toDate()
+        : obj.startTime;
+    obj.finishTime =
+      obj.startTime && obj.finishTime !== 'undefined' && obj.finishTime !== 'null'
+        ? moment(obj.finishTime).toDate()
+        : obj.finishTime;
+    return moment(obj.finishTime).diff(moment(obj.startTime), 'milliseconds');
+  })
   @Expose()
-  count: number;
+  durationMs: number;
+
+  @Transform(({ value, obj }) => {
+    return value?.filter((item: BuildJobInfoEntryPayloadDto) => !!item.buildTask);
+  })
+  @Type(() => BuildJobInfoEntryPayloadDto)
+  @Expose()
+  tasks: BuildJobInfoEntryPayloadDto[];
 
   @Expose()
-  results: string[];
+  buildState(): BuildStateEnum | undefined {
+    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
+    return this.tasks.reduce((acc: BuildStateEnum | undefined, buildJobInfoentry) => {
+      if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(buildJobInfoentry.state)) {
+        return buildJobInfoentry.state;
+      } else {
+        return acc;
+      }
+    }, undefined);
+  }
+
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // clone: BuildJobInfoPayloadDto;
+  //
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // ls: BuildJobInfoPayloadDto;
+  //
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // login: BuildJobInfoPayloadDto;
+  //
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // build: BuildJobInfoPayloadDto;
+  //
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // push: BuildJobInfoPayloadDto;
+  //
+  // @Type(() => BuildJobInfoPayloadDto)
+  // @Expose()
+  // scan: BuildJobInfoPayloadDto;
 }
