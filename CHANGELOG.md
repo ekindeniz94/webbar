@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.67 (2024-04-19)
+
+
+### Bug Fixes
+
+* ProjectNamespaceServiceContainerKubernetesSettingsDto ([560cd94](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/560cd94ffe1f5659d58b5a0b0cf385b49906de57))
+
 # 2.1.0-develop.66 (2024-04-19)
 
 
