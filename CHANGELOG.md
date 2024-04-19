@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.64 (2024-04-19)
+
+
+### Bug Fixes
+
+* Expose. ([c851aa4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c851aa46f37281912b99d4ab5e7b0c8787dff2cc))
+
 # 2.1.0-develop.63 (2024-04-19)
 
 
