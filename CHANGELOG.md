@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.63 (2024-04-19)
+
+
+### Bug Fixes
+
+* update cicd ([369d0fd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/369d0fd5c22e6f50d9aaf946d6239324107cec68))
+
 # 2.1.0-develop.62 (2024-04-18)
 
 
