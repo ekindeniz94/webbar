@@ -1,8 +1,8 @@
-import { Expose, Transform } from 'class-transformer';
-import { ContainerTypeEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
+import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 import { BuildJobInfoPayloadDto, BuildStateEnum } from '../../../mo-product-dto';
+import { ContainerTypeEnum } from '../../enums';
 
 export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
@@ -24,6 +24,7 @@ export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   latestBuild: BuildJobInfoPayloadDto | null;
 
   @Transform(({ value }) => (value && isArray(value) ? value : null))
+  @Type(() => BuildJobInfoPayloadDto)
   @Expose()
   builds: BuildJobInfoPayloadDto[] | null;
 

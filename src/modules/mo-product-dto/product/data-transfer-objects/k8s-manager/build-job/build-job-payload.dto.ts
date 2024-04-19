@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+import { BuildStateEnum } from '../../../enums';
 
 export class BuildJobPayloadDto {
   @Expose()
@@ -53,7 +54,7 @@ export class BuildJobPayloadDto {
   injectDockerEnvVars: string;
 
   @Expose()
-  state: 'FAILED' | 'SUCCEEDED' | 'STARTED' | 'PENDING';
+  state: BuildStateEnum;
 
   @Expose()
   startedAt: string;
