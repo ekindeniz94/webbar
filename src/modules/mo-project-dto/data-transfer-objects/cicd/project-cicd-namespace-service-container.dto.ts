@@ -20,6 +20,7 @@ export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   gitBranch: string;
 
+  @Type(() => BuildJobInfoPayloadDto)
   @Expose()
   latestBuild: BuildJobInfoPayloadDto | null;
 
