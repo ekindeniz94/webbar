@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.66 (2024-04-19)
+
+
+### Bug Fixes
+
+* type definition. ([807acb2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/807acb25096cf89e813df1f7b1a6ab4e847021a2))
+
 # 2.1.0-develop.65 (2024-04-19)
 
 
