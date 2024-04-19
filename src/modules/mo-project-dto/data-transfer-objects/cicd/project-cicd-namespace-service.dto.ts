@@ -14,7 +14,6 @@ export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   containers: ProjectCiCdNamespaceServiceContainerDto[]; // Always
 
-  @Expose()
   public latestBuildState(): BuildStateEnum | undefined {
     const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
 
@@ -30,7 +29,6 @@ export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
     }, undefined);
   }
 
-  @Expose()
   public latestBuildTime(): Date | undefined {
     return this.containers.reduce((acc: Date | undefined, container) => {
       if (!container.latestBuildTime) {

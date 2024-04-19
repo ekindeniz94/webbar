@@ -63,8 +63,7 @@ export class BuildJobInfoPayloadDto {
   @Expose()
   tasks: BuildJobInfoEntryPayloadDto[];
 
-  @Expose()
-  buildState(): BuildStateEnum | undefined {
+  public buildState(): BuildStateEnum | undefined {
     const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
     return this.tasks.reduce((acc: BuildStateEnum | undefined, buildJobInfoentry) => {
       if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(buildJobInfoentry.state)) {
