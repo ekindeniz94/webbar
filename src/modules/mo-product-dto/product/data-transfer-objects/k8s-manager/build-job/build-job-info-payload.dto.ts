@@ -2,6 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { BuildJobInfoEntryPayloadDto } from './build-job-info-entry-payload.dto';
 import moment from 'moment/moment';
 import { BuildStateEnum } from '../../../enums';
+import { ALLOWED_BUILD_TASKS } from '../../../../../mo-kubernetes';
 
 export class BuildJobInfoPayloadDto {
   @Expose()
@@ -53,9 +54,11 @@ export class BuildJobInfoPayloadDto {
   @Expose()
   durationMs: number;
 
-  @Transform(({ value, obj }) => {
-    return value?.filter((item: BuildJobInfoEntryPayloadDto) => !!item.buildTask);
-  })
+  @Transform(({ value, obj }) =>
+    value?.filter(
+      (item: BuildJobInfoEntryPayloadDto) => !!item.buildTask && ALLOWED_BUILD_TASKS.includes(item.buildTask)
+    )
+  )
   @Type(() => BuildJobInfoEntryPayloadDto)
   @Expose()
   tasks: BuildJobInfoEntryPayloadDto[];

@@ -2,6 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 import { isString } from 'class-validator';
 import { BuildStateEnum } from '../../../enums';
+import { KubernetesBuildTaskEnum } from '../../../../../mo-kubernetes';
 
 export class BuildJobInfoEntryPayloadDto {
   @Expose()
@@ -21,7 +22,7 @@ export class BuildJobInfoEntryPayloadDto {
 
   @Transform(({ value, obj }) => value ?? obj.prefix)
   @Expose()
-  buildTask: 'clone' | 'ls' | 'build' | 'push';
+  buildTask: KubernetesBuildTaskEnum;
 
   @Expose()
   state: BuildStateEnum;
