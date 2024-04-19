@@ -13,6 +13,7 @@ export class ProjectNamespaceServiceContainerKubernetesSettingsDto {
   @Expose()
   limitCpuCores: number;
 
+  @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.ALWAYS)
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
   @Expose()
