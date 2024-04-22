@@ -20,6 +20,7 @@ import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from '../../../
 import { AppPortDto } from '../app-port.dto';
 import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
+import {StripTags} from "@mo/js-utils";
 
 export class AppContainerCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()
@@ -62,6 +63,22 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   @ValidateIf((obj: AppContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @Expose()
   repositoryBranch?: string;
+
+  @Transform(({ value }) => (isString(value) ? value : 'Dockerfile'))
+  @IsNotEmpty()
+  @IsString()
+  @StripTags()
+  @ValidateIf((obj: AppContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
+  @Expose()
+  dockerfileName?: string;
+
+  @Transform(({ value }) => (isString(value) ? value : '.'))
+  @IsNotEmpty()
+  @IsString()
+  @StripTags()
+  @ValidateIf((obj: AppContainerCreateRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
+  @Expose()
+  dockerContext?: string;
 
   @IsOptional()
   @IsString()

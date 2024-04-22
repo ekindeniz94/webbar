@@ -36,6 +36,12 @@ export class AppContainerDto extends BaseEntityDto {
   repositoryBranch?: string;
 
   @Expose()
+  dockerfileName?: string;
+
+  @Expose()
+  dockerContext?: string;
+
+  @Expose()
   repositoryUser?: string;
 
   @Expose()
