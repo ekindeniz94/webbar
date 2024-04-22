@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, isNumberString } from 'class-validator';
+import { isBoolean, IsNumber, isNumber, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto';
 
 export class ProductKubernetesSettingsDto {
@@ -30,6 +30,12 @@ export class ProductKubernetesSettingsDto {
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @Expose()
   ephemeralStorageMB: number;
+
+  @Transform(({ value }) => (isNumber(+value) && !isNaN(+value) ? +value : 10))
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
+  maxVolumeSizeGb: number;
 
   @Type(() => Boolean)
   @Transform(({ value }) => (value && isBoolean(value) ? value : false))

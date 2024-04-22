@@ -1,5 +1,5 @@
-import { Expose, Type } from 'class-transformer';
-import { IsNumber } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isNumber, IsNumber } from 'class-validator';
 
 export class ProjectKubernetesLimitsDto {
   @Type(() => Number)
@@ -16,4 +16,10 @@ export class ProjectKubernetesLimitsDto {
   @IsNumber()
   @Expose()
   ephemeralStorageMB: number;
+
+  @Transform(({ value }) => (isNumber(+value) && !isNaN(+value) ? +value : 10))
+  @Type(() => Number)
+  @IsNumber()
+  @Expose()
+  maxVolumeSizeGb: number;
 }
