@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.71 (2024-04-22)
+
+
+### Features
+
+* new hirachy. ([fe6be10](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fe6be10eed38d2f4c0fe5d449fc5337bef7b1b5d))
+
 # 2.1.0-develop.70 (2024-04-22)
 
 
