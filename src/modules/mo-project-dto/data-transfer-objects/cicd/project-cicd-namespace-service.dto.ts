@@ -16,13 +16,13 @@ export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
   containers: ProjectCiCdNamespaceServiceContainerDto[]; // Always
 
   public latestBuildState(): BuildStateEnum | undefined {
-    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.SUCCEEDED, BuildStateEnum.PENDING];
+    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.PENDING, BuildStateEnum.SUCCEEDED];
 
     return this.containers.reduce((acc: BuildStateEnum | undefined, container) => {
       if (!container.latestBuildState) {
         return acc;
       }
-      if (!acc || hierarchy.indexOf(acc) < hierarchy.indexOf(container.latestBuildState)) {
+      if (!acc || hierarchy.indexOf(acc) > hierarchy.indexOf(container.latestBuildState)) {
         return container.latestBuildState;
       } else {
         return acc;
