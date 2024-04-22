@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.69 (2024-04-22)
+
+
+### Bug Fixes
+
+* update app git settings ([08640f6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/08640f60af2fef81f3341c59138372d7939b5a91))
+
 # 2.1.0-develop.68 (2024-04-22)
 
 
