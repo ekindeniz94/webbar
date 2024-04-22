@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.70 (2024-04-22)
+
+
+### Bug Fixes
+
+* default dockerfile and dockercontext app lib ([86d1de6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/86d1de66ec24ae87750dc2e62c9104510caf66f2))
+
 # 2.1.0-develop.69 (2024-04-22)
 
 
