@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.68 (2024-04-22)
+
+
+### Bug Fixes
+
+* K8sMsgTaskDto ([a886b1e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a886b1eb68a08affe725c26fe61f9a6cd947673e))
+
 # 2.1.0-develop.67 (2024-04-19)
 
 
