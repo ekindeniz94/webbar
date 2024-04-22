@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.72 (2024-04-22)
+
+
+### Bug Fixes
+
+* add maxVolumeSizeGb ProjectKubernetesLimitsDto/ProductKubernetesSettingsDto ([6a0f8bf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6a0f8bf39406a52134b5c6be13439cdfdc3ac1d2))
+
 # 2.1.0-develop.71 (2024-04-22)
 
 
