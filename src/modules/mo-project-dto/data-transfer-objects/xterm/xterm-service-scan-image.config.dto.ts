@@ -4,9 +4,14 @@ import { XtermCmdEnum, XtermRequestTypeEnum, XtermScanImageTypeEnum } from '../.
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class XtermServiceScanImageConfigDto extends XtermBaseConfigDto {
-  @Transform(() => XtermRequestTypeEnum.SERVICE_SCAN_IMAGE)
+  @Transform(() => XtermRequestTypeEnum.SERVICE__SCAN_IMAGE)
   @Expose()
-  type: XtermRequestTypeEnum.SERVICE_SCAN_IMAGE;
+  type: XtermRequestTypeEnum.SERVICE__SCAN_IMAGE;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  container: string;
 
   @Transform(({ value }) => value ?? XtermCmdEnum.LOG)
   @IsNotEmpty()

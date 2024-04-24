@@ -35,10 +35,5 @@ export abstract class XtermBaseConfigDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  container: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
   cmd: XtermCmdEnum;
 }

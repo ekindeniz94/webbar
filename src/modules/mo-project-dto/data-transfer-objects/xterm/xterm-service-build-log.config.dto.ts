@@ -3,10 +3,15 @@ import { Expose, Transform } from 'class-transformer';
 import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class XtermServiceBuildConfigDto extends XtermBaseConfigDto {
-  @Transform(() => XtermRequestTypeEnum.SERVICE_BUILD)
+export class XtermServiceBuildLogConfigDto extends XtermBaseConfigDto {
+  @Transform(() => XtermRequestTypeEnum.SERVICE__BUILD_LOG)
   @Expose()
-  type: XtermRequestTypeEnum.SERVICE_BUILD;
+  type: XtermRequestTypeEnum.SERVICE__BUILD_LOG;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  container: string;
 
   @Transform(() => XtermCmdEnum.LOG)
   @IsNotEmpty()
