@@ -41,12 +41,6 @@ export class ClusterSyncUpdatePayloadDto {
   @Expose()
   allowPush: boolean;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
-  @IsNotEmpty()
-  @IsBoolean()
-  @Expose()
-  allowManualClusterChanges: boolean;
-
   @Type(() => Number)
   @Transform(({ value }) => value ?? 10)
   @IsNotEmpty()
@@ -65,4 +59,10 @@ export class ClusterSyncUpdatePayloadDto {
   @IsString({ each: true })
   @Expose()
   availableSyncWorkloads: string[];
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @IsNotEmpty()
+  @IsString({ each: true })
+  @Expose()
+  ignoredNamespaces: string[];
 }
