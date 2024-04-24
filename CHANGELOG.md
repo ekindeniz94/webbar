@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.76 (2024-04-24)
+
+
+### Bug Fixes
+
+* ignored namespaces . ([ff74c5c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ff74c5c229ea7c3f575a2a93fd6ee19612b415d8))
+
 # 2.1.0-develop.75 (2024-04-24)
 
 
