@@ -1,6 +1,5 @@
 export * from './permissions';
 
-
 export * from './container-type.enum';
 export * from './k8s-build-scan-result-info.enum';
 export * from './project-color.enum';
