@@ -2,6 +2,16 @@
 
 
 
+# 2.1.0-develop.73 (2024-04-24)
+
+
+### Bug Fixes
+
+* optimize and reduce service-status ([9229e56](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9229e566d21d01658b097e7afeb3959aa22c4b4d))
+* remove deprecated structures ([341ef1e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/341ef1ecbf851edc0a1c5a2bcffda37330cc6fe9))
+* remove ProjectNamespaceServiceStatusResourceDto ([d92c161](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d92c1610ab4f21b6d185f3c37a7250ead59c86ed))
+* remove ProjectNamespaceServiceStatusResourceDto, ProjectNamespaceServiceStatusItemResourceDto ([58fd737](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/58fd7373c85888efcc64928064c13ff6ff126b69))
+
 # 2.1.0-develop.72 (2024-04-22)
 
 
