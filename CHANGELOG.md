@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.74 (2024-04-24)
+
+
+### Bug Fixes
+
+* xterm DTOs ([c3eee68](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c3eee6881642a096390db78f4929e1cd98d34e20))
+
 # 2.1.0-develop.73 (2024-04-24)
 
 
