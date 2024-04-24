@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app';
 import { isArray, isString } from 'class-validator';
-import { ProjectNamespaceServiceStatusResourceDto } from '../project-namespace-service-status';
+import { ProjectNamespaceServiceStatusDto } from '../project-namespace-service-status';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
 import { ServiceControllerEnum } from '../../enums';
@@ -29,7 +29,7 @@ export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
   @Expose()
   app: ProjectNamespaceServiceAppDashboardDto;
 
-  @Type(() => ProjectNamespaceServiceStatusResourceDto)
+  @Type(() => ProjectNamespaceServiceStatusDto)
   @Expose()
-  status: ProjectNamespaceServiceStatusResourceDto;
+  status: ProjectNamespaceServiceStatusDto;
 }
