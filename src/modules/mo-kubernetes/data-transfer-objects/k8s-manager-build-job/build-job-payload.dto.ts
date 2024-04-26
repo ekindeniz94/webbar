@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { BuildStateEnum } from '../../../enums';
+import { K8sBuildStateEnum } from '../../enums';
 
 export class BuildJobPayloadDto {
   @Expose()
@@ -54,7 +54,7 @@ export class BuildJobPayloadDto {
   injectDockerEnvVars: string;
 
   @Expose()
-  state: BuildStateEnum;
+  state: K8sBuildStateEnum;
 
   @Expose()
   startedAt: string;

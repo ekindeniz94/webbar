@@ -1,4 +1,4 @@
-import { KubernetesBuildTaskEnum } from './enums';
+import { K8sBuildTaskEnum } from './enums';
 
 export const KUBERNETES_CONST = {
   LABEL_NAME: {
@@ -8,8 +8,8 @@ export const KUBERNETES_CONST = {
 };
 
 export const ALLOWED_BUILD_TASKS = [
-  KubernetesBuildTaskEnum.LS,
-  KubernetesBuildTaskEnum.CLONE,
-  KubernetesBuildTaskEnum.BUILD,
-  KubernetesBuildTaskEnum.PUSH
+  K8sBuildTaskEnum.LS,
+  K8sBuildTaskEnum.CLONE,
+  K8sBuildTaskEnum.BUILD,
+  K8sBuildTaskEnum.PUSH
 ];

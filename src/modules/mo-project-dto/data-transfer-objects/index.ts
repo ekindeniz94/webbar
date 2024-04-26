@@ -16,7 +16,6 @@ export * from './project-namespace-service-container-git-settings';
 export * from './project-namespace-service-pod';
 export * from './project-namespace-service-container-port';
 export * from './project-namespace-service-status';
-export * from './project-notification';
 export * from './stats';
 export * from './traffic';
 export * from './xterm';

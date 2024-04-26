@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { isEmpty } from 'class-validator';
-import { K8sSystemCheckEntryStatusEnum } from '../../../enums/k8s-manager/k8s-system-check-entry-status.enum';
+import { K8sSystemCheckEntryStatusEnum } from '../../enums/k8s-manager/k8s-system-check-entry-status.enum';
 
 export class K8sSystemCheckEntryDto {
   @Type(() => Boolean)

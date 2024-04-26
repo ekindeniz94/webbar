@@ -1,8 +1,8 @@
 import { BaseEntityDto } from '@mo/database-dto';
 import { Expose, Type } from 'class-transformer';
 import moment from 'moment';
-import { BuildStateEnum } from '../../../mo-product-dto/product/enums/k8s-manager/build-state.enum';
 import { ProjectCiCdNamespaceServiceContainerDto } from './project-cicd-namespace-service-container.dto';
+import { K8sBuildStateEnum } from '../../../mo-kubernetes';
 
 export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
   @Expose()
@@ -15,10 +15,15 @@ export class ProjectCiCdNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   containers: ProjectCiCdNamespaceServiceContainerDto[]; // Always
 
-  public latestBuildState(): BuildStateEnum | undefined {
-    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.PENDING, BuildStateEnum.SUCCEEDED];
+  public latestBuildState(): K8sBuildStateEnum | undefined {
+    const hierarchy = [
+      K8sBuildStateEnum.STARTED,
+      K8sBuildStateEnum.FAILED,
+      K8sBuildStateEnum.PENDING,
+      K8sBuildStateEnum.SUCCEEDED
+    ];
 
-    return this.containers.reduce((acc: BuildStateEnum | undefined, container) => {
+    return this.containers.reduce((acc: K8sBuildStateEnum | undefined, container) => {
       if (!container.latestBuildState) {
         return acc;
       }

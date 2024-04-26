@@ -1,8 +1,9 @@
 import { BaseEntityDto } from '@mo/database-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
-import { BuildJobInfoPayloadDto, BuildStateEnum } from '../../../mo-product-dto';
 import { ContainerTypeEnum } from '../../enums';
+import { BuildJobInfoPayloadDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-manager-build-job/build-job-info-payload.dto';
+import { K8sBuildStateEnum } from '../../../mo-kubernetes/enums/k8s-manager/k8s-build-state.enum';
 
 export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
@@ -30,7 +31,7 @@ export class ProjectCiCdNamespaceServiceContainerDto extends BaseEntityDto {
   builds: BuildJobInfoPayloadDto[] | null;
 
   @Expose()
-  get latestBuildState(): BuildStateEnum | undefined {
+  get latestBuildState(): K8sBuildStateEnum | undefined {
     return this.latestBuild ? this.latestBuild.buildState() : undefined;
   }
 

@@ -1,4 +1,3 @@
-export * from './k8s-manager';
 export * from './permissions';
 export * from './workload';
 

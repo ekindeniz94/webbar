@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BuildJobInfoEntryPayloadDto } from './build-job-info-entry-payload.dto';
 import moment from 'moment/moment';
-import { BuildStateEnum } from '../../../enums';
-import { ALLOWED_BUILD_TASKS } from '../../../../../mo-kubernetes';
+import { K8sBuildStateEnum } from '../../enums';
+import { ALLOWED_BUILD_TASKS } from '../../mo-kubernetes-dto.const';
 
 export class BuildJobInfoPayloadDto {
   @Expose()
@@ -63,9 +63,9 @@ export class BuildJobInfoPayloadDto {
   @Expose()
   tasks: BuildJobInfoEntryPayloadDto[];
 
-  public buildState(): BuildStateEnum | undefined {
-    const hierarchy = [BuildStateEnum.STARTED, BuildStateEnum.FAILED, BuildStateEnum.PENDING, BuildStateEnum.SUCCEEDED];
-    return this.tasks.reduce((acc: BuildStateEnum | undefined, buildJobInfoentry) => {
+  public buildState(): K8sBuildStateEnum | undefined {
+    const hierarchy = [K8sBuildStateEnum.STARTED, K8sBuildStateEnum.FAILED, K8sBuildStateEnum.PENDING, K8sBuildStateEnum.SUCCEEDED];
+    return this.tasks.reduce((acc: K8sBuildStateEnum | undefined, buildJobInfoentry) => {
       if (!acc || hierarchy.indexOf(acc) > hierarchy.indexOf(buildJobInfoentry.state)) {
         return buildJobInfoentry.state;
       } else {
@@ -73,28 +73,4 @@ export class BuildJobInfoPayloadDto {
       }
     }, undefined);
   }
-
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // clone: BuildJobInfoPayloadDto;
-  //
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // ls: BuildJobInfoPayloadDto;
-  //
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // login: BuildJobInfoPayloadDto;
-  //
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // build: BuildJobInfoPayloadDto;
-  //
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // push: BuildJobInfoPayloadDto;
-  //
-  // @Type(() => BuildJobInfoPayloadDto)
-  // @Expose()
-  // scan: BuildJobInfoPayloadDto;
 }
