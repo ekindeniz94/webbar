@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.77 (2024-04-26)
+
+
+### Bug Fixes
+
+* refactoring kubernetes dtos ([b979f55](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b979f554b6587fbdd2a8ebc213dfaa89816e081f))
+
 # 2.1.0-develop.76 (2024-04-24)
 
 
