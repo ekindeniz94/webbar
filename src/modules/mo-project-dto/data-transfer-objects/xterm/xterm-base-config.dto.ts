@@ -1,6 +1,7 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
 import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
+import { XtermOptionsDto } from './xterm-options.dto';
 
 export abstract class XtermBaseConfigDto {
   @IsNotEmpty()
@@ -25,15 +26,9 @@ export abstract class XtermBaseConfigDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  namespace: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  controller: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
   cmd: XtermCmdEnum;
+
+  @Type(() => XtermOptionsDto)
+  @Expose()
+  xtermOptions: XtermOptionsDto;
 }

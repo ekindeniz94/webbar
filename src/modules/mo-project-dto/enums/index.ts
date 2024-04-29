@@ -17,3 +17,4 @@ export * from './service-controller.enum';
 export * from './xterm-cmd.enum';
 export * from './xterm-scan-image-type.enum';
 export * from './xterm-request-type.enum';
+export * from './xterm-cluster-tool-type.enum';

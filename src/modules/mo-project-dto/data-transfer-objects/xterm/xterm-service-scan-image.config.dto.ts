@@ -1,9 +1,9 @@
-import { XtermBaseConfigDto } from './xterm-base-config.dto';
 import { Expose, Transform } from 'class-transformer';
 import { XtermCmdEnum, XtermRequestTypeEnum, XtermScanImageTypeEnum } from '../../enums';
 import { IsNotEmpty, IsString } from 'class-validator';
+import { XtermBaseNamespaceContainerConfigDto } from './xterm-base-namespace-container-config.dto';
 
-export class XtermServiceScanImageConfigDto extends XtermBaseConfigDto {
+export class XtermServiceScanImageConfigDto extends XtermBaseNamespaceContainerConfigDto {
   @Transform(() => XtermRequestTypeEnum.SERVICE__SCAN_IMAGE)
   @Expose()
   type: XtermRequestTypeEnum.SERVICE__SCAN_IMAGE;
