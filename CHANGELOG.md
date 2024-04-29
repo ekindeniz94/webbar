@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.78 (2024-04-29)
+
+
+### Bug Fixes
+
+* add xterm cluster tool dto ([6aac51a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6aac51acd003700ca8e10a7177235508ac817c71))
+
 # 2.1.0-develop.77 (2024-04-26)
 
 
