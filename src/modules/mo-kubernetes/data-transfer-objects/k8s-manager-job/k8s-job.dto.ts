@@ -13,41 +13,90 @@ import {
   ValidateNested
 } from 'class-validator';
 import { GitConnectionTypeEnum } from '../../../mo-git';
+import {
+  ProjectDisplayNameDto,
+  ProjectNamespaceDisplayNameDto,
+  ProjectNamespaceServiceContainerNameDto,
+  ProjectNamespaceServiceDisplayNameDto,
+  ProjectNamespaceServiceFlatDto
+} from '../../../mo-project-dto';
+import { BuildJobInfoEntryPayloadDto } from '../k8s-manager-build-job';
+import { ALLOWED_BUILD_TASKS } from '../../mo-kubernetes-dto.const';
 
 export class K8sJobDto {
+  /*
+	Namespace      string       `json:"namespace"`
+	ControllerName string       `json:"controllerName"`
+   */
+
   @IsNotEmpty()
   @IsString()
   @Expose()
   id: string;
 
   @IsNotEmpty()
+  @Type(() => ProjectDisplayNameDto)
+  @ValidateNested()
+  @Expose()
+  project: ProjectDisplayNameDto;
+
+  // from k8s
+  @IsNotEmpty()
   @IsString()
   @Expose()
   projectId: string;
 
+  // from k8s
   @IsNotEmpty()
-  @ValidateIf((object: K8sJobDto, value) => !object.namespaceId)
+  // @ValidateIf((object: K8sJobDto, value) => !object.namespaceId)
   @IsString()
   @Expose()
-  namespace: string;
+  namespaceName: string;
 
   @IsNotEmpty()
-  @ValidateIf((object: K8sJobDto, value) => !object.namespace)
-  @IsString()
+  @Type(() => ProjectNamespaceDisplayNameDto)
+  @ValidateNested()
   @Expose()
-  namespaceId: string;
+  namespace: ProjectNamespaceDisplayNameDto;
+
+  //
+  // @IsNotEmpty()
+  // @ValidateIf((object: K8sJobDto, value) => !object.namespace)
+  // @IsString()
+  // @Expose()
+  // namespaceId: string;
 
   @IsNotEmpty()
-  @ValidateIf((object: K8sJobDto, value) => !object.serviceId)
+  @Type(() => ProjectNamespaceServiceDisplayNameDto)
+  @ValidateNested()
+  @Expose()
+  service: ProjectNamespaceServiceDisplayNameDto;
+
+  // from k8s
+  @IsNotEmpty()
+  // @ValidateIf((object: K8sJobDto, value) => !object.serviceId)
   @IsString()
   @Expose()
   controllerName: string;
 
-  @IsNotEmpty()
-  @ValidateIf((object: K8sJobDto, value) => !object.controllerName)
+  // @IsNotEmpty()
+  // @ValidateIf((object: K8sJobDto, value) => !object.controllerName)
+  // @IsString()
+  // @Expose()
+  // serviceId: string;
+
+  @IsOptional()
+  @Type(() => ProjectNamespaceServiceContainerNameDto)
+  @ValidateNested()
+  @Expose()
+  container: ProjectNamespaceServiceContainerNameDto;
+
+  // from k8s
+  @IsOptional()
+  // @ValidateIf((object: K8sJobDto, value) => !object.serviceId)
   @IsString()
   @Expose()
-  serviceId: string;
+  containerName: string;
 
   @IsOptional()
   @IsNumber()
@@ -80,6 +129,9 @@ export class K8sJobDto {
   state: K8sJobStateEnum;
 
   @Type(() => K8sJobCommandDto)
+  @Transform(({ value, obj }) =>
+    value?.filter((item: K8sJobCommandDto) => !!item.command && ALLOWED_BUILD_TASKS.includes(item.command))
+  )
   @ValidateNested({ each: true })
   @Expose()
   commands: K8sJobCommandDto[];
@@ -88,9 +140,9 @@ export class K8sJobDto {
     obj.started =
       obj.started && obj.started !== 'undefined' && obj.started !== 'null' ? moment(obj.started).toDate() : obj.started;
     obj.finished =
-      obj.started && obj.finished !== 'undefined' && obj.finished !== 'null'
+      obj.started && obj.finished && obj.finished !== 'undefined' && obj.finished !== 'null'
         ? moment(obj.finished).toDate()
-        : obj.finished;
+        : new Date();
     return moment(obj.finished).diff(moment(obj.started), 'milliseconds');
   })
   @Expose()

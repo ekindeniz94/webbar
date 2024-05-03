@@ -16,8 +16,8 @@ export class ProjectNamespaceDisplayNameDto extends BaseEntityDto {
   @Expose()
   name: string; // `${project.name}-${project-namespace.name}` k8s namespace-name
 
-  @Transform(
-    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DESCRIPTION.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DESCRIPTION.MAX)
   )
   @Expose()
   description: string;

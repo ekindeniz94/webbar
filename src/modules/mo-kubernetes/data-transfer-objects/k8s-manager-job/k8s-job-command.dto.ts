@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { K8sJobStateEnum } from '../../enums';
+import { K8sBuildTaskEnum, K8sJobStateEnum } from '../../enums';
 import moment from 'moment/moment';
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
@@ -8,6 +8,11 @@ export class K8sJobCommandDto {
   @IsString()
   @Expose()
   id: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  command: K8sBuildTaskEnum;
 
   @IsNotEmpty()
   @IsString()
@@ -32,9 +37,9 @@ export class K8sJobCommandDto {
     obj.started =
       obj.started && obj.started !== 'undefined' && obj.started !== 'null' ? moment(obj.started).toDate() : obj.started;
     obj.finished =
-      obj.started && obj.finished !== 'undefined' && obj.finished !== 'null'
+      obj.started && obj.finished && obj.finished !== 'undefined' && obj.finished !== 'null'
         ? moment(obj.finished).toDate()
-        : obj.finished;
+        : new Date();
     return moment(obj.finished).diff(moment(obj.started), 'milliseconds');
   })
   @Expose()
