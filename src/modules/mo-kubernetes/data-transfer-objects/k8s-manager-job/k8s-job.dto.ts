@@ -2,33 +2,15 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { K8sJobStateEnum } from '../../enums/k8s-manager';
 import moment from 'moment/moment';
 import { K8sJobCommandDto } from './k8s-job-command.dto';
-import {
-  IsEnum,
-  IsNotEmpty,
-  IsNumber,
-  isNumberString,
-  IsOptional,
-  IsString,
-  ValidateIf,
-  ValidateNested
-} from 'class-validator';
-import { GitConnectionTypeEnum } from '../../../mo-git';
+import { IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional, IsString, ValidateNested } from 'class-validator';
 import {
   ProjectDisplayNameDto,
   ProjectNamespaceDisplayNameDto,
   ProjectNamespaceServiceContainerNameDto,
-  ProjectNamespaceServiceDisplayNameDto,
-  ProjectNamespaceServiceFlatDto
+  ProjectNamespaceServiceDisplayNameDto
 } from '../../../mo-project-dto';
-import { BuildJobInfoEntryPayloadDto } from '../k8s-manager-build-job';
-import { ALLOWED_BUILD_TASKS } from '../../mo-kubernetes-dto.const';
 
 export class K8sJobDto {
-  /*
-	Namespace      string       `json:"namespace"`
-	ControllerName string       `json:"controllerName"`
-   */
-
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -59,13 +41,6 @@ export class K8sJobDto {
   @Expose()
   namespace: ProjectNamespaceDisplayNameDto;
 
-  //
-  // @IsNotEmpty()
-  // @ValidateIf((object: K8sJobDto, value) => !object.namespace)
-  // @IsString()
-  // @Expose()
-  // namespaceId: string;
-
   @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceDisplayNameDto)
   @ValidateNested()
@@ -78,12 +53,6 @@ export class K8sJobDto {
   @IsString()
   @Expose()
   controllerName: string;
-
-  // @IsNotEmpty()
-  // @ValidateIf((object: K8sJobDto, value) => !object.controllerName)
-  // @IsString()
-  // @Expose()
-  // serviceId: string;
 
   @IsOptional()
   @Type(() => ProjectNamespaceServiceContainerNameDto)
@@ -129,9 +98,9 @@ export class K8sJobDto {
   state: K8sJobStateEnum;
 
   @Type(() => K8sJobCommandDto)
-  @Transform(({ value, obj }) =>
-    value?.filter((item: K8sJobCommandDto) => !!item.command && ALLOWED_BUILD_TASKS.includes(item.command))
-  )
+  // @Transform(({ value, obj }) =>
+  //   value?.filter((item: K8sJobCommandDto) => !!item.command && ALLOWED_BUILD_TASKS.includes(item.command))
+  // )
   @ValidateNested({ each: true })
   @Expose()
   commands: K8sJobCommandDto[];
