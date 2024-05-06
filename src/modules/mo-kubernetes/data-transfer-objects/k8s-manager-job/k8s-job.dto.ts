@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { K8sJobStateEnum } from '../../enums/k8s-manager';
+import { K8sJobNotificationTypeEnum, K8sJobStateEnum } from '../../enums/k8s-manager';
 import moment from 'moment/moment';
 import { K8sJobCommandDto } from './k8s-job-command.dto';
 import { IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional, IsString, ValidateNested } from 'class-validator';
@@ -48,14 +48,14 @@ export class K8sJobDto {
   @Expose()
   namespace: ProjectNamespaceDisplayNameDto;
 
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => ProjectNamespaceServiceDisplayNameDto)
   @ValidateNested()
   @Expose()
   service: ProjectNamespaceServiceDisplayNameDto;
 
   // from k8s
-  @IsNotEmpty()
+  @IsOptional()
   // @ValidateIf((object: K8sJobDto, value) => !object.serviceId)
   @IsString()
   @Expose()
@@ -123,4 +123,21 @@ export class K8sJobDto {
   })
   @Expose()
   durationMs: number;
+
+  @IsEnum(K8sJobNotificationTypeEnum)
+  @Transform(({ value, obj }) => {
+    if (value === 'Volume') {
+      return K8sJobNotificationTypeEnum.VOLUME;
+    } else if (value === 'Build') {
+      return K8sJobNotificationTypeEnum.BUILD;
+    } else if (value === 'Service') {
+      return K8sJobNotificationTypeEnum.SERVICE;
+    } else if (obj.buildId) {
+      return K8sJobNotificationTypeEnum.BUILD;
+    } else {
+      return K8sJobNotificationTypeEnum.SERVICE;
+    }
+  })
+  @Expose()
+  notificationType: K8sJobNotificationTypeEnum;
 }
