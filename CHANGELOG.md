@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.83 (2024-05-06)
+
+
+### Bug Fixes
+
+* add frontend context notification type enum to k8sjobdto ([436f46f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/436f46fad4f80f3367022e73fb84f5e569c0c984))
+
 # 2.1.0-develop.82 (2024-05-06)
 
 
