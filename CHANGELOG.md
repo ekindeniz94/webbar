@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.81 (2024-05-06)
+
+
+### Bug Fixes
+
+* K8sJobDto ([94f875b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/94f875bc2fffcabce82d235d7590531ada94ef62))
+
 # 2.1.0-develop.80 (2024-05-03)
 
 
