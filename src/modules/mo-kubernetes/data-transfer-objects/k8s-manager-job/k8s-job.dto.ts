@@ -9,12 +9,19 @@ import {
   ProjectNamespaceServiceContainerNameDto,
   ProjectNamespaceServiceDisplayNameDto
 } from '../../../mo-project-dto';
+import { OrganizationNameDto } from '../../../mo-product-dto/product/data-transfer-objects/organization/organization-name.dto';
 
 export class K8sJobDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
   id: string;
+
+  @IsNotEmpty()
+  @Type(() => OrganizationNameDto)
+  @ValidateNested()
+  @Expose()
+  organization: OrganizationNameDto;
 
   @IsNotEmpty()
   @Type(() => ProjectDisplayNameDto)
