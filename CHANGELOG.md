@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.84 (2024-05-06)
+
+
+### Bug Fixes
+
+* cronJobSettings on Create Service. ([d9fbe4a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d9fbe4a6ae9cc8673153b7d9c97c929157babaab))
+
 # 2.1.0-develop.83 (2024-05-06)
 
 
