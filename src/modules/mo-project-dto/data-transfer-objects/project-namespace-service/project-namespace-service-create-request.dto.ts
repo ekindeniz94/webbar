@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform, Type, plainToInstance } from 'class-transformer';
 import {
   ArrayMinSize,
   IsArray,
@@ -10,6 +10,7 @@ import {
   IsString,
   MaxLength,
   MinLength,
+  ValidateIf,
   ValidateNested
 } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
@@ -17,6 +18,7 @@ import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from '../project-namespace-service-container/project-namespace-service-container-create-request.dto';
 import { ServiceControllerEnum } from '../../enums';
+import { CronjobSettingsDto } from './cronjob-settings.dto';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -55,6 +57,15 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @ArrayMinSize(1)
   @Expose()
   containers: ProjectNamespaceServiceContainerCreateRequestDto[];
+
+  @Transform(({ value, obj }) =>
+    obj.controller === ServiceControllerEnum.CRON_JOB ? plainToInstance(CronjobSettingsDto, value) : undefined
+  )
+  @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) => obj.controller === ServiceControllerEnum.CRON_JOB)
+  @IsNotEmpty()
+  @Type(() => CronjobSettingsDto)
+  @Expose()
+  cronJobSettings: CronjobSettingsDto;
 
   @IsOptional()
   // TODO app multi container
