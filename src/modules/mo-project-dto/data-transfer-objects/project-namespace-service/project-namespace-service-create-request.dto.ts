@@ -64,6 +64,7 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @ValidateIf((obj: ProjectNamespaceServiceCreateRequestDto) => obj.controller === ServiceControllerEnum.CRON_JOB)
   @IsNotEmpty()
   @Type(() => CronjobSettingsDto)
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   cronJobSettings: CronjobSettingsDto;
 
