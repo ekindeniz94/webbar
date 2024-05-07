@@ -1,8 +1,17 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform, Type, plainToInstance } from 'class-transformer';
 import { K8sJobNotificationTypeEnum, K8sJobStateEnum } from '../../enums/k8s-manager';
 import moment from 'moment/moment';
 import { K8sJobCommandDto } from './k8s-job-command.dto';
-import { IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional, IsString, ValidateNested } from 'class-validator';
+import {
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  isNumberString,
+  IsOptional,
+  IsString,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator';
 import {
   ProjectDisplayNameDto,
   ProjectNamespaceDisplayNameDto,
@@ -48,15 +57,20 @@ export class K8sJobDto {
   @Expose()
   namespace: ProjectNamespaceDisplayNameDto;
 
-  @IsOptional()
+  // @IsOptional()
+  @Transform(({ value }) => (!value ? null : plainToInstance(ProjectNamespaceServiceDisplayNameDto, value)))
   @Type(() => ProjectNamespaceServiceDisplayNameDto)
+  @ValidateIf((object: K8sJobDto, value) => object.notificationType !== K8sJobNotificationTypeEnum.VOLUME)
+  @IsNotEmpty()
   @ValidateNested()
   @Expose()
   service: ProjectNamespaceServiceDisplayNameDto;
 
   // from k8s
-  @IsOptional()
+  // @IsOptional()
   // @ValidateIf((object: K8sJobDto, value) => !object.serviceId)
+  @ValidateIf((object: K8sJobDto, value) => object.notificationType !== K8sJobNotificationTypeEnum.VOLUME)
+  @IsNotEmpty()
   @IsString()
   @Expose()
   controllerName: string;
