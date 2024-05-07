@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.86 (2024-05-07)
+
+
+### Bug Fixes
+
+* add addToTlsHosts to cname ([8fcc22b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8fcc22b2a3a0d4583a079d420f1f9eb35370c14c))
+
 # 2.1.0-develop.85 (2024-05-07)
 
 
