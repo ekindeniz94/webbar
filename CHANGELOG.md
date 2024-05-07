@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.87 (2024-05-07)
+
+
+### Bug Fixes
+
+* default addToTlsHosts true ([f2eae2d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f2eae2dfcdc262b9b41bd40d41d45d03963b5983))
+
 # 2.1.0-develop.86 (2024-05-07)
 
 
