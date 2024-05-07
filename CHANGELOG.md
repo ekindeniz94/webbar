@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.85 (2024-05-07)
+
+
+### Bug Fixes
+
+* only optional if notification type volume ([bc94250](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bc9425050c2364e330e8686fe81848bd14e10dc7))
+
 # 2.1.0-develop.84 (2024-05-06)
 
 
