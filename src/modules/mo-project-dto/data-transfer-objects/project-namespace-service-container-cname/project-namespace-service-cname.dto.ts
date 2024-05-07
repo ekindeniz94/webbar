@@ -1,6 +1,6 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
-import { CloudflareCustomHostnameDto } from '../../../mo-cloudflare';
+import { MoUtils } from '@mo/js-utils';
 
 export class ProjectNamespaceServiceCnameDto {
   @Expose()
@@ -17,7 +17,7 @@ export class ProjectNamespaceServiceCnameDto {
   @Expose()
   cName: string;
 
-  @Type(() => CloudflareCustomHostnameDto)
+  @Transform(({ value }) => MoUtils.parseBoolean(value))
   @Expose()
-  cloudflareCustomHostname: CloudflareCustomHostnameDto;
+  addToTlsHosts: boolean;
 }
