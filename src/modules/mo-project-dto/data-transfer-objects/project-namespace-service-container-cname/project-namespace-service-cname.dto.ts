@@ -1,6 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 import { MoUtils } from '@mo/js-utils';
+import { IsBoolean, isBoolean } from 'class-validator';
 
 export class ProjectNamespaceServiceCnameDto {
   @Expose()
@@ -17,7 +18,8 @@ export class ProjectNamespaceServiceCnameDto {
   @Expose()
   cName: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @IsBoolean()
   @Expose()
   addToTlsHosts: boolean;
 }
