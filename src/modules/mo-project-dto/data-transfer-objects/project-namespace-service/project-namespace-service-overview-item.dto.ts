@@ -5,7 +5,7 @@ import { ProjectNamespaceServiceStatusDto } from '../project-namespace-service-s
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
 import { ServiceControllerEnum } from '../../enums';
-import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { CpuDto, EphemeralStorageDto, MemoryDto, TrafficDto } from '../stats';
 
 export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
@@ -38,10 +38,9 @@ export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
 
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0)
+  @Type(() => TrafficDto)
   @Expose()
-  trafficInBytes: number;
+  traffic: TrafficDto;
 
   @Type(() => ProjectNamespaceServiceAppDashboardDto)
   @Expose()
