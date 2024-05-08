@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.88 (2024-05-08)
+
+
+### Bug Fixes
+
+* revert addToTlsHosts transformer logic ([4d48a82](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4d48a825e7574e4da636e2bbe400c2ba7cb924b5))
+
 # 2.1.0-develop.87 (2024-05-07)
 
 
