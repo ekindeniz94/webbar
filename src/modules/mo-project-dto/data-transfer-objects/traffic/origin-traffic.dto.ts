@@ -46,7 +46,6 @@ export class OriginTrafficDto {
   @Expose()
   createdAt: string;
 
-
   get isReachingTrafficLimit(): boolean {
     return this.trafficInPercentage > this.trafficWarningLimit * 100;
   }

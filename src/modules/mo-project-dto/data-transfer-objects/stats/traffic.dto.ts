@@ -1,5 +1,6 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import _ from 'lodash';
+import moment from 'moment';
 
 export class TrafficDto {
   @Expose()
@@ -22,6 +23,10 @@ export class TrafficDto {
 
   @Expose()
   transmitBytes: number;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  createdAt: string;
 
   get totalTrafficBytes(): number {
     return _.sum([this.receivedBytes, this.transmitBytes]);
