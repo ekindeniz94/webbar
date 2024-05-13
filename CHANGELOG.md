@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.94 (2024-05-13)
+
+
+### Bug Fixes
+
+* buildState method ([2a078c9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2a078c9065c2cc2f3ec3148635c6ca1400c11cf9))
+
 # 2.1.0-develop.93 (2024-05-13)
 
 
