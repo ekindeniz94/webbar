@@ -6,8 +6,13 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
 import { ServiceControllerEnum } from '../../enums';
 import { CpuDto, EphemeralStorageDto, MemoryDto, TrafficDto } from '../stats';
+import { ProjectNamespaceDisplayNameDto } from '../project-namespace/project-namespace-display-name.dto';
 
 export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
+  @Type(() => ProjectNamespaceDisplayNameDto)
+  @Expose()
+  namespace: ProjectNamespaceDisplayNameDto;
+
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
   @Expose()
   displayName: string;
