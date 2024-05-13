@@ -1,6 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, IsEnum, IsNotEmpty, IsNumber, isNumberString, IsOptional } from 'class-validator';
+import { IsBoolean, isBoolean, IsEnum, IsNotEmpty, isNumber, IsNumber, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto/enums';
+import { MoUtils } from '@mo/js-utils';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -17,24 +18,11 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   limitCpuCores: number;
 
-  // @Type(() => Number)
-  // @IsNotEmpty()
-  // @Transform(({ value }) => (isNumberString(value) ? +value : value))
-  // @IsNumber()
-  // @Expose()
-  // replicaCount: number;
-
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServiceDeploymentStrategyEnum)
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
-
-  // @Transform(({ value }) => value ?? ProjectNamespaceServiceImagePullPolicyEnum.IF_NOT_PRESENT)
-  // @IsEnum(ProjectNamespaceServiceImagePullPolicyEnum)
-  // @IsNotEmpty()
-  // @Expose()
-  // imagePullPolicy: ProjectNamespaceServiceImagePullPolicyEnum;
 
   @Type(() => Number)
   @Expose()
@@ -43,9 +31,22 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @IsNumber()
   ephemeralStorageMB: number;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (value && isBoolean(value) ? value : false))
-  @IsOptional()
+  @IsNotEmpty()
+  @Transform(({ value }) => (isNumber(+value) && !isNaN(+value) ? +value : 10))
+  @Type(() => Number)
+  @IsNumber()
   @Expose()
-  probesOn: boolean;
+  maxVolumeSizeGb: number;
+
+  @IsNotEmpty()
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @IsBoolean()
+  @Expose()
+  repoYamlSync: boolean;
+
+  @IsNotEmpty()
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @IsBoolean()
+  @Expose()
+  allowUnbound: boolean;
 }
