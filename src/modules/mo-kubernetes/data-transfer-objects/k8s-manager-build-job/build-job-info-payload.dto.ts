@@ -64,10 +64,19 @@ export class BuildJobInfoPayloadDto {
   tasks: BuildJobInfoEntryPayloadDto[];
 
   public buildState(): K8sBuildStateEnum | undefined {
-    const hierarchy = [K8sBuildStateEnum.STARTED, K8sBuildStateEnum.FAILED, K8sBuildStateEnum.PENDING, K8sBuildStateEnum.SUCCEEDED];
-    return this.tasks.reduce((acc: K8sBuildStateEnum | undefined, buildJobInfoentry) => {
-      if (!acc || hierarchy.indexOf(acc) > hierarchy.indexOf(buildJobInfoentry.state)) {
-        return buildJobInfoentry.state;
+    if (!this.tasks || this.tasks?.length === 0) {
+      return undefined;
+    }
+    const hierarchy = [
+      K8sBuildStateEnum.STARTED,
+      K8sBuildStateEnum.FAILED,
+      K8sBuildStateEnum.PENDING,
+      K8sBuildStateEnum.SUCCEEDED
+    ];
+
+    return this.tasks.reduce((acc: K8sBuildStateEnum | undefined, buildJobInfoEntry) => {
+      if (!acc || hierarchy.indexOf(acc) > hierarchy.indexOf(buildJobInfoEntry.state)) {
+        return buildJobInfoEntry.state;
       } else {
         return acc;
       }
