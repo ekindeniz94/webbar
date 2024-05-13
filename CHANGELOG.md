@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.95 (2024-05-13)
+
+
+### Bug Fixes
+
+* add createdAt to TrafficDto ([a6546c4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a6546c47a6a57bd85a98b07e54c18df70c5c6922))
+
 # 2.1.0-develop.94 (2024-05-13)
 
 
