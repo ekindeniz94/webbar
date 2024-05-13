@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.91 (2024-05-13)
+
+
+### Bug Fixes
+
+* kubernetes limits ([003e81b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/003e81be8990245adcee48afb0ab4bae5e16c2ba))
+
 # 2.1.0-develop.90 (2024-05-13)
 
 
