@@ -23,7 +23,15 @@ export class TrafficDto {
   @Expose()
   transmitBytes: number;
 
-  public totalTrafficBytes(): number {
-    return _.sum([this.receivedBytes, this.transmitBytes, this.localReceivedBytes, this.localTransmitBytes]);
+  get totalTrafficBytes(): number {
+    return _.sum([this.receivedBytes, this.transmitBytes]);
+  }
+
+  get totalLocalTrafficBytes(): number {
+    return _.sum([this.localReceivedBytes, this.localTransmitBytes]);
+  }
+
+  get totalExternalTrafficBytes(): number {
+    return this.totalTrafficBytes - this.totalLocalTrafficBytes;
   }
 }
