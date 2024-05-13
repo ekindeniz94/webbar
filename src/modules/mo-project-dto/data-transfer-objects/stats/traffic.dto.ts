@@ -1,4 +1,5 @@
 import { Expose } from 'class-transformer';
+import _ from 'lodash';
 
 export class TrafficDto {
   @Expose()
@@ -21,4 +22,8 @@ export class TrafficDto {
 
   @Expose()
   transmitBytes: number;
+
+  public totalTrafficBytes(): number {
+    return _.sum([this.receivedBytes, this.transmitBytes, this.localReceivedBytes, this.localTransmitBytes]);
+  }
 }
