@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.96 (2024-05-14)
+
+
+### Bug Fixes
+
+* rm repoYamlSync from product kubernetes limits ([28984e4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/28984e43a3c299b74df12e7c88c2baae858022dc))
+
 # 2.1.0-develop.95 (2024-05-13)
 
 
