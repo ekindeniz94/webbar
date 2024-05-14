@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.99 (2024-05-14)
+
+
+### Bug Fixes
+
+* tags to app. ([7818a55](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7818a5591779634e7701d47f9438143ab143b279))
+
 # 2.1.0-develop.98 (2024-05-14)
 
 
