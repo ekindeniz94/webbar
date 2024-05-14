@@ -102,12 +102,9 @@ export class AppCreateRequestDto {
   @Expose()
   cronJobSettings?: CronjobSettingsDto;
 
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => AppTagDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @IsArray()
-  @ValidateNested({ each: true, message: '$property must be an array' })
-  @ArrayMinSize(1)
   @Expose()
   tags: AppTagDto[];
 
