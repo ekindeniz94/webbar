@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.97 (2024-05-14)
+
+
+### Bug Fixes
+
+* update KubernetesWorkloadDeleteRequestDto ([5980e79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5980e79bb29fefaac2dbe43c9f2e708cf736d077))
+
 # 2.1.0-develop.96 (2024-05-14)
 
 
