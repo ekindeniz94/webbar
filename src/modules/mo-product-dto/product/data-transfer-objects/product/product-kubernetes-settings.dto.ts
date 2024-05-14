@@ -28,11 +28,6 @@ export class ProductKubernetesSettingsDto {
   @Expose()
   maxVolumeSizeGb: number;
 
-  @IsNotEmpty()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
-  @Expose()
-  repoYamlSync: boolean;
-
   @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
   @Expose()
   allowUnbound: boolean;

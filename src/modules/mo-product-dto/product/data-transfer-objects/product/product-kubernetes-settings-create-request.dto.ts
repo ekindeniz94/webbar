@@ -39,12 +39,6 @@ export class ProductKubernetesSettingsCreateRequestDto {
   maxVolumeSizeGb: number;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
-  @IsBoolean()
-  @Expose()
-  repoYamlSync: boolean;
-
-  @IsNotEmpty()
   @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
   @IsBoolean()
   @Expose()
