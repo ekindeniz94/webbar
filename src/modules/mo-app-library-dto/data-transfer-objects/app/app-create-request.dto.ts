@@ -22,6 +22,7 @@ import {
   ServiceControllerEnum
 } from '../../../mo-project-dto';
 import { AppContainerCreateRequestDto } from '../app-container/app-container-create-request.dto';
+import { AppTagDto } from '../app-tag.dto';
 
 export class AppCreateRequestDto {
   @IsNotEmpty()
@@ -100,6 +101,15 @@ export class AppCreateRequestDto {
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
   cronJobSettings?: CronjobSettingsDto;
+
+  @IsNotEmpty()
+  @Type(() => AppTagDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @IsArray()
+  @ValidateNested({ each: true, message: '$property must be an array' })
+  @ArrayMinSize(1)
+  @Expose()
+  tags: AppTagDto[];
 
   @IsNotEmpty()
   @Type(() => AppContainerCreateRequestDto)
