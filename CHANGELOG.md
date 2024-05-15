@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.100 (2024-05-15)
+
+
+### Bug Fixes
+
+* traffic/compute time series ([ab66d6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ab66d6d0271cb1b80d56003fb0c9e16cd11ae646))
+
 # 2.1.0-develop.99 (2024-05-14)
 
 
