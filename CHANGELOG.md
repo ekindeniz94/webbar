@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.102 (2024-05-15)
+
+
+### Bug Fixes
+
+* KubernetesWorkloadDescribeRequestDto ([4e0b93c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e0b93cd345d0cbd777a5725c4e80949279b3d4e))
+
 # 2.1.0-develop.101 (2024-05-15)
 
 
