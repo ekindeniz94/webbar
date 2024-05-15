@@ -1,6 +1,7 @@
 import { Expose } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
+import {IsEnum, IsNotEmpty, IsString, ValidateIf} from 'class-validator';
 import { KubernetesWorkloadEnum } from '../../../enums';
+import {GitConnectionTypeEnum} from "../../../../../mo-git";
 
 export class KubernetesWorkloadDescribeRequestDto {
   @IsNotEmpty()
@@ -9,6 +10,7 @@ export class KubernetesWorkloadDescribeRequestDto {
   workload: KubernetesWorkloadEnum;
 
   @IsNotEmpty()
+  @ValidateIf((object, value) => object.workload !== KubernetesWorkloadEnum.NAMESPACE)
   @IsString()
   @Expose()
   namespaceName: string;
