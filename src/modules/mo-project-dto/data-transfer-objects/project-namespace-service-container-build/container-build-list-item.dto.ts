@@ -3,7 +3,7 @@ import { isArray } from 'class-validator';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
 import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { MoUtils } from '@mo/js-utils';
-import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from '../project-namespace-service-container';
+import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../project-namespace-service-container';
 
 export class ContainerBuildListItemDto {
   @Expose()
@@ -39,9 +39,9 @@ export class ContainerBuildListItemDto {
   @Expose()
   buildId: string;
 
-  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => ProjectNamespaceServiceContainerEnvVarDto)

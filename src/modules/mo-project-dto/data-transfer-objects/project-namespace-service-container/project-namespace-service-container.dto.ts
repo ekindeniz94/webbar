@@ -13,7 +13,7 @@ import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
-import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from './project-namespace-service-container-kubernetes-settings.dto';
+import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
@@ -60,9 +60,9 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   gitSettings: ProjectNamespaceServiceContainerGitSettingsDto;
 
-  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
 
   // @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   // @Expose()

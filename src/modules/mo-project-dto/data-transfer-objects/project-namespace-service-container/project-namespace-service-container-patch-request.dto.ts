@@ -18,7 +18,7 @@ import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../projec
 import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-namespace-service-container-port';
 import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
 import { ContainerTypeEnum } from '../../enums';
-import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from './project-namespace-service-container-kubernetes-settings.dto';
+import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -49,10 +49,10 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   // name: string;
 
   @IsNotEmpty()
-  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
   @ValidateNested()
   @Expose()
-  kubernetesSettings: ProjectNamespaceServiceContainerKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
 
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))

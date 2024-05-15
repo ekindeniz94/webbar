@@ -5,7 +5,7 @@ import { isArray, isString } from 'class-validator';
 import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 import { AppPortDto } from '../app-port.dto';
-import { ProjectNamespaceServiceContainerKubernetesSettingsDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-container/project-namespace-service-container-kubernetes-settings.dto';
+import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-container/project-namespace-service-container-kubernetes-limits.dto';
 import { AppEnvVarDto } from '../app-envvar.dto';
 
 export class AppContainerDto extends BaseEntityDto {
@@ -79,9 +79,9 @@ export class AppContainerDto extends BaseEntityDto {
   @Expose()
   ports: AppPortDto[];
 
-  @Type(() => ProjectNamespaceServiceContainerKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesSettingsDto;
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
 
   @Type(() => AppEnvVarDto)
   @Expose()

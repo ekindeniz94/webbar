@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceImagePullPolicyEnum } from '../../enums';
 import { IsBoolean, isBoolean, IsEnum, IsNotEmpty, IsNumber } from 'class-validator';
 
-export class ProjectNamespaceServiceContainerKubernetesSettingsDto {
+export class ProjectNamespaceServiceContainerKubernetesLimitsDto {
   @IsNumber()
   @Type(() => Number)
   @Expose()
