@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.101 (2024-05-15)
+
+
+### Bug Fixes
+
+* rn kubernetesSettings to kubernetesLimits ([006ea20](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/006ea204c49eeca087429a439f01867470260e76))
+
 # 2.1.0-develop.100 (2024-05-15)
 
 
