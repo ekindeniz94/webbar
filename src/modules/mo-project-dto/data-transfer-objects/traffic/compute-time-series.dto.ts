@@ -3,6 +3,15 @@ import moment from 'moment';
 import { isNumber } from 'class-validator';
 
 export class ComputeTimeSeriesDto {
+  @Expose()
+  namespace: string;
+
+  @Expose()
+  containerName: string;
+
+  @Expose()
+  podName: string;
+
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) ? value : 0))
   @Expose()
@@ -35,5 +44,9 @@ export class ComputeTimeSeriesDto {
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  timeStamp: Date;
+  startTime: Date;
+
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Expose()
+  createdAt: Date;
 }
