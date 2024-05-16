@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.103 (2024-05-16)
+
+
+### Bug Fixes
+
+* rm azure build type ([f0bdfb7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f0bdfb7cce3852ddc42869049351c35f2cdc5154))
+
 # 2.1.0-develop.102 (2024-05-15)
 
 
