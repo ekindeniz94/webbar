@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.104 (2024-05-17)
+
+
+### Bug Fixes
+
+* add K8S_EVENT to K8sBuildTaskEnum ([8bba63f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8bba63f4b563c6a3307fd33391f17079ac3f91b3))
+
 # 2.1.0-develop.103 (2024-05-16)
 
 
