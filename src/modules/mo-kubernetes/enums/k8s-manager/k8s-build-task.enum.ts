@@ -3,5 +3,6 @@ export enum K8sBuildTaskEnum {
   LS = 'ls',
   LOGIN = 'login',
   BUILD = 'build',
-  PUSH = 'push'
+  PUSH = 'push',
+  K8S_EVENT = 'k8s-event'
 }
