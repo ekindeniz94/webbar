@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.105 (2024-05-21)
+
+
+### Bug Fixes
+
+* add convertEol to xterm options ([cb3626b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cb3626b90ea16da450902b6f7b5c15dd4b628c21))
+
 # 2.1.0-develop.104 (2024-05-17)
 
 
