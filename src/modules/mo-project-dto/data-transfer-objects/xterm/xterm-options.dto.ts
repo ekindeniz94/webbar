@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean, IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
+import { isBoolean, IsBoolean, IsOptional, IsString } from 'class-validator';
+import { MoUtils } from '@mo/js-utils';
 
 export abstract class XtermOptionsDto {
   @Type(() => Boolean)
@@ -24,4 +24,10 @@ export abstract class XtermOptionsDto {
   @IsString()
   @Expose()
   cursorInactiveStyle?: 'outline' | 'block' | 'bar' | 'underline' | 'none';
+
+  @IsOptional()
+  @IsBoolean()
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @Expose()
+  convertEol?: boolean;
 }
