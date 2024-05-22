@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength, ValidateIf } from 'class-validator';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
@@ -15,10 +15,15 @@ export class ProjectNamespaceServiceContainerEnvvarCreateRequestDto {
   name: string;
 
   @IsString()
+  @IsNotEmpty()
   // @Matches(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MATCHES)
   @MaxLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MAX)
   @MinLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MIN)
   // @StripTags()
+  @ValidateIf(
+    (obj: ProjectNamespaceServiceContainerEnvvarCreateRequestDto) =>
+      obj.type === ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT
+  )
   @Expose()
   value: string;
 
