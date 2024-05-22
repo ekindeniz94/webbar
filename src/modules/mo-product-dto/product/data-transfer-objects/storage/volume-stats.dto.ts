@@ -35,6 +35,10 @@ export class VolumeStatsDto {
   volumeName: string;
 
   @Expose()
+  @IsString()
+  namespaceName: string;
+
+  @Expose()
   @IsNumber()
   totalBytes: number;
 
