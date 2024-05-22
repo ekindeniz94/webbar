@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.106 (2024-05-22)
+
+
+### Bug Fixes
+
+* ProjectNamespaceServiceContainerEnvvarCreateRequestDto ([7f7c878](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7f7c87813deabc33ba1cd7b6026a0b1c9e9e86bb))
+
 # 2.1.0-develop.105 (2024-05-21)
 
 
