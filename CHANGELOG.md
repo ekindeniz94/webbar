@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.107 (2024-05-22)
+
+
+### Bug Fixes
+
+* extend volume stats ([900426c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/900426c8cc58b10de251e3dba7e7979c431a2273))
+
 # 2.1.0-develop.106 (2024-05-22)
 
 
