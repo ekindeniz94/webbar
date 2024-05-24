@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.110 (2024-05-24)
+
+
+### Bug Fixes
+
+* update traffic ([568b92e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/568b92edffeda390b587dff5c939882eb80a303f))
+
 # 2.1.0-develop.109 (2024-05-24)
 
 
