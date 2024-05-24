@@ -1,24 +1,20 @@
 import { StripTags } from '@mo/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
-import {
-  isArray,
-  IsNotEmpty,
-  IsOptional,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength,
-  ValidateNested
-} from 'class-validator';
+import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
-import { ProjectNamespaceServiceEnvVarDto } from '../project-namespace-service-envvar';
-import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
-import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
-import { ProjectNamespaceServicePodDto } from '../project-namespace-service-pod';
+import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-container-cname';
+import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { BaseEntityDto } from '@mo/database-dto';
+import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
+import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { OriginTrafficDto } from '../traffic';
+import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
+import { ContainerTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
+import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -26,6 +22,9 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   )
   @Expose()
   displayName: string;
+
+  @Expose()
+  type: ContainerTypeEnum;
 
   @StripTags()
   @Transform(({ value, obj }) =>
@@ -40,7 +39,7 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImage: string;
 
   @Type(() => KeyVaultSecretDto)
-  @Transform(({ value }) => value ?? null)
+  @Transform(({ value }) => (value && value.id) ?? null)
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
@@ -57,30 +56,52 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   containerImageCommandArgs: string;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectNamespaceServiceContainerGitSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  gitSettings: ProjectNamespaceServiceContainerGitSettingsDto;
+
+  @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
+  @Expose()
+  kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
 
   // @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
   // @Expose()
   // kubernetesRequests: ProjectNamespaceServiceKubernetesSettingsDto;
 
-  @Type(() => ProjectNamespaceServiceEnvVarDto)
+  @Type(() => ProjectNamespaceServiceContainerEnvVarDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
-  envVars: ProjectNamespaceServiceEnvVarDto[];
+  envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => ProjectNamespaceServiceCnameDto)
   @Expose()
   cNames: ProjectNamespaceServiceCnameDto[];
 
-  @Type(() => ProjectNamespaceServicePortDto)
+  @Type(() => ProjectNamespaceServiceContainerPortDto)
   @Transform(({ value }) => (isArray(value) ? value : undefined))
   @Expose()
-  ports: ProjectNamespaceServicePortDto[];
+  ports: ProjectNamespaceServiceContainerPortDto[];
 
-  @Type(() => ProjectNamespaceServicePodDto)
+  @Type(() => CpuDto)
   @Expose()
-  pods: ProjectNamespaceServicePodDto[];
+  cpu: CpuDto;
+
+  @Type(() => MemoryDto)
+  @Expose()
+  memory: MemoryDto;
+
+  @Type(() => EphemeralStorageDto)
+  @Expose()
+  ephemeralStorage: EphemeralStorageDto;
+
+  // deployment message
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => KubernetesPublicEventDto)
+  @Expose()
+  messages: KubernetesPublicEventDto[];
+
+  @Type(() => AppContainerDto)
+  @Expose()
+  appContainer: AppContainerDto;
 }

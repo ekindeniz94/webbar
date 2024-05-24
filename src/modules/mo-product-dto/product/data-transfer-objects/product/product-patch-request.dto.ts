@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { ProductCreateRequestDto } from './product-create-request.dto';
-import { ProjectNamespaceServiceKubernetesSettingsPatchRequestDto } from '../../../../mo-project-dto';
+import { ProductKubernetesSettingsPatchRequestDto } from './product-kubernetes-settings-patch-request.dto';
 
 export class ProductPatchRequestDto extends ProductCreateRequestDto {
   @IsNotEmpty()
@@ -10,8 +10,8 @@ export class ProductPatchRequestDto extends ProductCreateRequestDto {
   @Expose()
   id: string;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsPatchRequestDto)
+  @Type(() => ProductKubernetesSettingsPatchRequestDto)
   @ValidateNested()
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsPatchRequestDto;
+  kubernetesLimits: ProductKubernetesSettingsPatchRequestDto;
 }

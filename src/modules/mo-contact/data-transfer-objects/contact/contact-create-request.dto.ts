@@ -1,11 +1,4 @@
-import {
-  IsEmail,
-  IsNotEmpty,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength,
-} from 'class-validator';
+import { IsEmail, IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
 import { StripTags } from '@mo/js-utils';
@@ -19,8 +12,8 @@ export class ContactCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.FIRST_NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.FIRST_NAME.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FIRST_NAME.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FIRST_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -30,8 +23,8 @@ export class ContactCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.LAST_NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.LAST_NAME.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.LAST_NAME.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.LAST_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -42,8 +35,8 @@ export class ContactCreateRequestDto {
   @IsEmail()
   @MinLength(DTO_VALIDATION_CONST.EMAIL.MIN)
   @MaxLength(DTO_VALIDATION_CONST.EMAIL.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
   )
   @StripTags()
   @Expose()
@@ -52,8 +45,9 @@ export class ContactCreateRequestDto {
   @IsNotEmpty()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.INTEREST.MAX)
   )
   @StripTags()
   @Expose()
@@ -63,8 +57,9 @@ export class ContactCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.CONTACT.SUBJECT.MIN)
   @MaxLength(DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.SUBJECT.MAX)
   )
   @StripTags()
   @Expose()
@@ -74,8 +69,9 @@ export class ContactCreateRequestDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.CONTACT.MESSAGE.MIN)
   @MaxLength(DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.CONTACT.MESSAGE.MAX)
   )
   @StripTags()
   @Expose()

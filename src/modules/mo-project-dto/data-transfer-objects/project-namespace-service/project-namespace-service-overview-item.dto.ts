@@ -1,49 +1,35 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app';
-import { ProjectNamespaceServiceStateEnum, ServiceTypeEnum } from '../../enums';
-import moment from 'moment/moment';
-import { isBoolean } from 'class-validator';
-import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
-import { ProjectNamespaceServiceStatusResourceDto } from '../project-namespace-service-status';
+import { isArray, isString } from 'class-validator';
+import { ProjectNamespaceServiceStatusDto } from '../project-namespace-service-status';
+import { BaseEntityDto } from '@mo/database-dto';
+import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
+import { ServiceControllerEnum } from '../../enums';
+import { CpuDto, EphemeralStorageDto, MemoryDto, TrafficDto } from '../stats';
+import { ProjectNamespaceDisplayNameDto } from '../project-namespace/project-namespace-display-name.dto';
 
-export class ProjectNamespaceServiceOverviewItemDto {
+export class ProjectNamespaceServiceOverviewItemDto extends BaseEntityDto {
+  @Type(() => ProjectNamespaceDisplayNameDto)
   @Expose()
-  id: string;
+  namespace: ProjectNamespaceDisplayNameDto;
 
+  @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
   @Expose()
   displayName: string;
 
   @Expose()
-  type: ServiceTypeEnum; // Enum
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  createdAt: Date;
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  updatedAt: Date;
-
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Expose()
-  lastPodCreatedAt: Date;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0)
-  @Expose()
-  podCount: number;
-
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : true))
-  @Expose()
-  switchedOn: boolean; // Enum ON/OFF;
-
-  // @todo: remove
-  @Expose()
-  state: ProjectNamespaceServiceStateEnum; // Enum ERROR/BUILDING...
+  controllerName: string;
 
   @Expose()
-  runningSince: Date;
+  controller: ServiceControllerEnum;
+
+  @Expose()
+  description: string;
+
+  @Type(() => ProjectNamespaceServiceContainerNameDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  containers: ProjectNamespaceServiceContainerNameDto[];
 
   @Type(() => CpuDto)
   @Expose()
@@ -57,16 +43,15 @@ export class ProjectNamespaceServiceOverviewItemDto {
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
 
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0)
+  @Type(() => TrafficDto)
   @Expose()
-  trafficInBytes: number;
+  traffic: TrafficDto;
 
   @Type(() => ProjectNamespaceServiceAppDashboardDto)
   @Expose()
   app: ProjectNamespaceServiceAppDashboardDto;
 
-  @Type(() => ProjectNamespaceServiceStatusResourceDto)
+  @Type(() => ProjectNamespaceServiceStatusDto)
   @Expose()
-  status: ProjectNamespaceServiceStatusResourceDto;
+  status: ProjectNamespaceServiceStatusDto;
 }

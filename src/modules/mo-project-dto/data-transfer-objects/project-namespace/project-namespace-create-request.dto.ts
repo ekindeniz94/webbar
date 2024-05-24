@@ -8,8 +8,8 @@ import { StripTags } from '@mo/js-utils';
 export class ProjectNamespaceCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DISPLAY_NAME.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -27,8 +27,8 @@ export class ProjectNamespaceCreateRequestDto extends BaseEntityDto {
 
   @IsOptional()
   @IsString()
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DESCRIPTION.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DESCRIPTION.MAX)
   )
   @Expose()
   description: string;

@@ -5,7 +5,7 @@ import { MoUtils } from '@mo/js-utils';
 export class SpectrumAppResponseDto {
   @Type(() => SpectrumAppResultDto)
   @Expose()
-  result: SpectrumAppResultDto
+  result: SpectrumAppResultDto;
 
   @Transform(({ value }) => MoUtils.parseBoolean(value))
   @Expose()

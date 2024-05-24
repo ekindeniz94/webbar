@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class GatewayStatusResponseDto {
+export class GatewayStatusResponseDto2 {
   @Expose()
   version: string;
 

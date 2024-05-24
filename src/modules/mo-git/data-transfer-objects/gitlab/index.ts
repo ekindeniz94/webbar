@@ -4,5 +4,4 @@ export * from './gitlab-authorized-response.dto';
 export * from './gitlab-user.dto';
 export * from './gitlab-token.dto';
 export * from './gitlab-namespace-response.dto';
-export * from './gitlab-create-request.dto';
-export * from './gitlab-webhook.dto';
+// export * from './gitlab-create-request.dto';

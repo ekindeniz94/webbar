@@ -1,10 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, isString, IsString, IsUUID, ValidateNested } from 'class-validator';
-import { IdDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { StripTags } from '@mo/js-utils';
-import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
+import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectPatchRequestDto {
   @IsNotEmpty()
@@ -30,8 +27,8 @@ export class ProjectPatchRequestDto {
   description: string;
 
   @IsOptional()
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectKubernetesLimitsDto)
   @ValidateNested()
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectKubernetesLimitsDto;
 }

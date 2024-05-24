@@ -7,8 +7,8 @@ import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { MoUtils } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../../../../mo-project-dto/data-transfer-objects/project-namespace-service-kubernetes-settings';
 import { BaseEntityDto } from '@mo/database-dto';
+import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductDto extends BaseEntityDto {
   @Type(() => ClusterDto)
@@ -61,9 +61,9 @@ export class ProductDto extends BaseEntityDto {
 
   /***************************** LIMITS ********************************/
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProductKubernetesSettingsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProductKubernetesSettingsDto;
 
   @Type(() => Number)
   @Expose()

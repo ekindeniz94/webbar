@@ -2,28 +2,31 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { ProjectStateEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { GitConnectionDto } from '../../../mo-git';
-import {MoUtils} from "@mo/js-utils";
+import { MoUtils } from '@mo/js-utils';
+import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   createdBy: UserPublicDto;
 
   @Type(() => ProductFlatDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   product: ProductFlatDto;
 
   @Type(() => ClusterPublicDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   cluster: ClusterPublicDto;
 
   @Type(() => GitConnectionDto)
+  @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
   gitConnection: GitConnectionDto;
 
@@ -60,14 +63,10 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  @Transform(({ value }) => value ?? ProjectStateEnum.INACTIVE)
-  @Expose()
-  state: ProjectStateEnum;
-
   @Expose()
   bgColorStyle: string;
 
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectKubernetesLimitsDto)
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectKubernetesLimitsDto;
 }

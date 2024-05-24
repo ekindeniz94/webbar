@@ -14,9 +14,7 @@ export class ProjectInvitationCreateRequestDto {
   @IsString()
   @IsEmail()
   @MaxLength(USER_CONST.EMAIL.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, USER_CONST.EMAIL.MAX)
-  )
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, USER_CONST.EMAIL.MAX))
   @StripTags()
   @Expose()
   email: string;

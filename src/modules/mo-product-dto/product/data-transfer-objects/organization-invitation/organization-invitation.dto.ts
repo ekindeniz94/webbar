@@ -25,9 +25,7 @@ export class OrganizationInvitationDto {
   @Expose()
   group: GroupDto;
 
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, USER_CONST.EMAIL.MAX)
-  )
+  @Transform(({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, USER_CONST.EMAIL.MAX))
   @StripTags()
   @Expose()
   email: string;

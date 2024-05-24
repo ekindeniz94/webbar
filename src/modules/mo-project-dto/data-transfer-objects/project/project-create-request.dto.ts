@@ -1,22 +1,24 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
-import { IdDto } from '@mo/core-dto';
+import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoUtils, StripTags } from '@mo/js-utils';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { ProjectNamespaceServiceKubernetesSettingsDto } from '../project-namespace-service-kubernetes-settings';
 import { CittProjectNamespaceCreateRequestDto } from '../citt';
+import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectCreateRequestDto {
   @IsNotEmpty()
-  @Type(() => IdDto)
+  @Type(() => IdRequiredDto)
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  product: IdDto;
+  product: IdRequiredDto;
 
   @IsNotEmpty()
-  @Type(() => IdDto)
+  @Type(() => IdRequiredDto)
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  cluster: IdDto;
+  cluster: IdRequiredDto;
 
   @IsOptional()
   @Transform(({ value }) => MoUtils.parseBoolean(value))
@@ -26,8 +28,8 @@ export class ProjectCreateRequestDto {
 
   @IsNotEmpty()
   @IsString()
-  @Transform(
-    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -44,10 +46,10 @@ export class ProjectCreateRequestDto {
   name: string;
 
   @IsOptional()
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsDto)
+  @Type(() => ProjectKubernetesLimitsDto)
   @ValidateNested()
   @Expose()
-  kubernetesLimits: ProjectNamespaceServiceKubernetesSettingsDto;
+  kubernetesLimits: ProjectKubernetesLimitsDto;
 
   @IsOptional()
   @Type(() => CittProjectNamespaceCreateRequestDto)

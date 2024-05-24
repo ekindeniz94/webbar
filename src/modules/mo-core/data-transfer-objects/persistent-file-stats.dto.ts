@@ -3,15 +3,15 @@
 import { Expose } from 'class-transformer';
 
 export class PersistentFileStatsDto {
-    @Expose()
-    objects: Object;
-  
-    @Expose()
-    sum: number;
-  
-    @Expose()
-    durationMs?: number;
+  @Expose()
+  objects: Object;
 
-    @Expose()
-    generatedAt: string;
-  }
+  @Expose()
+  sum: number;
+
+  @Expose()
+  durationMs?: number;
+
+  @Expose()
+  generatedAt: string;
+}

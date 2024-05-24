@@ -1,10 +1,18 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { isArray } from 'class-validator';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { ComputeTimeSeriesDto } from './compute-time-series.dto';
 
 export class ComputeTimeSeriesResponseDto {
-  @Type(() => ComputeTimeSeriesDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Transform(
+    ({ value }) =>
+      Object.entries(value).reduce(
+        (acc, [key, val]) => {
+          acc[key] = (val as any).map((item: any) => plainToInstance(ComputeTimeSeriesDto, item));
+          return acc;
+        },
+        {} as { [key: string]: ComputeTimeSeriesDto[] }
+      ),
+    { toClassOnly: true }
+  )
   @Expose()
-  results: ComputeTimeSeriesDto[];
+  pods: { [key: string]: ComputeTimeSeriesDto[] };
 }

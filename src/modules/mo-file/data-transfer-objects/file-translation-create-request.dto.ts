@@ -11,8 +11,9 @@ export class FileTranslationCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.FILE.ALT_TEXT.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.ALT_TEXT.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.ALT_TEXT.MAX)
   )
   @Expose()
   altText: string;
@@ -20,8 +21,8 @@ export class FileTranslationCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.FILE.TITLE.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.TITLE.MAX)
+  @Transform(
+    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.TITLE.MAX)
   )
   @Expose()
   title?: string;
@@ -29,8 +30,9 @@ export class FileTranslationCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.FILE.CAPTION.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.CAPTION.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.CAPTION.MAX)
   )
   @Expose()
   caption?: string;

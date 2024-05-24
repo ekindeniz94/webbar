@@ -1,11 +1,11 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import {isArray, isBoolean, isIP} from 'class-validator';
+import { isArray, isBoolean, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { BaseEntityDto, CountryDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
-import {MoUtils} from "@mo/js-utils";
+import { MoUtils } from '@mo/js-utils';
 
 export class ClusterDto extends BaseEntityDto {
   // @Type(() => ProductDto)
@@ -70,9 +70,9 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
-  @Expose()
-  cloudflareProxied: boolean;
+  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @Expose()
+  // cloudflareProxied: boolean;
 
   @Expose()
   clusterMfaId: string;

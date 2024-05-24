@@ -1,16 +1,14 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, isString } from 'class-validator';
-import { ProjectNamespaceServiceStateEnum } from '../../../mo-project-dto/enums/project-namespace-service-state.enum';
+import { isArray, isNumberString, isString, ValidateNested } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
-import { ServiceTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { UserPublicDto } from '@mo/user-dto';
 import { ProjectNamespaceServiceAppDto } from '../project-namespace-service-app';
 import { ProjectNamespaceServiceContainerDto } from '../project-namespace-service-container/project-namespace-service-container.dto';
 import { IdDto } from '@mo/core-dto';
-import { ProjectNamespaceServiceGitSettingsDto } from '../project-namespace-service-git-settings/project-namespace-service-git-settings.dto';
-import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
+import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { OriginTrafficDto } from '../traffic';
-import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
+import { TrafficDto } from '../stats';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -21,26 +19,18 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   projectNamespace: IdDto;
 
-  @Expose()
-  type: ServiceTypeEnum;
-
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))
   @Expose()
   displayName: string;
+
+  @Expose()
+  controller: ServiceControllerEnum;
 
   @Expose()
   controllerName: string;
 
   @Expose()
   description: string;
-
-  @Expose()
-  state: ProjectNamespaceServiceStateEnum;
-
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : true))
-  @Expose()
-  switchedOn: boolean;
 
   @Type(() => ProjectNamespaceServiceAppDto)
   @Expose()
@@ -51,56 +41,20 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   containers: ProjectNamespaceServiceContainerDto[];
 
-  @Type(() => ProjectNamespaceServiceGitSettingsDto)
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumberString(value) ? +value : value))
   @Expose()
-  gitSettings: ProjectNamespaceServiceGitSettingsDto;
+  replicaCount: number;
 
-  @Type(() => CpuDto)
+  @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
-  cpu: CpuDto;
+  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 
-  @Type(() => MemoryDto)
+  @Type(() => CronjobSettingsDto)
   @Expose()
-  memory: MemoryDto;
+  cronJobSettings?: CronjobSettingsDto;
 
-  @Type(() => EphemeralStorageDto)
+  @Type(() => TrafficDto)
   @Expose()
-  ephemeralStorage: EphemeralStorageDto;
-
-  @Type(() => OriginTrafficDto)
-  @Expose()
-  traffic: OriginTrafficDto;
-
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => KubernetesPublicEventDto)
-  @Expose()
-  messages: KubernetesPublicEventDto[];
-
-  // get tcpPort(): ProjectNamespaceServicePortDto | undefined {
-  //   return (
-  //     this.ports.find(
-  //       (item: ProjectNamespaceServicePortDto) => item.portType === ProjectNamespaceServicePortBindingEnum.TCP
-  //     ) ?? undefined
-  //   );
-  // }
-  //
-  // get udpPort(): ProjectNamespaceServicePortDto | undefined {
-  //   return (
-  //     this.ports.find(
-  //       (item: ProjectNamespaceServicePortDto) => item.portType === ProjectNamespaceServicePortBindingEnum.UDP
-  //     ) ?? undefined
-  //   );
-  // }
-  //
-  // get hostname(): string {
-  //   return `${this.name.toLowerCase()}`;
-  // }
-  //
-  // get fullHostname(): string {
-  //   return `http://${this.name}`;
-  // }
-  //
-  // get fullHostnameWithPort(): string {
-  //   return `http://${this.name}:${this.internalPort}`;
-  // }
+  traffic: TrafficDto;
 }

@@ -8,6 +8,6 @@ export interface IDockerTemplateEnvironmentVariable {
   deactivateValue?: boolean;
   deactivateType?: boolean;
   deactivateDelete?: boolean;
-  dependsOn?: string;
-  dependsOnMethod?: string;
+  // dependsOn?: string;
+  // dependsOnMethod?: string;
 }

@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsString, IsOptional, IsNotEmpty, MinLength } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class UserApplicationDto {
   @Expose() @IsString() @IsOptional() interests: string;

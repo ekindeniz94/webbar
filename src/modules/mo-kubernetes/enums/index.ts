@@ -1,3 +1,6 @@
+export * from './k8s-manager';
+
+export * from './k8s-manager/k8s-build-task.enum';
 export * from './kubernetes-event-kind.enum';
 export * from './kubernetes-event-status-level.enum';
 export * from './kubernetes-event-status-reason.enum';

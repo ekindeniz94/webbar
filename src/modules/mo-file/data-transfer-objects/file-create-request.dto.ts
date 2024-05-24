@@ -16,8 +16,9 @@ export class FileCreateRequestDto {
   @IsOptional()
   @IsString()
   @MaxLength(DTO_VALIDATION_CONST.FILE.COPYRIGHT.MAX)
-  @Transform(({ value }) =>
-    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.COPYRIGHT.MAX)
+  @Transform(
+    ({ value }) =>
+      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.FILE.COPYRIGHT.MAX)
   )
   @Expose()
   copyright?: string;

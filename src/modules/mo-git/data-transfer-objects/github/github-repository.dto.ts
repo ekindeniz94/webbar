@@ -1,44 +1,44 @@
-import { Expose, Type } from 'class-transformer';
-
-export class GithubRepositoryDto {
-  @Type(() => Number)
-  @Expose()
-  id: number;
-
-  // branch name
-  @Expose()
-  name: string;
-
-  @Expose()
-  clone_url: string;
-
-  @Expose()
-  full_name: string;
-
-  @Expose()
-  html_url: string;
-
-  @Expose()
-  created_at: string;
-
-  @Expose()
-  default_branch: string;
-
-  @Expose()
-  language: string;
-
-  // {admin: true, maintain: true, push: true, triage: true, pull: true}
-  @Expose()
-  permissions: any;
-
-  @Type(() => Number)
-  @Expose()
-  size: number;
-
-  @Expose()
-  visibility: string;
-
-  get branchesApiUrl(): string {
-    return `https://api.github.com/repos/${this.full_name}/branches`;
-  }
-}
+// import { Expose, Type } from 'class-transformer';
+//
+// export class GithubRepositoryDto {
+//   @Type(() => Number)
+//   @Expose()
+//   id: number;
+//
+//   // branch name
+//   @Expose()
+//   name: string;
+//
+//   @Expose()
+//   clone_url: string;
+//
+//   @Expose()
+//   full_name: string;
+//
+//   @Expose()
+//   html_url: string;
+//
+//   @Expose()
+//   created_at: string;
+//
+//   @Expose()
+//   default_branch: string;
+//
+//   @Expose()
+//   language: string;
+//
+//   // {admin: true, maintain: true, push: true, triage: true, pull: true}
+//   @Expose()
+//   permissions: any;
+//
+//   @Type(() => Number)
+//   @Expose()
+//   size: number;
+//
+//   @Expose()
+//   visibility: string;
+//
+//   get branchesApiUrl(): string {
+//     return `https://api.github.com/repos/${this.full_name}/branches`;
+//   }
+// }

@@ -1,16 +1,19 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
-import { GitConnectionTypeEnum, GitConnectionTokenTypeEnum } from '../../enums';
+import { GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
 import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class GitConnectionDto extends BaseEntityDto {
   //
+  // @Expose()
+  // @IsOptional()
+  // @IsString()
+  // login?: string;
+
   @Expose()
-  @IsOptional()
-  @IsString()
-  login?: string;
+  installationId?: string;
 
   @Expose()
   gitConnectionType: GitConnectionTypeEnum;

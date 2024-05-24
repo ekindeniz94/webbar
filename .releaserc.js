@@ -7,7 +7,12 @@
  * https://github.com/semantic-release/semantic-release
  */
 module.exports = {
-  branches: ['main'],
+  branches: [
+    {
+      name: 'main'
+    },
+    { name: 'develop', prerelease: true }
+  ],
   /**
    * repositoryUrl
    * Default: repository property in package.json or git origin url

@@ -1,5 +1,29 @@
 import { Expose } from 'class-transformer';
-import { IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
+
+export enum VolumeStatusEnum {
+  PENDING = 'PENDING',
+  BOUND = 'BOUND',
+  ERROR = 'ERROR',
+  WARNING = 'WARNING'
+}
+
+export enum VolumeStatusMessageTypeEnum {
+  SUCCESS = 'SUCCESS',
+  INFO = 'INFO',
+  ERROR = 'ERROR',
+  WARNING = 'WARNING'
+}
+
+export class VolumeStatusMessageDto {
+  @Expose()
+  @IsString()
+  type: VolumeStatusMessageTypeEnum;
+
+  @Expose()
+  @IsString()
+  message: string;
+}
 
 export class VolumeStatsDto {
   // @Expose()
@@ -9,6 +33,10 @@ export class VolumeStatsDto {
   @Expose()
   @IsString()
   volumeName: string;
+
+  @Expose()
+  @IsString()
+  namespaceName: string;
 
   @Expose()
   @IsNumber()
@@ -21,4 +49,16 @@ export class VolumeStatsDto {
   @Expose()
   @IsNumber()
   usedBytes: number;
+
+  @Expose()
+  @IsOptional()
+  status?: VolumeStatusEnum;
+
+  @Expose()
+  @IsOptional()
+  messages?: VolumeStatusMessageDto[];
+
+  @Expose()
+  @IsOptional()
+  usedByPods?: string[];
 }

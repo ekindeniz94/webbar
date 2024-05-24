@@ -1,4 +1,3 @@
-export * from './k8s-manager';
 export * from './permissions';
 export * from './workload';
 
@@ -9,3 +8,6 @@ export * from './product-state.enum';
 export * from './product-type.enum';
 export * from './organization-user-state.enum';
 export * from './roles.enum';
+export * from './pvc-phase.enum';
+export * from './file-event-update.enum';
+export * from './volume-event-update.enum';

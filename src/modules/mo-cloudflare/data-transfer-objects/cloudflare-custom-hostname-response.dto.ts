@@ -1,5 +1,5 @@
 import { CloudflareCustomHostnameStatusEnum } from '../enums';
-import { Expose, Exclude, Transform } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import {
   ICloudflareCustomHostnameDetailsSsl,
   ICloudflareCustomHostnameDetailsSslValidationRecord

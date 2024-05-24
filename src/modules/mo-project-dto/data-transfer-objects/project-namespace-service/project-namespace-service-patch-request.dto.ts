@@ -1,18 +1,28 @@
-import { Exclude, Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsNotEmpty, IsOptional, IsString, IsUUID, ValidateNested } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import {
+  ArrayMinSize,
+  IsArray,
+  isArray,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  isNumberString,
+  IsOptional,
+  isString,
+  IsString,
+  IsUUID,
+  MaxLength,
+  MinLength,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator';
 import { StripTags } from '@mo/js-utils';
-import { ProjectNamespaceServiceCreateRequestDto } from './project-namespace-service-create-request.dto';
-import { ProjectNamespaceServiceKubernetesSettingsPatchRequestDto } from '../project-namespace-service-kubernetes-settings';
-import { ProjectNamespaceServiceEnvvarPatchRequestDto } from '../project-namespace-service-envvar';
-import { ProjectNamespaceServicePortPatchRequestDto } from '../project-namespace-service-port';
-import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-cname';
-import { ServiceTypeEnum } from '../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-namespace-service-container/project-namespace-service-container-patch-request.dto';
+import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
+import { CronjobSettingsDto } from './cronjob-settings.dto';
 
-export class ProjectNamespaceServicePatchRequestDto extends ProjectNamespaceServiceCreateRequestDto {
-  @IsOptional()
-  @Exclude()
-  type: ServiceTypeEnum;
-
+export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()
   @IsString()
   @IsUUID()
@@ -20,34 +30,56 @@ export class ProjectNamespaceServicePatchRequestDto extends ProjectNamespaceServ
   @Expose()
   id: string;
 
+  @IsEnum(ServiceControllerEnum)
+  @Expose()
+  controller: ServiceControllerEnum;
+
   @IsNotEmpty()
-  @Type(() => ProjectNamespaceServiceKubernetesSettingsPatchRequestDto)
-  @ValidateNested()
+  @IsString()
+  @MinLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MIN)
+  @MaxLength(PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.SERVICE.DISPLAY_NAME.MAX)
+  )
+  @StripTags()
   @Expose()
-  kubernetesSettings: ProjectNamespaceServiceKubernetesSettingsPatchRequestDto;
+  displayName: string;
 
   @IsOptional()
+  @IsString()
+  @StripTags()
+  @Expose()
+  description: string;
+
+  @IsNotEmpty()
+  @Type(() => ProjectNamespaceServiceContainerPatchRequestDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceEnvvarPatchRequestDto)
-  @ValidateNested()
+  @IsArray()
+  @ValidateNested({ each: true, message: '$property must be an array' })
+  @ArrayMinSize(1)
   @Expose()
-  envVars: ProjectNamespaceServiceEnvvarPatchRequestDto[];
+  containers: ProjectNamespaceServiceContainerPatchRequestDto[];
 
-  @IsOptional()
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServicePortPatchRequestDto)
+  @IsNotEmpty()
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.DEPLOYMENT)
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumberString(value) ? +value : value))
+  @IsNumber()
   @Expose()
-  ports: ProjectNamespaceServicePortPatchRequestDto[];
+  replicaCount: number;
 
-  @IsOptional()
-  @Transform(({ value }) => {
-    if (value && isArray(value)) {
-      return value.filter((item: ProjectNamespaceServiceCnamePatchRequestDto) => !!item.cName);
-    }
-    return [];
-  })
-  @Type(() => ProjectNamespaceServiceCnamePatchRequestDto)
-  @ValidateNested()
+  @IsNotEmpty()
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.DEPLOYMENT)
+  @IsEnum(ProjectNamespaceServiceDeploymentStrategyEnum)
+  @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
-  cNames: ProjectNamespaceServiceCnamePatchRequestDto[];
+  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @IsNotEmpty()
+  @Transform(({ value, obj }) => (obj.controller === ServiceControllerEnum.CRON_JOB ? value : undefined))
+  @ValidateIf((obj: ProjectNamespaceServicePatchRequestDto) => obj.controller === ServiceControllerEnum.CRON_JOB)
+  @Type(() => CronjobSettingsDto)
+  @ValidateNested({ message: '$property must be an object' })
+  @Expose()
+  cronJobSettings?: CronjobSettingsDto;
 }

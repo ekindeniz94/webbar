@@ -2,7 +2,6 @@ import { Expose, Transform } from 'class-transformer';
 import { isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { ProjectStateEnum } from '../../enums';
 import { MoUtils } from '@mo/js-utils';
 
 export class ProjectDisplayNameDto {
@@ -13,8 +12,8 @@ export class ProjectDisplayNameDto {
   @Expose()
   citt: boolean;
 
-  @Transform(
-    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;
@@ -29,10 +28,6 @@ export class ProjectDisplayNameDto {
 
   @Expose()
   description: string;
-
-  @Transform(({ value }) => value ?? ProjectStateEnum.INACTIVE)
-  @Expose()
-  state: ProjectStateEnum;
 
   @Expose()
   bgColorStyle: string;
