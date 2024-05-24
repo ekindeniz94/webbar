@@ -16,6 +16,9 @@ export class TrafficDto {
   receivedBytes: number;
 
   @Expose()
+  totalReceivedBytes: number;
+
+  @Expose()
   trafficShutdownLimit: number;
 
   @Expose()
@@ -24,12 +27,15 @@ export class TrafficDto {
   @Expose()
   transmitBytes: number;
 
+  @Expose()
+  totalTransmitBytes: number;
+
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: string;
 
   get totalTrafficBytes(): number {
-    return _.sum([this.receivedBytes, this.transmitBytes]);
+    return _.sum([this.totalReceivedBytes, this.totalTransmitBytes]);
   }
 
   get totalLocalTrafficBytes(): number {
