@@ -41,7 +41,7 @@ export class GitRepositoryDto {
 
   @Transform(({ value, obj }) => {
     if (value) return value;
-    if (obj.provider === GitConnectionTypeEnum.GIT_LAB) return obj.http_url_to_repo;
+    if (obj.provider === GitConnectionTypeEnum.GIT_LAB) return obj.http_url_to_repo ?? obj.git_http_url;
     if (obj.provider === GitConnectionTypeEnum.GIT_HUB) return obj.clone_url;
     return obj.clone_url || obj.http_url_to_repo;
   })
