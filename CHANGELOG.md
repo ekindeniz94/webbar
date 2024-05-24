@@ -2,6 +2,13 @@
 
 
 
+# 2.1.0-develop.111 (2024-05-24)
+
+
+### Bug Fixes
+
+* git repository dto ([8ed4b46](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ed4b46834fc46b4ef36e64b82ff00421e6887de))
+
 # 2.1.0-develop.110 (2024-05-24)
 
 
