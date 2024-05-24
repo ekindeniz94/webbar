@@ -8,6 +8,7 @@ import { ProjectNamespaceServiceContainerDto } from '../project-namespace-servic
 import { IdDto } from '@mo/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { OriginTrafficDto } from '../traffic';
+import { TrafficDto } from '../stats';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -53,7 +54,7 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Expose()
   cronJobSettings?: CronjobSettingsDto;
 
-  @Type(() => OriginTrafficDto)
+  @Type(() => TrafficDto)
   @Expose()
-  traffic: OriginTrafficDto;
+  traffic: TrafficDto;
 }

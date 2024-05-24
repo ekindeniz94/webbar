@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { CpuDto, EphemeralStorageDto, MemoryDto, StorageDto } from '../stats';
+import {CpuDto, EphemeralStorageDto, MemoryDto, StorageDto, TrafficDto} from '../stats';
 import { OriginTrafficDto } from '../traffic';
 
 export class ProjectNamespaceStatsDto {
@@ -28,7 +28,7 @@ export class ProjectNamespaceStatsDto {
   @Expose()
   storage: StorageDto;
 
-  @Type(() => OriginTrafficDto)
+  @Type(() => TrafficDto)
   @Expose()
-  traffic: OriginTrafficDto;
+  traffic: TrafficDto;
 }
