@@ -11,7 +11,7 @@ export class ProjectNamespaceServiceCnamePatchRequestDto extends ProjectNamespac
   @Expose()
   id: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
   @IsBoolean()
   @Expose()
   addToTlsHosts: boolean;

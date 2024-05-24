@@ -9,7 +9,7 @@ export class ProjectNamespaceServiceCnameNameDto {
   @Expose()
   cName: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
   @IsBoolean()
   @Expose()
   addToTlsHosts: boolean;
