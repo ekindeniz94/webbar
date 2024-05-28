@@ -2,6 +2,14 @@
 
 
 
+## 2.1.1 (2024-05-28)
+
+
+### Bug Fixes
+
+* opt imports ([a2491d1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a2491d110b0efa7c2004e2db3aca7cde1bcc3b28))
+* update js-utils ([55f8c95](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55f8c95d6dc417b635af8df101e33569e737239d))
+
 # 2.1.0 (2024-05-24)
 
 
