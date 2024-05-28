@@ -34,7 +34,7 @@
   "dependencies": {
     "@mo/core-dto": "^2.0.7",
     "@mo/database-dto": "^2.0.3",
-    "@mo/js-utils": "^2.0.9",
+    "@mo/js-utils": "^2.0.11",
     "@mo/user-dto": "^2.0.6",
     "@mo/websocket-dto": "^2.0.2",
     "class-transformer": "^0.5.1",
