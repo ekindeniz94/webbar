@@ -2,6 +2,13 @@
 
 
 
+## 2.1.2 (2024-05-28)
+
+
+### Bug Fixes
+
+* update js-utils ([cb1b0e4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cb1b0e4e3c3f16da9d8aef906fdb431abad34e2a))
+
 ## 2.1.1 (2024-05-28)
 
 
