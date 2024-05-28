@@ -1,6 +1,6 @@
 import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { IsSemanticVersion, MoUtils } from '@mo/js-utils';
+import { IsSemanticVersion, MoUtils, TransformToBoolean } from '@mo/js-utils';
 import _ from 'lodash';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
@@ -96,7 +96,7 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   clusterMfaId: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsOptional()
   @IsBoolean()
   @Expose()

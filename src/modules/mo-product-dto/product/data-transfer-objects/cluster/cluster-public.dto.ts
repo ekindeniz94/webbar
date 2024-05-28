@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import { isArray, isBoolean, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 
 export class ClusterPublicDto {
   @Expose()
@@ -44,10 +44,9 @@ export class ClusterPublicDto {
   @Expose()
   description: string;
 
-  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @TransformToBoolean(false)
   // @Expose()
   // cloudflareProxied: boolean;
-
   @Transform(({ value }) =>
     _.uniq((value && isArray(value) ? value : []) as string[]).filter((item: string) => isIP(item))
   )

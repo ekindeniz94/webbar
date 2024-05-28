@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
-import { MoUtils } from '@mo/js-utils';
+import {MoUtils, TransformToBoolean} from '@mo/js-utils';
 
 export class ClusterFlatDto extends BaseEntityDto {
   @Type(() => Number)
@@ -50,7 +50,7 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @TransformToBoolean(false)
   // @Expose()
   // cloudflareProxied: boolean;
 
@@ -60,7 +60,7 @@ export class ClusterFlatDto extends BaseEntityDto {
   @Expose()
   apiKey: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   apiKeyIsActive: boolean;
 

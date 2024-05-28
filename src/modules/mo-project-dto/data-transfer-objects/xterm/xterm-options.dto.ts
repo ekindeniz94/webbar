@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsBoolean, IsOptional, IsString } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 
 export abstract class XtermOptionsDto {
   @Type(() => Boolean)
@@ -27,7 +27,7 @@ export abstract class XtermOptionsDto {
 
   @IsOptional()
   @IsBoolean()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @Expose()
   convertEol?: boolean;
 }

@@ -1,6 +1,6 @@
 import { isBoolean, IsBoolean, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import { MoUtils, StripTags } from '@mo/js-utils';
+import { MoUtils, StripTags, TransformToBoolean } from '@mo/js-utils';
 import { ProjectNamespaceServiceCnameCreateRequestDto } from './project-namespace-service-cname-create-request.dto';
 
 export class ProjectNamespaceServiceCnamePatchRequestDto extends ProjectNamespaceServiceCnameCreateRequestDto {
@@ -11,7 +11,7 @@ export class ProjectNamespaceServiceCnamePatchRequestDto extends ProjectNamespac
   @Expose()
   id: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @IsBoolean()
   @Expose()
   addToTlsHosts: boolean;

@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { SpectrumAppResultDto } from './spectrum-app-result.dto';
 import { isArray } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class SpectrumAppResponseListDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
@@ -9,7 +9,7 @@ export class SpectrumAppResponseListDto {
   @Expose()
   result: SpectrumAppResultDto[];
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   success: boolean;
 

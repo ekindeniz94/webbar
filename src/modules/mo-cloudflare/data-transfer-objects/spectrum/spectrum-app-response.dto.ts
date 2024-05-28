@@ -1,13 +1,13 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { SpectrumAppResultDto } from './spectrum-app-result.dto';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class SpectrumAppResponseDto {
   @Type(() => SpectrumAppResultDto)
   @Expose()
   result: SpectrumAppResultDto;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   success: boolean;
 

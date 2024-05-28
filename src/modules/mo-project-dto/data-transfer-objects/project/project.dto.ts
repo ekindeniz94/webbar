@@ -6,7 +6,7 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionDto } from '../../../mo-git';
-import { MoUtils } from '@mo/js-utils';
+import {MoUtils, TransformToBoolean} from '@mo/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectDto extends BaseEntityDto {
@@ -42,7 +42,7 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   projectUserCount: number;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   citt: boolean;
 

@@ -1,7 +1,7 @@
 import { ClusterCreateRequestDto } from './cluster-create-request.dto';
 import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 import _ from 'lodash';
 import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
@@ -71,7 +71,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   image: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsOptional()
   @IsBoolean()
   @Expose()

@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { MoUtils, StripTags } from '@mo/js-utils';
+import { MoUtils, StripTags, TransformToBoolean } from '@mo/js-utils';
 import { IsBoolean, isBoolean, IsFQDN, IsString } from 'class-validator';
 
 export class ProjectNamespaceServiceCnameNameDto {
@@ -9,7 +9,7 @@ export class ProjectNamespaceServiceCnameNameDto {
   @Expose()
   cName: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @IsBoolean()
   @Expose()
   addToTlsHosts: boolean;

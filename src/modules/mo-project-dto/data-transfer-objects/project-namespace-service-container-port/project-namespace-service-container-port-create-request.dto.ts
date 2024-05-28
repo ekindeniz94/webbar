@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isBoolean, IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
-import { MoUtils } from '@mo/js-utils';
+import {MoUtils, TransformToBoolean} from '@mo/js-utils';
 
 export class ProjectNamespaceServiceContainerPortCreateRequestDto {
   @IsNotEmpty()
@@ -26,14 +26,12 @@ export class ProjectNamespaceServiceContainerPortCreateRequestDto {
   @Expose()
   externalPort: number;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsBoolean()
   @Expose()
   expose: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? value : false))
+  @TransformToBoolean(false)
   @IsNotEmpty()
   @IsBoolean()
   @Expose()

@@ -5,7 +5,7 @@ import { ClusterSetupDto } from './cluster-setup.dto';
 import { BaseEntityDto, CountryDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 
 export class ClusterDto extends BaseEntityDto {
   // @Type(() => ProductDto)
@@ -70,7 +70,7 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  // @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  // @TransformToBoolean(false)
   // @Expose()
   // cloudflareProxied: boolean;
 
@@ -80,7 +80,7 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   apiKey: string;
 
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   apiKeyIsActive: boolean;
 

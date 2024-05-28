@@ -9,7 +9,7 @@ import {
   ValidateIf
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 
 export class ClusterSyncUpdatePayloadDto {
   @IsOptional()
@@ -29,13 +29,13 @@ export class ClusterSyncUpdatePayloadDto {
   @Expose()
   pat: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsNotEmpty()
   @IsBoolean()
   @Expose()
   allowPull: boolean;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsNotEmpty()
   @IsBoolean()
   @Expose()

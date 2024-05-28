@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums/project-namespace-service-port-binding.enum';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 
 export class K8sPortsDto {
   @Expose()
@@ -12,8 +12,7 @@ export class K8sPortsDto {
   @Expose()
   externalPort: number;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   expose: boolean;
 }

@@ -4,7 +4,7 @@ import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { IdDto } from '@mo/core-dto';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 import { ClusterDto } from '../cluster';
 import { ProductKubernetesSettingsCreateRequestDto } from './product-kubernetes-settings-create-request.dto';
 
@@ -125,12 +125,12 @@ export class ProductCreateRequestDto {
 
   /****************************************************************/
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsBoolean()
   @Expose()
   enableTeamCollaboration: boolean;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsBoolean()
   @Expose()
   enableCreateCluster: boolean;

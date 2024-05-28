@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { MoUtils } from '@mo/js-utils';
+import {MoUtils, TransformToBoolean} from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { BaseEntityDto } from '@mo/database-dto';
 import moment from 'moment/moment';
@@ -90,11 +90,11 @@ export class ProductFlatDto extends BaseEntityDto {
 
   /****************************************************************/
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   enableTeamCollaboration: boolean;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   enableCreateCluster: boolean;
 }
