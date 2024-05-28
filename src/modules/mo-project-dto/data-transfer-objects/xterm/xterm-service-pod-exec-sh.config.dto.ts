@@ -1,8 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
-import { XtermBaseConfigDto } from './xterm-base-config.dto';
 import { IsNotEmpty, IsString } from 'class-validator';
 import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
-import {XtermBaseNamespaceContainerConfigDto} from "./xterm-base-namespace-container-config.dto";
+import { XtermBaseNamespaceContainerConfigDto } from './xterm-base-namespace-container-config.dto';
 
 export class XtermServicePodExecShConfigDto extends XtermBaseNamespaceContainerConfigDto {
   @Transform(() => XtermRequestTypeEnum.SERVICE__POD_EXEC_SH)

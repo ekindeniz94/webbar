@@ -6,7 +6,7 @@ export type RedisPubSubMessageTypes =
   // | IRedisPubSubMessageK8sNotification
   // | IRedisPubSubMessageNamespace
   // | IRedisPubSubMessageNamespaceInvitation
-  | IRedisPubSubMessageNotification
-  // | IRedisPubSubMessageUser
-  // | IRedisPubSubMessagePayment
-  // | IRedisPubSubMessageAuth;
+  IRedisPubSubMessageNotification;
+// | IRedisPubSubMessageUser
+// | IRedisPubSubMessagePayment
+// | IRedisPubSubMessageAuth;

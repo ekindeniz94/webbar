@@ -1,6 +1,6 @@
-import {NotificationSocketDataEventEnum, NotificationSocketEventEnum} from '../enums';
-import {IRedisPubSubMessageDeprecated} from './redis-pub-sub-message';
-import {RedisPubSubMessageDataTypes} from '../types';
+import { NotificationSocketDataEventEnum, NotificationSocketEventEnum } from '../enums';
+import { IRedisPubSubMessageDeprecated } from './redis-pub-sub-message';
+import { RedisPubSubMessageDataTypes } from '../types';
 
 /*********************************************
  * NOTIFICATION

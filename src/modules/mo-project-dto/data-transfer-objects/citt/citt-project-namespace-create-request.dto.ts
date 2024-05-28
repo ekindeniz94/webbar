@@ -7,8 +7,8 @@ import { CittProjectNamespaceServiceCreateRequestDto } from './citt-project-name
 export class CittProjectNamespaceCreateRequestDto {
   @IsNotEmpty()
   @IsString()
-  @Transform(
-    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DISPLAY_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, PROJECT_CONST.STAGE.DISPLAY_NAME.MAX)
   )
   @Expose()
   displayName: string;

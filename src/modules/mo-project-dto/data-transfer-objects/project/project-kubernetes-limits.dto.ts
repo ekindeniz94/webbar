@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, isBoolean, IsNotEmpty, isNumber, IsNumber } from 'class-validator';
-import {MoUtils, TransformToBoolean} from '@mo/js-utils';
+import { IsBoolean, IsNotEmpty, isNumber, IsNumber } from 'class-validator';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProjectKubernetesLimitsDto {
   @IsNotEmpty()

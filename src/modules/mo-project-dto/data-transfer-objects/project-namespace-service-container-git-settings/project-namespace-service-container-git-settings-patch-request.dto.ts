@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { isBoolean, IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, isString, IsUUID } from 'class-validator';
-import {MoUtils, StripTags, TransformToBoolean} from '@mo/js-utils';
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, isString, IsUUID } from 'class-validator';
+import { StripTags, TransformToBoolean } from '@mo/js-utils';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class ProjectNamespaceServiceContainerGitSettingsPatchRequestDto extends BaseEntityDto {

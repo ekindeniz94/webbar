@@ -5,7 +5,7 @@ import {
   ProjectNamespaceServiceStatusKindTypeEnum
 } from '../../enums/project-namespace-service-status.enum';
 import { cloneDeep } from 'lodash';
-import { IsOptional, isArray } from 'class-validator';
+import { isArray, IsOptional } from 'class-validator';
 
 export enum ProjectNamespaceServiceStatusMessageTypeEnum {
   INFO = 'INFO',

@@ -1,6 +1,6 @@
-import { Expose, Transform } from 'class-transformer';
-import { MoUtils, StripTags, TransformToBoolean } from '@mo/js-utils';
-import { IsBoolean, isBoolean, IsFQDN, IsString } from 'class-validator';
+import { Expose } from 'class-transformer';
+import { StripTags, TransformToBoolean } from '@mo/js-utils';
+import { IsBoolean, IsFQDN, IsString } from 'class-validator';
 
 export class ProjectNamespaceServiceCnameNameDto {
   @IsString()

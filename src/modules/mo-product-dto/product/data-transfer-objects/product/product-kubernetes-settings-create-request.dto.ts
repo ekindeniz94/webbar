@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, isBoolean, IsEnum, IsNotEmpty, isNumber, IsNumber, isNumberString } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, isNumber, IsNumber, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto/enums';
-import {MoUtils, TransformToBoolean} from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)

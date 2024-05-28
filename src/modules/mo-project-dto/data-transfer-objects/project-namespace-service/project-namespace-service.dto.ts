@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isNumberString, isString, ValidateNested } from 'class-validator';
+import { isArray, isNumberString, isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { UserPublicDto } from '@mo/user-dto';
@@ -7,7 +7,6 @@ import { ProjectNamespaceServiceAppDto } from '../project-namespace-service-app'
 import { ProjectNamespaceServiceContainerDto } from '../project-namespace-service-container/project-namespace-service-container.dto';
 import { IdDto } from '@mo/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
-import { OriginTrafficDto } from '../traffic';
 import { TrafficDto } from '../stats';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {

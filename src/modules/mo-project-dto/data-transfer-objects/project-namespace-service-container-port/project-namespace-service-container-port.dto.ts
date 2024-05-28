@@ -1,8 +1,8 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
-import {MoUtils, TransformToBoolean} from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {
   @Expose()
