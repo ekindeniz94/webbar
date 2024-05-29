@@ -2,6 +2,13 @@
 
 
 
+## 2.1.3 (2024-05-29)
+
+
+### Bug Fixes
+
+* ProjectNamespaceServiceEnvVarTypeEnum.PLAINTEXT ([5142efe](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5142efea763daa280e8fe82e2122bb77b0d5c587))
+
 ## 2.1.2 (2024-05-28)
 
 
