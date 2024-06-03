@@ -2,6 +2,13 @@
 
 
 
+## 2.1.4 (2024-06-03)
+
+
+### Bug Fixes
+
+* add appVersion to cluster public dto ([6b82fe2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6b82fe218b4d13d318b38e5b44490fec28cbf875))
+
 ## 2.1.3 (2024-05-29)
 
 
