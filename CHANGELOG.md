@@ -2,6 +2,13 @@
 
 
 
+## 2.1.5 (2024-06-03)
+
+
+### Bug Fixes
+
+* update packages ([8a0a0ad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8a0a0add55e91763569232c96b2b09759c9e4a62))
+
 ## 2.1.4 (2024-06-03)
 
 
