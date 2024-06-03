@@ -43,6 +43,9 @@ export class ClusterPublicDto {
   @Expose()
   description: string;
 
+  @Expose()
+  appVersion: string;
+
   // @TransformToBoolean(false)
   // @Expose()
   // cloudflareProxied: boolean;
