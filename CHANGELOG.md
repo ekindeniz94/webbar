@@ -2,6 +2,13 @@
 
 
 
+## 2.1.6 (2024-06-04)
+
+
+### Bug Fixes
+
+* update ProductOrganizationSocketDataEventEnum ([79e5464](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/79e54646fbc26498ecd1fe760ee17c680ebe366e))
+
 ## 2.1.5 (2024-06-03)
 
 
