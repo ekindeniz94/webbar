@@ -2,6 +2,13 @@
 
 
 
+## 2.1.7 (2024-06-10)
+
+
+### Bug Fixes
+
+* containerImageCommand and containerImageCommandArgs IsJson validator ([76071a7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/76071a70e9bb1ec89ee64df0f64dad1f8181d90b))
+
 ## 2.1.6 (2024-06-04)
 
 
