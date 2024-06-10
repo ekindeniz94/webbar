@@ -3,7 +3,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {
   isArray,
-  IsEnum,
+  IsEnum, IsJSON,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -106,11 +106,13 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
 
   @IsOptional()
   @IsString()
+  @IsJSON()
   @Expose()
   containerImageCommand: string;
 
   @IsOptional()
   @IsString()
+  @IsJSON()
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,

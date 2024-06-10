@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
-  IsEnum,
+  IsEnum, IsJSON,
   IsNotEmpty,
   IsOptional,
   isString,
@@ -105,6 +105,7 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
+  @IsJSON()
   @StripTags()
   @Expose()
   containerImageCommand: string;
@@ -112,6 +113,7 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
   @IsString()
+  @IsJSON()
   @StripTags()
   @Expose()
   containerImageCommandArgs: string;
