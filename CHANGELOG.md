@@ -2,6 +2,13 @@
 
 
 
+## 2.1.8 (2024-06-11)
+
+
+### Bug Fixes
+
+* containerImageCommand, containerImageCommandArgs ([b1fd4e7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b1fd4e74f8fe756921fa517bbaef4c7edf5df6d0))
+
 ## 2.1.7 (2024-06-10)
 
 
