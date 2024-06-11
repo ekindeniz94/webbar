@@ -1,7 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
-  IsEnum, IsJSON,
+  isEmpty,
+  IsEnum,
+  IsJSON,
   IsNotEmpty,
   IsOptional,
   isString,
@@ -103,6 +105,10 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   containerImageRepoSecret: KeyVaultSecretDto;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()
@@ -111,6 +117,10 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   containerImageCommand: string;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()

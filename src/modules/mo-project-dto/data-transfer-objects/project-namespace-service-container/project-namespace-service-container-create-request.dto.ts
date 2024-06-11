@@ -1,6 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
-  IsEnum, IsJSON,
+  isEmpty,
+  IsEnum,
+  IsJSON,
   IsNotEmpty,
   IsObject,
   IsOptional,
@@ -10,7 +12,7 @@ import {
   ValidateNested
 } from 'class-validator';
 import { KeyVaultSecretDto } from '../key-vault';
-import { StripTags } from '@mo/js-utils';
+import { MoUtils, StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { ProjectNamespaceServiceContainerGitSettingsCreateRequestDto } from '../project-namespace-service-container-git-settings';
@@ -64,6 +66,10 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   containerImageRepoSecret: KeyVaultSecretDto;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()
@@ -72,6 +78,10 @@ export class ProjectNamespaceServiceContainerCreateRequestDto {
   containerImageCommand: string;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerCreateRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()

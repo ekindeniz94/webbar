@@ -3,7 +3,9 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {
   isArray,
-  IsEnum, IsJSON,
+  isEmpty,
+  IsEnum,
+  IsJSON,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -104,12 +106,20 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   @Expose()
   containerImage: string;
 
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()
   @Expose()
   containerImageCommand: string;
 
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
   @IsJSON()
