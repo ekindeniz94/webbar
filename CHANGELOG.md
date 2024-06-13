@@ -2,6 +2,13 @@
 
 
 
+## 2.1.9 (2024-06-13)
+
+
+### Bug Fixes
+
+* fix ProjectNamespaceServiceContainerDto ([feebd73](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/feebd7310d32a30efdf8a8e27dd7ab425a56d1fb))
+
 ## 2.1.8 (2024-06-11)
 
 
