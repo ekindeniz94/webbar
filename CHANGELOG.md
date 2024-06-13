@@ -2,6 +2,13 @@
 
 
 
+## 2.1.11 (2024-06-13)
+
+
+### Bug Fixes
+
+* add demo to product type ([820ec53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/820ec53fa04d66088b583aa45037a5d934964523))
+
 ## 2.1.10 (2024-06-13)
 
 
