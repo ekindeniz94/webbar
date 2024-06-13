@@ -38,7 +38,7 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImage: string;
 
   @Type(() => KeyVaultSecretDto)
-  @Transform(({ value }) => (value && value.id) ?? null)
+  @Transform(({ value }) => (value && value.id ? value : null))
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 
