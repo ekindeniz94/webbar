@@ -2,6 +2,13 @@
 
 
 
+## 2.1.10 (2024-06-13)
+
+
+### Bug Fixes
+
+* impports ([e4f1030](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e4f1030bb827e27df7314fd967b1a7e7f96fb10a))
+
 ## 2.1.9 (2024-06-13)
 
 
