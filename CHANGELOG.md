@@ -2,6 +2,13 @@
 
 
 
+## 2.1.12 (2024-06-14)
+
+
+### Bug Fixes
+
+* add GET_ORGANIZATION_LIST ProductOrganizationSocketDataEventEnum ([88ccd89](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88ccd8947dfde3ac32a3e44829dedd55a9ab54cd))
+
 ## 2.1.11 (2024-06-13)
 
 
