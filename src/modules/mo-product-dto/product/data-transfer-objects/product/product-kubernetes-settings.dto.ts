@@ -14,9 +14,9 @@ export class ProductKubernetesSettingsDto {
   @Expose()
   limitCpuCores: number;
 
-  @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
-  @Expose()
-  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+  // @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
+  // @Expose()
+  // deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
 
   @Type(() => Number)
   @Transform(({ value }) => (isNumberString(value) ? +value : value))

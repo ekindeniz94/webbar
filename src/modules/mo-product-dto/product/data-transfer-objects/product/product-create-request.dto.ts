@@ -1,8 +1,16 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
+import {
+  isArray,
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  ValidateNested
+} from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { ProductBulletPointDto } from './product-bullet-point.dto';
 import { IdDto } from '@mo/core-dto';
 import { TransformToBoolean } from '@mo/js-utils';
 import { ClusterDto } from '../cluster';
@@ -15,11 +23,12 @@ export class ProductCreateRequestDto {
   @Expose()
   clusters: IdDto[];
 
-  @IsOptional()
+  @IsNotEmpty()
   @Type(() => IdDto)
   @Expose()
   organization: IdDto;
 
+  // TODO RAUS
   @IsOptional()
   @Type(() => IdDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
@@ -38,17 +47,6 @@ export class ProductCreateRequestDto {
   @IsString()
   @Expose()
   description: string;
-
-  @Type(() => ProductBulletPointDto)
-  @Transform(({ value }) => value ?? [])
-  @ValidateNested()
-  @Expose()
-  bulletPoints: ProductBulletPointDto[];
-
-  @IsOptional()
-  @IsString()
-  @Expose()
-  icon: string;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
@@ -70,23 +68,7 @@ export class ProductCreateRequestDto {
   @Expose()
   kubernetesLimits: ProductKubernetesSettingsCreateRequestDto;
 
-  @Type(() => Number)
-  @IsNumber()
-  @Expose()
-  trafficInMb: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0.9)
-  @IsNumber()
-  @Expose()
-  trafficWarning: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 1.3)
-  @IsNumber()
-  @Expose()
-  trafficShutdown: number;
-
+  // Es geht hier um die Anzahl der persistenten Volumes die erstellt werden können prüfen ob das in API verwendet wird.
   @Type(() => Number)
   @Transform(({ value }) => value ?? 1)
   @IsNumber()
@@ -98,18 +80,6 @@ export class ProductCreateRequestDto {
   @IsNumber()
   @Expose()
   persistentDiskInMb: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0.9)
-  @IsNumber()
-  @Expose()
-  persistentDiskWarning: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 1.3)
-  @IsNumber()
-  @Expose()
-  persistentDiskShutdown: number;
 
   @Type(() => Number)
   @IsOptional()

@@ -50,6 +50,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   host: string;
 
+  // Check für raus
   @Type(() => Number)
   @IsOptional()
   @IsNumber()
@@ -77,6 +78,7 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   apiKeyIsActive: boolean;
 
+  // Check für raus
   @Type(() => ClusterSetupDto)
   @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
   @Expose()
