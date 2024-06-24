@@ -50,7 +50,6 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   host: string;
 
-  // Check für raus
   @Type(() => Number)
   @IsOptional()
   @IsNumber()
