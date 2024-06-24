@@ -6,7 +6,7 @@ import { CountryDto } from '@mo/database-dto';
 import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
 import { OrganizationNameDto } from '../../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';
-import { ClusterSetupDto } from '../cluster-setup.dto';
+// import { ClusterSetupDto } from '../cluster-setup.dto';
 
 export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @IsNotEmpty()
@@ -108,10 +108,10 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   appVersion: string;
 
-  @Type(() => ClusterSetupDto)
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // @Type(() => ClusterSetupDto)
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @IsNotEmpty()
   @IsString()

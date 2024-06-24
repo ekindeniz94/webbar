@@ -23,10 +23,10 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   createdBy: UserPublicDto;
 
-  @Type(() => UserPublicDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  allowedUsers: UserPublicDto[];
+  // @Type(() => UserPublicDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @Expose()
+  // allowedUsers: UserPublicDto[];
 
   @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
   @Expose()

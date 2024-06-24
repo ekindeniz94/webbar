@@ -1,10 +1,9 @@
-import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { isArray, isIP } from 'class-validator';
-import _ from 'lodash';
-import { ClusterSetupDto } from './cluster-setup.dto';
-import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { TransformToBoolean } from '@mo/js-utils';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray, isIP } from 'class-validator';
+import _ from 'lodash';
+import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 
 export class ClusterFlatDto extends BaseEntityDto {
   @Type(() => Number)
@@ -70,9 +69,9 @@ export class ClusterFlatDto extends BaseEntityDto {
   // @Expose()
   // spectrumSubDomain: string;
 
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @Expose()
   containerRegistryUrl: string;

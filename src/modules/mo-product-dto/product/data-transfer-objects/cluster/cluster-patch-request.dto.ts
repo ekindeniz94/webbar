@@ -3,7 +3,7 @@ import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsS
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 import _ from 'lodash';
-import { ClusterSetupDto } from './cluster-setup.dto';
+// import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
 
@@ -78,10 +78,10 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   apiKeyIsActive: boolean;
 
   // Check für raus
-  @Type(() => ClusterSetupDto)
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // @Type(() => ClusterSetupDto)
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @IsNotEmpty()
   @IsString()

@@ -1,7 +1,7 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
-import { ClusterSetupDto } from './cluster-setup.dto';
+// import { ClusterSetupDto } from './cluster-setup.dto';
 import { BaseEntityDto, CountryDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
@@ -90,9 +90,9 @@ export class ClusterDto extends BaseEntityDto {
   // @Expose()
   // spectrumSubDomain: string;
 
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @Expose()
   containerRegistryUrl: string;
