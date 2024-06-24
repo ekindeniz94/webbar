@@ -2,6 +2,14 @@
 
 
 
+## 2.1.13 (2024-06-24)
+
+
+### Bug Fixes
+
+* admin-area unsaved. ([19a3c21](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/19a3c211c33743b358caf4f6b364f8e27f7f4446))
+* admin-area. ([c7320d3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c7320d3743ce34a54abc0640fc7ff507d3acab8d))
+
 ## 2.1.12 (2024-06-14)
 
 
