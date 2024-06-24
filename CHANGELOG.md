@@ -2,6 +2,14 @@
 
 
 
+## 2.1.14 (2024-06-24)
+
+
+### Bug Fixes
+
+* removed unnecessary product fields again. ([cabd567](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cabd5671d0ab5177e285b037ca46f5ecfbd1f456))
+* removed unnecessary product fields. ([0bb66e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0bb66e2c144ba5d277e0372d1f11eee3ccdcfb54))
+
 ## 2.1.13 (2024-06-24)
 
 
