@@ -29,11 +29,11 @@ export class ProductCreateRequestDto {
   organization: IdDto;
 
   // TODO RAUS
-  @IsOptional()
-  @Type(() => IdDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  allowedUsers: IdDto[];
+  // @IsOptional()
+  // @Type(() => IdDto)
+  // @Transform(({ value }) => (value && isArray(value) ? value : []))
+  // @Expose()
+  // allowedUsers: IdDto[];
 
   @IsEnum(ProductTypeEnum)
   @Transform(({ value }) => value ?? ProductTypeEnum.PLAN)
