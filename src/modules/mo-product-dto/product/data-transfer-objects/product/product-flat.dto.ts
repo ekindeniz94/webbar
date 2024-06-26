@@ -3,7 +3,7 @@ import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { TransformToBoolean } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { BaseEntityDto } from '@mo/database-dto';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductFlatDto extends BaseEntityDto {

@@ -1,6 +1,6 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { K8sJobNotificationTypeEnum, K8sJobStateEnum } from '../../enums/k8s-manager';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { K8sJobCommandDto } from './k8s-job-command.dto';
 import {
   IsEnum,

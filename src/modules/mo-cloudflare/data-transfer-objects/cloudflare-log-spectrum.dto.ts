@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { SpectrumEventsEnum } from '../enums';
 import { isNumber, isNumberString } from 'class-validator';
-import moment from 'moment/moment';
+import moment from 'moment';
 
 export class CloudflareLogSpectrumDto {
   @Expose()
