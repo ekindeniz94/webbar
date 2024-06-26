@@ -2,6 +2,13 @@
 
 
 
+## 2.1.15 (2024-06-26)
+
+
+### Bug Fixes
+
+* add ProjectiIemDto (GitConnectionPublicDto) ([aeb411b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aeb411b7ac53c5d47d4c38637314308b2797b0f6))
+
 ## 2.1.14 (2024-06-24)
 
 
