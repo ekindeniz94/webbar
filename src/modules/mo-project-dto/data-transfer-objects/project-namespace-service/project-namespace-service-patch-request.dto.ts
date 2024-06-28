@@ -21,6 +21,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-namespace-service-container/project-namespace-service-container-patch-request.dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
+import { HpaSettingsDto } from './project-namespace-service.dto';
 
 export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()
@@ -82,4 +83,15 @@ export class ProjectNamespaceServicePatchRequestDto {
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
   cronJobSettings?: CronjobSettingsDto;
+
+  @IsNotEmpty()
+  @Transform(({ value, obj }) => (obj.controller === ServiceControllerEnum.DEPLOYMENT ? value : undefined))
+  @ValidateIf(
+    (obj: ProjectNamespaceServicePatchRequestDto) =>
+      obj.controller === ServiceControllerEnum.DEPLOYMENT && obj.hpaSettings !== undefined
+  )
+  @Type(() => HpaSettingsDto)
+  @ValidateNested({ message: '$property must be an object' })
+  @Expose()
+  hpaSettings?: HpaSettingsDto;
 }
