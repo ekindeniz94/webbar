@@ -2,13 +2,13 @@ import { Expose, Transform } from 'class-transformer';
 import { isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProjectDisplayNameDto {
   @Expose()
   id: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   citt: boolean;
 

@@ -1,7 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
+  isEmpty,
   IsEnum,
+  IsJSON,
   IsNotEmpty,
   IsOptional,
   isString,
@@ -10,7 +12,6 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { KeyVaultSecretDto } from '../key-vault';
 import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
@@ -19,6 +20,7 @@ import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-
 import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
+import { IdDto } from '@mo/core-dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -97,21 +99,38 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
   @IsOptional()
-  @Type(() => KeyVaultSecretDto)
-  @Transform(({ value }) => value ?? null)
+  @Type(() => IdDto)
+  @ValidateNested({ message: '$property must be an object' })
+  @Transform(({ value }) =>
+    isString(value)
+      ? {
+          id: value
+        }
+      : value ?? null
+  )
   @Expose()
-  containerImageRepoSecret: KeyVaultSecretDto;
+  containerImageRepoSecret: IdDto;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
+  @IsJSON()
   @StripTags()
   @Expose()
   containerImageCommand: string;
 
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.CONTAINER_IMAGE)
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
+  @IsJSON()
   @StripTags()
   @Expose()
   containerImageCommandArgs: string;

@@ -4,7 +4,7 @@ export enum ProductStateEnum {
   ACTIVE = 'ACTIVE'
 }
 
-export const PlanStateEnum_ALL: ProductStateEnum[] = [
+export const ProductStateEnum_ALL: ProductStateEnum[] = [
   //
   ProductStateEnum.CREATED,
   ProductStateEnum.INACTIVE,

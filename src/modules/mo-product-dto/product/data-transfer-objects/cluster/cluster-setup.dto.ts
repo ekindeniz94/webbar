@@ -1,6 +1,5 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { isBoolean } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { Expose, Transform } from 'class-transformer';
+import { TransformToBoolean } from '@mo/js-utils';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterSetupDto extends BaseEntityDto {
@@ -20,38 +19,31 @@ export class ClusterSetupDto extends BaseEntityDto {
   @Expose()
   namespace: string;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   metricsServer: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @Expose()
   k8sManager: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @Expose()
   trafficCollector: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @Expose()
   podStatsCollector: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   ingressController: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   certManager: boolean;
 
-  @Type(() => Boolean)
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @Expose()
   defaultBackend: boolean;
 }

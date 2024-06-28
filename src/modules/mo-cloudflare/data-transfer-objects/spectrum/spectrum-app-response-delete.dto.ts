@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { isArray } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class SpectrumAppResponseDeleteDto {
   @Expose()
@@ -8,7 +8,7 @@ export class SpectrumAppResponseDeleteDto {
     id: string;
   };
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   success: boolean;
 

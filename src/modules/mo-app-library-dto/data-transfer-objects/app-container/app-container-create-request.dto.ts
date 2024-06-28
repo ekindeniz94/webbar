@@ -3,9 +3,10 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {
   isArray,
+  isEmpty,
   IsEnum,
+  IsJSON,
   IsNotEmpty,
-  IsObject,
   IsOptional,
   IsString,
   isString,
@@ -16,11 +17,10 @@ import {
 } from 'class-validator';
 import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
-import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-container/project-namespace-service-container-kubernetes-limits.dto';
 import { AppPortDto } from '../app-port.dto';
 import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
-import {StripTags} from "@mo/js-utils";
+import { StripTags } from '@mo/js-utils';
 
 export class AppContainerCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()
@@ -106,13 +106,23 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   @Expose()
   containerImage: string;
 
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
+  @IsJSON()
   @Expose()
   containerImageCommand: string;
 
+  @Transform(({ value }) => {
+    const trimmedValue = value && isString(value) ? value.trim() : value;
+    return !trimmedValue || isEmpty(trimmedValue) ? undefined : value;
+  })
   @IsOptional()
   @IsString()
+  @IsJSON()
   @Transform(({ value }) =>
     (value && isString(value) ? value.trim() : value)?.substring(
       0,

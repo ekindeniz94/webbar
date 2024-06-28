@@ -5,11 +5,11 @@ import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
-import { GitConnectionDto } from '../../../mo-git';
+import { GitConnectionPublicDto } from '../../../mo-git';
 import { TransformToBoolean } from '@mo/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
-export class ProjectDto extends BaseEntityDto {
+export class ProjectItemDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
   @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
@@ -25,10 +25,10 @@ export class ProjectDto extends BaseEntityDto {
   @Expose()
   cluster: ClusterPublicDto;
 
-  @Type(() => GitConnectionDto)
+  @Type(() => GitConnectionPublicDto)
   @Transform(({ value }) => (value?.id ? value : undefined))
   @Expose()
-  gitConnection: GitConnectionDto;
+  gitConnection: GitConnectionPublicDto;
 
   @Type(() => Number)
   @Expose()

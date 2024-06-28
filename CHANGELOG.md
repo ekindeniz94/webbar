@@ -2,6 +2,245 @@
 
 
 
+## 2.1.15 (2024-06-26)
+
+
+### Bug Fixes
+
+* add ProjectiIemDto (GitConnectionPublicDto) ([aeb411b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aeb411b7ac53c5d47d4c38637314308b2797b0f6))
+
+## 2.1.14 (2024-06-24)
+
+
+### Bug Fixes
+
+* removed unnecessary product fields again. ([cabd567](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cabd5671d0ab5177e285b037ca46f5ecfbd1f456))
+* removed unnecessary product fields. ([0bb66e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0bb66e2c144ba5d277e0372d1f11eee3ccdcfb54))
+
+## 2.1.13 (2024-06-24)
+
+
+### Bug Fixes
+
+* admin-area unsaved. ([19a3c21](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/19a3c211c33743b358caf4f6b364f8e27f7f4446))
+* admin-area. ([c7320d3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c7320d3743ce34a54abc0640fc7ff507d3acab8d))
+
+## 2.1.12 (2024-06-14)
+
+
+### Bug Fixes
+
+* add GET_ORGANIZATION_LIST ProductOrganizationSocketDataEventEnum ([88ccd89](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88ccd8947dfde3ac32a3e44829dedd55a9ab54cd))
+
+## 2.1.11 (2024-06-13)
+
+
+### Bug Fixes
+
+* add demo to product type ([820ec53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/820ec53fa04d66088b583aa45037a5d934964523))
+
+## 2.1.10 (2024-06-13)
+
+
+### Bug Fixes
+
+* impports ([e4f1030](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e4f1030bb827e27df7314fd967b1a7e7f96fb10a))
+
+## 2.1.9 (2024-06-13)
+
+
+### Bug Fixes
+
+* fix ProjectNamespaceServiceContainerDto ([feebd73](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/feebd7310d32a30efdf8a8e27dd7ab425a56d1fb))
+
+## 2.1.8 (2024-06-11)
+
+
+### Bug Fixes
+
+* containerImageCommand, containerImageCommandArgs ([b1fd4e7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b1fd4e74f8fe756921fa517bbaef4c7edf5df6d0))
+
+## 2.1.7 (2024-06-10)
+
+
+### Bug Fixes
+
+* containerImageCommand and containerImageCommandArgs IsJson validator ([76071a7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/76071a70e9bb1ec89ee64df0f64dad1f8181d90b))
+
+## 2.1.6 (2024-06-04)
+
+
+### Bug Fixes
+
+* update ProductOrganizationSocketDataEventEnum ([79e5464](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/79e54646fbc26498ecd1fe760ee17c680ebe366e))
+
+## 2.1.5 (2024-06-03)
+
+
+### Bug Fixes
+
+* update packages ([8a0a0ad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8a0a0add55e91763569232c96b2b09759c9e4a62))
+
+## 2.1.4 (2024-06-03)
+
+
+### Bug Fixes
+
+* add appVersion to cluster public dto ([6b82fe2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6b82fe218b4d13d318b38e5b44490fec28cbf875))
+
+## 2.1.3 (2024-05-29)
+
+
+### Bug Fixes
+
+* ProjectNamespaceServiceEnvVarTypeEnum.PLAINTEXT ([5142efe](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5142efea763daa280e8fe82e2122bb77b0d5c587))
+
+## 2.1.2 (2024-05-28)
+
+
+### Bug Fixes
+
+* update js-utils ([cb1b0e4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cb1b0e4e3c3f16da9d8aef906fdb431abad34e2a))
+
+## 2.1.1 (2024-05-28)
+
+
+### Bug Fixes
+
+* opt imports ([a2491d1](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a2491d110b0efa7c2004e2db3aca7cde1bcc3b28))
+* update js-utils ([55f8c95](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/55f8c95d6dc417b635af8df101e33569e737239d))
+
+# 2.1.0 (2024-05-24)
+
+
+### Bug Fixes
+
+* add addToTlsHosts to cname ([8fcc22b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8fcc22b2a3a0d4583a079d420f1f9eb35370c14c))
+* add app container to service dto ([9e907af](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9e907afc7fef9c1cba6d1537df752d148794d15f))
+* add ClusterSyncUpdatePayloadDto ([1be8f0d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1be8f0d68ed228fb0b2bb193e1d75ee33e110937))
+* add constraints for storage status ([25335fc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/25335fcb592833f3f30f9063929bb8a0cff5725e))
+* add convertEol to xterm options ([cb3626b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/cb3626b90ea16da450902b6f7b5c15dd4b628c21))
+* add createdAt to TrafficDto ([a6546c4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a6546c47a6a57bd85a98b07e54c18df70c5c6922))
+* add docker-compose to service type ([646e046](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/646e046cfe9f30904a06ad78207938981ad5009d))
+* add FileListFullDto ([07cc380](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/07cc380ebd99ed176b6ca0c3f2ac8e4d287d1ebf))
+* add frontend context notification type enum to k8sjobdto ([436f46f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/436f46fad4f80f3367022e73fb84f5e569c0c984))
+* add k8s to XtermRequestTypeEnum ([4252afa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4252afa049e90a817728e964e754980d743b24b6))
+* add K8S_EVENT to K8sBuildTaskEnum ([8bba63f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8bba63f4b563c6a3307fd33391f17079ac3f91b3))
+* add KubernetesEventKindEnum persitentvolume ([baf4e53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/baf4e5374078daceb54c7ad4da106c773a01e957))
+* add maxVolumeSizeGb ProjectKubernetesLimitsDto/ProductKubernetesSettingsDto ([6a0f8bf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6a0f8bf39406a52134b5c6be13439cdfdc3ac1d2))
+* add new dtos for storage events ([64ed050](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/64ed050f601f6bb3185fea89853d167c611d798f))
+* add repositoryBranch to app dto ([3d2809a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3d2809a265cec6a6aeafad61f36093f2496917c4))
+* add storage related dto ([760b114](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/760b1149c0df74d956d21a202ae26fbc3ddfdd7f))
+* add xterm cluster tool dto ([6aac51a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6aac51acd003700ca8e10a7177235508ac817c71))
+* added logic for provider create git repository. ([9c0a425](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9c0a425a7f345ad4d622b8eb886773504a5bfaec))
+* addToTlsHosts default true ([d547dd3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d547dd37c9df722a6c87aa393c37e38a3455929c))
+* behrang refinement. ([154fbfb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/154fbfb2c2fd4df736645cb5f225c02441eac026))
+* buildState method ([2a078c9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2a078c9065c2cc2f3ec3148635c6ca1400c11cf9))
+* changed naming. ([7b7b07d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7b7b07d8bc056d4d11a70474102787594dcce9ae))
+* changed order of validators to fix project create. ([759aad9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/759aad9071d074b821d716acc1f25f5829c258f8))
+* changed order of validators to fix project create. ([1e6a4bf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1e6a4bf83786f6f56678a2a88ee759b5a675dedf))
+* cicd dtos ([5e2bf5d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5e2bf5d486d2397ced35dd634fe8803f0d7c595e))
+* create service dto ([386b5b5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/386b5b5ac561f0fd2f82ffbf80e05a2b551de4cb))
+* created unified logic for git repository settings. ([b7ef5b7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b7ef5b7d105aafec442b4ebef8292ccdcbd5299a))
+* cronJobSettings on Create Service. ([d9fbe4a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d9fbe4a6ae9cc8673153b7d9c97c929157babaab))
+* cronJobSettings on Create Service. ([da3a0a4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/da3a0a42bdf53e3ea3198e1882d78a2d6beca144))
+* default addToTlsHosts true ([f2eae2d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f2eae2dfcdc262b9b41bd40d41d45d03963b5983))
+* default dockerfile and dockercontext app lib ([86d1de6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/86d1de66ec24ae87750dc2e62c9104510caf66f2))
+* Expose. ([c851aa4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c851aa46f37281912b99d4ab5e7b0c8787dff2cc))
+* extend status object ([99bc4e3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/99bc4e3021d1454d48de9780d257b0f3f5609373))
+* extend storage ([7e95542](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7e955429a3090e229db0ef4c83781e08ebd3b24a))
+* extend volume stats ([900426c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/900426c8cc58b10de251e3dba7e7979c431a2273))
+* file item dto ([3ef5aab](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3ef5aab1fe298d5eaf93581cc4f57131535800f8))
+* forgot to add the new git-create-request to index. ([e3bb771](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e3bb771bb8cec21228b36b11b81e3e607322698a))
+* git dtos ([3193aa9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3193aa911e2237a56303139d6781bfcba787f8bf))
+* git repository dto ([8ed4b46](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ed4b46834fc46b4ef36e64b82ff00421e6887de))
+* ignored namespaces . ([ff74c5c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ff74c5c229ea7c3f575a2a93fd6ee19612b415d8))
+* K8sJobDto ([94f875b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/94f875bc2fffcabce82d235d7590531ada94ef62))
+* K8sMsgTaskDto ([a886b1e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a886b1eb68a08affe725c26fe61f9a6cd947673e))
+* kubernetes limits ([003e81b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/003e81be8990245adcee48afb0ab4bae5e16c2ba))
+* KubernetesWorkloadDescribeRequestDto ([4e0b93c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e0b93cd345d0cbd777a5725c4e80949279b3d4e))
+* Merge branch 'main' into develop ([1f84f79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1f84f7943bf37926787c3ebf7c8f1b2014ef1ec1))
+* Merge branch 'main' into develop ([e9d5979](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e9d597912d4b2652f4ba3def564079ed2397e746))
+* merge feature/status-item; update ProjectNamespaceServiceContainerPatchRequestDto ([8ea1276](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ea1276e95da905c7ca1a03ddc6d106aefd9eda1))
+* move logic from platform to dto ([d52e94f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d52e94fb5b73599f3a1f1bd98187e0f8f25e045a))
+* move logic into operator, simplify dto ([fccf139](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fccf139af003ca314574fbc7846915d3f0045b8e))
+* new types. ([85d5dac](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/85d5dacd41be2416e825c84d95e20ebd8d186ae5))
+* only optional if notification type volume ([bc94250](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/bc9425050c2364e330e8686fe81848bd14e10dc7))
+* optimize and reduce service-status ([9229e56](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9229e566d21d01658b097e7afeb3959aa22c4b4d))
+* optimize imports ([c60519b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c60519b485e9a78e25bef6f8a75b608fb723bcd1))
+* packages json repository url ([c8d602c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c8d602ce33e4bf259f3b5e02dcf0318f66b56b6c))
+* project boolean property ([9a385bb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9a385bba07c5cae7758e875b1eafd4298c0a2235))
+* ProjectNamespaceServiceContainerEnvvarCreateRequestDto ([7f7c878](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7f7c87813deabc33ba1cd7b6026a0b1c9e9e86bb))
+* ProjectNamespaceServiceContainerKubernetesSettingsDto ([560cd94](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/560cd94ffe1f5659d58b5a0b0cf385b49906de57))
+* public repo added to GitSettings. ([732dbd8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/732dbd83ec94f87d874cdbcc2098f63fcb9ab51b))
+* refactoring app ([8ed89f7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8ed89f73a52c1fe8c588260918151367c8c20641))
+* refactoring container type ([53af743](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/53af74387bd9e47f42f1e979a55a70e299163d07))
+* refactoring cron jobsettings ([af04b6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/af04b6daf4449476989bd118c494576b79ca32ce))
+* refactoring kubernetes dtos ([b979f55](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b979f554b6587fbdd2a8ebc213dfaa89816e081f))
+* refactoring service container ([7c9a8e5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7c9a8e5813cb2c3190c877d217b99c9475deafdf))
+* remove deprecated structures ([341ef1e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/341ef1ecbf851edc0a1c5a2bcffda37330cc6fe9))
+* remove ProjectNamespaceServiceStatusResourceDto ([d92c161](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d92c1610ab4f21b6d185f3c37a7250ead59c86ed))
+* remove ProjectNamespaceServiceStatusResourceDto, ProjectNamespaceServiceStatusItemResourceDto ([58fd737](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/58fd7373c85888efcc64928064c13ff6ff126b69))
+* rename service status related enums and add Enum suffix ([16d7be9](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16d7be910d4000e2dbc98d8d7ce6d9072b14a05e))
+* revert addToTlsHosts transformer logic ([4d48a82](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4d48a825e7574e4da636e2bbe400c2ba7cb924b5))
+* rm azure build type ([f0bdfb7](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/f0bdfb7cce3852ddc42869049351c35f2cdc5154))
+* rm dependsOn and dependsOnMethod from app; rm CHANGE_OWNER from ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT ([8940411](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/894041186e47872a662ba75124c5007d3623945e))
+* rm FileListFullDto ([1956944](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/1956944f377947f3b45e2781efa3489b5c42f2f0))
+* rm git create dto ([c347125](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c3471252cf3af0e98a144858e669265b1033060e))
+* rm gitlab webhook dto ([ec4320c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ec4320c131954312d5b9e840bd0e474990f38853))
+* rm repoYamlSync from product kubernetes limits ([28984e4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/28984e43a3c299b74df12e7c88c2baae858022dc))
+* rn kubernetesSettings to kubernetesLimits ([006ea20](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/006ea204c49eeca087429a439f01867470260e76))
+* rollback fuckup. ([ad45469](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ad454697fd30a218fc77a66b29cdca4afdb10800))
+* scan image ([86aac7f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/86aac7f7e53bf3e4dfb27ca77e3301c561aa1598))
+* service dto ([361da80](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/361da80d166124b5463d9bc59db25b98e0ffa977))
+* service git settings dto ([36346e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/36346e2fea7d43856f7921b72fd50bb66d478c16))
+* ServiceTypeEnum ([efaedd8](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/efaedd887b152b8c298370a03bd77917030394d6))
+* tags to app. ([7818a55](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7818a5591779634e7701d47f9438143ab143b279))
+* tags to app. ([e4ac65e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e4ac65e910ccd89402f73c3868cf1717bb604c28))
+* traffic. ([2490aaa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2490aaa4cca1963f80bc6664cbb955906b143020))
+* traffic. ([6438957](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/643895707599df6a2c38eae2281cfa3fc11e9725))
+* traffic. ([a16af4f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a16af4f99fe1e5bc4012167de1435e7df5b06c5c))
+* traffic. ([3590d24](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3590d240b7fc0c15e8978bd08709ac44557bf4a8))
+* traffic/compute time series ([ab66d6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ab66d6d0271cb1b80d56003fb0c9e16cd11ae646))
+* type definition. ([807acb2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/807acb25096cf89e813df1f7b1a6ab4e847021a2))
+* type definition. ([9da5876](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9da58768eb0b9c389cf6b3ef72b643e90f466585))
+* update ([539bde0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/539bde00a8b72ad1366fe11282690335d01ece88))
+* update ([2f15279](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2f152797bb9b1ef74e1e3a7d717fae49039dba7e))
+* update app git settings ([08640f6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/08640f60af2fef81f3341c59138372d7939b5a91))
+* update build dto ([35551b0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/35551b08509698a0b9558d8efc4de04d0b218c14))
+* update BuildJobInfosPayloadDto; add createBuildTaskItemList ([8103ad5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8103ad52a3edd4fdf0526766631f18c6efe8d765))
+* update BuildJobInfosPayloadDto; xterm dtos ([dbb37fd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/dbb37fd706fb44fb2716ca372d7f760f56a8e0fd))
+* update cicd ([369d0fd](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/369d0fd5c22e6f50d9aaf946d6239324107cec68))
+* update create service dto ([4546339](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/45463398d49cad3d47c87f3f723317a1b7059e0d))
+* update create service dto ([5b73feb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5b73feb5d06f3f7cf24c7535cc479ec09ee25611))
+* update create/update project; rm project state ([aa9dc38](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aa9dc380a1cfa34d19e45c3f8f455513eb7f7d94))
+* update dashboard dto; ([4ceffb2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4ceffb2692e2a5d1707c4bba175e6b7f844538c0))
+* update gitlab index ([2edad89](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2edad89f748f7bd83bdb70e3fee9c96f27c556cd))
+* update GitRepositoryDto ([90c4a12](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/90c4a12ca51a81c62a250ce3225e474e63d86584))
+* update GitRepositoryDto ([10444e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/10444e2f7a7382e4d2f86bfe277392cd2e982390))
+* update import; update ProjectNamespaceServiceGitSettingsPatchRequestDto ([6de9fdf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6de9fdf8647bfeb1e9e95c73dbf44e7f77488767))
+* update k8s project,namespace, service dto ([b00f7e5](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b00f7e589845bf371720d08aaa662e2822bcdad6))
+* update k8sjobdto ([5babc64](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5babc6475ab10344383adce6dd1ff492b09b42b0))
+* update KubernetesWorkloadDeleteRequestDto ([5980e79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5980e79bb29fefaac2dbe43c9f2e708cf736d077))
+* update namespace service dto ([5b72ca6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5b72ca66965a0c07ff50e9966cfbc06448377d0d))
+* update ProjectNamespaceServiceOverviewItemDto ([fe265f0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fe265f0efa7eb28a633c19ccaa8cac69408397b5))
+* update service dto ([b076e49](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b076e49cef67fb87a1d1602f8f6513ed7c7d90e7))
+* update service dtos ([c9c6a34](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c9c6a34f6fe599179f38347f4a099cb3f658d845))
+* update service status dto ([8fc8e12](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8fc8e12aa2b14a8f29631807acd01cdbf7246a6a))
+* update stats dto ([99a7187](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/99a7187c810c4874894b3505d392b026d120e085))
+* update traffic ([568b92e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/568b92edffeda390b587dff5c939882eb80a303f))
+* update traffic dto ([88519bc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88519bc2a53c7fc4f3763d563ffaee5e39340543))
+* update version ([34c6ee3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/34c6ee371cd338efbdac4f1030adf4408c6bea6c))
+* VolumeRequestDto; update build job payload; rm gateway-status ([d6fa4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d6fa4e22f9087c5f86d4a28b915f41649e1f1ff5))
+* xterm DTOs ([c3eee68](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/c3eee6881642a096390db78f4929e1cd98d34e20))
+
+
+### Features
+
+* create service (update); service types update ([2f5a7ea](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2f5a7ea69c736eea4a94aac87fa9c3426d2cdd05))
+* dev release ([88111e6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/88111e68d134079ae1b09a36e8509662f4194817))
+* new hirachy. ([fe6be10](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/fe6be10eed38d2f4c0fe5d449fc5337bef7b1b5d))
+
 # 2.1.0-develop.111 (2024-05-24)
 
 

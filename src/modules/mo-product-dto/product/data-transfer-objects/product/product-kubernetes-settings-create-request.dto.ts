@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, isBoolean, IsEnum, IsNotEmpty, isNumber, IsNumber, isNumberString } from 'class-validator';
+import { IsBoolean, IsEnum, IsNotEmpty, isNumber, IsNumber, isNumberString } from 'class-validator';
 import { ProjectNamespaceServiceDeploymentStrategyEnum } from '../../../../mo-project-dto/enums';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProductKubernetesSettingsCreateRequestDto {
   @Type(() => Number)
@@ -18,12 +18,6 @@ export class ProductKubernetesSettingsCreateRequestDto {
   @Expose()
   limitCpuCores: number;
 
-  @IsNotEmpty()
-  @IsEnum(ProjectNamespaceServiceDeploymentStrategyEnum)
-  @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
-  @Expose()
-  deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
-
   @Type(() => Number)
   @Expose()
   @Transform(({ value }) => (isNumberString(value) ? +value : value))
@@ -39,7 +33,7 @@ export class ProductKubernetesSettingsCreateRequestDto {
   maxVolumeSizeGb: number;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @IsBoolean()
   @Expose()
   allowUnbound: boolean;

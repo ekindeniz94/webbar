@@ -1,4 +1,4 @@
-import { Expose, Transform, Type, plainToInstance } from 'class-transformer';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import {
   ArrayMinSize,
   IsArray,

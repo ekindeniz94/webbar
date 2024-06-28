@@ -1,4 +1,4 @@
-import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import { Expose, plainToInstance, Transform } from 'class-transformer';
 import { ComputeTimeSeriesDto } from './compute-time-series.dto';
 
 export class ComputeTimeSeriesResponseDto {

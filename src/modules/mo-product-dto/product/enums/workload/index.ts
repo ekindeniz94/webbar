@@ -1,1 +1,1 @@
-export * from './kubernetes-workload.enum'
+export * from './kubernetes-workload.enum';

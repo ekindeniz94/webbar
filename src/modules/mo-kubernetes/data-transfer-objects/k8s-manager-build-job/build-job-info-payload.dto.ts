@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { BuildJobInfoEntryPayloadDto } from './build-job-info-entry-payload.dto';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { K8sBuildStateEnum } from '../../enums';
 import { ALLOWED_BUILD_TASKS } from '../../mo-kubernetes-dto.const';
 

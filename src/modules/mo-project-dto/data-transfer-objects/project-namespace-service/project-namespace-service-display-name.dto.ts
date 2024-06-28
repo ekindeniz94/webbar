@@ -1,9 +1,7 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { isNumberString, isString } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
-import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
-import { IdDto } from '@mo/core-dto';
-import { CronjobSettingsDto } from './cronjob-settings.dto';
+import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceDisplayNameDto extends BaseEntityDto {
   @Transform(({ value, obj }) => (value && isString(value) && value.length > 0 ? value : obj.name))

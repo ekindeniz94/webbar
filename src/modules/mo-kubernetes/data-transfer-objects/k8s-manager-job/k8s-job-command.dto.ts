@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { K8sBuildTaskEnum, K8sJobStateEnum } from '../../enums';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
 export class K8sJobCommandDto {

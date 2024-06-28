@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, isBoolean, IsNotEmpty, isNumber, IsNumber } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { IsBoolean, IsNotEmpty, isNumber, IsNumber } from 'class-validator';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProjectKubernetesLimitsDto {
   @IsNotEmpty()
@@ -29,13 +29,13 @@ export class ProjectKubernetesLimitsDto {
   maxVolumeSizeGb: number;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @IsBoolean()
   @Expose()
   repoYamlSync: boolean;
 
   @IsNotEmpty()
-  @Transform(({ value }) => (isBoolean(value) ? MoUtils.parseBoolean(value) : false))
+  @TransformToBoolean(false)
   @IsBoolean()
   @Expose()
   allowUnbound: boolean;

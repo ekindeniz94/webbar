@@ -1,5 +1,5 @@
 // import { Expose, Transform } from 'class-transformer';
-// import moment from 'moment/moment';
+// import moment from 'moment';
 // import { SecurityLogInterface, SecurityLogSeverityEnum } from '../../../mo-namespace';
 // import { BuildStateEnum } from '../../../mo-product-dto';
 //

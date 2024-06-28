@@ -1,10 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { ProductBulletPointDto } from './product-bullet-point.dto';
-import { MoUtils } from '@mo/js-utils';
+import { TransformToBoolean } from '@mo/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { BaseEntityDto } from '@mo/database-dto';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductFlatDto extends BaseEntityDto {
@@ -30,14 +29,6 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   description: string;
 
-  @Type(() => ProductBulletPointDto)
-  @Transform(({ value }) => value ?? [])
-  @Expose()
-  bulletPoints: ProductBulletPointDto[];
-
-  @Expose()
-  icon: string;
-
   @Transform(({ value }) => value ?? ProductStateEnum.ACTIVE)
   @Expose()
   state: ProductStateEnum;
@@ -49,20 +40,6 @@ export class ProductFlatDto extends BaseEntityDto {
   kubernetesLimits: ProductKubernetesSettingsDto;
 
   @Type(() => Number)
-  @Expose()
-  trafficInMb: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0.9)
-  @Expose()
-  trafficWarning: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 1.3)
-  @Expose()
-  trafficShutdown: number;
-
-  @Type(() => Number)
   @Transform(({ value }) => value ?? 1)
   @Expose()
   persistentCountMax: number;
@@ -72,16 +49,6 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   persistentDiskInMb: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 0.9)
-  @Expose()
-  persistentDiskWarning: number;
-
-  @Type(() => Number)
-  @Transform(({ value }) => value ?? 1.3)
-  @Expose()
-  persistentDiskShutdown: number;
-
   @Expose()
   clusterCountMax?: number;
 
@@ -90,11 +57,11 @@ export class ProductFlatDto extends BaseEntityDto {
 
   /****************************************************************/
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   enableTeamCollaboration: boolean;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @Expose()
   enableCreateCluster: boolean;
 }

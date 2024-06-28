@@ -1,7 +1,6 @@
 import { Expose } from 'class-transformer';
-import {IsEnum, IsNotEmpty, IsString, ValidateIf} from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString, ValidateIf } from 'class-validator';
 import { KubernetesWorkloadEnum } from '../../../enums';
-import {GitConnectionTypeEnum} from "../../../../../mo-git";
 
 export class KubernetesWorkloadDescribeRequestDto {
   @IsNotEmpty()

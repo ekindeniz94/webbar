@@ -1,12 +1,12 @@
 import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { IsSemanticVersion, MoUtils } from '@mo/js-utils';
+import { IsSemanticVersion, MoUtils, TransformToBoolean } from '@mo/js-utils';
 import _ from 'lodash';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
 import { OrganizationNameDto } from '../../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';
-import { ClusterSetupDto } from '../cluster-setup.dto';
+// import { ClusterSetupDto } from '../cluster-setup.dto';
 
 export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @IsNotEmpty()
@@ -96,7 +96,7 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   clusterMfaId: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsOptional()
   @IsBoolean()
   @Expose()
@@ -108,10 +108,10 @@ export class ClusterAdminPatchRequestDto extends ClusterAdminCreateRequestDto {
   @Expose()
   appVersion: string;
 
-  @Type(() => ClusterSetupDto)
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // @Type(() => ClusterSetupDto)
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @IsNotEmpty()
   @IsString()

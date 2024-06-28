@@ -1,10 +1,9 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isNotEmpty } from 'class-validator';
 import { SpectrumAppProxyProtocolEnum, SpectrumAppTLSEnum, SpectrumAppTrafficTypeEnum } from '../../enums/spectrum';
 import { SpectrumAppResultDnsDto } from './spectrum-app-result-dns.dto';
 import { SpectrumAppResultEdgeIpsDto } from './spectrum-app-result-edge-ips.dto';
-import moment from 'moment/moment';
-import { MoUtils } from '@mo/js-utils';
+import moment from 'moment';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class SpectrumAppResultDto {
   @Expose()
@@ -20,7 +19,7 @@ export class SpectrumAppResultDto {
   @Expose()
   origin_direct: string[];
 
-  @Transform(({ value }) => (isNotEmpty(value) ? MoUtils.parseBoolean(value) : true))
+  @TransformToBoolean(true)
   @Expose()
   ip_firewall: boolean; // true
 

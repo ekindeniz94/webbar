@@ -14,9 +14,8 @@ export class RegisterBetaRequestDto extends BaseEntityDto {
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MIN)
   @MaxLength(DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MAX)
-  @Transform(
-    ({ value }) =>
-      (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.REGISTER_BETA.FULL_NAME.MAX)
   )
   @StripTags()
   @Expose()
@@ -27,8 +26,8 @@ export class RegisterBetaRequestDto extends BaseEntityDto {
   @IsEmail()
   @MinLength(DTO_VALIDATION_CONST.EMAIL.MIN)
   @MaxLength(DTO_VALIDATION_CONST.EMAIL.MAX)
-  @Transform(
-    ({ value }) => (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
+  @Transform(({ value }) =>
+    (value && isString(value) ? value.trim() : value)?.substring(0, DTO_VALIDATION_CONST.EMAIL.MAX)
   )
   @StripTags()
   @Expose()

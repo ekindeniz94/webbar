@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { GroupDto, UserPublicDto } from '@mo/user-dto';
 import { ProjectDisplayNameDto } from '../../../../mo-project-dto/data-transfer-objects/project/project-display-name.dto';
 import { isArray } from 'class-validator';

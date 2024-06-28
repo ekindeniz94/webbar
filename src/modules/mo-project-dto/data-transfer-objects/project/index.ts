@@ -1,4 +1,5 @@
 export * from './project.dto';
+export * from './project-item.dto';
 export * from './project-create-request.dto';
 export * from './project-dashboard-stats-response.dto';
 export * from './project-display-name.dto';

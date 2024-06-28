@@ -10,7 +10,6 @@ import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-se
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
-import { OriginTrafficDto } from '../traffic';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
@@ -39,7 +38,7 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   containerImage: string;
 
   @Type(() => KeyVaultSecretDto)
-  @Transform(({ value }) => (value && value.id) ?? null)
+  @Transform(({ value }) => (value && value.id ? value : null))
   @Expose()
   containerImageRepoSecret: KeyVaultSecretDto;
 

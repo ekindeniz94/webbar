@@ -5,4 +5,3 @@ export enum GitConnectionTypeEnum {
   AZURE_DEV_OPS = 'AZURE_DEV_OPS',
   UNKNOWN = 'UNKNOWN'
 }
-

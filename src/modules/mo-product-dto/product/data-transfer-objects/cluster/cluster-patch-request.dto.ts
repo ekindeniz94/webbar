@@ -1,9 +1,9 @@
 import { ClusterCreateRequestDto } from './cluster-create-request.dto';
 import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mo/js-utils';
 import _ from 'lodash';
-import { ClusterSetupDto } from './cluster-setup.dto';
+// import { ClusterSetupDto } from './cluster-setup.dto';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
 
@@ -71,16 +71,17 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @Expose()
   image: string;
 
-  @Transform(({ value }) => MoUtils.parseBoolean(value))
+  @TransformToBoolean(false)
   @IsOptional()
   @IsBoolean()
   @Expose()
   apiKeyIsActive: boolean;
 
-  @Type(() => ClusterSetupDto)
-  @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
-  @Expose()
-  clusterSetup: ClusterSetupDto;
+  // Check für raus
+  // @Type(() => ClusterSetupDto)
+  // @Transform(({ value }) => plainToInstance(ClusterSetupDto, value, { excludeExtraneousValues: true }))
+  // @Expose()
+  // clusterSetup: ClusterSetupDto;
 
   @IsNotEmpty()
   @IsString()
