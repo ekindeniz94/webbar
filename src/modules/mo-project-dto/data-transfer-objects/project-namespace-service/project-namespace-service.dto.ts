@@ -77,7 +77,7 @@ export class HpaSettingsDto {
   @Type(() => CrossVersionObjectReference)
   @Expose()
   @IsOptional()
-  ScaleTargetRef: CrossVersionObjectReference;
+  scaleTargetRef: CrossVersionObjectReference;
 
   @Expose()
   @IsNumber()
@@ -156,22 +156,22 @@ export class MetricIdentifier {
 
 export class MetricTarget {
   @Expose()
-  Type: MetricTargetTypeEnum;
+  type: MetricTargetTypeEnum;
 
   @Expose()
   @IsString()
   @IsOptional()
-  Value: string;
+  value: string;
 
   @Expose()
   @IsString()
   @IsOptional()
-  AverageValue: string;
+  averageValue: string;
 
   @Expose()
   @IsString()
   @IsOptional()
-  AverageUtilization: number;
+  averageUtilization: number;
 }
 
 export enum MetricTargetTypeEnum {

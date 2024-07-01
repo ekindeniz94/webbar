@@ -70,13 +70,13 @@ export class ProjectNamespaceServiceCreateRequestDto {
   cronJobSettings: CronjobSettingsDto;
 
   @Transform(({ value, obj }) =>
-    obj.controller === ServiceControllerEnum.DEPLOYMENT && obj.hpaSettings !== undefined
+    obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings
       ? plainToInstance(HpaSettingsDto, value)
       : undefined
   )
   @ValidateIf(
     (obj: ProjectNamespaceServiceCreateRequestDto) =>
-      obj.controller === ServiceControllerEnum.DEPLOYMENT && obj.hpaSettings !== undefined
+      obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings
   )
   @IsNotEmpty()
   @Type(() => HpaSettingsDto)

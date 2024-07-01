@@ -85,10 +85,12 @@ export class ProjectNamespaceServicePatchRequestDto {
   cronJobSettings?: CronjobSettingsDto;
 
   @IsNotEmpty()
-  @Transform(({ value, obj }) => (obj.controller === ServiceControllerEnum.DEPLOYMENT ? value : undefined))
+  @Transform(({ value, obj }) =>
+    obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings ? value : undefined
+  )
   @ValidateIf(
     (obj: ProjectNamespaceServicePatchRequestDto) =>
-      obj.controller === ServiceControllerEnum.DEPLOYMENT && obj.hpaSettings !== undefined
+      obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings
   )
   @Type(() => HpaSettingsDto)
   @ValidateNested({ message: '$property must be an object' })
