@@ -19,6 +19,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from '../project-namespace-service-container/project-namespace-service-container-create-request.dto';
 import { ServiceControllerEnum } from '../../enums';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
+import { HpaSettingsDto } from './project-namespace-service.dto';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -67,6 +68,21 @@ export class ProjectNamespaceServiceCreateRequestDto {
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
   cronJobSettings: CronjobSettingsDto;
+
+  @Transform(({ value, obj }) =>
+    obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings
+      ? plainToInstance(HpaSettingsDto, value)
+      : undefined
+  )
+  @ValidateIf(
+    (obj: ProjectNamespaceServiceCreateRequestDto) =>
+      obj.controller === ServiceControllerEnum.DEPLOYMENT && !!obj.hpaSettings
+  )
+  @IsNotEmpty()
+  @Type(() => HpaSettingsDto)
+  @ValidateNested({ message: '$property must be an object' })
+  @Expose()
+  hpaSettings: HpaSettingsDto;
 
   @IsOptional()
   // TODO app multi container
