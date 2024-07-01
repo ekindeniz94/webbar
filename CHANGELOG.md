@@ -2,6 +2,13 @@
 
 
 
+## 2.1.16 (2024-07-01)
+
+
+### Bug Fixes
+
+* add message to k8sJobCommandDto ([4672a6a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4672a6a3c8744c9aa57409986170f847d0194906))
+
 ## 2.1.15 (2024-06-26)
 
 
