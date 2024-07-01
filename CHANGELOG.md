@@ -2,6 +2,15 @@
 
 
 
+## 2.1.17 (2024-07-01)
+
+
+### Bug Fixes
+
+* extend hpa data strcutures ([8c88c5f](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8c88c5f5bd324320c3cce8abc613e6bc678abe19))
+* hpa ([3002e8b](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3002e8bb44ee7855e320a5875c0146279b9296d9))
+* update ([02d2883](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/02d28837580cfcd81e3b4d9218fd5797f75b4a35))
+
 ## 2.1.16 (2024-07-01)
 
 
