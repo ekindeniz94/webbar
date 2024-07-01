@@ -19,6 +19,11 @@ export class K8sJobCommandDto {
   @Expose()
   title: string;
 
+  @IsString()
+  @Transform(({ value, obj }) => (value && value !== 'undefined' && value !== 'null' ? value : obj.title))
+  @Expose()
+  message: string;
+
   @IsNotEmpty()
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
