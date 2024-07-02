@@ -2,6 +2,14 @@
 
 
 
+## 2.1.18 (2024-07-02)
+
+
+### Bug Fixes
+
+* hpa cleanup ([6243022](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6243022acc052b282738b40050faa73f07166f19))
+* hpa cleanup ([652b416](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/652b416f3a607fa36c11959e6bdf133d372c38fe))
+
 ## 2.1.17 (2024-07-01)
 
 
