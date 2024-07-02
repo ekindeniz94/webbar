@@ -2,6 +2,13 @@
 
 
 
+## 2.1.19 (2024-07-02)
+
+
+### Bug Fixes
+
+* update index (hpa) ([d231662](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d231662f3c64db95766ba9364727ca175d8db18a))
+
 ## 2.1.18 (2024-07-02)
 
 
