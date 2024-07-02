@@ -1,14 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import {
-  IsArray,
-  isArray,
-  IsNumber,
-  isNumberString,
-  IsOptional,
-  IsString,
-  isString,
-  ValidateNested
-} from 'class-validator';
+import { isArray, isNumberString, IsOptional, isString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { UserPublicDto } from '@mo/user-dto';
@@ -17,6 +8,7 @@ import { ProjectNamespaceServiceContainerDto } from '../project-namespace-servic
 import { IdDto } from '@mo/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { TrafficDto } from '../stats';
+import { HpaSettingsDto } from './hpa';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -71,119 +63,4 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => TrafficDto)
   @Expose()
   traffic: TrafficDto;
-}
-
-export class HpaSettingsDto {
-  @Type(() => CrossVersionObjectReference)
-  @Expose()
-  @IsOptional()
-  scaleTargetRef: CrossVersionObjectReference;
-
-  @Expose()
-  @IsNumber()
-  minReplicas: number;
-
-  @Expose()
-  @IsNumber()
-  maxReplicas: number;
-
-  @Type(() => MetricSpec)
-  @Expose()
-  @IsArray()
-  metrics: MetricSpec[];
-}
-
-export class CrossVersionObjectReference {
-  @Expose()
-  @IsString()
-  kind: string;
-
-  @Expose()
-  @IsString()
-  name: string;
-
-  @Expose()
-  @IsString()
-  @IsOptional()
-  apiVersion: string;
-}
-
-export class MetricSpec {
-  @Expose()
-  type: MetricSourceTypeEnum;
-
-  @Type(() => PodsMetricSource)
-  @IsOptional()
-  @Expose()
-  pods: PodsMetricSource;
-
-  @Type(() => ResourceMetricSource)
-  @IsOptional()
-  @Expose()
-  resource: ResourceMetricSource;
-}
-
-export class ResourceMetricSource {
-  @IsString()
-  @Expose()
-  name: string;
-
-  @Type(() => MetricTarget)
-  @Expose()
-  target: MetricTarget;
-}
-
-export class PodsMetricSource {
-  @Type(() => MetricIdentifier)
-  @Expose()
-  metric: MetricIdentifier;
-
-  @Type(() => MetricTarget)
-  @Expose()
-  target: MetricTarget;
-}
-
-export class MetricIdentifier {
-  @Expose()
-  @IsString()
-  name: string;
-
-  @Expose()
-  @IsString()
-  @IsOptional()
-  selector: string;
-}
-
-export class MetricTarget {
-  @Expose()
-  type: MetricTargetTypeEnum;
-
-  @Expose()
-  @IsString()
-  @IsOptional()
-  value: string;
-
-  @Expose()
-  @IsString()
-  @IsOptional()
-  averageValue: string;
-
-  @Expose()
-  @IsString()
-  @IsOptional()
-  averageUtilization: number;
-}
-
-export enum MetricTargetTypeEnum {
-  UtilizationMetricType = 'Utilization',
-  ValueMetricType = 'Value',
-  AverageValueMetricType = 'AverageValue'
-}
-
-export enum MetricSourceTypeEnum {
-  ObjectMetricSourceType = 'Object',
-  PodsMetricSourceType = 'Pods',
-  ResourceMetricSourceType = 'Resource',
-  ContainerResourceMetricSourceType = 'ContainerResource',
-  ExternalMetricSourceType = 'External'
 }
