@@ -1,3 +1,4 @@
+export * from './hpa';
 export * from './cronjob-settings.dto';
 export * from './project-namespace-service.dto';
 export * from './project-namespace-service-create-request.dto';
