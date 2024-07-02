@@ -1,4 +1,5 @@
 export * from './permissions';
+export * from './hpa';
 
 export * from './container-type.enum';
 export * from './k8s-build-scan-result-info.enum';

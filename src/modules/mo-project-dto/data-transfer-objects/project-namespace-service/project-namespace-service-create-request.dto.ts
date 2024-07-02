@@ -19,7 +19,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerCreateRequestDto } from '../project-namespace-service-container/project-namespace-service-container-create-request.dto';
 import { ServiceControllerEnum } from '../../enums';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
-import { HpaSettingsDto } from './project-namespace-service.dto';
+import { HpaSettingsDto } from './hpa';
 
 export class ProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
