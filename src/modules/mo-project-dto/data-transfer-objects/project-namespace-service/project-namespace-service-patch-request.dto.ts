@@ -21,7 +21,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-namespace-service-container/project-namespace-service-container-patch-request.dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
-import { HpaSettingsDto } from './project-namespace-service.dto';
+import { HpaSettingsDto } from './hpa';
 
 export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()
