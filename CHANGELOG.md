@@ -2,6 +2,14 @@
 
 
 
+## 2.1.20 (2024-07-04)
+
+
+### Bug Fixes
+
+* citt service k8s resource dtos ([182d3cb](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/182d3cb6fe8160822cb734acbb1e230022eb4947))
+* xterm service operator ([def56e4](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/def56e482011fcde7270a0b12da5989649ac52ea))
+
 ## 2.1.19 (2024-07-02)
 
 
