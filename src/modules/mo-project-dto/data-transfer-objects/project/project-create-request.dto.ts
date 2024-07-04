@@ -53,6 +53,7 @@ export class ProjectCreateRequestDto {
 
   @IsOptional()
   @Type(() => CittProjectNamespaceCreateRequestDto)
+  @Transform(({ value, obj }) => (obj.citt ? value : undefined))
   @Expose()
   projectNamespaces?: CittProjectNamespaceCreateRequestDto[];
 }

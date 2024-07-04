@@ -6,3 +6,4 @@ export * from './xterm-service-pod-log.config.dto';
 export * from './xterm-service-scan-image.config.dto';
 export * from './xterm-cluster-workload.config.dto';
 export * from './xterm-service-deployment-log.config.dto';
+export * from './xterm-service-operator-log.config.dto';

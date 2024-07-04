@@ -2,6 +2,7 @@ import { IsNotEmpty, isString, IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { StripTags } from '@mo/js-utils';
+import { ServiceControllerEnum } from '../../enums';
 
 export class CittProjectNamespaceServiceCreateRequestDto {
   @IsNotEmpty()
@@ -16,5 +17,11 @@ export class CittProjectNamespaceServiceCreateRequestDto {
   @IsString()
   @StripTags()
   @Expose()
-  name: string;
+  controllerName: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @StripTags()
+  @Expose()
+  controller: ServiceControllerEnum;
 }

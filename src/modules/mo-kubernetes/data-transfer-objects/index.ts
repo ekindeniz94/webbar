@@ -2,6 +2,7 @@ export * from './k8s-manager-build-job';
 export * from './k8s-manager-cluster-pattern-response';
 export * from './k8s-manager-job';
 export * from './k8s-manager-traffic';
+export * from './k8s-resources';
 
 export * from './kubernetes-event.dto';
 export * from './kubernetes-event-involved-object.dto';
