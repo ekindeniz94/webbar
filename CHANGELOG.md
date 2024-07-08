@@ -2,6 +2,13 @@
 
 
 
+## 2.1.22 (2024-07-08)
+
+
+### Bug Fixes
+
+* external secret store dtos ([58e5022](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/58e50220bfb0af9e6c235af3754a2caf024a8fdd))
+
 ## 2.1.21 (2024-07-08)
 
 
