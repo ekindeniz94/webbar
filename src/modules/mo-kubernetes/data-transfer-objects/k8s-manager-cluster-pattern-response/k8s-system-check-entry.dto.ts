@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { isEmpty } from 'class-validator';
+import { IsOptional, isEmpty } from 'class-validator';
 import { K8sSystemCheckEntryStatusEnum } from '../../enums/k8s-manager/k8s-system-check-entry-status.enum';
 
 export class K8sSystemCheckEntryDto {
@@ -18,6 +18,11 @@ export class K8sSystemCheckEntryDto {
   @Type(() => String)
   @Expose()
   message: string;
+
+  @IsOptional()
+  @Type(() => String)
+  @Expose()
+  errorMessage: string;
 
   @Type(() => String)
   @Expose()
@@ -49,6 +54,15 @@ export class K8sSystemCheckEntryDto {
       !this.uninstallPattern ||
       isEmpty(this.uninstallPattern) ||
       this.uninstallPattern === ''
+    );
+  }
+
+  get hasUpdate(): boolean {
+    return (
+      !!this.upgradePattern &&
+      !!this.versionAvailable &&
+      !!this.versionInstalled &&
+      this.versionAvailable !== this.versionInstalled
     );
   }
 }
