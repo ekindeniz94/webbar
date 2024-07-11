@@ -2,6 +2,13 @@
 
 
 
+## 2.1.23 (2024-07-11)
+
+
+### Bug Fixes
+
+* bitbucket dtos ([7bc1a04](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/7bc1a048bdb58130fdc7a510e57803b4bdba281c))
+
 ## 2.1.22 (2024-07-08)
 
 
