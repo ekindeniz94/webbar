@@ -6,5 +6,6 @@ export * from './github';
 export * from './gitlab';
 export * from './common';
 export * from './git-user-public.dto';
+export * from './bitbucket';
 
 // export type GitBranchDtoType = GithubBranchDto | GitlabBranchDto;

@@ -9,4 +9,10 @@ export class GitUserPublicDto {
 
   @Expose()
   company: string;
+
+  @Expose()
+  type: string;
+
+  @Expose()
+  workspace: string;
 }

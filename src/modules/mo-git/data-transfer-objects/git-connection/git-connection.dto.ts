@@ -1,9 +1,10 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
-import { GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
+import { BitbucketTokenAccessTypeEnum, GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
 import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '@mo/database-dto';
+import { GitUserDto } from './git-user.dto';
 
 export class GitConnectionDto extends BaseEntityDto {
   //
@@ -58,9 +59,9 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   gitResponseData?: GithubInstallationDto;
 
-  @Type(() => GithubUserDto)
+  @Type(() => GitUserDto)
   @Expose()
-  gitUser: GithubUserDto;
+  gitUser: GitUserDto;
 
   @Type(() => GithubAppDto)
   @IsOptional()
@@ -72,15 +73,34 @@ export class GitConnectionDto extends BaseEntityDto {
   @Expose()
   customDomain?: string;
 
+  @Expose()
   get isAccessTokenExpired(): boolean {
     return this.accessTokenExpiresAt && moment(this.accessTokenExpiresAt).isValid()
       ? moment().isAfter(this.accessTokenExpiresAt)
       : false;
   }
 
+  @Expose()
   get isRefreshTokenExpired(): boolean {
     return this.refreshTokenExpiresAt && moment(this.refreshTokenExpiresAt).isValid()
       ? moment().isAfter(this.refreshTokenExpiresAt)
       : false;
+  }
+
+  @Expose()
+  get tokenType(): string {
+    switch (this.gitConnectionType) {
+      case GitConnectionTypeEnum.GIT_HUB:
+        return 'token';
+      case GitConnectionTypeEnum.GIT_LAB:
+        return 'Bearer';
+      case GitConnectionTypeEnum.BITBUCKET:
+        if (this.gitUser.type === BitbucketTokenAccessTypeEnum.APP_PASSWORD) {
+          return 'Basic';
+        }
+        return 'Bearer';
+      default:
+        return 'Bearer';
+    }
   }
 }
