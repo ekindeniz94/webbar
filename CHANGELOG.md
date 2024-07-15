@@ -2,6 +2,13 @@
 
 
 
+## 2.1.24 (2024-07-15)
+
+
+### Bug Fixes
+
+* xterm cluster k8s component logs ([4cb5800](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4cb58007df113d0a063e4433c7b815676c7007f4))
+
 ## 2.1.23 (2024-07-11)
 
 
