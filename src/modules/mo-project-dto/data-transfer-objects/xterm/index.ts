@@ -1,4 +1,5 @@
 export * from './xterm-base-config.dto';
+export * from './xterm-cluster-operator-log.config.dto';
 export * from './xterm-cluster-tools.config.dto';
 export * from './xterm-service-build-log.config.dto';
 export * from './xterm-service-pod-exec-sh.config.dto';
