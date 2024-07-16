@@ -9,6 +9,8 @@ import { IdDto } from '@mo/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { TrafficDto } from '../stats';
 import { HpaSettingsDto } from './hpa';
+import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-cname';
+import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -49,6 +51,16 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => ProjectNamespaceServiceCnameDto)
+  @Expose()
+  cNames: ProjectNamespaceServiceCnameDto[];
+
+  @Type(() => ProjectNamespaceServicePortDto)
+  @Transform(({ value }) => (isArray(value) ? value : undefined))
+  @Expose()
+  ports: ProjectNamespaceServicePortDto[];
 
   @Type(() => CronjobSettingsDto)
   @IsOptional()

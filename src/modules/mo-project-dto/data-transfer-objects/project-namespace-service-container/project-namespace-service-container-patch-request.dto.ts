@@ -16,8 +16,8 @@ import { StripTags } from '@mo/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
-import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-namespace-service-container-port';
-import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
+import { ProjectNamespaceServicePortPatchRequestDto } from '../project-namespace-service-port';
+import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-cname';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { IdDto } from '@mo/core-dto';
@@ -62,24 +62,6 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @ValidateNested()
   @Expose()
   envVars: ProjectNamespaceServiceContainerEnvvarPatchRequestDto[];
-
-  @IsOptional()
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceContainerPortPatchRequestDto)
-  @Expose()
-  ports: ProjectNamespaceServiceContainerPortPatchRequestDto[];
-
-  @IsOptional()
-  @Transform(({ value }) => {
-    if (value && isArray(value)) {
-      return value.filter((item: ProjectNamespaceServiceCnamePatchRequestDto) => !!item.cName);
-    }
-    return [];
-  })
-  @Type(() => ProjectNamespaceServiceCnamePatchRequestDto)
-  @ValidateNested()
-  @Expose()
-  cNames: ProjectNamespaceServiceCnamePatchRequestDto[];
 
   /****** Repository type ******/
   @Type(() => ProjectNamespaceServiceContainerGitSettingsPatchRequestDto)

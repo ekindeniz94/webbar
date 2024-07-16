@@ -3,7 +3,7 @@ import { IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'c
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { TransformToBoolean } from '@mo/js-utils';
 
-export class ProjectNamespaceServiceContainerPortCreateRequestDto {
+export class ProjectNamespaceServicePortCreateRequestDto {
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServicePortBindingEnum)
   @Expose()

@@ -4,7 +4,7 @@ import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { TransformToBoolean } from '@mo/js-utils';
 
-export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {
+export class ProjectNamespaceServicePortDto extends BaseEntityDto {
   @Expose()
   portType: ProjectNamespaceServicePortBindingEnum;
 

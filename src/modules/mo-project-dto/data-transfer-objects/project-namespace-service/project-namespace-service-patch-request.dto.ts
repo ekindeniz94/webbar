@@ -22,6 +22,8 @@ import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-name
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { HpaSettingsDto } from './hpa';
+import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-cname';
+import { ProjectNamespaceServicePortPatchRequestDto } from '../project-namespace-service-port';
 
 export class ProjectNamespaceServicePatchRequestDto {
   @IsNotEmpty()
@@ -75,6 +77,24 @@ export class ProjectNamespaceServicePatchRequestDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @IsOptional()
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Type(() => ProjectNamespaceServicePortPatchRequestDto)
+  @Expose()
+  ports: ProjectNamespaceServicePortPatchRequestDto[];
+
+  @IsOptional()
+  @Transform(({ value }) => {
+    if (value && isArray(value)) {
+      return value.filter((item: ProjectNamespaceServiceCnamePatchRequestDto) => !!item.cName);
+    }
+    return [];
+  })
+  @Type(() => ProjectNamespaceServiceCnamePatchRequestDto)
+  @ValidateNested()
+  @Expose()
+  cNames: ProjectNamespaceServiceCnamePatchRequestDto[];
 
   @IsNotEmpty()
   @Transform(({ value, obj }) => (obj.controller === ServiceControllerEnum.CRON_JOB ? value : undefined))

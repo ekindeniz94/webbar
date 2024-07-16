@@ -5,8 +5,6 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
-import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-container-cname';
-import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
@@ -71,16 +69,6 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   envVars: ProjectNamespaceServiceContainerEnvVarDto[];
-
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceCnameDto)
-  @Expose()
-  cNames: ProjectNamespaceServiceCnameDto[];
-
-  @Type(() => ProjectNamespaceServiceContainerPortDto)
-  @Transform(({ value }) => (isArray(value) ? value : undefined))
-  @Expose()
-  ports: ProjectNamespaceServiceContainerPortDto[];
 
   @Type(() => CpuDto)
   @Expose()
