@@ -2,6 +2,14 @@
 
 
 
+# 2.2.0 (2024-07-16)
+
+
+### Features
+
+* add new requests for eso ([8497c53](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8497c53c3880a38903684dbbb546e46f5e28fdd8))
+* remove unused dto ([6234aa6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6234aa65ded2a7bfebf0302d11fb7dc9854c0da0))
+
 ## 2.1.24 (2024-07-15)
 
 
