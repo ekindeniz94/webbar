@@ -1,6 +1,6 @@
 {
   "name": "@mo/mo-core-base",
-  "version": "2.2.1-develop.1",
+  "version": "2.2.1-develop.2",
   "description": "Mogenius GmbH Core Base",
   "homepage": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base",
   "main": "dist/mo-core-base.js",

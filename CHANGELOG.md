@@ -2,6 +2,13 @@
 
 
 
+## 2.2.1-develop.2 (2024-07-16)
+
+
+### Bug Fixes
+
+* refactoring app lib ports ([33c4b91](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/33c4b919af8c9256a424a3a040af493879521038))
+
 ## 2.2.1-develop.1 (2024-07-16)
 
 
