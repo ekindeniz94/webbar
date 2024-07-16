@@ -13,6 +13,7 @@ import {
 import { BaseEntityDto } from '@mo/database-dto';
 import { OrganizationNameDto } from '../../../mo-product-dto';
 import { AppContainerDto } from '../app-container/app-container.dto';
+import { AppPortDto } from '../app-port.dto';
 
 export class AppDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)
@@ -71,6 +72,11 @@ export class AppDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @Type(() => AppPortDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
+  ports: AppPortDto[];
 
   @Type(() => CronjobSettingsDto)
   @Expose()

@@ -2,7 +2,6 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {
-  isArray,
   isEmpty,
   IsEnum,
   IsJSON,
@@ -17,7 +16,6 @@ import {
 } from 'class-validator';
 import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
-import { AppPortDto } from '../app-port.dto';
 import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
 import { StripTags } from '@mo/js-utils';
@@ -137,13 +135,6 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   @Expose()
   containerImageRepoSecret?: string;
   /************************************************************************************************************/
-
-  @IsOptional()
-  @Type(() => AppPortDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @ValidateNested({ each: true, message: '$property must be an array' })
-  @Expose()
-  ports: AppPortDto[];
 
   @IsOptional()
   @Type(() => AppKubernetesLimitsCreateRequestDto)
