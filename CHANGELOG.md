@@ -2,6 +2,13 @@
 
 
 
+## 2.2.1-develop.1 (2024-07-16)
+
+
+### Bug Fixes
+
+* refactoring ports/cnames ([16a4aa6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16a4aa631772ebe9eab151ac171675df08606b8c))
+
 # 2.2.0 (2024-07-16)
 
 
