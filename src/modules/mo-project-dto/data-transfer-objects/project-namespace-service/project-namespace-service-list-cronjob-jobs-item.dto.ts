@@ -2,10 +2,8 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsDate, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ProjectNamespaceServiceListCronjobJobsItemStatusMessageDto } from './project-namespace-service-list-cronjob-jobs-item-status-message.dto';
 import moment from 'moment';
-import {
-  ProjectNamespaceServiceListCronjobJobStatusEnum,
-  ProjectNamespaceServiceListCronjobJobTileStatusEnum
-} from 'src/mo-core-base';
+import { ProjectNamespaceServiceListCronjobJobStatusEnum } from '../../enums/project-namespace-service-list-cronjob-job-status.enum';
+import { ProjectNamespaceServiceListCronjobJobTileStatusEnum } from '../../enums/project-namespace-service-list-cronjob-job-tile-status.enum';
 
 export class ProjectNamespaceServiceListCronjobJobsItemDto {
   @IsNotEmpty()
