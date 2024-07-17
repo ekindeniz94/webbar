@@ -2,6 +2,14 @@
 
 
 
+## 2.2.1 (2024-07-17)
+
+
+### Bug Fixes
+
+* add cronjob-jobs logic ([b69aaba](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b69aaba3703b075362835818a9f02f843aebeeb9))
+* adjust cronjob-job list ([01e8f02](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/01e8f02bda9ce35d4d3a3991e858ef82f64f26bb))
+
 # 2.2.0 (2024-07-16)
 
 
