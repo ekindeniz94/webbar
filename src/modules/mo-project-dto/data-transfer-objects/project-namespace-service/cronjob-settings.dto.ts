@@ -7,6 +7,20 @@ export class CronjobSettingsDto {
   @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) || isNumberString(value) ? +value : 6))
   @Expose()
+  failedJobsHistoryLimit: number;
+
+  @IsNotEmpty()
+  @IsNumber()
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumber(value) || isNumberString(value) ? +value : 6))
+  @Expose()
+  successfulJobsHistoryLimit: number;
+
+  @IsNotEmpty()
+  @IsNumber()
+  @Type(() => Number)
+  @Transform(({ value }) => (isNumber(value) || isNumberString(value) ? +value : 6))
+  @Expose()
   backoffLimit: number;
 
   @IsNotEmpty()
