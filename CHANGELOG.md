@@ -2,6 +2,14 @@
 
 
 
+## 2.2.2 (2024-07-17)
+
+
+### Bug Fixes
+
+* mv string literals to enums ([088133c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/088133cd4127309cac78ea5b6f6b8ca3c7c69af7))
+* rename duration, change type to numbers ([4e81c6a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e81c6aa03896fe7914205ddf6ff2cb75bba07f5))
+
 ## 2.2.1 (2024-07-17)
 
 
