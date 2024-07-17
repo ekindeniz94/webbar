@@ -2,6 +2,13 @@
 
 
 
+## 2.2.1-develop.3 (2024-07-17)
+
+
+### Bug Fixes
+
+* added port logic. ([3e6f16c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e6f16c643ac122c8cfa25a187d5a94230eecd14))
+
 ## 2.2.1-develop.2 (2024-07-16)
 
 
