@@ -1,7 +1,8 @@
-import { Expose, Transform } from 'class-transformer';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import moment from 'moment';
 import { TransformToBoolean } from '@mo/js-utils';
-import { IsBoolean } from 'class-validator';
+import { IsBoolean, Max, Min } from 'class-validator';
+import { ProjectNamespaceServiceContainerDto } from '../project-namespace-service-container';
 
 export class ProjectNamespaceServiceCnameDto {
   @Expose()
@@ -17,6 +18,17 @@ export class ProjectNamespaceServiceCnameDto {
 
   @Expose()
   cName: string;
+
+  @Type(() => ProjectNamespaceServiceContainerDto)
+  @Transform(({ value }) => plainToInstance(ProjectNamespaceServiceContainerDto, value))
+  @Expose()
+  container: ProjectNamespaceServiceContainerDto;
+
+  @Type(() => Number)
+  @Min(0)
+  @Max(65535)
+  @Expose()
+  internalPort: number;
 
   @TransformToBoolean(true)
   @IsBoolean()

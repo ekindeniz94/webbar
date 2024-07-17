@@ -1,3 +1,5 @@
+import { IdDto } from '@mo/core-dto';
+import { StripTags } from '@mo/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
@@ -12,15 +14,11 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
-import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
-import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
-import { ProjectNamespaceServicePortPatchRequestDto } from '../project-namespace-service-port';
-import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-cname';
 import { ContainerTypeEnum } from '../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
-import { IdDto } from '@mo/core-dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
