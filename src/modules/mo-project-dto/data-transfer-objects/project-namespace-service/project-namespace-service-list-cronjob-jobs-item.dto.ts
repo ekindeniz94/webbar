@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsDate, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsDate, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ProjectNamespaceServiceListCronjobJobsItemStatusMessageDto } from './project-namespace-service-list-cronjob-jobs-item-status-message.dto';
 import moment from 'moment';
 import {
@@ -42,10 +42,10 @@ export class ProjectNamespaceServiceListCronjobJobsItemDto {
   podName?: string;
 
   @IsOptional()
-  @IsString()
-  @Type(() => String)
+  @IsNumber()
+  @Type(() => Number)
   @Expose()
-  durationInSec?: string;
+  durationInMs?: number;
 
   @IsOptional()
   @Type(() => ProjectNamespaceServiceListCronjobJobsItemStatusMessageDto)
