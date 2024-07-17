@@ -2,6 +2,10 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsDate, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ProjectNamespaceServiceListCronjobJobsItemStatusMessageDto } from './project-namespace-service-list-cronjob-jobs-item-status-message.dto';
 import moment from 'moment';
+import {
+  ProjectNamespaceServiceListCronjobJobStatusEnum,
+  ProjectNamespaceServiceListCronjobJobTileStatusEnum
+} from 'src/mo-core-base';
 
 export class ProjectNamespaceServiceListCronjobJobsItemDto {
   @IsNotEmpty()
@@ -11,16 +15,13 @@ export class ProjectNamespaceServiceListCronjobJobsItemDto {
   @Expose()
   schedule: Date;
 
-  @IsString()
   @IsNotEmpty()
   @Expose()
-  status: 'Active' | 'Succeeded' | 'Failed' | 'Suspended' | 'Unknown';
+  status: ProjectNamespaceServiceListCronjobJobStatusEnum;
 
-  @IsString()
   @IsNotEmpty()
-  @Type(() => String)
   @Expose()
-  tileType: 'Job' | 'Empty';
+  tileType: ProjectNamespaceServiceListCronjobJobTileStatusEnum;
 
   @IsOptional()
   @IsString()
