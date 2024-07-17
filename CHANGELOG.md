@@ -2,6 +2,13 @@
 
 
 
+## 2.2.3 (2024-07-17)
+
+
+### Bug Fixes
+
+* fix import ([d932afc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d932afcc9637634acf82bee3e88897b2f799eafd))
+
 ## 2.2.2 (2024-07-17)
 
 
