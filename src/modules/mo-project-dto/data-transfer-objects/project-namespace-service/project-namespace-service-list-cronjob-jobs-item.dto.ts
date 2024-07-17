@@ -1,10 +1,13 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsDate, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ProjectNamespaceServiceListCronjobJobsItemStatusMessageDto } from './project-namespace-service-list-cronjob-jobs-item-status-message.dto';
+import moment from 'moment';
 
 export class ProjectNamespaceServiceListCronjobJobsItemDto {
-  @IsDate()
   @IsNotEmpty()
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @IsDate()
+  @Type(() => Date)
   @Expose()
   schedule: Date;
 
@@ -14,9 +17,16 @@ export class ProjectNamespaceServiceListCronjobJobsItemDto {
   status: 'Active' | 'Succeeded' | 'Failed' | 'Suspended' | 'Unknown';
 
   @IsString()
+  @IsNotEmpty()
   @Type(() => String)
   @Expose()
-  tileType: 'Job' | 'CronJob';
+  tileType: 'Job' | 'Empty';
+
+  @IsOptional()
+  @IsString()
+  @Type(() => String)
+  @Expose()
+  jobId?: string;
 
   @IsOptional()
   @IsString()
