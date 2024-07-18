@@ -1,7 +1,5 @@
 # Changelog
 
-
-
 ## 2.2.1-develop.4 (2024-07-18)
 
 
@@ -10,6 +8,9 @@
 * refactoring cnames/ports ([5e71a26](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5e71a260af442d20c2edb5dc2ac3beeaa0fcdf5a))
 
 ## 2.2.1-develop.3 (2024-07-17)
+* fix import ([d932afc](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/d932afcc9637634acf82bee3e88897b2f799eafd))
+
+## 2.2.2 (2024-07-17)
 
 
 ### Bug Fixes
@@ -17,18 +18,21 @@
 * added port logic. ([3e6f16c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e6f16c643ac122c8cfa25a187d5a94230eecd14))
 
 ## 2.2.1-develop.2 (2024-07-16)
-
-
+* mv string literals to enums ([088133c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/088133cd4127309cac78ea5b6f6b8ca3c7c69af7))
+* rename duration, change type to numbers ([4e81c6a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e81c6aa03896fe7914205ddf6ff2cb75bba07f5))
 ### Bug Fixes
 
 * refactoring app lib ports ([33c4b91](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/33c4b919af8c9256a424a3a040af493879521038))
 
-## 2.2.1-develop.1 (2024-07-16)
+## 2.2.1 (2024-07-17)
 
 
 ### Bug Fixes
 
 * refactoring ports/cnames ([16a4aa6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16a4aa631772ebe9eab151ac171675df08606b8c))
+=======
+* add cronjob-jobs logic ([b69aaba](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/b69aaba3703b075362835818a9f02f843aebeeb9))
+* adjust cronjob-job list ([01e8f02](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/01e8f02bda9ce35d4d3a3991e858ef82f64f26bb))
 
 # 2.2.0 (2024-07-16)
 
