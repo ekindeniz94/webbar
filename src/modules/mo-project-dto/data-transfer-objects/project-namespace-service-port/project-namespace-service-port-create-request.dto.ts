@@ -1,7 +1,19 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
+import {
+  isArray,
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  Max,
+  Min,
+  ValidateNested
+} from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { TransformToBoolean } from '@mo/js-utils';
+import { ProjectNamespaceServicePortCnameDto } from './project-namespace-service-port-cname.dto';
+import _ from 'lodash';
 
 export class ProjectNamespaceServicePortCreateRequestDto {
   @IsNotEmpty()
@@ -31,9 +43,22 @@ export class ProjectNamespaceServicePortCreateRequestDto {
   @Expose()
   expose: boolean;
 
-  @TransformToBoolean(false)
-  @IsNotEmpty()
-  @IsBoolean()
+  @Transform(
+    ({
+      value,
+      obj
+    }: {
+      value: ProjectNamespaceServicePortCnameDto;
+      obj: ProjectNamespaceServicePortCreateRequestDto;
+    }): ProjectNamespaceServicePortCnameDto[] => {
+      if (obj.expose && obj.portType === ProjectNamespaceServicePortBindingEnum.HTTPS) {
+        return value && isArray(value) ? _.uniqBy(value, 'cName') : [];
+      }
+      return [];
+    }
+  )
+  @ValidateNested({ each: true })
+  @Type(() => ProjectNamespaceServicePortCnameDto)
   @Expose()
-  spectrumEnableTls: boolean;
+  cNames: ProjectNamespaceServicePortCnameDto[];
 }

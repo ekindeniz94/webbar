@@ -1,8 +1,10 @@
-import { Expose, Type } from 'class-transformer';
-import { Max, Min } from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { isArray, Max, Min, ValidateNested } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 import { BaseEntityDto } from '@mo/database-dto';
 import { TransformToBoolean } from '@mo/js-utils';
+import { ProjectNamespaceServicePortCnameDto } from './project-namespace-service-port-cname.dto';
+import _ from 'lodash';
 
 export class ProjectNamespaceServicePortDto extends BaseEntityDto {
   @Expose()
@@ -22,6 +24,25 @@ export class ProjectNamespaceServicePortDto extends BaseEntityDto {
   @TransformToBoolean(false)
   @Expose()
   expose: boolean;
+
+  @Transform(
+    ({
+      value,
+      obj
+    }: {
+      value: ProjectNamespaceServicePortCnameDto;
+      obj: ProjectNamespaceServicePortDto;
+    }): ProjectNamespaceServicePortCnameDto[] => {
+      if (obj.expose && obj.portType === ProjectNamespaceServicePortBindingEnum.HTTPS) {
+        return value && isArray(value) ? _.uniqBy(value, 'cName') : [];
+      }
+      return [];
+    }
+  )
+  @Type(() => ProjectNamespaceServicePortCnameDto)
+  @ValidateNested({ each: true })
+  @Expose()
+  cNames: ProjectNamespaceServicePortCnameDto[];
 
   // @Type(() => Boolean)
   // @Expose()

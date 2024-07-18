@@ -19,6 +19,7 @@ import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
 import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
+import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -50,9 +51,15 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
 
   @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
-  @ValidateNested()
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
+
+  @IsOptional()
+  @ValidateNested({ message: '$property must be an object' })
+  @Type(() => ProjectNamespaceServiceContainerProbeDto)
+  @Expose()
+  probes: ProjectNamespaceServiceContainerProbeDto;
 
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
@@ -65,7 +72,7 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @Type(() => ProjectNamespaceServiceContainerGitSettingsPatchRequestDto)
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @IsNotEmpty()
-  @ValidateNested()
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   gitSettings: ProjectNamespaceServiceContainerGitSettingsPatchRequestDto;
 

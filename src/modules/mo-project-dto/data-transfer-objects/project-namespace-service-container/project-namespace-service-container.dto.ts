@@ -1,6 +1,6 @@
 import { StripTags } from '@mo/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isString, MaxLength } from 'class-validator';
+import { isArray, isBoolean, IsBoolean, IsOptional, isString, MaxLength, ValidateNested } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
@@ -12,6 +12,7 @@ import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
+import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -81,6 +82,10 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Type(() => EphemeralStorageDto)
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
+
+  @Type(() => ProjectNamespaceServiceContainerProbeDto)
+  @Expose()
+  probes: ProjectNamespaceServiceContainerProbeDto;
 
   // deployment message
   @Transform(({ value }) => (value && isArray(value) ? value : []))

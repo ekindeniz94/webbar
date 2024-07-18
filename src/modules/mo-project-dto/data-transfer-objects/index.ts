@@ -1,6 +1,7 @@
 export * from './cicd';
 export * from './citt';
 export * from './key-vault';
+export * from './probe';
 export * from './project';
 export * from './project-invitation';
 export * from './project-namespace';
@@ -8,7 +9,6 @@ export * from './project-namespace-service';
 export * from './project-namespace-service-app';
 export * from './project-namespace-service-container-build';
 export * from './project-namespace-service-build-job';
-export * from './project-namespace-service-cname';
 export * from './project-namespace-service-container';
 export * from './project-namespace-service-container-envvar';
 export * from './project-namespace-service-container-git-settings';
