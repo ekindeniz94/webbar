@@ -2,6 +2,13 @@
 
 
 
+## 2.2.4 (2024-07-19)
+
+
+### Bug Fixes
+
+* project-socket-data-event ([0157c79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0157c79b595c1e7533eeb9d22760382e3cb87bcb))
+
 ## 2.2.3 (2024-07-17)
 
 
