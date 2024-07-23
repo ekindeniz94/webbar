@@ -2,9 +2,17 @@
 
 
 
+## 2.2.4 (2024-07-19)
+
+
+### Bug Fixes
+
+* project-socket-data-event ([0157c79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0157c79b595c1e7533eeb9d22760382e3cb87bcb))
+
+## 2.2.3 (2024-07-17)
+
+
 ## 2.2.4-develop.1 (2024-07-18)
-
-
 ### Bug Fixes
 
 * added port logic. ([3e6f16c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e6f16c643ac122c8cfa25a187d5a94230eecd14))
