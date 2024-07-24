@@ -1,4 +1,4 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceStatusKindEnum, ProjectNamespaceServiceStatusKindTypeEnum } from '../../enums';
 import { IsOptional } from 'class-validator';
 import { ProjectNamespaceServiceStatusMessageDto } from './project-namespace-service-status-message.dto';
@@ -47,7 +47,9 @@ export class ProjectNamespaceServiceStatusItemDto {
       value: ProjectNamespaceServiceContainerStatusDto;
       obj: ProjectNamespaceServiceStatusItemDto;
     }) => {
-      return obj.kind !== ProjectNamespaceServiceStatusKindEnum.Container ? undefined : value;
+      return obj.kind !== ProjectNamespaceServiceStatusKindEnum.Container
+        ? undefined
+        : plainToInstance(ProjectNamespaceServiceContainerStatusDto, value ?? {}, { excludeExtraneousValues: true });
     }
   )
   @Expose()
