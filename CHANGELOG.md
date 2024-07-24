@@ -2,6 +2,13 @@
 
 
 
+## 2.2.5 (2024-07-24)
+
+
+### Bug Fixes
+
+* service status ([38638cf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/38638cffe20362e502bae864c66a92938497465c))
+
 ## 2.2.4 (2024-07-19)
 
 
