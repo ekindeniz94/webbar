@@ -2,6 +2,13 @@
 
 
 
+## 2.2.6 (2024-07-24)
+
+
+### Bug Fixes
+
+* service container status ([8b4dffa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8b4dffafa667e5759f7b8507bf4f397b94b91108))
+
 ## 2.2.5 (2024-07-24)
 
 
