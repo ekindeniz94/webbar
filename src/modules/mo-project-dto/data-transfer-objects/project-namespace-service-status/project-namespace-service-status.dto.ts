@@ -6,83 +6,42 @@ import {
 } from '../../enums/project-namespace-service-status.enum';
 import { cloneDeep } from 'lodash';
 import { isArray, IsOptional } from 'class-validator';
-
-export enum ProjectNamespaceServiceStatusMessageTypeEnum {
-  INFO = 'INFO',
-  SUCCESS = 'SUCCESS',
-  ERROR = 'ERROR',
-  WARNING = 'WARNING'
-}
-
-export enum ProjectNamespaceServiceStatusTypeEnum {
-  PENDING = 'PENDING',
-  SUCCESS = 'SUCCESS',
-  WARNING = 'WARNING',
-  ERROR = 'ERROR',
-  UNKOWN = 'UNKOWN'
-}
-
-export class ProjectNamespaceServiceStatusMessage {
-  @Expose()
-  type: ProjectNamespaceServiceStatusMessageTypeEnum;
-
-  @Expose()
-  message: string;
-}
-
-export class EmptyTest {}
-
-export class ProjectNamespaceServiceStatusItemDto {
-  @Expose()
-  kind: ProjectNamespaceServiceStatusKindTypeEnum;
-
-  @Expose()
-  name: string;
-
-  @Expose()
-  namespace: string;
-
-  @Expose()
-  @IsOptional()
-  ownerName: string;
-
-  @Expose()
-  @IsOptional()
-  ownerKind: ProjectNamespaceServiceStatusKindTypeEnum;
-
-  @Expose()
-  @IsOptional()
-  status: ProjectNamespaceServiceStatusTypeEnum;
-
-  @Expose()
-  @IsOptional()
-  messages: ProjectNamespaceServiceStatusMessage[];
-}
+import { ProjectNamespaceServiceStatusMessageDto } from './project-namespace-service-status-message.dto';
+import { ProjectNamespaceServiceStatusItemDto } from './project-namespace-service-status-item.dto';
+import { ProjectNamespaceServiceStatusTypeEnum } from '../../enums';
+import { TransformToBoolean } from '@mo/js-utils';
 
 export class ProjectNamespaceServiceStatusDto {
-  @Expose()
   @Type(() => ProjectNamespaceServiceStatusItemDto)
   @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @Expose()
   items: ProjectNamespaceServiceStatusItemDto[];
 
+  @TransformToBoolean(false)
   @Expose()
   switchedOn: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasPods: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasContainers: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasDeployment: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasJob: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasCronJob: boolean;
 
+  @TransformToBoolean(false)
   @Expose()
   hasBuild: boolean;
 
@@ -91,9 +50,10 @@ export class ProjectNamespaceServiceStatusDto {
     return (this.warnings?.length ?? 0) > 0;
   }
 
-  @Expose()
+  @Type(() => ProjectNamespaceServiceStatusMessageDto)
   @IsOptional()
-  warnings?: ProjectNamespaceServiceStatusMessage[];
+  @Expose()
+  warnings?: ProjectNamespaceServiceStatusMessageDto[];
 
   public isOk(exclude: ProjectNamespaceServiceStatusKindTypeEnum[]): boolean {
     const isNotSuspicious = (status: ProjectNamespaceServiceStatusTypeEnum) =>
