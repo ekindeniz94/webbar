@@ -2,6 +2,14 @@
 
 
 
+## 2.3.4 (2024-07-25)
+
+
+### Bug Fixes
+
+* ad metrics to index ([4e25989](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e25989324ff34b60269d8bf818b705eaf7f3915))
+* add metrics dto ([674bbbf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/674bbbfe8be1cd69174775f4655c155df9bd701b))
+
 ## 2.3.3 (2024-07-25)
 
 
