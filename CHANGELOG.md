@@ -2,6 +2,14 @@
 
 
 
+## 2.3.3 (2024-07-25)
+
+
+### Bug Fixes
+
+* k8sName function ([a440c9e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a440c9e79cbb34d767645e6de781cb273acbbfc2))
+* update packages ([4958880](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4958880eed19a5218a513aaf2bf99f0b0539a3b4))
+
 ## 2.3.2 (2024-07-25)
 
 
