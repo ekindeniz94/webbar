@@ -11,8 +11,11 @@ resources:
   - repo: self
 
 variables:
-  SourceBranch: $(Build.SourceBranch)
-  tag: '$(Build.BuildId)'
+  - group: default
+  - name: SourceBranch
+    value: $(Build.SourceBranch)
+  - name: tag
+    value: "$(Build.BuildId)"
 
 stages:
   - stage: Build
@@ -29,33 +32,34 @@ stages:
               if [ "${RN:0:10}" = "refs/tags/" ]; then
                 echo "Tag detected: ${RN:10}"
               fi
-            displayName: 'check for tag'
+            displayName: "check for tag"
 
           - script: |
               touch .npmrc
               echo "registry=https://registry.npmjs.org/" >> .npmrc
               echo "@mo:registry=https://pkgs.dev.azure.com/mogenius/packages/_packaging/mo-packages/npm/registry/" >> .npmrc
               echo "always-auth=true" >> .npmrc
-            displayName: 'create .npmrc for auth task'
+              echo "//npm.pkg.github.com/:_authToken=$(NPM_TOKEN)" >> .npmrc
+            displayName: "create .npmrc for auth task"
 
           - task: npmAuthenticate@0
             inputs:
-              workingFile: '.npmrc'
-            displayName: 'npm authenticate'
+              workingFile: ".npmrc"
+            displayName: "npm authenticate"
 
           - task: NodeTool@0
             inputs:
-              versionSpec: '20.x'
-            displayName: 'Install Node.js'
+              versionSpec: "20.x"
+            displayName: "Install Node.js"
 
           - script: |
               npm ci
-            displayName: 'Install dependencies'
+            displayName: "Install dependencies"
 
           - script: |
               npm run build
-            displayName: 'Build package'
+            displayName: "Build package"
 
           - script: |
               npm run semantic-release
-            displayName: 'Semantic release'
+            displayName: "Semantic release"
