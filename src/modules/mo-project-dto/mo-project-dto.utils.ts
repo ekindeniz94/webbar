@@ -1,4 +1,4 @@
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 import { PROJECT_CONST } from './mo-project-dto.const';
 
 export class MoProjectDtoUtils {

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsEmail, IsEnum, IsOptional, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
 import { RegisterBetaRoleEnum } from '../../enums';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class RegisterBetaRequestDto extends BaseEntityDto {

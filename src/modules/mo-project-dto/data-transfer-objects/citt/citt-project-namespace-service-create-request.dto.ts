@@ -1,7 +1,7 @@
 import { IsNotEmpty, isString, IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { ServiceControllerEnum } from '../../enums';
 
 export class CittProjectNamespaceServiceCreateRequestDto {

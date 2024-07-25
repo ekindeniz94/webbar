@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class NamespaceBackupResponse {
+export class KubernetesBackupResponseDto {
   @Expose()
   namespaceName: string;
 

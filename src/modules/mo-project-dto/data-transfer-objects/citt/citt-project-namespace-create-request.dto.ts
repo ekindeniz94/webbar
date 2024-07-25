@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsOptional, isString, IsString } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { CittProjectNamespaceServiceCreateRequestDto } from './citt-project-namespace-service-create-request.dto';
 
 export class CittProjectNamespaceCreateRequestDto {

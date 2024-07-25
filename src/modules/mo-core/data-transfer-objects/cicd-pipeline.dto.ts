@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { CiCdPipelineLogEntryDto } from './cicd-pipeline-log-entry.dto';
 import { CiCdPipelineResultEnum, CiCdPipelineStatusEnum } from '../enums';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 
 export class CiCdPipelineDto {
   @Transform(({ value }) => value ?? MoUtils.nanoid())

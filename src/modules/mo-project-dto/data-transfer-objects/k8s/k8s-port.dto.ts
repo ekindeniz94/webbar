@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums/project-namespace-service-port-binding.enum';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 
 export class K8sPortsDto {
   @Expose()

@@ -1,4 +1,4 @@
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 
 export * from './constantes';
 export * from './country';

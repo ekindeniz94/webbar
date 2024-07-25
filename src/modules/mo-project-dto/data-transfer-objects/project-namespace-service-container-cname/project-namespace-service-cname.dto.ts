@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { IsBoolean } from 'class-validator';
 
 export class ProjectNamespaceServiceCnameDto {

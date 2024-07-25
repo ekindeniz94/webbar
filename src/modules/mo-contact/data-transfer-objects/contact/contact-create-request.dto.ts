@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class ContactCreateRequestDto {
   @Type(() => LanguageCodeDto)

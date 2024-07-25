@@ -4,7 +4,7 @@ import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ClusterDto } from '../cluster/cluster.dto';
 import { UserPublicDto } from '@mo/user-dto';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { OrganizationNameDto } from '../organization';
 import { BaseEntityDto } from '@mo/database-dto';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';

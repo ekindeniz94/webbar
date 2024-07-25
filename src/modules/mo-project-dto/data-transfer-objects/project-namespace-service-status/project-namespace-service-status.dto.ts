@@ -9,7 +9,7 @@ import { isArray, IsOptional } from 'class-validator';
 import { ProjectNamespaceServiceStatusMessageDto } from './project-namespace-service-status-message.dto';
 import { ProjectNamespaceServiceStatusItemDto } from './project-namespace-service-status-item.dto';
 import { ProjectNamespaceServiceStatusTypeEnum } from '../../enums';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceStatusDto {
   @Type(() => ProjectNamespaceServiceStatusItemDto)

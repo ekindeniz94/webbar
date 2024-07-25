@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { BitbucketWorkspaceResponseDto } from './bitbucket-workspace-response.dto';
 
 export class BitbucketProjectResponseDto {

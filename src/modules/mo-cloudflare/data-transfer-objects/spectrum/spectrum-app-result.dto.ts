@@ -3,7 +3,7 @@ import { SpectrumAppProxyProtocolEnum, SpectrumAppTLSEnum, SpectrumAppTrafficTyp
 import { SpectrumAppResultDnsDto } from './spectrum-app-result-dns.dto';
 import { SpectrumAppResultEdgeIpsDto } from './spectrum-app-result-edge-ips.dto';
 import moment from 'moment';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 
 export class SpectrumAppResultDto {
   @Expose()

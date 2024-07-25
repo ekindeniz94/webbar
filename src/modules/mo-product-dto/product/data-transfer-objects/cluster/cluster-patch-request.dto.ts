@@ -12,7 +12,7 @@ import {
   IsUUID
 } from 'class-validator';
 import { Expose, Transform, Type } from 'class-transformer';
-import { MoUtils, TransformToBoolean } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 import _ from 'lodash';
 import { CountryDto } from '@mo/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';

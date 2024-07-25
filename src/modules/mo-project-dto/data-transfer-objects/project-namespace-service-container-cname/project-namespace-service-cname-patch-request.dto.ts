@@ -1,6 +1,6 @@
 import { IsBoolean, IsOptional, IsString, IsUUID } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { StripTags, TransformToBoolean } from '@mo/js-utils';
+import { StripTags, TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectNamespaceServiceCnameCreateRequestDto } from './project-namespace-service-cname-create-request.dto';
 
 export class ProjectNamespaceServiceCnamePatchRequestDto extends ProjectNamespaceServiceCnameCreateRequestDto {

@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { SpectrumAppResultDto } from './spectrum-app-result.dto';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 
 export class SpectrumAppResponseDto {
   @Type(() => SpectrumAppResultDto)
