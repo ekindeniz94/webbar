@@ -30,7 +30,7 @@ export class MoProjectDtoUtils {
       .replace(/^-+/, '')
       .replace(/^[0-9]/, (p) => numberToWord[p])
       .replace(/ +/g, '-')
-      .replace(/[(-)\1+]/g, '-')
+      .replace(/[()\-\+]/g, '-')
       .substring(0, maxLength)
       .split('-')
       .filter((item) => item && item.length > 0)
