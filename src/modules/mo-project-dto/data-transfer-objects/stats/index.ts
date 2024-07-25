@@ -3,3 +3,4 @@ export * from './memory.dto';
 export * from './ephemeral-storage.dto';
 export * from './storage.dto';
 export * from './traffic.dto';
+export * from './metrics.dto';
