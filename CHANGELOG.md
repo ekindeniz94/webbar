@@ -2,6 +2,13 @@
 
 
 
+## 2.3.2 (2024-07-25)
+
+
+### Bug Fixes
+
+* helm chart dto. ([03b5d7a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/03b5d7ab0e01d042bb12197048649c06f605ea65))
+
 ## 2.3.1 (2024-07-25)
 
 
