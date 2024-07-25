@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsDate, IsInt, IsString } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 
 export class FileListItemDto {
   @Expose()

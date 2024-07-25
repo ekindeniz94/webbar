@@ -38,6 +38,7 @@ stages:
               touch .npmrc
               echo "registry=https://registry.npmjs.org/" >> .npmrc
               echo "@mo:registry=https://pkgs.dev.azure.com/mogenius/packages/_packaging/mo-packages/npm/registry/" >> .npmrc
+              echo "@mogenius:registry=https://npm.pkg.github.com" >> .npmrc
               echo "always-auth=true" >> .npmrc
               echo "//npm.pkg.github.com/:_authToken=$(GITHUB_NPM_TOKEN)" >> .npmrc
             displayName: "create .npmrc for auth task"

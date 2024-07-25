@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
 import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../project-namespace-service-container';
 
 export class ContainerBuildListItemDto {

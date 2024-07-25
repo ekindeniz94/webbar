@@ -6,7 +6,7 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { UserPublicDto } from '@mo/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionDto } from '../../../mo-git';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectDto extends BaseEntityDto {

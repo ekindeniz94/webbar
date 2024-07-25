@@ -1,6 +1,6 @@
 import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class OrganizationInvitationActionRequestDto {
   @IsNotEmpty()

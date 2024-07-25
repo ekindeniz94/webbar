@@ -20,7 +20,7 @@ import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 import { AppPortDto } from '../app-port.dto';
 import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class AppContainerCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()

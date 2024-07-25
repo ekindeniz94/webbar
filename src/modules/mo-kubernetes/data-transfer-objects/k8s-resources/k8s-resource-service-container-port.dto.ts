@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { Max, Min } from 'class-validator';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectNamespaceServicePortBindingEnum } from '../../../mo-project-dto/enums/project-namespace-service-port-binding.enum';
 import moment from 'moment';
 

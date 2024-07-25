@@ -3,7 +3,7 @@ import { BaseEntityDto } from '@mo/database-dto';
 import { IsNotEmpty, IsOptional, IsString, isString } from 'class-validator';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class ProjectNamespaceCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()

@@ -9,7 +9,7 @@ import {
 } from '../../../mo-project-dto';
 import { lowerCase } from 'lodash';
 import { isArray, isNumber, isNumberString } from 'class-validator';
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 
 export class K8sResourceServiceDto {
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
 import { IdRequiredDto } from '@mo/core-dto';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { StripTags, TransformToBoolean } from '@mo/js-utils';
+import { StripTags, TransformToBoolean } from '@mogenius/js-utils';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { CittProjectNamespaceCreateRequestDto } from '../citt';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';

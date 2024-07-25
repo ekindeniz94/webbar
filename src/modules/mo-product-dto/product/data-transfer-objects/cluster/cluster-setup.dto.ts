@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { BaseEntityDto } from '@mo/database-dto';
 
 export class ClusterSetupDto extends BaseEntityDto {

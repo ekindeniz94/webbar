@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, isString, IsString, MaxLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { USER_CONST } from '@mo/user-dto';
 
 export class ProjectInvitationCreateRequestDto {
