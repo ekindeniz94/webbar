@@ -1,4 +1,4 @@
-import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mo/websocket-dto';
+import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mogenius/websocket-dto';
 import { ProductSocketEventEnum } from './enums/product-socket-event.enum';
 import { ProductClusterSocketDataEventEnum } from './enums/product-cluster-socket-data-event.enum';
 import { ProductOrganizationSocketDataEventEnum } from './enums/product-organization-socket-data-event.enum';
