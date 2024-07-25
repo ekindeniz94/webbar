@@ -2,6 +2,18 @@
 
 
 
+# 2.3.0 (2024-07-25)
+
+
+### Bug Fixes
+
+* rename npm token ([4064168](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/406416867a1da2ba6d0b3db41ca765b827ca86ef))
+
+
+### Features
+
+* switch websocket dep ([0eeb5b2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0eeb5b252652da158b2546298c205a882e7a77f8))
+
 ## 2.2.6 (2024-07-24)
 
 
