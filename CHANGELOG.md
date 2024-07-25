@@ -2,6 +2,13 @@
 
 
 
+## 2.3.1 (2024-07-25)
+
+
+### Bug Fixes
+
+* patch cluster ([5fa4441](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5fa4441f778c34afe58fbed40b95a58e41981e5a))
+
 # 2.3.0 (2024-07-25)
 
 
