@@ -2,6 +2,13 @@
 
 
 
+## 2.3.7 (2024-07-26)
+
+
+### Bug Fixes
+
+* new delete user from organization event. ([e14e5ae](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e14e5ae4953fef4f4dfb6fec86bd89493d5ceea0))
+
 ## 2.3.6 (2024-07-26)
 
 
