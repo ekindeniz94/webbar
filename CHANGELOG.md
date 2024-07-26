@@ -2,6 +2,13 @@
 
 
 
+## 2.3.5 (2024-07-26)
+
+
+### Bug Fixes
+
+* isLoced state fix. ([5d8fb6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5d8fb6da8f39f0cb3f49f1e8f035976fe0594100))
+
 ## 2.3.4 (2024-07-25)
 
 
