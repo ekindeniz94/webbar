@@ -91,7 +91,7 @@ export class K8sSystemCheckEntryDto {
 
   get isLocked(): boolean {
     const { UNKNOWN, UNINSTALLED } = K8sSystemCheckEntryHelmStatusEnum;
-    return [UNKNOWN, UNINSTALLED].includes(this.helmStatus) && this.isRunning;
+    return ([UNKNOWN, UNINSTALLED].includes(this.helmStatus) || this.isRequired) && this.isRunning;
   }
 
   get hasError(): boolean {
