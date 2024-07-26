@@ -2,6 +2,13 @@
 
 
 
+## 2.3.6 (2024-07-26)
+
+
+### Bug Fixes
+
+* final metrics dtos ([ff0c6e0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ff0c6e05245ecdea8c4e360b5eb39265d151a5a6))
+
 ## 2.3.5 (2024-07-26)
 
 
