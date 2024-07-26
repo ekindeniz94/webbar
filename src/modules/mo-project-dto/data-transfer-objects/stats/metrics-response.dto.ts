@@ -1,6 +1,7 @@
 import { isNumber } from 'class-validator';
-import { Expose, Transform } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
+import { PodMetricsDto } from './pod-metrics.dto';
 
 export class MetricsResponseDto {
   @Expose()
@@ -12,25 +13,13 @@ export class MetricsResponseDto {
   @Expose()
   kind: string;
 
-  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
-  cpu: number;
-
-  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
-  @Expose()
-  cpuLimit: number;
+  @Type(() => PodMetricsDto)
+  podsMetrics: PodMetricsDto[];
 
   @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
   cpuAverageUtilization: number;
-
-  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
-  @Expose()
-  memory: number;
-
-  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
-  @Expose()
-  memoryLimit: number;
 
   @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
