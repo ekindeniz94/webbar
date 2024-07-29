@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { K8sEnvVarDto } from './k8s-envvar.dto';
 import { isArray } from 'class-validator';
 import { K8sPortsDto } from './k8s-port.dto';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 import { ContainerTypeEnum } from '../../enums';
 import { K8sProjectNamespaceServiceSettingsK8sSettingsYamlDto } from './k8s-project-namespace-service-settings-k8s-settings-yaml.dto';
 

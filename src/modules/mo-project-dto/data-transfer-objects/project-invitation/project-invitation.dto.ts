@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isString } from 'class-validator';
-import { GroupDto, USER_CONST, UserPublicDto } from '@mo/user-dto';
+import { GroupDto, USER_CONST, UserPublicDto } from '@mogenius/user-dto';
 import { StripTags } from '@mogenius/js-utils';
 
 export class ProjectInvitationDto {

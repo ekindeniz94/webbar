@@ -1,9 +1,9 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
 import { isArray, IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { OrganizationCreateRequestDto } from './organization-create-request.dto';
-import { AddressPatchRequestDto } from '@mo/database-dto';
+import { AddressPatchRequestDto } from '@mogenius/database-dto';
 import { OrganizationUserGroupPatchRequestDto } from './organization-user-group-patch-request.dto';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 
 export class OrganizationAdminPatchRequestDto extends OrganizationCreateRequestDto {
   @Type(() => IdDto)

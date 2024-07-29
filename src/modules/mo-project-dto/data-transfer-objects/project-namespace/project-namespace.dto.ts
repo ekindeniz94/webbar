@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '@mo/database-dto';
-import { UserPublicDto } from '@mo/user-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 import { isString } from 'class-validator';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';

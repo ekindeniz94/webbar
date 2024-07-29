@@ -1,6 +1,6 @@
 import { LanguageCodeDto } from '../../mo-core';
 import { Expose, Transform, Type } from 'class-transformer';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class FileTranslationDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

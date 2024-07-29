@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { CountryDto } from '@mo/database-dto';
+import { CountryDto } from '@mogenius/database-dto';
 import { ClusterPublicDto, OrganizationNameDto, ProductNameDto } from '../../mo-product-dto';
 
 export class CreateProjectClusterItemDto {

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app';
 import { isArray, isString } from 'class-validator';
 import { ProjectNamespaceServiceStatusDto } from '../project-namespace-service-status';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
 import { ServiceControllerEnum } from '../../enums';
 import { CpuDto, EphemeralStorageDto, MemoryDto, TrafficDto } from '../stats';

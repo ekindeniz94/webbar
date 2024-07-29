@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
-import { UserPublicDto } from '@mo/user-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 
 export abstract class BaseEntityDto2 {
   @Expose()

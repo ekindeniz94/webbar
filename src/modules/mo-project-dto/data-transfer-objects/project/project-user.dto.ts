@@ -1,6 +1,6 @@
 import { IsOptional } from 'class-validator';
 import { Expose, Type } from 'class-transformer';
-import { GroupDto, UserPublicDto } from '@mo/user-dto';
+import { GroupDto, UserPublicDto } from '@mogenius/user-dto';
 import { ProjectUserStateEnum } from '../../enums';
 
 export class ProjectUserDto {

@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { OrganizationNameDto } from '../organization';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import moment from 'moment';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 

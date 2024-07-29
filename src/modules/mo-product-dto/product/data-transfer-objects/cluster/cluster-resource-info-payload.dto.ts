@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ClusterNodeDto } from './cluster-node.dto';
 import { isArray, isIP, IsString } from 'class-validator';
 import _ from 'lodash';
-import { BaseEntityDto, CountryDto } from '@mo/database-dto';
+import { BaseEntityDto, CountryDto } from '@mogenius/database-dto';
 import { ClusterProviderEnum } from '../../enums';
 
 export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
