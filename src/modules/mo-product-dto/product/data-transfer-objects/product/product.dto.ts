@@ -3,10 +3,10 @@ import { isArray } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { ClusterDto } from '../cluster/cluster.dto';
-import { UserPublicDto } from '@mo/user-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { OrganizationNameDto } from '../organization';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
 export class ProductDto extends BaseEntityDto {

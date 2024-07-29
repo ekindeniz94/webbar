@@ -1,8 +1,8 @@
 // import { Expose, Transform, Type } from 'class-transformer';
 // import { isEnum, isString } from 'class-validator';
 // import moment from 'moment';
-// import { BaseEntityDto } from '@mo/database-dto';
-// import { IdDto } from '@mo/core-dto';
+// import { BaseEntityDto } from '@mogenius/database-dto';
+// import { IdDto } from '@mogenius/core-dto';
 // import { BuildStateEnum, DeploymentStateEnum, K8sNotificationStateEnum } from '../../../mo-product-dto';
 //
 // export class ProjectNotificationDto extends BaseEntityDto {

@@ -1,6 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import moment from 'moment';
 import { IsOptional, IsString } from 'class-validator';
 import { GitUserPublicDto } from '../git-user-public.dto';

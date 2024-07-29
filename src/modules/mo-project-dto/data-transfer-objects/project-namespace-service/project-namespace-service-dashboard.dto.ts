@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProjectNamespaceServiceAppDashboardDto } from '../project-namespace-service-app/project-namespace-service-app-dashboard.dto';
 import { ProjectNamespaceServiceContainerNameDto } from '../project-namespace-service-container';
 import { isArray, isString } from 'class-validator';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceDashboardDto extends BaseEntityDto {

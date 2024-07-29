@@ -1,5 +1,5 @@
 {
-  "name": "@mo/mo-core-base",
+  "name": "@mogenius/mo-core-base",
   "version": "2.3.7",
   "description": "Mogenius GmbH Core Base",
   "homepage": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base",
@@ -32,9 +32,9 @@
     "striptags": "^4.0.0-alpha.2"
   },
   "dependencies": {
-    "@mo/core-dto": "^2.0.8",
-    "@mo/database-dto": "^2.0.5",
-    "@mo/user-dto": "^2.1.2",
+    "@mogenius/core-dto": "^2.1.0",
+    "@mogenius/database-dto": "^2.1.0",
+    "@mogenius/user-dto": "^2.1.2",
     "@mogenius/js-utils": "^2.1.0",
     "@mogenius/websocket-dto": "^2.0.9",
     "class-transformer": "^0.5.1",

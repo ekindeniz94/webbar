@@ -14,7 +14,7 @@ import {
 import { Expose, Transform, Type } from 'class-transformer';
 import { MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 import _ from 'lodash';
-import { CountryDto } from '@mo/database-dto';
+import { CountryDto } from '@mogenius/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
 
 export class ClusterPatchRequestDto extends ClusterCreateRequestDto {

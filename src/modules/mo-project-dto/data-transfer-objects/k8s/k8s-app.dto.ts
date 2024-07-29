@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 import { ServiceControllerEnum } from '../../enums';
 
 export class K8sAppDto {

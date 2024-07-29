@@ -20,7 +20,7 @@ import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-
 import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()

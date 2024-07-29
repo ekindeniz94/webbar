@@ -1,5 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { IsNotEmpty, IsOptional, IsString, isString } from 'class-validator';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';

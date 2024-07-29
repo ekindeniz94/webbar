@@ -2,7 +2,7 @@ import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsS
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsSemanticVersion, MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 import _ from 'lodash';
-import { CountryDto } from '@mo/database-dto';
+import { CountryDto } from '@mogenius/database-dto';
 import { ClusterAdminCreateRequestDto } from './cluster-admin-create-request.dto';
 import { OrganizationNameDto } from '../../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../../enums';

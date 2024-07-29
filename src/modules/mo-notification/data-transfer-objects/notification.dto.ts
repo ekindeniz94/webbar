@@ -1,7 +1,7 @@
 // import { Expose } from 'class-transformer';
 // import { MessageTypeEnum, NotificationContentTypeEnum, NotificationTypeEnum } from '../enums';
-// import { UserPublicDto } from '@mo/user-dto';
-// import { BaseEntityDto } from '@mo/database-dto';
+// import { UserPublicDto } from '@mogenius/user-dto';
+// import { BaseEntityDto } from '@mogenius/database-dto';
 //
 // export class NotificationDto extends BaseEntityDto {
 //   @Expose()

@@ -1,11 +1,11 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isNumberString, IsOptional, isString } from 'class-validator';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
-import { UserPublicDto } from '@mo/user-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 import { ProjectNamespaceServiceAppDto } from '../project-namespace-service-app';
 import { ProjectNamespaceServiceContainerDto } from '../project-namespace-service-container/project-namespace-service-container.dto';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { TrafficDto } from '../stats';
 import { HpaSettingsDto } from './hpa';

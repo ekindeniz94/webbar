@@ -1,7 +1,7 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsString, IsUUID, ValidateNested } from 'class-validator';
 import { OrganizationCreateRequestDto } from './organization-create-request.dto';
-import { AddressPatchRequestDto } from '@mo/database-dto';
+import { AddressPatchRequestDto } from '@mogenius/database-dto';
 
 export class OrganizationPatchRequestDto extends OrganizationCreateRequestDto {
   @IsNotEmpty()

@@ -2614,7 +2614,7 @@
 ### Bug Fixes
 
 * rm mo user ([a0f17aa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a0f17aa68aaba48b4f55118b6427faacfe779d6c))
-* rm utils and install @mo/js-utils ([aacf4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aacf4e238b39538c1d6b923f7069d89598ffbdfa))
+* rm utils and install @mogenius/js-utils ([aacf4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aacf4e238b39538c1d6b923f7069d89598ffbdfa))
 
 ## 1.35.30 (2023-02-02)
 
@@ -7078,7 +7078,7 @@
 ### Bug Fixes
 
 * added misc-data and project plugin. ([6ea3266](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6ea32662c041701a1adce8b5ebd51be96103c46b))
-* rm @mo/mo-gateway-core ([e6c3b79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e6c3b79e63c09a515ada52b39c93bebaeddb3a4a))
+* rm @mogenius/mo-gateway-core ([e6c3b79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e6c3b79e63c09a515ada52b39c93bebaeddb3a4a))
 
 ## 1.1.1 (2021-03-01)
 

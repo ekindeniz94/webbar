@@ -3,7 +3,7 @@ import { IsBoolean, IsEmail, IsEnum, IsOptional, isString, IsString, MaxLength, 
 import { DTO_VALIDATION_CONST, LanguageCodeDto } from '../../../mo-core';
 import { RegisterBetaRoleEnum } from '../../enums';
 import { StripTags } from '@mogenius/js-utils';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class RegisterBetaRequestDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

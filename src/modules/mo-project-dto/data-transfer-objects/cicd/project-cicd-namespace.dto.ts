@@ -1,4 +1,4 @@
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { Expose, Type } from 'class-transformer';
 import { ProjectCiCdNamespaceServiceDto } from './project-cicd-namespace-service.dto';
 

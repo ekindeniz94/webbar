@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { Max, Min } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { TransformToBoolean } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerPortDto extends BaseEntityDto {

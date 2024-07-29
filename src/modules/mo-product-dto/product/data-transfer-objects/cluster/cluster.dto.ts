@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
-import { BaseEntityDto, CountryDto } from '@mo/database-dto';
+import { BaseEntityDto, CountryDto } from '@mogenius/database-dto';
 import { OrganizationNameDto } from '../organization';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
 import { TransformToBoolean } from '@mogenius/js-utils';

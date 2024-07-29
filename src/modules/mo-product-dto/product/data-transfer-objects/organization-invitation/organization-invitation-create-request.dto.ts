@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, isString, IsString, MaxLength } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { StripTags } from '@mogenius/js-utils';
-import { USER_CONST } from '@mo/user-dto';
+import { USER_CONST } from '@mogenius/user-dto';
 
 export class OrganizationInvitationCreateRequestDto {
   @IsNotEmpty()
