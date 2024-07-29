@@ -2,6 +2,18 @@
 
 
 
+# 2.4.0 (2024-07-29)
+
+
+### Bug Fixes
+
+* pkg name ([9cf5a15](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9cf5a158ba862b0d3531d3851726440df661065f))
+
+
+### Features
+
+* use gh repos only ([2b58dad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2b58dad1a4ff7d04d555609a37f00dbf6f537792))
+
 ## 2.3.7 (2024-07-26)
 
 
