@@ -3,7 +3,7 @@ import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { ProbeHttpGetDto } from './probe-http-get.dto';
 import { ProbeTcpSocketDto } from './probe-tcp-socket.dto';
 import { ProbeExecDto } from './probe-exec.dto';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProbeGrpcDto } from './probe-grpc.dto';
 
 export class ProbeDto {

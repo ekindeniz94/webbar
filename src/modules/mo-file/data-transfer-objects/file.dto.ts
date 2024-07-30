@@ -1,8 +1,8 @@
 import { Expose, Type } from 'class-transformer';
 import { FileTypeDto } from './file-type.dto';
 import { FileTranslationDto } from './file-translation.dto';
-import { UserPublicDto } from '@mo/user-dto';
-import { BaseEntityDto } from '@mo/database-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class FileDto2 extends BaseEntityDto {
   @Type(() => FileTypeDto)

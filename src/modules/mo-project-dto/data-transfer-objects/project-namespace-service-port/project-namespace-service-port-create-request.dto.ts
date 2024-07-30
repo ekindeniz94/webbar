@@ -11,7 +11,7 @@ import {
   ValidateNested
 } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectNamespaceServicePortCnameDto } from './project-namespace-service-port-cname.dto';
 import _ from 'lodash';
 

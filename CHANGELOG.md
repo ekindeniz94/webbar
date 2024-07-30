@@ -2,6 +2,83 @@
 
 
 
+## 2.3.7 (2024-07-26)
+
+
+### Bug Fixes
+
+* new delete user from organization event. ([e14e5ae](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e14e5ae4953fef4f4dfb6fec86bd89493d5ceea0))
+
+## 2.3.6 (2024-07-26)
+
+
+### Bug Fixes
+
+* final metrics dtos ([ff0c6e0](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/ff0c6e05245ecdea8c4e360b5eb39265d151a5a6))
+
+## 2.3.5 (2024-07-26)
+
+
+### Bug Fixes
+
+* isLoced state fix. ([5d8fb6d](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5d8fb6da8f39f0cb3f49f1e8f035976fe0594100))
+
+## 2.3.4 (2024-07-25)
+
+
+### Bug Fixes
+
+* ad metrics to index ([4e25989](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4e25989324ff34b60269d8bf818b705eaf7f3915))
+* add metrics dto ([674bbbf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/674bbbfe8be1cd69174775f4655c155df9bd701b))
+
+## 2.3.3 (2024-07-25)
+
+
+### Bug Fixes
+
+* k8sName function ([a440c9e](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a440c9e79cbb34d767645e6de781cb273acbbfc2))
+* update packages ([4958880](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/4958880eed19a5218a513aaf2bf99f0b0539a3b4))
+
+## 2.3.2 (2024-07-25)
+
+
+### Bug Fixes
+
+* helm chart dto. ([03b5d7a](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/03b5d7ab0e01d042bb12197048649c06f605ea65))
+
+## 2.3.1 (2024-07-25)
+
+
+### Bug Fixes
+
+* patch cluster ([5fa4441](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5fa4441f778c34afe58fbed40b95a58e41981e5a))
+
+# 2.3.0 (2024-07-25)
+
+
+### Bug Fixes
+
+* rename npm token ([4064168](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/406416867a1da2ba6d0b3db41ca765b827ca86ef))
+
+
+### Features
+
+* switch websocket dep ([0eeb5b2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/0eeb5b252652da158b2546298c205a882e7a77f8))
+
+## 2.2.6 (2024-07-24)
+
+
+### Bug Fixes
+
+* service container status ([8b4dffa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/8b4dffafa667e5759f7b8507bf4f397b94b91108))
+
+## 2.2.5 (2024-07-24)
+
+
+### Bug Fixes
+
+* service status ([38638cf](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/38638cffe20362e502bae864c66a92938497465c))
+
 ## 2.2.4 (2024-07-19)
 
 
@@ -2559,7 +2636,7 @@
 ### Bug Fixes
 
 * rm mo user ([a0f17aa](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/a0f17aa68aaba48b4f55118b6427faacfe779d6c))
-* rm utils and install @mo/js-utils ([aacf4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aacf4e238b39538c1d6b923f7069d89598ffbdfa))
+* rm utils and install @mogenius/js-utils ([aacf4e2](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/aacf4e238b39538c1d6b923f7069d89598ffbdfa))
 
 ## 1.35.30 (2023-02-02)
 
@@ -7023,7 +7100,7 @@
 ### Bug Fixes
 
 * added misc-data and project plugin. ([6ea3266](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/6ea32662c041701a1adce8b5ebd51be96103c46b))
-* rm @mo/mo-gateway-core ([e6c3b79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e6c3b79e63c09a515ada52b39c93bebaeddb3a4a))
+* rm @mogenius/mo-gateway-core ([e6c3b79](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/e6c3b79e63c09a515ada52b39c93bebaeddb3a4a))
 
 ## 1.1.1 (2021-03-01)
 

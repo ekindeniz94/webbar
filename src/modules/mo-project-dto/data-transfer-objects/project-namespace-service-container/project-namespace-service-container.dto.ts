@@ -1,11 +1,11 @@
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray, isBoolean, IsBoolean, IsOptional, isString, MaxLength, ValidateNested } from 'class-validator';
+import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';

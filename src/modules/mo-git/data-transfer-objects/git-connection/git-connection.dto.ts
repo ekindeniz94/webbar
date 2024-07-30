@@ -3,7 +3,7 @@ import moment from 'moment';
 import { BitbucketTokenAccessTypeEnum, GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
 import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { GitUserDto } from './git-user.dto';
 
 export class GitConnectionDto extends BaseEntityDto {

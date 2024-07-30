@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, IsString } from 'class-validator';
 import { AppTagDto } from '../app-tag.dto';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class AppPublicDto extends BaseEntityDto {
   @Type(() => AppTagDto)

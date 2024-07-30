@@ -1,5 +1,4 @@
-import { IdDto } from '@mo/core-dto';
-import { StripTags } from '@mo/js-utils';
+import { IdDto } from '@mogenius/core-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
@@ -20,6 +19,7 @@ import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../projec
 import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
+import { StripTags } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -93,7 +93,7 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
       ? {
           id: value
         }
-      : value ?? null
+      : (value ?? null)
   )
   @Expose()
   containerImageRepoSecret: IdDto;

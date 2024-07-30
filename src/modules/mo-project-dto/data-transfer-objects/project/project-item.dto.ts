@@ -2,11 +2,11 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
-import { BaseEntityDto } from '@mo/database-dto';
-import { UserPublicDto } from '@mo/user-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionPublicDto } from '../../../mo-git';
-import { TransformToBoolean } from '@mo/js-utils';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
 
 export class ProjectItemDto extends BaseEntityDto {

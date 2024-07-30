@@ -16,7 +16,7 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceContainerPatchRequestDto } from '../project-namespace-service-container/project-namespace-service-container-patch-request.dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';

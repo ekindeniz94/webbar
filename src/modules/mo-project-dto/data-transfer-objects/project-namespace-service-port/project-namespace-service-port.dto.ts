@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, Max, Min, ValidateNested } from 'class-validator';
 import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
-import { BaseEntityDto } from '@mo/database-dto';
-import { TransformToBoolean } from '@mo/js-utils';
+import { BaseEntityDto } from '@mogenius/database-dto';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectNamespaceServicePortCnameDto } from './project-namespace-service-port-cname.dto';
 import _ from 'lodash';
 

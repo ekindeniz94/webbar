@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, isString } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerGitSettingsCreateRequestDto {
   @IsOptional()

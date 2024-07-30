@@ -19,13 +19,6 @@ export class CronjobSettingsDto {
   @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) || isNumberString(value) ? +value : 6))
-  @Expose()
-  backoffLimit: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  @Type(() => Number)
   @Transform(({ value }) => (isNumber(value) || isNumberString(value) ? +value : 5 * 60)) // default 5 minutes
   @Expose()
   activeDeadlineSeconds: number;

@@ -1,8 +1,8 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
 import { isArray } from 'class-validator';
-import { AddressDto, BaseEntityDto } from '@mo/database-dto';
+import { AddressDto, BaseEntityDto } from '@mogenius/database-dto';
 import { ClusterDto } from '../cluster';
-import { UserPublicDto } from '@mo/user-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 import { ProductDto } from '../product';
 import { OrganizationUserGroupDto } from './organization-user-group.dto';
 

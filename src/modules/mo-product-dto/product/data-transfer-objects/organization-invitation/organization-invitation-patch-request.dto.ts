@@ -1,6 +1,6 @@
 import { IsOptional, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class OrganizationInvitationPatchRequestDto {
   @IsOptional()

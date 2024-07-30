@@ -1,7 +1,7 @@
 import { IsBoolean, IsOptional, ValidateNested, validateSync } from 'class-validator';
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { ProbeDto } from '../probe/probe.dto';
-import { MoUtils, TransformToBoolean } from '@mo/js-utils';
+import { MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerProbeDto {
   @IsBoolean()

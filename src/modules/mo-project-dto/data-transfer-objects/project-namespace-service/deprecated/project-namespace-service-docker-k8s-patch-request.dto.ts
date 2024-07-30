@@ -1,7 +1,7 @@
 // import { Expose, Transform, Type } from 'class-transformer';
 // import { IsNumber, IsOptional, IsString, ValidateIf } from 'class-validator';
 // import { KeyVaultSecretDto } from '../key-vault';
-// import { StripTags } from '@mo/js-utils';
+// import { StripTags } from '@mogenius/js-utils';
 //
 // export class ProjectNamespaceServiceDockerK8sPatchRequestDto {
 //   @StripTags()

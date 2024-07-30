@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString, Matches, MaxLength } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 
 export class KeyVaultSecretCreateRequestDto {

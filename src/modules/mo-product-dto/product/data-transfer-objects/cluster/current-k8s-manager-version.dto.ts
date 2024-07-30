@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsSemanticVersion } from '@mo/js-utils';
+import { IsSemanticVersion } from '@mogenius/js-utils';
 
 export class CurrentK8sManagerVersionDto {
   @IsSemanticVersion()

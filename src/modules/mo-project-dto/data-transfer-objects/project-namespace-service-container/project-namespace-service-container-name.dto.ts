@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import { isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ContainerTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceContainerNameDto extends BaseEntityDto {

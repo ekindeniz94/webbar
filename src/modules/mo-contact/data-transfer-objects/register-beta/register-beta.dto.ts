@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { LanguageCodeDto } from '../../../mo-core';
 import { RegisterBetaRoleEnum } from '../../enums';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class RegisterBetaDto extends BaseEntityDto {
   @Type(() => LanguageCodeDto)

@@ -10,7 +10,7 @@ import {
   ProjectNamespaceServiceDeploymentStrategyEnum,
   ServiceControllerEnum
 } from '../../../mo-project-dto';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { OrganizationNameDto } from '../../../mo-product-dto';
 import { AppContainerDto } from '../app-container/app-container.dto';
 import { AppPortDto } from '../app-port.dto';

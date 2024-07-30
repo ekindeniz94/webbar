@@ -11,12 +11,12 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { ProjectNamespaceServiceContainerGitSettingsCreateRequestDto } from '../project-namespace-service-container-git-settings';
 import { ContainerTypeEnum } from '../../enums';
-import { IdDto, IdRequiredDto } from '@mo/core-dto';
+import { IdDto, IdRequiredDto } from '@mogenius/core-dto';
 
 export class ProjectNamespaceServiceContainerCreateRequestDto {
   @IsNotEmpty()

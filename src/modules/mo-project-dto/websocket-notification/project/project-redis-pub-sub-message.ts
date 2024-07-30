@@ -1,4 +1,4 @@
-import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mo/websocket-dto';
+import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mogenius/websocket-dto';
 import {
   ProjectCiCdSocketDataEventEnum,
   ProjectInvitationSocketDataEventEnum,

@@ -1,4 +1,4 @@
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {
@@ -18,7 +18,7 @@ import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils'
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
 import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
-import { StripTags } from '@mo/js-utils';
+import { StripTags } from '@mogenius/js-utils';
 
 export class AppContainerCreateRequestDto extends BaseEntityDto {
   @IsNotEmpty()

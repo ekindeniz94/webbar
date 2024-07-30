@@ -1,10 +1,20 @@
 import { ClusterCreateRequestDto } from './cluster-create-request.dto';
-import { isArray, IsBoolean, IsEnum, isIP, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
-import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { MoUtils, TransformToBoolean } from '@mo/js-utils';
+import {
+  isArray,
+  IsBoolean,
+  IsEnum,
+  isIP,
+  isNotEmpty,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  IsUUID
+} from 'class-validator';
+import { Expose, Transform, Type } from 'class-transformer';
+import { MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 import _ from 'lodash';
-// import { ClusterSetupDto } from './cluster-setup.dto';
-import { CountryDto } from '@mo/database-dto';
+import { CountryDto } from '@mogenius/database-dto';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum } from '../../enums';
 
 export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
@@ -84,12 +94,13 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   // clusterSetup: ClusterSetupDto;
 
   @IsNotEmpty()
+  @Transform(({ value }) => (value && isNotEmpty(value) ? value : 'https://index.docker.io/v1/'))
   @IsString()
   @Expose()
   containerRegistryUrl: string;
 
   @IsNotEmpty()
-  @Transform(({ value }) => MoUtils.removeLastSlashes(value))
+  @Transform(({ value }) => (value && isNotEmpty(value) ? MoUtils.removeLastSlashes(value) : 'docker.io'))
   @IsString()
   @Expose()
   containerRegistryPath: string;
@@ -97,12 +108,12 @@ export class ClusterPatchRequestDto extends ClusterCreateRequestDto {
   @IsOptional()
   @IsString()
   @Expose()
-  containerRegistryUser: string;
+  containerRegistryUser?: string | null;
 
   @IsOptional()
   @IsString()
   @Expose()
-  containerRegistryPat: string;
+  containerRegistryPat?: string | null;
 
   // @IsOptional()
   // @Type(() => ProductDto)

@@ -11,8 +11,8 @@ import {
 } from 'class-validator';
 import moment from 'moment';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
-import { IdDto } from '@mo/core-dto';
-import { TransformToBoolean } from '@mo/js-utils';
+import { IdDto } from '@mogenius/core-dto';
+import { TransformToBoolean } from '@mogenius/js-utils';
 import { ClusterDto } from '../cluster';
 import { ProductKubernetesSettingsCreateRequestDto } from './product-kubernetes-settings-create-request.dto';
 

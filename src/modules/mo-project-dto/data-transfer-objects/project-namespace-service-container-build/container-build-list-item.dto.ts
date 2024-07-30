@@ -1,5 +1,5 @@
-import { Expose, Type } from 'class-transformer';
-import { MoUtils } from '@mo/js-utils';
+import { Expose, Transform, Type } from 'class-transformer';
+import { MoUtils } from '@mogenius/js-utils';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../project-namespace-service-container';
 
 export class ContainerBuildListItemDto {

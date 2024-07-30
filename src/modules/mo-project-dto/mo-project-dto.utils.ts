@@ -1,4 +1,4 @@
-import { MoUtils } from '@mo/js-utils';
+import { MoUtils } from '@mogenius/js-utils';
 import { PROJECT_CONST } from './mo-project-dto.const';
 
 export class MoProjectDtoUtils {
@@ -30,7 +30,7 @@ export class MoProjectDtoUtils {
       .replace(/^-+/, '')
       .replace(/^[0-9]/, (p) => numberToWord[p])
       .replace(/ +/g, '-')
-      .replace(/[(-)\1+]/g, '-')
+      .replace(/[()\-\+]/g, '-')
       .substring(0, maxLength)
       .split('-')
       .filter((item) => item && item.length > 0)
