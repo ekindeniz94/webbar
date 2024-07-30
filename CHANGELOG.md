@@ -2,6 +2,22 @@
 
 
 
+# 2.4.0-develop.1 (2024-07-30)
+
+
+### Bug Fixes
+
+* added port logic. ([3e6f16c](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/3e6f16c643ac122c8cfa25a187d5a94230eecd14))
+* pkg name ([9cf5a15](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9cf5a158ba862b0d3531d3851726440df661065f))
+* refactoring app lib ports ([33c4b91](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/33c4b919af8c9256a424a3a040af493879521038))
+* refactoring cnames/ports ([5e71a26](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/5e71a260af442d20c2edb5dc2ac3beeaa0fcdf5a))
+* refactoring ports/cnames ([16a4aa6](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/16a4aa631772ebe9eab151ac171675df08606b8c))
+
+
+### Features
+
+* use gh repos only ([2b58dad](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/2b58dad1a4ff7d04d555609a37f00dbf6f537792))
+
 ## 2.3.7 (2024-07-26)
 
 
