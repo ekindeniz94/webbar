@@ -34,8 +34,8 @@
   "dependencies": {
     "@mogenius/core-dto": "^2.1.0",
     "@mogenius/database-dto": "^2.1.0",
-    "@mogenius/user-dto": "^2.1.2",
-    "@mogenius/js-utils": "^2.1.0",
+    "@mogenius/user-dto": "^2.2.0",
+    "@mogenius/js-utils": "^2.1.1",
     "@mogenius/websocket-dto": "^2.0.9",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
