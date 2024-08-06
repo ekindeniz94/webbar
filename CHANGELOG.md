@@ -2,6 +2,13 @@
 
 
 
+## 2.4.1 (2024-08-06)
+
+
+### Bug Fixes
+
+* update mogenius package ([9a99ba3](https://dev.azure.com/mogenius/packages/_git/mo-core-base/commit/9a99ba309b1e2e6375ee48920989a11ef270eb9e))
+
 # 2.4.0 (2024-07-29)
 
 
