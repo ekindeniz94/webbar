@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { GroupDto } from '@mo/user-dto';
 import { ProductFlatDto } from '../product';
-import { isArray } from 'class-validator';
+import { isArray, IsOptional, IsString } from 'class-validator';
 
 export class OrganizationPermissionDto {
   @Expose()
@@ -9,6 +9,11 @@ export class OrganizationPermissionDto {
 
   @Expose()
   name: string;
+
+  @Expose()
+  @IsString()
+  @IsOptional()
+  imageUrl?: string;
 
   @Type(() => GroupDto)
   @Expose()
