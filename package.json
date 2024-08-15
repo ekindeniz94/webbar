@@ -1,8 +1,15 @@
 {
-  "name": "@mo/mo-core-base",
+  "name": "@mogenius/mo-core-base",
   "version": "2.4.1",
   "description": "Mogenius GmbH Core Base",
-  "homepage": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base",
+  "homepage": "https://github.com/mogenius/mo-core-base.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogenius/mo-core-base.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "dist/mo-core-base.js",
   "types": "dist/mo-core-base.d.ts",
   "files": [
@@ -17,10 +24,6 @@
     "semantic-release": "semantic-release",
     "yalc:push": "npm run build && npx yalc push",
     "yalc:watch": "nodemon --config ./nodemon.config.json --exec \"npm run yalc:push\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://mogenius@dev.azure.com/mogenius/packages/_git/mo-core-base"
   },
   "keywords": [
     "gateway"
