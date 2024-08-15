@@ -2,6 +2,18 @@
 
 
 
+# 2.5.0 (2024-08-15)
+
+
+### Bug Fixes
+
+* remove condition ([4a5108d](https://github.com/mogenius/mo-core-base/commit/4a5108dcaafeaa04fddf40f365141562957d6504))
+
+
+### Features
+
+* move to gh actions ([3d19ddb](https://github.com/mogenius/mo-core-base/commit/3d19ddbe736e5facb1c2cb1c2f48132bd7f3edca))
+
 ## 2.4.1 (2024-08-06)
 
 
