@@ -1,12 +1,13 @@
-import { Expose, plainToInstance, Transform } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { ComputeTimeSeriesDto } from './compute-time-series.dto';
+import { MoUtils } from '@mogenius/js-utils';
 
 export class ComputeTimeSeriesResponseDto {
   @Transform(
     ({ value }) =>
       Object.entries(value).reduce(
         (acc, [key, val]) => {
-          acc[key] = (val as any).map((item: any) => plainToInstance(ComputeTimeSeriesDto, item));
+          acc[key] = MoUtils.transformToDtoList(ComputeTimeSeriesDto, val as any);
           return acc;
         },
         {} as { [key: string]: ComputeTimeSeriesDto[] }
