@@ -2,6 +2,13 @@
 
 
 
+## 2.5.1 (2024-08-20)
+
+
+### Bug Fixes
+
+* product max cluster ([ad1358c](https://github.com/mogenius/mo-core-base/commit/ad1358cfa6637b1ceeaeec2d5a888c53315231de))
+
 # 2.5.0 (2024-08-15)
 
 
