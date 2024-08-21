@@ -2,6 +2,15 @@
 
 
 
+## 2.5.2 (2024-08-21)
+
+
+### Bug Fixes
+
+* add image upload dto ([bee347d](https://github.com/mogenius/mo-core-base/commit/bee347d08102c4ac941225345dbbfe0f401c1675))
+* add imageUrl ([44323bf](https://github.com/mogenius/mo-core-base/commit/44323bf2b4cc785d092dc8fcc6993590f342905f))
+* add imageUrl to organization ([8e634ca](https://github.com/mogenius/mo-core-base/commit/8e634cad53bd3831596d781aa8be0fce10ebad47))
+
 ## 2.5.1 (2024-08-20)
 
 
