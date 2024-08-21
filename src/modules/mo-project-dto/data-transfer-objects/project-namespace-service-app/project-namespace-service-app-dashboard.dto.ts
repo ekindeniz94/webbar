@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { BaseEntityDto } from '@mo/database-dto/dist/data-transfer-objects/base.entity.dto';
+import { BaseEntityDto } from '@mogenius/database-dto/dist/data-transfer-objects/base.entity.dto';
 import { ServiceControllerEnum } from '../../enums';
 
 export class ProjectNamespaceServiceAppDashboardDto extends BaseEntityDto {

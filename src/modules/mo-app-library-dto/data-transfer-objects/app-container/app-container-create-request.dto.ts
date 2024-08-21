@@ -1,4 +1,4 @@
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
 import {

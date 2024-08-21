@@ -1,7 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { StripTags } from '@mogenius/js-utils';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
 
 export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {

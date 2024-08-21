@@ -64,7 +64,6 @@ export class K8sResourceServiceDto {
         return value;
       }
       return {
-        backoffLimit: obj?.spec?.jobTemplate?.spec?.backoffLimit,
         activeDeadlineSeconds: obj?.spec?.jobTemplate?.spec?.activeDeadlineSeconds,
         schedule: obj?.spec?.schedule
       };

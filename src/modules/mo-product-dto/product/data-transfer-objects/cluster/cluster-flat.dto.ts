@@ -1,4 +1,4 @@
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';

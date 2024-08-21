@@ -1,6 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, IsOptional, isString, IsString } from 'class-validator';
-import { USER_CONST } from '@mo/user-dto';
+import { USER_CONST } from '@mogenius/user-dto';
 import { StripTags } from '@mogenius/js-utils';
 
 export class SalesRequestDto {

@@ -1,6 +1,6 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
-import { AddressCreateRequestDto } from '@mo/database-dto';
+import { AddressCreateRequestDto } from '@mogenius/database-dto';
 
 export class OrganizationCreateRequestDto {
   @IsNotEmpty()

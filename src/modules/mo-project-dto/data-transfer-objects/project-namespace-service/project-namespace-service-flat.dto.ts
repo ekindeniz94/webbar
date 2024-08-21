@@ -1,8 +1,8 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { isNumberString, isString } from 'class-validator';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceDeploymentStrategyEnum, ServiceControllerEnum } from '../../enums';
-import { IdDto } from '@mo/core-dto';
+import { IdDto } from '@mogenius/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 
 export class ProjectNamespaceServiceFlatDto extends BaseEntityDto {

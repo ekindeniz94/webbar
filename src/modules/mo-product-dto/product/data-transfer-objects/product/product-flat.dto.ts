@@ -2,7 +2,7 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { ProductStateEnum, ProductTypeEnum } from '../../enums';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { OrganizationNameDto } from '../organization';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import moment from 'moment';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
 
@@ -49,9 +49,11 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   persistentDiskInMb: number;
 
+  @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   clusterCountMax?: number;
 
+  @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   projectCountMax?: number;
 

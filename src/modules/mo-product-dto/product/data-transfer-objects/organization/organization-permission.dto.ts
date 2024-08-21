@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { GroupDto } from '@mo/user-dto';
+import { GroupDto } from '@mogenius/user-dto';
 import { ProductFlatDto } from '../product';
 import { isArray, IsOptional, IsString } from 'class-validator';
 

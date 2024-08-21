@@ -7,7 +7,7 @@ import { KeyVaultSecretDto } from '../key-vault';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
 import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-container-cname';
 import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
 import { KubernetesPublicEventDto } from '../../../mo-kubernetes';

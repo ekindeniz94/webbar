@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { BaseEntityDto } from '@mo/database-dto';
+import { BaseEntityDto } from '@mogenius/database-dto';
 
 export class KeyVaultSecretDto extends BaseEntityDto {
   @Expose()
