@@ -2,6 +2,21 @@
 
 
 
+# 2.6.0-develop.1 (2024-08-26)
+
+
+### Bug Fixes
+
+* added port logic. ([3e6f16c](https://github.com/mogenius/mo-core-base/commit/3e6f16c643ac122c8cfa25a187d5a94230eecd14))
+* refactoring app lib ports ([33c4b91](https://github.com/mogenius/mo-core-base/commit/33c4b919af8c9256a424a3a040af493879521038))
+* refactoring cnames/ports ([5e71a26](https://github.com/mogenius/mo-core-base/commit/5e71a260af442d20c2edb5dc2ac3beeaa0fcdf5a))
+* refactoring ports/cnames ([16a4aa6](https://github.com/mogenius/mo-core-base/commit/16a4aa631772ebe9eab151ac171675df08606b8c))
+
+
+### Features
+
+* test dev release npm ([b3915ae](https://github.com/mogenius/mo-core-base/commit/b3915aec8eb5746224f199612c78d2069b0705c8))
+
 ## 2.5.3 (2024-08-26)
 
 
