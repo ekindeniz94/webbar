@@ -66,9 +66,11 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   persistentDiskInMb: number;
 
+  @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   clusterCountMax?: number;
 
+  @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   projectCountMax?: number;
 

@@ -1,5 +1,5 @@
 import { Expose, instanceToPlain, Transform, Type } from 'class-transformer';
-import { isArray } from 'class-validator';
+import { isArray, IsOptional, IsString } from 'class-validator';
 import { AddressDto, BaseEntityDto } from '@mogenius/database-dto';
 import { ClusterDto } from '../cluster';
 import { UserPublicDto } from '@mogenius/user-dto';
@@ -42,4 +42,9 @@ export class OrganizationDto extends BaseEntityDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   organizationUserGroups: OrganizationUserGroupDto[];
+
+  @Expose()
+  @IsOptional()
+  @IsString()
+  imageUrl?: string;
 }

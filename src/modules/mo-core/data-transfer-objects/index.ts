@@ -22,3 +22,4 @@ export * from './response.dto';
 export * from './user-application-request.dto';
 export * from './user-application-item-response.dto';
 export * from './user-verification-status-response.dto';
+export * from './image-upload.dto';

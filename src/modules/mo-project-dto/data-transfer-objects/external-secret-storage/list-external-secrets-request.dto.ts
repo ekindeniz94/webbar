@@ -5,7 +5,6 @@ import { MoProjectDtoUtils, PROJECT_CONST } from '../..';
 export class ListExternalSecretsRequestDto {
   @IsNotEmpty()
   @IsString()
-  @Transform(({ value }) => MoProjectDtoUtils.k8sName(value, PROJECT_CONST.K8S_NAME.MAX - 16))
   @Expose()
-  namePrefix: string;
+  name: string;
 }

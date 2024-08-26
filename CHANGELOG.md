@@ -2,7 +2,42 @@
 
 
 
-# 2.5.0-develop.1 (2024-08-15)
+## 2.5.3 (2024-08-26)
+
+
+### Bug Fixes
+
+* update external store dtos ([8945e56](https://github.com/mogenius/mo-core-base/commit/8945e562de00ea3b47ddaf79f63f502c4b3477ee))
+
+## 2.5.2 (2024-08-21)
+
+
+### Bug Fixes
+
+* add image upload dto ([bee347d](https://github.com/mogenius/mo-core-base/commit/bee347d08102c4ac941225345dbbfe0f401c1675))
+* add imageUrl ([44323bf](https://github.com/mogenius/mo-core-base/commit/44323bf2b4cc785d092dc8fcc6993590f342905f))
+* add imageUrl to organization ([8e634ca](https://github.com/mogenius/mo-core-base/commit/8e634cad53bd3831596d781aa8be0fce10ebad47))
+
+## 2.5.1 (2024-08-20)
+
+
+### Bug Fixes
+
+* product max cluster ([ad1358c](https://github.com/mogenius/mo-core-base/commit/ad1358cfa6637b1ceeaeec2d5a888c53315231de))
+
+# 2.5.0 (2024-08-15)
+
+
+### Bug Fixes
+
+* remove condition ([4a5108d](https://github.com/mogenius/mo-core-base/commit/4a5108dcaafeaa04fddf40f365141562957d6504))
+
+
+### Features
+
+* move to gh actions ([3d19ddb](https://github.com/mogenius/mo-core-base/commit/3d19ddbe736e5facb1c2cb1c2f48132bd7f3edca))
+
+## 2.4.1 (2024-08-06)
 
 
 ### Bug Fixes
