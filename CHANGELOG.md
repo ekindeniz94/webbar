@@ -2,6 +2,13 @@
 
 
 
+## 2.5.3 (2024-08-26)
+
+
+### Bug Fixes
+
+* update external store dtos ([8945e56](https://github.com/mogenius/mo-core-base/commit/8945e562de00ea3b47ddaf79f63f502c4b3477ee))
+
 ## 2.5.2 (2024-08-21)
 
 
