@@ -5,5 +5,5 @@ export class ListExternalSecretStoresResponseDto {
   @Expose()
   @IsArray()
   @IsString({ each: true })
-  storesInCluster: string[];
+  stores: string[];
 }
