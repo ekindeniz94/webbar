@@ -2,6 +2,13 @@
 
 
 
+## 2.5.4 (2024-08-30)
+
+
+### Bug Fixes
+
+* add helm dtos ([3343719](https://github.com/mogenius/mo-core-base/commit/3343719d2c018a94d7a1c50f9919c36f7c067778))
+
 ## 2.5.3 (2024-08-26)
 
 
