@@ -15,3 +15,4 @@ export * from './project-notification-settings-category.dto';
 export * from './project-notification-settings.base.dto';
 export * from './default-project-notification-settings.base';
 export * from './default-project-notification-settings';
+export * from './send-project-notification.payload.dto';
