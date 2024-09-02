@@ -9,3 +9,6 @@ export * from './project-patch-request.dto';
 export * from './project-user.dto';
 export * from './project-user-role.dto';
 export * from './change-project-user-group-request.dto';
+export * from './project-notification-patch.request.dto';
+export * from './project-notification-settings.dto';
+export * from './project-notification-settings-group.dto';
