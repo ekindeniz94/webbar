@@ -2,6 +2,13 @@
 
 
 
+## 2.5.5 (2024-09-02)
+
+
+### Bug Fixes
+
+* update external sec dtos ([380ba63](https://github.com/mogenius/mo-core-base/commit/380ba63579bb40511879a44081d6eef798dc5220))
+
 ## 2.5.4 (2024-08-30)
 
 
