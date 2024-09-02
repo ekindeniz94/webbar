@@ -4,6 +4,7 @@ export * from './mo-contact';
 export * from './mo-core';
 export * from './mo-file';
 export * from './mo-git';
+export * from './mo-helm';
 export * from './mo-namespace';
 export * from './mo-kubernetes';
 export * from './mo-product-dto';
