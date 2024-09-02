@@ -1,13 +1,13 @@
 import { Expose, Type } from 'class-transformer';
 import { IsString } from 'class-validator';
-import { ProjectNotificationSettingsDto } from './project-notification-settings.dto';
+import { ProjectNotificationSettingsBaseDto } from './project-notification-settings.base.dto';
 
 export class ProjectNotificationPatchRequestDto {
   @IsString()
   @Expose()
   id: string;
 
-  @Type(() => ProjectNotificationSettingsDto)
+  @Type(() => ProjectNotificationSettingsBaseDto)
   @Expose()
-  notificationSettings: ProjectNotificationSettingsDto[];
+  notificationSettings: ProjectNotificationSettingsBaseDto[];
 }
