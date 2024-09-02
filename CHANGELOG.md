@@ -2,6 +2,14 @@
 
 
 
+# 2.6.0-develop.2 (2024-09-02)
+
+
+### Bug Fixes
+
+* add helm dtos ([3343719](https://github.com/mogenius/mo-core-base/commit/3343719d2c018a94d7a1c50f9919c36f7c067778))
+* update external sec dtos ([380ba63](https://github.com/mogenius/mo-core-base/commit/380ba63579bb40511879a44081d6eef798dc5220))
+
 ## 2.5.5 (2024-09-02)
 
 
