@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { IsBoolean, IsString } from 'class-validator';
-import { ProjectNotificationSettingsGroupDto } from './project-notification-settings-group.dto';
+import { ProjectNotificationSettingsCategoryDto } from './project-notification-settings-category.dto';
 import { ProjectNotificationSettingsTypeEnum } from '../../enums';
 
 export class ProjectNotificationSettingsDto {
@@ -24,6 +24,6 @@ export class ProjectNotificationSettingsDto {
   description: string;
 
   @Expose()
-  @Type(() => ProjectNotificationSettingsGroupDto)
-  group: ProjectNotificationSettingsGroupDto;
+  @Type(() => ProjectNotificationSettingsCategoryDto)
+  group: ProjectNotificationSettingsCategoryDto;
 }

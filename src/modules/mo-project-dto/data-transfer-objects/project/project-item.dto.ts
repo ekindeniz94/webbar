@@ -8,6 +8,7 @@ import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionPublicDto } from '../../../mo-git';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
+import { ProjectNotificationSettingsDto } from './project-notification-settings.dto';
 
 export class ProjectItemDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -69,4 +70,8 @@ export class ProjectItemDto extends BaseEntityDto {
   @Type(() => ProjectKubernetesLimitsDto)
   @Expose()
   kubernetesLimits: ProjectKubernetesLimitsDto;
+
+  @Type(() => ProjectNotificationSettingsDto)
+  @Expose()
+  notificationSettings: ProjectNotificationSettingsDto[];
 }
