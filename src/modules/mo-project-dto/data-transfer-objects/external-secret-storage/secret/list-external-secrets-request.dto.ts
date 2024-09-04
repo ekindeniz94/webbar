@@ -5,5 +5,5 @@ export class ListExternalSecretsRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  name: string;
+  namePrefix: string;
 }
