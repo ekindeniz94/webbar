@@ -2,6 +2,13 @@
 
 
 
+## 2.5.7 (2024-09-04)
+
+
+### Bug Fixes
+
+* update ExternalSecretStoreDto ([a9894b7](https://github.com/mogenius/mo-core-base/commit/a9894b794b39762559143acf179d6547fa02bfd4))
+
 ## 2.5.6 (2024-09-04)
 
 
