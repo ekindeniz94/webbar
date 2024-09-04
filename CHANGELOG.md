@@ -2,6 +2,13 @@
 
 
 
+## 2.5.6 (2024-09-04)
+
+
+### Bug Fixes
+
+* external sec store ([6e5bb01](https://github.com/mogenius/mo-core-base/commit/6e5bb01adcd394baa6a6567798b5ed8234677095))
+
 ## 2.5.5 (2024-09-02)
 
 
