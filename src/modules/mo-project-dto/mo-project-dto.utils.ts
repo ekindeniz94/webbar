@@ -1,5 +1,6 @@
 import { MoUtils } from '@mogenius/js-utils';
 import { PROJECT_CONST } from './mo-project-dto.const';
+git pull
 
 export class MoProjectDtoUtils {
   static generateK8sName(value: string): string {

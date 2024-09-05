@@ -1,7 +1,13 @@
-import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateExternalSecretStoreRequestDto {
+  @IsOptional()
+  @Transform(({ value }) => value ?? 'external-secret-store')
+  @IsString()
+  @Expose()
+  displayName: string;
+
   @IsNotEmpty()
   @IsString()
   @Expose()

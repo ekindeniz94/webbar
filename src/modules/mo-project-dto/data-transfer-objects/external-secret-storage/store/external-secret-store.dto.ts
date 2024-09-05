@@ -1,10 +1,17 @@
 import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
+import { isNotEmpty } from 'class-validator';
+import { MoUtils, StripTags } from '@mogenius/js-utils';
 
 export class ExternalSecretStoreDto {
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
+
+  @StripTags()
+  @Transform(({ value, obj }) => (value && isNotEmpty(value) ? MoUtils.alphaNumeric(value, obj.name) : obj.name))
+  @Expose()
+  displayName: string;
 
   @Expose()
   name: string;
