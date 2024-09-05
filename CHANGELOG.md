@@ -2,6 +2,14 @@
 
 
 
+## 2.5.8 (2024-09-05)
+
+
+### Bug Fixes
+
+* ExternalSecretStoreDto ([b323844](https://github.com/mogenius/mo-core-base/commit/b323844b4f30090546ccc6d15ee6ea2befcc39a8))
+* rm git pull from file ([51f4c38](https://github.com/mogenius/mo-core-base/commit/51f4c38c2040329dce72e2b685a575c6ee0b2555))
+
 ## 2.5.7 (2024-09-04)
 
 
