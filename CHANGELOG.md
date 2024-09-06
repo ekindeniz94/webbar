@@ -2,6 +2,13 @@
 
 
 
+## 2.5.9 (2024-09-06)
+
+
+### Bug Fixes
+
+* helm ([81876fe](https://github.com/mogenius/mo-core-base/commit/81876fe022d52cb4b33727b2bff419632a8c99cd))
+
 ## 2.5.8 (2024-09-05)
 
 
