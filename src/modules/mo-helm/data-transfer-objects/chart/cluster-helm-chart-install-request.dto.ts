@@ -1,7 +1,7 @@
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 
-export class ClusterHelmUpgradeRequestDto {
+export class ClusterHelmChartInstallRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -15,19 +15,19 @@ export class ClusterHelmUpgradeRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  version: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
   release: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  @IsString()
+  @Expose()
+  version: string;
+
+  @IsOptional()
   @IsString()
   @Expose()
   values: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsBoolean()
   @Expose()
   dryRun: boolean;

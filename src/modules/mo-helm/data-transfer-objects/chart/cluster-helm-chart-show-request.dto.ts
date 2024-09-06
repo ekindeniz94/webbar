@@ -1,8 +1,8 @@
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
-import { HelmShowFormatEnum } from '../enums';
+import { HelmShowFormatEnum } from '../../enums';
 
-export class ClusterHelmShowRequestDto {
+export class ClusterHelmChartShowRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()

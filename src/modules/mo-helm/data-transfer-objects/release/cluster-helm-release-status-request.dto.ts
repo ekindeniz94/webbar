@@ -1,9 +1,14 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 
-export class ClusterHelmListRequestDto {
+export class ClusterHelmReleaseStatusRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
   namespace: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  release: string;
 }

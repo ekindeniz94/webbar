@@ -1,7 +1,7 @@
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 
-export class ClusterHelmUninstallRequestDto {
+export class ClusterHelmReleaseRollbackRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -13,7 +13,7 @@ export class ClusterHelmUninstallRequestDto {
   release: string;
 
   @IsNotEmpty()
-  @IsBoolean()
+  @IsString()
   @Expose()
-  dryRun: boolean;
+  revision: string;
 }
