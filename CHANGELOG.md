@@ -2,6 +2,18 @@
 
 
 
+## 2.5.11 (2024-09-10)
+
+
+### Bug Fixes
+
+* add project notification settings ([3789946](https://github.com/mogenius/mo-core-base/commit/3789946d9c0f7eeafda5e5846ab878d0577fa8e1))
+* adjust strcutrues, add defaults ([224b7cf](https://github.com/mogenius/mo-core-base/commit/224b7cf4d719bbe7527e32ac4ec665f4df37ad67))
+* extend project notificartion defaults ([df8e20b](https://github.com/mogenius/mo-core-base/commit/df8e20b64ed591ec53cd37f37ca18ba7ca40a8c5))
+* refactor project notification settings ([72eea39](https://github.com/mogenius/mo-core-base/commit/72eea39f9cd07542f10d73c55581136d66fbb8d7))
+* send payload ([ff4632b](https://github.com/mogenius/mo-core-base/commit/ff4632b67cbe739b4a538861d25efade70e3d844))
+* typos ([c2883fc](https://github.com/mogenius/mo-core-base/commit/c2883fc02bb8adaa99dcf415fe5a282170b4865e))
+
 ## 2.5.10 (2024-09-10)
 
 
