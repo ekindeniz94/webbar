@@ -2,6 +2,13 @@
 
 
 
+## 2.5.10 (2024-09-10)
+
+
+### Bug Fixes
+
+* update helm DTOs ([e159cbd](https://github.com/mogenius/mo-core-base/commit/e159cbdf333324eef380fc4cb71f40edcdbaa7e9))
+
 ## 2.5.9 (2024-09-06)
 
 
