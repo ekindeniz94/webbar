@@ -2,6 +2,13 @@
 
 
 
+## 2.5.13 (2024-09-10)
+
+
+### Bug Fixes
+
+* removed external secrets. ([4b98d1c](https://github.com/mogenius/mo-core-base/commit/4b98d1c054e731fc16aa5b5c3754beea49db25d6))
+
 ## 2.5.12 (2024-09-10)
 
 
