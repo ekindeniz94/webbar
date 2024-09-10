@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 import { Expose } from 'class-transformer';
 
 export class ClusterHelmReleaseRollbackRequestDto {
@@ -13,7 +13,7 @@ export class ClusterHelmReleaseRollbackRequestDto {
   release: string;
 
   @IsNotEmpty()
-  @IsString()
+  @IsNumber()
   @Expose()
-  revision: string;
+  revision: number;
 }
