@@ -4,8 +4,8 @@ export enum ProjectNamespaceServiceEnvVarTypeEnum {
   VOLUME_MOUNT = 'VOLUME_MOUNT',
   // VOLUME_MOUNT_SEED = 'VOLUME_MOUNT_SEED',
   // CHANGE_OWNER = 'CHANGE_OWNER',
-  HOSTNAME = 'HOSTNAME',
-  EXTERNAL_SECRET_STORE = 'EXTERNAL_SECRET_STORE'
+  HOSTNAME = 'HOSTNAME'
+  // EXTERNAL_SECRET_STORE = 'EXTERNAL_SECRET_STORE'
 }
 
 export const ProjectNamespaceServiceEnvVarTypeEnum_ALL = [
@@ -14,6 +14,6 @@ export const ProjectNamespaceServiceEnvVarTypeEnum_ALL = [
   ProjectNamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT,
   // ProjectNamespaceServiceEnvVarTypeEnum.VOLUME_MOUNT_SEED,
   // ProjectNamespaceServiceEnvVarTypeEnum.CHANGE_OWNER,
-  ProjectNamespaceServiceEnvVarTypeEnum.HOSTNAME,
-  ProjectNamespaceServiceEnvVarTypeEnum.EXTERNAL_SECRET_STORE
+  ProjectNamespaceServiceEnvVarTypeEnum.HOSTNAME
+  // ProjectNamespaceServiceEnvVarTypeEnum.EXTERNAL_SECRET_STORE
 ];
