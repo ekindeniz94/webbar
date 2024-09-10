@@ -23,3 +23,4 @@ export * from './xterm-cluster-tool-type.enum';
 export * from './xterm-cluster-operator-log-component-type.enum';
 export * from './project-namespace-service-list-cronjob-job-tile-status.enum';
 export * from './project-namespace-service-list-cronjob-job-status.enum';
+export * from './project-notification-settings-type.enum';
