@@ -2,6 +2,13 @@
 
 
 
+## 2.5.12 (2024-09-10)
+
+
+### Bug Fixes
+
+* update runner ([0e623d2](https://github.com/mogenius/mo-core-base/commit/0e623d26eec539880c489aa4640903a889c5ae8d))
+
 ## 2.5.11 (2024-09-10)
 
 
