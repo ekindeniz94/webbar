@@ -2,6 +2,13 @@
 
 
 
+## 2.5.14 (2024-09-11)
+
+
+### Bug Fixes
+
+* add payload ([37d5c55](https://github.com/mogenius/mo-core-base/commit/37d5c55331a7960ae79132fc92858e8046d4d097))
+
 ## 2.5.13 (2024-09-10)
 
 
