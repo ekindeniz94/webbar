@@ -1,6 +1,6 @@
 {
   "name": "@mogenius/mo-core-base",
-  "version": "2.6.0-develop.2",
+  "version": "2.5.13",
   "description": "Mogenius GmbH Core Base",
   "homepage": "https://github.com/mogenius/mo-core-base.git",
   "repository": {
@@ -38,7 +38,7 @@
     "@mogenius/core-dto": "^2.1.0",
     "@mogenius/database-dto": "^2.1.0",
     "@mogenius/user-dto": "^2.2.0",
-    "@mogenius/js-utils": "^2.1.1",
+    "@mogenius/js-utils": "^2.1.3",
     "@mogenius/websocket-dto": "^2.0.9",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",

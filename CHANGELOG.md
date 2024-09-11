@@ -2,13 +2,70 @@
 
 
 
-# 2.6.0-develop.2 (2024-09-02)
+## 2.5.13 (2024-09-10)
 
 
 ### Bug Fixes
 
 * add helm dtos ([3343719](https://github.com/mogenius/mo-core-base/commit/3343719d2c018a94d7a1c50f9919c36f7c067778))
 * update external sec dtos ([380ba63](https://github.com/mogenius/mo-core-base/commit/380ba63579bb40511879a44081d6eef798dc5220))
+* removed external secrets. ([4b98d1c](https://github.com/mogenius/mo-core-base/commit/4b98d1c054e731fc16aa5b5c3754beea49db25d6))
+
+## 2.5.12 (2024-09-10)
+
+
+### Bug Fixes
+
+* update runner ([0e623d2](https://github.com/mogenius/mo-core-base/commit/0e623d26eec539880c489aa4640903a889c5ae8d))
+
+## 2.5.11 (2024-09-10)
+
+
+### Bug Fixes
+
+* add project notification settings ([3789946](https://github.com/mogenius/mo-core-base/commit/3789946d9c0f7eeafda5e5846ab878d0577fa8e1))
+* adjust strcutrues, add defaults ([224b7cf](https://github.com/mogenius/mo-core-base/commit/224b7cf4d719bbe7527e32ac4ec665f4df37ad67))
+* extend project notificartion defaults ([df8e20b](https://github.com/mogenius/mo-core-base/commit/df8e20b64ed591ec53cd37f37ca18ba7ca40a8c5))
+* refactor project notification settings ([72eea39](https://github.com/mogenius/mo-core-base/commit/72eea39f9cd07542f10d73c55581136d66fbb8d7))
+* send payload ([ff4632b](https://github.com/mogenius/mo-core-base/commit/ff4632b67cbe739b4a538861d25efade70e3d844))
+* typos ([c2883fc](https://github.com/mogenius/mo-core-base/commit/c2883fc02bb8adaa99dcf415fe5a282170b4865e))
+
+## 2.5.10 (2024-09-10)
+
+
+### Bug Fixes
+
+* update helm DTOs ([e159cbd](https://github.com/mogenius/mo-core-base/commit/e159cbdf333324eef380fc4cb71f40edcdbaa7e9))
+
+## 2.5.9 (2024-09-06)
+
+
+### Bug Fixes
+
+* helm ([81876fe](https://github.com/mogenius/mo-core-base/commit/81876fe022d52cb4b33727b2bff419632a8c99cd))
+
+## 2.5.8 (2024-09-05)
+
+
+### Bug Fixes
+
+* ExternalSecretStoreDto ([b323844](https://github.com/mogenius/mo-core-base/commit/b323844b4f30090546ccc6d15ee6ea2befcc39a8))
+* rm git pull from file ([51f4c38](https://github.com/mogenius/mo-core-base/commit/51f4c38c2040329dce72e2b685a575c6ee0b2555))
+
+## 2.5.7 (2024-09-04)
+
+
+### Bug Fixes
+
+* update ExternalSecretStoreDto ([a9894b7](https://github.com/mogenius/mo-core-base/commit/a9894b794b39762559143acf179d6547fa02bfd4))
+
+## 2.5.6 (2024-09-04)
+
+
+### Bug Fixes
+
+* external sec store ([6e5bb01](https://github.com/mogenius/mo-core-base/commit/6e5bb01adcd394baa6a6567798b5ed8234677095))
+>>>>>>> main
 
 ## 2.5.5 (2024-09-02)
 

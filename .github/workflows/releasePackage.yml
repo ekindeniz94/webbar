@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish-gpr:
-    runs-on: self-hosted
+    runs-on: [self-hosted-ansible]
     permissions:
       contents: write
       packages: write

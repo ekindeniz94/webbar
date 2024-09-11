@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isString } from 'class-validator';
+import { isArray, isString } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { BaseEntityDto } from '@mogenius/database-dto';
@@ -8,6 +8,8 @@ import { ClusterPublicDto, ProductFlatDto } from '../../../mo-product-dto';
 import { GitConnectionPublicDto } from '../../../mo-git';
 import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectKubernetesLimitsDto } from './project-kubernetes-limits.dto';
+import { ProjectNotificationSettingsBaseDto } from './project-notification-settings.base.dto';
+import { defaultProjectNotificationSettingsBase } from './default-project-notification-settings.base';
 
 export class ProjectItemDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -69,4 +71,13 @@ export class ProjectItemDto extends BaseEntityDto {
   @Type(() => ProjectKubernetesLimitsDto)
   @Expose()
   kubernetesLimits: ProjectKubernetesLimitsDto;
+
+  @Type(() => ProjectNotificationSettingsBaseDto)
+  @Expose()
+  @Transform(({ value }) =>
+    value && isArray(value)
+      ? defaultProjectNotificationSettingsBase.map((item) => value.find((v) => v.type === item.type) || item)
+      : defaultProjectNotificationSettingsBase
+  )
+  notificationSettings: ProjectNotificationSettingsBaseDto[];
 }

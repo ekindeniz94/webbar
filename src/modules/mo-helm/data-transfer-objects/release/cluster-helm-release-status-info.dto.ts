@@ -1,7 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 
-export class HelmReleaseStatusInfoDto {
+export class ClusterHelmReleaseStatusInfoDto {
   @Expose()
   name: string;
 
