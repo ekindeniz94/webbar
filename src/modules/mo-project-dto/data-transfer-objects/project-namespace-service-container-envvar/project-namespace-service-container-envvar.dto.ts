@@ -1,8 +1,9 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import { IsBoolean, IsEnum, IsNotEmpty, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { StripTags } from '@mogenius/js-utils';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceContainerEnvVarDataDto } from './project-namespace-service-container-envvar-data.dto';
 
 export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @IsNotEmpty()
@@ -12,11 +13,29 @@ export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @Expose()
   name: string;
 
-  // @IsNotEmpty()
-  @IsString()
-  // @Matches(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MATCHES)
+  @IsNotEmpty()
+  @Transform(
+    ({
+      value,
+      obj
+    }: {
+      value: ProjectNamespaceServiceContainerEnvVarDataDto;
+      obj: ProjectNamespaceServiceContainerEnvVarDto;
+    }) => {
+      return plainToInstance(
+        ProjectNamespaceServiceContainerEnvVarDataDto,
+        {
+          ...value,
+          type: obj.type
+        },
+        { excludeExtraneousValues: true }
+      );
+    }
+  )
+  @IsObject({ message: '$property must be an object' })
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  value: string;
+  data: ProjectNamespaceServiceContainerEnvVarDataDto;
 
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServiceEnvVarTypeEnum)
