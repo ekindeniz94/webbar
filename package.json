@@ -22,6 +22,7 @@
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "build": "rm -rf ./dist && tsc",
     "semantic-release": "semantic-release",
+    "full:clean": "rm -rf ./dist && rm -rf ./node_modules && rm -rf ./package-lock.json",
     "yalc:push": "npm run build && npx yalc push",
     "yalc:watch": "nodemon --config ./nodemon.config.json --exec \"npm run yalc:push\""
   },
