@@ -53,9 +53,12 @@ export class ContainerBuildListItemDto {
   @Expose()
   ports: ProjectNamespaceServiceContainerPortDto[];
 
+  @Expose()
+  image: string;
+
   get containerImage(): string {
     return MoUtils.cleanUpUrl(
-      `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
+      this.image ?? `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
     );
   }
 }
