@@ -2,6 +2,14 @@
 
 
 
+## 2.5.15 (2024-09-13)
+
+
+### Bug Fixes
+
+* refactoring service envs ([087da93](https://github.com/mogenius/mo-core-base/commit/087da9384ae5f53aa7f56ab9c74352dafad983d4))
+* update package lock ([fb61e59](https://github.com/mogenius/mo-core-base/commit/fb61e59ff66d80165f5d9d8dc727d821bd497ac4))
+
 ## 2.5.14 (2024-09-11)
 
 
