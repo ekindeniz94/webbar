@@ -2,6 +2,19 @@
 
 
 
+# 2.7.0 (2024-09-16)
+
+
+### Bug Fixes
+
+* lock ([d39bd58](https://github.com/mogenius/mo-core-base/commit/d39bd583abad9cda9778f3ef82d0ddb50c39a8c7))
+
+
+### Features
+
+* add cluster status dto ([0b7f8ad](https://github.com/mogenius/mo-core-base/commit/0b7f8ad09cba02f165fd7f8bca1e90c95453a08f))
+* add cluster status dto ([c802979](https://github.com/mogenius/mo-core-base/commit/c80297961d70df96cad765125e846af3fa3da9fa))
+
 ## 2.6.1 (2024-09-16)
 
 
