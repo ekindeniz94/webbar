@@ -3,6 +3,7 @@ export * from './k8s-manager-cluster-pattern-response';
 export * from './k8s-manager-job';
 export * from './k8s-manager-traffic';
 export * from './k8s-resources';
+export * from './k8s-manager-iac';
 
 export * from './k8s-message-response-base.dto';
 export * from './k8s-message-response.dto';
