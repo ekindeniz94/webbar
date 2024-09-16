@@ -1,3 +1,4 @@
+import { IdDto } from '@mogenius/core-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import {
   isArray,
@@ -12,15 +13,13 @@ import {
   ValidateIf,
   ValidateNested
 } from 'class-validator';
-import { StripTags } from '@mogenius/js-utils';
-import { PROJECT_CONST } from '../../mo-project-dto.const';
-import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
-import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
-import { ProjectNamespaceServiceContainerPortPatchRequestDto } from '../project-namespace-service-container-port';
-import { ProjectNamespaceServiceCnamePatchRequestDto } from '../project-namespace-service-container-cname';
 import { ContainerTypeEnum } from '../../enums';
+import { PROJECT_CONST } from '../../mo-project-dto.const';
+import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../project-namespace-service-container-envvar';
+import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
-import { IdDto } from '@mogenius/core-dto';
+import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
+import { MoUtils, StripTags } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -52,9 +51,21 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
 
   @IsNotEmpty()
   @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
-  @ValidateNested()
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   kubernetesLimits: ProjectNamespaceServiceContainerKubernetesLimitsDto;
+
+  @IsOptional()
+  @ValidateNested({ message: '$property must be an object' })
+  @Transform(({ value }) =>
+    MoUtils.transformToDto(
+      ProjectNamespaceServiceContainerProbeDto,
+      value,
+      ProjectNamespaceServiceContainerProbeDto.initEmptyContainerProbe()
+    )
+  )
+  @Expose()
+  probes: ProjectNamespaceServiceContainerProbeDto;
 
   @IsOptional()
   @Transform(({ value }) => (value && isArray(value) ? value : []))
@@ -63,29 +74,11 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
   @Expose()
   envVars: ProjectNamespaceServiceContainerEnvvarPatchRequestDto[];
 
-  @IsOptional()
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceContainerPortPatchRequestDto)
-  @Expose()
-  ports: ProjectNamespaceServiceContainerPortPatchRequestDto[];
-
-  @IsOptional()
-  @Transform(({ value }) => {
-    if (value && isArray(value)) {
-      return value.filter((item: ProjectNamespaceServiceCnamePatchRequestDto) => !!item.cName);
-    }
-    return [];
-  })
-  @Type(() => ProjectNamespaceServiceCnamePatchRequestDto)
-  @ValidateNested()
-  @Expose()
-  cNames: ProjectNamespaceServiceCnamePatchRequestDto[];
-
   /****** Repository type ******/
   @Type(() => ProjectNamespaceServiceContainerGitSettingsPatchRequestDto)
   @ValidateIf((obj: ProjectNamespaceServiceContainerPatchRequestDto) => obj.type === ContainerTypeEnum.GIT_REPOSITORY)
   @IsNotEmpty()
-  @ValidateNested()
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
   gitSettings: ProjectNamespaceServiceContainerGitSettingsPatchRequestDto;
 
@@ -106,7 +99,7 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
       ? {
           id: value
         }
-      : value ?? null
+      : (value ?? null)
   )
   @Expose()
   containerImageRepoSecret: IdDto;

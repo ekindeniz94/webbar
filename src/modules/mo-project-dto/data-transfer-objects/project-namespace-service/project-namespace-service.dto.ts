@@ -9,6 +9,7 @@ import { IdDto } from '@mogenius/core-dto';
 import { CronjobSettingsDto } from './cronjob-settings.dto';
 import { TrafficDto } from '../stats';
 import { HpaSettingsDto } from './hpa';
+import { ProjectNamespaceServicePortDto } from '../project-namespace-service-port';
 
 export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Type(() => UserPublicDto)
@@ -49,6 +50,11 @@ export class ProjectNamespaceServiceDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @Type(() => ProjectNamespaceServicePortDto)
+  @Transform(({ value }) => (isArray(value) ? value : undefined))
+  @Expose()
+  ports: ProjectNamespaceServicePortDto[];
 
   @Type(() => CronjobSettingsDto)
   @IsOptional()

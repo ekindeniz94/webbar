@@ -64,4 +64,7 @@ export class BuildJobPayloadDto {
 
   @Expose()
   buildId: number;
+
+  @Expose()
+  image: string;
 }

@@ -1,12 +1,10 @@
-import { StripTags } from '@mogenius/js-utils';
+import { MoUtils, StripTags } from '@mogenius/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { MoProjectDtoUtils } from '../../mo-project-dto.utils';
 import { KeyVaultSecretDto } from '../key-vault';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
-import { ProjectNamespaceServiceCnameDto } from '../project-namespace-service-container-cname';
-import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceContainerGitSettingsDto } from '../project-namespace-service-container-git-settings';
 import { CpuDto, EphemeralStorageDto, MemoryDto } from '../stats';
@@ -14,6 +12,7 @@ import { KubernetesPublicEventDto } from '../../../mo-kubernetes';
 import { ContainerTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { AppContainerDto } from '../../../mo-app-library-dto/data-transfer-objects/app-container/app-container.dto';
+import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
 
 export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Transform(({ value }) =>
@@ -72,16 +71,6 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Type(() => ProjectNamespaceServiceCnameDto)
-  @Expose()
-  cNames: ProjectNamespaceServiceCnameDto[];
-
-  @Type(() => ProjectNamespaceServiceContainerPortDto)
-  @Transform(({ value }) => (isArray(value) ? value : undefined))
-  @Expose()
-  ports: ProjectNamespaceServiceContainerPortDto[];
-
   @Type(() => CpuDto)
   @Expose()
   cpu: CpuDto;
@@ -93,6 +82,16 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Type(() => EphemeralStorageDto)
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
+
+  @Transform(({ value }) =>
+    MoUtils.transformToDto(
+      ProjectNamespaceServiceContainerProbeDto,
+      value,
+      ProjectNamespaceServiceContainerProbeDto.initEmptyContainerProbe()
+    )
+  )
+  @Expose()
+  probes: ProjectNamespaceServiceContainerProbeDto;
 
   // deployment message
   @Transform(({ value }) => (value && isArray(value) ? value : []))

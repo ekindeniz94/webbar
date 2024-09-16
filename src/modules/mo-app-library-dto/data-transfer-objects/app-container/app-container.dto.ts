@@ -1,10 +1,9 @@
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { Expose, Transform, Type } from 'class-transformer';
 import { ContainerTypeEnum } from '../../../mo-project-dto/enums/container-type.enum';
-import { isArray, isString } from 'class-validator';
+import { isString } from 'class-validator';
 import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
-import { AppPortDto } from '../app-port.dto';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../../../mo-project-dto/data-transfer-objects/project-namespace-service-container/project-namespace-service-container-kubernetes-limits.dto';
 import { AppEnvVarDto } from '../app-envvar.dto';
 
@@ -73,11 +72,6 @@ export class AppContainerDto extends BaseEntityDto {
   @Transform(({ value }) => (value === 'null' || value === 'undefined' ? '' : value))
   @Expose()
   setupCommands: string;
-
-  @Type(() => AppPortDto)
-  @Transform(({ value }) => (value && isArray(value) ? value : []))
-  @Expose()
-  ports: AppPortDto[];
 
   @Type(() => ProjectNamespaceServiceContainerKubernetesLimitsDto)
   @Expose()

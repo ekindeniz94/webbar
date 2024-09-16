@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsString } from 'class-validator';
+import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { ProjectNotificationSettingsTypeEnum } from '../../enums';
 
 export class SendProjectNotificationPayloadDto {
@@ -7,9 +7,11 @@ export class SendProjectNotificationPayloadDto {
   @Expose()
   id: string;
 
+  @IsEnum(ProjectNotificationSettingsTypeEnum)
   @Expose()
   type: ProjectNotificationSettingsTypeEnum;
 
+  @IsOptional()
   @Expose()
   data: Record<string, any>;
 }

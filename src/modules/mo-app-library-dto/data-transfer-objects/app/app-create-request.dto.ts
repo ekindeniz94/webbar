@@ -23,6 +23,7 @@ import {
 } from '../../../mo-project-dto';
 import { AppContainerCreateRequestDto } from '../app-container/app-container-create-request.dto';
 import { AppTagDto } from '../app-tag.dto';
+import { AppPortDto } from '../app-port.dto';
 
 export class AppCreateRequestDto {
   @IsNotEmpty()
@@ -93,6 +94,13 @@ export class AppCreateRequestDto {
   @Transform(({ value }) => value ?? ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE)
   @Expose()
   deploymentStrategy: ProjectNamespaceServiceDeploymentStrategyEnum;
+
+  @IsOptional()
+  @Type(() => AppPortDto)
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @ValidateNested({ each: true, message: '$property must be an array' })
+  @Expose()
+  ports: AppPortDto[];
 
   @IsNotEmpty()
   @ValidateIf((obj: AppCreateRequestDto) => obj.controller === ServiceControllerEnum.CRON_JOB)
