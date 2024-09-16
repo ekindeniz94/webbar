@@ -1,0 +1,4 @@
+export enum ProjectNamespaceServiceEnvVarVaultTypeEnum {
+  MOGENIUS_VAULT = 'MOGENIUS_VAULT',
+  HASHICORP_EXTERNAL_VAULT = 'HASHICORP_EXTERNAL_VAULT'
+}

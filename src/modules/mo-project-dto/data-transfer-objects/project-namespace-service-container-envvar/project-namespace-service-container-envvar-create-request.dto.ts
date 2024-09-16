@@ -1,8 +1,20 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength, ValidateIf } from 'class-validator';
+import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import {
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
+  IsObject,
+  IsOptional,
+  IsString,
+  MaxLength,
+  MinLength,
+  ValidateIf,
+  ValidateNested
+} from 'class-validator';
 import { StripTags } from '@mogenius/js-utils';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
+import { ProjectNamespaceServiceContainerEnvVarDataDto } from './project-namespace-service-container-envvar-data.dto';
 
 export class ProjectNamespaceServiceContainerEnvvarCreateRequestDto {
   @IsNotEmpty()
@@ -14,18 +26,29 @@ export class ProjectNamespaceServiceContainerEnvvarCreateRequestDto {
   @Expose()
   name: string;
 
-  @IsString()
   @IsNotEmpty()
-  // @Matches(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MATCHES)
-  @MaxLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MAX)
-  @MinLength(PROJECT_CONST.SERVICE.ENVVAR_VALUE.MIN)
-  // @StripTags()
-  @ValidateIf(
-    (obj: ProjectNamespaceServiceContainerEnvvarCreateRequestDto) =>
-      obj.type === ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT
+  @Transform(
+    ({
+      value,
+      obj
+    }: {
+      value: ProjectNamespaceServiceContainerEnvVarDataDto;
+      obj: ProjectNamespaceServiceContainerEnvvarCreateRequestDto;
+    }) => {
+      return plainToInstance(
+        ProjectNamespaceServiceContainerEnvVarDataDto,
+        {
+          ...value,
+          type: obj.type
+        },
+        { excludeExtraneousValues: true }
+      );
+    }
   )
+  @IsObject({ message: '$property must be an object' })
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  value: string;
+  data: ProjectNamespaceServiceContainerEnvVarDataDto;
 
   @IsNotEmpty()
   @IsEnum(ProjectNamespaceServiceEnvVarTypeEnum)

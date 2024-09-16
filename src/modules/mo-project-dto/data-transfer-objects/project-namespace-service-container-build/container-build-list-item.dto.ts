@@ -1,4 +1,5 @@
-import { Expose, Transform, Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
+import { IsOptional, IsString } from 'class-validator';
 import { MoUtils } from '@mogenius/js-utils';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from '../project-namespace-service-container';
 
@@ -45,9 +46,14 @@ export class ContainerBuildListItemDto {
   // @Expose()
   // envVars: ProjectNamespaceServiceContainerEnvVarDto[];
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  image: string;
+
   get containerImage(): string {
     return MoUtils.cleanUpUrl(
-      `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
+      this.image ?? `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
     );
   }
 }

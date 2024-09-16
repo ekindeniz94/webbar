@@ -2,7 +2,7 @@
 
 
 
-# 2.6.0-develop.3 (2024-09-11)
+## 2.5.16 (2024-09-16)
 
 
 ### Bug Fixes
@@ -21,6 +21,23 @@
 * update ExternalSecretStoreDto ([a9894b7](https://github.com/mogenius/mo-core-base/commit/a9894b794b39762559143acf179d6547fa02bfd4))
 * update helm DTOs ([e159cbd](https://github.com/mogenius/mo-core-base/commit/e159cbdf333324eef380fc4cb71f40edcdbaa7e9))
 * update runner ([0e623d2](https://github.com/mogenius/mo-core-base/commit/0e623d26eec539880c489aa4640903a889c5ae8d))
+* add image, add constraints ([5ce861d](https://github.com/mogenius/mo-core-base/commit/5ce861df970e26073892690c9fece697a02709da))
+* mark image as optional ([f7f59b6](https://github.com/mogenius/mo-core-base/commit/f7f59b6916b4dbc5bff1f0ac742082883931932f))
+
+## 2.5.15 (2024-09-13)
+
+
+### Bug Fixes
+
+* refactoring service envs ([087da93](https://github.com/mogenius/mo-core-base/commit/087da9384ae5f53aa7f56ab9c74352dafad983d4))
+* update package lock ([fb61e59](https://github.com/mogenius/mo-core-base/commit/fb61e59ff66d80165f5d9d8dc727d821bd497ac4))
+
+## 2.5.14 (2024-09-11)
+
+
+### Bug Fixes
+
+* add payload ([37d5c55](https://github.com/mogenius/mo-core-base/commit/37d5c55331a7960ae79132fc92858e8046d4d097))
 
 ## 2.5.13 (2024-09-10)
 
