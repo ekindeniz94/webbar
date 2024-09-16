@@ -2,6 +2,14 @@
 
 
 
+## 2.5.16 (2024-09-16)
+
+
+### Bug Fixes
+
+* add image, add constraints ([5ce861d](https://github.com/mogenius/mo-core-base/commit/5ce861df970e26073892690c9fece697a02709da))
+* mark image as optional ([f7f59b6](https://github.com/mogenius/mo-core-base/commit/f7f59b6916b4dbc5bff1f0ac742082883931932f))
+
 ## 2.5.15 (2024-09-13)
 
 
