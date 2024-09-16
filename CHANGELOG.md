@@ -2,11 +2,36 @@
 
 
 
+# 2.6.0-develop.4 (2024-09-16)
+
+
+### Bug Fixes
+
+* add image, add constraints ([5ce861d](https://github.com/mogenius/mo-core-base/commit/5ce861df970e26073892690c9fece697a02709da))
+* add payload ([37d5c55](https://github.com/mogenius/mo-core-base/commit/37d5c55331a7960ae79132fc92858e8046d4d097))
+* mark image as optional ([f7f59b6](https://github.com/mogenius/mo-core-base/commit/f7f59b6916b4dbc5bff1f0ac742082883931932f))
+* refactoring service envs ([087da93](https://github.com/mogenius/mo-core-base/commit/087da9384ae5f53aa7f56ab9c74352dafad983d4))
+* update package lock ([fb61e59](https://github.com/mogenius/mo-core-base/commit/fb61e59ff66d80165f5d9d8dc727d821bd497ac4))
+
 ## 2.5.16 (2024-09-16)
 
 
 ### Bug Fixes
 
+* add project notification settings ([3789946](https://github.com/mogenius/mo-core-base/commit/3789946d9c0f7eeafda5e5846ab878d0577fa8e1))
+* adjust strcutrues, add defaults ([224b7cf](https://github.com/mogenius/mo-core-base/commit/224b7cf4d719bbe7527e32ac4ec665f4df37ad67))
+* extend project notificartion defaults ([df8e20b](https://github.com/mogenius/mo-core-base/commit/df8e20b64ed591ec53cd37f37ca18ba7ca40a8c5))
+* external sec store ([6e5bb01](https://github.com/mogenius/mo-core-base/commit/6e5bb01adcd394baa6a6567798b5ed8234677095))
+* ExternalSecretStoreDto ([b323844](https://github.com/mogenius/mo-core-base/commit/b323844b4f30090546ccc6d15ee6ea2befcc39a8))
+* helm ([81876fe](https://github.com/mogenius/mo-core-base/commit/81876fe022d52cb4b33727b2bff419632a8c99cd))
+* refactor project notification settings ([72eea39](https://github.com/mogenius/mo-core-base/commit/72eea39f9cd07542f10d73c55581136d66fbb8d7))
+* removed external secrets. ([4b98d1c](https://github.com/mogenius/mo-core-base/commit/4b98d1c054e731fc16aa5b5c3754beea49db25d6))
+* rm git pull from file ([51f4c38](https://github.com/mogenius/mo-core-base/commit/51f4c38c2040329dce72e2b685a575c6ee0b2555))
+* send payload ([ff4632b](https://github.com/mogenius/mo-core-base/commit/ff4632b67cbe739b4a538861d25efade70e3d844))
+* typos ([c2883fc](https://github.com/mogenius/mo-core-base/commit/c2883fc02bb8adaa99dcf415fe5a282170b4865e))
+* update ExternalSecretStoreDto ([a9894b7](https://github.com/mogenius/mo-core-base/commit/a9894b794b39762559143acf179d6547fa02bfd4))
+* update helm DTOs ([e159cbd](https://github.com/mogenius/mo-core-base/commit/e159cbdf333324eef380fc4cb71f40edcdbaa7e9))
+* update runner ([0e623d2](https://github.com/mogenius/mo-core-base/commit/0e623d26eec539880c489aa4640903a889c5ae8d))
 * add image, add constraints ([5ce861d](https://github.com/mogenius/mo-core-base/commit/5ce861df970e26073892690c9fece697a02709da))
 * mark image as optional ([f7f59b6](https://github.com/mogenius/mo-core-base/commit/f7f59b6916b4dbc5bff1f0ac742082883931932f))
 
@@ -30,6 +55,8 @@
 
 ### Bug Fixes
 
+* add helm dtos ([3343719](https://github.com/mogenius/mo-core-base/commit/3343719d2c018a94d7a1c50f9919c36f7c067778))
+* update external sec dtos ([380ba63](https://github.com/mogenius/mo-core-base/commit/380ba63579bb40511879a44081d6eef798dc5220))
 * removed external secrets. ([4b98d1c](https://github.com/mogenius/mo-core-base/commit/4b98d1c054e731fc16aa5b5c3754beea49db25d6))
 
 ## 2.5.12 (2024-09-10)
@@ -86,6 +113,7 @@
 ### Bug Fixes
 
 * external sec store ([6e5bb01](https://github.com/mogenius/mo-core-base/commit/6e5bb01adcd394baa6a6567798b5ed8234677095))
+>>>>>>> main
 
 ## 2.5.5 (2024-09-02)
 

@@ -24,9 +24,10 @@ export class ProjectNamespaceServiceContainerKubernetesLimitsDto {
   @Expose()
   ephemeralStorageMB: number;
 
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }) => (value && isBoolean(value) ? value : false))
-  @Expose()
-  probesOn: boolean;
+  // REMOVE
+  // @IsBoolean()
+  // @Type(() => Boolean)
+  // @Transform(({ value }) => (value && isBoolean(value) ? value : false))
+  // @Expose()
+  // probesOn: boolean;
 }
