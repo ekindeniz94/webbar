@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { isArray } from 'class-validator';
+import { isArray, IsOptional, IsString } from 'class-validator';
 import { ProjectNamespaceServiceContainerEnvVarDto } from '../project-namespace-service-container-envvar';
 import { ProjectNamespaceServiceContainerPortDto } from '../project-namespace-service-container-port';
 import { MoUtils } from '@mogenius/js-utils';
@@ -53,9 +53,14 @@ export class ContainerBuildListItemDto {
   @Expose()
   ports: ProjectNamespaceServiceContainerPortDto[];
 
+  @IsOptional()
+  @IsString()
+  @Expose()
+  image: string;
+
   get containerImage(): string {
     return MoUtils.cleanUpUrl(
-      `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
+      this.image ?? `${this.containerRegistryPath}/${this.projectNamespaceName}-${this.containerName}:${this.buildId}`
     );
   }
 }
