@@ -2,6 +2,17 @@
 
 
 
+# 2.6.0-develop.4 (2024-09-16)
+
+
+### Bug Fixes
+
+* add image, add constraints ([5ce861d](https://github.com/mogenius/mo-core-base/commit/5ce861df970e26073892690c9fece697a02709da))
+* add payload ([37d5c55](https://github.com/mogenius/mo-core-base/commit/37d5c55331a7960ae79132fc92858e8046d4d097))
+* mark image as optional ([f7f59b6](https://github.com/mogenius/mo-core-base/commit/f7f59b6916b4dbc5bff1f0ac742082883931932f))
+* refactoring service envs ([087da93](https://github.com/mogenius/mo-core-base/commit/087da9384ae5f53aa7f56ab9c74352dafad983d4))
+* update package lock ([fb61e59](https://github.com/mogenius/mo-core-base/commit/fb61e59ff66d80165f5d9d8dc727d821bd497ac4))
+
 ## 2.5.16 (2024-09-16)
 
 
