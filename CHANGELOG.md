@@ -2,6 +2,14 @@
 
 
 
+## 2.6.1 (2024-09-16)
+
+
+### Bug Fixes
+
+* container probes empty value ([28e4015](https://github.com/mogenius/mo-core-base/commit/28e40153bf869e2c76db23168772524b8fdb1112))
+* iac dtos ([2151de0](https://github.com/mogenius/mo-core-base/commit/2151de0dff19cd451132192d173c8496a47e5aeb))
+
 # 2.6.0 (2024-09-16)
 
 
