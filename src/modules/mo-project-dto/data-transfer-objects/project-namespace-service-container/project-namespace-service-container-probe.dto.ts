@@ -58,4 +58,24 @@ export class ProjectNamespaceServiceContainerProbeDto {
     }
     return result;
   }
+
+  public static initEmptyContainerProbe(): ProjectNamespaceServiceContainerProbeDto {
+    const result = plainToInstance(ProjectNamespaceServiceContainerProbeDto, {
+      isActive: false,
+      livenessProbe: {
+        isActive: false
+      },
+      readinessProbe: {
+        isActive: false
+      },
+      startupProbe: {
+        isActive: false
+      }
+    });
+    const validateData = validateSync(result);
+    if (Array.isArray(validateData) && validateData.length > 0) {
+      console.error(MoUtils.getValidationErrorMessages(validateData, false));
+    }
+    return result;
+  }
 }

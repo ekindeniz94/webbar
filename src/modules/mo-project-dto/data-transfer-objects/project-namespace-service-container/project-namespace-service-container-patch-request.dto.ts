@@ -19,7 +19,7 @@ import { ProjectNamespaceServiceContainerEnvvarPatchRequestDto } from '../projec
 import { ProjectNamespaceServiceContainerGitSettingsPatchRequestDto } from '../project-namespace-service-container-git-settings';
 import { ProjectNamespaceServiceContainerKubernetesLimitsDto } from './project-namespace-service-container-kubernetes-limits.dto';
 import { ProjectNamespaceServiceContainerProbeDto } from './project-namespace-service-container-probe.dto';
-import { StripTags } from '@mogenius/js-utils';
+import { MoUtils, StripTags } from '@mogenius/js-utils';
 
 export class ProjectNamespaceServiceContainerPatchRequestDto {
   @IsOptional()
@@ -57,7 +57,13 @@ export class ProjectNamespaceServiceContainerPatchRequestDto {
 
   @IsOptional()
   @ValidateNested({ message: '$property must be an object' })
-  @Type(() => ProjectNamespaceServiceContainerProbeDto)
+  @Transform(({ value }) =>
+    MoUtils.transformToDto(
+      ProjectNamespaceServiceContainerProbeDto,
+      value,
+      ProjectNamespaceServiceContainerProbeDto.initEmptyContainerProbe()
+    )
+  )
   @Expose()
   probes: ProjectNamespaceServiceContainerProbeDto;
 

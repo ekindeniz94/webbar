@@ -1,4 +1,4 @@
-import { StripTags } from '@mogenius/js-utils';
+import { MoUtils, StripTags } from '@mogenius/js-utils';
 import { Expose, Transform, Type } from 'class-transformer';
 import { isArray, isString, MaxLength } from 'class-validator';
 import { PROJECT_CONST } from '../../mo-project-dto.const';
@@ -83,7 +83,13 @@ export class ProjectNamespaceServiceContainerDto extends BaseEntityDto {
   @Expose()
   ephemeralStorage: EphemeralStorageDto;
 
-  @Type(() => ProjectNamespaceServiceContainerProbeDto)
+  @Transform(({ value }) =>
+    MoUtils.transformToDto(
+      ProjectNamespaceServiceContainerProbeDto,
+      value,
+      ProjectNamespaceServiceContainerProbeDto.initEmptyContainerProbe()
+    )
+  )
   @Expose()
   probes: ProjectNamespaceServiceContainerProbeDto;
 
