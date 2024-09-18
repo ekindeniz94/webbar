@@ -6,3 +6,5 @@ export * from './iac-manager-status.dto';
 export * from './iac-manager-sync-info.dto';
 export * from './iac-get-status-response.dto';
 export * from './iac-reset-file-request.request.dto';
+export * from './iac-resource-states-item.dto';
+export * from './iac-configuration.dto';

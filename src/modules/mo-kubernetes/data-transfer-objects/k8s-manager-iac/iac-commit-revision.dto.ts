@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
+import moment from 'moment';
 
 export class IacCommitRevisionDto {
   @Expose()
@@ -7,8 +8,9 @@ export class IacCommitRevisionDto {
   @Expose()
   author: string;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  date: string;
+  date: Date;
 
   @Expose()
   diff: string;
