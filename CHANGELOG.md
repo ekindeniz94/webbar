@@ -2,6 +2,13 @@
 
 
 
+## 2.7.1 (2024-09-18)
+
+
+### Bug Fixes
+
+* All Keyvault array. ([e91d00c](https://github.com/mogenius/mo-core-base/commit/e91d00ca4b5a354475ff3ebd2d0ba2e165e6a180))
+
 # 2.7.0 (2024-09-16)
 
 
