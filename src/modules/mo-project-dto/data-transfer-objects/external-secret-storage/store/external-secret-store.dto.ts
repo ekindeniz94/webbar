@@ -2,8 +2,13 @@ import { Expose, Transform } from 'class-transformer';
 import moment from 'moment';
 import { isNotEmpty } from 'class-validator';
 import { MoUtils, StripTags } from '@mogenius/js-utils';
+import { ProjectNamespaceServiceEnvVarVaultTypeEnum } from '../../../enums/project-namespace-service-envvar-vault-type.enum';
 
 export class ExternalSecretStoreDto {
+  @Transform(() => ProjectNamespaceServiceEnvVarVaultTypeEnum.HASHICORP_EXTERNAL_VAULT)
+  @Expose()
+  vaultType: ProjectNamespaceServiceEnvVarVaultTypeEnum;
+
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   createdAt: Date;
