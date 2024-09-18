@@ -2,6 +2,13 @@
 
 
 
+## 2.7.2 (2024-09-18)
+
+
+### Bug Fixes
+
+* vaultType added to store dto. ([fcbde42](https://github.com/mogenius/mo-core-base/commit/fcbde4269ce0386d6c7465f073699a903b8a3ec3))
+
 ## 2.7.1 (2024-09-18)
 
 
