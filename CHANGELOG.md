@@ -2,6 +2,13 @@
 
 
 
+## 2.7.9 (2024-09-19)
+
+
+### Bug Fixes
+
+* update iac dtos ([f39d739](https://github.com/mogenius/mo-core-base/commit/f39d7394a76d2e225280bd9fd943481377ab4157))
+
 ## 2.7.8 (2024-09-19)
 
 
