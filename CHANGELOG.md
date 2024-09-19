@@ -2,6 +2,13 @@
 
 
 
+## 2.7.7 (2024-09-19)
+
+
+### Bug Fixes
+
+* stupid me. ([42c5e45](https://github.com/mogenius/mo-core-base/commit/42c5e451c71cbe6e18aceb52c0c3f84faadbee61))
+
 ## 2.7.6 (2024-09-19)
 
 
