@@ -2,6 +2,13 @@
 
 
 
+## 2.7.4 (2024-09-19)
+
+
+### Bug Fixes
+
+* envvar secret dto transform. ([b8db69b](https://github.com/mogenius/mo-core-base/commit/b8db69bf859b1c5c433dfec3d862b5d1cf7ef825))
+
 ## 2.7.3 (2024-09-18)
 
 
