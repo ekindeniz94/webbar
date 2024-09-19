@@ -5,7 +5,7 @@ import { MoUtils, StripTags } from '@mogenius/js-utils';
 import { ProjectNamespaceServiceEnvVarVaultTypeEnum } from '../../../enums/project-namespace-service-envvar-vault-type.enum';
 
 export class ExternalSecretStoreDto {
-  @Transform((value) => value ?? ProjectNamespaceServiceEnvVarVaultTypeEnum.HASHICORP_EXTERNAL_VAULT)
+  @Transform(({ value, obj }) => value ?? ProjectNamespaceServiceEnvVarVaultTypeEnum.HASHICORP_EXTERNAL_VAULT)
   @Expose()
   vaultType: ProjectNamespaceServiceEnvVarVaultTypeEnum;
 
