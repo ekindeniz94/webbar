@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
+import moment from 'moment';
 
 export class IacContributorDto {
   @Expose()
@@ -7,6 +8,7 @@ export class IacContributorDto {
   @Expose()
   email: string;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  lastActivityTime: string;
+  lastActivityTime: Date;
 }

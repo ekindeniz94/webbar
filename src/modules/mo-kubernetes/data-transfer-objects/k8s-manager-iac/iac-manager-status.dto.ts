@@ -7,14 +7,15 @@ import { MoUtils, TransformToBoolean } from '@mogenius/js-utils';
 import _ from 'lodash';
 import { isNotEmpty } from 'class-validator';
 import { IacConfigurationDto } from './iac-configuration.dto';
+import moment from 'moment';
 
 export class IacManagerStatusDto {
   @Expose()
   syncInfo: IacManagerSyncInfoDto;
 
-  @Type(() => IacGitActionStatusDto)
-  @Expose()
-  commitHistory: IacGitActionStatusDto[];
+  // @Type(() => IacGitActionStatusDto)
+  // @Expose()
+  // commitHistory: IacGitActionStatusDto[];
 
   @Type(() => IacGitActionStatusDto)
   @Expose()
@@ -76,4 +77,48 @@ export class IacManagerStatusDto {
   @TransformToBoolean(false)
   @Expose()
   synced: boolean;
+
+  @Transform(({ obj }: { obj: IacManagerStatusDto }) => {
+    return new Date(
+      moment(obj.lastSuccessfullyAppliedCommit.lastExecution).toDate().getTime() + obj.syncInfo.executionTimeInMs
+    );
+  })
+  @Expose()
+  get nextExecutionDate(): Date {
+    return new Date((this.lastSuccessfullyAppliedCommit?.lastExecution).getTime() + this.syncInfo?.executionTimeInMs);
+  }
+
+  @Expose()
+  get lastUpdateFromNow(): string {
+    const nextExecutionDate = moment(this.nextExecutionDate);
+    const now = moment();
+    const duration = moment.duration(nextExecutionDate.diff(now));
+    return duration.toISOString();
+  }
+
+  @Expose()
+  getNextExecution(): string {
+    const now = new Date();
+
+    let timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit.lastExecution.getTime();
+
+    const syncFrequencyInMs = this.iacConfiguration.syncFrequencyInSec * 1000;
+    if (timeSinceLastExecution >= syncFrequencyInMs) {
+      const cycles = Math.floor(timeSinceLastExecution / syncFrequencyInMs);
+
+      this.lastSuccessfullyAppliedCommit.lastExecution = new Date(
+        this.lastSuccessfullyAppliedCommit.lastExecution.getTime() + cycles * syncFrequencyInMs
+      );
+
+      timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit.lastExecution.getTime();
+    }
+
+    const timeUntilNextExecution = syncFrequencyInMs - timeSinceLastExecution;
+
+    const hours = Math.floor((timeUntilNextExecution / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((timeUntilNextExecution / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeUntilNextExecution / 1000) % 60);
+
+    return `${hours}h ${minutes}m ${seconds}s`;
+  }
 }

@@ -1,4 +1,5 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
+import moment from 'moment/moment';
 
 export class IacGitActionStatusDto {
   @Expose()
@@ -10,12 +11,14 @@ export class IacGitActionStatusDto {
   @Expose()
   commitHash: string;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  commitDate: string;
+  commitDate: Date;
 
   @Expose()
   diff: string;
 
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
-  lastExecution: string;
+  lastExecution: Date;
 }

@@ -1,5 +1,8 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { IacContributorDto } from './iac-contributor.dto';
+import _ from 'lodash';
+import { MoUtils } from '@mogenius/js-utils';
+import { isArray } from 'class-validator';
 
 export class IacManagerSyncInfoDto {
   @Expose()
@@ -8,7 +11,10 @@ export class IacManagerSyncInfoDto {
   @Expose()
   numberOfFiles: number;
 
-  @Type(() => IacContributorDto)
+  @Transform(({ value }: { value: IacContributorDto[] }) => {
+    value = _.orderBy(MoUtils.transformToDtoList(IacContributorDto, value), ['lastActivityTime'], ['desc']);
+    return value;
+  })
   @Expose()
   contributors: IacContributorDto[];
 
@@ -32,4 +38,27 @@ export class IacManagerSyncInfoDto {
 
   @Expose()
   syncError: string;
+
+  /*********************************************************************************************************************
+   * The following properties are not present in the original source code but are used in the application for
+   * additional functionality. They are added here for reference.
+   * ********************************************************************************************************************/
+
+  @Transform(({ obj }: { obj: IacManagerSyncInfoDto }) => {
+    return isArray(obj?.contributors) ? obj.contributors.length : 0;
+  })
+  @Expose()
+  contributorsCount: number;
+
+  @Transform(({ obj }: { obj: IacManagerSyncInfoDto }) => {
+    return isArray(obj?.recentlyAddedOrUpdatedFiles) ? obj.recentlyAddedOrUpdatedFiles.length : 0;
+  })
+  @Expose()
+  recentlyAddedOrUpdatedFilesCount: number;
+
+  @Transform(({ obj }: { obj: IacManagerSyncInfoDto }) => {
+    return isArray(obj?.recentlyDeletedFiles) ? obj.recentlyDeletedFiles.length : 0;
+  })
+  @Expose()
+  recentlyDeletedFilesCount: number;
 }
