@@ -1,6 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsOptional, IsString, ValidateIf } from 'class-validator';
 import { ProjectNamespaceServiceEnvVarTypeEnum, ProjectNamespaceServiceEnvVarVaultTypeEnum } from '../../enums';
+import { isObject, isString } from 'lodash';
 
 export class ProjectNamespaceServiceContainerEnvVarDataDto {
   @IsNotEmpty()
@@ -61,6 +62,12 @@ export class ProjectNamespaceServiceContainerEnvVarDataDto {
       obj.type === ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT &&
       obj.vaultType === ProjectNamespaceServiceEnvVarVaultTypeEnum.HASHICORP_EXTERNAL_VAULT
   )
+  @Transform(({ value, obj }: { value: any; obj: ProjectNamespaceServiceContainerEnvVarDataDto }) => {
+    if (!isString(value)) {
+      return value.name ?? undefined;
+    }
+    return value;
+  })
   @Transform(({ value, obj }: { value: string; obj: ProjectNamespaceServiceContainerEnvVarDataDto }) => {
     if (
       obj.type === ProjectNamespaceServiceEnvVarTypeEnum.KEY_VAULT &&
