@@ -2,6 +2,13 @@
 
 
 
+## 2.7.10 (2024-09-20)
+
+
+### Bug Fixes
+
+* added Formal_ALL Helm. ([cbe950c](https://github.com/mogenius/mo-core-base/commit/cbe950cf43f6df60a902f1e89dac6a2ef83be11a))
+
 ## 2.7.9 (2024-09-19)
 
 
