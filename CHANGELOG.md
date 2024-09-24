@@ -2,6 +2,13 @@
 
 
 
+## 2.7.11 (2024-09-24)
+
+
+### Bug Fixes
+
+* helm release dtos; citt dtos ([2b000f0](https://github.com/mogenius/mo-core-base/commit/2b000f05759a3eed7a139d1ab96ac0d36b9f8407))
+
 ## 2.7.10 (2024-09-20)
 
 
