@@ -1,45 +1,94 @@
-import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { ServiceControllerEnum } from '../../../mo-project-dto/enums/service-controller.enum';
 import moment from 'moment';
 import {
-  ContainerTypeEnum,
   CronjobSettingsDto,
+  HpaSettingsDto,
   ProjectNamespaceServiceContainerDto,
-  ProjectNamespaceServiceDeploymentStrategyEnum
+  ProjectNamespaceServiceDeploymentStrategyEnum,
+  ProjectNamespaceServicePortDto
 } from '../../../mo-project-dto';
 import { lowerCase } from 'lodash';
-import { isArray, isNumber, isNumberString } from 'class-validator';
+import { isArray, isNumber, isNumberString, IsOptional } from 'class-validator';
+import { IdDto } from '@mogenius/core-dto';
+import { V1CronJob, V1Deployment } from '@kubernetes/client-node';
 import { MoUtils } from '@mogenius/js-utils';
 
-export class K8sResourceServiceDto {
-  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
-  @Transform(({ value, obj }) => value ?? moment(obj?.metadata?.creationTimestamp).toDate(), { toClassOnly: true })
-  @Expose()
-  createdAt: string | Date;
+type SupportedK8sResource = V1Deployment | V1CronJob;
 
-  @Transform(({ value, obj }) => value ?? obj?.metadata?.uid, { toClassOnly: true })
+export class K8sResourceServiceDto {
+  @Transform(({ value, obj }: { value: string; obj: SupportedK8sResource }) => value ?? obj?.metadata?.uid, {
+    toClassOnly: true
+  })
   @Expose()
   id: string;
 
-  @Transform(({ value, obj }) => value ?? obj?.metadata?.name, { toClassOnly: true })
+  @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
+  @Transform(
+    ({ value, obj }: { value: string; obj: SupportedK8sResource }) =>
+      value ?? moment(obj?.metadata?.creationTimestamp).toDate(),
+    { toClassOnly: true }
+  )
+  @Expose()
+  createdAt: string | Date;
+
+  @Type(() => IdDto)
+  @Expose()
+  projectNamespace: IdDto;
+
+  @Transform(({ value, obj }: { value: string; obj: SupportedK8sResource }) => value ?? obj?.metadata?.name, {
+    toClassOnly: true
+  })
   @Expose()
   displayName: string;
 
-  @Transform(({ value, obj }) => value ?? obj?.metadata?.name, { toClassOnly: true })
+  @Transform(({ value, obj }: { value: string; obj: SupportedK8sResource }) => value ?? obj?.metadata?.name, {
+    toClassOnly: true
+  })
   @Expose()
   controllerName: string;
 
+  @Transform(
+    ({ value, obj }: { value: ServiceControllerEnum; obj: SupportedK8sResource }) => {
+      switch (obj.kind) {
+        case 'Deployment':
+          return value ?? ServiceControllerEnum.DEPLOYMENT;
+        case 'CronJob':
+          return value ?? ServiceControllerEnum.CRON_JOB;
+        default:
+          return value;
+      }
+    },
+    {
+      toClassOnly: true
+    }
+  )
   @Expose()
   controller: ServiceControllerEnum;
 
   @Type(() => Number)
   @Transform(
-    ({ value, obj }) =>
-      isNumber(value) || isNumberString(value)
-        ? +value
-        : isNumber(obj?.spec?.replicas) || isNumberString(obj?.spec?.replicas)
-          ? +obj?.spec?.replicas
-          : 0,
+    ({ value, obj }: { value: number; obj: SupportedK8sResource }) => {
+      console.log('##############################');
+      console.log('kind', obj);
+      console.log('spec', (obj?.spec as any)?.replicas);
+      console.log('value', value);
+      switch (obj.kind) {
+        case 'Deployment':
+          const replicas = (obj?.spec as V1Deployment['spec'])?.replicas;
+          console.log(replicas, replicas, isNumber(replicas), isNumberString(replicas));
+          value =
+            value && (isNumber(value) || isNumberString(value))
+              ? +value
+              : replicas && (isNumber(replicas) || isNumberString(replicas))
+                ? +replicas
+                : 0;
+          break;
+        default:
+          value = 0;
+      }
+      return value;
+    },
     {
       toClassOnly: true
     }
@@ -48,10 +97,17 @@ export class K8sResourceServiceDto {
   replicaCount: number;
 
   @Transform(
-    ({ value, obj }) =>
-      value ?? obj?.spec?.strategy?.type
-        ? lowerCase(obj?.spec?.strategy?.type)
-        : ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE,
+    ({ value, obj }: { value: ProjectNamespaceServiceDeploymentStrategyEnum; obj: SupportedK8sResource }) => {
+      switch (obj.kind) {
+        case 'Deployment':
+          const spec = obj?.spec as V1Deployment['spec'];
+          return (value ?? spec?.strategy?.type)
+            ? lowerCase(spec?.strategy?.type)
+            : ProjectNamespaceServiceDeploymentStrategyEnum.RECREATE;
+        default:
+          return undefined;
+      }
+    },
     { toClassOnly: true }
   )
   @Expose()
@@ -59,14 +115,21 @@ export class K8sResourceServiceDto {
 
   @Type(() => CronjobSettingsDto)
   @Transform(
-    ({ value, obj }) => {
+    ({ value, obj }: { value: ProjectNamespaceServiceDeploymentStrategyEnum; obj: SupportedK8sResource }) => {
       if (value) {
         return value;
       }
-      return {
-        activeDeadlineSeconds: obj?.spec?.jobTemplate?.spec?.activeDeadlineSeconds,
-        schedule: obj?.spec?.schedule
-      };
+
+      switch (obj.kind) {
+        case 'CronJob':
+          const spec = obj?.spec as V1CronJob['spec'];
+          return {
+            activeDeadlineSeconds: spec?.jobTemplate?.spec?.activeDeadlineSeconds,
+            schedule: spec?.schedule
+          };
+        default:
+          return undefined;
+      }
     },
     { toClassOnly: true }
   )
@@ -74,53 +137,17 @@ export class K8sResourceServiceDto {
   cronJobSettings?: CronjobSettingsDto;
 
   @Type(() => ProjectNamespaceServiceContainerDto)
-  @Transform(
-    ({ value, obj }) => {
-      if (value) {
-        return value;
-      }
-      value = [];
-
-      const containers = isArray(obj?.spec?.jobTemplate?.spec?.template?.spec?.containers)
-        ? obj?.spec?.jobTemplate?.spec?.template?.spec?.containers
-        : isArray(obj?.spec?.template?.spec?.containers)
-          ? obj?.spec?.template?.spec?.containers
-          : [];
-      for (const container of containers) {
-        value.push(
-          plainToInstance(ProjectNamespaceServiceContainerDto, {
-            displayName: container.name,
-            name: container.name,
-            type: ContainerTypeEnum.CONTAINER_IMAGE,
-            containerImage: container.image,
-            // TODO
-            // containerImageRepoSecret:
-            containerImageCommand: container?.command ? JSON.stringify(container?.command) : undefined,
-            containerImageCommandArgs: container?.args ? JSON.stringify(container?.args) : undefined,
-            kubernetesLimits: {
-              limitCpuCores: container?.resources?.limits?.cpu
-                ? MoUtils.convertKubernetesResourcesCpu(container.resources?.limits?.cpu)
-                : 0,
-              limitMemoryMB: container?.resources?.limits?.memory
-                ? MoUtils.convertKubernetesResourcesCpu(container.resources?.limits?.memory)
-                : 0,
-              ephemeralStorageMB:
-                container?.resources?.limits && container?.resources?.limits['ephemeral-storage']
-                  ? MoUtils.convertKubernetesResourcesCpu(container.resources?.limits['ephemeral-storage'])
-                  : 0
-              // TODO
-              // probesOn:
-            },
-            envVars: [],
-            cNames: [],
-            ports: obj.ports
-          })
-        );
-      }
-      return value;
-    },
-    { toClassOnly: true }
-  )
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   containers: ProjectNamespaceServiceContainerDto[];
+
+  @Type(() => ProjectNamespaceServicePortDto)
+  @Transform(({ value }) => (isArray(value) ? value : undefined))
+  @Expose()
+  ports: ProjectNamespaceServicePortDto[];
+
+  @Type(() => HpaSettingsDto)
+  @IsOptional()
+  @Expose()
+  hpaSettings?: HpaSettingsDto;
 }

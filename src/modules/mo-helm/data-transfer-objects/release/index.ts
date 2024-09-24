@@ -7,3 +7,5 @@ export * from './cluster-helm-release-status-request.dto';
 export * from './cluster-helm-release-get-request.dto';
 export * from './cluster-helm-release-history-request.dto';
 export * from './cluster-helm-release-rollback-request.dto';
+export * from './cluster-helm-release-list-response.dto';
+export * from './cluster-helm-release.dto';

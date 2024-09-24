@@ -4,7 +4,7 @@ import { TransformToBoolean } from '@mogenius/js-utils';
 import { ProjectNamespaceServicePortBindingEnum } from '../../../mo-project-dto/enums/project-namespace-service-port-binding.enum';
 import moment from 'moment';
 
-export class K8sResourceServiceContainerPortDto {
+export class K8sResourceServicePortDto {
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Transform(({ value, obj }) => value ?? moment(obj?.metadata?.creationTimestamp).toDate(), { toClassOnly: true })
   @Expose()
