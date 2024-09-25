@@ -78,7 +78,7 @@ export class IacManagerStatusDto {
   synced: boolean;
 
   @Transform(({ obj }: { obj: IacManagerStatusDto }) => {
-    if (obj.lastSuccessfullyAppliedCommit == null) {
+    if (!obj.lastSuccessfullyAppliedCommit) {
       return new Date();
     }
     return new Date(
@@ -102,7 +102,7 @@ export class IacManagerStatusDto {
   getNextExecution(): string {
     const now = new Date();
 
-    if (this.lastSuccessfullyAppliedCommit == null) {
+    if (!this.lastSuccessfullyAppliedCommit) {
       return '0h 0m 0s';
     }
 
