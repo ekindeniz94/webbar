@@ -2,6 +2,13 @@
 
 
 
+## 2.7.12 (2024-09-25)
+
+
+### Bug Fixes
+
+* added ignoredNames and repoPulse property to iac-manager. ([12c91ad](https://github.com/mogenius/mo-core-base/commit/12c91ad924e318858fabb35642201656fd50583f))
+
 ## 2.7.11 (2024-09-24)
 
 
