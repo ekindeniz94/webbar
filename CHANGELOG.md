@@ -2,6 +2,13 @@
 
 
 
+## 2.7.16 (2024-09-25)
+
+
+### Bug Fixes
+
+* progress. ([e731faf](https://github.com/mogenius/mo-core-base/commit/e731faf6738bbd23689d252cda08fffce11424cd))
+
 ## 2.7.15 (2024-09-25)
 
 
