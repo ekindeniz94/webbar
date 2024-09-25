@@ -30,5 +30,8 @@ export class IacConfigurationDto {
   ignoredNamespaces: string[];
 
   @Expose()
+  ignoredNames: string[];
+
+  @Expose()
   logChanges: boolean;
 }

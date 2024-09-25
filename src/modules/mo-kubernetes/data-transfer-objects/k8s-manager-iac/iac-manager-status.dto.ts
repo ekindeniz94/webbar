@@ -13,9 +13,8 @@ export class IacManagerStatusDto {
   @Expose()
   syncInfo: IacManagerSyncInfoDto;
 
-  // @Type(() => IacGitActionStatusDto)
-  // @Expose()
-  // commitHistory: IacGitActionStatusDto[];
+  @Expose()
+  repoPulse: Record<string, number>;
 
   @Type(() => IacGitActionStatusDto)
   @Expose()

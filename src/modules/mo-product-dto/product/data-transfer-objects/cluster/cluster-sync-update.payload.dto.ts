@@ -65,4 +65,10 @@ export class ClusterSyncUpdatePayloadDto {
   @IsString({ each: true })
   @Expose()
   ignoredNamespaces: string[];
+
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
+  @IsNotEmpty()
+  @IsString({ each: true })
+  @Expose()
+  ignoredNames: string[];
 }
