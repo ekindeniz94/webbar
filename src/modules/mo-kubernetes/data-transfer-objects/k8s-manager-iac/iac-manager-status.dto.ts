@@ -99,6 +99,10 @@ export class IacManagerStatusDto {
   getNextExecution(): string {
     const now = new Date();
 
+    if (this.lastSuccessfullyAppliedCommit.lastExecution == null) {
+      return '0h 0m 0s';
+    }
+
     let timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit.lastExecution.getTime();
 
     const syncFrequencyInMs = this.iacConfiguration.syncFrequencyInSec * 1000;
