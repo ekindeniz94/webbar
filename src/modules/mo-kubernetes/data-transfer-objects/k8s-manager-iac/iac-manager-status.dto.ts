@@ -78,8 +78,11 @@ export class IacManagerStatusDto {
   synced: boolean;
 
   @Transform(({ obj }: { obj: IacManagerStatusDto }) => {
+    if (obj.lastSuccessfullyAppliedCommit.lastExecution == null) {
+      return new Date();
+    }
     return new Date(
-      moment(obj.lastSuccessfullyAppliedCommit.lastExecution).toDate().getTime() + obj.syncInfo.executionTimeInMs
+      moment(obj.lastSuccessfullyAppliedCommit?.lastExecution).toDate().getTime() + obj.syncInfo.executionTimeInMs
     );
   })
   @Expose()
@@ -103,17 +106,17 @@ export class IacManagerStatusDto {
       return '0h 0m 0s';
     }
 
-    let timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit.lastExecution.getTime();
+    let timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit?.lastExecution?.getTime();
 
     const syncFrequencyInMs = this.iacConfiguration.syncFrequencyInSec * 1000;
     if (timeSinceLastExecution >= syncFrequencyInMs) {
       const cycles = Math.floor(timeSinceLastExecution / syncFrequencyInMs);
 
       this.lastSuccessfullyAppliedCommit.lastExecution = new Date(
-        this.lastSuccessfullyAppliedCommit.lastExecution.getTime() + cycles * syncFrequencyInMs
+        this.lastSuccessfullyAppliedCommit?.lastExecution?.getTime() + cycles * syncFrequencyInMs
       );
 
-      timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit.lastExecution.getTime();
+      timeSinceLastExecution = now.getTime() - this.lastSuccessfullyAppliedCommit?.lastExecution?.getTime();
     }
 
     const timeUntilNextExecution = syncFrequencyInMs - timeSinceLastExecution;
