@@ -78,7 +78,7 @@ export class IacManagerStatusDto {
   synced: boolean;
 
   @Transform(({ obj }: { obj: IacManagerStatusDto }) => {
-    if (!obj.lastSuccessfullyAppliedCommit) {
+    if (obj.lastSuccessfullyAppliedCommit === undefined || obj.lastSuccessfullyAppliedCommit === null) {
       return new Date();
     }
     return new Date(
@@ -87,6 +87,9 @@ export class IacManagerStatusDto {
   })
   @Expose()
   get nextExecutionDate(): Date {
+    if (this.lastSuccessfullyAppliedCommit === undefined || this.lastSuccessfullyAppliedCommit === null) {
+      return new Date(new Date().getTime() + this.syncInfo?.executionTimeInMs);
+    }
     return new Date((this.lastSuccessfullyAppliedCommit?.lastExecution).getTime() + this.syncInfo?.executionTimeInMs);
   }
 
@@ -102,7 +105,7 @@ export class IacManagerStatusDto {
   getNextExecution(): string {
     const now = new Date();
 
-    if (!this.lastSuccessfullyAppliedCommit) {
+    if (this.lastSuccessfullyAppliedCommit === undefined || this.lastSuccessfullyAppliedCommit === null) {
       return '0h 0m 0s';
     }
 
