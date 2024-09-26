@@ -16,8 +16,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.ServiceStatusError,
-    title: 'Service status error',
-    description: 'Notification for errors or critical issues related to service status.',
+    title: 'Service status',
+    description: 'A service encountered errors with deployments or pods.',
     group: {
       type: 'services',
       title: 'Services'
@@ -26,8 +26,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.HealthCheckError,
-    title: 'Health check error',
-    description: 'Notification for failures during service health checks.',
+    title: 'Health checks',
+    description: 'Health checks for a service failed.',
     group: {
       type: 'services',
       title: 'Services'
@@ -37,8 +37,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.ProjectResourcesWarning,
-    title: 'Project resources warning',
-    description: 'Notification when project resource usage exceeds 90% of the defined limit.',
+    title: 'Project resources',
+    description: 'The allocated resources in a project have exceeded 90% of the defined limits.',
     group: {
       type: 'resources',
       title: 'Resources'
@@ -47,8 +47,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.ServiceUsageWarning,
-    title: 'Service usage warning',
-    description: 'Notification when service usage exceeds 80% of the defined limit.',
+    title: 'Service resource usage',
+    description: 'A service has exceeded 80% of its resource limits within the last 15 minutes.',
     group: {
       type: 'resources',
       title: 'Resources'
@@ -58,8 +58,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.GitIntegrationTokenExpiredWarning,
-    title: 'Git integration token expired warning',
-    description: 'Notification when a Git integration token expires.',
+    title: 'Git integration token expired',
+    description: 'The token for the Git integration in a project has expired.',
     group: {
       type: 'intgerations',
       title: 'Intgerations'
@@ -68,8 +68,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.GitIntegrationTokenRefreshError,
-    title: 'Git integration token refresh error',
-    description: 'Notification when there is an error refreshing a Git integration token.',
+    title: 'Git integration refresh failed',
+    description: 'The Git integration encountered an error when attempting to refresh the token.',
     group: {
       type: 'intgerations',
       title: 'Intgerations'
@@ -79,8 +79,8 @@ export const defaultProjectNotificationSettings: ProjectNotificationSettingsDto[
   {
     enabled: true,
     type: ProjectNotificationSettingsTypeEnum.UserJoinedActivity,
-    title: 'User joined activity',
-    description: 'Notification when a user joins the project.',
+    title: 'New project member',
+    description: 'A new team member has joined the project by invitation.',
     group: {
       type: 'users',
       title: 'Users'
