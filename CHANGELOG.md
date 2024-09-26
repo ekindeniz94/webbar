@@ -2,6 +2,13 @@
 
 
 
+## 2.7.18 (2024-09-26)
+
+
+### Bug Fixes
+
+* adjust project mail notifications ([a8cecd8](https://github.com/mogenius/mo-core-base/commit/a8cecd88f34ebdc7159178781dd3e4b5df691b0c))
+
 ## 2.7.17 (2024-09-25)
 
 
