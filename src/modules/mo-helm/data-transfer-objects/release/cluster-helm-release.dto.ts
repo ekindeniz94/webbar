@@ -1,5 +1,8 @@
 import { Expose, Transform } from 'class-transformer';
-import moment from 'moment/moment';
+import * as JSYAML from 'js-yaml';
+import { MoUtils } from '@mogenius/js-utils';
+import { ClusterHelmReleaseInfoDto } from './cluster-helm-release-info.dto';
+import { isEmpty } from 'class-validator';
 
 export class ClusterHelmReleaseDto {
   @Transform(({ value, obj }) => value ?? obj)
@@ -17,22 +20,39 @@ export class ClusterHelmReleaseDto {
   @Expose()
   releaseName: string;
 
-  @Transform(({ value, obj }) => obj?.data?.chart?.metadata?.version ?? value)
+  @Transform(({ value, obj }: { value: string; obj: any }) => {
+    value = obj?.data?.chart?.metadata?.version ?? value;
+    if (!value || isEmpty(value)) {
+      return value;
+    }
+    value = `${value}`;
+    if (!value.startsWith('v')) {
+      value = `v${value}`;
+    }
+    return value;
+  })
   @Expose()
   version: string;
 
-  @Transform(({ value, obj }) => obj?.data?.chart?.metadata?.appVersion ?? value)
+  @Transform(({ value, obj }: { value: string; obj: any }) => {
+    value = obj?.data?.chart?.metadata?.appVersion ?? value;
+    if (!value || isEmpty(value)) {
+      return value;
+    }
+    value = `${value}`;
+    if (!value.startsWith('v')) {
+      value = `v${value}`;
+    }
+    return value;
+  })
   @Expose()
   appVersion: string;
 
-  @Transform(({ value, obj }) => obj?.data?.info?.status ?? value)
+  @Transform(({ value, obj }) => JSYAML.dump(obj?.data?.chart?.values) ?? value)
   @Expose()
-  status: string;
+  chartValue: string;
 
-  @Transform(({ value, obj }) => {
-    value = obj?.data?.info?.last_deployed ?? value;
-    return value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value;
-  })
+  @Transform(({ value, obj }) => MoUtils.transformToDto(ClusterHelmReleaseInfoDto, obj?.data?.info) ?? value)
   @Expose()
-  lastDeployed: string;
+  info: ClusterHelmReleaseInfoDto;
 }
