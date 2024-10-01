@@ -1,6 +1,6 @@
 import { IdRequiredDto } from '@mogenius/core-dto';
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
+import { IsNotEmpty, ValidateNested } from 'class-validator';
 
 export class LabeledNetworkPolicyPortsListRequestsDto {
   @IsNotEmpty()
