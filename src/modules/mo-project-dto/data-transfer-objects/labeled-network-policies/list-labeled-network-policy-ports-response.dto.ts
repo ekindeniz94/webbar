@@ -3,7 +3,7 @@ import { IsNotEmpty } from "class-validator";
 import { K8sLabeledNetworkPolicy } from "./labeled-network-policies.dto";
 
 
-export class LabeledNetworkPolicyPortsListResponseDto {
+export class ListLabeledNetworkPolicyPortsResponseDto {
   @Expose()
   @IsNotEmpty()
   K8sLabeledNetworkPolicy: K8sLabeledNetworkPolicy[];
