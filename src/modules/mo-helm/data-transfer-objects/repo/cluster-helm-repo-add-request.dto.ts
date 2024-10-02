@@ -11,7 +11,7 @@ export class ClusterHelmRepoAddRequestDto {
   @IsNotEmpty()
   @IsUrl({
     require_host: true,
-    require_protocol: true,
+    require_protocol: false,
     require_tld: true
   })
   @IsString()
