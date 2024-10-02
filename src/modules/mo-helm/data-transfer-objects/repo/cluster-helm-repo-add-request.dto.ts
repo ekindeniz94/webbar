@@ -12,7 +12,8 @@ export class ClusterHelmRepoAddRequestDto {
   @IsUrl({
     require_host: true,
     require_protocol: false,
-    require_tld: true
+    require_tld: true,
+    protocols: ['http', 'https', 'oci']
   })
   @IsString()
   @Expose()
