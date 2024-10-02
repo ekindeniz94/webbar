@@ -2,6 +2,13 @@
 
 
 
+## 2.7.20 (2024-10-02)
+
+
+### Bug Fixes
+
+* helmchart repos can no start without http. ([01d8376](https://github.com/mogenius/mo-core-base/commit/01d8376c7609b0d9fbdce4c2f2d22541d6e549a7))
+
 ## 2.7.19 (2024-09-27)
 
 
