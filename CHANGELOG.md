@@ -2,6 +2,13 @@
 
 
 
+## 2.7.21 (2024-10-02)
+
+
+### Bug Fixes
+
+* helmchart repos can now use oci images. ([30d607d](https://github.com/mogenius/mo-core-base/commit/30d607d39fa1a22e87b778e7ba9ff42e7d243d44))
+
 ## 2.7.20 (2024-10-02)
 
 
