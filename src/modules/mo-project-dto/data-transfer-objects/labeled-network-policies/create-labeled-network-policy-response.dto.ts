@@ -1,13 +1,10 @@
 import { Expose } from 'class-transformer';
-import { IsOptional, IsString } from 'class-validator';
+import { K8sMessageResponseBaseDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-message-response-base.dto';
+import { IsString } from 'class-validator';
 
-export class CreateLabeledNetworkPolicyResponseDto {
-  @Expose()
+export class CreateLabeledNetworkPolicyResponseDto extends K8sMessageResponseBaseDto<string> {
   @IsString()
-  status: 'ERROR' | 'SUCCESS';
-
   @Expose()
-  @IsOptional()
-  @IsString()
-  errorMessage?: string;
+  data?: string;
 }
+  
