@@ -1,10 +1,12 @@
 import { Expose } from 'class-transformer';
-import { IsNotEmpty } from 'class-validator';
-import { K8sLabeledNetworkPolicy } from './labeled-network-policies.dto';
+import { IsNotEmpty, IsString } from 'class-validator';
+import { K8sLabeledNetworkPolicyDto } from './labeled-network-policies.dto';
 
 export class CreateLabeledNetworkPolicyRequestDto {
   @IsNotEmpty()
+  @IsString()
   @Expose()
   namespaceName: string;
-  labeledNetworkPolicy: K8sLabeledNetworkPolicy;
+  @Expose()
+  labeledNetworkPolicy: K8sLabeledNetworkPolicyDto;
 }

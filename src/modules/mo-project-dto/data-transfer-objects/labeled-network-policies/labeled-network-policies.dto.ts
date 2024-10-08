@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsString, Max, Min } from 'class-validator';
-import { ProjectNamespaceServicePortBindingEnum } from 'src/mo-core-base';
+import { IsEnum, IsNotEmpty, IsNumber, IsString, Max, Min, ValidateNested } from 'class-validator';
+import { ProjectNamespaceServicePortBindingEnum } from '../../enums';
 
 export class K8sLabeledPortDto {
   @Type(() => Number)
@@ -11,12 +11,12 @@ export class K8sLabeledPortDto {
   port: number;
   
   @IsNotEmpty()
-  @IsString()
+  @IsEnum(ProjectNamespaceServicePortBindingEnum)
   @Expose()
   portType: ProjectNamespaceServicePortBindingEnum;
 }
 
-export class K8sLabeledNetworkPolicy{
+export class K8sLabeledNetworkPolicyDto{
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -28,7 +28,7 @@ export class K8sLabeledNetworkPolicy{
   type: "egress" | "ingress";
 
   @IsNotEmpty()
-  @IsString()
+  @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
   ports: K8sLabeledPortDto[];
 }
