@@ -2,6 +2,19 @@
 
 
 
+# 2.8.0 (2024-10-09)
+
+
+### Bug Fixes
+
+* imports ([d96164d](https://github.com/mogenius/mo-core-base/commit/d96164df1dc47dcfc54b925861ba643d4319f03b))
+
+
+### Features
+
+* add labeled netpol dtos ([249d3e1](https://github.com/mogenius/mo-core-base/commit/249d3e1219783e6ff891a683c5b9834adc951b62))
+* add sctp porttype ([53248de](https://github.com/mogenius/mo-core-base/commit/53248dec13b1acdb9e7fcb7df211ef8e02b2da64))
+
 ## 2.7.21 (2024-10-02)
 
 
