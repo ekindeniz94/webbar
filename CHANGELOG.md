@@ -2,6 +2,13 @@
 
 
 
+## 2.8.1 (2024-10-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency uuid to v10 ([a718f3e](https://github.com/mogenius/mo-core-base/commit/a718f3e418b029afdc6617f90aac22a9a0a02b0c))
+
 # 2.8.0 (2024-10-09)
 
 
