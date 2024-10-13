@@ -2,6 +2,13 @@
 
 
 
+## 2.8.2 (2024-10-13)
+
+
+### Bug Fixes
+
+* update package ([12462fd](https://github.com/mogenius/mo-core-base/commit/12462fd739d92332e8306a952719d41fbb4ca7ea))
+
 ## 2.8.1 (2024-10-10)
 
 
