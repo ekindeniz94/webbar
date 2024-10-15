@@ -1,16 +1,16 @@
 import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
-import { K8sLabeledNetworkPolicyDto } from './labeled-network-policies.dto';
+import { NetworkPolicyLabeledDto } from './network-policy-labeled.dto';
 
-export class CreateLabeledNetworkPolicyRequestDto {
+export class NetworkPolicyCreateLabeledRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
   namespaceName: string;
-  
+
   @IsNotEmpty()
-  @Type(() => K8sLabeledNetworkPolicyDto)
+  @Type(() => NetworkPolicyLabeledDto)
   @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  labeledNetworkPolicy: K8sLabeledNetworkPolicyDto;
+  labeledNetworkPolicy: NetworkPolicyLabeledDto;
 }

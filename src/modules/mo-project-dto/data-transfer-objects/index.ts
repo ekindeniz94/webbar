@@ -20,4 +20,3 @@ export * from './traffic';
 export * from './xterm';
 export * from './create-project-cluster-item.dto';
 export * from './external-secret-storage';
-export * from './labeled-network-policies';
