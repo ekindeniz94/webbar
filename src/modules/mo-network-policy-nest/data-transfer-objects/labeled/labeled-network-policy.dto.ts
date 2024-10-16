@@ -2,7 +2,7 @@ import { Expose } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { NetworkPolicyPortTypeEnum } from '../../enums';
 
-export class NetworkPolicyLabeledDto {
+export class LabeledNetworkPolicyDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
