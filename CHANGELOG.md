@@ -2,6 +2,13 @@
 
 
 
+## 2.8.4 (2024-10-16)
+
+
+### Bug Fixes
+
+* refactoring network policy ([6b55a66](https://github.com/mogenius/mo-core-base/commit/6b55a66eff71c5b21d786f4aaae5bbb361a6521c))
+
 ## 2.8.3 (2024-10-15)
 
 
