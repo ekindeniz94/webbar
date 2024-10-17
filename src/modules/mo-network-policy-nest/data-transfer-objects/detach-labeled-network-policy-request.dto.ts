@@ -1,7 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { LabeledNetworkPolicyDto } from './labeled-network-policy.dto';
-import { ServiceControllerEnum } from '../../../mo-project-dto';
+import { ServiceControllerEnum } from '../../mo-project-dto';
 
 export class DetachLabeledNetworkPolicyRequestDto {
   @IsNotEmpty()
@@ -15,7 +15,7 @@ export class DetachLabeledNetworkPolicyRequestDto {
   controllerName: string;
 
   @IsNotEmpty()
-  @IsString()
+  @IsEnum(ServiceControllerEnum)
   @Expose()
   controllerType: ServiceControllerEnum;
 
