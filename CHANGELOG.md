@@ -2,6 +2,13 @@
 
 
 
+## 2.8.5 (2024-10-17)
+
+
+### Bug Fixes
+
+* update network policy ([193ea28](https://github.com/mogenius/mo-core-base/commit/193ea28e3d2e5ab9e53d29efc93ae58db14aa33b))
+
 ## 2.8.4 (2024-10-16)
 
 
