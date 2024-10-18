@@ -2,6 +2,13 @@
 
 
 
+## 2.8.6 (2024-10-18)
+
+
+### Bug Fixes
+
+* ConflictingNetworkPolicyDto ([40725dd](https://github.com/mogenius/mo-core-base/commit/40725dd05b4faff95d72be24c682d00460080a7e))
+
 ## 2.8.5 (2024-10-17)
 
 
