@@ -2,6 +2,13 @@
 
 
 
+## 2.8.7 (2024-10-21)
+
+
+### Bug Fixes
+
+* ListControllerLabeledNetworkPolicies ([e56b816](https://github.com/mogenius/mo-core-base/commit/e56b8160ca2094fd661c2cd8dca8a35c5a21865c))
+
 ## 2.8.6 (2024-10-18)
 
 
