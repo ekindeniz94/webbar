@@ -27,5 +27,10 @@ export class XtermClusterOperatorLogConfigDto extends XtermBaseConfigDto {
   @IsOptional()
   @IsString()
   @Expose()
+  controller?: string;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
   release?: string;
 }

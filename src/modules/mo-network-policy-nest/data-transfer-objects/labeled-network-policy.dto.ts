@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { NetworkPolicyPortTypeEnum } from '../enums';
 
 export class LabeledNetworkPolicyDto {
@@ -14,7 +14,7 @@ export class LabeledNetworkPolicyDto {
   type: 'egress' | 'ingress';
 
   @IsNotEmpty()
-  @ValidateNested({ each: true, message: '$property must be an array' })
+  @IsNumber()
   @Expose()
   port: number;
 

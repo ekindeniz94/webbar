@@ -13,3 +13,5 @@ export * from './cluster-node.dto';
 export * from './cluster-resource-info-payload.dto';
 export * from './cluster-status-payload.dto';
 export * from './cluster-sync-update.payload.dto';
+export * from './cluster-namespace-list-by-names-request.dto';
+export * from './cluster-service-list-by-names-request.dto';

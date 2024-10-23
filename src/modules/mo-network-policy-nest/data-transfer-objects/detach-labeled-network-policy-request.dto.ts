@@ -21,7 +21,7 @@ export class DetachLabeledNetworkPolicyRequestDto {
 
   @IsNotEmpty()
   @Type(() => LabeledNetworkPolicyDto)
-  @ValidateNested({ message: '$property must be an object' })
+  @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  labeledNetworkPolicy: LabeledNetworkPolicyDto;
+  labeledNetworkPolicies: LabeledNetworkPolicyDto[];
 }

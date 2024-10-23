@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsString, ValidateNested } from "class-validator";
+import { IsEnum, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { LabeledNetworkPolicyDto } from './labeled-network-policy.dto';
 import { ServiceControllerEnum } from '../../mo-project-dto';
 
@@ -21,7 +21,7 @@ export class AttachLabeledNetworkPolicyRequestDto {
 
   @IsNotEmpty()
   @Type(() => LabeledNetworkPolicyDto)
-  @ValidateNested({ message: '$property must be an object' })
+  @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  labeledNetworkPolicy: LabeledNetworkPolicyDto;
+  labeledNetworkPolicies: LabeledNetworkPolicyDto[];
 }
