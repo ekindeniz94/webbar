@@ -2,6 +2,13 @@
 
 
 
+## 2.8.9 (2024-10-29)
+
+
+### Bug Fixes
+
+* add network ploicy to enum ([8e055ff](https://github.com/mogenius/mo-core-base/commit/8e055ffea8d17f6bb16761a4cf72be47ce97792d))
+
 ## 2.8.8 (2024-10-23)
 
 
