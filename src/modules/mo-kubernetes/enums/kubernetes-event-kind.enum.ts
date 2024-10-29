@@ -10,5 +10,6 @@ export enum KubernetesEventKindEnum {
   PersistentVolumeClaim = 'PersistentVolumeClaim',
   PersistentVolume = 'PersistentVolume',
   CronJob = 'CronJob',
-  Job = 'Job'
+  Job = 'Job',
+  NetworkPolicy = 'NetworkPolicy'
 }
