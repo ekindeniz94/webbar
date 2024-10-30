@@ -2,6 +2,13 @@
 
 
 
+## 2.8.10 (2024-10-30)
+
+
+### Bug Fixes
+
+* extend k8s metadata object ([19e5a74](https://github.com/mogenius/mo-core-base/commit/19e5a747dc1e497063215c573be86c477f1b81aa))
+
 ## 2.8.9 (2024-10-29)
 
 
