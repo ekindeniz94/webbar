@@ -1,5 +1,5 @@
 export * from './permissions';
-export * from './workload';
+// export * from './workload';
 
 export * from './cluster-provider.enum';
 export * from './cluster-type.enum';

@@ -1,4 +1,3 @@
-export * from './workload';
 export * from './admin';
 
 export * from './cluster.dto';
