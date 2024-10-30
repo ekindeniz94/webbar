@@ -2,6 +2,13 @@
 
 
 
+## 2.8.11 (2024-10-30)
+
+
+### Bug Fixes
+
+* workloads ([afea78e](https://github.com/mogenius/mo-core-base/commit/afea78e5d0287b65e478d9607cbf2fdc8876d62d))
+
 ## 2.8.10 (2024-10-30)
 
 
