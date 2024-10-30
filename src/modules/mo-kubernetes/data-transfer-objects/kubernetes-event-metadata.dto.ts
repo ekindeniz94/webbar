@@ -44,4 +44,10 @@ export class KubernetesEventMetadataDto {
   @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Expose()
   managedFields: any[];
+
+  @Expose()
+  annotations: Record<string, string>;
+
+  @Expose()
+  labels: Record<string, string>;
 }
