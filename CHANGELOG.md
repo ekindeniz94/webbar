@@ -2,6 +2,13 @@
 
 
 
+## 2.8.16 (2024-11-04)
+
+
+### Bug Fixes
+
+* refactor np response dtos ([bbcf7b8](https://github.com/mogenius/mo-core-base/commit/bbcf7b825774baad55d8712cec5a0a0bbc9bf27c))
+
 ## 2.8.15 (2024-11-04)
 
 
