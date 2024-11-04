@@ -9,3 +9,6 @@ export * from './conflicting-network-policy-response.dto';
 export * from './list-controller-labeled-network-policies.dto';
 export * from './list-controller-labeled-network-policies-response.dto';
 export * from './list-controller-labeled-network-policies-request.dto';
+export * from './list-network-policy-controller.dto';
+export * from './list-network-policy-namespace.dto';
+export * from './list-network-policy-response.dto';
