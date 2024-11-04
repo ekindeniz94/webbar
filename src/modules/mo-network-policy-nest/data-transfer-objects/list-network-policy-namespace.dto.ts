@@ -1,6 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsString, IsArray, IsNotEmpty } from 'class-validator';
 import { ListNetworkPolicyControllerDto } from './list-network-policy-controller.dto';
+import { ConflictingNetworkPolicyDto } from './conflicting-network-policy.dto';
 
 export class ListNetworkPolicyNamespaceDto {
   @IsNotEmpty()
@@ -32,5 +33,5 @@ export class ListNetworkPolicyNamespaceDto {
   @IsArray()
   @Transform((value) => value ?? [])
   @Expose()
-  unmanagedPolicies: any[]; // Replace with specific DTO if needed
+  unmanagedPolicies: ConflictingNetworkPolicyDto[];
 }
