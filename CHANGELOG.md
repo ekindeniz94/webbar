@@ -2,6 +2,13 @@
 
 
 
+## 2.8.12 (2024-11-04)
+
+
+### Bug Fixes
+
+* add list-network-policy dto's ([d7b93b3](https://github.com/mogenius/mo-core-base/commit/d7b93b387bcddf2d5e80dc437887b7d7ddaaaeea))
+
 ## 2.8.11 (2024-10-30)
 
 
