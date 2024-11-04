@@ -2,36 +2,30 @@ import { Expose, Transform, Type } from 'class-transformer';
 import { IsString, IsArray, IsNotEmpty } from 'class-validator';
 import { ListNetworkPolicyControllerDto } from './list-network-policy-controller.dto';
 import { ConflictingNetworkPolicyDto } from './conflicting-network-policy.dto';
+import { MoUtils } from '@mogenius/js-utils';
 
 export class ListNetworkPolicyNamespaceDto {
-  @IsNotEmpty()
   @IsString()
   @Expose()
   id: string;
 
-  @IsNotEmpty()
   @IsString()
   @Expose()
   displayName: string;
 
-  @IsNotEmpty()
   @IsString()
   @Expose()
   name: string;
 
-  @IsNotEmpty()
   @IsString()
   @Expose()
   projectId: string;
 
-  @IsArray()
-  @Type(() => ListNetworkPolicyControllerDto)
-  @Transform((value) => value ?? [])
+  @Transform(({ value }) => MoUtils.transformToDtoList(ListNetworkPolicyControllerDto, value))
   @Expose()
   controllers: ListNetworkPolicyControllerDto[];
 
-  @IsArray()
-  @Transform((value) => value ?? [])
+  @Transform(({ value }) => MoUtils.transformToDtoList(ConflictingNetworkPolicyDto, value))
   @Expose()
   unmanagedPolicies: ConflictingNetworkPolicyDto[];
 }
