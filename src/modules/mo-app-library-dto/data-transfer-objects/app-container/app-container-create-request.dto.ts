@@ -16,7 +16,7 @@ import {
 } from 'class-validator';
 import { MoProjectDtoUtils } from '../../../mo-project-dto/mo-project-dto.utils';
 import { PROJECT_CONST } from '../../../mo-project-dto/mo-project-dto.const';
-import { AppEnvVarCreateRequestDto } from '../app-envvar-create-request.dto';
+import { AppContainerEnvVarCreateRequestDto } from './app-container-envvar-create-request.dto';
 import { AppKubernetesLimitsCreateRequestDto } from '../app-kubernetes-limits-create-request.dto';
 import { StripTags } from '@mogenius/js-utils';
 
@@ -143,8 +143,8 @@ export class AppContainerCreateRequestDto extends BaseEntityDto {
   kubernetesLimits: AppKubernetesLimitsCreateRequestDto;
 
   @IsOptional()
-  @Type(() => AppEnvVarCreateRequestDto)
+  @Type(() => AppContainerEnvVarCreateRequestDto)
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  envVars: AppEnvVarCreateRequestDto[];
+  envVars: AppContainerEnvVarCreateRequestDto[];
 }

@@ -1,9 +1,10 @@
-import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
-import { IsBoolean, IsEnum, IsNotEmpty, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { Expose, plainToInstance, Transform } from 'class-transformer';
+import { IsEnum, IsNotEmpty, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { StripTags } from '@mogenius/js-utils';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { ProjectNamespaceServiceEnvVarTypeEnum } from '../../enums';
 import { ProjectNamespaceServiceContainerEnvVarDataDto } from './project-namespace-service-container-envvar-data.dto';
+import { ProjectNamespaceServiceContainerEnvVarSettingDto } from './project-namespace-service-container-env-var-setting.dto';
 
 export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @IsNotEmpty()
@@ -12,6 +13,11 @@ export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   // @Matches(PROJECT_CONST.SERVICE.ENVVAR_NAME.MATCHES)
   @Expose()
   name: string;
+
+  @IsNotEmpty()
+  @IsEnum(ProjectNamespaceServiceEnvVarTypeEnum)
+  @Expose()
+  type: ProjectNamespaceServiceEnvVarTypeEnum;
 
   @IsNotEmpty()
   @Transform(
@@ -37,46 +43,8 @@ export class ProjectNamespaceServiceContainerEnvVarDto extends BaseEntityDto {
   @Expose()
   data: ProjectNamespaceServiceContainerEnvVarDataDto;
 
-  @IsNotEmpty()
-  @IsEnum(ProjectNamespaceServiceEnvVarTypeEnum)
-  @Expose()
-  type: ProjectNamespaceServiceEnvVarTypeEnum;
-
-  @Type(() => Boolean)
   @IsOptional()
-  @IsBoolean()
-  @Transform(({ value }) => (value === undefined ? false : value))
+  @ValidateNested({ message: '$property must be an object' })
   @Expose()
-  deactivateName: boolean;
-
-  @Type(() => Boolean)
-  @IsOptional()
-  @IsBoolean()
-  @Transform(({ value }) => (value === undefined ? false : value))
-  @Expose()
-  deactivateValue: boolean;
-
-  @Type(() => Boolean)
-  @IsOptional()
-  @IsBoolean()
-  @Expose()
-  @Transform(({ value }) => (value === undefined ? false : value))
-  deactivateType: boolean;
-
-  @Type(() => Boolean)
-  @IsOptional()
-  @IsBoolean()
-  @Expose()
-  @Transform(({ value }) => (value === undefined ? false : value))
-  deactivateDelete: boolean;
-
-  // @IsOptional()
-  // @IsString()
-  // @Expose()
-  // dependsOn?: string;
-  //
-  // @IsOptional()
-  // @IsString()
-  // @Expose()
-  // dependsOnMethod?: string;
+  settings: ProjectNamespaceServiceContainerEnvVarSettingDto;
 }

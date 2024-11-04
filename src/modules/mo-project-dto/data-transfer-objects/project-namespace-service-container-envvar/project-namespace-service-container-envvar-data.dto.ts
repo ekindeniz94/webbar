@@ -1,7 +1,6 @@
 import { Expose, Transform } from 'class-transformer';
-import { IsEnum, IsNotEmpty, IsOptional, IsString, ValidateIf } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString, ValidateIf } from 'class-validator';
 import { ProjectNamespaceServiceEnvVarTypeEnum, ProjectNamespaceServiceEnvVarVaultTypeEnum } from '../../enums';
-import { isObject, isString } from 'lodash';
 
 export class ProjectNamespaceServiceContainerEnvVarDataDto {
   @IsNotEmpty()
