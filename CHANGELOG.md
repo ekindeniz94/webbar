@@ -2,6 +2,13 @@
 
 
 
+## 2.8.15 (2024-11-04)
+
+
+### Bug Fixes
+
+* change type of unmanagedPolicies ([b0a9279](https://github.com/mogenius/mo-core-base/commit/b0a927966d0fe69bbfe38576c8c04118b1ef5607))
+
 ## 2.8.14 (2024-11-04)
 
 
