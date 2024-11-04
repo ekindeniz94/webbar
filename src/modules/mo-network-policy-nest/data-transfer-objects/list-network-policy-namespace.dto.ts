@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsString, IsArray, ValidateNested, IsNotEmpty } from 'class-validator';
+import { IsString, IsArray, IsNotEmpty } from 'class-validator';
 import { ListNetworkPolicyControllerDto } from './list-network-policy-controller.dto';
 
 export class ListNetworkPolicyNamespaceDto {
@@ -24,7 +24,6 @@ export class ListNetworkPolicyNamespaceDto {
   projectId: string;
 
   @IsArray()
-  @ValidateNested({ each: true })
   @Type(() => ListNetworkPolicyControllerDto)
   @Transform((value) => value ?? [])
   @Expose()

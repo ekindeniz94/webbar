@@ -1,12 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsArray, ValidateNested } from 'class-validator';
+import { IsArray } from 'class-validator';
 import { ListNetworkPolicyNamespaceDto } from './list-network-policy-namespace.dto';
+import { K8sMessageResponseBaseDto } from '../../../modules/mo-kubernetes/data-transfer-objects/k8s-message-response-base.dto';
 
-export class ListNetworkPolicyResponseDto {
+export class ListNetworkPolicyResponseDto extends K8sMessageResponseBaseDto<ListNetworkPolicyNamespaceDto[]> {
   @IsArray()
-  @ValidateNested({ each: true })
   @Transform((value) => value ?? [])
   @Type(() => ListNetworkPolicyNamespaceDto)
   @Expose()
-  namespaces: ListNetworkPolicyNamespaceDto[];
+  data: ListNetworkPolicyNamespaceDto[];
 }
