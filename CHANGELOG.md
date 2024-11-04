@@ -2,6 +2,13 @@
 
 
 
+## 2.8.14 (2024-11-04)
+
+
+### Bug Fixes
+
+* refactor ([65f9e8a](https://github.com/mogenius/mo-core-base/commit/65f9e8a45fd162589dca5261a9b71bf00a735fdc))
+
 ## 2.8.13 (2024-11-04)
 
 
