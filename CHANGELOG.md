@@ -2,6 +2,13 @@
 
 
 
+## 2.8.13 (2024-11-04)
+
+
+### Bug Fixes
+
+* refactoring app lib ([3fa0769](https://github.com/mogenius/mo-core-base/commit/3fa07695fcd39df4f92ed6a2b77265b2170ce1f6))
+
 ## 2.8.12 (2024-11-04)
 
 
