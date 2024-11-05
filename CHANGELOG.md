@@ -2,6 +2,13 @@
 
 
 
+## 2.8.17 (2024-11-05)
+
+
+### Bug Fixes
+
+* trigger build ([47b8c25](https://github.com/mogenius/mo-core-base/commit/47b8c25eb3355813ddb62cc91d6b8770cb371efb))
+
 ## 2.8.16 (2024-11-04)
 
 
