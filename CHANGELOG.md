@@ -2,6 +2,14 @@
 
 
 
+## 2.8.18 (2024-11-08)
+
+
+### Bug Fixes
+
+* add response dto ([94037fe](https://github.com/mogenius/mo-core-base/commit/94037febc33bb9117cc9748c9b0d6efd5ca80416))
+* renamce ([adf35c3](https://github.com/mogenius/mo-core-base/commit/adf35c365964d4bf417c9a25be401be8cf8e5910))
+
 ## 2.8.17 (2024-11-05)
 
 
