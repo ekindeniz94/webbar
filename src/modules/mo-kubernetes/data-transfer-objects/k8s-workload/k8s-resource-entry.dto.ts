@@ -1,5 +1,5 @@
-import { Expose } from 'class-transformer';
-import { TransformToBoolean } from '@mogenius/js-utils';
+import { Expose, Transform } from 'class-transformer';
+import { IsOptional } from 'class-validator';
 
 export class K8sResourceEntryDto {
   @Expose()
@@ -8,13 +8,24 @@ export class K8sResourceEntryDto {
   @Expose()
   name: string;
 
-  @TransformToBoolean(false)
+  @Transform(({ value }: { value: string }) => {
+    if (value === null || value === undefined || value === 'null' || value === 'undefined') {
+      return undefined;
+    }
+    return value;
+  })
+  @IsOptional()
   @Expose()
-  namespaced: boolean;
+  namespace?: string | undefined | null;
 
   @Expose()
   group?: string;
 
   @Expose()
   version?: string;
+
+  @Expose()
+  get namespaced(): boolean {
+    return this.namespace === '';
+  }
 }

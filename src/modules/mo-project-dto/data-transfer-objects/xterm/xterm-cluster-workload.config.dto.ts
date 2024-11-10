@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Expose, Transform } from 'class-transformer';
 import { XtermRequestTypeEnum } from '../../enums';
 import { XtermBaseNamespaceContainerConfigDto } from './xterm-base-namespace-container-config.dto';

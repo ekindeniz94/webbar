@@ -1,9 +1,7 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { TransformToBoolean } from '@mogenius/js-utils';
-import { K8sResourceEntryDto } from './k8s-resource-entry.dto';
 
-export class K8sGetWorkloadExampleRequestDto implements K8sResourceEntryDto {
+export class K8sGetWorkloadExampleRequestDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
@@ -14,9 +12,15 @@ export class K8sGetWorkloadExampleRequestDto implements K8sResourceEntryDto {
   @Expose()
   name: string;
 
-  @TransformToBoolean(false)
+  @Transform(({ value }: { value: string }) => {
+    if (value === null || value === undefined || value === 'null' || value === 'undefined') {
+      return undefined;
+    }
+    return value;
+  })
+  @IsOptional()
   @Expose()
-  namespaced: boolean;
+  namespace?: string | undefined | null;
 
   @IsOptional()
   @IsString()

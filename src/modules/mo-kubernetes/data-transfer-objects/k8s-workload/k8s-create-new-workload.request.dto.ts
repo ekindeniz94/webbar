@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, Transform } from "class-transformer";
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { TransformToBoolean } from '@mogenius/js-utils';
 
@@ -13,9 +13,15 @@ export class K8sCreateNewWorkloadRequestDto {
   @Expose()
   name: string;
 
-  @TransformToBoolean(false)
+  @Transform(({ value }: { value: string }) => {
+    if (value === null || value === undefined || value === 'null' || value === 'undefined') {
+      return undefined;
+    }
+    return value;
+  })
+  @IsOptional()
   @Expose()
-  namespaced: boolean;
+  namespace?: string | undefined | null;
 
   @IsNotEmpty()
   @IsString()
