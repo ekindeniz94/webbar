@@ -2,6 +2,13 @@
 
 
 
+## 2.8.19 (2024-11-10)
+
+
+### Bug Fixes
+
+* workloads (rm namespaced) ([a94580a](https://github.com/mogenius/mo-core-base/commit/a94580a53e2fadfb1626ba2e77053c3bb3f0bc20))
+
 ## 2.8.18 (2024-11-08)
 
 
