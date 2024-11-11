@@ -2,6 +2,13 @@
 
 
 
+## 2.8.20 (2024-11-11)
+
+
+### Bug Fixes
+
+* add managed np ([177413a](https://github.com/mogenius/mo-core-base/commit/177413a8299182c39613780badecd91a5b02d300))
+
 ## 2.8.19 (2024-11-10)
 
 
