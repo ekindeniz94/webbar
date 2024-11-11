@@ -2,6 +2,13 @@
 
 
 
+## 2.8.21 (2024-11-11)
+
+
+### Bug Fixes
+
+* netpol ([27b2ad0](https://github.com/mogenius/mo-core-base/commit/27b2ad04f3338e2537af5c62b2bf2625444ba64f))
+
 ## 2.8.20 (2024-11-11)
 
 
