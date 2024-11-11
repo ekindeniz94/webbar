@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { NetworkPolicyPortTypeEnum } from '../enums';
+import { NetworkPolicyPortTypeEnum, NetworkPolicyTypeEnum } from '../enums';
 
 export class LabeledNetworkPolicyDto {
   @IsNotEmpty()
@@ -9,9 +9,9 @@ export class LabeledNetworkPolicyDto {
   name: string;
 
   @IsNotEmpty()
-  @IsString()
+  @IsEnum(NetworkPolicyTypeEnum)
   @Expose()
-  type: 'egress' | 'ingress';
+  type: NetworkPolicyTypeEnum;
 
   @IsNotEmpty()
   @IsNumber()
