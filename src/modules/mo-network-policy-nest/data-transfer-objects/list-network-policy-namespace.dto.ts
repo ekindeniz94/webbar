@@ -3,6 +3,7 @@ import { IsString, IsArray, IsNotEmpty } from 'class-validator';
 import { ListNetworkPolicyControllerDto } from './list-network-policy-controller.dto';
 import { ConflictingNetworkPolicyDto } from './conflicting-network-policy.dto';
 import { MoUtils } from '@mogenius/js-utils';
+import { NetworkPolicyDto } from './network-policy.dto';
 
 export class ListNetworkPolicyNamespaceDto {
   @IsString()
@@ -28,4 +29,8 @@ export class ListNetworkPolicyNamespaceDto {
   @Transform(({ value }) => MoUtils.transformToDtoList(ConflictingNetworkPolicyDto, value))
   @Expose()
   unmanagedPolicies: ConflictingNetworkPolicyDto[];
+
+  @Transform(({ value }) => MoUtils.transformToDtoList(NetworkPolicyDto, value))
+  @Expose()
+  managedPolicies: NetworkPolicyDto[];
 }

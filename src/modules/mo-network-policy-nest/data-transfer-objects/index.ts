@@ -5,6 +5,7 @@ export * from './labeled-network-policy-response.dto';
 export * from './remove-conflicting-network-policies-request.dto';
 export * from './list-conflicting-network-policies-request.dto';
 export * from './conflicting-network-policy.dto';
+export * from './network-policy.dto';
 export * from './conflicting-network-policy-response.dto';
 export * from './list-controller-labeled-network-policies.dto';
 export * from './list-controller-labeled-network-policies-response.dto';
