@@ -2,6 +2,56 @@
 
 
 
+## 2.8.21 (2024-11-11)
+
+
+### Bug Fixes
+
+* netpol ([27b2ad0](https://github.com/mogenius/mo-core-base/commit/27b2ad04f3338e2537af5c62b2bf2625444ba64f))
+
+## 2.8.20 (2024-11-11)
+
+
+### Bug Fixes
+
+* add managed np ([177413a](https://github.com/mogenius/mo-core-base/commit/177413a8299182c39613780badecd91a5b02d300))
+
+## 2.8.19 (2024-11-10)
+
+
+### Bug Fixes
+
+* workloads (rm namespaced) ([a94580a](https://github.com/mogenius/mo-core-base/commit/a94580a53e2fadfb1626ba2e77053c3bb3f0bc20))
+
+## 2.8.18 (2024-11-08)
+
+
+### Bug Fixes
+
+* add response dto ([94037fe](https://github.com/mogenius/mo-core-base/commit/94037febc33bb9117cc9748c9b0d6efd5ca80416))
+* renamce ([adf35c3](https://github.com/mogenius/mo-core-base/commit/adf35c365964d4bf417c9a25be401be8cf8e5910))
+
+## 2.8.17 (2024-11-05)
+
+
+### Bug Fixes
+
+* trigger build ([47b8c25](https://github.com/mogenius/mo-core-base/commit/47b8c25eb3355813ddb62cc91d6b8770cb371efb))
+
+## 2.8.16 (2024-11-04)
+
+
+### Bug Fixes
+
+* refactor np response dtos ([bbcf7b8](https://github.com/mogenius/mo-core-base/commit/bbcf7b825774baad55d8712cec5a0a0bbc9bf27c))
+
+## 2.8.15 (2024-11-04)
+
+
+### Bug Fixes
+
+* change type of unmanagedPolicies ([b0a9279](https://github.com/mogenius/mo-core-base/commit/b0a927966d0fe69bbfe38576c8c04118b1ef5607))
+
 ## 2.8.14 (2024-11-04)
 
 

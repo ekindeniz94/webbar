@@ -13,21 +13,15 @@ export class K8sDeleteWorkloadRequestDto {
   @Expose()
   name: string;
 
-  @TransformToBoolean(false)
-  @Expose()
-  namespaced: boolean;
-
-  @ValidateIf((obj: K8sDeleteWorkloadRequestDto) => obj.namespaced)
-  @Transform(({ value, obj }: { value: string; obj: K8sDeleteWorkloadRequestDto }) => {
-    if (obj.namespaced) {
-      return value;
+  @Transform(({ value }: { value: string }) => {
+    if (value === null || value === undefined || value === 'null' || value === 'undefined') {
+      return undefined;
     }
-    return undefined;
+    return value;
   })
-  @IsNotEmpty()
-  @IsString()
+  @IsOptional()
   @Expose()
-  namespace: string;
+  namespace?: string | undefined | null;
 
   @IsNotEmpty()
   @IsString()

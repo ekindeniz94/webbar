@@ -13,21 +13,15 @@ export class K8sGetWorkloadRequestDto {
   @Expose()
   name: string;
 
-  @TransformToBoolean(false)
-  @Expose()
-  namespaced: boolean;
-
-  @ValidateIf((obj: K8sGetWorkloadRequestDto) => obj.namespaced)
-  @Transform(({ value, obj }: { value: string; obj: K8sGetWorkloadRequestDto }) => {
-    if (obj.namespaced) {
-      return value;
+  @Transform(({ value }: { value: string }) => {
+    if (value === null || value === undefined || value === 'null' || value === 'undefined') {
+      return undefined;
     }
-    return undefined;
+    return value;
   })
-  @IsNotEmpty()
-  @IsString()
+  @IsOptional()
   @Expose()
-  namespace: string;
+  namespace?: string | undefined | null;
 
   @IsNotEmpty()
   @IsString()
