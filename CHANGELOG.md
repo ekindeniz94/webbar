@@ -2,6 +2,13 @@
 
 
 
+## 2.8.23 (2024-11-12)
+
+
+### Bug Fixes
+
+* add response dto, rename dto ([d42d768](https://github.com/mogenius/mo-core-base/commit/d42d76896ccd96470fad080a2ebc2d4584e6362c))
+
 ## 2.8.22 (2024-11-12)
 
 
