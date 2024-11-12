@@ -4,7 +4,7 @@ import { ConflictingNetworkPolicyDto } from './conflicting-network-policy.dto';
 import { MoUtils } from '@mogenius/js-utils';
 import { NetworkPolicyDto } from './network-policy.dto';
 
-export class ListManagedAndUnmanagedNetworkPolicyNamespace {
+export class ListManagedAndUnmanagedNetworkPolicyNamespaceDto {
   @IsString()
   @Expose()
   id: string;
