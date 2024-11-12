@@ -2,6 +2,13 @@
 
 
 
+## 2.8.22 (2024-11-12)
+
+
+### Bug Fixes
+
+* add new dto ([9575793](https://github.com/mogenius/mo-core-base/commit/9575793c90f5ca0a574c72485514c971e05aeee7))
+
 ## 2.8.21 (2024-11-11)
 
 
