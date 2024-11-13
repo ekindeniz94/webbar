@@ -2,6 +2,13 @@
 
 
 
+## 2.8.26 (2024-11-13)
+
+
+### Bug Fixes
+
+* add ExistsServiceInCluster dto ([bde014f](https://github.com/mogenius/mo-core-base/commit/bde014fcd51e29a8aa9aa80293ae6c901c79d9c5))
+
 ## 2.8.25 (2024-11-13)
 
 
