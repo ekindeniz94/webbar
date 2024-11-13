@@ -2,6 +2,13 @@
 
 
 
+## 2.8.25 (2024-11-13)
+
+
+### Bug Fixes
+
+* K8sSystemCheckEntryDto ([8c4c639](https://github.com/mogenius/mo-core-base/commit/8c4c6392a3c5fb1452cf75a5db59e02310531b4b))
+
 ## 2.8.24 (2024-11-13)
 
 
