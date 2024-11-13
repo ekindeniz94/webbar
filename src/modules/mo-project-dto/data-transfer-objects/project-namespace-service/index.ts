@@ -12,3 +12,5 @@ export * from './project-namespace-service-display-name.dto';
 export * from './project-namespace-service-list-cronjob-jobs.dto';
 export * from './project-namespace-service-list-cronjob-jobs-item-status-message.dto';
 export * from './project-namespace-service-list-cronjob-jobs-item.dto';
+export * from './exists-service-in-cluster-request.dto';
+export * from './exists-service-in-cluster-response.dto';
