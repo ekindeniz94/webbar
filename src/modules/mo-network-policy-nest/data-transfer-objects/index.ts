@@ -17,3 +17,4 @@ export * from './remove-unmanaged-network-policies-request.dto';
 export * from './update-network-policies-template-request.dto';
 export * from './list-managed-and-unmanaged-network-policy-namespace.dto';
 export * from './list-namespace-policies-request.dto';
+export * from './enforce-network-policy-manager-request.dto';
