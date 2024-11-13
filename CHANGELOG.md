@@ -2,6 +2,13 @@
 
 
 
+## 2.8.27 (2024-11-13)
+
+
+### Bug Fixes
+
+* enforce netpol for service. ([fd97bd4](https://github.com/mogenius/mo-core-base/commit/fd97bd47b16c62e8957b18e39aed83676d88b1b6))
+
 ## 2.8.26 (2024-11-13)
 
 
