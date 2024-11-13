@@ -95,6 +95,6 @@ export class K8sSystemCheckEntryDto {
   }
 
   get hasError(): boolean {
-    return !!this.errorMessage || this.helmStatus === K8sSystemCheckEntryHelmStatusEnum.FAILED;
+    return !!this.errorMessage && this.helmStatus === K8sSystemCheckEntryHelmStatusEnum.FAILED;
   }
 }
