@@ -2,6 +2,13 @@
 
 
 
+## 2.8.24 (2024-11-13)
+
+
+### Bug Fixes
+
+* network policy response dto. ([2ac09fc](https://github.com/mogenius/mo-core-base/commit/2ac09fcedf6c5ae50d121ed8d72c37b82c49346f))
+
 ## 2.8.23 (2024-11-12)
 
 
