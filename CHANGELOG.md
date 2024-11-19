@@ -2,6 +2,13 @@
 
 
 
+## 2.8.28 (2024-11-19)
+
+
+### Bug Fixes
+
+* rm cluster tools ([60368f3](https://github.com/mogenius/mo-core-base/commit/60368f35ac1935551936e06126d0ded48209b39a))
+
 ## 2.8.27 (2024-11-13)
 
 
