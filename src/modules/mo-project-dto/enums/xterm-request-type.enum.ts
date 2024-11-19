@@ -9,7 +9,7 @@ export enum XtermRequestTypeEnum {
 
   // Cluster
   CLUSTER__WORKLOAD = 'CLUSTER__WORKLOAD',
-  CLUSTER__TOOLS = 'CLUSTER__TOOLS',
+  // CLUSTER__TOOLS = 'CLUSTER__TOOLS',
   CLUSTER__OPERATOR_LOG = 'CLUSTER__OPERATOR_LOG',
 
   K8S = 'k8s'
