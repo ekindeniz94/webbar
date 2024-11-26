@@ -2,6 +2,13 @@
 
 
 
+## 2.8.29 (2024-11-26)
+
+
+### Bug Fixes
+
+* ClusterHelmReleaseDto version and appVersion ([f8abf88](https://github.com/mogenius/mo-core-base/commit/f8abf8827fe7fca9712ecd9d8c3f81739b0944d1))
+
 ## 2.8.28 (2024-11-19)
 
 
