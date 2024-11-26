@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 import * as JSYAML from 'js-yaml';
 import { MoUtils } from '@mogenius/js-utils';
 import { ClusterHelmReleaseInfoDto } from './cluster-helm-release-info.dto';
-import { isEmpty } from 'class-validator';
+import { isEmpty, isNumberString } from 'class-validator';
 
 export class ClusterHelmReleaseDto {
   @Transform(({ value, obj }) => value ?? obj)
@@ -26,7 +26,7 @@ export class ClusterHelmReleaseDto {
       return value;
     }
     value = `${value}`;
-    if (!value.startsWith('v')) {
+    if (!value.startsWith('v') && isNumberString(value.charAt(0))) {
       value = `v${value}`;
     }
     return value;
@@ -40,7 +40,7 @@ export class ClusterHelmReleaseDto {
       return value;
     }
     value = `${value}`;
-    if (!value.startsWith('v')) {
+    if (!value.startsWith('v') && isNumberString(value.charAt(0))) {
       value = `v${value}`;
     }
     return value;
