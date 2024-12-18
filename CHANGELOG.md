@@ -2,6 +2,14 @@
 
 
 
+## 2.8.30 (2024-12-18)
+
+
+### Bug Fixes
+
+* package-lock ([59467b1](https://github.com/mogenius/mo-core-base/commit/59467b162c7a0a8596fce27113c82ee91dd29fcf))
+* update packages ([3ee22d6](https://github.com/mogenius/mo-core-base/commit/3ee22d64ecc665ae151b7ab2632bf12883e68b0f))
+
 ## 2.8.29 (2024-11-26)
 
 
