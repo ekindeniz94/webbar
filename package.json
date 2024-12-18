@@ -36,7 +36,7 @@
     "striptags": "^4.0.0-alpha.2"
   },
   "dependencies": {
-    "@kubernetes/client-node": "^0.22.0",
+    "@kubernetes/client-node": "0.22.0",
     "@mogenius/core-dto": "^2.1.11",
     "@mogenius/database-dto": "^2.1.2",
     "@mogenius/js-utils": "^2.1.5",
@@ -45,6 +45,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "deepmerge": "^4.3.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "nanoid": "^5.0.1",
@@ -60,7 +61,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/deepmerge": "^2.2.0",
+    "@types/js-yaml": "^4.0.9",
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.7.1",
     "@types/semver": "^7.5.3",
