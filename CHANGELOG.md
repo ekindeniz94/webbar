@@ -2,6 +2,13 @@
 
 
 
+# 2.9.0 (2025-01-06)
+
+
+### Features
+
+* namespace max length inreased to 50. ([0bcd413](https://github.com/mogenius/mo-core-base/commit/0bcd41349060f6b789636b35d7044ce684bd614a))
+
 ## 2.8.30 (2024-12-18)
 
 
