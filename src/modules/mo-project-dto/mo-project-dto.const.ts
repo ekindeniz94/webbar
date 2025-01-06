@@ -50,7 +50,7 @@ export const PROJECT_CONST = {
     },
     NAME: {
       MIN: 1,
-      MAX: 14,
+      MAX: 50,
       MATCHES: /^([a-z])([a-z0-9-])/
     },
     SUBDOMAIN: {
