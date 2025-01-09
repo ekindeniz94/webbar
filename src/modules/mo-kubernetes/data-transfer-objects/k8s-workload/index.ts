@@ -7,3 +7,5 @@ export * from './k8s-describe-workload.request.dto';
 export * from './k8s-update-workload.request.dto';
 export * from './k8s-create-new-workload.request.dto';
 export * from './k8s-delete-workload.request.dto';
+export * from './k8s-get-labeled-workload-list.request.dto';
+export * from './k8s-get-namespace-workload-list.request.dto';
