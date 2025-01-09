@@ -2,6 +2,13 @@
 
 
 
+## 2.9.1 (2025-01-09)
+
+
+### Bug Fixes
+
+* add workspace dtos ([0a24944](https://github.com/mogenius/mo-core-base/commit/0a2494493253b3fd8270a8d7e00e4bd5844ccad9))
+
 # 2.9.0 (2025-01-06)
 
 
