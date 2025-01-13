@@ -1,6 +1,10 @@
 import { K8sBuildTaskEnum } from './enums';
 
 export const KUBERNETES_CONST = {
+  NAME: {
+    MIN: 3,
+    MAX: 253
+  },
   LABEL_NAME: {
     MIN: 3,
     MAX: 50
