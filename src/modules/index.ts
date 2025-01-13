@@ -14,3 +14,4 @@ export * from './mo-cloudflare';
 export * from './mo-websocket';
 export * from './mo-docker-compose';
 export * from './mo-network-policy-nest';
+export * from './mo-workspace-manager';
