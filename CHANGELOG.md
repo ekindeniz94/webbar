@@ -2,6 +2,13 @@
 
 
 
+## 2.9.2 (2025-01-13)
+
+
+### Bug Fixes
+
+* K8sCreateWorkspaceRequestDto ([9ae8929](https://github.com/mogenius/mo-core-base/commit/9ae8929fb80b34843e188d56f1132394f6819c71))
+
 ## 2.9.1 (2025-01-09)
 
 
