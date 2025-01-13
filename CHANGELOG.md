@@ -2,6 +2,13 @@
 
 
 
+## 2.9.3 (2025-01-13)
+
+
+### Bug Fixes
+
+* workspace permissions ([274f82e](https://github.com/mogenius/mo-core-base/commit/274f82efd0d4ae2a27a250502295fb126cd364ff))
+
 ## 2.9.2 (2025-01-13)
 
 
