@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { ProjectNotificationSettingsTypeEnum } from 'dist/modules';
+import { ProjectNotificationSettingsTypeEnum } from '../../enums';
 
 export class ProjectNotificationSendgridDisplayNameDto {
   @IsString()
