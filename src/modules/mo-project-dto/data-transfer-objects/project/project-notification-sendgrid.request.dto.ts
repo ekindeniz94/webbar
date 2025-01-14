@@ -1,8 +1,18 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { ProjectNotificationSettingsTypeEnum } from 'dist/modules';
 
-export class ProjectNotificationSendgridRequestDto<T> {
+export class ProjectNotificationSendgridDisplayNameDto {
+  @IsString()
+  @Expose()
+  id: string;
+
+  @IsString()
+  @Expose()
+  displayName: string;
+}
+
+export class ProjectNotificationSendgridRequestDto {
   @IsEnum(ProjectNotificationSettingsTypeEnum)
   @Expose()
   type: ProjectNotificationSettingsTypeEnum;
@@ -18,24 +28,29 @@ export class ProjectNotificationSendgridRequestDto<T> {
     email: string;
   };
 
+  @Type(() => ProjectNotificationSendgridDisplayNameDto)
   @Expose()
-  project: T;
+  project: ProjectNotificationSendgridDisplayNameDto;
 
   @IsOptional()
+  @Type(() => ProjectNotificationSendgridDisplayNameDto)
   @Expose()
-  organization?: T;
+  organization?: ProjectNotificationSendgridDisplayNameDto;
 
   @IsOptional()
+  @Type(() => ProjectNotificationSendgridDisplayNameDto)
   @Expose()
-  cluster?: T;
+  cluster?: ProjectNotificationSendgridDisplayNameDto;
 
   @IsOptional()
+  @Type(() => ProjectNotificationSendgridDisplayNameDto)
   @Expose()
-  namespace?: T;
+  namespace?: ProjectNotificationSendgridDisplayNameDto;
 
   @IsOptional()
+  @Type(() => ProjectNotificationSendgridDisplayNameDto)
   @Expose()
-  service?: T;
+  service?: ProjectNotificationSendgridDisplayNameDto;
 
   @IsString()
   @Expose()
@@ -47,9 +62,21 @@ export class ProjectNotificationSendgridRequestDto<T> {
 
   @IsString()
   @Expose()
+  pathDescription?: string;
+
+  @IsString()
+  @Expose()
   headline: string;
 
   @IsString()
   @Expose()
   body: string;
+
+  @IsString()
+  @Expose()
+  subject: string;
+
+  @IsString()
+  @Expose()
+  preheader: string;
 }
