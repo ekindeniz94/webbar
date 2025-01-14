@@ -17,3 +17,4 @@ export * from './default-project-notification-settings.base';
 export * from './default-project-notification-settings';
 export * from './send-project-notification.payload.dto';
 export * from './is-project-notification-enabled.payload.dto';
+export * from './project-notification-sendgrid.request.dto';
