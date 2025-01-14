@@ -23,8 +23,8 @@ export class ProjectNotificationSendgridRequestDto {
   @Expose()
   user: {
     id: string;
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
     email: string;
   };
 
@@ -78,5 +78,5 @@ export class ProjectNotificationSendgridRequestDto {
 
   @IsString()
   @Expose()
-  preheader: string;
+  preHeader: string;
 }
