@@ -2,6 +2,18 @@
 
 
 
+## 2.9.5 (2025-01-15)
+
+
+### Bug Fixes
+
+* add sendgrid request dto ([b9a13c8](https://github.com/mogenius/mo-core-base/commit/b9a13c84aea771e0718606a3b202b966841193f1))
+* change property to userpublicdto ([3241fd3](https://github.com/mogenius/mo-core-base/commit/3241fd33705fd9c6d8ad5b9e8e0c2d836b55f77b))
+* fix wrong import ([ed48428](https://github.com/mogenius/mo-core-base/commit/ed484283ffbc04abc179ee1ecf27ab3f3673b68e))
+* re-use dto ([21b8d4a](https://github.com/mogenius/mo-core-base/commit/21b8d4af96aabea86aeb7eeb41177fd82163c576))
+* typo ([246c11f](https://github.com/mogenius/mo-core-base/commit/246c11fa1c8810808b617a5676a46b6c8873c12b))
+* update optionals ([ed0602b](https://github.com/mogenius/mo-core-base/commit/ed0602baf661622447db87091543dcd6a15348bd))
+
 ## 2.9.4 (2025-01-15)
 
 
