@@ -1,6 +1,6 @@
 import { K8sWorkspaceResourceTypeEnum } from '../../enums/workspace/k8s-workspace-resource-type.enum';
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
-import { Expose, Transform } from 'class-transformer';
+import { Expose } from 'class-transformer';
 
 export class K8sWorkspaceResourceDto {
   @IsNotEmpty()
