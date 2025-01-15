@@ -4,6 +4,7 @@ import { isArray, isIP, IsString } from 'class-validator';
 import _ from 'lodash';
 import { BaseEntityDto, CountryDto } from '@mogenius/database-dto';
 import { ClusterProviderEnum } from '../../enums';
+import { CniDataDto } from './cni-data.dto';
 
 export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
   @IsString({ each: true })
@@ -32,4 +33,8 @@ export class ClusterResourceInfoPayloadDto extends BaseEntityDto {
   @Transform(({ value }) => value ?? ClusterProviderEnum.UNKNOWN)
   @Expose()
   provider: ClusterProviderEnum;
+
+  @Type(() => CniDataDto)
+  @Expose()
+  cniConfig: CniDataDto[];
 }
