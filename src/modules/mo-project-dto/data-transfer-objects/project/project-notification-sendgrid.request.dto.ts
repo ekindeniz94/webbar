@@ -5,6 +5,7 @@ import { ProjectNamespaceServiceDisplayNameDto } from '../project-namespace-serv
 import { ProjectNamespaceDisplayNameDto } from '../project-namespace';
 import { ClusterDisplayNameDto, OrganizationNameDto } from '../../../../modules/mo-product-dto';
 import { ProjectDisplayNameDto } from './project-display-name.dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 
 export class ProjectNotificationSendgridRequestDto {
   @IsEnum(ProjectNotificationSettingsTypeEnum)
@@ -14,13 +15,9 @@ export class ProjectNotificationSendgridRequestDto {
   @Expose()
   layer: 'User' | 'Project' | 'Organization' | 'Cluster' | 'Namespace' | 'Service' | 'Volume';
 
+  @Type(() => UserPublicDto)
   @Expose()
-  user: {
-    id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-  };
+  user: UserPublicDto;
 
   @Type(() => ProjectDisplayNameDto)
   @Expose()
