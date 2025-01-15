@@ -2,6 +2,13 @@
 
 
 
+## 2.9.4 (2025-01-15)
+
+
+### Bug Fixes
+
+* add cni dtos ([9e7cfa5](https://github.com/mogenius/mo-core-base/commit/9e7cfa5305bb64db0ba48bb4a6f3d03adc5c645d))
+
 ## 2.9.3 (2025-01-13)
 
 
