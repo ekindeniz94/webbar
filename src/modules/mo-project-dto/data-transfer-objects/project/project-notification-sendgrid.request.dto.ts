@@ -1,16 +1,10 @@
 import { Expose, Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { ProjectNotificationSettingsTypeEnum } from '../../enums';
-
-export class ProjectNotificationSendgridDisplayNameDto {
-  @IsString()
-  @Expose()
-  id: string;
-
-  @IsString()
-  @Expose()
-  displayName: string;
-}
+import { ProjectNamespaceServiceDisplayNameDto } from '../project-namespace-service';
+import { ProjectNamespaceDisplayNameDto } from '../project-namespace';
+import { ClusterDisplayNameDto, OrganizationNameDto } from '../../../../modules/mo-product-dto';
+import { ProjectDisplayNameDto } from './project-display-name.dto';
 
 export class ProjectNotificationSendgridRequestDto {
   @IsEnum(ProjectNotificationSettingsTypeEnum)
@@ -28,29 +22,29 @@ export class ProjectNotificationSendgridRequestDto {
     email: string;
   };
 
-  @Type(() => ProjectNotificationSendgridDisplayNameDto)
+  @Type(() => ProjectDisplayNameDto)
   @Expose()
-  project: ProjectNotificationSendgridDisplayNameDto;
+  project: ProjectDisplayNameDto;
 
   @IsOptional()
-  @Type(() => ProjectNotificationSendgridDisplayNameDto)
+  @Type(() => OrganizationNameDto)
   @Expose()
-  organization?: ProjectNotificationSendgridDisplayNameDto;
+  organization?: OrganizationNameDto;
 
   @IsOptional()
-  @Type(() => ProjectNotificationSendgridDisplayNameDto)
+  @Type(() => ClusterDisplayNameDto)
   @Expose()
-  cluster?: ProjectNotificationSendgridDisplayNameDto;
+  cluster?: ClusterDisplayNameDto;
 
   @IsOptional()
-  @Type(() => ProjectNotificationSendgridDisplayNameDto)
+  @Type(() => ProjectNamespaceDisplayNameDto)
   @Expose()
-  namespace?: ProjectNotificationSendgridDisplayNameDto;
+  namespace?: ProjectNamespaceDisplayNameDto;
 
   @IsOptional()
-  @Type(() => ProjectNotificationSendgridDisplayNameDto)
+  @Type(() => ProjectNamespaceServiceDisplayNameDto)
   @Expose()
-  service?: ProjectNotificationSendgridDisplayNameDto;
+  service?: ProjectNamespaceServiceDisplayNameDto;
 
   @IsString()
   @Expose()
