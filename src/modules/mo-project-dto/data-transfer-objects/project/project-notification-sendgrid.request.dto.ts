@@ -26,15 +26,13 @@ export class ProjectNotificationSendgridRequestDto {
   @Expose()
   project: ProjectDisplayNameDto;
 
-  @IsOptional()
   @Type(() => OrganizationNameDto)
   @Expose()
-  organization?: OrganizationNameDto;
+  organization: OrganizationNameDto;
 
-  @IsOptional()
   @Type(() => ClusterDisplayNameDto)
   @Expose()
-  cluster?: ClusterDisplayNameDto;
+  cluster: ClusterDisplayNameDto;
 
   @IsOptional()
   @Type(() => ProjectNamespaceDisplayNameDto)
