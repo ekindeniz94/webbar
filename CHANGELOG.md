@@ -2,6 +2,13 @@
 
 
 
+## 2.9.7 (2025-01-16)
+
+
+### Bug Fixes
+
+* netpol exports ([c1d18ef](https://github.com/mogenius/mo-core-base/commit/c1d18ef960e9980e3e31c7e36bcd0c6a39ffb365))
+
 ## 2.9.6 (2025-01-15)
 
 
