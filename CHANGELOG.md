@@ -2,6 +2,13 @@
 
 
 
+## 2.9.8 (2025-01-16)
+
+
+### Bug Fixes
+
+* add K8sGetWorkspaceResponseDto ([f7b0572](https://github.com/mogenius/mo-core-base/commit/f7b0572a0a9617aa83430649c76dc17914d54777))
+
 ## 2.9.7 (2025-01-16)
 
 
