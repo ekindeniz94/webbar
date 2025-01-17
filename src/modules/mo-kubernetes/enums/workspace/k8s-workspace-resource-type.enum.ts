@@ -1,4 +1,4 @@
 export enum K8sWorkspaceResourceTypeEnum {
-  NAMESPACE = 'NAMESPACE',
-  HELM = 'HELM'
+  NAMESPACE = 'namespace',
+  HELM = 'helm'
 }
