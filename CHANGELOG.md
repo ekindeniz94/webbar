@@ -2,6 +2,13 @@
 
 
 
+## 2.9.9 (2025-01-17)
+
+
+### Bug Fixes
+
+* K8sWorkspaceResourceTypeEnum ([54ceada](https://github.com/mogenius/mo-core-base/commit/54ceada11d092d6583981e7f8ffd4c15b697c772))
+
 ## 2.9.8 (2025-01-16)
 
 
