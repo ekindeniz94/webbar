@@ -3,5 +3,6 @@ export enum BreadcrumbListTypeEnum {
   CLUSTER = 'cluster',
   PROJECT = 'project',
   NAMESPACE = 'namespace',
-  SERVICE = 'service'
+  SERVICE = 'service',
+  WORKSPACE = 'workspace'
 }
