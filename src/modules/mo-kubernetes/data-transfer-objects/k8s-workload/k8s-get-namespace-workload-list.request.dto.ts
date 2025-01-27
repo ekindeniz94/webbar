@@ -12,5 +12,11 @@ export class K8sGetNamespaceWorkloadListRequestDto {
   @Type(() => K8sResourceEntryDto)
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  ignoreResources?: K8sResourceEntryDto[];
+  whiteList?: K8sResourceEntryDto[];
+
+  @IsOptional()
+  @Type(() => K8sResourceEntryDto)
+  @ValidateNested({ each: true, message: '$property must be an array' })
+  @Expose()
+  blackList?: K8sResourceEntryDto[];
 }
