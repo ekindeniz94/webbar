@@ -2,6 +2,13 @@
 
 
 
+## 2.9.11 (2025-01-27)
+
+
+### Bug Fixes
+
+* update workspace dtos ([bf7cf0f](https://github.com/mogenius/mo-core-base/commit/bf7cf0ffb436b42baa4f64e1b1ca95886f1ce2a7))
+
 ## 2.9.10 (2025-01-24)
 
 
