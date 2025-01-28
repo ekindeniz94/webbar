@@ -13,9 +13,9 @@ export class K8sWorkspaceResourceDto {
   @Expose()
   type: K8sWorkspaceResourceTypeEnum;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  @ValidateIf((object: K8sWorkspaceResourceDto, value) => object.type !== K8sWorkspaceResourceTypeEnum.HELM)
+  @ValidateIf((object: K8sWorkspaceResourceDto, value) => object.type === K8sWorkspaceResourceTypeEnum.HELM)
   @Expose()
   namespace: string;
 }
