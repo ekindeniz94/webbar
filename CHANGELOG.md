@@ -2,6 +2,13 @@
 
 
 
+## 2.9.14 (2025-01-28)
+
+
+### Bug Fixes
+
+* add MoHelmUtils ([399adad](https://github.com/mogenius/mo-core-base/commit/399adad6ecbf420d6561537e7de0f60ab26e92b8))
+
 ## 2.9.13 (2025-01-28)
 
 
