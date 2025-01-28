@@ -2,6 +2,13 @@
 
 
 
+## 2.9.13 (2025-01-28)
+
+
+### Bug Fixes
+
+* create workspace validation ([3277f63](https://github.com/mogenius/mo-core-base/commit/3277f63c1d7ab46191f18b47e5b2870bbcc939e4))
+
 ## 2.9.12 (2025-01-28)
 
 
