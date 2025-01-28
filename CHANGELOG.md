@@ -2,6 +2,13 @@
 
 
 
+## 2.9.12 (2025-01-28)
+
+
+### Bug Fixes
+
+* add workspace workload permissions ([55405b4](https://github.com/mogenius/mo-core-base/commit/55405b4eff04c03ba75c5fe1d44e08e2f68af54b))
+
 ## 2.9.11 (2025-01-27)
 
 
