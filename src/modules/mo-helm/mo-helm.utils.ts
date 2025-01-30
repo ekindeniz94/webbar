@@ -6,29 +6,43 @@ export class MoHelmUtils {
   public static parseManifestResponse(
     manifestString: string,
     resourceList: K8sResourceEntryDto[],
-    namespace: string
-  ): K8sGetWorkloadRequestDto[] {
-    const results: K8sGetWorkloadRequestDto[] = [];
+    namespace: string | undefined
+  ): {
+    resourceEntry: K8sResourceEntryDto;
+    workloadRequest: K8sGetWorkloadRequestDto;
+  }[] {
+    const results: {
+      resourceEntry: K8sResourceEntryDto;
+      workloadRequest: K8sGetWorkloadRequestDto;
+    }[] = [];
     for (const item of manifestString.split('---')) {
       try {
         const parsed: any = JSYAML.load(item);
         if (!parsed) {
           continue;
         }
-        const resource = resourceList.find((r) => r.kind === parsed.kind && r.group === parsed.apiVersion);
-        if (!resource) {
+        const resourceEntry = resourceList.find((r) => r.kind === parsed.kind && r.group === parsed.apiVersion);
+        if (!resourceEntry) {
           continue;
         }
 
         namespace = parsed.metadata?.namespace ?? namespace;
+
+        if (resourceEntry.namespaced) {
+          namespace = undefined;
+        }
+
         const name = parsed.metadata?.name!;
-        const resourceEntity: K8sGetWorkloadRequestDto = MoUtils.transformToDto(K8sGetWorkloadRequestDto, {
-          ...resource,
+        const workloadRequest: K8sGetWorkloadRequestDto = MoUtils.transformToDto(K8sGetWorkloadRequestDto, {
+          ...resourceEntry,
           resourceName: name,
           namespace: namespace
         });
 
-        results.push(resourceEntity);
+        results.push({
+          resourceEntry: resourceEntry,
+          workloadRequest: workloadRequest
+        });
       } catch (e) {}
     }
 

@@ -12,11 +12,11 @@ export class K8sGetLabeledWorkloadListRequestDto {
   @Type(() => K8sResourceEntryDto)
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  whiteList?: K8sResourceEntryDto[];
+  whitelist?: K8sResourceEntryDto[];
 
   @IsOptional()
   @Type(() => K8sResourceEntryDto)
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
-  blackList?: K8sResourceEntryDto[];
+  blacklist?: K8sResourceEntryDto[];
 }
