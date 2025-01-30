@@ -2,6 +2,13 @@
 
 
 
+## 2.9.15 (2025-01-30)
+
+
+### Bug Fixes
+
+* workspace dtos;add helm get all workloads dto ([6e171fd](https://github.com/mogenius/mo-core-base/commit/6e171fd2fdb9e8382f963dd94e672d740eefbfe4))
+
 ## 2.9.14 (2025-01-28)
 
 
