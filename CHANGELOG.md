@@ -2,6 +2,13 @@
 
 
 
+## 2.9.16 (2025-01-30)
+
+
+### Bug Fixes
+
+* update streaming dtos ([d509b00](https://github.com/mogenius/mo-core-base/commit/d509b005b8a80d8ce8419a49170edfded5568bd8))
+
 ## 2.9.15 (2025-01-30)
 
 
