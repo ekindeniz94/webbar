@@ -1,3 +1,7 @@
+export * from './k8s-stream-nodes-cpu.config.dto';
+export * from './k8s-stream-nodes-memory.config.dto';
+export * from './k8s-stream-nodes-traffic.config.dto';
+
 export * from './xterm-base-config.dto';
 export * from './xterm-cluster-operator-log.config.dto';
 // export * from './xterm-cluster-tools.config.dto';
