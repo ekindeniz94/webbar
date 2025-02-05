@@ -2,6 +2,13 @@
 
 
 
+## 2.9.18 (2025-02-05)
+
+
+### Bug Fixes
+
+* workload status ([b64d9b0](https://github.com/mogenius/mo-core-base/commit/b64d9b0fc6d4fd9fd405759d617052ec19f372f9))
+
 ## 2.9.17 (2025-01-31)
 
 
