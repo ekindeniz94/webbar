@@ -2,6 +2,13 @@
 
 
 
+## 2.9.19 (2025-02-06)
+
+
+### Bug Fixes
+
+* WorkspaceWorkloadStatusItemDto, add messages string, add events ([2801c15](https://github.com/mogenius/mo-core-base/commit/2801c1525be3178b59c30649cd94ae1b3962cb33))
+
 ## 2.9.18 (2025-02-05)
 
 
