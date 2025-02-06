@@ -3,6 +3,7 @@ import { IsNotEmpty, IsNumber, IsOptional, IsString, ValidateNested } from 'clas
 import moment from 'moment';
 import { K8sGetWorkloadRequestDto } from '../../../mo-kubernetes';
 import {
+  CoreV1Event,
   V1DaemonSetStatus,
   V1DeploymentStatus,
   V1IngressStatus,
@@ -44,6 +45,10 @@ export class WorkspaceWorkloadStatusItemDto {
   status?: any;
 
   @IsOptional()
+  @Expose()
+  events?: CoreV1Event[];
+
+  @IsOptional()
   @IsNumber()
   @Expose()
   replicas?: number;
@@ -57,6 +62,19 @@ export class WorkspaceWorkloadStatusItemDto {
   @IsString()
   @Expose()
   specType?: string;
+
+  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+    if (value) {
+      return value;
+    }
+    if (!obj.events || obj.events?.length === 0) {
+      return undefined;
+    }
+
+    return obj.events.map((item) => `[${item.reason}] ${item.message}`).join(', ');
+  })
+  @Expose()
+  eventMessages?: string | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
     if (value) {
@@ -122,6 +140,7 @@ export class WorkspaceWorkloadStatusItemDto {
         status.conditions &&
         status.conditions.some((condition) => condition.type === 'Progressing' && condition.status === 'False')
       ) {
+        obj.deploymentMessages = status.conditions.map((item) => `[${item.reason}] ${item.message}`).join(', ');
         return 'error';
       }
       return 'danger';
@@ -138,6 +157,11 @@ export class WorkspaceWorkloadStatusItemDto {
   })
   @Expose()
   deploymentStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @IsOptional()
+  @IsString()
+  @Expose()
+  deploymentMessages?: string | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
     if (value) {
