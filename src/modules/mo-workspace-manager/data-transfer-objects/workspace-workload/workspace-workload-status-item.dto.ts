@@ -4,9 +4,11 @@ import moment from 'moment';
 import { K8sGetWorkloadRequestDto } from '../../../mo-kubernetes';
 import {
   CoreV1Event,
+  V1CronJobStatus,
   V1DaemonSetStatus,
   V1DeploymentStatus,
   V1IngressStatus,
+  V1NamespaceStatus,
   V1PodStatus,
   V1ReplicaSetStatus,
   V1ServiceStatus,
@@ -80,7 +82,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'ReplicaSet') {
+    if (obj.resource?.kind !== 'ReplicaSet') {
       return undefined;
     }
     const replicas = obj.replicas ?? 0;
@@ -117,7 +119,40 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'Deployment') {
+    if (obj.resource?.kind !== 'Namespace') {
+      return undefined;
+    }
+    const status: V1NamespaceStatus = obj.status ?? {};
+    if (!status || !status.phase) {
+      return 'inactive';
+    }
+    switch (status.phase) {
+      case 'Active':
+        return 'success';
+      case 'Terminating':
+        return 'building';
+      default:
+        if (status.conditions) {
+          for (const condition of status.conditions) {
+            if (condition.type === 'NamespaceDeletionContentFailure' && condition.status === 'True') {
+              return 'danger';
+            }
+            if (condition.type === 'NamespaceDeletionDiscoveryFailure' && condition.status === 'True') {
+              return 'warning';
+            }
+          }
+        }
+        return 'error';
+    }
+  })
+  @Expose()
+  namespaceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+    if (value) {
+      return value;
+    }
+    if (obj.resource?.kind !== 'Deployment') {
       return undefined;
     }
 
@@ -167,7 +202,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'Pod') {
+    if (obj.resource?.kind !== 'Pod') {
       return undefined;
     }
 
@@ -215,7 +250,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'Service') {
+    if (obj.resource?.kind !== 'Service') {
       return undefined;
     }
 
@@ -225,7 +260,6 @@ export class WorkspaceWorkloadStatusItemDto {
       return 'inactive';
     }
 
-    // Check the service type conditions
     switch (obj.specType) {
       case 'ClusterIP':
         return 'success';
@@ -247,7 +281,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'Ingress') {
+    if (obj.resource?.kind !== 'Ingress') {
       return undefined;
     }
 
@@ -270,7 +304,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'StatefulSet') {
+    if (obj.resource?.kind !== 'StatefulSet') {
       return undefined;
     }
 
@@ -306,7 +340,7 @@ export class WorkspaceWorkloadStatusItemDto {
     if (value) {
       return value;
     }
-    if (obj.resource.kind !== 'DaemonSet') {
+    if (obj.resource?.kind !== 'DaemonSet') {
       return undefined;
     }
 
@@ -342,4 +376,35 @@ export class WorkspaceWorkloadStatusItemDto {
   })
   @Expose()
   daemonSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+    if (value) {
+      return value;
+    }
+    if (obj.resource?.kind !== 'CronJob') {
+      return undefined;
+    }
+    const status: V1CronJobStatus = obj.status ?? {};
+    if (!status) {
+      return 'inactive';
+    }
+
+    if (status.active && status.active.length > 0) {
+      return 'building';
+    }
+
+    const currentTime = new Date();
+
+    if (status.lastSuccessfulTime && currentTime.getTime() - status.lastSuccessfulTime.getTime() < 3600000) {
+      return 'success';
+    }
+
+    if (!status.lastSuccessfulTime) {
+      return 'warning';
+    }
+
+    return 'info';
+  })
+  @Expose()
+  cronJobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 }
