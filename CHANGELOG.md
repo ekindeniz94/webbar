@@ -2,6 +2,13 @@
 
 
 
+## 2.9.20 (2025-02-10)
+
+
+### Bug Fixes
+
+* workload status; add default resource entities ([6c2aca9](https://github.com/mogenius/mo-core-base/commit/6c2aca9b18dbb8ab634f6f2d0a367fff6a66b895))
+
 ## 2.9.19 (2025-02-06)
 
 
