@@ -2,6 +2,13 @@
 
 
 
+## 2.9.22 (2025-02-12)
+
+
+### Bug Fixes
+
+* update K8sWorkloadStatusItemDto ([2c49ef3](https://github.com/mogenius/mo-core-base/commit/2c49ef314b118b05e93163a7b946e664bbc59cf8))
+
 ## 2.9.21 (2025-02-12)
 
 
