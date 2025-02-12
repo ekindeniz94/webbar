@@ -1,1 +1,2 @@
-export * from './workspace-workload-status-item.dto';
+export * from './workspace-workload-resource-status.request.dto';
+export * from './workspace-resource-entity-status.request.dto';

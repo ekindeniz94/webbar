@@ -1,7 +1,6 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import moment from 'moment';
-import { K8sGetWorkloadRequestDto } from '../../../mo-kubernetes';
 import {
   CoreV1Event,
   V1CronJobStatus,
@@ -15,11 +14,21 @@ import {
   V1StatefulSetStatus
 } from '@kubernetes/client-node';
 
-export class WorkspaceWorkloadStatusItemDto {
+export class K8sWorkloadStatusItemDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
   uid: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  kind: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  group: string;
 
   @IsNotEmpty()
   @IsString()
@@ -35,12 +44,6 @@ export class WorkspaceWorkloadStatusItemDto {
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
   creationTimestamp?: string;
-
-  @IsNotEmpty()
-  @Type(() => K8sGetWorkloadRequestDto)
-  @ValidateNested({ message: '$property must be an object' })
-  @Expose()
-  resource: K8sGetWorkloadRequestDto;
 
   @IsOptional()
   @Expose()
@@ -65,7 +68,7 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   specType?: string;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
@@ -78,11 +81,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   eventMessages?: string | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'ReplicaSet') {
+    if (obj?.kind !== 'ReplicaSet') {
       return undefined;
     }
     const replicas = obj.replicas ?? 0;
@@ -115,11 +118,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   replicaSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'Namespace') {
+    if (obj?.kind !== 'Namespace') {
       return undefined;
     }
     const status: V1NamespaceStatus = obj.status ?? {};
@@ -148,11 +151,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   namespaceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'Deployment') {
+    if (obj?.kind !== 'Deployment') {
       return undefined;
     }
 
@@ -198,11 +201,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   deploymentMessages?: string | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'Pod') {
+    if (obj?.kind !== 'Pod') {
       return undefined;
     }
 
@@ -246,11 +249,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   podStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'Service') {
+    if (obj?.kind !== 'Service') {
       return undefined;
     }
 
@@ -277,11 +280,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   serviceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'Ingress') {
+    if (obj?.kind !== 'Ingress') {
       return undefined;
     }
 
@@ -300,11 +303,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   ingressStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'StatefulSet') {
+    if (obj?.kind !== 'StatefulSet') {
       return undefined;
     }
 
@@ -336,11 +339,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   statefulSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'DaemonSet') {
+    if (obj?.kind !== 'DaemonSet') {
       return undefined;
     }
 
@@ -377,11 +380,11 @@ export class WorkspaceWorkloadStatusItemDto {
   @Expose()
   daemonSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadStatusItemDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (value) {
       return value;
     }
-    if (obj.resource?.kind !== 'CronJob') {
+    if (obj?.kind !== 'CronJob') {
       return undefined;
     }
     const status: V1CronJobStatus = obj.status ?? {};
