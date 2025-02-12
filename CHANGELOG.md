@@ -2,6 +2,13 @@
 
 
 
+## 2.9.21 (2025-02-12)
+
+
+### Bug Fixes
+
+* update workload status dtos ([ee40d59](https://github.com/mogenius/mo-core-base/commit/ee40d594f85587667a2fc8239139f02c2891ac22))
+
 ## 2.9.20 (2025-02-10)
 
 
