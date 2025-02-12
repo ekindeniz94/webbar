@@ -69,9 +69,6 @@ export class K8sWorkloadStatusItemDto {
   specType?: string;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (!obj.events || obj.events?.length === 0) {
       return undefined;
     }
@@ -82,9 +79,6 @@ export class K8sWorkloadStatusItemDto {
   eventMessages?: string | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'ReplicaSet') {
       return undefined;
     }
@@ -119,9 +113,6 @@ export class K8sWorkloadStatusItemDto {
   replicaSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'Namespace') {
       return undefined;
     }
@@ -152,9 +143,6 @@ export class K8sWorkloadStatusItemDto {
   namespaceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'Deployment') {
       return undefined;
     }
@@ -202,9 +190,6 @@ export class K8sWorkloadStatusItemDto {
   deploymentMessages?: string | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'Pod') {
       return undefined;
     }
@@ -215,6 +200,7 @@ export class K8sWorkloadStatusItemDto {
       case 'Pending':
         return 'building';
       case 'Running':
+      case 'Succeeded':
         if (status.containerStatuses) {
           for (const containerStatus of status.containerStatuses) {
             if (containerStatus.state && containerStatus.state?.waiting) {
@@ -226,6 +212,9 @@ export class K8sWorkloadStatusItemDto {
             }
             if (containerStatus.state && containerStatus.state?.terminated) {
               const reason = containerStatus.state.terminated.reason;
+              if (reason === 'Completed' && containerStatus.started === false) {
+                return 'inactive';
+              }
               if (reason === 'Error' || reason === 'OOMKilled') {
                 return 'error';
               }
@@ -235,8 +224,6 @@ export class K8sWorkloadStatusItemDto {
             }
           }
         }
-        return 'success';
-      case 'Succeeded':
         return 'success';
       case 'Failed':
         return 'error';
@@ -250,9 +237,6 @@ export class K8sWorkloadStatusItemDto {
   podStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'Service') {
       return undefined;
     }
@@ -281,9 +265,6 @@ export class K8sWorkloadStatusItemDto {
   serviceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'Ingress') {
       return undefined;
     }
@@ -304,9 +285,6 @@ export class K8sWorkloadStatusItemDto {
   ingressStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'StatefulSet') {
       return undefined;
     }
@@ -340,9 +318,6 @@ export class K8sWorkloadStatusItemDto {
   statefulSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'DaemonSet') {
       return undefined;
     }
@@ -381,9 +356,6 @@ export class K8sWorkloadStatusItemDto {
   daemonSetStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (value) {
-      return value;
-    }
     if (obj?.kind !== 'CronJob') {
       return undefined;
     }
