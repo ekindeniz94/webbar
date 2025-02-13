@@ -88,22 +88,22 @@ export class K8sWorkloadStatusItemDto {
       return 'inactive';
     }
 
-    if (status.readyReplicas === replicas && status.availableReplicas === replicas) {
+    if (status?.readyReplicas === replicas && status?.availableReplicas === replicas) {
       return 'success';
     }
 
-    if (status.replicas < replicas) {
+    if (status?.replicas < replicas) {
       return 'building';
     }
 
     if (
-      (status.readyReplicas && status.readyReplicas < replicas) ||
-      (status.availableReplicas && status.availableReplicas < replicas)
+      (status?.readyReplicas && status?.readyReplicas < replicas) ||
+      (status?.availableReplicas && status?.availableReplicas < replicas)
     ) {
       return 'warning';
     }
 
-    if (status.availableReplicas === 0 && status.replicas > 0) {
+    if (status?.availableReplicas === 0 && status?.replicas > 0) {
       return 'danger';
     }
 
@@ -117,17 +117,17 @@ export class K8sWorkloadStatusItemDto {
       return undefined;
     }
     const status: V1NamespaceStatus = obj.status ?? {};
-    if (!status || !status.phase) {
+    if (!status || !status?.phase) {
       return 'inactive';
     }
-    switch (status.phase) {
+    switch (status?.phase) {
       case 'Active':
         return 'success';
       case 'Terminating':
         return 'building';
       default:
-        if (status.conditions) {
-          for (const condition of status.conditions) {
+        if (status?.conditions) {
+          for (const condition of status?.conditions) {
             if (condition.type === 'NamespaceDeletionContentFailure' && condition.status === 'True') {
               return 'danger';
             }
@@ -149,32 +149,32 @@ export class K8sWorkloadStatusItemDto {
 
     const status: V1DeploymentStatus = obj.status ?? {};
 
-    if (!status.replicas || status.replicas === 0) {
+    if (!status?.replicas || status?.replicas === 0) {
       return 'inactive';
     }
 
-    if (status.updatedReplicas && status.updatedReplicas < status.replicas) {
+    if (status?.updatedReplicas && status?.updatedReplicas < status?.replicas) {
       return 'building';
     }
 
-    if (status.readyReplicas === status.replicas && status.availableReplicas === status.replicas) {
+    if (status?.readyReplicas === status?.replicas && status?.availableReplicas === status?.replicas) {
       return 'success';
     }
 
-    if (status.unavailableReplicas && status.unavailableReplicas > 0) {
+    if (status?.unavailableReplicas && status?.unavailableReplicas > 0) {
       if (
-        status.conditions &&
-        status.conditions.some((condition) => condition.type === 'Progressing' && condition.status === 'False')
+        status?.conditions &&
+        status?.conditions.some((condition) => condition.type === 'Progressing' && condition.status === 'False')
       ) {
-        obj.deploymentMessages = status.conditions.map((item) => `[${item.reason}] ${item.message}`).join(', ');
+        obj.deploymentMessages = status?.conditions.map((item) => `[${item.reason}] ${item.message}`).join(', ');
         return 'error';
       }
       return 'danger';
     }
 
     if (
-      (status.readyReplicas && status.readyReplicas < status.replicas) ||
-      (status.availableReplicas && status.availableReplicas < status.replicas)
+      (status?.readyReplicas && status?.readyReplicas < status?.replicas) ||
+      (status?.availableReplicas && status?.availableReplicas < status?.replicas)
     ) {
       return 'warning';
     }
@@ -196,13 +196,13 @@ export class K8sWorkloadStatusItemDto {
 
     const status: V1PodStatus = obj.status ?? {};
 
-    switch (status.phase) {
+    switch (status?.phase) {
       case 'Pending':
         return 'building';
       case 'Running':
       case 'Succeeded':
-        if (status.containerStatuses) {
-          for (const containerStatus of status.containerStatuses) {
+        if (status?.containerStatuses) {
+          for (const containerStatus of status?.containerStatuses) {
             if (containerStatus.state && containerStatus.state?.waiting) {
               const reason = containerStatus.state.waiting.reason;
               if (reason === 'CrashLoopBackOff' || reason === 'ErrImagePull' || reason === 'RunContainerError') {
@@ -253,7 +253,7 @@ export class K8sWorkloadStatusItemDto {
       case 'NodePort':
         return 'success';
       case 'LoadBalancer':
-        if (status.loadBalancer && status.loadBalancer.ingress && status.loadBalancer.ingress.length > 0) {
+        if (status?.loadBalancer && status?.loadBalancer.ingress && status?.loadBalancer?.ingress.length > 0) {
           return 'success';
         }
         return 'warning';
@@ -271,11 +271,11 @@ export class K8sWorkloadStatusItemDto {
 
     const status: V1IngressStatus = obj.status ?? {};
 
-    if (!status.loadBalancer || !status.loadBalancer.ingress || status.loadBalancer.ingress.length === 0) {
+    if (!status?.loadBalancer || !status?.loadBalancer.ingress || status?.loadBalancer.ingress.length === 0) {
       return 'inactive';
     }
 
-    if (status.loadBalancer.ingress.some((entry) => entry.ip || entry.hostname)) {
+    if (status?.loadBalancer.ingress.some((entry) => entry.ip || entry.hostname)) {
       return 'success';
     }
 
@@ -296,19 +296,19 @@ export class K8sWorkloadStatusItemDto {
       return 'inactive';
     }
 
-    if (status.updatedReplicas && status.updatedReplicas < replicas) {
+    if (status?.updatedReplicas && status?.updatedReplicas < replicas) {
       return 'building';
     }
 
     if (
-      status.readyReplicas === replicas &&
-      status.currentReplicas === replicas &&
-      status.updatedReplicas === replicas
+      status?.readyReplicas === replicas &&
+      status?.currentReplicas === replicas &&
+      status?.updatedReplicas === replicas
     ) {
       return 'success';
     }
 
-    if (status.readyReplicas !== replicas) {
+    if (status?.readyReplicas !== replicas) {
       return 'warning';
     }
 
@@ -325,28 +325,31 @@ export class K8sWorkloadStatusItemDto {
     const status: V1DaemonSetStatus = obj.status ?? {};
     const replicas = obj.replicas ?? 0;
 
-    if (status.desiredNumberScheduled === 0) {
+    if (status?.desiredNumberScheduled === 0) {
       return 'inactive';
     }
 
     if (
-      status.currentNumberScheduled === status.desiredNumberScheduled &&
-      (status.updatedNumberScheduled === undefined ||
-        status.updatedNumberScheduled === status.desiredNumberScheduled) &&
-      status.numberReady === status.desiredNumberScheduled
+      status?.currentNumberScheduled === status?.desiredNumberScheduled &&
+      (status?.updatedNumberScheduled === undefined ||
+        status?.updatedNumberScheduled === status?.desiredNumberScheduled) &&
+      status?.numberReady === status?.desiredNumberScheduled
     ) {
       return 'success';
     }
 
-    if (status.updatedNumberScheduled !== undefined && status.updatedNumberScheduled < status.desiredNumberScheduled) {
+    if (
+      status?.updatedNumberScheduled !== undefined &&
+      status?.updatedNumberScheduled < status?.desiredNumberScheduled
+    ) {
       return 'building';
     }
 
-    if (status.numberReady < status.desiredNumberScheduled) {
+    if (status?.numberReady < status?.desiredNumberScheduled) {
       return 'warning';
     }
 
-    if (status.numberUnavailable !== undefined && status.numberUnavailable > 0) {
+    if (status?.numberUnavailable !== undefined && status?.numberUnavailable > 0) {
       return 'danger';
     }
 
@@ -364,17 +367,21 @@ export class K8sWorkloadStatusItemDto {
       return 'inactive';
     }
 
-    if (status.active && status.active.length > 0) {
+    if (status?.active && status?.active.length > 0) {
       return 'building';
     }
 
     const currentTime = new Date();
 
-    if (status.lastSuccessfulTime && currentTime.getTime() - status.lastSuccessfulTime.getTime() < 3600000) {
+    if (
+      status?.lastSuccessfulTime &&
+      status?.lastSuccessfulTime?.getTime &&
+      currentTime?.getTime() - status?.lastSuccessfulTime?.getTime() < 3600000
+    ) {
       return 'success';
     }
 
-    if (!status.lastSuccessfulTime) {
+    if (!status?.lastSuccessfulTime) {
       return 'warning';
     }
 
