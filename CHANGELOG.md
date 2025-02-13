@@ -2,6 +2,13 @@
 
 
 
+## 2.9.23 (2025-02-13)
+
+
+### Bug Fixes
+
+* start/stop workloads ([f4766c1](https://github.com/mogenius/mo-core-base/commit/f4766c1a78fb7e61e8c42b588276e9f332477fcb))
+
 ## 2.9.22 (2025-02-12)
 
 
