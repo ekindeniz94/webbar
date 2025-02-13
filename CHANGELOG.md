@@ -2,6 +2,13 @@
 
 
 
+## 2.9.25 (2025-02-13)
+
+
+### Bug Fixes
+
+* stats ([7e262e1](https://github.com/mogenius/mo-core-base/commit/7e262e1783b32e4ddd33a2776e4532a13f05c618))
+
 ## 2.9.24 (2025-02-13)
 
 
