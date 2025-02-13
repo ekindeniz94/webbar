@@ -2,6 +2,13 @@
 
 
 
+## 2.9.24 (2025-02-13)
+
+
+### Bug Fixes
+
+* update K8sGetWorkspaceWorkloadsRequestDto ([01f9451](https://github.com/mogenius/mo-core-base/commit/01f94514b68911989833e31ef90dceba26ddd914))
+
 ## 2.9.23 (2025-02-13)
 
 
