@@ -165,3 +165,13 @@ export const DefaultK8sResourceEntry = {
     version: ''
   })
 };
+
+export const PodCreatingResources = [
+  DefaultK8sResourceEntry.DeploymentResource,
+  DefaultK8sResourceEntry.ReplicaSetResource,
+  DefaultK8sResourceEntry.StatefulSetResource,
+  DefaultK8sResourceEntry.DaemonSetResource,
+  DefaultK8sResourceEntry.JobResource,
+  DefaultK8sResourceEntry.CronJobResource,
+  DefaultK8sResourceEntry.ReplicationControllerResource
+];

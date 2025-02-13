@@ -12,3 +12,4 @@ export * from './k8s-get-namespace-workload-list.request.dto';
 export * from './k8s-workload-status.dto';
 export * from './k8s-workload-status-item.dto';
 export * from './k8s-get-workload-status.request.dto';
+export * from './k8s-action-workload.request.dto';
