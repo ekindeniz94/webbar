@@ -2,6 +2,13 @@
 
 
 
+## 2.9.27 (2025-02-17)
+
+
+### Bug Fixes
+
+* refactoring xterm dtos (to k8s-stream) ([064384f](https://github.com/mogenius/mo-core-base/commit/064384f35f30be955c8043082edb282c41a27a20))
+
 ## 2.9.26 (2025-02-17)
 
 
