@@ -2,6 +2,13 @@
 
 
 
+## 2.9.26 (2025-02-17)
+
+
+### Bug Fixes
+
+* k8s workspace grant enums ([4902a3e](https://github.com/mogenius/mo-core-base/commit/4902a3e6ade4bd9b6a4ee913ba6701101186f4b2))
+
 ## 2.9.25 (2025-02-13)
 
 
