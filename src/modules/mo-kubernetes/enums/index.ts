@@ -2,6 +2,7 @@ export * from './k8s-manager';
 export * from './k8s-workload';
 export * from './k8s-workspace';
 export * from './k8s-user-management';
+export * from './k8s-stream';
 
 export * from './k8s-manager/k8s-build-task.enum';
 export * from './kubernetes-event-kind.enum';

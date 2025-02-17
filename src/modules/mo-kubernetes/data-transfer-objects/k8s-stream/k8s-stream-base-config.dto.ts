@@ -1,13 +1,14 @@
 import { Expose, Type } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { XtermCmdEnum, XtermRequestTypeEnum } from '../../enums';
 import { XtermOptionsDto } from './xterm-options.dto';
+import { K8sStreamCmdEnum } from '../../enums/k8s-stream/k8s-stream-cmd.enum';
+import { K8sStreamRequestTypeEnum } from '../../enums/k8s-stream/k8s-stream-request-type.enum';
 
-export abstract class XtermBaseConfigDto {
+export abstract class K8sStreamBaseConfigDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  abstract type: XtermRequestTypeEnum;
+  abstract type: K8sStreamRequestTypeEnum;
 
   @IsNotEmpty()
   @IsString()
@@ -26,7 +27,7 @@ export abstract class XtermBaseConfigDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
-  cmd: XtermCmdEnum;
+  cmd: K8sStreamCmdEnum;
 
   @Type(() => XtermOptionsDto)
   @Expose()

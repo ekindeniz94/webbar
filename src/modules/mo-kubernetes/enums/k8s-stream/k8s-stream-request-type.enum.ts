@@ -1,4 +1,4 @@
-export enum XtermRequestTypeEnum {
+export enum K8sStreamRequestTypeEnum {
   // Service
   SERVICE__POD_LOG = 'SERVICE__POD_LOG',
   SERVICE__POD_EXEC_SH = 'SERVICE__POD_EXEC_SH',

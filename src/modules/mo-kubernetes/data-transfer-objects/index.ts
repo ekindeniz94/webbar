@@ -6,6 +6,7 @@ export * from './k8s-resources';
 export * from './k8s-manager-iac';
 export * from './k8s-workload';
 export * from './k8s-workspace';
+export * from './k8s-stream';
 
 export * from './k8s-message-response-base.dto';
 export * from './k8s-message-response.dto';

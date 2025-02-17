@@ -17,6 +17,5 @@ export * from './project-namespace-service-port';
 export * from './project-namespace-service-status';
 export * from './stats';
 export * from './traffic';
-export * from './xterm';
 export * from './create-project-cluster-item.dto';
 export * from './external-secret-storage';

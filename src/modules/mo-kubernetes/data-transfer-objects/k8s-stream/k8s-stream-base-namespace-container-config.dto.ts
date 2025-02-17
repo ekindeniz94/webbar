@@ -1,8 +1,8 @@
 import { Expose } from 'class-transformer';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { XtermBaseConfigDto } from './xterm-base-config.dto';
+import { K8sStreamBaseConfigDto } from './k8s-stream-base-config.dto';
 
-export abstract class XtermBaseNamespaceContainerConfigDto extends XtermBaseConfigDto {
+export abstract class K8sStreamBaseNamespaceContainerConfigDto extends K8sStreamBaseConfigDto {
   @IsNotEmpty()
   @IsString()
   @Expose()
