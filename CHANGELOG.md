@@ -2,6 +2,13 @@
 
 
 
+## 2.9.28 (2025-02-17)
+
+
+### Bug Fixes
+
+* workspace logs ([3304d61](https://github.com/mogenius/mo-core-base/commit/3304d61d81ea3a06a4b6c1c1907e998fe579e2bf))
+
 ## 2.9.27 (2025-02-17)
 
 
