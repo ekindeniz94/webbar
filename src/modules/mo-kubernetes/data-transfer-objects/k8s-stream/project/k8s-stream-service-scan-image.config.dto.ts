@@ -5,6 +5,9 @@ import { K8sStreamRequestTypeEnum } from '../../../enums/k8s-stream/k8s-stream-r
 import { K8sStreamCmdEnum } from '../../../enums/k8s-stream/k8s-stream-cmd.enum';
 import { K8sStreamScanImageTypeEnum } from '../../../enums/k8s-stream/k8s-stream-scan-image-type.enum';
 
+/**
+ * Deprecated
+ */
 export class K8sStreamServiceScanImageConfigDto extends K8sStreamBaseNamespaceContainerConfigDto {
   @Transform(() => K8sStreamRequestTypeEnum.SERVICE__SCAN_IMAGE)
   @Expose()

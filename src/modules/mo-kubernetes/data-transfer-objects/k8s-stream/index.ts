@@ -1,4 +1,5 @@
 export * from './project';
+export * from './workspace';
 
 export * from './k8s-stream-nodes-cpu.config.dto';
 export * from './k8s-stream-nodes-memory.config.dto';
