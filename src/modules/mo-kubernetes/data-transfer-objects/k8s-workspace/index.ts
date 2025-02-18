@@ -9,3 +9,5 @@ export * from './k8s-workspace-resource.dto';
 export * from './k8s-workspace.dto';
 export * from './k8s-workspace-stats.request.dto';
 export * from './k8s-workspace-stats.response.dto';
+export * from './k8s-update-workspace-users.request.dto';
+export * from './k8s-workspace-user.dto';
