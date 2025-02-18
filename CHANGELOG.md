@@ -2,6 +2,13 @@
 
 
 
+## 2.9.29 (2025-02-18)
+
+
+### Bug Fixes
+
+* added user manage workspace dto. ([7ac194f](https://github.com/mogenius/mo-core-base/commit/7ac194f78ad7eaaafe777b57534c6881dba09f11))
+
 ## 2.9.28 (2025-02-17)
 
 
