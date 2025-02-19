@@ -2,6 +2,13 @@
 
 
 
+## 2.9.30 (2025-02-19)
+
+
+### Bug Fixes
+
+* workspace user ([a7236ea](https://github.com/mogenius/mo-core-base/commit/a7236eadb9e2ea84db2029d2a8a1f00faa978347))
+
 ## 2.9.29 (2025-02-18)
 
 
