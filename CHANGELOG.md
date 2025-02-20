@@ -2,6 +2,13 @@
 
 
 
+## 2.9.32 (2025-02-20)
+
+
+### Bug Fixes
+
+* workspace grantees dto ([7ea5891](https://github.com/mogenius/mo-core-base/commit/7ea58913e4ae23e726f9da641aec0eb4f2a63192))
+
 ## 2.9.31 (2025-02-20)
 
 
