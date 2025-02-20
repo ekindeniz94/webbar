@@ -13,6 +13,7 @@ import {
   V1ServiceStatus,
   V1StatefulSetStatus
 } from '@kubernetes/client-node';
+import { DefaultK8sResourceEntry } from '../../mo-kubernetes-dto.const';
 
 export class K8sWorkloadStatusItemDto {
   @IsNotEmpty()
@@ -67,16 +68,6 @@ export class K8sWorkloadStatusItemDto {
   @IsString()
   @Expose()
   specType?: string;
-
-  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
-    if (!obj.events || obj.events?.length === 0) {
-      return undefined;
-    }
-
-    return obj.events.map((item) => `[${item.reason}] ${item.message}`).join(', ');
-  })
-  @Expose()
-  eventMessages?: string | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (obj?.kind !== 'ReplicaSet') {
@@ -389,4 +380,104 @@ export class K8sWorkloadStatusItemDto {
   })
   @Expose()
   cronJobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    const results = [];
+    if (obj.events && obj.events?.length > 0) {
+      for (const event of obj.events) {
+        const reason = event.reason;
+        results.push({ reason: reason, message: event.message });
+      }
+    }
+    switch (obj.kind) {
+      case DefaultK8sResourceEntry.PodResource.kind:
+        if (obj.podStatus === 'error') {
+          const podStatus: V1PodStatus = obj.status;
+          if (!podStatus) {
+            break;
+          }
+          results.push({ reason: podStatus.reason, message: podStatus.message });
+
+          // add conditions messages
+          if (podStatus?.conditions) {
+            for (const condition of podStatus.conditions) {
+              results.push({ reason: condition.reason, message: condition.message });
+            }
+          }
+
+          // add container statuses messages
+          if (podStatus?.containerStatuses) {
+            for (const containerStatus of podStatus.containerStatuses) {
+              if (containerStatus.state && containerStatus.state?.waiting) {
+                results.push({
+                  reason: containerStatus.state.waiting.reason,
+                  message: containerStatus.state.waiting.message
+                });
+              }
+              if (containerStatus.state && containerStatus.state?.terminated) {
+                results.push({
+                  reason: containerStatus.state.terminated.reason,
+                  message: containerStatus.state.terminated.message
+                });
+              }
+            }
+          }
+        }
+        break;
+      case DefaultK8sResourceEntry.DeploymentResource.kind:
+        const deploymentStatus: V1DeploymentStatus = obj.status;
+        if (!deploymentStatus) {
+          break;
+        }
+        // add conditions messages
+        if (deploymentStatus?.conditions) {
+          for (const condition of deploymentStatus.conditions) {
+            results.push({ reason: condition.reason, message: condition.message });
+          }
+        }
+        break;
+      case DefaultK8sResourceEntry.ReplicaSetResource.kind:
+        const replicaSetStatus: V1ReplicaSetStatus = obj.status;
+        if (!replicaSetStatus) {
+          break;
+        }
+        // add conditions messages
+        if (replicaSetStatus?.conditions) {
+          for (const condition of replicaSetStatus.conditions) {
+            results.push({ reason: condition.reason, message: condition.message });
+          }
+        }
+        break;
+      case DefaultK8sResourceEntry.StatefulSetResource.kind:
+        const statefulSetStatus: V1StatefulSetStatus = obj.status;
+        if (!statefulSetStatus) {
+          break;
+        }
+        // add conditions messages
+        if (statefulSetStatus?.conditions) {
+          for (const condition of statefulSetStatus.conditions) {
+            results.push({ reason: condition.reason, message: condition.message });
+          }
+        }
+        break;
+      case DefaultK8sResourceEntry.DaemonSetResource.kind:
+        const daemonSetStatus: V1DaemonSetStatus = obj.status;
+        if (!daemonSetStatus) {
+          break;
+        }
+        // add conditions messages
+        if (daemonSetStatus?.conditions) {
+          for (const condition of daemonSetStatus.conditions) {
+            results.push({ reason: condition.reason, message: condition.message });
+          }
+        }
+        break;
+      default:
+        break;
+    }
+
+    return results.length > 0 ? results : undefined;
+  })
+  @Expose()
+  messages?: { reason: any; message: string }[] | undefined;
 }
