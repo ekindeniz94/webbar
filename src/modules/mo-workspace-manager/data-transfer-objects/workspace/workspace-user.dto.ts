@@ -1,24 +1,14 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import {
-  IsArray,
-  IsEmail,
-  IsEnum,
-  IsNotEmpty,
-  IsOptional,
-  isString,
-  IsString,
-  MaxLength,
-  MinLength,
-  ValidateNested
-} from 'class-validator';
-import { MoProjectDtoUtils } from '../../../mo-project-dto';
-import moment from 'moment';
-import { ClusterPublicDto } from '../../../mo-product-dto';
-import { K8sGrantRoleEnum, K8sWorkspaceResourceDto, KUBERNETES_CONST } from '../../../mo-kubernetes';
+import { Expose, Transform } from 'class-transformer';
+import { IsEmail, IsEnum, IsNotEmpty, isString, IsString, MaxLength, MinLength } from 'class-validator';
+import { K8sGrantRoleEnum } from '../../../mo-kubernetes';
 import { DTO_VALIDATION_CONST } from '../../../mo-core';
-import { StripTags } from '@mogenius/js-utils';
+import { StripTags, TransformToBoolean } from '@mogenius/js-utils';
 
-export class WorkspaceListItemGranteeDto {
+export class WorkspaceUserDto {
+  @TransformToBoolean(false)
+  @Expose()
+  isOrganizationAdmin?: boolean;
+
   @IsNotEmpty()
   @IsString()
   @MinLength(DTO_VALIDATION_CONST.FIRST_NAME.MIN)

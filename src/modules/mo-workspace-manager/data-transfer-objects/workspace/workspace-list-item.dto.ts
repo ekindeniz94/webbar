@@ -4,7 +4,7 @@ import { MoProjectDtoUtils } from '../../../mo-project-dto';
 import moment from 'moment';
 import { ClusterPublicDto } from '../../../mo-product-dto';
 import { K8sWorkspaceResourceDto, KUBERNETES_CONST } from '../../../mo-kubernetes';
-import { WorkspaceListItemGranteeDto } from './workspace-list-item-grantee.dto';
+import { WorkspaceUserDto } from './workspace-user.dto';
 
 export class WorkspaceListItemDto {
   @Type(() => ClusterPublicDto)
@@ -30,7 +30,7 @@ export class WorkspaceListItemDto {
   @Expose()
   resources: K8sWorkspaceResourceDto[];
 
-  @Type(() => WorkspaceListItemGranteeDto)
+  @Type(() => WorkspaceUserDto)
   @Expose()
-  grantees: WorkspaceListItemGranteeDto[];
+  users: WorkspaceUserDto[];
 }
