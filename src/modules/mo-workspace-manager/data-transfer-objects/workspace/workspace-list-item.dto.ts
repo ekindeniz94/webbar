@@ -4,6 +4,7 @@ import { MoProjectDtoUtils } from '../../../mo-project-dto';
 import moment from 'moment';
 import { ClusterPublicDto } from '../../../mo-product-dto';
 import { K8sWorkspaceResourceDto, KUBERNETES_CONST } from '../../../mo-kubernetes';
+import { WorkspaceListItemGranteeDto } from './workspace-list-item-grantee.dto';
 
 export class WorkspaceListItemDto {
   @Type(() => ClusterPublicDto)
@@ -28,4 +29,8 @@ export class WorkspaceListItemDto {
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
   resources: K8sWorkspaceResourceDto[];
+
+  @Type(() => WorkspaceListItemGranteeDto)
+  @Expose()
+  grantees: WorkspaceListItemGranteeDto[];
 }
