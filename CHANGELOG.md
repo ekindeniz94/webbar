@@ -2,6 +2,13 @@
 
 
 
+## 2.9.36 (2025-02-25)
+
+
+### Bug Fixes
+
+* update ResourceRedisPubSubMessageDataDto ([3d95093](https://github.com/mogenius/mo-core-base/commit/3d95093c0062ac753303f70b77816b499941a15d))
+
 ## 2.9.35 (2025-02-25)
 
 
