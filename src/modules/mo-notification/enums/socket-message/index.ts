@@ -21,3 +21,5 @@ export * from './payment-socket-data-event.enum';
 // Changelog
 export * from './changelog-socket-event.enum';
 export * from './changelog-socket-data-event.enum';
+
+export * from './resource-socket-event.enum';

@@ -1,4 +1,4 @@
-import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mogenius/websocket-dto';
+import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketRedisChannelEnum } from '@mogenius/websocket-dto';
 import {
   ProjectCiCdSocketDataEventEnum,
   ProjectInvitationSocketDataEventEnum,
@@ -8,7 +8,7 @@ import {
 
 export interface IRedisPubSubMessageProject
   extends IRedisPubSubMessage<ProjectSocketEventEnum, IRedisPubSubMessageData<ProjectSocketDataEventEnum, any>[]> {
-  redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
+  redisChannel: WebsocketRedisChannelEnum.MO_WEBSOCKET__REDIS_CHANNEL__PUBLISH_EVENT;
   socketEvent: ProjectSocketEventEnum.PROJECT_SERVICE;
 }
 
@@ -17,12 +17,12 @@ export interface IRedisPubSubMessageProjectInvitation
     ProjectSocketEventEnum,
     IRedisPubSubMessageData<ProjectInvitationSocketDataEventEnum, any>[]
   > {
-  redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
+  redisChannel: WebsocketRedisChannelEnum.MO_WEBSOCKET__REDIS_CHANNEL__PUBLISH_EVENT;
   socketEvent: ProjectSocketEventEnum.PROJECT_INVITATION_SERVICE;
 }
 
 export interface IRedisPubSubMessageProjectCiCd
   extends IRedisPubSubMessage<ProjectSocketEventEnum, IRedisPubSubMessageData<ProjectCiCdSocketDataEventEnum, any>[]> {
-  redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
+  redisChannel: WebsocketRedisChannelEnum.MO_WEBSOCKET__REDIS_CHANNEL__PUBLISH_EVENT;
   socketEvent: ProjectSocketEventEnum.PROJECT_CICD_SERVICE;
 }

@@ -1,4 +1,4 @@
-import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketChannelEnum } from '@mogenius/websocket-dto';
+import { IRedisPubSubMessage, IRedisPubSubMessageData, WebsocketRedisChannelEnum } from '@mogenius/websocket-dto';
 import { ProductSocketEventEnum } from './enums/product-socket-event.enum';
 import { ProductClusterSocketDataEventEnum } from './enums/product-cluster-socket-data-event.enum';
 import { ProductOrganizationSocketDataEventEnum } from './enums/product-organization-socket-data-event.enum';
@@ -8,7 +8,7 @@ export interface IRedisPubSubMessageProductCluster
     ProductSocketEventEnum,
     IRedisPubSubMessageData<ProductClusterSocketDataEventEnum, any>[]
   > {
-  redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
+  redisChannel: WebsocketRedisChannelEnum.MO_WEBSOCKET__REDIS_CHANNEL__PUBLISH_EVENT;
   socketEvent: ProductSocketEventEnum.PRODUCT_CLUSTER_SERVICE;
 }
 
@@ -17,6 +17,6 @@ export interface IRedisPubSubMessageProductOrganization
     ProductSocketEventEnum,
     IRedisPubSubMessageData<ProductOrganizationSocketDataEventEnum, any>[]
   > {
-  redisChannel: WebsocketChannelEnum.MO_WEBSOCKET_PUBLISH_USER_MESSAGE;
+  redisChannel: WebsocketRedisChannelEnum.MO_WEBSOCKET__REDIS_CHANNEL__PUBLISH_EVENT;
   socketEvent: ProductSocketEventEnum.PRODUCT_ORGANIZATION_SERVICE;
 }
