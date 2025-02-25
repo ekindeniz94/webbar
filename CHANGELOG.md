@@ -2,6 +2,13 @@
 
 
 
+## 2.9.38 (2025-02-25)
+
+
+### Bug Fixes
+
+* add cluster api key ([ced83b2](https://github.com/mogenius/mo-core-base/commit/ced83b21cac24efd77d021236145630747de02cc))
+
 ## 2.9.37 (2025-02-25)
 
 
