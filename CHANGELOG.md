@@ -2,6 +2,13 @@
 
 
 
+## 2.9.35 (2025-02-25)
+
+
+### Bug Fixes
+
+* update ws data ([39e2176](https://github.com/mogenius/mo-core-base/commit/39e2176be6501be25ce1c66583334a3413fc700f))
+
 ## 2.9.34 (2025-02-24)
 
 
