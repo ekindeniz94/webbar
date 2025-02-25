@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { K8sGetWorkloadRequestDto } from '../../mo-kubernetes/data-transfer-objects/k8s-workload/k8s-get-workload.request.dto';
-import { KubernetesEventTypeEnum } from '../../mo-kubernetes';
+import { KubernetesEventTypeEnum } from '../../mo-kubernetes/enums/kubernetes-event-type.enum';
 
 export class ResourceRedisPubSubMessageDataDto {
   @Expose()
