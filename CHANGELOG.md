@@ -2,6 +2,13 @@
 
 
 
+## 2.9.39 (2025-03-04)
+
+
+### Bug Fixes
+
+* api key ([6e3c23c](https://github.com/mogenius/mo-core-base/commit/6e3c23cdb71f575f6c40028ce2d6f5064c0d896e))
+
 ## 2.9.38 (2025-02-25)
 
 
