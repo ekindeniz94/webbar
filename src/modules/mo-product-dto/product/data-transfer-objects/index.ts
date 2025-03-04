@@ -4,4 +4,4 @@ export * from './organization-invitation';
 export * from './product';
 export * from './storage';
 export * from './file';
-export * from './cluster-api-key';
+export * from './workload';
