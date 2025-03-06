@@ -7,6 +7,7 @@ export * from './cluster-build-server-type.enum';
 export * from './product-state.enum';
 export * from './product-type.enum';
 export * from './organization-user-state.enum';
+export * from './organization-scope.enum';
 export * from './roles.enum';
 export * from './pvc-phase.enum';
 export * from './file-event-update.enum';
