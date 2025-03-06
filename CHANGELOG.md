@@ -2,6 +2,13 @@
 
 
 
+## 2.9.41 (2025-03-06)
+
+
+### Bug Fixes
+
+* update kubernetes/client-node ([d47c433](https://github.com/mogenius/mo-core-base/commit/d47c43334cb9b4a115db05c661228114f8491f27))
+
 ## 2.9.40 (2025-03-06)
 
 
