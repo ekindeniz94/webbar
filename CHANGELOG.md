@@ -2,6 +2,13 @@
 
 
 
+## 2.9.40 (2025-03-06)
+
+
+### Bug Fixes
+
+* add scope enums ([c6568ea](https://github.com/mogenius/mo-core-base/commit/c6568ea4a8c7fd49b9f4cd113c7b900bc1b06131))
+
 ## 2.9.39 (2025-03-04)
 
 
