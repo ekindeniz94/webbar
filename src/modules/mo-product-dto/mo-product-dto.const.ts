@@ -1,5 +1,4 @@
 import { KUBERNETES_CONST } from '../mo-kubernetes';
-import { MO_PRODUCT_ROLES } from './product/enums/roles.enum';
 
 export const PRODUCT_CONST = {
   CLUSTER: {
@@ -14,9 +13,3 @@ export const PRODUCT_CONST = {
     }
   }
 };
-
-export const OrganizationScopes = [
-  `organization:${MO_PRODUCT_ROLES.ORGANIZATION_ADMIN}`,
-  `organization:${MO_PRODUCT_ROLES.ORGANIZATION_EDITOR}`,
-  `organization:${MO_PRODUCT_ROLES.ORGANIZATION_VIEW}`
-];
