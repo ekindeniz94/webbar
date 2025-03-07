@@ -44,6 +44,11 @@ export class K8sJobDto {
   @Expose()
   projectId: string;
 
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  clusterId: string;
+
   // from k8s
   @IsNotEmpty()
   // @ValidateIf((object: K8sJobDto, value) => !object.namespaceId)
