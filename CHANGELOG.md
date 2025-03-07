@@ -2,6 +2,13 @@
 
 
 
+## 2.9.43 (2025-03-07)
+
+
+### Bug Fixes
+
+* update packages ([7a59ed1](https://github.com/mogenius/mo-core-base/commit/7a59ed1527241e9753698b2a99d7dace95656ec2))
+
 ## 2.9.42 (2025-03-07)
 
 
