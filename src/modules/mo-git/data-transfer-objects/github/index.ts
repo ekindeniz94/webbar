@@ -9,3 +9,6 @@ export * from './github-user.dto';
 export * from './github-authorized-response.dto';
 export * from './github-workflow.dto';
 export * from './github-action.dto';
+export * from './github-file-item.dto';
+export * from './github-secrets-public-key.dto';
+export * from './github-variable.dto';

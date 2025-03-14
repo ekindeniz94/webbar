@@ -5,6 +5,7 @@ import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { GitUserDto } from './git-user.dto';
+import { IdDto } from '@mogenius/core-dto';
 
 export class GitConnectionDto extends BaseEntityDto {
   //
@@ -72,6 +73,13 @@ export class GitConnectionDto extends BaseEntityDto {
   @IsString()
   @Expose()
   customDomain?: string;
+
+  @Expose()
+  workspaceName?: string;
+
+  @Type(() => IdDto)
+  @Expose()
+  cluster?: IdDto;
 
   @Expose()
   get isAccessTokenExpired(): boolean {
