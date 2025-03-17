@@ -2,6 +2,13 @@
 
 
 
+## 2.9.45 (2025-03-17)
+
+
+### Bug Fixes
+
+* extend cluster events for workspace storage ([b7c3499](https://github.com/mogenius/mo-core-base/commit/b7c3499f2afe3993b05934619702432741eaaefb))
+
 ## 2.9.44 (2025-03-14)
 
 
