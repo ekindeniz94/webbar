@@ -7,6 +7,7 @@ import {
   V1DaemonSetStatus,
   V1DeploymentStatus,
   V1IngressStatus,
+  V1JobStatus,
   V1NamespaceStatus,
   V1PodStatus,
   V1ReplicaSetStatus,
@@ -187,14 +188,22 @@ export class K8sWorkloadStatusItemDto {
 
     const status: V1PodStatus = obj.status ?? {};
 
+    if (status?.conditions) {
+      for (const condition of status.conditions) {
+        if (condition.type === 'PodScheduled' && condition.status === 'False' && condition.reason === 'Unschedulable') {
+          return 'warning';
+        }
+      }
+    }
+
     switch (status?.phase) {
       case 'Pending':
         return 'building';
       case 'Running':
       case 'Succeeded':
         if (status?.containerStatuses) {
-          for (const containerStatus of status?.containerStatuses) {
-            if (containerStatus.state && containerStatus.state?.waiting) {
+          for (const containerStatus of status.containerStatuses) {
+            if (containerStatus.state?.waiting) {
               const reason = containerStatus.state.waiting.reason;
               if (reason === 'CrashLoopBackOff' || reason === 'ErrImagePull' || reason === 'RunContainerError') {
                 return 'danger';
@@ -353,26 +362,39 @@ export class K8sWorkloadStatusItemDto {
     if (obj?.kind !== 'CronJob') {
       return undefined;
     }
+
     const status: V1CronJobStatus = obj.status ?? {};
+
     if (!status) {
       return 'inactive';
     }
 
-    if (status?.active && status?.active.length > 0) {
+    if (obj.events) {
+      for (const event of obj.events) {
+        switch (event.reason) {
+          case 'TooManyMissedTimes':
+            return 'danger';
+          case 'JobAlreadyActive':
+            return 'warning';
+        }
+      }
+    }
+
+    if (status.active && status.active.length > 0) {
       return 'building';
     }
 
     const currentTime = new Date();
 
     if (
-      status?.lastSuccessfulTime &&
-      status?.lastSuccessfulTime?.getTime &&
-      currentTime?.getTime() - status?.lastSuccessfulTime?.getTime() < 3600000
+      status.lastSuccessfulTime &&
+      status.lastSuccessfulTime.getTime &&
+      currentTime.getTime() - status.lastSuccessfulTime.getTime() < 3600000
     ) {
       return 'success';
     }
 
-    if (!status?.lastSuccessfulTime) {
+    if (!status.lastSuccessfulTime) {
       return 'warning';
     }
 
@@ -380,6 +402,30 @@ export class K8sWorkloadStatusItemDto {
   })
   @Expose()
   cronJobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'Job') {
+      return undefined;
+    }
+
+    const status: V1JobStatus = obj.status ?? {};
+
+    if (status.active && status.active > 0) {
+      return 'building';
+    }
+
+    if (status.succeeded && status.succeeded > 0) {
+      return 'success';
+    }
+
+    if (status.failed && status.failed > 0) {
+      return 'danger';
+    }
+
+    return 'inactive';
+  })
+  @Expose()
+  jobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     const results = [];
