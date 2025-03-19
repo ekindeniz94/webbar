@@ -2,6 +2,13 @@
 
 
 
+## 2.9.47 (2025-03-19)
+
+
+### Bug Fixes
+
+* resource status job/cronjob ([e3f67c0](https://github.com/mogenius/mo-core-base/commit/e3f67c00dc6493be1df45c24434afb83038b5502))
+
 ## 2.9.46 (2025-03-17)
 
 
