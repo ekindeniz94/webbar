@@ -428,6 +428,83 @@ export class K8sWorkloadStatusItemDto {
   jobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'PersistentVolumeClaim') {
+      return undefined;
+    }
+    const status = obj.status ?? {};
+
+    switch (status.phase) {
+      case 'Pending':
+        return 'building';
+      case 'Bound':
+        return 'success';
+      case 'Lost':
+        return 'danger';
+      default:
+        return 'unknown';
+    }
+  })
+  @Expose()
+  pvcStatus?: 'success' | 'danger' | 'warning' | 'info' | 'building' | 'inactive' | 'unknown' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'PodDisruptionBudget') {
+      return undefined;
+    }
+
+    const status = obj.status ?? {};
+
+    if (status.currentHealthy < status.desiredHealthy) {
+      return 'danger';
+    }
+
+    if (status.desiredHealthy && status.currentHealthy >= status.desiredHealthy) {
+      return 'success';
+    }
+
+    if (status.currentHealthy === 0) {
+      return 'warning';
+    }
+
+    return 'inactive';
+  })
+  @Expose()
+  pdbStatus?: 'success' | 'danger' | 'warning' | 'info' | 'building' | 'inactive' | 'unknown' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'CiliumEndpoint') {
+      return undefined;
+    }
+
+    const status = obj.status ?? {};
+
+    if (status.networking && status.networking['health'] === 'Disconnected') {
+      return 'danger';
+    }
+
+    if ((status.policy && status.policy['realized']) || obj?.status?.state === 'ready') {
+      return 'success';
+    }
+
+    if (status.policy && status.policy['error']) {
+      return 'error';
+    }
+
+    return 'unknown';
+  })
+  @Expose()
+  ciliumEndpointStatus?:
+    | 'success'
+    | 'danger'
+    | 'error'
+    | 'warning'
+    | 'info'
+    | 'building'
+    | 'inactive'
+    | 'unknown'
+    | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     const results = [];
     if (obj.events && obj.events?.length > 0) {
       for (const event of obj.events) {
