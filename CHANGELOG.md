@@ -2,6 +2,13 @@
 
 
 
+## 2.9.48 (2025-03-20)
+
+
+### Bug Fixes
+
+* resource status update ([a1cb454](https://github.com/mogenius/mo-core-base/commit/a1cb454c7dd987dd1796c6e6029b72a4a0ef02c1))
+
 ## 2.9.47 (2025-03-19)
 
 
