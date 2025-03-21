@@ -5,3 +5,4 @@ export * from './product';
 export * from './storage';
 export * from './file';
 export * from './workload';
+export * from './cluster-api-key';
