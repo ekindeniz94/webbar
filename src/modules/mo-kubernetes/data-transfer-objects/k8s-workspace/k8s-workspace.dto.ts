@@ -1,5 +1,5 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { isArray, IsArray, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { K8sWorkspaceResourceDto } from './k8s-workspace-resource.dto';
 import { MoProjectDtoUtils } from '../../../mo-project-dto';
 import { KUBERNETES_CONST } from '../../mo-kubernetes-dto.const';
@@ -19,6 +19,7 @@ export class K8sWorkspaceDto {
 
   @IsNotEmpty()
   @IsArray()
+  @Transform(({ value }) => (value && isArray(value) ? value : []))
   @Type(() => K8sWorkspaceResourceDto)
   @ValidateNested({ each: true, message: '$property must be an array' })
   @Expose()
