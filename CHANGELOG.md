@@ -2,6 +2,13 @@
 
 
 
+## 2.9.49 (2025-03-21)
+
+
+### Bug Fixes
+
+* add enableCreateWorkspace to product ([6ff51b4](https://github.com/mogenius/mo-core-base/commit/6ff51b4481c92ec23d0ab8066b29c9ed101a0d84))
+
 ## 2.9.48 (2025-03-20)
 
 
