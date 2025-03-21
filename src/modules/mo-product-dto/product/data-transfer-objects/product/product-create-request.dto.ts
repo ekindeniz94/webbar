@@ -105,5 +105,10 @@ export class ProductCreateRequestDto {
   @Expose()
   enableCreateCluster: boolean;
 
+  @TransformToBoolean(false)
+  @IsBoolean()
+  @Expose()
+  enableCreateWorkspace: boolean;
+
   /***************************** CLOUDFLARE ********************************/
 }

@@ -66,4 +66,8 @@ export class ProductFlatDto extends BaseEntityDto {
   @TransformToBoolean(false)
   @Expose()
   enableCreateCluster: boolean;
+
+  @TransformToBoolean(false)
+  @Expose()
+  enableCreateWorkspace: boolean;
 }

@@ -84,6 +84,10 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   enableCreateCluster: boolean;
 
+  @TransformToBoolean(false)
+  @Expose()
+  enableCreateWorkspace: boolean;
+
   get isValid(): boolean {
     return this.state === ProductStateEnum.ACTIVE && moment().isBetween(this.startsOn, this.endsOn);
   }
