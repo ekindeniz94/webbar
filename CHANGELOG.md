@@ -2,6 +2,13 @@
 
 
 
+## 2.9.51 (2025-03-21)
+
+
+### Bug Fixes
+
+* add cluster api key dto ([78fd18a](https://github.com/mogenius/mo-core-base/commit/78fd18aa63062cdddbd333994255f97b192cefb1))
+
 ## 2.9.50 (2025-03-21)
 
 
