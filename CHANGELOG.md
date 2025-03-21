@@ -2,6 +2,13 @@
 
 
 
+## 2.9.50 (2025-03-21)
+
+
+### Bug Fixes
+
+* K8sWorkspaceDto ([a91ff9c](https://github.com/mogenius/mo-core-base/commit/a91ff9c949d0fe9261d4a1765ac1669f0ae2324d))
+
 ## 2.9.49 (2025-03-21)
 
 
