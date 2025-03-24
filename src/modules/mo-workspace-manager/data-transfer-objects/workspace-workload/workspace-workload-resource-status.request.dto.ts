@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { K8sResourceEntryDto } from '../../../mo-kubernetes';
 
@@ -10,6 +10,7 @@ export class WorkspaceWorkloadResourceStatusRequestDto {
 
   @IsNotEmpty()
   @IsString({ each: true })
+  @Transform(({ value }) => (value && value.length ? value.filter((item: string) => !!item) : []))
   @Expose()
   namespaces: string[];
 

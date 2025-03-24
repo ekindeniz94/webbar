@@ -6,6 +6,7 @@ import {
   V1CronJobStatus,
   V1DaemonSetStatus,
   V1DeploymentStatus,
+  V1Endpoint,
   V1IngressStatus,
   V1JobStatus,
   V1NamespaceStatus,
@@ -21,6 +22,9 @@ export class K8sWorkloadStatusItemDto {
   @IsString()
   @Expose()
   uid: string;
+
+  @Expose()
+  endpoints?: V1Endpoint[];
 
   @IsNotEmpty()
   @IsString()
@@ -428,6 +432,29 @@ export class K8sWorkloadStatusItemDto {
   jobStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'PersistentVolume') {
+      return undefined;
+    }
+
+    const status = obj.status ?? {};
+
+    switch (status.phase) {
+      case 'Available':
+        return 'info';
+      case 'Bound':
+        return 'success';
+      case 'Released':
+        return 'warning';
+      case 'Failed':
+        return 'danger';
+      default:
+        return 'unknown';
+    }
+  })
+  @Expose()
+  pvStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (obj?.kind !== 'PersistentVolumeClaim') {
       return undefined;
     }
@@ -445,7 +472,7 @@ export class K8sWorkloadStatusItemDto {
     }
   })
   @Expose()
-  pvcStatus?: 'success' | 'danger' | 'warning' | 'info' | 'building' | 'inactive' | 'unknown' | undefined;
+  pvcStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (obj?.kind !== 'PodDisruptionBudget') {
@@ -469,7 +496,7 @@ export class K8sWorkloadStatusItemDto {
     return 'inactive';
   })
   @Expose()
-  pdbStatus?: 'success' | 'danger' | 'warning' | 'info' | 'building' | 'inactive' | 'unknown' | undefined;
+  pdbStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     if (obj?.kind !== 'CiliumEndpoint') {
@@ -493,16 +520,83 @@ export class K8sWorkloadStatusItemDto {
     return 'unknown';
   })
   @Expose()
-  ciliumEndpointStatus?:
-    | 'success'
-    | 'danger'
-    | 'error'
-    | 'warning'
-    | 'info'
-    | 'building'
-    | 'inactive'
-    | 'unknown'
-    | undefined;
+  ciliumEndpointStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+    if (obj?.kind !== 'EndpointSlice') {
+      return undefined;
+    }
+
+    if (!obj.endpoints) {
+      return 'unknown';
+    }
+
+    const allReady = obj.endpoints.every((endpoint: V1Endpoint) => endpoint?.conditions?.ready === true);
+    const someNotReady = obj.endpoints.some((endpoint: V1Endpoint) => endpoint?.conditions?.ready !== true);
+
+    if (allReady) {
+      return 'success';
+    }
+
+    if (someNotReady) {
+      return 'warning';
+    }
+
+    return 'unknown';
+  })
+  @Expose()
+  endpointSliceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+
+  // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+  //   if (obj?.kind !== 'ServiceAccount') {
+  //     return undefined;
+  //   }
+  //
+  //   return 'success';
+  // })
+  // @Expose()
+  // serviceAccountStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+  //   if (obj?.kind !== 'ConfigMap') {
+  //     return undefined;
+  //   }
+  //
+  //   return 'success';
+  // })
+  // @Expose()
+  // configMapStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+  //   if (obj?.kind !== 'Secret') {
+  //     return undefined;
+  //   }
+  //
+  //   return 'success';
+  // })
+  // @Expose()
+  // secretStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+  //   if (obj?.kind !== 'Endpoints') {
+  //     return undefined;
+  //   }
+  //
+  //   return 'success';
+  // })
+  // @Expose()
+  // endpointsStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
+
+  // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
+  //   if (obj?.kind !== 'NetworkPolicy') {
+  //     return undefined;
+  //   }
+  //
+  //   return 'success';
+  // })
+  // @Expose()
+  // networkPolicyStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
 
   @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
     const results = [];
