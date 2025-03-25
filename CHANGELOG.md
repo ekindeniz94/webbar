@@ -2,6 +2,13 @@
 
 
 
+## 2.9.53 (2025-03-25)
+
+
+### Bug Fixes
+
+* add K8sWorkspaceTimeSeriesRequestDto ([107e365](https://github.com/mogenius/mo-core-base/commit/107e365ed3d0b1ecb515b20b418bb4a40700173c))
+
 ## 2.9.52 (2025-03-24)
 
 
