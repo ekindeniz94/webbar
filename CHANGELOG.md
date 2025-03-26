@@ -2,6 +2,13 @@
 
 
 
+## 2.9.54 (2025-03-26)
+
+
+### Bug Fixes
+
+* update cluster provider enum ([35d4672](https://github.com/mogenius/mo-core-base/commit/35d4672c1e86eb179d745d49023c4a853ea44b09))
+
 ## 2.9.53 (2025-03-25)
 
 
