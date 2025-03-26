@@ -46,7 +46,8 @@ export enum ClusterProviderEnum {
   APPSCODE = 'APPSCODE', // AppsCode Kubernetes
   LOFT = 'LOFT', // Loft Kubernetes
   SPECTROCLOUD = 'SPECTROCLOUD', // Spectro Cloud Kubernetes
-  DIAMANTI = 'DIAMANTI' // Diamanti Kubernetes
+  DIAMANTI = 'DIAMANTI', // Diamanti Kubernetes
+  PLUSSERVER_KUBERNETES_ENGINE = 'PLUSSERVER_KUBERNETES_ENGINE' // Plusserver Kubernetes Engine
 }
 export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   //
@@ -97,5 +98,6 @@ export const ClusterProviderEnum_ALL: ClusterProviderEnum[] = [
   ClusterProviderEnum.APPSCODE,
   ClusterProviderEnum.LOFT,
   ClusterProviderEnum.SPECTROCLOUD,
-  ClusterProviderEnum.DIAMANTI
+  ClusterProviderEnum.DIAMANTI,
+  ClusterProviderEnum.PLUSSERVER_KUBERNETES_ENGINE
 ];
