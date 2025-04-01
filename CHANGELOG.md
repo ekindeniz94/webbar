@@ -2,6 +2,13 @@
 
 
 
+## 2.9.55 (2025-04-01)
+
+
+### Bug Fixes
+
+* github integration in workspace ([39c8b84](https://github.com/mogenius/mo-core-base/commit/39c8b84d6e4e1f6fe4b3363a101893770b116dca))
+
 ## 2.9.54 (2025-03-26)
 
 
