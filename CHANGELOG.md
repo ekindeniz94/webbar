@@ -2,6 +2,13 @@
 
 
 
+## 2.9.56 (2025-04-02)
+
+
+### Bug Fixes
+
+* create repo in workspace ([178a8d7](https://github.com/mogenius/mo-core-base/commit/178a8d7ca3b4c29f262b3c2c44b098e70b90143e))
+
 ## 2.9.55 (2025-04-01)
 
 
