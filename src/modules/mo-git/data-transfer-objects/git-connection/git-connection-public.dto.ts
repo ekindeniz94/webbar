@@ -4,8 +4,13 @@ import { BaseEntityDto } from '@mogenius/database-dto';
 import moment from 'moment';
 import { IsOptional, IsString } from 'class-validator';
 import { GitUserPublicDto } from '../git-user-public.dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 
 export class GitConnectionPublicDto extends BaseEntityDto {
+  @Type(() => UserPublicDto)
+  @Expose()
+  createdBy: UserPublicDto;
+
   @Expose()
   gitConnectionType: GitConnectionTypeEnum;
 

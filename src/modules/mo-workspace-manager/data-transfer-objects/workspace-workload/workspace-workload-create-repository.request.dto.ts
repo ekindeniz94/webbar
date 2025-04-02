@@ -1,6 +1,7 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { K8sResourceEntryDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-workload/k8s-resource-entry.dto';
+import { V1Secret } from '@kubernetes/client-node';
 
 export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @IsNotEmpty()
@@ -68,4 +69,8 @@ export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @IsString()
   @Expose()
   containerPullSecret: string;
+
+  @IsOptional()
+  @Expose()
+  imagePullSecret?: V1Secret;
 }

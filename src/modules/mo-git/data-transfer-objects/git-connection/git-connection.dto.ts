@@ -1,11 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import moment from 'moment';
 import { BitbucketTokenAccessTypeEnum, GitConnectionTokenTypeEnum, GitConnectionTypeEnum } from '../../enums';
-import { GithubAppDto, GithubInstallationDto, GithubUserDto } from '../github';
+import { GithubAppDto, GithubInstallationDto } from '../github';
 import { IsOptional, IsString } from 'class-validator';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import { GitUserDto } from './git-user.dto';
 import { IdDto } from '@mogenius/core-dto';
+import { UserPublicDto } from '@mogenius/user-dto';
 
 export class GitConnectionDto extends BaseEntityDto {
   //
@@ -13,6 +14,10 @@ export class GitConnectionDto extends BaseEntityDto {
   // @IsOptional()
   // @IsString()
   // login?: string;
+
+  @Type(() => UserPublicDto)
+  @Expose()
+  createdBy: UserPublicDto;
 
   @Expose()
   installationId?: string;
