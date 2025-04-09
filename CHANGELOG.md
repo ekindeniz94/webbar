@@ -2,6 +2,13 @@
 
 
 
+## 2.9.57 (2025-04-09)
+
+
+### Bug Fixes
+
+* update TrafficTimeSeriesDto ([46f4121](https://github.com/mogenius/mo-core-base/commit/46f41210faa927ea44b34e137c85338d69baec12))
+
 ## 2.9.56 (2025-04-02)
 
 
