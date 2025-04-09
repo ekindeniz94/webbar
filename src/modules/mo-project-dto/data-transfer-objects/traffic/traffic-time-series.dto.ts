@@ -7,36 +7,36 @@ export class TrafficTimeSeriesDto {
   @Expose()
   ip: string;
 
+  @Transform(({ value, obj }) => value || obj.podName)
   @Expose()
-  podName: string;
+  pod: string;
 
   @Expose()
   namespace: string;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
-  localReceivedBytes: number;
+  transmitBytes: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
-  localTransmitBytes: number;
+  transmitPackets: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
-  packetsSum: number;
+  transmitStartBytes: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
   receivedBytes: number;
 
-  @Type(() => Number)
-  @Transform(({ value }) => (isNumber(value) ? value : 0))
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
   @Expose()
-  transmitBytes: number;
+  receivedPackets: number;
+
+  @Transform(({ value }) => (value && isNumber(value) ? value : 0))
+  @Expose()
+  receivedStartBytes: number;
 
   @Transform(({ value }) => (value && value !== 'undefined' && value !== 'null' ? moment(value).toDate() : value))
   @Expose()
@@ -46,15 +46,18 @@ export class TrafficTimeSeriesDto {
   @Expose()
   createdAt: Date;
 
+  @Expose()
+  get totalTransmitBytes(): number {
+    return _.sum([+this.transmitBytes, +this.transmitStartBytes]);
+  }
+
+  @Expose()
+  get totalReceivedBytes(): number {
+    return _.sum([+this.receivedBytes, +this.receivedStartBytes]);
+  }
+
+  @Expose()
   get totalTrafficBytes(): number {
     return _.sum([this.receivedBytes, this.transmitBytes]);
-  }
-
-  get totalLocalTrafficBytes(): number {
-    return _.sum([this.localReceivedBytes, this.localTransmitBytes]);
-  }
-
-  get totalExternalTrafficBytes(): number {
-    return this.totalTrafficBytes - this.totalLocalTrafficBytes;
   }
 }
