@@ -40,6 +40,9 @@ export class ClusterNodeDto extends BaseEntityDto {
   @Expose()
   maschineId: string;
 
+  @Expose()
+  osKernelVersion: string;
+
   @Type(() => Number)
   @Expose()
   maxPods: number;

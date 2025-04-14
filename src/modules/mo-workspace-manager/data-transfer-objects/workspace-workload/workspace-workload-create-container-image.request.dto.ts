@@ -1,66 +1,36 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
-import { K8sResourceEntryDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-workload/k8s-resource-entry.dto';
 import { V1Secret } from '@kubernetes/client-node';
+import { K8sCreateNewWorkloadRequestDto } from '../../../mo-kubernetes';
 
-export class WorkspaceWorkloadCreateRepositoryRequestDto {
+export class WorkspaceWorkloadCreateContainerImageRequestDto {
   @IsNotEmpty()
   @ValidateNested({ message: '$property must be an object' })
-  @Type(() => K8sResourceEntryDto)
+  @Type(() => K8sCreateNewWorkloadRequestDto)
   @Expose()
-  resource: K8sResourceEntryDto;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  gitRepository: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  gitBranch: string;
+  resource: K8sCreateNewWorkloadRequestDto;
 
   @IsNotEmpty()
   @IsString()
   @Expose()
   name: string;
 
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  namespace: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  dockerfileName: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  dockerContext: string;
-
-  @IsNotEmpty()
-  @IsString()
-  @Expose()
-  apiKey: string;
-
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   registryAuthUrl: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   registryUrl: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   registryUser: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
   registryPat: string;
@@ -69,14 +39,14 @@ export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @Expose()
   imagePullSecretResource?: V1Secret;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @Expose()
-  imagePullSecretResourceJson: string;
+  imagePullSecretResourceJson?: string;
 
   @IsOptional()
   @IsString()
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadCreateRepositoryRequestDto }) => {
+  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadCreateContainerImageRequestDto }) => {
     if (!value) {
       if (obj.imagePullSecretResource) {
         return obj.imagePullSecretResource.metadata?.name;
