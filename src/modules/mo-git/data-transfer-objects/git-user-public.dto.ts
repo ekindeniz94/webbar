@@ -5,6 +5,9 @@ export class GitUserPublicDto {
   name: string;
 
   @Expose()
+  login: string;
+
+  @Expose()
   avatar_url: string;
 
   @Expose()
