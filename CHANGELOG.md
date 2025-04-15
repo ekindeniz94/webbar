@@ -2,6 +2,13 @@
 
 
 
+## 2.9.59 (2025-04-15)
+
+
+### Bug Fixes
+
+* update git user public dto (add login) ([de77131](https://github.com/mogenius/mo-core-base/commit/de77131092e17fcb03ea3ca52083c65ef2d80f78))
+
 ## 2.9.58 (2025-04-14)
 
 
