@@ -2,6 +2,13 @@
 
 
 
+## 2.9.61 (2025-04-16)
+
+
+### Bug Fixes
+
+* add K8sStreamWorkspaceHelmOperatorLogConfigDto ([7eb9ad5](https://github.com/mogenius/mo-core-base/commit/7eb9ad577ea66d671f6da9ac6652d69f4def3dca))
+
 ## 2.9.60 (2025-04-15)
 
 
