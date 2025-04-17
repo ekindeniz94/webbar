@@ -10,6 +10,7 @@ import {
   V1IngressStatus,
   V1JobStatus,
   V1NamespaceStatus,
+  V1OwnerReference,
   V1PodStatus,
   V1ReplicaSetStatus,
   V1ServiceStatus,
@@ -25,6 +26,9 @@ export class K8sWorkloadStatusItemDto {
 
   @Expose()
   endpoints?: V1Endpoint[];
+
+  @Expose()
+  ownerReferences?: V1OwnerReference[];
 
   @IsNotEmpty()
   @IsString()
@@ -546,7 +550,6 @@ export class K8sWorkloadStatusItemDto {
   })
   @Expose()
   endpointSliceStatus?: 'success' | 'danger' | 'error' | 'warning' | 'info' | 'building' | 'inactive' | undefined;
-
 
   // @Transform(({ value, obj }: { value: string; obj: K8sWorkloadStatusItemDto }) => {
   //   if (obj?.kind !== 'ServiceAccount') {
