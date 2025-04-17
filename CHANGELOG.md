@@ -2,6 +2,13 @@
 
 
 
+## 2.9.62 (2025-04-17)
+
+
+### Bug Fixes
+
+* add ownerReferences to K8sWorkloadStatusItemDto ([b2af0f6](https://github.com/mogenius/mo-core-base/commit/b2af0f60d35c19359d3679ce172db2b0ef0e71b9))
+
 ## 2.9.61 (2025-04-16)
 
 
