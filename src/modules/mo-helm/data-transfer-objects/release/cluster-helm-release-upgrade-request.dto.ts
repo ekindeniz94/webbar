@@ -1,5 +1,6 @@
-import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { Expose } from 'class-transformer';
+import { IsBoolean, IsNotEmpty, isObject, IsOptional, IsString } from 'class-validator';
+import { Expose, Transform } from 'class-transformer';
+import * as JSYAML from 'js-yaml';
 
 export class ClusterHelmReleaseUpgradeRequestDto {
   @IsNotEmpty()
@@ -23,6 +24,12 @@ export class ClusterHelmReleaseUpgradeRequestDto {
   version: string;
 
   @IsOptional()
+  @Transform(({ value }) => {
+    if (value && isObject(value)) {
+      value = JSYAML.dump(value);
+    }
+    return value;
+  })
   @IsString()
   @Expose()
   values: string;
