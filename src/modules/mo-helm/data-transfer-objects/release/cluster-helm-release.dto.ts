@@ -12,16 +12,16 @@ export class ClusterHelmReleaseDto {
   @Expose()
   namespace: string;
 
-  @Transform(({ value, obj }) => obj?.data?.chart?.metadata?.name ?? value)
+  @Transform(({ value, obj }) => obj?.chart?.metadata?.name || obj?.data?.chart?.metadata?.name || value)
   @Expose()
   chartName: string;
 
-  @Transform(({ value, obj }) => obj?.data?.name ?? value)
+  @Transform(({ value, obj }) => obj?.name || obj?.data?.name || value)
   @Expose()
   releaseName: string;
 
   @Transform(({ value, obj }: { value: string; obj: any }) => {
-    value = obj?.data?.chart?.metadata?.version ?? value;
+    value = obj?.chart?.metadata?.version || obj?.data?.chart?.metadata?.version || value;
     if (!value || isEmpty(value)) {
       return value;
     }
@@ -35,7 +35,7 @@ export class ClusterHelmReleaseDto {
   version: string;
 
   @Transform(({ value, obj }: { value: string; obj: any }) => {
-    value = obj?.data?.chart?.metadata?.appVersion ?? value;
+    value = obj?.chart?.metadata?.appVersion || obj?.data?.chart?.metadata?.appVersion || value;
     if (!value || isEmpty(value)) {
       return value;
     }
@@ -48,11 +48,13 @@ export class ClusterHelmReleaseDto {
   @Expose()
   appVersion: string;
 
-  @Transform(({ value, obj }) => JSYAML.dump(obj?.data?.chart?.values) ?? value)
+  @Transform(({ value, obj }) => JSYAML.dump(obj?.chart?.values || obj?.data?.chart?.values) ?? value)
   @Expose()
   chartValue: string;
 
-  @Transform(({ value, obj }) => MoUtils.transformToDto(ClusterHelmReleaseInfoDto, obj?.data?.info) ?? value)
+  @Transform(
+    ({ value, obj }) => MoUtils.transformToDto(ClusterHelmReleaseInfoDto, obj?.info || obj?.data?.info) ?? value
+  )
   @Expose()
   info: ClusterHelmReleaseInfoDto;
 }
