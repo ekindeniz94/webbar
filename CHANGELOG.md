@@ -2,6 +2,13 @@
 
 
 
+## 2.9.64 (2025-04-23)
+
+
+### Bug Fixes
+
+* ClusterHelmReleaseUpgradeRequestDto (json value to yaml) ([13f3f29](https://github.com/mogenius/mo-core-base/commit/13f3f294d101f3fb21a31f5ec2cfe640266c704e))
+
 ## 2.9.63 (2025-04-23)
 
 
