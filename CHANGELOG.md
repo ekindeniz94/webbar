@@ -2,6 +2,13 @@
 
 
 
+## 2.9.63 (2025-04-23)
+
+
+### Bug Fixes
+
+* update ClusterHelmReleaseDto ([c7c2743](https://github.com/mogenius/mo-core-base/commit/c7c27430f153d44025244dd4b61be6a0b0bcf7ff))
+
 ## 2.9.62 (2025-04-17)
 
 
