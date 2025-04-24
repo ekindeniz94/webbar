@@ -5,6 +5,7 @@ import { OrganizationNameDto } from '../organization';
 import { BaseEntityDto } from '@mogenius/database-dto';
 import moment from 'moment';
 import { ProductKubernetesSettingsDto } from './product-kubernetes-settings.dto';
+import { IsNumber, IsOptional } from 'class-validator';
 
 export class ProductFlatDto extends BaseEntityDto {
   @Type(() => OrganizationNameDto)
@@ -49,13 +50,25 @@ export class ProductFlatDto extends BaseEntityDto {
   @Expose()
   persistentDiskInMb: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   clusterCountMax?: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   projectCountMax?: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => (value > 0 ? value : 0))
+  @Expose()
+  workspaceCountMax: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => (value > 0 ? value : 0))
+  @Expose()
+  teamInviteCountMax: number;
 
   /****************************************************************/
 

@@ -70,9 +70,20 @@ export class ProductDto extends BaseEntityDto {
   @Expose()
   clusterCountMax?: number;
 
+  @Type(() => Number)
   @Transform(({ value }) => (value > 0 ? value : 0))
   @Expose()
   projectCountMax?: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => (value > 0 ? value : 0))
+  @Expose()
+  workspaceCountMax: number;
+
+  @Type(() => Number)
+  @Transform(({ value }) => (value > 0 ? value : 0))
+  @Expose()
+  teamInviteCountMax: number;
 
   /****************************************************************/
 

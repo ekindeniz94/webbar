@@ -93,6 +93,18 @@ export class ProductCreateRequestDto {
   @Expose()
   projectCountMax?: number;
 
+  @Type(() => Number)
+  @IsOptional()
+  @IsNumber()
+  @Expose()
+  workspaceCountMax: number;
+
+  @Type(() => Number)
+  @IsOptional()
+  @IsNumber()
+  @Expose()
+  teamInviteCountMax: number;
+
   /****************************************************************/
 
   @TransformToBoolean(false)
