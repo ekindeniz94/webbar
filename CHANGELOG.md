@@ -2,6 +2,13 @@
 
 
 
+## 2.9.65 (2025-04-24)
+
+
+### Bug Fixes
+
+* add to product workspaceCountMax, teamInviteCountMax ([29f7ce9](https://github.com/mogenius/mo-core-base/commit/29f7ce9fd1f40a70f8156d752ac317a1a536a7c8))
+
 ## 2.9.64 (2025-04-23)
 
 
