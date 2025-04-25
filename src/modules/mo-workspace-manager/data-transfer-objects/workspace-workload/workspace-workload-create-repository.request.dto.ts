@@ -1,9 +1,7 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { IsNotEmpty, IsOptional, isString, IsString, ValidateNested } from 'class-validator';
+import { Expose, Type } from 'class-transformer';
+import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 import { K8sResourceEntryDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-workload/k8s-resource-entry.dto';
 import { V1Secret } from '@kubernetes/client-node';
-import { MoProjectDtoUtils } from '../../../mo-project-dto';
-import { KUBERNETES_CONST } from '../../../mo-kubernetes';
 
 export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @IsNotEmpty()
@@ -67,32 +65,7 @@ export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @Expose()
   registryPat: string;
 
-  @IsOptional()
-  @Expose()
-  imagePullSecretResource?: V1Secret;
-
   @IsNotEmpty()
-  @IsString()
   @Expose()
-  imagePullSecretResourceJson: string;
-
-  @IsOptional()
-  @IsString()
-  @Transform(({ value, obj }: { value: string; obj: WorkspaceWorkloadCreateRepositoryRequestDto }) => {
-    if (!value) {
-      if (obj.imagePullSecretResource) {
-        return obj.imagePullSecretResource.metadata?.name;
-      }
-      if (obj.imagePullSecretResourceJson) {
-        return `img-pull-sec-${obj.name}`;
-      }
-    }
-    if (value && isString(value)) {
-      value = MoProjectDtoUtils.k8sName(value, KUBERNETES_CONST.NAME.MAX);
-    }
-
-    return value;
-  })
-  @Expose()
-  imagePullSecretResourceName?: string;
+  imagePullSecretResource: V1Secret;
 }
