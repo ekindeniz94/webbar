@@ -2,6 +2,13 @@
 
 
 
+## 2.9.66 (2025-04-25)
+
+
+### Bug Fixes
+
+* update WorkspaceWorkloadCreateRepositoryRequestDto ([02078d1](https://github.com/mogenius/mo-core-base/commit/02078d19c02e3b157796d62e2b70ae4f28be3db6))
+
 ## 2.9.65 (2025-04-24)
 
 
