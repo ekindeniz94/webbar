@@ -2,6 +2,13 @@
 
 
 
+## 2.9.67 (2025-04-28)
+
+
+### Bug Fixes
+
+* rm WorkspaceWorkloadCreateContainerImageRequestDto ([a4918b8](https://github.com/mogenius/mo-core-base/commit/a4918b830b50889d58c219a7c1ea2409b17682d8))
+
 ## 2.9.66 (2025-04-25)
 
 
