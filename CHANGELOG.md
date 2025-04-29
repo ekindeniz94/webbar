@@ -2,6 +2,13 @@
 
 
 
+## 2.9.68 (2025-04-29)
+
+
+### Bug Fixes
+
+* add ClusterNodeMachineStatsDto to ClusterNodeDto ([e52c999](https://github.com/mogenius/mo-core-base/commit/e52c999cba99dc5442ce972c792b3c2e11211e46))
+
 ## 2.9.67 (2025-04-28)
 
 
