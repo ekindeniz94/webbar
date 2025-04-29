@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
 import { BaseEntityDto } from '@mogenius/database-dto';
+import { ClusterNodeMachineStatsDto } from './cluster-node-machine-stats.dto';
 
 export class ClusterNodeDto extends BaseEntityDto {
   @Expose()
@@ -66,4 +67,8 @@ export class ClusterNodeDto extends BaseEntityDto {
   @Type(() => Number)
   @Expose()
   memoryInBytesUtilized: number;
+
+  @Type(() => ClusterNodeMachineStatsDto)
+  @Expose()
+  machineStats: ClusterNodeMachineStatsDto;
 }
