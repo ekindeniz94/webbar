@@ -2,6 +2,13 @@
 
 
 
+## 2.9.69 (2025-04-30)
+
+
+### Bug Fixes
+
+* add K8sMessageResponseMachineStatsDto ([874bef2](https://github.com/mogenius/mo-core-base/commit/874bef2a24c622af98b489623ae6d1d07dc180b6))
+
 ## 2.9.68 (2025-04-29)
 
 
