@@ -16,7 +16,7 @@ export * from './cni-plugin.dto';
 export * from './cni-capabilities.dto';
 export * from './cni-ipam.dto';
 export * from './cni-policy.dto';
-export * from './cluster-status-payload.dto';
+// export * from './cluster-status-payload.dto';
 export * from './cluster-sync-update.payload.dto';
 export * from './cluster-namespace-list-by-names-request.dto';
 export * from './cluster-service-list-by-names-request.dto';
