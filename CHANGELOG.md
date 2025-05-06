@@ -2,6 +2,13 @@
 
 
 
+## 2.9.70 (2025-05-06)
+
+
+### Bug Fixes
+
+* rm ClusterStatusPayloadDto ([9d4f004](https://github.com/mogenius/mo-core-base/commit/9d4f00409b5eb01a197ed53ef6a290cce89e384a))
+
 ## 2.9.69 (2025-04-30)
 
 
