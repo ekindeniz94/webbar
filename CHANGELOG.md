@@ -2,6 +2,13 @@
 
 
 
+## 2.9.73 (2025-05-21)
+
+
+### Bug Fixes
+
+* add PersistentVolumeClaimResource to DefaultK8sResourceEntry ([253cb50](https://github.com/mogenius/mo-core-base/commit/253cb500eceba99fbfb26923b0dc57e0d68016c2))
+
 ## 2.9.72 (2025-05-20)
 
 
