@@ -117,6 +117,14 @@ export const DefaultK8sResourceEntry = {
     version: ''
   }),
 
+  PersistentVolumeClaimResource: MoUtils.transformToDto(K8sResourceEntryDto, {
+    kind: 'PersistentVolumeClaim',
+    name: 'persistentvolumeclaims',
+    namespaced: true,
+    group: 'v1',
+    version: ''
+  }),
+
   ControllerRevisionResource: MoUtils.transformToDto(K8sResourceEntryDto, {
     kind: 'ControllerRevision',
     name: 'controllerrevisions',
