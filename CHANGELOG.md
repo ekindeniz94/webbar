@@ -2,6 +2,13 @@
 
 
 
+## 3.0.1 (2025-06-03)
+
+
+### Bug Fixes
+
+* added nodeName for stream. ([109b4f2](https://github.com/mogenius/mo-core-base/commit/109b4f2f472ce3843d88f5b35260aaaaf1bb9be7))
+
 # 3.0.0 (2025-06-03)
 
 
