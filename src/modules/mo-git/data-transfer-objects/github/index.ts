@@ -19,3 +19,4 @@ export * from './github-actions-workflows-request.dto';
 export * from './github-actions-workflows-runs-request.dto';
 export * from './github-actions-runs-logs-request.dto';
 export * from './github-readme-request.dto';
+export * from './github-exists-workflow-request.dto';

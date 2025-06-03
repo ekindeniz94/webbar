@@ -33,11 +33,13 @@ export class ClusterDto extends BaseEntityDto {
   @Expose()
   buildServerType: ClusterBuildServerTypeEnum;
 
+  // deprecated
   @Transform(({ value }) => value ?? 0)
   @Type(() => Number)
   @Expose()
   projectCountMax: number;
 
+  // deprecated
   @Type(() => Number)
   @Expose()
   projectCount: number;
