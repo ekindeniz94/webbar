@@ -2,6 +2,13 @@
 
 
 
+## 2.9.74 (2025-06-03)
+
+
+### Bug Fixes
+
+* update cluster event ([1962b8f](https://github.com/mogenius/mo-core-base/commit/1962b8ff28ab6ce795a91e57c175350e5d0e1aba))
+
 ## 2.9.73 (2025-05-21)
 
 
