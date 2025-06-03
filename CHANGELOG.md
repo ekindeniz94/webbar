@@ -2,6 +2,23 @@
 
 
 
+# 3.0.0 (2025-06-03)
+
+
+### Bug Fixes
+
+* add workload repo update (github workflow) ([c65a7e9](https://github.com/mogenius/mo-core-base/commit/c65a7e91f0848b256ac385e8e1464e9c255a85a7))
+
+
+### Features
+
+* update ([feb8338](https://github.com/mogenius/mo-core-base/commit/feb83386653b8ebfb7b3a8c63e563eef621a9c4e))
+
+
+### BREAKING CHANGES
+
+* update all packages
+
 ## 2.9.74 (2025-06-03)
 
 
