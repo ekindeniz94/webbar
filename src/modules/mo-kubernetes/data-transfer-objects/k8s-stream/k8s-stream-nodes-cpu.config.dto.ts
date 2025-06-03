@@ -1,6 +1,6 @@
 import { K8sStreamBaseConfigDto } from './k8s-stream-base-config.dto';
 import { Expose, Transform } from 'class-transformer';
-import { IsEnum } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 import { K8sStreamRequestTypeEnum } from '../../enums/k8s-stream/k8s-stream-request-type.enum';
 import { K8sStreamCmdEnum } from '../../enums/k8s-stream/k8s-stream-cmd.enum';
 
@@ -14,4 +14,9 @@ export class K8sStreamNodesCpuConfigDto extends K8sStreamBaseConfigDto {
   @IsEnum(K8sStreamCmdEnum)
   @Expose()
   cmd: K8sStreamCmdEnum;
+
+  @IsNotEmpty()
+  @IsString()
+  @Expose()
+  nodeName: string;
 }
