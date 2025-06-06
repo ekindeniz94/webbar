@@ -10,3 +10,5 @@ export * from './k8s-workspace.dto';
 export * from './k8s-workspace-stats.request.dto';
 export * from './k8s-workspace-stats.response.dto';
 export * from './k8s-workspace-time-series.request.dto';
+export * from './k8s-workspace-clean-up.request.dto';
+export * from './k8s-workspace-clean-up.response.dto';
