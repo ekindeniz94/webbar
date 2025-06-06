@@ -7,10 +7,15 @@ export * from './k8s-manager-iac';
 export * from './k8s-workload';
 export * from './k8s-workspace';
 export * from './k8s-stream';
+export * from './k8s-prometheus';
 
 export * from './k8s-message-response-base.dto';
 export * from './k8s-message-response.dto';
 export * from './k8s-message-response-any.dto';
+export * from './k8s-message-response-string.dto';
+export * from './k8s-message-response-string-array.dto';
+export * from './k8s-message-response-record-string.dto';
+export * from './k8s-message-response-boolean.dto';
 export * from './k8s-message-response-machine-stats.dto';
 export * from './kubernetes-event.dto';
 export * from './kubernetes-event-involved-object.dto';
