@@ -2,6 +2,13 @@
 
 
 
+## 3.0.2 (2025-06-06)
+
+
+### Bug Fixes
+
+* k8s Prometheus dtos ([dab07ad](https://github.com/mogenius/mo-core-base/commit/dab07addd5196ea2af59860b50ecd0fe16470282))
+
 ## 3.0.1 (2025-06-03)
 
 
