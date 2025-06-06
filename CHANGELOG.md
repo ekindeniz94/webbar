@@ -2,6 +2,13 @@
 
 
 
+## 3.0.3 (2025-06-06)
+
+
+### Bug Fixes
+
+* workspace clean up ([07402a8](https://github.com/mogenius/mo-core-base/commit/07402a8eb8bd304dc0b77b55e1081dd53f96fdc8))
+
 ## 3.0.2 (2025-06-06)
 
 
