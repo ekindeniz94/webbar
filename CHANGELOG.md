@@ -2,6 +2,13 @@
 
 
 
+## 3.0.4 (2025-06-12)
+
+
+### Bug Fixes
+
+* sso dtos ([48bcac5](https://github.com/mogenius/mo-core-base/commit/48bcac5ce9482e2f16915715135e06ceee0aed4c))
+
 ## 3.0.3 (2025-06-06)
 
 
