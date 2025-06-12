@@ -2,6 +2,13 @@
 
 
 
+## 3.0.5 (2025-06-12)
+
+
+### Bug Fixes
+
+* step and timeOffsetSeconds added for prometheus. ([6737f92](https://github.com/mogenius/mo-core-base/commit/6737f923c7136efb7581c8f9db8494fcf900aaa2))
+
 ## 3.0.4 (2025-06-12)
 
 
