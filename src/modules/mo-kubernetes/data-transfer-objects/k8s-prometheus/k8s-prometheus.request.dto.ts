@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 /***
  * Data Transfer Object for K8s Prometheus Requests
@@ -12,6 +12,16 @@ export class K8sPrometheusRequestDto {
   @IsString()
   @Expose()
   query: string;
+
+  @IsOptional()
+  @IsNumber()
+  @Expose()
+  step: number;
+
+  @IsOptional()
+  @IsNumber()
+  @Expose()
+  timeOffsetSeconds: number;
 
   @IsOptional()
   @IsString()
