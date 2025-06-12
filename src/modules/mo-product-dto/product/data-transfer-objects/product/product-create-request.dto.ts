@@ -106,6 +106,10 @@ export class ProductCreateRequestDto {
   teamInviteCountMax: number;
 
   /****************************************************************/
+  @TransformToBoolean(false)
+  @IsBoolean()
+  @Expose()
+  enableSso: boolean;
 
   @TransformToBoolean(false)
   @IsBoolean()

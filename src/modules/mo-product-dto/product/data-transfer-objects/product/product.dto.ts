@@ -89,6 +89,10 @@ export class ProductDto extends BaseEntityDto {
 
   @TransformToBoolean(false)
   @Expose()
+  enableSso: boolean;
+
+  @TransformToBoolean(false)
+  @Expose()
   enableTeamCollaboration: boolean;
 
   @TransformToBoolean(false)

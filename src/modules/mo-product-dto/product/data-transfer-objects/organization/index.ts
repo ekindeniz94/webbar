@@ -9,3 +9,4 @@ export * from './organization-user-group-create-request.dto';
 export * from './organization-user-group-patch-request.dto';
 export * from './organization-user-list-item.dto';
 export * from './change-organization-user-group-request.dto';
+export * from './organization-public.dto';
