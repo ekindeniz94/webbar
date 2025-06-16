@@ -27,3 +27,5 @@ export * from './kubernetes-public-event.dto';
 export * from './k8s-message-response-workload-status.dto';
 export * from './k8s-message-response-workspace-stats.dto';
 export * from './k8s-message-response-workspace-clean-up.dto';
+export * from './k8s-message-response-record-response.dto';
+export * from './k8s-message-response-record-string.dto';
