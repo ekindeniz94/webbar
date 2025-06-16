@@ -2,6 +2,13 @@
 
 
 
+## 3.0.8 (2025-06-16)
+
+
+### Bug Fixes
+
+* networkpolicies to default resources. ([f5ef00f](https://github.com/mogenius/mo-core-base/commit/f5ef00f5037097f7021ba4ffb5c93d2327fd4875))
+
 ## 3.0.7 (2025-06-16)
 
 
