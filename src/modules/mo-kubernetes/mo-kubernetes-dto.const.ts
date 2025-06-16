@@ -171,6 +171,14 @@ export const DefaultK8sResourceEntry = {
     namespaced: true,
     group: 'v1',
     version: ''
+  }),
+
+  NetworkPolicyResource: MoUtils.transformToDto(K8sResourceEntryDto, {
+    kind: 'NetworkPolicy',
+    name: 'networkpolicies',
+    namespaced: true,
+    group: 'networking.k8s.io/v1',
+    version: ''
   })
 };
 
