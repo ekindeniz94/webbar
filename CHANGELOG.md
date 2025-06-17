@@ -2,6 +2,13 @@
 
 
 
+## 3.0.9 (2025-06-17)
+
+
+### Bug Fixes
+
+* added prometheus response obj. ([924c4fe](https://github.com/mogenius/mo-core-base/commit/924c4fea96aeefb15bd64ed27bc4861a76fc9d42))
+
 ## 3.0.8 (2025-06-16)
 
 
