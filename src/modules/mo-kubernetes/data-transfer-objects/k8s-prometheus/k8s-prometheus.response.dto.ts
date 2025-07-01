@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsDate, IsNumber, IsString } from 'class-validator';
 
 export class K8sPrometheusResponseDto {
   @IsString()
@@ -9,4 +9,8 @@ export class K8sPrometheusResponseDto {
   @IsNumber()
   @Expose()
   step: number;
+
+  @IsDate()
+  @Expose()
+  createdAt: Date;
 }
