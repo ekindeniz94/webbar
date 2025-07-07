@@ -2,6 +2,13 @@
 
 
 
+## 3.0.13 (2025-07-07)
+
+
+### Bug Fixes
+
+* swagger test ([af17d57](https://github.com/mogenius/mo-core-base/commit/af17d5725b11c32be2397338af3914f6eeaf50ad))
+
 ## 3.0.12 (2025-07-07)
 
 
