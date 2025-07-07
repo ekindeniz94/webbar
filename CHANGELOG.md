@@ -2,6 +2,13 @@
 
 
 
+## 3.0.12 (2025-07-07)
+
+
+### Bug Fixes
+
+* pipeline starter ([218ae36](https://github.com/mogenius/mo-core-base/commit/218ae3606a7ade0642559937269b0955451974a9))
+
 ## 3.0.11 (2025-07-01)
 
 
