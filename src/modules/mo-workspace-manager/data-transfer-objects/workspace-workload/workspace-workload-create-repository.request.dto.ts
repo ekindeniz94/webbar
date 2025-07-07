@@ -1,7 +1,9 @@
 import { Expose, Type } from 'class-transformer';
-import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { K8sResourceEntryDto } from '../../../mo-kubernetes/data-transfer-objects/k8s-workload/k8s-resource-entry.dto';
 import { V1Secret } from '@kubernetes/client-node';
+import { WorkspaceWorkloadCreateRepositoryWorkflowRequestDto } from './workspace-workload-create-repository-workflow.request.dto';
+import { WorkspaceWorkloadCreateRepositoryBuildArgRequestDto } from './workspace-workload-create-repository-build-arg.request.dto';
 
 export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @IsNotEmpty()
@@ -68,4 +70,16 @@ export class WorkspaceWorkloadCreateRepositoryRequestDto {
   @IsNotEmpty()
   @Expose()
   imagePullSecretResource: V1Secret;
+
+  @IsNotEmpty()
+  @ValidateNested({ message: '$property must be an object' })
+  @Type(() => WorkspaceWorkloadCreateRepositoryWorkflowRequestDto)
+  @Expose()
+  workflow: WorkspaceWorkloadCreateRepositoryWorkflowRequestDto;
+
+  @IsNotEmpty()
+  @ValidateNested({ message: '$property must be an array' })
+  @Type(() => WorkspaceWorkloadCreateRepositoryBuildArgRequestDto)
+  @Expose()
+  buildArgs: WorkspaceWorkloadCreateRepositoryBuildArgRequestDto[];
 }
