@@ -2,8 +2,15 @@ import { Expose, Transform } from 'class-transformer';
 import { isArray, isIP } from 'class-validator';
 import _ from 'lodash';
 import { ClusterBuildServerTypeEnum, ClusterProviderEnum, ClusterTypeEnum } from '../../enums';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class ClusterPublicDto {
+  @ApiProperty({
+    type: String,
+    description: 'Unique identifier for the cluster',
+    example: 'cluster-id',
+    required: true
+  })
   @Expose()
   id: string;
 
