@@ -10,7 +10,8 @@ export const KUBERNETES_CONST = {
   LABEL_NAME: {
     MIN: 3,
     MAX: 50
-  }
+  },
+  DESCRIPTION: { MIN: 1, MAX: 256 }
 };
 
 export const ALLOWED_BUILD_TASKS = [
